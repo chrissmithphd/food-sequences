@@ -212,9 +212,9 @@ def convert_to_parquet(raw_dir: Path, processed_dir: Path) -> dict[str, dict]:
 def save_provenance(processed_dir: Path, file_metadata: dict) -> None:
     """Save provenance metadata to JSON file."""
     provenance = {
-        "dataset_name": "Instacart Online Grocery Shopping Dataset 2017",
+        "dataset_name": "Instacart Market Basket Analysis Dataset",
         "source": KAGGLE_URL,
-        "competition": KAGGLE_COMPETITION,
+        "kaggle_dataset": KAGGLE_DATASET,
         "retrieval_date": datetime.now().isoformat(),
         "retrieval_method": "kaggle_api",
         "files": file_metadata,
