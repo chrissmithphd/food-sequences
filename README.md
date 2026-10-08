@@ -14,10 +14,10 @@ This portfolio project, motivated by CookUnity, investigates how customers repea
 
 ## Dataset
 
-**Instacart Online Grocery Shopping Dataset 2017**
+**Instacart Market Basket Analysis Dataset**
 
-- **Primary Source**: Kaggle competition data  
-  https://www.kaggle.com/c/instacart-market-basket-analysis/data
+- **Primary Source**: Kaggle dataset (originally from 2017 competition)  
+  https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis
 - **Required Tables**:
   - `orders` - Order metadata with user IDs, order sequence, and timing
   - `products` - Product catalog with names and category assignments
@@ -26,7 +26,7 @@ This portfolio project, motivated by CookUnity, investigates how customers repea
   - `order_products__prior` - Historical order contents
   - `order_products__train` - Training set order contents
 
-**Important**: The original Instacart website link (instacart.com/datasets/grocery-shopping-2017) returns 404. A partial archive exists at https://github.com/subwaymatch/instacart-dataset-2017 but lacks the critical historical order-item tables. This project requires the complete dataset from Kaggle.
+**Note**: The original Kaggle competition page is no longer active, but the complete dataset (6 CSV files, 207 MB) is available as a Kaggle dataset. A partial archive exists at https://github.com/subwaymatch/instacart-dataset-2017 but lacks the critical historical order-item tables.
 
 ## Setup
 
@@ -73,14 +73,6 @@ This portfolio project, motivated by CookUnity, investigates how customers repea
    
    Replace `KGAT_your_token_here` with your actual token from step (c).
 
-4. **Accept the competition terms**:
-   
-   Before downloading via API, you must manually accept the competition rules:
-   
-   a. Visit: https://www.kaggle.com/c/instacart-market-basket-analysis/rules
-   
-   b. Scroll down and click "I Understand and Accept"
-
 ### Download and Process Data
 
 **One-command execution**:
@@ -98,9 +90,9 @@ This script will:
 
 If API download fails or you prefer manual download:
 
-1. Visit: https://www.kaggle.com/c/instacart-market-basket-analysis/data
-2. Click "Download All" (requires accepting competition rules)
-3. Extract the ZIP to `data/raw/instacart-market-basket-analysis/`
+1. Visit: https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis
+2. Click "Download" button
+3. Extract the ZIP to `data/raw/`
 4. Run ingestion: `python scripts/ingest_data.py --skip-download`
 
 ## Data Validation

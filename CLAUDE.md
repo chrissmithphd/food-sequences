@@ -138,9 +138,11 @@ Kaggle uses token-based authentication (as of 2026). The user must:
 3. Choose one authentication method:
    - **Environment variable**: `export KAGGLE_API_TOKEN=KGAT_...` (session-only)
    - **Token file**: Save token to `~/.kaggle/access_token` and `chmod 600` it (persists)
-4. Accept competition rules at: https://www.kaggle.com/c/instacart-market-basket-analysis/rules
 
 **Note**: Kaggle changed from `kaggle.json` (username/key) to token-based auth. Old accounts may still have `kaggle.json`, which also works.
+
+**Dataset source**: The original Kaggle competition page is no longer active. The dataset is now available at:
+https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis
 
 **Scripts will detect missing credentials and provide exact manual steps.** Never request credentials in chat or commit them.
 

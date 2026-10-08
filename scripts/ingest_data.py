@@ -25,7 +25,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
 from food_sequences.config import (
     DATA_PROCESSED,
     DATA_RAW,
-    KAGGLE_COMPETITION,
+    KAGGLE_DATASET,
     KAGGLE_URL,
     REQUIRED_FILES,
 )
@@ -87,29 +87,25 @@ def download_from_kaggle(output_dir: Path) -> bool:
         print("\nIf you just set up your token, make sure you:")
         print("1. Exported it correctly: export KAGGLE_API_TOKEN=KGAT_...")
         print("2. OR saved it to ~/.kaggle/access_token")
-        print("3. Accepted the competition rules at:")
-        print(f"   https://www.kaggle.com/c/{KAGGLE_COMPETITION}/rules")
         return False
 
-    print(f"Downloading {KAGGLE_COMPETITION} dataset...")
+    print(f"Downloading {KAGGLE_DATASET} dataset...")
     print("This may take several minutes (~200 MB download)...")
 
     try:
         output_dir.mkdir(parents=True, exist_ok=True)
-        api.competition_download_files(KAGGLE_COMPETITION, path=str(output_dir))
+        api.dataset_download_files(KAGGLE_DATASET, path=str(output_dir), unzip=True)
         print(f"Download complete: {output_dir}")
         return True
     except Exception as e:
         print(f"ERROR: Download failed: {e}")
         print("\nPossible reasons:")
-        print("1. You haven't accepted the competition rules")
-        print(f"   Visit: https://www.kaggle.com/c/{KAGGLE_COMPETITION}/rules")
-        print("   Click 'I Understand and Accept'")
-        print("2. Network error or Kaggle API issue")
+        print("1. Network error or Kaggle API issue")
+        print("2. Invalid token or authentication problem")
         print("\nYou can download manually:")
         print(f"1. Visit: {KAGGLE_URL}")
-        print("2. Click 'Download All'")
-        print(f"3. Extract to: {output_dir}")
+        print("2. Click 'Download' button")
+        print(f"3. Extract the ZIP to: {output_dir}")
         return False
 
 
@@ -118,8 +114,8 @@ def extract_zip_files(raw_dir: Path) -> bool:
     zip_files = list(raw_dir.glob("*.zip"))
 
     if not zip_files:
-        print(f"No ZIP files found in {raw_dir}")
-        return False
+        print(f"No ZIP files found in {raw_dir} (may already be extracted)")
+        return True  # Not an error - files might already be extracted
 
     for zip_path in zip_files:
         print(f"Extracting {zip_path.name}...")

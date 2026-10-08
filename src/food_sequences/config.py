@@ -9,9 +9,9 @@ DATA_PROCESSED = PROJECT_ROOT / "data" / "processed"
 DOCS_DIR = PROJECT_ROOT / "docs"
 
 # Kaggle dataset configuration
-KAGGLE_COMPETITION = "instacart-market-basket-analysis"
-DATASET_NAME = "Instacart Online Grocery Shopping Dataset 2017"
-KAGGLE_URL = f"https://www.kaggle.com/c/{KAGGLE_COMPETITION}/data"
+KAGGLE_DATASET = "psparks/instacart-market-basket-analysis"
+DATASET_NAME = "Instacart Market Basket Analysis Dataset"
+KAGGLE_URL = f"https://www.kaggle.com/datasets/{KAGGLE_DATASET}"
 
 # Required data files (with possible filename variations)
 REQUIRED_FILES = {
