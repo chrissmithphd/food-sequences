@@ -53,16 +53,28 @@ def download_from_kaggle(output_dir: Path) -> bool:
         print("Install with: uv sync")
         return False
 
-    # Check for credentials
+    # Check for credentials (environment variable or token file)
+    import os
+
+    has_env_token = "KAGGLE_API_TOKEN" in os.environ
+    kaggle_token_file = Path.home() / ".kaggle" / "access_token"
     kaggle_json = Path.home() / ".kaggle" / "kaggle.json"
-    if not kaggle_json.exists():
+
+    has_credentials = has_env_token or kaggle_token_file.exists() or kaggle_json.exists()
+
+    if not has_credentials:
         print("ERROR: Kaggle credentials not found")
-        print(f"Expected file: {kaggle_json}")
-        print("\nTo set up Kaggle credentials:")
-        print("1. Go to https://www.kaggle.com/settings/account")
-        print("2. Scroll to 'API' and click 'Create New Token'")
-        print("3. Save kaggle.json to ~/.kaggle/kaggle.json")
-        print("4. Run: chmod 600 ~/.kaggle/kaggle.json")
+        print("\nTo set up Kaggle authentication, go to:")
+        print("  https://www.kaggle.com/settings/account")
+        print("\nScroll to the 'API' section and follow the instructions to generate a token.")
+        print("\nThen choose ONE of these methods:")
+        print("\n1. Environment variable (recommended for this session):")
+        print("   export KAGGLE_API_TOKEN=KGAT_your_token_here")
+        print("\n2. Save to file (persists across sessions):")
+        print("   mkdir -p ~/.kaggle")
+        print("   echo 'KGAT_your_token_here' > ~/.kaggle/access_token")
+        print("   chmod 600 ~/.kaggle/access_token")
+        print("\nNote: Kaggle changed from kaggle.json to token-based auth.")
         return False
 
     print("Initializing Kaggle API...")
@@ -72,6 +84,11 @@ def download_from_kaggle(output_dir: Path) -> bool:
         api.authenticate()
     except Exception as e:
         print(f"ERROR: Kaggle authentication failed: {e}")
+        print("\nIf you just set up your token, make sure you:")
+        print("1. Exported it correctly: export KAGGLE_API_TOKEN=KGAT_...")
+        print("2. OR saved it to ~/.kaggle/access_token")
+        print("3. Accepted the competition rules at:")
+        print(f"   https://www.kaggle.com/c/{KAGGLE_COMPETITION}/rules")
         return False
 
     print(f"Downloading {KAGGLE_COMPETITION} dataset...")

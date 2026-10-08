@@ -55,16 +55,23 @@ This portfolio project, motivated by CookUnity, investigates how customers repea
    
    b. Go to https://www.kaggle.com/settings/account
    
-   c. Scroll to "API" section and click "Create New Token"
+   c. Scroll to "API" section and follow instructions to generate a token (starts with `KGAT_`)
    
-   d. This downloads `kaggle.json` with your credentials
+   d. **Choose one authentication method**:
    
-   e. Place the file in `~/.kaggle/kaggle.json` (Linux/Mac) or `%USERPROFILE%\.kaggle\kaggle.json` (Windows)
+   **Option 1: Environment variable** (recommended for single session):
+   ```bash
+   export KAGGLE_API_TOKEN=KGAT_your_token_here
+   ```
    
-   f. Set permissions (Linux/Mac only):
-      ```bash
-      chmod 600 ~/.kaggle/kaggle.json
-      ```
+   **Option 2: Save to file** (persists across sessions):
+   ```bash
+   mkdir -p ~/.kaggle
+   echo 'KGAT_your_token_here' > ~/.kaggle/access_token
+   chmod 600 ~/.kaggle/access_token
+   ```
+   
+   Replace `KGAT_your_token_here` with your actual token from step (c).
 
 4. **Accept the competition terms**:
    

@@ -131,12 +131,16 @@ The audit validates:
 
 ## Kaggle API Authentication
 
-The Kaggle CLI requires manual credential setup:
+Kaggle uses token-based authentication (as of 2026). The user must:
 
-1. User must manually download `kaggle.json` from their Kaggle account
-2. Place at `~/.kaggle/kaggle.json` (Linux/Mac) or `%USERPROFILE%\.kaggle\kaggle.json` (Windows)
-3. Set permissions: `chmod 600 ~/.kaggle/kaggle.json` (Linux/Mac only)
+1. Go to https://www.kaggle.com/settings/account
+2. Scroll to "API" section and generate a token (format: `KGAT_...`)
+3. Choose one authentication method:
+   - **Environment variable**: `export KAGGLE_API_TOKEN=KGAT_...` (session-only)
+   - **Token file**: Save token to `~/.kaggle/access_token` and `chmod 600` it (persists)
 4. Accept competition rules at: https://www.kaggle.com/c/instacart-market-basket-analysis/rules
+
+**Note**: Kaggle changed from `kaggle.json` (username/key) to token-based auth. Old accounts may still have `kaggle.json`, which also works.
 
 **Scripts will detect missing credentials and provide exact manual steps.** Never request credentials in chat or commit them.
 
