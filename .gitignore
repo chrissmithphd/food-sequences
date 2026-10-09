@@ -3,6 +3,9 @@ data/raw/**
 data/processed/**
 *.csv
 *.parquet
+
+# EXCEPT: example data files showing schema (synthetic data)
+!data/examples/*.csv
 *.zip
 *.gz
 *.tar
