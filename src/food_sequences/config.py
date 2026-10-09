@@ -8,6 +8,11 @@ DATA_RAW = PROJECT_ROOT / "data" / "raw"
 DATA_PROCESSED = PROJECT_ROOT / "data" / "processed"
 DOCS_DIR = PROJECT_ROOT / "docs"
 
+# Analysis artifacts live OUTSIDE data/ — derived analysis is not source data.
+ANALYSIS_DIR = PROJECT_ROOT / "analysis"
+ANALYSIS_OUTPUTS = ANALYSIS_DIR / "outputs"
+FIGURES_DIR = ANALYSIS_DIR / "figures"
+
 # Kaggle dataset configuration
 KAGGLE_DATASET = "psparks/instacart-market-basket-analysis"
 DATASET_NAME = "Instacart Market Basket Analysis Dataset"

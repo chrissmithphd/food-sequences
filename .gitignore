@@ -74,3 +74,11 @@ htmlcov/
 tmp/
 temp/
 *.tmp
+
+# Claude Code plans and working artifacts
+.claude/plans/
+.claude/workspaces/
+
+# Analysis outputs (large parquet files - figures are kept)
+analysis/outputs/*.parquet
+analysis/outputs/*.csv
