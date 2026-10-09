@@ -10,9 +10,26 @@ This project uses real purchase data from 206,000 customers across 3.4 million o
 
 ## Key Findings
 
-> **⚠️ Under revision (2026-10).** This analysis is being corrected after a methodological review. Two issues affect the findings below: (1) reordering was mis-measured using adjacent-basket overlap instead of Instacart's `reordered` field and full-history reorder intervals; (2) the pattern classifier used mutually-exclusive labels, evaluated only the single largest gap, and an absolute `max_gap ≤ 10` cap that wrongly excluded long regular cycles. The reorder measurement has been recalculated (see Reorder Measurement); the classification numbers (staple/rotation/return percentages) are pending a rewrite to overlapping flags and should be read as provisional. A reconciliation table at the bottom tracks what changed.
+> **⚠️ Under revision (2026-10).** This analysis is being corrected after a methodological review. Two issues affect the findings below: (1) reordering was mis-measured using adjacent-basket overlap instead of Instacart's `reordered` field and full-history reorder intervals — **now corrected, see below**; (2) the pattern classifier used mutually-exclusive labels, evaluated only the single largest gap, and an absolute `max_gap ≤ 10` cap that wrongly excluded long regular cycles — **rewrite pending; the staple/rotation/return percentages below are provisional**. A reconciliation table at the bottom tracks what changed.
+
+### Delayed reordering is common — and it was the headline the old analysis got wrong
+
+Using Instacart's `reordered` field and full-history repeat intervals (not adjacent-basket overlap), reordering is frequent, but mostly **delayed**:
+
+- Only **27.8%** of product reorders happen in the *immediately next* order; **66.3%** happen within 10 subsequent orders (event-weighted, censoring-aware).
+- At the item level, **delayed reorders (35.3%) outnumber immediate repeats (27.7%)** of basket contents. An earlier draft read low adjacent-basket overlap (Jaccard 0.18) as "little reordering" — that inference was wrong, because overlap cannot see a product skipped for a few orders and bought again.
+- The median gap between consecutive purchases of the same product is **2 orders**.
+
+![When do customers reorder](analysis/figures/reorder_curve_product_vs_aisle.png)
+
+The **green line (aisle) sits well above the blue line (exact product)**: customers return to the same *kind* of food (85% within 10 orders) more than to the same exact SKU (66%). That gap is brand/variant switching — the same aisle, a different product — held separate here and kept for future recipe analysis.
+
+![Repeat interval distribution](analysis/figures/repeat_interval_distribution.png)
+
+**Weighting changes the story**, so all three are reported: event-weighted (66.3% within 10) lets frequent repeat-buyers dominate; customer-weighted (62.3%) gives each customer equal say; customer-product-weighted (32.0%) gives each (customer, product) pair equal say and is far lower — because 8.1M of 13.7M pairs are single-purchase, so most *pairs* are never repeated even though most *purchase events* are.
 
 ### Most grocery items are not staples — they come and go
+*(Provisional — depends on the classifier rewrite noted above.)*
 
 Of 4.5 million classifiable user-product sequences (users with 10+ orders who bought a product at least twice), only **6% are persistent staples** — products bought in more than half of orders with runs of 3+ consecutive purchases. The most common classified pattern is **return after a break** (21%): customers stop buying something for 5+ orders, then resume. Another 15% show **replacement by another product** in the same aisle. Nearly half (45%) of sequences don't fit any clean pattern.
 
@@ -97,11 +114,32 @@ For each (customer, product) pair, we extract:
 
 **13.7 million** user-product sequences across 197,523 users and 49,683 products.
 
-### Basket overlap
+### Reorder measurement (corrected)
 
-Consecutive baskets share only **17.7%** of products (Jaccard similarity); on average 28.6% of the previous order's items reappear in the *immediately following* order.
+**Reconciliation against Instacart's `reordered` field.** A history-based indicator (product seen in any earlier order by this customer) reproduces the `reordered` field on **100.000%** of 33,567,840 purchase rows (19,903,887 reorders; 13,663,953 first-time). The two measure the same thing; the full-history indicator is used throughout so it can also quantify *delayed* reorders, which the flag marks but does not measure.
 
-> **Correction in progress.** An earlier version of this README read adjacent-basket overlap as a measure of reordering and concluded "repeat purchasing is the exception." That inference is wrong: a product skipped for several orders and bought again is still a reorder, which adjacent-basket overlap cannot see. The correct measure uses Instacart's `reordered` field and a history-based "seen before" indicator across the full history. The reorder and repeat-interval results are being recalculated — see the Reorder Measurement section.
+**Basket composition** (items in orders that have a predecessor):
+
+| Composition | Item-weighted | Customer-weighted |
+|---|---|---|
+| From immediately prior order | 27.7% | 26.9% |
+| Older, absent from prior (**delayed reorder**) | **35.3%** | 23.6% |
+| First observed | 37.0% | 49.5% |
+
+Item-weighting pools all items (large baskets/heavy buyers dominate); customer-weighting gives each of 197,523 customers equal say. The *older-absent* share — items skipped in the immediately preceding order then rebought — is exactly what the old adjacent-overlap analysis missed.
+
+**Censoring-aware cumulative reorder probability** (Kaplan-Meier; terminal purchases with incomplete follow-up are right-censored):
+
+| Within n orders | 1 | 2 | 3 | 5 | 10 |
+|---|---|---|---|---|---|
+| Exact product, event-weighted | 27.8% | 40.7% | 48.2% | 56.8% | 66.3% |
+| Exact product, customer-weighted | 27.0% | 38.6% | 45.3% | 53.1% | 62.3% |
+| Exact product, customer-product-weighted | 10.8% | 16.6% | 20.4% | 25.4% | 32.0% |
+| Same aisle (brand/variant allowed), event-weighted | 42.4% | 58.5% | 67.0% | 76.0% | 85.1% |
+
+#### Adjacent-basket overlap (what the old analysis used — kept for transparency)
+
+Consecutive baskets share **17.7%** of products (Jaccard); 28.6% of the previous order's items reappear in the *immediately following* order. This describes neighbor-to-neighbor churn only. It does **not** measure reordering — a product skipped for several orders and rebought is invisible to it — which is why the earlier "repeat purchasing is the exception" conclusion was wrong.
 
 ### Category-level sequences
 
@@ -109,7 +147,9 @@ Aisle-level (134 categories) and department-level (21 categories) sequences are 
 
 ### Prepared food comparison
 
-| Metric | Prepared Foods | Other Groceries | Difference |
+> **Cohort note.** The table below uses the **broad** frozen+deli definition (5,329 products — sweeps in ice cream, frozen produce, lunch meat). The primary **meal-like** cohort is now the 3,245 products in documented meal aisles (`config.MEAL_LIKE_AISLES`). On the corrected reorder measure, both cohorts track all-products closely: within 10 orders, meal-like 63.6% vs broad 64.0% vs all 66.3% (event-weighted) — prepared/meal items reorder slightly *less* than groceries overall, not more. The sequence-feature table below is from the broad cohort and will be regenerated against the meal-like cohort during the classifier rewrite.
+
+| Metric | Prepared Foods (broad) | Other Groceries | Difference |
 |---|---|---|---|
 | Selection frequency | 0.143 | 0.145 | -1.3% |
 | Max consecutive | 1.43 | 1.46 | -2.5% |
@@ -175,10 +215,14 @@ python scripts/build_sequences_batched.py
 # Build basket overlap and category sequences (~10 min)
 python scripts/build_phase1_remaining.py
 
-# Classify patterns and run sensitivity analysis (~3 min)
+# Delayed-reorder analysis: reconciliation, repeat events, censored KM curves (~15 min)
+python scripts/analyze_reorder.py
+
+# Classify patterns and run sensitivity analysis (~3 min) [classifier rewrite pending]
 python scripts/analyze_patterns.py
 
 # Generate figures
+python scripts/generate_reorder_figures.py
 python scripts/generate_phase2_figures.py
 ```
 
@@ -209,14 +253,38 @@ food-sequences/
 │   ├── audit_data.py      # Validate data quality
 │   ├── build_sequences_batched.py    # Extract product sequences
 │   ├── build_phase1_remaining.py     # Basket overlap + category sequences
-│   ├── analyze_patterns.py           # Pattern classification
-│   └── generate_phase2_figures.py    # Figure generation
+│   ├── analyze_patterns.py           # Pattern classification (rewrite pending)
+│   ├── analyze_reorder.py            # Delayed-reorder measurement + reconciliation
+│   ├── generate_reorder_figures.py   # Reorder curve figures
+│   └── generate_phase2_figures.py    # Pattern figure generation
 ├── src/food_sequences/
 │   ├── config.py          # Centralized paths and configuration
 │   ├── patterns.py        # Pattern classification rules
 │   └── sequences.py       # Sequence extraction functions
 └── README.md
 ```
+
+## What Changed in the 2026-10 Revision
+
+Reconciliation of corrected results against the earlier version:
+
+| Claim / metric | Earlier version | Corrected | Why it changed |
+|---|---|---|---|
+| How reordering was measured | Adjacent-basket Jaccard (0.18) | Full-history indicator + `reordered` field + censored KM | Overlap can't see delayed reorders; it was the wrong instrument |
+| "Repeat purchasing is the exception" | Stated as a finding | **Removed — false** | 66.3% of products are reordered within 10 orders; delayed reorders (35.3%) outnumber immediate repeats (27.7%) |
+| "Reordering is at category level, not products" | Stated | Reframed as product-vs-aisle gap | Both are substantial; the gap (66%→85% within 10) is specifically brand/variant switching |
+| Reorder reconciliation vs `reordered` | Field never used | 100.000% agreement on 33.6M rows | New check confirms the indicator is correct |
+| Single-purchase repeat interval | Implicitly 0 (mean_gap=0) | **MISSING** (8.1M pairs) + censored observation | A product bought once has no interval, not a zero interval |
+| Prepared-food cohort | Broad frozen+deli (5,329 products) | Meal-like aisles primary (3,245); broad kept as comparison | "Deli/frozen" swept in ice cream, lunch meat, frozen produce |
+| "Rules capture real structure" (boxplots) | Stated as validation | **Removed** — relabeled descriptive | Patterns separate on the features that define them (circular) |
+| Replacement = "abandoned" | Stated | Softened to "terminal absence in window" | Follow-up is censored; off-platform purchases unobserved |
+| Pattern classifier | Final result | **Flagged provisional** | Mutually-exclusive labels, largest-gap-only, max_gap≤10 cap all pending rewrite |
+
+### Still pending (not yet corrected)
+- Classifier rewrite to **overlapping descriptive flags**, evaluating **all** eligible breaks (not just the largest), with the absolute `max_gap ≤ 10` cap removed so **long regular cycles stay eligible**, and explicit handling so an **every-other-order** sequence registers as periodic.
+- Explicit unit tests on hand-built sequences (consecutive, alternating, slow rotation, break-and-return).
+- Gallery rebuild: complete histories or marked cropping, marked observation endpoints, alternating/slow-cycle examples, both products shown for replacements.
+- Per-(customer, product) usual-cycle estimation using only preceding purchases at cutoffs; sensitivity re-run including replacement detection.
 
 ## Limitations and Caveats
 
