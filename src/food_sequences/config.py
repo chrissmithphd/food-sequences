@@ -86,3 +86,26 @@ PREPARED_FOOD_KEYWORDS = {
         "deli",
     ],
 }
+
+# Two explicitly-named cohorts for prepared-meal analysis.
+#
+# PRIMARY — documented meal-like aisles only (ready-to-eat / assemble-and-heat
+# meals). Matched by exact aisle name. This is the CookUnity-relevant cohort.
+#
+# BROAD — the whole "frozen" and "deli" departments. Much larger; sweeps in
+# ice cream, frozen produce, butter, cheese, lunch meat, etc. Kept only as a
+# named comparison, NOT as the primary definition.
+#
+# Edit MEAL_LIKE_AISLES to adjust the primary cohort.
+MEAL_LIKE_AISLES = [
+    "prepared meals",
+    "prepared soups salads",
+    "frozen meals",
+    "frozen appetizers sides",
+    "instant foods",
+    "canned meals beans",
+    "frozen pizza",
+    "frozen breakfast",
+]
+
+BROAD_PREPARED_DEPARTMENTS = ["frozen", "deli"]

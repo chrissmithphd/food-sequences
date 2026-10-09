@@ -10,6 +10,8 @@ This project uses real purchase data from 206,000 customers across 3.4 million o
 
 ## Key Findings
 
+> **⚠️ Under revision (2026-10).** This analysis is being corrected after a methodological review. Two issues affect the findings below: (1) reordering was mis-measured using adjacent-basket overlap instead of Instacart's `reordered` field and full-history reorder intervals; (2) the pattern classifier used mutually-exclusive labels, evaluated only the single largest gap, and an absolute `max_gap ≤ 10` cap that wrongly excluded long regular cycles. The reorder measurement has been recalculated (see Reorder Measurement); the classification numbers (staple/rotation/return percentages) are pending a rewrite to overlapping flags and should be read as provisional. A reconciliation table at the bottom tracks what changed.
+
 ### Most grocery items are not staples — they come and go
 
 Of 4.5 million classifiable user-product sequences (users with 10+ orders who bought a product at least twice), only **6% are persistent staples** — products bought in more than half of orders with runs of 3+ consecutive purchases. The most common classified pattern is **return after a break** (21%): customers stop buying something for 5+ orders, then resume. Another 15% show **replacement by another product** in the same aisle. Nearly half (45%) of sequences don't fit any clean pattern.
@@ -38,7 +40,7 @@ The one difference is at the basket level: orders containing prepared foods are 
 
 ### Patterns have distinct feature signatures
 
-The classification rules produce patterns with clearly separated feature distributions, confirming the rules capture real structure rather than arbitrary thresholds:
+The classification rules produce patterns with separated feature distributions. Note this is **descriptive, not validation**: patterns necessarily separate on the features used to define them, so this plot illustrates the rules rather than confirming them.
 
 ![Features by Pattern](analysis/figures/features_by_pattern.png)
 
@@ -46,9 +48,9 @@ The classification rules produce patterns with clearly separated feature distrib
 - Rotations have moderate frequency with consistent, short gaps
 - Burst-then-absence shows low recency (recently active) but concentrated early
 - Returns have the largest mean gaps (median 5 orders between purchases)
-- Replacements have high recency (long since last purchase) — these products were abandoned
+- Replacements have high recency (long since last purchase) — the product has not been bought for a while (terminal absence in the observed window; this does not establish abandonment, since follow-up is censored and off-platform purchases are unobserved)
 
-### Classification rules are transparent and robust
+### Classification rules are transparent, with documented threshold sensitivity
 
 All pattern thresholds were defined before examining examples. Sensitivity analysis shows gradual prevalence changes when thresholds are varied — no cliff edges or unstable boundaries:
 
@@ -97,7 +99,9 @@ For each (customer, product) pair, we extract:
 
 ### Basket overlap
 
-Consecutive baskets share only **17.7%** of products (Jaccard similarity). On average, 28.6% of the previous order's items reappear. This low overlap means most of each order is "new" relative to the last — repeat purchasing is the exception, not the rule.
+Consecutive baskets share only **17.7%** of products (Jaccard similarity); on average 28.6% of the previous order's items reappear in the *immediately following* order.
+
+> **Correction in progress.** An earlier version of this README read adjacent-basket overlap as a measure of reordering and concluded "repeat purchasing is the exception." That inference is wrong: a product skipped for several orders and bought again is still a reorder, which adjacent-basket overlap cannot see. The correct measure uses Instacart's `reordered` field and a history-based "seen before" indicator across the full history. The reorder and repeat-interval results are being recalculated — see the Reorder Measurement section.
 
 ### Category-level sequences
 
