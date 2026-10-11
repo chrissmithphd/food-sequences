@@ -1,146 +1,114 @@
-# Role-Based Food Ontology (design spec, v2)
+# Food Ontology (recipe-ingredient clustering, v2)
 
-**Status:** design for review. Supersedes the v1 regex/aisle mapping
-(`food_mapping.py`), which is retained but marked legacy/provisional.
+The frozen labels are in [`analysis/outputs/food_roles_v2.csv`](../analysis/outputs/food_roles_v2.csv)
+(one row per product). This document defines the ontology those labels follow.
 
-## Why this exists
+## Clustering rule
 
-Earlier mappings grouped products by aisle + surface-string keywords. That failed
-on *role*: it called a boxed "Mac & Cheese **Dinner**" a prepared dinner, matched
-"g‑**oat milk**" as oat milk, and could not separate cooking **broth** from **soup**
-(same aisle) or **buttermilk** (a baking acid) from drinking milk. Evidence from
-this dataset:
+A **cluster** is what a recipe's ingredient line names. Two products share a cluster
+when a cook could swap one for the other **without changing what they'd write in the
+recipe** — "1 cup milk", "1 onion", "2 cups chicken broth", "1 cup shredded cheddar".
 
-- Almond milk appears across **six** aisles (soy-lactosefree, coffee, ice cream,
-  yogurt, milk, "missing") — aisle does **not** cleanly separate plant from dairy milk.
-- "Buttermilk" spans cultured buttermilk (milk aisle), buttermilk **pancake mix**,
-  and buttermilk **ranch** — three roles, one string.
-- Broth (106) and stock (59) sit in the **same aisle as soup**.
-
-Grounding references: stock/broth/bouillon are "largely interchangeable" cooking
-bases and distinct from soup, a finished dish (Wikipedia, *Stock (food)*; James
-Beard). Plant milks are a category distinct from dairy; almond/oat/soy fill a
-similar role while coconut milk is a distinct culinary category, and flavor
-profiles make them "not interchangeable substitutes" (Wikipedia, *Plant milk*).
-
-## Principles
-
-1. **Equivalence = culinary role.** Two products are equivalent if they can play
-   the same role in a recipe with a compatible flavor profile — i.e. a cook could
-   substitute one for the other. Role is the decision.
-2. **Flavor profile is the secondary splitter.** Same nominal role but a flavor
-   that changes the dish stays separate (coconut milk vs. oat milk; tomato vs.
-   alfredo sauce).
-3. **Ingredient ≠ finished dish.** Dry pasta ≠ boxed mac & cheese ≠ frozen pasta
-   dinner. Eggs ≠ egg scramble. Pizza dough ≠ finished pizza. Broth ≠ soup.
-4. **Aisle is a weak prior, not evidence.** Start the candidate pool from aisles,
-   but override when the name signals a different role.
-5. **Ignore brand copy.** Words like "Dinner," "Deluxe," "Classic," "Homestyle"
-   are marketing, not role signals.
-6. **Preserve attributes, don't collapse them:** dairy-vs-plant, flavor profile,
-   fat level, dietary restriction (gluten-free, vegan), prepared-vs-ingredient,
-   physical form. Dietary distinctions must remain queryable.
-7. **Leave ambiguous items `unresolved`.** Never force a match. Report confidence
-   and a reason for every assignment.
-8. **Labels are frozen + versioned.** The LLM/culinary judgment runs once and is
-   committed as a reviewable CSV; downstream analysis reproduces from the frozen
-   file. Re-labeling is a deliberate version bump with a diff.
+- **Attributes, not cluster boundaries:** brand, organic, size, fat level, packaging.
+  (Whole vs 2% milk is one cluster, `milk`, with `fat_level` as an attribute.)
+- **Splits a cluster** only when the difference changes the recipe's flavor or role:
+  dairy milk vs plant milk; cheddar vs mozzarella; broth vs soup; pasta vs mac & cheese;
+  ingredient vs finished dish (eggs vs egg scramble; pizza dough vs pizza).
+- **Aisle is a weak prior**, not evidence — a candidate net only; the product name decides.
+- Unmatched names are left **`unresolved`**; nothing is force-fit.
 
 ## Hierarchy
 
-- **SKU** — the product.
-- **role_category** — substitutable within a recipe (the equivalence unit):
-  e.g. `cooking_stock_broth`, `dairy_milk_2pct`, `plant_milk_neutral`,
-  `boxed_mac_and_cheese`, `pasta_dry_spaghetti`, `tomato_pasta_sauce`.
-- **role_family** — broader grouping that keeps meaningful variants as attributes:
-  e.g. `cooking_liquids`, `milk_and_alternatives`, `pasta_ingredient`,
-  `prepared_pasta_dish`, `sauces`.
+`SKU (product_id)` → `cluster` (the equivalence unit) → `role_family` (broad grouping).
+Each product also carries attributes (organic, fat_level, gluten_free, flavored).
 
-## Role families (broad target set)
+## Cluster catalog
 
-Marked ⬤ = priority for first labeling batch (highest purchase volume + the hard
-cases we discussed); ○ = subsequent batches.
+Share = percent of total purchase volume. Clusters within a family listed by volume.
 
-### ⬤ milk_and_alternatives
-- `dairy_milk_{skim,1pct,2pct,whole}` — cow milk by fat (flavor: neutral dairy)
-- `plant_milk_neutral` — almond, oat, soy, cashew, rice, pea (dairy-milk substitute role)
-- `coconut_milk` — separate (curry/cooking base, distinct flavor)
-- `buttermilk_cultured` → actually role_family `baking_leavening_acids` (NOT milk)
-- `eggnog` → role_family `seasonal_beverages` (NOT milk)
-- `cream_half_and_half` → role_family `cooking_fats_creamers`
-- Attributes: dairy|plant, flavored, fat_level, lactose_free, organic
+### produce_fruit — 19.3%
+banana, apple, berry_strawberry, berry_blueberry, berry_raspberry, berry_blackberry,
+grape, citrus_lemon, citrus_lime, citrus_orange, avocado, melon, stone_fruit,
+tropical_fruit, pear
 
-### ⬤ cooking_liquids
-- `cooking_stock_broth` — stock + broth + bouillon (interchangeable base)
-  - Attribute protein: chicken|beef|vegetable|bone|seafood
-- (soups are a *different* family, below)
+### produce_veg — 17.4%
+leafy_green, onion, garlic, ginger, tomato_fresh, potato, carrot, celery, pepper,
+bell_pepper, cucumber, zucchini_squash, broccoli_cauliflower, mushroom, corn, peas,
+asparagus, green_beans, cabbage, brussels_sprouts, beet, radish, eggplant, fresh_herb
 
-### ⬤ soups (finished dish — NOT a base)
-- `canned_soup`, `dry_soup_mix`, `fresh_refrigerated_soup`
+### dairy — 14.6%
+milk, cheese, yogurt, butter, cream_cheese, cottage_or_ricotta, sour_cream
 
-### ⬤ pasta_ingredient (dry/fresh pasta you cook)
-- `pasta_dry_{spaghetti,penne,macaroni,…}` by shape; attributes: egg, whole_grain,
-  gluten_free, flavor, fresh|dry, filled (ravioli/tortellini = `filled_pasta`)
+### beverages — 5.5%
+water, juice, coffee, soda, tea, wine, beer
 
-### ⬤ prepared_pasta_dish (finished/kit — NOT pasta ingredient)
-- `boxed_mac_and_cheese` (pantry kit), `frozen_pasta_meal`, `deli_pasta_meal`
+### protein — 4.9%
+chicken, ground_beef_or_beef, pork, turkey, bacon_sausage, deli_lunchmeat,
+fish_seafood, tofu_meat_alt
 
-### ○ sauces
-- `tomato_pasta_sauce`, `cream_alfredo_sauce`, `pesto`, `salsa`, `asian_sauce`,
-  `gravy`, `marinade` — flavor profile is the splitter; sauce ≠ the dish it tops
+### bread_and_baked — 4.3%
+bread, tortilla_flatbread
 
-### ○ cheese
-- `shredded_cooking_cheese`, `sliced_sandwich_cheese`, `block_cheese`,
-  `cream_cheese_spread`, `cottage_ricotta`, `specialty_cheese`, `grated_hard_cheese`
+### snacks — 3.3%
+nuts_seeds, chips, crackers, cookies_sweets, granola_bar
 
-### ○ eggs_ingredient
-- `eggs_{large,xlarge,jumbo,medium}`, `egg_whites`, `egg_substitute`; prepared egg
-  dishes (scramble/bites) → `prepared_breakfast` family
+### cooking_fats_creamers — 2.2%
+half_and_half, heavy_cream
 
-### ○ bread_and_baked
-- `sandwich_bread`, `buns_rolls`, `tortilla_flatbread`, `bagels`, `bakery_dessert`
+### grains — 2.0%
+rice, oats, quinoa_other_grain
 
-### ○ yogurt
-- `plain_yogurt` (cooking/base), `flavored_yogurt_snack`, `greek_yogurt`,
-  `drinkable_yogurt`, `non_dairy_yogurt`
+### milk_and_alternatives — 2.0%  (non-dairy; distinct flavor/role from dairy milk)
+plant_milk, coconut_milk
 
-### ○ further families (later batches)
-breakfast_cereal, hot_cereal, nut_butters_spreads, jams_honey, baking_ingredients
-(flour/sugar/leavening), oils_vinegars, fresh_fruit, fresh_vegetables,
-raw_proteins (meat/poultry/seafood), deli_lunchmeat, frozen_prepared_meals,
-beverages (soda/juice/water/coffee/tea), snacks (chips/crackers/candy), condiments.
+### prepared_dish — 1.6%  (finished dishes / kits — NOT the base ingredient)
+boxed_mac_and_cheese, frozen_pizza, frozen_or_prepared_meal
 
-## Hard-case adjudications (reference)
+### condiments — 1.5%
+olive_oil, cooking_oil, vinegar, soy_sauce, hot_sauce, ketchup, mustard, mayo,
+salad_dressing
 
-| Product pattern | role_category | role_family | Rationale |
+### eggs — 1.5%
+eggs, egg_whites_or_substitute
+
+### pasta_ingredient — 1.1%  (dry/fresh pasta you cook; shape = attribute)
+pasta, filled_pasta
+
+### Other families
+cooking_liquids (stock_or_broth), soups (soup), tomato_bases (canned_tomatoes,
+tomato_paste), sauces (pasta_sauce, salsa), legumes (beans_legumes), spreads
+(nut_butter, jam_jelly, honey_syrup, hummus_dip), baking (flour, sugar), baking_acids
+(buttermilk), seasonal_beverage (eggnog), breakfast (cereal), frozen (ice_cream).
+
+## Boundary adjudications (reference)
+
+| Product | cluster | role_family | why |
 |---|---|---|---|
-| "Mac & Cheese Dinner" (boxed) | boxed_mac_and_cheese | prepared_pasta_dish | cheese-pasta kit; "Dinner" is brand copy |
-| Frozen lasagna / ziti dinner | frozen_pasta_meal | prepared_pasta_dish | finished meal, not an ingredient |
-| Dry spaghetti (any brand) | pasta_dry_spaghetti | pasta_ingredient | boil-and-serve ingredient |
-| Chicken stock / beef broth / bouillon | cooking_stock_broth | cooking_liquids | interchangeable base |
-| Chicken noodle soup | canned_soup | soups | finished dish |
-| Almond/oat/soy milk | plant_milk_neutral | milk_and_alternatives | dairy-milk substitute role |
-| Coconut milk (can) | coconut_milk | milk_and_alternatives | curry base, distinct flavor |
-| Cultured buttermilk | buttermilk_cultured | baking_leavening_acids | recipe acid, not drinking milk |
-| Buttermilk pancake mix | pancake_waffle_mix | baking_mixes | a mix, not buttermilk |
-| Eggnog | eggnog | seasonal_beverages | beverage, not a milk substitute |
-| 2% milk | dairy_milk_2pct | milk_and_alternatives | distinct flavor/role from plant milk |
+| Whole / 2% / fat-free milk | milk | dairy | fat is an attribute, not a boundary |
+| Almond / oat / soy milk | plant_milk | milk_and_alternatives | distinct flavor/role from dairy |
+| Coconut milk | coconut_milk | milk_and_alternatives | curry base, distinct flavor |
+| Cultured buttermilk | buttermilk | baking_acids | recipe acid, not drinking milk |
+| Eggnog | eggnog | seasonal_beverage | beverage, not a milk substitute |
+| Chicken stock / beef broth / bouillon | stock_or_broth | cooking_liquids | interchangeable base |
+| Chicken noodle soup | soup | soups | finished dish |
+| "Mac & Cheese Dinner" (boxed) | boxed_mac_and_cheese | prepared_dish | cheese-pasta kit; "Dinner" is brand copy |
+| Dry spaghetti (any brand) | pasta | pasta_ingredient | boil-and-serve ingredient |
 
-## Labeling plan (frozen, versioned, volume-prioritized)
+## Coverage
 
-1. Rank products by total purchase count so labeling effort covers the most of
-   actual purchases first; the rare long tail may remain `unresolved`.
-2. Assign `role_category`/`role_family`/attributes per the adjudications above,
-   family by family, starting with the ⬤ set.
-3. Emit `food_roles_v2.csv` (product_id, name, aisle, role_family, role_category,
-   attributes, confidence, status, reason, version) + an examples doc + a
-   stratified manual-validation sample.
-4. Human review of the validation sample before any downstream (combinations,
-   novelty) is run on these labels.
+v2 resolves **87.2% of purchase volume** (65.7% of distinct products; 108 clusters).
+Volume is concentrated — the top ~4,600 products (9% of the catalog) are ~80% of
+purchases — so the resolved head covers nearly all actual purchasing. The rare long
+tail is left `unresolved` by design. A stratified validation sample is in
+[`food_roles_validation.md`](../analysis/outputs/food_roles_validation.md).
 
-## Reproducibility note
+---
 
-`food_roles_v2.csv` is the frozen artifact of a judgment-based labeling step.
-It is committed and diffable; downstream code reads it deterministically. The
-labeling step is documented here, not re-run automatically, so results do not
-drift when the model changes. A version bump (v3) is an explicit, reviewed event.
+### Footnote: history
+
+v1 grouped by aisle + surface-string keywords and over-split by attribute (e.g. a
+separate category per milk-fat level). It also mislabeled role (boxed mac & cheese
+read as a "dinner"; broth not separated from soup). v2 replaces that with
+recipe-ingredient clustering decided by culinary role, with attributes preserved.
+Labels are frozen and versioned for reproducibility; re-labeling is an explicit
+version bump. The superseded v1 code (`food_mapping.py`) is retained but not used.

@@ -89,3 +89,4 @@ analysis/outputs/*.csv
 # EXCEPT: small aggregate / product-catalog tables meant for review (no customer IDs)
 !analysis/outputs/food_mapping_v1.csv
 !analysis/outputs/equivalence_reorder.csv
+!analysis/outputs/food_roles_v2.csv
