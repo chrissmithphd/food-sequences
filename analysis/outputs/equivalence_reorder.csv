@@ -1,0 +1,10 @@
+family,level,n_user_key_pairs,within_1,within_2,within_3,within_5,within_10
+pasta,sku,161645,15.2,24.4,31.0,39.8,51.5
+pasta,equivalent_food,145384,16.5,26.5,33.8,43.5,56.4
+pasta,family,79065,25.7,41.0,51.2,64.0,78.7
+milk,sku,164756,48.5,67.1,75.3,82.2,87.6
+milk,equivalent_food,134877,51.6,71.0,79.4,86.4,91.5
+milk,family,100933,56.0,75.7,84.0,90.5,95.1
+eggs,sku,129642,35.1,52.9,62.6,72.4,81.2
+eggs,equivalent_food,105404,38.2,57.5,67.9,78.4,87.4
+eggs,family,90859,40.6,60.7,71.5,82.0,90.6

@@ -85,3 +85,7 @@ temp/
 # Analysis outputs (large parquet files - figures are kept)
 analysis/outputs/*.parquet
 analysis/outputs/*.csv
+
+# EXCEPT: small aggregate / product-catalog tables meant for review (no customer IDs)
+!analysis/outputs/food_mapping_v1.csv
+!analysis/outputs/equivalence_reorder.csv
