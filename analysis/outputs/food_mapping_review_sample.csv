@@ -1,0 +1,41 @@
+product_id,original_name,aisle,cluster,role_family,status,confidence
+23207,Clear Face Break Out Free Liquid Lotion Sunscreen Spf 30,facial care,OUT_OF_SCOPE_personal_care,non_food,out_of_scope,high
+36206,Gluten Free Original Recipe Tapioca Pudding,refrigerated pudding desserts,,,unresolved,low
+28535,Cucumber & Garlic  Tzatziki,preserved dips spreads,garlic,vegetables,resolved,high
+17830,Premium Organic Strawberry Spread,spreads,jam_jelly,spreads,resolved,high
+16996,Snackers Pumpkin Seed Cheddar,crackers,cheese,dairy,resolved,high
+6907,Chips Ahoy! White Fudge Chunky Chocolate Chunk Cookies,cookies cakes,candy_chocolate,snacks,resolved,high
+22044,Gelato Pop Black Raspberry Dipped in Rich Chocolate,ice cream ice,ice_cream,frozen,resolved,high
+4527,Chicken Quesadillas,prepared meals,chicken,protein,resolved,high
+39322,Caramel Almond and Sea Salt Nut Bar,energy granola bars,candy_chocolate,snacks,resolved,high
+25077,Rigatoni with Chicken & Pesto,frozen meals,pasta,pasta_ingredient,resolved,high
+30429,Whole Wheat Penne Rigate Pasta,dry pasta,pasta,pasta_ingredient,resolved,high
+34121,Organic Roots Juice,juice nectars,juice,beverages,resolved,high
+5830,Thick Cut Sea Salt Potato Chips,chips pretzels,chips,snacks,resolved,high
+1647,All-Natural Spice Rub Chicken,marinades meat preparation,chicken,protein,resolved,high
+47543,Bombay Curry Veggie Burgers,other creams cheeses,,,unresolved,low
+1618,"Lasagna, Vegetable, with Daiya Cheeze",frozen meals,pasta,pasta_ingredient,resolved,high
+16046,English Teatime Black Tea,tea,tea,beverages,resolved,high
+41535,Rice Pecan Bread,bread,bread,bread_and_baked,resolved,high
+13698,Greek Raspberry Whole Milk Yogurt,yogurt,yogurt,dairy,resolved,high
+17007,Butter Salted,butter,butter,dairy,resolved,high
+27101,Gluten Free Mini Carrot Cupcakes 12 ct,bakery desserts,carrot,vegetables,resolved,high
+38278,Pink Beans,canned meals beans,beans_legumes,legumes,resolved,high
+29856,Butterscotch Baking Chips,baking ingredients,baking_chips,baking,resolved,high
+30124,Sport Milk Chocolate With Strawberry Creme,candy chocolate,candy_chocolate,snacks,resolved,high
+24388,Organic Dark Chocolate Chips,baking ingredients,baking_chips,baking,resolved,high
+2170,Original Strawberry and Mixed Berry Variety Pack Low Fat Yogurt,yogurt,yogurt,dairy,resolved,high
+9843,Fresher Collection™ Timber™ Scent Invisible Solid Men's Anti-Perspirant & Deoderant,deodorants,OUT_OF_SCOPE_personal_care,non_food,out_of_scope,high
+1261,Old Fashioned Buttermilk Ranch Salad Dressing,salad dressing toppings,salad_dressing,condiments,resolved,high
+14777,Nasal Decongestant Inhaler with Medicated Vapors,cold flu allergy,OUT_OF_SCOPE_personal_care,non_food,out_of_scope,high
+15571,Deep Moisture Conditioner,hair care,OUT_OF_SCOPE_personal_care,non_food,out_of_scope,high
+40231,Coffee Creamer White Chocolate Raspberry,cream,raspberries,fruit,resolved,high
+29522,Organic 18-in-1 Hemp Lavender Pure Castile Liquid Soap,soap,OUT_OF_SCOPE_personal_care,non_food,out_of_scope,high
+40536,Gluten-Free Garlic Goodness Vietnamese Brown Rice Noodle Soup,asian foods,soup,soups,resolved,high
+33711,Mild Pimento Cheese,packaged cheese,cheese,dairy,resolved,high
+27010,"Paper Towels, White, 2 Big Roll = 33% More Sheets Towels/Napkins",paper goods,OUT_OF_SCOPE_household,non_food,out_of_scope,high
+40854,Tequila Salsa Medium Burn,preserved dips spreads,salsa,sauces,resolved,high
+27180,Caffeine Alertness Aid Tablets 200 mg,vitamins supplements,OUT_OF_SCOPE_personal_care,non_food,out_of_scope,high
+36598,Original Ritz Toasted Chips,crackers,chips,snacks,resolved,high
+679,Awesome Strength Paper Towels,paper goods,OUT_OF_SCOPE_household,non_food,out_of_scope,high
+13309,Abate Fetel Pear,fresh fruits,pear,fruit,resolved,high

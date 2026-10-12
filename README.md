@@ -28,27 +28,19 @@ The **green line (aisle) sits well above the blue line (exact product)**: custom
 
 **Weighting changes the story**, so all three are reported: event-weighted (66.3% within 10) lets frequent repeat-buyers dominate; customer-weighted (62.3%) gives each customer equal say; customer-product-weighted (32.0%) gives each (customer, product) pair equal say and is far lower — because 8.1M of 13.7M pairs are single-purchase, so most *pairs* are never repeated even though most *purchase events* are.
 
-### Food equivalence: customers rebuy the same *kind* of food far more than the same SKU (Stage 1)
+### Food classification: every product mapped to a recipe-ingredient group
 
-A reviewable food-equivalence hierarchy (v1) was built for three well-supported families — **pasta, milk, eggs** — mapping each product to an *equivalent food* (brand/minor-form collapsed) and a *family* (broader grouping), while preserving attributes (prepared-vs-ingredient, shape, dietary, flavor, organic, physical form). Names and taxonomy are the evidence; aisle membership alone is not trusted. Ambiguous items are left unresolved rather than forced.
+To analyze purchasing by *food* rather than exact SKU, all 49,688 products are classified
+into **117 recipe-ingredient groups** (what a recipe would call them — "milk", "chicken
+broth", "cheese", "onion"). The name decides the group; brand, size, organic, and fat
+level are collapsed; non-food (pet, personal care, household) is excluded. This resolves
+**87.5% of purchase volume**, and collapses huge SKU variety (e.g. 1,560 cheese SKUs → one
+`cheese` group). It's a fast, reproducible classifier at ~75% accuracy on a hand-checked
+random sample, most reliable on the high-volume head and weakest on prepared/branded items.
 
-Re-running the corrected reorder measure at each grouping level (within-basket deduplicated) shows how much equivalence matters:
-
-| Family | Exact SKU | Equivalent food | Family | within |
-|---|---|---|---|---|
-| Pasta | 51.5% | 56.4% | **78.7%** | 10 orders |
-| Milk | 87.6% | 91.5% | **95.1%** | 10 orders |
-| Eggs | 81.2% | 87.4% | **90.6%** | 10 orders |
-
-![Equivalence reorder bars](analysis/figures/equivalence_reorder_bars.png)
-
-For pasta the SKU→equivalent gap is small but SKU→family is large (+27 points): customers switch *shape* more than *brand within a shape*. Milk is already high at SKU level (fat-level loyalty), so grouping adds less. A single customer makes the collapse concrete — 18 one-or-two-time pasta SKUs across 9 shapes are, at the family level, a steady staple:
-
-![Pasta SKU vs family](analysis/figures/pasta_sku_vs_family_example.png)
-
-Mapping definitions, representative examples, hard cases, and a stratified validation sample are in [`analysis/outputs/food_mapping_examples.md`](analysis/outputs/food_mapping_examples.md) and [`food_mapping_validation.md`](analysis/outputs/food_mapping_validation.md); the full reviewable mapping is [`food_mapping_v1.csv`](analysis/outputs/food_mapping_v1.csv).
-
-> **Stages 2–3 (recurring meal patterns, novelty) are not started.** They key off this mapping, so they are gated on a human review of it. The mapping covers only pasta/milk/eggs by design — a manageable, well-supported start.
+See the full write-up — approach, coverage, statistics, and honest accuracy — in
+**[docs/FOOD_CLASSIFICATION.md](docs/FOOD_CLASSIFICATION.md)**. Mapping:
+[`analysis/outputs/food_mapping.csv`](analysis/outputs/food_mapping.csv).
 
 ---
 
@@ -245,10 +237,8 @@ python scripts/analyze_reorder.py
 # Classify patterns and run sensitivity analysis (~3 min) [classifier rewrite pending]
 python scripts/analyze_patterns.py
 
-# Stage 1: food-equivalence mapping, equivalence-level reorder, figures
-python scripts/build_food_mapping.py
-python scripts/analyze_equivalence_reorder.py
-python scripts/generate_equivalence_figures.py
+# Food classification: map every product to a recipe-ingredient group
+python scripts/classify_products.py
 
 # Generate figures
 python scripts/generate_reorder_figures.py
@@ -284,15 +274,15 @@ food-sequences/
 │   ├── build_phase1_remaining.py     # Basket overlap + category sequences
 │   ├── analyze_patterns.py           # Pattern classification (rewrite pending)
 │   ├── analyze_reorder.py            # Delayed-reorder measurement + reconciliation
-│   ├── build_food_mapping.py         # Stage 1: food-equivalence mapping (v1)
-│   ├── analyze_equivalence_reorder.py # Stage 1: reorder by grouping level
-│   ├── generate_equivalence_figures.py # Stage 1 figures
+│   ├── classify_products.py          # Map every product to a recipe-ingredient group
 │   ├── generate_reorder_figures.py   # Reorder curve figures
 │   └── generate_phase2_figures.py    # Pattern figure generation
 ├── src/food_sequences/
-│   ├── config.py          # Centralized paths and configuration
-│   ├── patterns.py        # Pattern classification rules
-│   └── sequences.py       # Sequence extraction functions
+│   ├── config.py            # Centralized paths and configuration
+│   ├── food_classifier.py   # Recipe-ingredient classifier (see docs/FOOD_CLASSIFICATION.md)
+│   ├── patterns.py          # Pattern classification rules
+│   ├── reorder.py           # Delayed-reorder measurement
+│   └── sequences.py         # Sequence extraction functions
 └── README.md
 ```
 
@@ -317,13 +307,6 @@ Reconciliation of corrected results against the earlier version:
 - Explicit unit tests on hand-built sequences (consecutive, alternating, slow rotation, break-and-return).
 - Gallery rebuild: complete histories or marked cropping, marked observation endpoints, alternating/slow-cycle examples, both products shown for replacements.
 - Per-(customer, product) usual-cycle estimation using only preceding purchases at cutoffs; sensitivity re-run including replacement detection.
-
-## Food-Equivalence Limitations (Stage 1)
-
-- **v1 covers three families only** (pasta, milk, eggs). This is a deliberate, well-supported start, not full coverage. Expansion must be re-reviewed.
-- **Rule-based from names** — a stratified validation sample is provided for manual checking. Known residual boundary cases: filled pasta (ravioli) is a distinct subgroup at medium confidence; generic "noodle" products are separated from egg noodles but Asian noodles may still be imperfectly placed; "Vitamin D milk" is left unresolved rather than inferred as whole.
-- **Non-cow milks** (almond, coconut, goat, eggnog, buttermilk, half-and-half) sit in the dairy milk aisle but are marked `out_of_scope`, not conflated into cow-milk fat subgroups.
-- The equivalence-level reorder gain is **not** proof customers consider the products interchangeable — only that the same food family recurs. Availability, price, and preference are unobserved.
 
 ## Limitations and Caveats
 
