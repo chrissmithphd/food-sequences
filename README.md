@@ -28,19 +28,51 @@ The **green line (aisle) sits well above the blue line (exact product)**: custom
 
 **Weighting changes the story**, so all three are reported: event-weighted (66.3% within 10) lets frequent repeat-buyers dominate; customer-weighted (62.3%) gives each customer equal say; customer-product-weighted (32.0%) gives each (customer, product) pair equal say and is far lower — because 8.1M of 13.7M pairs are single-purchase, so most *pairs* are never repeated even though most *purchase events* are.
 
-### Food classification: every product mapped to a recipe-ingredient group
+### Food classification: every product mapped to a recipe ingredient
 
 To analyze purchasing by *food* rather than exact SKU, all 49,688 products are classified
-into **117 recipe-ingredient groups** (what a recipe would call them — "milk", "chicken
-broth", "cheese", "onion"). The name decides the group; brand, size, organic, and fat
-level are collapsed; non-food (pet, personal care, household) is excluded. This resolves
-**87.5% of purchase volume**, and collapses huge SKU variety (e.g. 1,560 cheese SKUs → one
-`cheese` group). It's a fast, reproducible classifier at ~75% accuracy on a hand-checked
-random sample, most reliable on the high-volume head and weakest on prepared/branded items.
+into recipe-ingredient categories — what a recipe's ingredient list would call them
+("milk", "pasta", "chicken", "cheese"). Brand, size, organic status, and fat level are
+attributes, not different ingredients. Non-food products (pet, personal care, household)
+are flagged and excluded from food analysis. Prepared dishes (frozen meals, boxed mac and
+cheese, canned soup) are separated from base ingredients.
 
-See the full write-up — approach, coverage, statistics, and honest accuracy — in
-**[docs/FOOD_CLASSIFICATION.md](docs/FOOD_CLASSIFICATION.md)**. Mapping:
-[`analysis/outputs/food_mapping.csv`](analysis/outputs/food_mapping.csv).
+**Taxonomy**: A [446-ingredient recipe-grounded taxonomy](analysis/INGREDIENT_TAXONOMY.md)
+built from knowledge of 1,000+ recipes across diverse cuisines. Categories range from
+specific produce (banana, apple, lemon) through dairy, proteins, grains, condiments,
+spices, baking, beverages, snacks, and prepared dishes. See
+[docs/CLASSIFICATION_METHODOLOGY.md](docs/CLASSIFICATION_METHODOLOGY.md) for how recipe
+knowledge was translated into classification rules.
+
+**Two NLP approaches were compared:**
+
+| Method | How it works | Strengths | Weaknesses |
+|---|---|---|---|
+| **TF-IDF + refinement** | sklearn TfidfVectorizer on product names + aisle/dept, cosine similarity to 446 ingredient descriptions, then product-identity rule corrections | Better on product identity (cookies, yogurt, pasta shapes, filled pasta) | Sparse vocab misses short/unusual names; defaults to wrong ingredient at score=0 |
+| **Sentence embeddings** | all-MiniLM-L6-v2 encodes product+context, cosine similarity to ingredient descriptions | Better semantic understanding (frozen meals, salad dressings, ramen) | Confused by flavor words (chocolate cookies → baking_chocolate; yogurt → ice_cream) |
+
+On a 21-product spot check with hand-labeled correct answers:
+
+| | Correct | Wrong |
+|---|---|---|
+| TF-IDF only right | 7 | — |
+| Embeddings only right | 4 | — |
+| Both right | 5 | — |
+| Both wrong | — | 5 |
+
+Neither method alone is sufficient. The methods have **complementary strengths**: TF-IDF
+anchors on exact product-type words (crackers, yogurt, pasta) while embeddings capture
+semantic context (frozen meal, deli meat, salad dressing). Both struggle with the same
+edge cases: ambiguous short names, flavor-vs-identity confusion, and products with no
+close match in the taxonomy.
+
+**Current outputs** (both committed for comparison):
+- [`analysis/outputs/food_classification_refined.csv`](analysis/outputs/food_classification_refined.csv) — TF-IDF + rule refinement
+- [`analysis/outputs/food_classification_embeddings.csv`](analysis/outputs/food_classification_embeddings.csv) — Sentence embeddings
+
+**Next step**: Merge the two methods (e.g., ensemble or use embeddings with TF-IDF
+tie-breaking) and run an LLM review pass on disagreements and low-confidence matches
+to produce a single authoritative mapping.
 
 ---
 
