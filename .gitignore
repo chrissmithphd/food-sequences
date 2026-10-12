@@ -92,3 +92,4 @@ analysis/outputs/*.csv
 
 !analysis/outputs/food_mapping.csv
 !analysis/outputs/food_mapping_review_sample.csv
+!analysis/outputs/food_classification_refined.csv
