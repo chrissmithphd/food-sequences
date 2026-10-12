@@ -1,0 +1,41 @@
+product_id,original_name,aisle,department,cluster,role_family,status,confidence
+23207,Clear Face Break Out Free Liquid Lotion Sunscreen Spf 30,facial care,personal care,OUT_OF_SCOPE_personal_care,non_food,out_of_scope,high
+36206,Gluten Free Original Recipe Tapioca Pudding,refrigerated pudding desserts,dairy eggs,,,unresolved,low
+28535,Cucumber & Garlic  Tzatziki,preserved dips spreads,pantry,garlic,vegetables,resolved,high
+17830,Premium Organic Strawberry Spread,spreads,pantry,jam_jelly,spreads,resolved,high
+16996,Snackers Pumpkin Seed Cheddar,crackers,snacks,cheese,dairy,resolved,high
+6907,Chips Ahoy! White Fudge Chunky Chocolate Chunk Cookies,cookies cakes,snacks,candy_chocolate,snacks,resolved,high
+22044,Gelato Pop Black Raspberry Dipped in Rich Chocolate,ice cream ice,frozen,ice_cream,frozen,resolved,high
+4527,Chicken Quesadillas,prepared meals,deli,chicken,protein,resolved,high
+39322,Caramel Almond and Sea Salt Nut Bar,energy granola bars,snacks,candy_chocolate,snacks,resolved,high
+25077,Rigatoni with Chicken & Pesto,frozen meals,frozen,pasta,pasta_ingredient,resolved,high
+30429,Whole Wheat Penne Rigate Pasta,dry pasta,dry goods pasta,pasta,pasta_ingredient,resolved,high
+34121,Organic Roots Juice,juice nectars,beverages,juice,beverages,resolved,high
+5830,Thick Cut Sea Salt Potato Chips,chips pretzels,snacks,chips,snacks,resolved,high
+1647,All-Natural Spice Rub Chicken,marinades meat preparation,pantry,chicken,protein,resolved,high
+47543,Bombay Curry Veggie Burgers,other creams cheeses,dairy eggs,,,unresolved,low
+1618,"Lasagna, Vegetable, with Daiya Cheeze",frozen meals,frozen,pasta,pasta_ingredient,resolved,high
+16046,English Teatime Black Tea,tea,beverages,tea,beverages,resolved,high
+41535,Rice Pecan Bread,bread,bakery,bread,bread_and_baked,resolved,high
+13698,Greek Raspberry Whole Milk Yogurt,yogurt,dairy eggs,yogurt,dairy,resolved,high
+17007,Butter Salted,butter,dairy eggs,butter,dairy,resolved,high
+27101,Gluten Free Mini Carrot Cupcakes 12 ct,bakery desserts,bakery,carrot,vegetables,resolved,high
+38278,Pink Beans,canned meals beans,canned goods,beans_legumes,legumes,resolved,high
+29856,Butterscotch Baking Chips,baking ingredients,pantry,baking_chips,baking,resolved,high
+30124,Sport Milk Chocolate With Strawberry Creme,candy chocolate,snacks,candy_chocolate,snacks,resolved,high
+24388,Organic Dark Chocolate Chips,baking ingredients,pantry,baking_chips,baking,resolved,high
+2170,Original Strawberry and Mixed Berry Variety Pack Low Fat Yogurt,yogurt,dairy eggs,yogurt,dairy,resolved,high
+9843,Fresher Collection™ Timber™ Scent Invisible Solid Men's Anti-Perspirant & Deoderant,deodorants,personal care,OUT_OF_SCOPE_personal_care,non_food,out_of_scope,high
+1261,Old Fashioned Buttermilk Ranch Salad Dressing,salad dressing toppings,pantry,salad_dressing,condiments,resolved,high
+14777,Nasal Decongestant Inhaler with Medicated Vapors,cold flu allergy,personal care,OUT_OF_SCOPE_personal_care,non_food,out_of_scope,high
+15571,Deep Moisture Conditioner,hair care,personal care,OUT_OF_SCOPE_personal_care,non_food,out_of_scope,high
+40231,Coffee Creamer White Chocolate Raspberry,cream,dairy eggs,raspberries,fruit,resolved,high
+29522,Organic 18-in-1 Hemp Lavender Pure Castile Liquid Soap,soap,personal care,OUT_OF_SCOPE_personal_care,non_food,out_of_scope,high
+40536,Gluten-Free Garlic Goodness Vietnamese Brown Rice Noodle Soup,asian foods,international,soup,soups,resolved,high
+33711,Mild Pimento Cheese,packaged cheese,dairy eggs,cheese,dairy,resolved,high
+27010,"Paper Towels, White, 2 Big Roll = 33% More Sheets Towels/Napkins",paper goods,household,OUT_OF_SCOPE_household,non_food,out_of_scope,high
+40854,Tequila Salsa Medium Burn,preserved dips spreads,pantry,salsa,sauces,resolved,high
+27180,Caffeine Alertness Aid Tablets 200 mg,vitamins supplements,personal care,OUT_OF_SCOPE_personal_care,non_food,out_of_scope,high
+36598,Original Ritz Toasted Chips,crackers,snacks,chips,snacks,resolved,high
+679,Awesome Strength Paper Towels,paper goods,household,OUT_OF_SCOPE_household,non_food,out_of_scope,high
+13309,Abate Fetel Pear,fresh fruits,produce,pear,fruit,resolved,high

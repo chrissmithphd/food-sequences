@@ -90,6 +90,8 @@ analysis/outputs/*.csv
 !analysis/outputs/food_mapping_v1.csv
 !analysis/outputs/equivalence_reorder.csv
 !analysis/outputs/food_roles_v2.csv
+!analysis/outputs/food_mapping_v4.csv
+!analysis/outputs/food_mapping_v4_sample.csv
 
 # Food-classification pilot artifacts are product-level (no customer IDs) and meant for review
 !analysis/food_classification/*.csv
