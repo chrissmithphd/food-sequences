@@ -94,3 +94,4 @@ analysis/outputs/*.csv
 !analysis/outputs/food_mapping_review_sample.csv
 !analysis/outputs/food_classification_refined.csv
 !analysis/outputs/food_classification_embeddings.csv
+!analysis/outputs/food_classification_fabric.csv
