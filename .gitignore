@@ -86,12 +86,7 @@ temp/
 analysis/outputs/*.parquet
 analysis/outputs/*.csv
 
-# EXCEPT: small aggregate / product-catalog tables meant for review (no customer IDs)
-
-# Food-classification pilot artifacts are product-level (no customer IDs) and meant for review
-
-!analysis/outputs/food_mapping.csv
-!analysis/outputs/food_mapping_review_sample.csv
-!analysis/outputs/food_classification_refined.csv
-!analysis/outputs/food_classification_embeddings.csv
-!analysis/outputs/food_classification_fabric.csv
+# EXCEPT: Classification results (product-level, no customer IDs)
+!analysis/classification/food_classification.csv
+!analysis/classification/methods_compared/*.csv
+!analysis/classification/archived/*.csv

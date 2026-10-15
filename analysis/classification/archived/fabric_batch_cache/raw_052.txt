@@ -1,0 +1,16 @@
+granola_bar|true|false
+26486|mushroom|true|false
+26487|pasta|true|false
+26488|yogurt|true|false
+26489|frozen_dessert|true|false
+26490|deli_meat|true|false
+26491|candy|true|false
+26492|oysters|true|false
+26493|broccoli|true|false
+26494|butter|true|false
+26495|buttermilk|true|false
+26496|instant_soup|true|true
+26497|lettuce|true|false
+26498|meal_kit|true|true
+26499|deodorant|false|false
+26500|grape_juice|true|false
