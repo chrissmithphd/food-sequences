@@ -30499,6 +30499,506 @@ product_id,product_name,aisle,department,ingredient,is_food,is_prepared_dish
 30498,Classics Canine Cuisine Variety Pack Wet Dog Food,dog food care,pets,dog_food,False,False
 30499,Special Blend Lemonade,refrigerated,beverages,lemonade,True,False
 30500,Steamable Broccoli Florets,frozen produce,frozen,frozen_vegetables,True,False
+30501,Sun-Dried Tomatoes Halves With Herbs,canned jarred vegetables,canned goods,canned_tomato,True,False
+30502,"Turkey Meatballs, Dinner Size, Flame Broiled",frozen meat seafood,frozen,ground_turkey,True,False
+30503,Original Salted Kettle Style Tortilla Chips,chips pretzels,snacks,tortilla_chips,True,False
+30504,Cucumber Mint Sparkling Water,water seltzer sparkling water,beverages,water,True,False
+30505,Gluten Free Class French Dinner Rolls,frozen breads doughs,frozen,dinner_roll,True,False
+30506,Hummus Roasted Pepper,fresh dips tapenades,deli,hummus,True,True
+30507,Gravy Sensations Poultry Favorites Variety Pack Cat Food,cat food care,pets,cat_food,False,False
+30508,White Flesh Nectarine,fresh fruits,produce,nectarine,True,False
+30509,Cheeseburger Macaroni Home Cooked Skillet Meal,instant foods,dry goods pasta,meal_kit,True,True
+30510,Ginger Kombucha,juice nectars,beverages,kombucha,True,False
+30511,Thin & Crispy Crust Four Cheese Pizza,frozen pizza,frozen,frozen_pizza,True,True
+30512,Lemon Dishwasher Detergent + Clorox Stain Fighting,dish detergents,household,dish_soap,False,False
+30513,Vegetarian Calcium + Vitamin D3 Sour Flavored Gummy Bears,vitamins supplements,personal care,vitamins,False,False
+30514,Perio Brite Natural Mouth Wash Cool Mint,oral hygiene,personal care,mouthwash,False,False
+30515,Peanut Butter Brownie Bliss Rich Chocolate Brownie Layered With Creamy Real Peanut Butter,cookies cakes,snacks,ice_cream,True,False
+30516,Gluten Free Cinnamon Thin Cookies,cookies cakes,snacks,cookies,True,False
+30517,Cut Corn,frozen produce,frozen,frozen_vegetables,True,False
+30518,Low Fat Ice Cream Bars Mint Fudge Swirl,ice cream ice,frozen,ice_cream,True,False
+30519,Easy Open Field Greens Salad Bag,packaged vegetables fruits,produce,lettuce,True,False
+30520,Fire Roasted Pizza Sauce,pasta sauce,dry goods pasta,marinara,True,False
+30521,Tan Mailing Tape,more household,household,cleaning_other,False,False
+30522,Cookie Dough Protein bars,energy granola bars,snacks,granola_bar,True,False
+30523,Chilled Orange Strawberry Banana Juice,missing,missing,juice_blend,True,False
+30524,"HE Liquid Laundry Detergent with Downy, April Fresh scent",laundry,household,laundry_detergent,False,False
+30525,"Bacon, Egg & Cheese Biscuit Sandwiches",frozen breakfast,frozen,frozen_meal,True,True
+30526,Essentials Bathroom 2 Ply Soft Giant Roll Tissue,missing,missing,toilet_paper,False,False
+30527,Ph 9+Purified Water With Electrolytes,water seltzer sparkling water,beverages,water,True,False
+30528,Naturally Smoked Gouda Cheese,packaged cheese,dairy eggs,swiss,True,False
+30529,Stage 2 Pear Pumpkin Baby Food,baby food formula,babies,baby_food,True,True
+30530,"Mounds Bars Dark Chocolate , Snack Size",candy chocolate,snacks,candy,True,False
+30531,2% Lowfat Cottage Cheese,packaged cheese,dairy eggs,cottage_cheese,True,False
+30532,Chunky New England Clam Chowder,soup broth bouillon,canned goods,soup,True,True
+30533,Zinc & Sage Shampoo,hair care,personal care,shampoo,False,False
+30534,Creamy Chicken Flavor Ramen Noodle Soup,instant foods,dry goods pasta,instant_ramen,True,True
+30535,"Dish Liquid, Ultra Concentrated, Aloe",dish detergents,household,dish_soap,False,False
+30536,Multigrain Bread Artisan Sandwich,bread,bakery,wheat_bread,True,False
+30537,Oil Wok,oils vinegars,pantry,vegetable_oil,True,False
+30538,Delicatessen Style Pepperoncini,pickled goods olives,pantry,hot_pepper,True,False
+30539,Eggo Thick & Fluffy Minis Chocolate Delight Waffles,frozen breakfast,frozen,frozen_waffles,True,False
+30540,RAW Meal Chocolate Cacao,protein meal replacements,personal care,vitamins,False,False
+30541,The Petroleum Jelly Alternative,soap,personal care,lotion,False,False
+30542,"Organic Baby Food Apricot, Peach & Pumpkin",baby food formula,babies,baby_food,True,True
+30543,Herring In Wine Sauce,packaged seafood,meat seafood,sardines,True,False
+30544,Skin Calming Daily Moisturizing Creme,body lotions soap,personal care,lotion,False,False
+30545,30% Less Sodium Brown Gravy Mix,marinades meat preparation,pantry,beef_broth,True,False
+30546,Caribbean Passion All Natural Smoothies,frozen juice,frozen,juice_blend,True,False
+30547,Flour Tortillas For Burritos,latino foods,international,tortilla,True,False
+30548,Cocoa,cocoa drink mixes,beverages,cocoa_powder,True,False
+30549,Strawberry Banana,refrigerated,beverages,juice_blend,True,False
+30550,White Mushroom,missing,missing,mushroom,True,False
+30551,Farmstyle Greek Old Fashioned Vanilla Strained Lowfat Yogurt,yogurt,dairy eggs,yogurt,True,False
+30552,Organic Unsweetened Cocoa,baking ingredients,pantry,cocoa_powder,True,False
+30553,Original Snack Mix 40 Ounce,chips pretzels,snacks,trail_mix,True,False
+30554,Party Cups Plastic 18 oz,plates bowls cups flatware,household,napkins,False,False
+30555,Churros,frozen dessert,frozen,frozen_dessert,True,False
+30556,Angel Hair Marinara Savory Italian Recipes,frozen meals,frozen,frozen_meal,True,True
+30557,Manzano Banana,fresh fruits,produce,banana,True,False
+30558,Pretzel Slider Buns,buns rolls,bakery,hamburger_bun,True,False
+30559,Certified Compostable Food Waste Bags 3 Gallon,trash bags liners,household,trash_bags,False,False
+30560,Custard Yogurt Blueberry,missing,missing,yogurt,True,False
+30561,Plain Bagelettes,breakfast bakery,bakery,bagel,True,False
+30562,Tasty Treasures With Ocean Fish in Sauce,cat food care,pets,cat_food,False,False
+30563,Strained Non-Fat Strawberry Icelandic Style Skyr Yogurt,missing,missing,yogurt,True,False
+30564,Port Wine,specialty wines champagnes,alcohol,wine,True,False
+30565,Extra Hot Peri-Peri Sauce,condiments,pantry,hot_sauce,True,False
+30566,Chocolate Flavor Warrior Blend Raw Vegan Protein,protein meal replacements,personal care,vitamins,False,False
+30567,Unsweet Watermelon Sparkling Water,water seltzer sparkling water,beverages,water,True,False
+30568,Go Fresh Cool Essentials Anti-Perspirant Deodorant,deodorants,personal care,deodorant,False,False
+30569,Infants Pain Reliever and Fever Reducer Berry Drops,other,other,pain_reliever,False,False
+30570,Mozzarella,packaged cheese,dairy eggs,mozzarella,True,False
+30571,Bare Fruit Banana Chips,fruit vegetable snacks,snacks,banana,True,False
+30572,Chunky Healthy Request Old Fashioned Vegetable Beef,soup broth bouillon,canned goods,soup,True,True
+30573,Spinaci e Ricotta Ravioli,fresh pasta,dry goods pasta,filled_pasta,True,False
+30574,Hazelnut Chocolate Chip Gelato,ice cream ice,frozen,ice_cream,True,False
+30575,Flamin' Hot Flavored Corn Chips,chips pretzels,snacks,tortilla_chips,True,False
+30576,Capellini No. 1,dry pasta,dry goods pasta,pasta,True,False
+30577,Lifewater 0 Cal Black and Blue Berry Vitamin Enriched Water,energy sports drinks,beverages,water,True,False
+30578,Organic Unscented Baby-Mild Pure Castile Liquid Soap,baby bath body care,babies,body_wash,False,False
+30579,Orange Mango Juice Cocktail,juice nectars,beverages,juice_blend,True,False
+30580,Medium Round Containers & Lids,more household,household,food_containers,False,False
+30581,Organic Tulsi Turmeric Ginger Stress-Relieving & Harmonizing Caffeine Free Herbal Supplement,tea,beverages,tea,True,False
+30582,Natural Champagne,specialty wines champagnes,alcohol,champagne,True,False
+30583,Flaked Coconut Unsweetened,baking ingredients,pantry,dried_fruit,True,False
+30584,Sharp Cheddar Shredded Cheese,packaged cheese,dairy eggs,cheddar,True,False
+30585,Soymilk Non Dairy Frozen Dessert Gluten Free Cookie Dough,ice cream ice,frozen,ice_cream,True,False
+30586,Big Bang K Cup,candy chocolate,snacks,coffee,True,False
+30587,Chipotle Cheddar Cheese,packaged cheese,dairy eggs,cheddar,True,False
+30588,"8\"" Flour Tortillas De Harina",tortillas flat bread,bakery,tortilla,True,False
+30589,Soy Ginger Sauce,asian foods,international,teriyaki_sauce,True,False
+30590,Ezekiel 4:9 Sprouted Grain Spaghetti Pasta,dry pasta,dry goods pasta,pasta,True,False
+30591,Cinnamon Brown Sugar Breakfast Biscuits,breakfast bars pastries,breakfast,granola_bar,True,False
+30592,Coconut Oil Popcorn,popcorn jerky,snacks,popcorn,True,False
+30593,Frosted Cherry Pop-Tarts Toaster Pastries,breakfast bars pastries,breakfast,cookies,True,False
+30594,Unstopables Glow In-Wash Scent Booster Fabric Enhancer,laundry,household,laundry_detergent,False,False
+30595,Sport Strip Extra Wide Adhesive Bandages,first aid,personal care,cleaning_other,False,False
+30596,Tomato Puree No Salt Added,canned jarred vegetables,canned goods,tomato_paste,True,False
+30597,French Vanilla Coffee Creamer,cream,dairy eggs,half_and_half,True,False
+30598,Bold Taco Dinner Kit with Nacho Cheese Flavored Taco Shells,latino foods,international,meal_kit,True,True
+30599,Homemade Vodka Sauce,pasta sauce,dry goods pasta,vodka_sauce,True,False
+30600,Pilsner,beers coolers,alcohol,beer,True,False
+30601,Buddy Biscuits Bacon & Cheese Soft & Chewy Dog Treats,dog food care,pets,dog_food,False,False
+30602,California Style Coarse Grind Blend Garlic Pepper,spices seasonings,pantry,garlic_powder,True,False
+30603,Spicy Kettle Corn,popcorn jerky,snacks,popcorn,True,False
+30604,32 oz UHT Eggnog Eggnog,milk,dairy eggs,milk,True,False
+30605,"Fragrance Free Olive & Aloe, Deep Moisturizing  Lotion",soap,personal care,lotion,False,False
+30606,Eucerin® Lip Repair Ointment,first aid,personal care,lotion,False,False
+30607,Black Elderberry Syrup,vitamins supplements,personal care,vitamins,False,False
+30608,Pineapple Yogurt Bars,ice cream ice,frozen,frozen_yogurt,True,False
+30609,Assorted Halloween Cupcakes,bakery desserts,bakery,muffin,True,False
+30610,Dark Chocolate With Cacao Nibs 72% Cocoa Chocolate,candy chocolate,snacks,candy,True,False
+30611,Mission Figs,nuts seeds dried fruit,snacks,fig,True,False
+30612,Cotton Breeze Air Freshener,air fresheners candles,household,air_freshener,False,False
+30613,Crest 3D White Radiant Mint,oral hygiene,personal care,toothpaste,False,False
+30614,Organic Qia Superfood Breakfast Cereal,cereal,breakfast,cereal,True,False
+30615,Raw Cacao Butter,baking ingredients,pantry,coconut_oil,True,False
+30616,Hemp Date Nut Dairy-Free Ice Cream,ice cream ice,frozen,ice_cream,True,False
+30617,Creme Caramel Flan,refrigerated pudding desserts,dairy eggs,ice_cream,True,False
+30618,Plain Unsalted Rice Cakes,crackers,snacks,rice_cakes,True,False
+30619,Refresh Black Cherry Limeade,juice nectars,beverages,juice_blend,True,False
+30620,Roasted Garlic & Olive Oil Pearled Couscous,instant foods,dry goods pasta,couscous,True,False
+30621,Garlic Herb Nut Cheese,packaged cheese,dairy eggs,cream_cheese,True,False
+30622,Shrimp Scampi,frozen meat seafood,frozen,frozen_meal,True,True
+30623,Unsweetened 100% Cocoa,baking ingredients,pantry,cocoa_powder,True,False
+30624,Sliced Beef Liver,meat counter,meat seafood,stew_meat,True,False
+30625,Semisweet Dark Chocolate,candy chocolate,snacks,chocolate_chips,True,False
+30626,Calcium Magnesium Zinc,vitamins supplements,personal care,vitamins,False,False
+30627,Crispy Golden Spud Puppies,frozen produce,frozen,hash_browns,True,False
+30628,13 Gallon Tall Trash Bags,trash bags liners,household,trash_bags,False,False
+30629,Southwest Couscous Salad,prepared soups salads,deli,deli_prepared,True,True
+30630,"Yogurt, Sheep Milk, Blackberry",yogurt,dairy eggs,yogurt,True,False
+30631,Red Enchilada Sauce Mix,latino foods,international,taco_seasoning,True,False
+30632,Organic Chimichurri Seasoning,spices seasonings,pantry,italian_seasoning,True,False
+30633,Veggie Cheese & Pretzel Snack Pac Prepacked,fruit vegetable snacks,snacks,pretzels,True,False
+30634,Riserva Porcini Mushrooms & White Truffle Oil,pasta sauce,dry goods pasta,marinara,True,False
+30635,Lactose Free Yogurt Plain,yogurt,dairy eggs,yogurt,True,False
+30636,Vitamin C Renewal Soothing Lip Balm,oral hygiene,personal care,lotion,False,False
+30637,Hickory Brussel Sprouts,canned jarred vegetables,canned goods,brussels_sprouts,True,False
+30638,White Paper Towels,paper goods,household,paper_towels,False,False
+30639,Organic Orange Juice,juice nectars,beverages,orange_juice,True,False
+30640,"Sausage, Smoked Chicken, Organic, Spinach & Feta",hot dogs bacon sausage,meat seafood,sausage,True,False
+30641,Family Reserve Single Serve Vanilla Nut Medium Roast Coffee,coffee,beverages,coffee,True,False
+30642,Belgian Chocolate S'more Gelato Sandwich,ice cream ice,frozen,ice_cream,True,False
+30643,Double Zipper 2 Gallon Freezer Bags,food storage,household,food_storage_bags,False,False
+30644,Organic French Roast,coffee,beverages,coffee,True,False
+30645,Pulled Pork,packaged meat,meat seafood,pork_shoulder,True,False
+30646,"Prunes, Pitted, Bite Size",nuts seeds dried fruit,snacks,dried_fruit,True,False
+30647,Oven Roasted Shaved White Turkey,lunch meat,deli,deli_meat,True,False
+30648,Sugar Free Spearmint Gum Value Pack,mint gum,snacks,gum,True,False
+30649,Classic Clean 2in1 Dandruff Shampoo,hair care,personal care,shampoo,False,False
+30650,Mushroom Lover's Veggie Burgers,frozen vegan vegetarian,frozen,plant_based_burger,True,False
+30651,Fun Shapes! Mixed Pack,cookies cakes,snacks,cookies,True,False
+30652,Halogen Soft White 53 Watt Light Bulbs,more household,household,cleaning_other,False,False
+30653,Boom Chicka Pop. Dark Chocolatier Sea Salt Kettle Corn,popcorn jerky,snacks,popcorn,True,False
+30654,Translucent Bronzing Tint,skin care,personal care,lotion,False,False
+30655,Hands & Face Citrus Scent Antibacterial Wipes,diapers wipes,babies,baby_wipes,False,False
+30656,Organic Marjoram,fresh herbs,produce,fresh_herbs,True,False
+30657,Cheddar Cheese Alternative,packaged cheese,dairy eggs,cheddar,True,False
+30658,Dark Chocolate Almond & Coconut Fruit & Nut Bar,energy granola bars,snacks,granola_bar,True,False
+30659,Medium Bag Peanut Milk Chocolate Candies,candy chocolate,snacks,candy,True,False
+30660,Golden Mint Jelly,spreads,pantry,jam_other,True,False
+30661,Lower Sugar Maple & Brown Sugar Instant Oatmeal,hot cereal pancake mixes,breakfast,oatmeal,True,False
+30662,Cranberry Watermelon Probiotic Juice Drink,refrigerated,beverages,juice_blend,True,False
+30663,Lean Beef Franks,hot dogs bacon sausage,meat seafood,hot_dog,True,False
+30664,Organic Beef Base,soup broth bouillon,canned goods,beef_broth,True,False
+30665,Chinese Long Beans,fresh vegetables,produce,green_beans,True,False
+30666,Grain Free Tuna Mackerel & Carrot Recipe in Gravy Cat Food,cat food care,pets,cat_food,False,False
+30667,Daily Protection Body Lotion SPF 15,body lotions soap,personal care,sunscreen,False,False
+30668,Half Baked Frozen Yogurt,ice cream ice,frozen,frozen_yogurt,True,False
+30669,"A Blend of Cream, Butter, Parmesan Cheese and a Hint of Nutmeg Alfredo Sauce",pasta sauce,dry goods pasta,alfredo_sauce,True,False
+30670,One Beyond Grain Free Arctic Char & Spinach,missing,missing,dog_food,False,False
+30671,Extra Strength Carpet Odor Eliminator,air fresheners candles,household,air_freshener,False,False
+30672,Seeded Honey Wheat Organic Bread,bread,bakery,wheat_bread,True,False
+30673,Harissa Hot Sauce,preserved dips spreads,pantry,hot_sauce,True,False
+30674,Blueberry Toaster Bagels,breakfast bakery,bakery,bagel,True,False
+30675,Edamame Soybeans in Pods,frozen produce,frozen,edamame,True,False
+30676,Sliced Havarti Dill Cheese,packaged cheese,dairy eggs,swiss,True,False
+30677,Low Salt Whole Kernel Corn,canned jarred vegetables,canned goods,corn,True,False
+30678,Rosemary & Olive Oil Flatbread,tortillas flat bread,bakery,flatbread,True,False
+30679,Lavender Lavender Flower,soap,personal care,body_wash,False,False
+30680,Slider Freezer Bag Gallon,food storage,household,food_storage_bags,False,False
+30681,Pineapple Soda Fridge Pack,soft drinks,beverages,soda,True,False
+30682,Yeast Extract,condiments,pantry,worcestershire,True,False
+30683,Puffins Peanut Butter & Chocolate Cereal,cereal,breakfast,cereal,True,False
+30684,Fast-Max Day & Night Cold & Flu Relief Liquid,cold flu allergy,personal care,pain_reliever,False,False
+30685,Pure Vanilla Powder,baking ingredients,pantry,vanilla_extract,True,False
+30686,California Cabernet Sauvignon,red wines,alcohol,wine,True,False
+30687,"Air Freshener, Electric, Refreshing Lime & Grapefruit",air fresheners candles,household,air_freshener,False,False
+30688,"Soup & Dip Mix, Onion",preserved dips spreads,pantry,onion_powder,True,False
+30689,Regenerist Moisturizer Regenerating Lotion With SPF 15,facial care,personal care,sunscreen,False,False
+30690,Squeezed Lemonade Fruit Juice,juice nectars,beverages,lemonade,True,False
+30691,"Vitamin E-Oil 30,000 IU Vegetarian Formula",vitamins supplements,personal care,vitamins,False,False
+30692,Kurly Straws,plates bowls cups flatware,household,napkins,False,False
+30693,"Herbal Tea, Organic, Chamomile, Caffeine Free, Bags",tea,beverages,tea,True,False
+30694,Ocean Breeze Shampoo,hair care,personal care,shampoo,False,False
+30695,Milk Chocolate Bar,candy chocolate,snacks,candy,True,False
+30696,Eggo Homestyle Waffles,frozen breakfast,frozen,frozen_waffles,True,False
+30697,Organic Salsa Medium,preserved dips spreads,pantry,salsa,True,False
+30698,Pecans,nuts seeds dried fruit,snacks,pecans,True,False
+30699,All Natural Dressing & Marinade Soy Ginger,salad dressing toppings,pantry,salad_dressing,True,False
+30700,Angel Food Cake,bakery desserts,bakery,cookies,True,False
+30701,Sweet & Salty Nut Chocolate Pretzel Nut Granola Bars,breakfast bars pastries,breakfast,granola_bar,True,False
+30702,Hampshire 100% Natural Grade A Pasteurized Sour Cream,other creams cheeses,dairy eggs,sour_cream,True,False
+30703,"360 Optic White Toothbrush, Soft",oral hygiene,personal care,toothbrush,False,False
+30704,Riverstone Chardonnay,white wines,alcohol,wine,True,False
+30705,"Macaroons, Lemon Ginger",cookies cakes,snacks,cookies,True,False
+30706,805 Blond Ale,beers coolers,alcohol,beer,True,False
+30707,Organic Ground Chicken Breast,packaged poultry,meat seafood,ground_chicken,True,False
+30708,Milk Chocolate With Almonds Giant Candy Bar,candy chocolate,snacks,candy,True,False
+30709,Rustic Country White Sandwich Bread,bread,bakery,white_bread,True,False
+30710,Sheep Milk Pizza,frozen pizza,frozen,frozen_pizza,True,True
+30711,Cocktail Shrimp,frozen meat seafood,frozen,shrimp,True,False
+30712,Olive Oil Vinaigrettes Italian Dressing,oils vinegars,pantry,salad_dressing,True,False
+30713,Ultimate Omega Xtra,vitamins supplements,personal care,vitamins,False,False
+30714,Sunny Millet Whole Grain Bread,bread,bakery,wheat_bread,True,False
+30715,Energy Bar,energy granola bars,snacks,granola_bar,True,False
+30716,Whipped Sweet Cream Butter,butter,dairy eggs,butter,True,False
+30717,Organic Ranch Salad Dressing,salad dressing toppings,pantry,salad_dressing,True,False
+30718,Unsweetened Pure & Smooth  Green Tea,tea,beverages,tea,True,False
+30719,Kids Alphatots Family pack,frozen appetizers sides,frozen,hash_browns,True,False
+30720,Sugar Snap Peas,fresh vegetables,produce,peas,True,False
+30721,No Beans Chili,canned meals beans,canned goods,canned_chili,True,True
+30722,Peppermint Ice Cream,ice cream ice,frozen,ice_cream,True,False
+30723,Tuna Creations Herb & Garlic Tuna,canned meat seafood,canned goods,canned_tuna,True,False
+30724,All Black Cherry Juice,juice nectars,beverages,juice_blend,True,False
+30725,Reduce Fat Yellow Chips,chips pretzels,snacks,tortilla_chips,True,False
+30726,Organic Assam Black Tea,tea,beverages,tea,True,False
+30727,Vanilla Almond Fit Granola,granola,breakfast,granola,True,False
+30728,Rosewater & Glycerin With Atomizer Flower Water,soap,personal care,lotion,False,False
+30729,Mild Thai Green Curry Paste,asian foods,international,curry_paste,True,False
+30730,"Truffles, Organic, Darkest Cacao",candy chocolate,snacks,candy,True,False
+30731,Pure Cane Granulated White Sugar,baking ingredients,pantry,white_sugar,True,False
+30732,Organic Blackberry Fruit Spread,spreads,pantry,jam_other,True,False
+30733,Turkey and Seafood Cat Food,cat food care,pets,cat_food,False,False
+30734,Antibacterial Orange Dishwashing Liquid,dish detergents,household,dish_soap,False,False
+30735,Advance Powder,baby food formula,babies,baby_formula,True,False
+30736,Hard Cider Crisp Apple,beers coolers,alcohol,beer,True,False
+30737,Original Vanilla Low Fat Yogurt,yogurt,dairy eggs,yogurt,True,False
+30738,Milk Chocolate Pretzel Dips,chips pretzels,snacks,pretzels,True,False
+30739,"EZ Foil Cake Pans, 8\"" - 3 pans",kitchen supplies,household,aluminum_foil,False,False
+30740,Take 5 Snack Size Candy,candy chocolate,snacks,candy,True,False
+30741,Splash Diet Berry Blend,juice nectars,beverages,water,True,False
+30742,Veggie Pepperoni Pizza,tofu meat alternatives,deli,deli_prepared,True,True
+30743,"Shaving Gel, Organic, Unscented",shave needs,personal care,lotion,False,False
+30744,Classic Tender Liver & Chicken Feast Cat Food,cat food care,pets,cat_food,False,False
+30745,Organic Bulgarian Yogurt,yogurt,dairy eggs,yogurt,True,False
+30746,Organic Peanut Butter Milk Chocolate Bar,candy chocolate,snacks,candy,True,False
+30747,Dentotape® Unflavored Waxed Tape,oral hygiene,personal care,dental_floss,False,False
+30748,Cheese & Garlic Croutons,prepared meals,deli,crackers,True,False
+30749,"Wheat Grass Juice, Organic",juice nectars,beverages,juice_blend,True,False
+30750,Chocolate Fudge High Protein Bars,energy granola bars,snacks,granola_bar,True,False
+30751,All-Purpose Flour,baking ingredients,pantry,all_purpose_flour,True,False
+30752,Meat & Cheese Tray,packaged meat,meat seafood,deli_prepared,True,True
+30753,Organic Red Lentil Penne,dry pasta,dry goods pasta,pasta,True,False
+30754,Wheels & Cheese,frozen meals,frozen,mac_and_cheese,True,True
+30755,Smoked Mild Alaskan Sockeye Salmon,packaged seafood,meat seafood,salmon,True,False
+30756,Mandarin Clementine  Bag,fresh fruits,produce,orange,True,False
+30757,16 Oz White Plastic Tumbler Glasses,plates bowls cups flatware,household,napkins,False,False
+30758,Mexican Red Guajillo Chile Cooking Sauce,latino foods,international,hot_sauce,True,False
+30759,Freezer Gallon Bags,food storage,household,food_storage_bags,False,False
+30760,Children's Natural Grape Flavor Cough Syrup,cold flu allergy,personal care,pain_reliever,False,False
+30761,Mega Milk Chocolate Peanuts,candy chocolate,snacks,candy,True,False
+30762,Hot & Sour  Chinese Style Egg Flower Soup Mix,asian foods,international,instant_soup,True,True
+30763,Garden Vegetable Soup,prepared soups salads,deli,soup,True,True
+30764,Cinnamon Raisin Bagels,breakfast bakery,bakery,bagel,True,False
+30765,Almond Ice Cream Bars,ice cream ice,frozen,ice_cream,True,False
+30766,Omega 3 Gummies,vitamins supplements,personal care,vitamins,False,False
+30767,Low Sodium Sweet Peas,canned jarred vegetables,canned goods,peas,True,False
+30768,Watermelon & Raspberry Flavored Coconut Water,juice nectars,beverages,coconut_water,True,False
+30769,Natural Broccoli Rabe,frozen produce,frozen,broccoli,True,False
+30770,Party Mix Candy,candy chocolate,snacks,candy,True,False
+30771,Spearmint Sugar Free Gum,mint gum,snacks,gum,True,False
+30772,Party Mix Original Flavor Crunch Cat Treats,cat food care,pets,cat_food,False,False
+30773,Unsweetened Lemongrass Green Tea,asian foods,international,tea,True,False
+30774,Organic French Roast Ground Coffee,coffee,beverages,coffee,True,False
+30775,Kid's Cold & Mucus Relief,cold flu allergy,personal care,pain_reliever,False,False
+30776,Organic Raw Kombucha Gingerade,refrigerated,beverages,kombucha,True,False
+30777,Organic Classic Hummus,fresh dips tapenades,deli,hummus,True,True
+30778,Ultra Original Scent Dishwashing Liquid 38 Fl Oz Dish Care,dish detergents,household,dish_soap,False,False
+30779,Cleansing Facial Wipes,facial care,personal care,body_wash,False,False
+30780,Exceptional Lavender Fabric Softener He 42 Loads,laundry,household,laundry_detergent,False,False
+30781,Hershey's Milk Chocolate Frosting,baking supplies decor,pantry,chocolate_chips,True,False
+30782,Fresh Body Wash High Endurance,body lotions soap,personal care,body_wash,False,False
+30783,Sensitive Post Shave Balm,shave needs,personal care,lotion,False,False
+30784,Organic Restaurant Style  Sea Salt & Lime Tortilla Chips,chips pretzels,snacks,tortilla_chips,True,False
+30785,U.T. Vibrance Crisis Intervention Formula,vitamins supplements,personal care,vitamins,False,False
+30786,Monoarabica Brazilian Whole Bean Coffee,coffee,beverages,coffee,True,False
+30787,Crispy Crowns! Seasoned Shredded Potatoes,frozen appetizers sides,frozen,hash_browns,True,False
+30788,Sprouted Seed Spelt Bread,bread,bakery,wheat_bread,True,False
+30789,Chocolate Hazelnut Ice Cream Bars,ice cream ice,frozen,ice_cream,True,False
+30790,Strawberry Starburst Gum,candy chocolate,snacks,gum,True,False
+30791,Nama Shoyu Soy Sauce,condiments,pantry,soy_sauce,True,False
+30792,Reduced Fat Kettle Cooked Cream Cheese & Chive Potato Chips,chips pretzels,snacks,potato_chips,True,False
+30793,Platinum Fresh Scent ActionPacs Dishwasher Detergent,missing,missing,dish_soap,False,False
+30794,Cold Pressed  Extra Virgin Olive Oil,oils vinegars,pantry,olive_oil,True,False
+30795,Sesame Seaweed Salad,prepared meals,deli,deli_prepared,True,True
+30796,Strawberry Gem Fruit Spread,spreads,pantry,strawberry_jam,True,False
+30797,Roasted  Almond Butter,spreads,pantry,almond_butter,True,False
+30798,Pro-V Curl Perfection Shampoo for Curly Hair,hair care,personal care,shampoo,False,False
+30799,Organic Whole Wheat 7 Grain Bread,bread,bakery,wheat_bread,True,False
+30800,Parmesan Cheese Shaker,other creams cheeses,dairy eggs,parmesan,True,False
+30801,Classic Original Mint Mouthwash,oral hygiene,personal care,mouthwash,False,False
+30802,Mint Whitening Gel Toothpaste,oral hygiene,personal care,toothpaste,False,False
+30803,ProActive Health Dry  Kitten Food,cat food care,pets,cat_food,False,False
+30804,Korean Style Beef,missing,missing,frozen_meal,True,True
+30805,Sea Salt Chips,chips pretzels,snacks,potato_chips,True,False
+30806,Olive Oil Rosemary and Garlic Oven Fries,frozen appetizers sides,frozen,hash_browns,True,False
+30807,Brown Sugar & Cinnamon Cream Cheese Spread,other creams cheeses,dairy eggs,cream_cheese,True,False
+30808,One & Done Refreshing Cucumber & Green Tea Baby Wipes,diapers wipes,babies,baby_wipes,False,False
+30809,Organic No Stir Creamy Peanut Butter,spreads,pantry,peanut_butter,True,False
+30810,Healthy Growth for Puppies Dry Dog Food,dog food care,pets,dog_food,False,False
+30811,Tart Cherry Stomp Juice,refrigerated,beverages,juice_blend,True,False
+30812,Roasted Tomato Arrabbiata Sauce,pasta sauce,dry goods pasta,marinara,True,False
+30813,99% Fat Free Beef Broth,soup broth bouillon,canned goods,beef_broth,True,False
+30814,Vegan Flaxbread Breakfast Sandwiches 2 Count,frozen meals,frozen,frozen_meal,True,True
+30815,Oinkies Pig Skin Twists Dog Chews,dog food care,pets,dog_food,False,False
+30816,Iced Teaz Mint Green Tea,tea,beverages,tea,True,False
+30817,Rhubarb Strawberry Jam,spreads,pantry,strawberry_jam,True,False
+30818,Rice Select Royal Blend Whole Grain,grains rice dried goods,dry goods pasta,wild_rice,True,False
+30819,Muesli Cereal,cereal,breakfast,cereal,True,False
+30820,"Cheese Alternative, Mozzarella",soy lactosefree,dairy eggs,mozzarella,True,False
+30821,Light 12 Grain Bread,bread,bakery,wheat_bread,True,False
+30822,Thirst Quencher Lemon-Lime/Fruit Punch/Orange Variety Pack Sports Drink,energy sports drinks,beverages,sports_drink,True,False
+30823,Organic Pumpernickel,bread,bakery,rye_bread,True,False
+30824,Boneless Fried Chicken,frozen meals,frozen,frozen_meal,True,True
+30825,Organic Maple Agave Pancake Syrup,honeys syrups nectars,pantry,maple_syrup,True,False
+30826,Complete All Day Moisturizer With SPF 15 For Normal,facial care,personal care,sunscreen,False,False
+30827,Seedless Cucumbers,packaged produce,produce,cucumber,True,False
+30828,Burger Veggie Curry,frozen meals,frozen,plant_based_burger,True,False
+30829,Fresh Chicken Wings,poultry counter,meat seafood,chicken_wings,True,False
+30830,Organics Vitamin C Fortified 100% Apple Juice,juice nectars,beverages,apple_juice,True,False
+30831,Fat Free Smooth & Creamy French Vanilla Organic Yogurt,yogurt,dairy eggs,yogurt,True,False
+30832,Halloween Characters In A Bag!,candy chocolate,snacks,candy,True,False
+30833,Cote Du Rhone Rouge France,red wines,alcohol,wine,True,False
+30834,Organic Pan-Fired Green Tea Bags,tea,beverages,tea,True,False
+30835,Long Term Relationship Conditioner For Long Hair 23.7 Fl Oz  Female Hair Care,hair care,personal care,conditioner,False,False
+30836,Organic Belgian Pancake And Waffle Mix,hot cereal pancake mixes,breakfast,all_purpose_flour,True,False
+30837,Reduced Fat Whole Grain The Pounder Tortilla Chips,chips pretzels,snacks,tortilla_chips,True,False
+30838,Original Ginger Drink,juice nectars,beverages,soda,True,False
+30839,Homestyle Breaded Chicken Breast Tenders,frozen appetizers sides,frozen,chicken_tenders,True,False
+30840,Light Beef Pot Roast Soup,soup broth bouillon,canned goods,soup,True,True
+30841,Umcka Cold+Flu Chewable Tablets Berry Flavor - 20 CT,cold flu allergy,personal care,pain_reliever,False,False
+30842,Hydrogen Peroxide Topical Solution,first aid,personal care,lotion,False,False
+30843,Detox Salad,prepared soups salads,deli,deli_prepared,True,True
+30844,Strong English Mustard,condiments,pantry,mustard,True,False
+30845,Bun Length Franks,hot dogs bacon sausage,meat seafood,hot_dog,True,False
+30846,Stainless Steel Steamer Basket,kitchen supplies,household,food_containers,False,False
+30847,Wild Oregano Oil,vitamins supplements,personal care,vitamins,False,False
+30848,Cheddar Potatoes with Broccoli,frozen meals,frozen,frozen_meal,True,True
+30849,Blueberries Pint,fresh fruits,produce,blueberry,True,False
+30850,French Roast Ground Coffee,coffee,beverages,coffee,True,False
+30851,Sage & Onion Cubed Stuffing,instant foods,dry goods pasta,crackers,True,False
+30852,Bareskin Premium Lubricant Condoms Sensitivity,other,other,feminine_care,False,False
+30853,Beef Broth Concentrate,soup broth bouillon,canned goods,beef_broth,True,False
+30854,Chunky Philly-Style Cheesesteak,soup broth bouillon,canned goods,soup,True,True
+30855,Chocolate Hazelnut Butter Blend,spreads,pantry,peanut_butter,True,False
+30856,Whole Grain White Hamburger Buns,buns rolls,bakery,hamburger_bun,True,False
+30857,Herbal Tea Sampler,tea,beverages,tea,True,False
+30858,Canin Cuisine Savory Delights Pork Tenderloin Flavor with Roasted Potatoes & Green Beans Wet Dog Food,dog food care,pets,dog_food,False,False
+30859,Dark Chocolate Hemp Seeds,nuts seeds dried fruit,snacks,candy,True,False
+30860,Mocha Frappuccino,coffee,beverages,coffee,True,False
+30861,Coconut Thai Chai,tea,beverages,tea,True,False
+30862,Stone Go To IPA,beers coolers,alcohol,beer,True,False
+30863,Light & Fit Banana Cream Nonfat Greek Yogurt,yogurt,dairy eggs,yogurt,True,False
+30864,Chili Cheese Mac Velveeta Cheesy Skillets,instant foods,dry goods pasta,mac_and_cheese,True,True
+30865,Tri Color Mozzarella And Herb Tortellini,dry pasta,dry goods pasta,filled_pasta,True,False
+30866,Bleach Alternative Grapefruit Dish Detergent,cleaning products,household,dish_soap,False,False
+30867,"100% Fruit Bar, Blueberry Pomegranate",energy granola bars,snacks,granola_bar,True,False
+30868,No Sugar Added White Grapefruit Juice,juice nectars,beverages,juice_blend,True,False
+30869,Pure Leaf Unsweetened Tea With Lemon,tea,beverages,tea,True,False
+30870,Gourmet Collection: Tarragon,spices seasonings,pantry,fresh_herbs,True,False
+30871,Baby Swiss Cheese Slices,packaged cheese,dairy eggs,swiss,True,False
+30872,Sliced Shiitake Mushrooms,packaged vegetables fruits,produce,mushroom,True,False
+30873,Chunky Spicy Chicken Quesadilla Soup,soup broth bouillon,canned goods,soup,True,True
+30874,Regular Security Maxi Sanitary Pads,feminine care,personal care,feminine_care,False,False
+30875,Macaroni & Cheese with Cheddar & Romano,frozen meals,frozen,mac_and_cheese,True,True
+30876,Diet Chocolate Fudge - 6 CT,soft drinks,beverages,soda,True,False
+30877,Heart Smart Traditional Italian Sauce,pasta sauce,dry goods pasta,marinara,True,False
+30878,Organic Chopped Ginger,condiments,pantry,ginger,True,False
+30879,Marshmallow Mateys Cereal,cereal,breakfast,cereal,True,False
+30880,Watermelon & Green Apple Soft Chewy Candy Bites,candy chocolate,snacks,candy,True,False
+30881,Naturally Smoked Oysters in Pure Olive Oil,canned meat seafood,canned goods,oysters,True,False
+30882,Hawaiian Breeze and Vanilla Passion Fruit 2-in-1 Candle,air fresheners candles,household,candles,False,False
+30883,Strawberry Flavor Dairy Culture Probiotic Supplement,vitamins supplements,personal care,vitamins,False,False
+30884,Island Vanilla Cereal,cereal,breakfast,cereal,True,False
+30885,Acidophilus Yogurt,yogurt,dairy eggs,yogurt,True,False
+30886,Sprouted Multigrain Bread,frozen breads doughs,frozen,wheat_bread,True,False
+30887,Gherkin Pickles,pickled goods olives,pantry,cucumber,True,False
+30888,Jalapeno Slices Pickled,latino foods,international,hot_pepper,True,False
+30889,In Water Sardines,canned meat seafood,canned goods,sardines,True,False
+30890,MCT Oil,vitamins supplements,personal care,coconut_oil,True,False
+30891,Tropical Fruit Tab,digestion,personal care,vitamins,False,False
+30892,Refreshing Lip Balm with Pink Grapefruit,beauty,personal care,lotion,False,False
+30893,"Cooking Sauce, Thai, Red Curry, Medium",asian foods,international,curry_paste,True,False
+30894,Supreme Peanut Butter Brownie Mix,doughs gelatins bake mixes,pantry,all_purpose_flour,True,False
+30895,Chunk Light Tuna in Vegetable Oil,canned meat seafood,canned goods,canned_tuna,True,False
+30896,Cleanse & Detox Herbal Tea,tea,beverages,tea,True,False
+30897,Lemon Flavor Arctic Cod Liver Oil,vitamins supplements,personal care,vitamins,False,False
+30898,Power Snack Cacao Goji Superfood,fruit vegetable snacks,snacks,granola_bar,True,False
+30899,Original Black Liquorice,candy chocolate,snacks,candy,True,False
+30900,Very Teriyaki Cooking Sauce,marinades meat preparation,pantry,teriyaki_sauce,True,False
+30901,Snickerdoodle Cinnamon Sugar Cookies,cookies cakes,snacks,cookies,True,False
+30902,"Lime Juice, Reconstituted",juice nectars,beverages,lime,True,False
+30903,Nori Sesame Gourmet Popcorn,popcorn jerky,snacks,popcorn,True,False
+30904,100% Stone Ground Whole Wheat Bread,bread,bakery,wheat_bread,True,False
+30905,Vanilla Soy Beverage,soy lactosefree,dairy eggs,plant_milk,True,False
+30906,Spicy Tuscan Tomato Sauce,pasta sauce,dry goods pasta,marinara,True,False
+30907,Strawberry Menthol Cough Suppressant/Oral Anesthetic,cold flu allergy,personal care,pain_reliever,False,False
+30908,Teriyaki Turkey Jerky,popcorn jerky,snacks,jerky,True,False
+30909,Telera Rolls,buns rolls,bakery,dinner_roll,True,False
+30910,Double Stuf Golden Sandwich Cookies,cookies cakes,snacks,cookies,True,False
+30911,Peas,fruit vegetable snacks,snacks,peas,True,False
+30912,Original Decaf Medium Roast K-Cups,coffee,beverages,coffee,True,False
+30913,Organic Green Tea,tea,beverages,tea,True,False
+30914,Alphabet Letters Gummi Candy,candy chocolate,snacks,candy,True,False
+30915,Linen Scent Bleach With Fabric Protection,laundry,household,bleach,False,False
+30916,Hi-Chew Strawberry Fruit Chews,asian foods,international,candy,True,False
+30917,Chipotle Pepper Marinade,spices seasonings,pantry,hot_sauce,True,False
+30918,Whole Chicken,poultry counter,meat seafood,whole_chicken,True,False
+30919,Parchment Baking Sheets,baking supplies decor,pantry,aluminum_foil,False,False
+30920,"Scallops, Vegan, Breaded",frozen vegan vegetarian,frozen,scallops,True,False
+30921,Jumbo Grade A White Eggs,eggs,dairy eggs,eggs,True,False
+30922,The Saint Hard Apple Cider,beers coolers,alcohol,beer,True,False
+30923,Vanilla Bean Soda,soft drinks,beverages,soda,True,False
+30924,Cherry Real Italian Ice,ice cream ice,frozen,sorbet,True,False
+30925,Instant Chocolate Sugar Free Fat Free Pudding & Pie Filling,doughs gelatins bake mixes,pantry,cocoa_powder,True,False
+30926,Chocolate Fudge Stripe Layer Cake,frozen dessert,frozen,frozen_dessert,True,False
+30927,Simply Country Style Olive Oil and Sea Salt French Fried Potatoes,frozen appetizers sides,frozen,hash_browns,True,False
+30928,Organic Gluten Free Yellow Cornmeal,baking ingredients,pantry,cornmeal,True,False
+30929,Lavender Essential Oil,air fresheners candles,household,air_freshener,False,False
+30930,Imperial IPA,beers coolers,alcohol,beer,True,False
+30931,Stimulations Ecstasy Ultrasmooth Lubricant Premium Latex Condoms,other,other,feminine_care,False,False
+30932,Toasted Coconut Greek Nonfat Yogurt Honey Oat Crisps Dippers,missing,missing,yogurt,True,False
+30933,Orange Pineapple/100% Apple/Grape  Juice Drink Variety,juice nectars,beverages,juice_blend,True,False
+30934,All Time Greats Snack Size Chocolates,candy chocolate,snacks,candy,True,False
+30935,Melatonin 5 mg Strawberry Gummies,vitamins supplements,personal care,vitamins,False,False
+30936,"Tortilla Chips, Original",chips pretzels,snacks,tortilla_chips,True,False
+30937,RIP-L Potato Chips,chips pretzels,snacks,potato_chips,True,False
+30938,Wholly Guacamole Mini 12 Oz,fresh dips tapenades,deli,guacamole,True,True
+30939,New Orleans Style Garlic Butter Flavored Rice Mix,instant foods,dry goods pasta,instant_rice,True,False
+30940,Mexican Style Lasagna,frozen meals,frozen,frozen_meal,True,True
+30941,Apple and Blueberry Organic Baby Food,baby food formula,babies,baby_food,True,True
+30942,Cherry Cassis Sparkling Fermented Tea,refrigerated,beverages,kombucha,True,False
+30943,"8.5\"" Soft Cushion Scissors",kitchen supplies,household,cleaning_other,False,False
+30944,Red Lentil Spaghetti Pasta,dry pasta,dry goods pasta,pasta,True,False
+30945,"Organic Banana, Cinnamon & Granola Stage 2 Baby Food",baby food formula,babies,baby_food,True,True
+30946,Organic Pitted Dates,nuts seeds dried fruit,snacks,dried_fruit,True,False
+30947,Very Light Absorbency Long Length Incontinence Liners,feminine care,personal care,feminine_care,False,False
+30948,CranActin Cranberry AF Extract,vitamins supplements,personal care,vitamins,False,False
+30949,Organic YoKids Smoothie Strawberry Banana Lowfat Yogurt,yogurt,dairy eggs,yogurt,True,False
+30950,Mild Banana Pepper Rings,pickled goods olives,pantry,hot_pepper,True,False
+30951,Veal Loin Chop,meat counter,meat seafood,veal,True,False
+30952,Quick Defense Vegetarian Liquid Phyto-Caps,vitamins supplements,personal care,vitamins,False,False
+30953,Sliced Beets No Salt Added,canned jarred vegetables,canned goods,beet,True,False
+30954,Organic Gotta Have Java Nonfat Frozen Yogurt,ice cream ice,frozen,frozen_yogurt,True,False
+30955,Unsalted Vegetable Stock,soup broth bouillon,canned goods,vegetable_broth,True,False
+30956,Organic Strawberry Banana Juice,refrigerated,beverages,juice_blend,True,False
+30957,Mild Tomatillo Salsa,preserved dips spreads,pantry,salsa,True,False
+30958,Honey Mustard and Onion Pretzels Pieces,chips pretzels,snacks,pretzels,True,False
+30959,Classic Catalina Dressing,salad dressing toppings,pantry,salad_dressing,True,False
+30960,Regular Pork Sausage Tube,hot dogs bacon sausage,meat seafood,ground_pork,True,False
+30961,Banana Chocolate Protein Juice Smoothie,refrigerated,beverages,juice_blend,True,False
+30962,Vanilla Greek Yogurt 0% Fat,yogurt,dairy eggs,yogurt,True,False
+30963,Cilantro Leaves,spices seasonings,pantry,fresh_herbs,True,False
+30964,"Super 4 Snacks White Bean, Quinoa, Lentil, Chia Cheesy Nacho Baked Bean Bites",chips pretzels,snacks,crackers,True,False
+30965,Sliced Sweet Pimientos,canned jarred vegetables,canned goods,bell_pepper,True,False
+30966,Organic Amber Agave Nectar,honeys syrups nectars,pantry,agave,True,False
+30967,Organic Frosted Flakes Cereal,cereal,breakfast,cereal,True,False
+30968,Water Chestnut,fresh vegetables,produce,turnip,True,False
+30969,Veggie Made Riced Cauliflower Lightly Sauced with Savory Herb,missing,missing,cauliflower,True,False
+30970,Thyroid Support,vitamins supplements,personal care,vitamins,False,False
+30971,"Notebook, Wide Rule, 1 Subject, Not Packed",more household,household,cleaning_other,False,False
+30972,Kids Only! All Natural Gentle Conditioner,hair care,personal care,conditioner,False,False
+30973,Sharp Cheddar Macaroni & Cheese Dinner,instant foods,dry goods pasta,mac_and_cheese,True,True
+30974,Organic Chopped Shallots,canned jarred vegetables,canned goods,onion,True,False
+30975,Raspberry Lime Seltzer,water seltzer sparkling water,beverages,water,True,False
+30976,Goldfish Saltine Organic Otg,chips pretzels,snacks,crackers,True,False
+30977,Habanero Salsa,fresh dips tapenades,deli,salsa,True,False
+30978,"Dry Roasted, Spicy Organic Pumpkin Seeds",nuts seeds dried fruit,snacks,pumpkin_seeds,True,False
+30979,Scentsations Spring Sunshine,laundry,household,laundry_detergent,False,False
+30980,"Platinum Our Best Clean, Sparkling Silverware & Dishwasher Detergent",missing,missing,dish_soap,False,False
+30981,Lemon Frosted Sugar Cookies,cookies cakes,snacks,cookies,True,False
+30982,All Natural Original Hummus,fresh dips tapenades,deli,hummus,True,True
+30983,Wild Strawberry Yogurt Smoothie,yogurt,dairy eggs,yogurt,True,False
+30984,"Refried Beans, Vegetarian",canned meals beans,canned goods,refried_beans,True,False
+30985,Sea Salt Snack Crackers,crackers,snacks,crackers,True,False
+30986,SmartBlend Pairings Chicken & Chicken Hearts Recipe in Gravy Cat Food,cat food care,pets,cat_food,False,False
+30987,Crinkle Fries French Fried Sweet Potatoes,frozen appetizers sides,frozen,hash_browns,True,False
+30988,Dark Temptation Daily Fragrance,deodorants,personal care,deodorant,False,False
+30989,Spam Original Luncheon Meat,canned meat seafood,canned goods,deli_meat,True,False
+30990,Cookie Dough,refrigerated pudding desserts,dairy eggs,cookies,True,False
+30991,Egg And Bacon Burritos,frozen breakfast,frozen,frozen_meal,True,True
+30992,Shrimp Alfredo,frozen meals,frozen,frozen_meal,True,True
+30993,S'mores Grand Ice Cream,ice cream ice,frozen,ice_cream,True,False
+30994,Talenti Double Dark Chocolate Gelato,ice cream ice,frozen,ice_cream,True,False
+30995,Creme Fraiche French Cultured Cream,cream,dairy eggs,sour_cream,True,False
+30996,Black Truffle Goat Cheese Log,packaged cheese,dairy eggs,goat_cheese,True,False
+30997,All Natural Brie,packaged cheese,dairy eggs,brie,True,False
+30998,Organic Pure Pistachio Gelato,ice cream ice,frozen,ice_cream,True,False
+30999,Layered Dark Chocolate Coconut Granola Bars,energy granola bars,snacks,granola_bar,True,False
+31000,Zesty Ranch Dressing,salad dressing toppings,pantry,salad_dressing,True,False
 31001,White Tuna In Olive Oil,canned meat seafood,canned goods,canned_tuna,True,False
 31002,Quattro For Women Disposable Razor,shave needs,personal care,shaving,False,False
 31003,Broccoli  Bunch,missing,missing,broccoli,True,False
@@ -44499,6 +44999,506 @@ product_id,product_name,aisle,department,ingredient,is_food,is_prepared_dish
 44814,"Sauerkraut Salad, Arame (Sea Vegetable) & Ginger",pickled goods olives,pantry,unclassified,True,False
 44815,Unsweetened Soy Milk,soy lactosefree,dairy eggs,unclassified,True,False
 44816,Mach3 Razor Replacement Cartridges,missing,missing,unclassified,True,False
+45001,Fair Trade 100% Pure Organic Honey,honeys syrups nectars,pantry,honey,True,False
+45002,Organic Balsamic Vinegar Of Modena,oils vinegars,pantry,balsamic_vinegar,True,False
+45003,"Cheesecake, Chocolate Truffle",bakery desserts,bakery,cookies,True,True
+45004,White Multifold Towels,paper goods,household,paper_towels,False,False
+45005,Sourdough Deli Bread,bread,bakery,sourdough,True,False
+45006,Pinot Gris,white wines,alcohol,wine,True,False
+45007,Organic Zucchini,fresh vegetables,produce,zucchini,True,False
+45008,Men Sport Anti-Perspirant & Deodorant,deodorants,personal care,deodorant,False,False
+45009,Chocolate Chocolate Chip Ice Cream,ice cream ice,frozen,ice_cream,True,False
+45010,Non Acetone Nail Polish Remover,beauty,personal care,cleaning_other,False,False
+45011,Intensive Healing Lotion Eczema,first aid,personal care,lotion,False,False
+45012,"Black-Eye Peas, Specially-Seasoned",canned meals beans,canned goods,black_beans,True,False
+45013,Apple Sauce,canned fruit applesauce,canned goods,applesauce,True,False
+45014,Rotelle No 54,dry pasta,dry goods pasta,pasta,True,False
+45015,Assorted Variety Pack Tea Bags,tea,beverages,tea,True,False
+45016,Organic Ras El Hanout,spices seasonings,pantry,cumin,True,False
+45017,Mild Taco Sauce,latino foods,international,salsa,True,False
+45018,Chocolate Peppermint Stick,energy granola bars,snacks,granola_bar,True,False
+45019,Organic White Hot Dog Buns,buns rolls,bakery,hot_dog_bun,True,False
+45020,Arnica Oil,muscles joints pain relief,personal care,pain_reliever,False,False
+45021,Organic Strawberry Fruit Leather,missing,missing,fruit_snacks,True,False
+45022,Sparkling Blood Orange,missing,missing,water,True,False
+45023,Tropical Orange Probiotic Juice,refrigerated,beverages,juice_blend,True,False
+45024,Organic Spirulina Dream Bar,energy granola bars,snacks,granola_bar,True,False
+45025,Easy Mac Triple Cheese,instant foods,dry goods pasta,mac_and_cheese,True,True
+45026,Premium Cheeses Parmesan & Romaso,packaged cheese,dairy eggs,parmesan,True,False
+45027,Drops Mixed Berry Flavor Enhancer,cocoa drink mixes,beverages,vanilla_extract,True,False
+45028,Honey Mustard Dressing & Dip,salad dressing toppings,pantry,salad_dressing,True,False
+45029,Wakame And Brown Rice Ramen,instant foods,dry goods pasta,instant_ramen,True,True
+45030,Lemon Meringue Pie,frozen dessert,frozen,cookies,True,True
+45031,Sugar Free Hazelnut Coffee Creamer,cream,dairy eggs,half_and_half,True,False
+45032,Bleu Cheese Salad Dressing And Dip,salad dressing toppings,pantry,salad_dressing,True,False
+45033,Original Bread With Honey,bread,bakery,white_bread,True,False
+45034,Extra Large Strawberry Figgies & Jammies Cookies,chips pretzels,snacks,cookies,True,False
+45035,Coffee Flavor Yogurt,yogurt,dairy eggs,yogurt,True,False
+45036,Organic Half Tea & Half Lemonade,tea,beverages,tea,True,False
+45037,Lemon Dish Liquid,dish detergents,household,dish_soap,False,False
+45038,Pledge FloorCare Multi-Surface Concentrated Cleaner,cleaning products,household,all_purpose_cleaner,False,False
+45039,Dark Chocolate Peanut Sea Salt,missing,missing,candy,True,False
+45040,Head Lock Mega Gel,hair care,personal care,hair_styling,False,False
+45041,Greek-Style Plain Yogurt,yogurt,dairy eggs,yogurt,True,False
+45042,"Cake Pans & Lids, Square, 8 Inch",kitchen supplies,household,food_containers,False,False
+45043,Deluxe American Cheese Slices,packaged cheese,dairy eggs,american_cheese,True,False
+45044,100% Organic Pure & Unfiltered Cold Pressed Flax Oil,vitamins supplements,personal care,vitamins,False,False
+45045,Organic Stage 3 Pumpkin Cranberry Apple Baby Food,baby food formula,babies,baby_food,False,False
+45046,Plus OxiClean Stain Fighters Cool Breeze Liquid Laundry Detergent,laundry,household,laundry_detergent,False,False
+45047,Fit Kitchen Teriyaki Chicken,missing,missing,frozen_meal,True,True
+45048,Band-Aid Large Gauze Pads,first aid,personal care,pain_reliever,False,False
+45049,Numeral 3 Birthday Candle,baking supplies decor,pantry,candles,False,False
+45050,"Veggie Juice -Apple, Strawberry, Beet, & Raisin",juice nectars,beverages,juice_blend,True,False
+45051,Pub Mix,chips pretzels,snacks,trail_mix,True,False
+45052,Fast-Max Maximum Strength Cold Flu & Sore Throat,cold flu allergy,personal care,pain_reliever,False,False
+45053,Harvest Squash Turkey Country Dinner For Children 6 Months & Up,baby food formula,babies,baby_food,False,False
+45054,Combination Party Pizza,frozen pizza,frozen,frozen_pizza,True,True
+45055,Puffs Flamin' Hot Cheese Flavored Snacks,chips pretzels,snacks,chips,True,False
+45056,Everyone Lavender + Aloe Soap,soap,personal care,soap,False,False
+45057,Steak & Dippin' Sauce,marinades meat preparation,pantry,bbq_sauce,True,False
+45058,"Simply Clean & Fresh HE Liquid Laundry Detergent, Daybreak Fresh Scent, 89 Loads",laundry,household,laundry_detergent,False,False
+45059,Meat Loaf Seasoning Mix,marinades meat preparation,pantry,taco_seasoning,True,False
+45060,Coarse Yellow Corn Meal,latino foods,international,cornmeal,True,False
+45061,Natural Vanilla Ice Cream,ice cream ice,frozen,ice_cream,True,False
+45062,Whole Tomatillos,canned jarred vegetables,canned goods,canned_tomato,True,False
+45063,Organic Baby Bella Mushrooms,packaged vegetables fruits,produce,mushroom,True,False
+45064,Honey Wheat Bread,bread,bakery,wheat_bread,True,False
+45065,Organic Rice Protein Vanilla,protein meal replacements,personal care,vitamins,False,False
+45066,Honeycrisp Apple,fresh fruits,produce,apple,True,False
+45067,All Natural Chickpea Snacks! Smoky Chili & Lime,fruit vegetable snacks,snacks,chickpeas,True,False
+45068,Nutri-Grain Harvest Blueberry Bliss Breakfast Bars,breakfast bars pastries,breakfast,granola_bar,True,False
+45069,Big Rolls Pick-A-Size With Thirst Pockets Just White Paper Towels,missing,missing,paper_towels,False,False
+45070,Peeled Tomatoes San Marzano Organic With Basil Leaf,canned jarred vegetables,canned goods,canned_tomato,True,False
+45071,Boneless Pork Tenderloin,other,other,pork_tenderloin,True,False
+45072,Country Style Shredded Hash Browns,frozen breakfast,frozen,hash_browns,True,False
+45073,Sliced Portabella Mushrooms,fresh vegetables,produce,mushroom,True,False
+45074,Chocolate Flourless Cake,bakery desserts,bakery,cookies,True,True
+45075,Colon Health Digestive Health Probiotic Supplement Capsules,digestion,personal care,vitamins,False,False
+45076,Slow Churned Light Ice Cream Cookies 'N Cream,ice cream ice,frozen,ice_cream,True,False
+45077,Hearty & Delicious Center Split White Deli Rolls,buns rolls,bakery,dinner_roll,True,False
+45078,Pomegranatea,tea,beverages,tea,True,False
+45079,Blood Orange Lemonade,juice nectars,beverages,lemonade,True,False
+45080,Body Bar Soap Milk & Honey Complexion,soap,personal care,soap,False,False
+45081,Gluten-Free Pancake Mix,hot cereal pancake mixes,breakfast,pancake_mix,True,False
+45082,Honey Oat Crunch Trail Mix Crunchy Granola Bars,energy granola bars,snacks,granola_bar,True,False
+45083,Grassmilk Raw Sharp Cheddar Cheese,packaged cheese,dairy eggs,cheddar,True,False
+45084,Gelato Fudge Brownie ,ice cream ice,frozen,ice_cream,True,False
+45085,White Ale,beers coolers,alcohol,beer,True,False
+45086,Big Red Cinnamon Gum 3 Slim,mint gum,snacks,gum,True,False
+45087,Strawberry-Rhubarb Swiss Preserves,spreads,pantry,strawberry_jam,True,False
+45088,California Dill Pollen & Garlic Goat Cheese & Olive Oil Infusion,specialty cheeses,dairy eggs,goat_cheese,True,False
+45089,Jewish Rye & Pumpernickel Deli Swirl Bread,bread,bakery,rye_bread,True,False
+45090,Nourished Beauty Antiperspirant Deodorant,deodorants,personal care,deodorant,False,False
+45091,Natural Tea Tree Oil Facial Cleansing Pads Original,skin care,personal care,soap,False,False
+45092,"Papaya Enzyme, Super Plus, High-Potency, Chewable Tablets",vitamins supplements,personal care,vitamins,False,False
+45093,Authentic Mexican Shredded Cheese,packaged cheese,dairy eggs,cheese_blend,True,False
+45094,Gluten Free Mild Whole Green Chiles,latino foods,international,hot_pepper,True,False
+45095,"Granola, Gluten Free, Cranberry Orange Cashew",granola,breakfast,granola,True,False
+45096,Laundry Liquid Grapefruit Seed & Citrus Extract,laundry,household,laundry_detergent,False,False
+45097,Sliced Pepperoncini,pickled goods olives,pantry,hot_pepper,True,False
+45098,Sonoma County Chardonnay Wine,white wines,alcohol,wine,True,False
+45099,Steak Fries Thick-Cut French Fried Potatoes,frozen appetizers sides,frozen,hash_browns,True,False
+45100,Pumpkin Pie Spice,spices seasonings,pantry,cinnamon,True,False
+45101,Home Care Room Freshener Lavender Spray,air fresheners candles,household,air_freshener,False,False
+45102,Bartlett Pear Slices In Pear Juice From Concentrate,canned fruit applesauce,canned goods,canned_fruit,True,False
+45103,Decaffeinated English Breakfast Black Tea,tea,beverages,tea,True,False
+45104,ALMONDBREEZE UNSWEETENED,soy lactosefree,dairy eggs,plant_milk,True,False
+45105,Protein Pleasure Peanut Butter Chocolate Chip Macrobar,energy granola bars,snacks,granola_bar,True,False
+45106,Low Fat Strawberry Yogurt Tubes,yogurt,dairy eggs,yogurt,True,False
+45107,Multi-Pack Regular/Super/Super Plus Tampons - 40 CT,feminine care,personal care,feminine_care,False,False
+45108,Organic Uncooked Flour Tortillas,tortillas flat bread,bakery,tortilla,True,False
+45109,Curcumin 95 500 mg,vitamins supplements,personal care,vitamins,False,False
+45110,Honey Peanut Nutrition Bar,energy granola bars,snacks,granola_bar,True,False
+45111,Ghost Pepper Nacho Cheese Sauce,preserved dips spreads,pantry,queso,True,False
+45112,Butter Flavor Instant Grits,hot cereal pancake mixes,breakfast,oatmeal,True,False
+45113,Artesian Water,water seltzer sparkling water,beverages,water,True,False
+45114,Corn Tortillas White,bread,bakery,tortilla,True,False
+45115,Super Grains Tabbouleh,prepared soups salads,deli,deli_prepared,True,True
+45116,Potatoes Sweet,fresh vegetables,produce,sweet_potato,True,False
+45117,Organic Dark Chocolate Peanut Butter Trail Mix Bar,energy granola bars,snacks,granola_bar,True,False
+45118,Light & Fit Vanilla Nonfat Yogurt,yogurt,dairy eggs,yogurt,True,False
+45119,Tender White Pop Up Bowl Microwave Popcorn,popcorn jerky,snacks,popcorn,True,False
+45120,One Sensitive Systems Adult Cat Food,cat food care,pets,cat_food,False,False
+45121,100% All Natural Crunchy Peanut Butter,spreads,pantry,peanut_butter,True,False
+45122,Api Wellness 10+ Bio Active Manuka Honey,honeys syrups nectars,pantry,honey,True,False
+45123,Organic 21 Grain Thin Sliced Bread,bread,bakery,wheat_bread,True,False
+45124,Diet Vanilla Root Beer,soft drinks,beverages,soda,True,False
+45125,Boil-In-Bag Whole Grain Brown Rice,grains rice dried goods,dry goods pasta,brown_rice,True,False
+45126,Toddler Veggie Cracker Bites,crackers,snacks,crackers,True,False
+45127,Trading Company White Bean Dip Medium Hot,preserved dips spreads,pantry,hummus,True,False
+45128,Milk Chocolate M&Ms,candy chocolate,snacks,candy,True,False
+45129,"Whole Wheat Wraps 12\""",tortillas flat bread,bakery,tortilla,True,False
+45130,Bakery Classics Soft White Hoagie Rolls,buns rolls,bakery,hamburger_bun,True,False
+45131,Seven Crown Whiskey,spirits,alcohol,spirits,True,False
+45132,Whole Care Natural Peppermint Gel Fluoride Toothpaste,oral hygiene,personal care,toothpaste,False,False
+45133,Poppy & Sesame Crackers,crackers,snacks,crackers,True,False
+45134,Pirouette Chocolate Hazelnut Creme Filled Wafers,cookies cakes,snacks,cookies,True,False
+45135,Dark Chocolate Petit Ecolier European Biscuits,cookies cakes,snacks,cookies,True,False
+45136,Albacore Tuna in Thai Coconut Lemongrass,asian foods,international,canned_tuna,True,False
+45137,Coolmint Oral Rinse,oral hygiene,personal care,mouthwash,False,False
+45138,Deli Select Ultra Thin Rotisserie Seasoned Chicken Breast,lunch meat,deli,deli_meat,True,False
+45139,Honey Mustard Avocado Oil Dressing,salad dressing toppings,pantry,salad_dressing,True,False
+45140,Amazing Meal Vanilla Chai Single,protein meal replacements,personal care,vitamins,False,False
+45141,Gobstopper Assorted Flavors Sugar Candy,candy chocolate,snacks,candy,True,False
+45142,Organic Pork Chop Seasoning,spices seasonings,pantry,italian_seasoning,True,False
+45143,Organic Fillo Dough,frozen breads doughs,frozen,frozen_appetizer,True,False
+45144,Pumpkin Spice Blended Low-Fat Greek Yogurt,yogurt,dairy eggs,yogurt,True,False
+45145,Draft Style Root Beer Caffeine Free Soda,soft drinks,beverages,soda,True,False
+45146,Organic Gold Pineapple,fresh fruits,produce,pineapple,True,False
+45147,Dill & Garlic Raw Sauerkraut,pickled goods olives,pantry,pickled_goods,True,False
+45148,Bun Klasic Kaiser 8 Count,buns rolls,bakery,hamburger_bun,True,False
+45149,Chunk Light Tuna In Water,canned meat seafood,canned goods,canned_tuna,True,False
+45150,Vegetable Bouillon Cubes,soup broth bouillon,canned goods,chicken_broth,True,False
+45151,Dairy Free Soymilk Mocha Fudge Non-Dairy Frozen Dessert,ice cream ice,frozen,ice_cream,True,False
+45152,Bite-Size Honey Gold Potatoes,fresh vegetables,produce,potato,True,False
+45153,"Bread Crumbs, Italian",marinades meat preparation,pantry,breadcrumbs,True,False
+45154,Pure & Smooth Green Tea,tea,beverages,tea,True,False
+45155,Hearty Bits Banana Apple Strawberry Multigrain Toddler Cereal,baby food formula,babies,baby_cereal,False,False
+45156,Blueberry B Smoothie,refrigerated,beverages,juice_blend,True,False
+45157,Stool Softener Softgels,digestion,personal care,vitamins,False,False
+45158,Hand Towels,paper goods,household,paper_towels,False,False
+45159,Salsa For All Seasons Tropical Mango,preserved dips spreads,pantry,salsa,True,False
+45160,Original High Fiber 100% Vegetable Juice,juice nectars,beverages,juice_blend,True,False
+45161,Pistachio Pistachio Ice Cream,ice cream ice,frozen,ice_cream,True,False
+45162,Just Sea Salt,popcorn jerky,snacks,popcorn,True,False
+45163,Seaweed Rice Chips Sea Salt,chips pretzels,snacks,chips,True,False
+45164,Total Effects Revitalizing Foaming Cleanser,facial care,personal care,soap,False,False
+45165,Balsamic Vinegar Glaze,oils vinegars,pantry,balsamic_vinegar,True,False
+45166,French Green Lentils,other,other,lentils,True,False
+45167,Semi Soft Part-Skim Cheese,specialty cheeses,dairy eggs,mozzarella,True,False
+45168,"Granola, Organic, Honey Cashew Vanilla",cereal,breakfast,granola,True,False
+45169,Roast Chicken Flavor Ramen Noodles,instant foods,dry goods pasta,instant_ramen,True,True
+45170,Cinnfull Apple,beers coolers,alcohol,beer,True,False
+45171,Old World Flatbreads Tuscan Six Grain Pizza Crust,tortillas flat bread,bakery,flatbread,True,False
+45172,"Liquid Hand Soap, Original",body lotions soap,personal care,soap,False,False
+45173,Leave-in Conditioner,hair care,personal care,conditioner,False,False
+45174,Lime Chili Shrimp Flavor Ramen Noodle Soup,instant foods,dry goods pasta,instant_ramen,True,True
+45175,"Oregano Oil, Standardized, Liquid Vcaps",vitamins supplements,personal care,vitamins,False,False
+45176,Sugar Free Pecan Delight,candy chocolate,snacks,candy,True,False
+45177,Organic Chicken Noodles Soup,soup broth bouillon,canned goods,soup,True,True
+45178,Light Balsamic & Basil Vinaigrette Dressing,salad dressing toppings,pantry,salad_dressing,True,False
+45179,Chocolate Fudge Brownie Mix,doughs gelatins bake mixes,pantry,brownie_mix,True,False
+45180,Arm & Hammer Kid's Spinbrush Marvel Heroes/The Amazing Spiderman Powered Toothbrush,oral hygiene,personal care,toothbrush,False,False
+45181,Aged Garlic Extract Original Formula,vitamins supplements,personal care,vitamins,False,False
+45182,Finest Signature Seasoned Beef Frankfurter,hot dogs bacon sausage,meat seafood,hot_dog,True,False
+45183,Coarse Ground with Parsley Garlic Salt,spices seasonings,pantry,salt,True,False
+45184,Bourbon Brown Sugar BBQ Sauce,marinades meat preparation,pantry,bbq_sauce,True,False
+45185,Whips! Chocolate Yogurt Mousse,yogurt,dairy eggs,yogurt,True,False
+45186,Original Non-Dairy Coffee Creamer,cream,dairy eggs,half_and_half,True,False
+45187,Target Exclusive Aloe Love Cleansing Cloths,beauty,personal care,baby_wipes,False,False
+45188,Dairy Milk Fine Chocolate Candy Bar,candy chocolate,snacks,candy,True,False
+45189,The Colossal Volume Express 230 Glam Black Washable Mascara,beauty,personal care,makeup,False,False
+45190,Vodka,spirits,alcohol,spirits,True,False
+45191,Garlic Thyme Baked Crackers,crackers,snacks,crackers,True,False
+45192,Soft And Strong Double Roll Bath Tissue,paper goods,household,toilet_paper,False,False
+45193,Brownies Ala Mode Ice Cream,ice cream ice,frozen,ice_cream,True,False
+45194,Unsalted Sweet Cream Butter,butter,dairy eggs,butter,True,False
+45195,Gluten Free Chicken Pot Pie,frozen meals,frozen,frozen_meal,True,True
+45196,Alka-Seltzer Plus Severe Sinus Day & Night Liquid,cold flu allergy,personal care,pain_reliever,False,False
+45197,Moroccan Chickpea & Carrot Soup,soup broth bouillon,canned goods,soup,True,True
+45198,Light Miracle Whip Dressing,condiments,pantry,mayonnaise,True,False
+45199,Smoothies Extra Strength 750 Assorted Fruit Chewable Tablets Antacid,digestion,personal care,vitamins,False,False
+45200,Organic Cauliflower,fresh vegetables,produce,cauliflower,True,False
+45201,SauceSations Chicken & Turkey Dinner in Cheesy Sauce Cat Food,cat food care,pets,cat_food,False,False
+45202,Windy City Crunch Salad,packaged vegetables fruits,produce,lettuce,True,False
+45203,Triple Action Cleaning Contact Travel,eye ear care,personal care,cleaning_other,False,False
+45204,Sliced Pepperoni,lunch meat,deli,deli_meat,True,False
+45205,Classic Crunchy Fish Sticks,frozen meat seafood,frozen,chicken_nuggets,True,False
+45206,Double Chocolate Mini Cakes,frozen dessert,frozen,frozen_dessert,True,True
+45207,Organic Blonde Coconut Nectar,refrigerated,beverages,juice_blend,True,False
+45208,Organic Cinnamon Graham Crackers,crackers,snacks,crackers,True,False
+45209,Organic Frozen Algae,honeys syrups nectars,pantry,vitamins,False,False
+45210,Organic Greek Lowfat Yogurt With Blueberries,yogurt,dairy eggs,yogurt,True,False
+45211,Organic French Fingerling Potato,fresh vegetables,produce,potato,True,False
+45212,Granite Cleaner And Polish,cleaning products,household,cleaning_other,False,False
+45213,Mild Super BBQ Sauce,marinades meat preparation,pantry,bbq_sauce,True,False
+45214,"Seasoning, without Annatto, Econo Pak",spices seasonings,pantry,italian_seasoning,True,False
+45215,Extra Crispy Easy Fries Golden Crinkles,frozen appetizers sides,frozen,hash_browns,True,False
+45216,Expectorant and Cough Suppresant,cold flu allergy,personal care,pain_reliever,False,False
+45217,Pizza for One Original 4 Cheese Frozen Pizza,frozen pizza,frozen,frozen_pizza,True,True
+45218,Destinations Invisible Solid Paris Romantic Rose Deodorant & Body Spray,deodorants,personal care,deodorant,False,False
+45219,Gluten Free Pantry Muffin Mix,hot cereal pancake mixes,breakfast,pancake_mix,True,False
+45220,"Soap, Triple Milled, Dead Sea Salt",soap,personal care,soap,False,False
+45221,Indian Mattar Paneer,frozen meals,frozen,frozen_meal,True,True
+45222,Dark Chocolate With Mint Bar,candy chocolate,snacks,candy,True,False
+45223,Just Green Unsweetened Tea,tea,beverages,tea,True,False
+45224,Fior Di Latte Mozzarella,packaged cheese,dairy eggs,mozzarella,True,False
+45225,Artisan Thin Pizza Crust Rustic White Flatbread,tortillas flat bread,bakery,flatbread,True,False
+45226,Sweet Teriyaki Chicken Oven Sauce,marinades meat preparation,pantry,teriyaki_sauce,True,False
+45227,Anchovies In Olive Oil,canned meat seafood,canned goods,anchovies,True,False
+45228,Temptations Turkey Flavor Treats,cat food care,pets,cat_food,False,False
+45229,Organic Chia Seeds,nuts seeds dried fruit,snacks,chia_seeds,True,False
+45230,Liquid Energy Shot,energy sports drinks,beverages,energy_drink,True,False
+45231,Bag Of Oranges,fresh fruits,produce,orange,True,False
+45232,Plantains,fresh fruits,produce,plantain,True,False
+45233,Torta Orange,latino foods,international,bread,True,False
+45234,Original Thin Cheese Pizza,frozen pizza,frozen,frozen_pizza,True,True
+45235,Organic Rice Jasmine Long Grain,grains rice dried goods,dry goods pasta,white_rice,True,False
+45236,Mini Chocolate Cupcakes,bakery desserts,bakery,muffin,True,False
+45237,Ultra Strong Cutlery Dinner Combo,plates bowls cups flatware,household,food_containers,False,False
+45238,Heroine IPA,beers coolers,alcohol,beer,True,False
+45239,Special Recipe White Bread,bread,bakery,white_bread,True,False
+45240,"Sausages, Little Pork",frozen breakfast,frozen,sausage,True,False
+45241,Flu & Sore Throat Packets Pain Reliever/Fever Reducer,cold flu allergy,personal care,pain_reliever,False,False
+45242,Decorating Gel White,baking supplies decor,pantry,frosting,True,False
+45243,Ultra Dishwashing Liquid Original Scent 14 Oz Dish Care,dish detergents,household,dish_soap,False,False
+45244,Organic Acai Berry Juice Blend,refrigerated,beverages,juice_blend,True,False
+45245,Pods Botanical Rain Scent with Febreze Laundry Detergent Pacs,laundry,household,laundry_detergent,False,False
+45246,High Protein Pretzels,chips pretzels,snacks,pretzels,True,False
+45247,Trick Sparkler Candles,baking supplies decor,pantry,candles,False,False
+45248,Selects Hardwood Smoked Uncured Turkey Sausage,hot dogs bacon sausage,meat seafood,sausage,True,False
+45249,Gluten Free Chocolate Chunk Cookies,doughs gelatins bake mixes,pantry,cookie_dough,True,False
+45250,Sea Kelp Facial Toner,facial care,personal care,soap,False,False
+45251,Oats Banana Maple Blended Low-Fat Greek Yogurt,yogurt,dairy eggs,yogurt,True,False
+45252,Frozen Cut Green Beans,frozen produce,frozen,green_beans,True,False
+45253,gel hand wash sea minerals,body lotions soap,personal care,soap,False,False
+45254,Organic Gala Apple,fresh fruits,produce,apple,True,False
+45255,High Efficiency Complete Dual Formula,laundry,household,laundry_detergent,False,False
+45256,Organic Teriyaki Greens Veggie Krunch,fruit vegetable snacks,snacks,fruit_vegetable_snacks,True,False
+45257,Lactose-Free Vitamin D Organic Milk,milk,dairy eggs,milk,True,False
+45258,Parsley Flakes,spices seasonings,pantry,parsley_dried,True,False
+45259,Clean Breeze High Efficiency Liquid Laundry Detergent,laundry,household,laundry_detergent,False,False
+45260,Organic Virgin Coconut Oil,oils vinegars,pantry,coconut_oil,True,False
+45261,"Beneful Chopped Blends With Beef, Tomatoes, Carrots & Wild Rice Dog Food",dog food care,pets,dog_food,False,False
+45262,Artisan Naan,tortillas flat bread,bakery,naan,True,False
+45263,AcneDote Oil Control Lotion,skin care,personal care,lotion,False,False
+45264,Pearl Onions,frozen produce,frozen,onion,True,False
+45265,Raspberry on the Bottom Non-Fat Greek Yogurt,yogurt,dairy eggs,yogurt,True,False
+45266,Cranberry Pomegranate Juice Cocktail,juice nectars,beverages,cranberry_juice,True,False
+45267,Oaxacan Red Chile Mole Simmer Sauce,latino foods,international,hot_sauce,True,False
+45268,Chocolate Filled Brioche,bakery desserts,bakery,muffin,True,True
+45269,Hot Oats Apple Cinnamon,granola,breakfast,oats,True,False
+45270,Original Organic Acai Juice,refrigerated,beverages,juice_blend,True,False
+45271,"Ice Cream, Black Cherry Chocolate Chip",ice cream ice,frozen,ice_cream,True,False
+45272,Broccoli Souffle,frozen vegan vegetarian,frozen,frozen_vegetables,True,False
+45273,Flame Roasted Red Peppers Spreadable Cheese,fresh dips tapenades,deli,cream_cheese,True,False
+45274,Aspirin Regimen Pain Reliever,muscles joints pain relief,personal care,pain_reliever,False,False
+45275,Brie Pico,packaged cheese,dairy eggs,brie,True,False
+45276,Gluten Free Everything Flatbread,tortillas flat bread,bakery,flatbread,True,False
+45277,Cookies 'n Cream Ice Cream,ice cream ice,frozen,ice_cream,True,False
+45278,Shot Of Java Dairy Free Frozen Dessert,ice cream ice,frozen,ice_cream,True,False
+45279,Organic Fat Free Dha Omega 3 Milk,milk,dairy eggs,milk,True,False
+45280,Ultra Thin Size 2 Long Super with Flexi-Wings Pads,feminine care,personal care,feminine_care,False,False
+45281,Marsala,specialty wines champagnes,alcohol,wine,True,False
+45282,Gluten Free Tofu Scramble Breakfast Wrap,frozen breakfast,frozen,frozen_burrito,True,True
+45283,Jumbo White Onions,fresh vegetables,produce,onion,True,False
+45284,Virgin Avocado Oil,oils vinegars,pantry,avocado_oil,True,False
+45285,Choose-A-Sheet Mega Roll White Paper Towels,paper goods,household,paper_towels,False,False
+45286,In Louisiana Hot Sauce Sardines,canned meat seafood,canned goods,sardines,True,False
+45287,Kosher Dill Sandwich Slices,pickled goods olives,pantry,pickled_goods,True,False
+45288,Honey Smoked Turkey,lunch meat,deli,deli_meat,True,False
+45289,"4\"" Banana Cream Pie",bakery desserts,bakery,cookies,True,True
+45290,Thin Spaghetti Pasta,dry pasta,dry goods pasta,pasta,True,False
+45291,Chunky Cherry 100 Calorie Mixed Fruit,canned fruit applesauce,canned goods,canned_fruit,True,False
+45292,Futonaga Udon Noodles,asian foods,international,udon,True,False
+45293,Velvet Shredded Cheddar,packaged cheese,dairy eggs,cheddar,True,False
+45294,Sonoma Chardonnay,white wines,alcohol,wine,True,False
+45295,Cream of Buckwheat Cereal,hot cereal pancake mixes,breakfast,oats,True,False
+45296,Tostitos  Scoops,chips pretzels,snacks,tortilla_chips,True,False
+45297,"Cheese, Sausage & Pepperoni Mini Bagels",frozen appetizers sides,frozen,frozen_appetizer,True,True
+45298,Applesauce Cinnamon Jar,canned fruit applesauce,canned goods,applesauce,True,False
+45299,Thirst Quencher Powder Lemon Lime,cocoa drink mixes,beverages,sports_drink,True,False
+45300,Red Taco Sauce,preserved dips spreads,pantry,salsa,True,False
+45301,Fruit Adventure Mints,mint gum,snacks,candy,True,False
+45302,Mini Falafel With Tahini Sauce,prepared soups salads,deli,frozen_appetizer,True,True
+45303,Naturally Alkaline Spring Water,water seltzer sparkling water,beverages,water,True,False
+45304,Green Tomato Tomatillo,canned jarred vegetables,canned goods,canned_tomato,True,False
+45305,Taters Shredded Potatoes,frozen appetizers sides,frozen,hash_browns,True,False
+45306,Rooibos Chai Caffeine Free Herbal Tea,tea,beverages,tea,True,False
+45307,Rush Sports Drink,energy sports drinks,beverages,sports_drink,True,False
+45308,Ultimate CoQ10 Restoring Skin Therapy Lotion,body lotions soap,personal care,lotion,False,False
+45309,Purple Carrot & blueberry Puffs,baby food formula,babies,baby_food,False,False
+45310,Organic Peachy Green Tea,tea,beverages,tea,True,False
+45311,Protein Bar Maple Sea Salt,missing,missing,granola_bar,True,False
+45312,Clear Tone Pink Rosa Antiperspirant Deodorant,deodorants,personal care,deodorant,False,False
+45313,Buttermilk Mini Pancakes,frozen breakfast,frozen,frozen_pancakes,True,False
+45314,Asian Yogurt Green Tea Honey,yogurt,dairy eggs,yogurt,True,False
+45315,"Yogurt, Nonfat Russian",yogurt,dairy eggs,yogurt,True,False
+45316,"\""Mokaccino\"" Milk + Blue Bottle Coffee Chocolate",candy chocolate,snacks,candy,True,False
+45317,Moringa Superfood Dark Chocolate,energy granola bars,snacks,granola_bar,True,False
+45318,Onion Flavored Rings,chips pretzels,snacks,chips,True,False
+45319,Original Submarine Dressing,condiments,pantry,salad_dressing,True,False
+45320,Papaya Moisturizing Lotion,soap,personal care,lotion,False,False
+45321,Mini Corn Dogs,frozen appetizers sides,frozen,corn_dogs,True,False
+45322,Cherry Chocolate,granola,breakfast,granola,True,False
+45323,Park Hoppy Wheat Beer,beers coolers,alcohol,beer,True,False
+45324,"Soda, Vanilla Bean",soft drinks,beverages,soda,True,False
+45325,Oven Baked Original Potato Crisps,missing,missing,chips,True,False
+45326,Salame Sampler,lunch meat,deli,deli_meat,True,False
+45327,Beef Eye Of Round Steak,meat counter,meat seafood,steak,True,False
+45328,"Flavored Vodka, Peach",spirits,alcohol,spirits,True,False
+45329,Tabuleh,fresh dips tapenades,deli,deli_prepared,True,True
+45330,US Weekly,facial care,personal care,magazines,False,False
+45331,FreezerWare Small Containers & Lids,food storage,household,food_containers,False,False
+45332,Antioxidant Super Tea Pomegranate Honey Green Tea,tea,beverages,tea,True,False
+45333,Belgium Milk Chocolate Crispy Crepes,cookies cakes,snacks,cookies,True,False
+45334,Chili Lime Hot Sauce,condiments,pantry,hot_sauce,True,False
+45335,Double Rolls Unscented Bath Tissue,paper goods,household,toilet_paper,False,False
+45336,Flax Plus Vanilla Almond Granola,granola,breakfast,granola,True,False
+45337,Fresh Pomegranate Hibiscus Ginger Ale,refrigerated,beverages,soda,True,False
+45338,Sensitive Systems Formula Adult Dog Food,dog food care,pets,dog_food,False,False
+45339,Men's Refresh Dandruff Shampoo,hair care,personal care,shampoo,False,False
+45340,Fresh Garden Mint Sauce,other,other,fresh_herbs,True,False
+45341,Zero Calorie Fruitwater Fizzy Lemonade,water seltzer sparkling water,beverages,water,True,False
+45342,Sushi Rice,grains rice dried goods,dry goods pasta,white_rice,True,False
+45343,Unsweetened Honeydew Essence Water,water seltzer sparkling water,beverages,water,True,False
+45344,Pastel Baking Cups,baking supplies decor,pantry,baking_supplies,False,False
+45345,Spearmint + Lemongrass Hand Soap,soap,personal care,soap,False,False
+45346,"Food for Cats, Chicken & Herring Formula",cat food care,pets,cat_food,False,False
+45347,Special K Chocolatey Delight Pastry Crisps,breakfast bars pastries,breakfast,granola_bar,True,False
+45348,Chillable Red House Wine,red wines,alcohol,wine,True,False
+45349,Oxi  Cleanser,cleaning products,household,cleaning_other,False,False
+45350,Special K Heavenly Caramel Brownies,cereal,breakfast,granola_bar,True,False
+45351,Sesame Ginger Low Fat Dressing,salad dressing toppings,pantry,salad_dressing,True,False
+45352,Stainless Steel Grater,kitchen supplies,household,kitchen_supplies,False,False
+45353,Jalapeno Potato Crisps,chips pretzels,snacks,chips,True,False
+45354,"Burrito, Pinto Bean Rice & Cheese",frozen meals,frozen,frozen_burrito,True,True
+45355,Deep Clean Cream Cleanser,facial care,personal care,soap,False,False
+45356,Gluten Free Dream Cookies Chocolate Vanilla Creme,cookies cakes,snacks,cookies,True,False
+45357,White Hot® Safety Spoons,baby accessories,babies,baby_accessories,False,False
+45358,Tam Tams Everything Snack Crackers,kosher foods,international,crackers,True,False
+45359,100% Natural Sponge Cloths,cleaning products,household,cleaning_other,False,False
+45360,Every Day Original Fully Cooked Turkey Bacon,hot dogs bacon sausage,meat seafood,bacon,True,False
+45361,Sugar Cookie with Sea Salted Caramel  Ice Cream Sandwiches,ice cream ice,frozen,ice_cream,True,False
+45362,Fresh Cilantro Jalapeno Hummus Dip,preserved dips spreads,pantry,hummus,True,False
+45363,Stewed Mexican Recipe Sliced Tomatoes,canned jarred vegetables,canned goods,canned_tomato,True,False
+45364,California Veggie Burgers - 4 CT,frozen vegan vegetarian,frozen,plant_based_burger,True,False
+45365,Organic Peppermint,oils vinegars,pantry,mint_extract,True,False
+45366,Heart Health Nonfat Blackberry BioKefir,milk,dairy eggs,yogurt,True,False
+45367,North Pole Gingerbread House Kit,bakery desserts,bakery,cookies,True,True
+45368,Roman Raspberry Sorbetto,ice cream ice,frozen,sorbet,True,False
+45369,Cherry Pomegranate Drink Mix,cocoa drink mixes,beverages,sports_drink,True,False
+45370,Lactose Free Whole Milk,milk,dairy eggs,milk,True,False
+45371,Soft Taco Size Flour Tortillas 10 Count,tortillas flat bread,bakery,tortilla,True,False
+45372,Pop-Tarts Frosted Chocolate Fudge Toaster Pastries,breakfast bars pastries,breakfast,breakfast_bars,True,False
+45373,Coverstick,skin care,personal care,makeup,False,False
+45374,Newman O's Creme Filled Chocolate Cookies,cookies cakes,snacks,cookies,True,False
+45375,Swiss Thick Slices Cheese,packaged cheese,dairy eggs,swiss,True,False
+45376,"Toothpaste, Ayurvedic Herbal, Licorice",oral hygiene,personal care,toothpaste,False,False
+45377,Organic Blueberry Agave Pancake Syrup,honeys syrups nectars,pantry,maple_syrup,True,False
+45378,Miss Treated Conditioner,hair care,personal care,conditioner,False,False
+45379,"Simply Clean & Fresh HE Liquid Laundry Detergent, Refreshing Breeze Scent, 89 Loads",laundry,household,laundry_detergent,False,False
+45380,Original Salted Caramel Protein Energy Bar,energy granola bars,snacks,granola_bar,True,False
+45381,70% Dark Chocolate for Baking,baking supplies decor,pantry,baking_chocolate,True,False
+45382,Pork Baby Back Ribs,meat counter,meat seafood,ribs,True,False
+45383,Pop-Tarts Frosted Raspberry Toaster Pastries,breakfast bars pastries,breakfast,breakfast_bars,True,False
+45384,Foot Balm,other,other,lotion,False,False
+45385,Purina Beyond Natural Dog Food Grain Free Tuna & Egg Recipe,dog food care,pets,dog_food,False,False
+45386,Muddy Buddies Snack Mix Brownie Supreme,trail mix snack mix,snacks,trail_mix,True,False
+45387,Organics White Corn Tortilla Chips,chips pretzels,snacks,tortilla_chips,True,False
+45388,GoGurt Burstin' Melon Berry and Cool Cotton Candy Variety Pack Portable Low Fat Yogurt,yogurt,dairy eggs,yogurt,True,False
+45389,Original Roasted & Salted Sunflower Seeds,nuts seeds dried fruit,snacks,sunflower_seeds,True,False
+45390,Yellow Cling Peach Chunks,canned fruit applesauce,canned goods,canned_fruit,True,False
+45391,Smart Straw Lubricant,more household,household,cleaning_other,False,False
+45392,Unbleached 100% Recycled Bath Tissue (Double Rolls),paper goods,household,toilet_paper,False,False
+45393,Cinnamon Raisin Sandwich Bread,bread,bakery,white_bread,True,False
+45394,Kellogg's Special K Strawberry Fruit Crisps 100 Calorie,breakfast bars pastries,breakfast,granola_bar,True,False
+45395,Lower Fat Chicken Hardwood Smoked Sausage,hot dogs bacon sausage,meat seafood,sausage,True,False
+45396,Devil's Food Creme Cakes,cookies cakes,snacks,cookies,True,False
+45397,Breakfast Blend Handcrafted Coffee,coffee,beverages,coffee,True,False
+45398,Roasted Peppers,canned jarred vegetables,canned goods,bell_pepper,True,False
+45399,Special K  Chocolate Cherry Nut Protein Snack Bars,missing,missing,granola_bar,True,False
+45400,Multi-Surface Sunflower Scent Everyday Cleaner,cleaning products,household,all_purpose_cleaner,False,False
+45401,Organic Vietnamese 5% Oil Ground Cinnamon,spices seasonings,pantry,cinnamon,True,False
+45402,Liquid White Eggs,eggs,dairy eggs,egg_whites,True,False
+45403,Imported Liquor,spirits,alcohol,spirits,True,False
+45404,Peaches in Strawberry Gel,canned fruit applesauce,canned goods,canned_fruit,True,False
+45405,Medium Organic Salsa,fresh dips tapenades,deli,salsa,True,False
+45406,"Oikos Yogurt Drink, Berry",missing,missing,yogurt,True,False
+45407,Cooked Ham,lunch meat,deli,deli_meat,True,False
+45408,Di Giorno Half & Half Pizza Cheese And Pepperoni,frozen pizza,frozen,frozen_pizza,True,True
+45409,Cacao Mint Protein Bomb Energy Ball,energy granola bars,snacks,granola_bar,True,False
+45410,Summer Flowers Honey,honeys syrups nectars,pantry,honey,True,False
+45411,Bordeaux,red wines,alcohol,wine,True,False
+45412,Greek Whips 2% Vanilla Cream,missing,missing,yogurt,True,False
+45413,Hand Wash Lavander Flower & Mint,soap,personal care,soap,False,False
+45414,Indulgent Mint & Dark Chocolate Greek Yogurt,yogurt,dairy eggs,yogurt,True,False
+45415,Blackberry Pomegranate Juice Squeeze,soft drinks,beverages,juice_blend,True,False
+45416,Go Mango! Organic Dried Mango Slices,nuts seeds dried fruit,snacks,dried_fruit,True,False
+45417,Organic Creamy Sweet Potato Soup,soup broth bouillon,canned goods,soup,True,True
+45418,Star Wars Macaroni and Cheese,instant foods,dry goods pasta,mac_and_cheese,True,True
+45419,Click Super Unscented Tampons,feminine care,personal care,feminine_care,False,False
+45420,Activia Prune Lowfat Yogurt,yogurt,dairy eggs,yogurt,True,False
+45421,Fruit And Nut Medley Trail Mix,nuts seeds dried fruit,snacks,trail_mix,True,False
+45422,"Snacks Peas Please White Cheddar, Baked Organic Crunchy Pea Snack",missing,missing,chips,True,False
+45423,"Organic Toddler Formula, Milk Drink Powder, Vanilla, For Toddlers 1 Year & Up",baby food formula,babies,baby_formula,False,False
+45424,Goat Cheese Tomato Basil,specialty cheeses,dairy eggs,goat_cheese,True,False
+45425,Baby Nasal Relief Simply Saline Nasal Mist,cold flu allergy,personal care,pain_reliever,False,False
+45426,"Stage 2 Veggies On-The-Go Sqaush, Apple & Strawberry Puree",baby food formula,babies,baby_food,False,False
+45427,Deluxe Whole Lightly Salted Cashews,nuts seeds dried fruit,snacks,cashews,True,False
+45428,Fruit Chews Sweets + Sours,candy chocolate,snacks,candy,True,False
+45429,Beef & Cheese Mini Tacos,frozen appetizers sides,frozen,frozen_appetizer,True,True
+45430,Sweet'n Hot Honey Mustard,condiments,pantry,mustard,True,False
+45431,Organic Nuts & Coconut Milks Blend,soy lactosefree,dairy eggs,plant_milk,True,False
+45432,Brewmaster's Seasonal Sampler,beers coolers,alcohol,beer,True,False
+45433,Living Potted Rosemary,fresh herbs,produce,fresh_herbs,True,False
+45434,Cantina Chipotle Salsa,preserved dips spreads,pantry,salsa,True,False
+45435,Super Cleanse Tablets,other,other,vitamins,False,False
+45436,Gluten Free 4 Cheese Medley Pizza,frozen pizza,frozen,frozen_pizza,True,True
+45437,Sea Salt Made With Organic Grain Rice Chips,chips pretzels,snacks,chips,True,False
+45438,Select 2% Reduced Fat Milk,milk,dairy eggs,milk,True,False
+45439,Plenti Greek Apple Cinnamon Oatmeal with Yogurt,yogurt,dairy eggs,yogurt,True,False
+45440,On the Go Lemon Iced Tea Drink Mix,cocoa drink mixes,beverages,tea,True,False
+45441,Reese Puffs Peanut Butter Cereal,cereal,breakfast,cereal,True,False
+45442,Air Effects Gain Original Scent,air fresheners candles,household,air_freshener,False,False
+45443,Flip Chocolate Haze Craze Low-Fat Greek Yogurt,yogurt,dairy eggs,yogurt,True,False
+45444,Go Big Strawberry/Mixed Berry Low Fat Yogurt,missing,missing,yogurt,True,False
+45445,Organic Bagged Mini Dark Peanut Butter,candy chocolate,snacks,candy,True,False
+45446,"Yogurt, Organic, Lowfat, Strawberry",yogurt,dairy eggs,yogurt,True,False
+45447,Gluten Free Covered Pretzels Yogurt,chips pretzels,snacks,pretzels,True,False
+45448,Peanut Butter Protein Replenishment Macrobar,energy granola bars,snacks,granola_bar,True,False
+45449,Classics Prince Of Wales Tea,tea,beverages,tea,True,False
+45450,Crunchy English Toffee with Almonds in Dark Chocolate Bar,candy chocolate,snacks,candy,True,False
+45451,DreamSticks® Vegetable and Chicken,dog food care,pets,dog_food,False,False
+45452,Grabbers Banana Pear & Zucchini Fruit and Vegetable Squeezers,baby food formula,babies,baby_food,False,False
+45453,Tomato Medley,fresh vegetables,produce,tomato,True,False
+45454,Classic Soft Pretzels,frozen appetizers sides,frozen,pretzels,True,False
+45455,Powder Anti-Perspirant Deodorant,deodorants,personal care,deodorant,False,False
+45456,Calorie Smart Balanced Nutritional Drink Rich Chocolate,protein meal replacements,personal care,vitamins,False,False
+45457,Maximum Strength Extended-Release Bi-Layer Tablets Expectorant & Nasal Decongestant,cold flu allergy,personal care,pain_reliever,False,False
+45458,Nutritional Strawberry Shake,protein meal replacements,personal care,vitamins,False,False
+45459,Black Earl Grey Tea K-cups,tea,beverages,tea,True,False
+45460,"12\"" Cast Iron Skillet",kitchen supplies,household,kitchen_supplies,False,False
+45461,Sweet Drops Sweetener Vanilla Creme,baking ingredients,pantry,sweetener,True,False
+45462,Sugarfree Power Peppermints,oral hygiene,personal care,candy,True,False
+45463,Honey Roast Turkey Breast,lunch meat,deli,deli_meat,True,False
+45464,Candy Coated Milk Chocolates,candy chocolate,snacks,candy,True,False
+45465,Shredded Swiss Cheese,packaged cheese,dairy eggs,swiss,True,False
+45466,Gaba Calm Sublingual Orange Flavored Lozenges,vitamins supplements,personal care,vitamins,False,False
+45467,Calendula Long Lasting Deodorant,deodorants,personal care,deodorant,False,False
+45468,Lowfat Chocolate Milk,milk,dairy eggs,milk,True,False
+45469,Cranberry Lemon Lime Soda,soft drinks,beverages,soda,True,False
+45470,20 Watt Energy Smart Soft White Light Bulb,more household,household,light_bulbs,False,False
+45471,100% Whole Grain 3 Seed Bread,bread,bakery,wheat_bread,True,False
+45472,Brownie Mix,doughs gelatins bake mixes,pantry,brownie_mix,True,False
+45473,Hemp Seed Oil,vitamins supplements,personal care,vitamins,False,False
+45474,Sweet & Zesty BBQ Sauce,marinades meat preparation,pantry,bbq_sauce,True,False
+45475,Berry Sparkling Water,water seltzer sparkling water,beverages,water,True,False
+45476,T/Gel Original Formula Therapeutic Shampoo,hair care,personal care,shampoo,False,False
+45477,Anti-Gas Tablets,digestion,personal care,vitamins,False,False
+45478,Vanilla With Caramel Low Fat Ice Cream Cone,ice cream ice,frozen,ice_cream,True,False
+45479,Waffeletten Dark Fine European Biscuits,cookies cakes,snacks,cookies,True,False
+45480,Breakfast Blend Ground Coffee,coffee,beverages,coffee,True,False
+45481,Petit Creme Brie,specialty cheeses,dairy eggs,brie,True,False
+45482,Ultraclean Cool Mint Mouthwash,oral hygiene,personal care,mouthwash,False,False
+45483,Signature Classics Fettuccini Alfredo,frozen meals,frozen,frozen_meal,True,True
+45484,Toll House Double Chocolate Chip Frozen Cookie Dough,frozen breads doughs,frozen,cookie_dough,True,False
+45485,Pepperoni Chub,packaged meat,meat seafood,deli_meat,True,False
+45486,Goldfish Mix Honey Mustard + Pretzel Baked Snack Crackers,crackers,snacks,crackers,True,False
+45487,Colby Cheese Block,packaged cheese,dairy eggs,cheese_block,True,False
+45488,Classic Hot Dog Buns,buns rolls,bakery,hot_dog_bun,True,False
+45489,Doubleshot Mocha Fortified Energy Coffee Drink,coffee,beverages,coffee,True,False
+45490,Apple Kiwi Strawberry Bottled Juice Cocktail,juice nectars,beverages,juice_blend,True,False
+45491,Golden Butter Crackers,crackers,snacks,crackers,True,False
+45492,Cereal with Real Strawberries,cereal,breakfast,cereal,True,False
+45493,Dark Chocolate Ice Cream,ice cream ice,frozen,ice_cream,True,False
+45494,Original Raincoast Oat Crisp,crackers,snacks,crackers,True,False
+45495,Pear Kiwi & Kale Baby Food,baby food formula,babies,baby_food,False,False
+45496,Star Anise,spices seasonings,pantry,star_anise,True,False
+45497,Organic Sliced Mild Cheddar,yogurt,dairy eggs,cheddar,True,False
+45498,Original Lip Therapy,facial care,personal care,lip_balm,False,False
+45499,Grass Fed Beef Tallow,doughs gelatins bake mixes,pantry,butter,True,False
+45500,Shredded Medium Cheddar Cheese,packaged cheese,dairy eggs,cheddar,True,False
 45501,Milk Chocolate English Toffee Bars Snack Size,candy chocolate,snacks,candy,True,False
 45502,Organic Uncured Chicken Franks,hot dogs bacon sausage,meat seafood,hot_dog,True,False
 45503,Uzuri African Blend Deep Roast Coffee,coffee,beverages,coffee,True,False
