@@ -90,3 +90,6 @@ analysis/outputs/*.csv
 !analysis/classification/food_classification.csv
 !analysis/classification/methods_compared/*.csv
 !analysis/classification/archived/*.csv
+
+# EXCEPT: Sequence analysis summary (aggregate statistics only)
+!analysis/sequence_analysis/reorder_summary.csv
