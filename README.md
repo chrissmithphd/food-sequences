@@ -153,7 +153,7 @@ Each row is one product for one customer. ■ = purchased, · = not purchased. P
 
 These are patterns in grocery purchasing. Whether they generalize to meal subscriptions is an open question, but they suggest some possibilities:
 
-**1. Category loyalty is strong, product loyalty is weak:** Customers stick to ingredient families (DAIRY, PROTEIN) but rotate within them and switch products frequently. If this holds for meals, customers may prefer variety in *preparation* (different chicken recipes) while maintaining familiar core ingredients.
+**1. Repetition dominates, but there's more exploration than brand switching:** 64% of purchases are exact product repeats. Within the remaining 36%, novel ingredients (22%) happen more often than brand switching (14%). Most variety comes from trying genuinely new foods, not just changing brands of familiar ones.
 
 **2. Novelty happens more than brand switching:** 22% of purchases are genuinely new ingredients vs 14% that are familiar ingredients in different products. Customers try new foods more often than they just try different brands of known foods. This contradicts the "safe variety through brand switching" narrative.
 
