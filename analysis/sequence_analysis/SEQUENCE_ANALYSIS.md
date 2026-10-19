@@ -135,15 +135,17 @@ For orders 2+ (30.2M items across 197K customers):
 
 ### Interpretation
 
-**Most variety is brand switching, not dietary change:**
+**Novelty drives variety more than brand switching:**
 
-1. **78.3% of purchases are familiar ingredients** - either exact repeats (63.9%) or brand/variant switches (14.4%). True novelty is rare.
+1. **Novel ingredients (21.7%) > brand switches (14.4%)** - Customers try genuinely new foods more often than they just change brands of familiar ones. But repetition still dominates: 78.3% are familiar ingredients (63.9% exact + 14.4% switches).
 
-2. **Customer-weighted shows more exploration**: Individual customers try new ingredients at higher rates (34.0%) than volume suggests, but heavy buyers stick to familiar foods.
+2. **Individual customers explore more than volume suggests**: Customer-weighted shows 34.0% new ingredients vs 21.7% item-weighted. Heavy buyers stick to routines; lighter buyers explore more.
 
-3. **Brand switching is the "safe variety"**: 14.4% of items are the same ingredient in a different product - customers get variety without risk.
+3. **Understanding the weighting**:
+   - **Item-weighted**: Counts every purchase (heavy buyers with large orders dominate the average)
+   - **Customer-weighted**: Average each customer's percentages first, then average those (every customer has equal voice)
 
-**Meal subscription insight**: "New" meals that recombine familiar ingredients (chicken → chicken marsala vs chicken parmesan) may be more appealing than genuinely novel foods.
+The difference (34% vs 22% novel) reveals that people who buy less try more new things, while high-volume buyers are more repetitive.
 
 ---
 
@@ -238,11 +240,11 @@ Prepared dishes have lower immediate reorder rates (31% vs 40%) than base ingred
 
 **What this means**: Meal services should emphasize menu rotation and diverse presentations of familiar ingredients rather than introducing genuinely unfamiliar foods.
 
-### 4. Most "Variety" is Brand Switching, Not Novel Foods
+### 4. Novelty Drives Variety More Than Brand Switching
 
-78.3% of purchases are familiar ingredients - either exact repeats (63.9%) or brand/variant switches (14.4%). Only 21.7% are genuinely new ingredients.
+Novel ingredients (21.7%) are more common than brand switches (14.4%). Customers try genuinely new foods more often than they just change brands. However, 78.3% of purchases are still familiar ingredients (63.9% exact + 14.4% switches).
 
-**What this means**: Customers want variety in presentation, not dietary overhaul. New recipes with familiar ingredients > completely unfamiliar foods.
+**What this means**: Customers explore new foods regularly, not just different presentations. But repetition dominates volume.
 
 ### 5. Returns After Breaks are More Common Than Staples
 

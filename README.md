@@ -2,29 +2,13 @@
 
 **How do customers choose meals over time? What patterns of repetition, rotation, and novelty explain satisfaction and longevity?**
 
-This project grew out of an effort to understand meal subscriptions — specifically, how services might better understand customer preferences, fatigue, novelty-seeking, and retention. Before we can analyze meal sequences or predict satisfaction, we need to represent what meals contain in a way that supports comparison and similarity analysis.
+This project explores questions relevant to meal subscriptions: How do customers choose foods over time? Do they prefer repetition, rotation, or exploration? What drives variety-seeking versus loyalty? When do they return to familiar foods after trying something new?
 
-The work here uses grocery purchase data to build that foundation: classifying products into recipe-oriented ingredients, analyzing how people select and repeat foods, and preparing to study meal composition and variety.
+To study these questions at the *ingredient* level (not just product brands), we need to classify products into recipe-oriented categories. That classification enables analysis of whether customers are changing brands, substituting ingredients, or genuinely shifting food preferences.
 
----
+**The approach:** Use grocery purchase data (Instacart) as a proxy for meal selection patterns. Classify 49,688 products into recipe ingredients using LLM-based taxonomy. Analyze purchasing sequences at multiple levels: exact products, recipe ingredients, ingredient categories, and retail aisles.
 
-## The Meal Subscription Challenge
-
-Meal delivery services face a common challenge: **keeping customers engaged over time**.
-
-Customers subscribe for convenience, variety, and quality. But after weeks or months, they may experience:
-- **Meal fatigue:** ordering the same types of meals repeatedly
-- **Lack of novelty:** not discovering new favorites
-- **Insufficient variety:** menu doesn't match their preference for rotation vs. repetition
-
-Understanding which customers prefer **repetition** (ordering the same few meals reliably) vs. **exploration** (trying new meals frequently) vs. **rotation** (cycling through a stable set) could inform menu curation, recommendations, and retention strategies.
-
-But to study meal sequences, we need:
-1. A way to represent what meals contain (ingredients, flavors, cuisines)
-2. A taxonomy that preserves distinctions that matter to customers
-3. Methods for measuring meal similarity, variety, and novelty
-
-This project tackles the first two using grocery purchase data as a proxy for meal selection behavior.
+**The motivation:** Meal subscription services likely face questions about menu variety, customer retention, and balancing familiarity with novelty. Grocery data won't answer those questions directly, but it can reveal patterns in how people select and repeat foods over time.
 
 ---
 
@@ -112,17 +96,19 @@ Customers are remarkably consistent about food *categories* but highly variable 
 
 The gap between ingredient-level (49%) and product-level (45%) immediate reorders represents pure brand/variant switching while maintaining ingredient loyalty.
 
-### Most Variety is Brand Switching, Not Novel Foods
+### Variety Comes More from New Ingredients Than Brand Switching
 
-When we track what's actually *new* in each order:
+When we track what's actually *new* in each order (item-weighted across 30M purchases):
 
 ![Basket Composition](analysis/sequence_analysis/figures/basket_composition.png)
 
 - **64% Familiar products** (exact repeats)
-- **14% Familiar ingredients, new products** (brand switching)
-- **22% New ingredients** (genuinely novel foods)
+- **22% New ingredients** (genuinely novel foods - never purchased this ingredient before)
+- **14% Familiar ingredients, new products** (brand switching within known ingredients)
 
-**Key insight:** 78% of purchases are familiar ingredients. Customers want variety in *presentation*, not dietary overhaul. Different brands, sizes, and preparations of the same ingredient feel varied.
+**Key insight:** Novel ingredients (22%) drive more variety than brand switching (14%). Customers are trying genuinely new foods more often than they're just changing brands of familiar foods.
+
+**Item-weighted vs customer-weighted:** These percentages reflect total volume (item-weighted). If we weight each customer equally instead (customer-weighted), novel ingredients rise to 34% - individual customers explore more than heavy buyers do, but heavy buyers stick to familiar products and dominate the volume.
 
 ### Patterns: Returns Are More Common Than Staples
 
@@ -153,36 +139,29 @@ Prepared dishes have lower immediate reorder rates than staples like milk or egg
 
 ### Example Sequences
 
-Real customer purchasing patterns showing product repetition vs brand switching:
+Real customer purchasing patterns across order histories:
 
-![Product Repetition](analysis/sequence_analysis/figures/product_repetition_examples.png)
+![Pattern Gallery](analysis/sequence_analysis/figures/pattern_gallery.png)
 
-![Brand Switching](analysis/sequence_analysis/figures/brand_switching_examples.png)
+Each dot represents a purchase. The timeline shows all orders, with highlights where this product/ingredient was purchased. Patterns reveal staples (frequent consecutive purchases), rotation (consistent gaps), bursts (early clustering), and returns (long gaps then resumption).
 
 [Detailed sequence analysis with methodology, statistics, and meal subscription implications →](analysis/sequence_analysis/SEQUENCE_ANALYSIS.md)
 
 ---
 
-## Implications for Meal Subscriptions
+## What This Might Mean for Meal Subscriptions
 
-### Key Insights
+These are patterns in grocery purchasing. Whether they generalize to meal subscriptions is an open question, but they suggest some possibilities:
 
-**1. Variety doesn't require novelty:** Customers are loyal to ingredient categories but flexible on products. Rotating presentations of familiar ingredients (chicken parmesan → chicken marsala) feels varied without dietary risk.
+**1. Category loyalty is strong, product loyalty is weak:** Customers stick to ingredient families (DAIRY, PROTEIN) but rotate within them and switch products frequently. If this holds for meals, customers may prefer variety in *preparation* (different chicken recipes) while maintaining familiar core ingredients.
 
-**2. Brand switching is "safe variety":** 14% of purchases are familiar ingredients in different products. Customers want the same food prepared differently.
+**2. Novelty happens more than brand switching:** 22% of purchases are genuinely new ingredients vs 14% that are familiar ingredients in different products. Customers try new foods more often than they just try different brands of known foods. This contradicts the "safe variety through brand switching" narrative.
 
-**3. Temporary absences aren't churn:** 31% of ingredient patterns show long gaps followed by returns. Don't over-react to pauses in ordering.
+**3. Returns after breaks are common:** 31% of ingredient patterns show long gaps (5+ orders) followed by returns. Only 10% are persistent staples. If meal subscriptions see similar patterns, temporary pauses might not signal churn.
 
-**4. Staples are rare:** Only 10% of ingredients are persistent staples. Most customers explore, rotate, and return rather than settling into fixed routines.
+**4. Prepared foods show higher rotation:** Prepared dishes have lower immediate reordering (31% vs 40%) than base ingredients like milk. This could mean customers want more variety in "what's for dinner" than in pantry staples.
 
-**5. Prepared foods need more rotation:** Prepared dishes show lower immediate reordering (31% vs 40%) than base ingredients. Menu variety matters more for complete meals than pantry staples.
-
-### For Menu Design
-
-- **Emphasize familiar ingredients in new combinations** over genuinely exotic foods
-- **Plan for rotation:** Bring back popular dishes after gaps, don't force immediate repeats
-- **Maintain category consistency:** Always offer options in core categories customers prefer
-- **Accommodate irregular patterns:** Don't force fixed schedules or predictable ordering
+**5. Most patterns are irregular:** 50% don't fit clean categories (staples, rotation, bursts). Customers explore, pause, and return unpredictably rather than following simple routines.
 
 ### Current Foundation
 

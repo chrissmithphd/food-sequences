@@ -28,12 +28,16 @@ Customers analyzed: 197,435
 | Familiar ingredient, new product | 14.7% |
 | New ingredient (novel food) | 34.0% |
 
-**Why two denominators:** Item-weighting reflects overall volume. Customer-weighting gives equal voice to each customer regardless of order size.
+**Why two denominators:** 
+- **Item-weighted**: Counts every item purchase (heavy buyers with large orders dominate)
+- **Customer-weighted**: Average each customer's percentages first, then average those (every customer has equal voice regardless of order size)
+
+The difference reveals that heavy buyers stick to familiar products more (64% vs 51% familiar) while lighter buyers explore more (34% vs 22% new ingredients).
 
 ## Key Findings
 
-1. **Most variety is brand switching, not dietary change:** 78.3% of purchases are familiar ingredients (either exact repeats or switched products).
+1. **Novelty drives variety more than brand switching:** New ingredients (21.7%) are more common than brand switches (14.4%). Customers try genuinely new foods more often than they just change brands of familiar ingredients.
 
-2. **True novelty is limited:** Only 21.7% of items represent genuinely new ingredients never purchased before.
+2. **But most purchases are still familiar:** 78.3% of purchases are known ingredients (63.9% exact repeats + 14.4% brand switches). Exploration happens, but repetition dominates volume.
 
-3. **Meal subscription implications:** Customers may want variety in presentation (different recipes, preparations) while maintaining familiar core ingredients. "New" meals that combine familiar ingredients differently may be more appealing than meals with genuinely unfamiliar foods.
+3. **Individual customers explore more than volume suggests:** Customer-weighted shows 34% new ingredients vs 22% item-weighted. This means people who buy less explore more, while heavy buyers stick to routines.
