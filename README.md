@@ -92,80 +92,113 @@ We compared three approaches:
 
 ---
 
-## Purchase Patterns: Repetition, Rotation, and Return
+## Understanding Food Selection Patterns
 
-Using the Instacart dataset, we analyzed how customers select and reorder foods over time.
+Using the Instacart dataset with LLM-based ingredient classifications, we analyzed how customers select and reorder foods at multiple levels: exact products, recipe ingredients, ingredient categories, and retail aisles.
 
-### Delayed Reordering Is Common
+### Loyalty at the Category Level, Variety at the Product Level
 
-Using Instacart's `reordered` field and full-history repeat intervals, **reordering is frequent but mostly delayed:**
+Customers are remarkably consistent about food *categories* but highly variable about specific *products*:
 
-- Only **27.8%** of product reorders happen in the *immediately next* order
-- **66.3%** of reorders happen within 10 subsequent orders
-- **Delayed reorders (35.3%) outnumber immediate repeats (27.7%)** of basket contents
-- **Median gap between reorders:** 2 orders
+| Level | Immediate Reorders | Delayed Reorders | Median Gap |
+|-------|-------------------|------------------|------------|
+| **Category** (e.g., DAIRY) | 73% | 27% | 1 order |
+| **Ingredient** (e.g., milk) | 49% | 51% | 2 orders |
+| **Product** (e.g., Organic 2% Milk) | 45% | 55% | 2 orders |
 
-![When Customers Reorder](analysis/figures/reorder_curve_product_vs_aisle.png)
+![Reorder Comparison](analysis/sequence_analysis/figures/reorder_comparison.png)
 
-The **green line (aisle)** sits above the **blue line (exact product)**: customers return to the same *type* of food (85% within 10 orders) more often than the exact SKU (66%). That gap is brand/variant switching.
+**What this reveals:** Customers stick to food families (if they buy dairy, they keep buying dairy) but rotate within categories (milk → yogurt → cheese) and switch brands frequently.
 
-![Repeat Interval Distribution](analysis/figures/repeat_interval_distribution.png)
+The gap between ingredient-level (49%) and product-level (45%) immediate reorders represents pure brand/variant switching while maintaining ingredient loyalty.
 
-### Most Items Are Not Staples
+### Most Variety is Brand Switching, Not Novel Foods
 
-Of 4.5 million user-product sequences (users with 10+ orders who bought a product at least twice), only **6% are persistent staples** — items bought in more than half of orders with runs of 3+ consecutive purchases.
+When we track what's actually *new* in each order:
 
-The most common pattern is **return after a break (21%)**: customers stop buying something for 5+ orders, then resume. Another 15% show **replacement** by another product in the same aisle. Nearly half (45%) don't fit clean patterns.
+![Basket Composition](analysis/sequence_analysis/figures/basket_composition.png)
 
-![Pattern Prevalence](analysis/figures/pattern_prevalence.png)
+- **64% Familiar products** (exact repeats)
+- **14% Familiar ingredients, new products** (brand switching)
+- **22% New ingredients** (genuinely novel foods)
 
-**Pattern examples:**
+**Key insight:** 78% of purchases are familiar ingredients. Customers want variety in *presentation*, not dietary overhaul. Different brands, sizes, and preparations of the same ingredient feel varied.
 
-![Pattern Gallery](analysis/figures/pattern_gallery.png)
+### Patterns: Returns Are More Common Than Staples
 
-- **Persistent Staple:** Organic Bananas bought in 88% of orders
-- **Regular Rotation:** Sliced Black Olives appearing every few orders
-- **Burst then Absence:** Mediterranean Crusted Salmon bought 3 times, then never again
-- **Return after Break:** Chicken Nuggets purchased regularly, absent 10+ orders, then resumed
+Analyzing 3.4M user-ingredient pairs with 2+ purchases:
 
-### Prepared Foods Behave Like Everything Else
+![Pattern Prevalence](analysis/sequence_analysis/figures/pattern_prevalence.png)
 
-Prepared foods (frozen meals, deli items, frozen pizza — 5,839 products) show almost **identical patterns** to other groceries. Selection frequency, consecutive purchase runs, and gap lengths differ by less than 3%.
+| Pattern | Percentage |
+|---------|------------|
+| Irregular/Mixed | 50% |
+| **Return after Break** (gap 5+ orders, then resume) | **31%** |
+| Persistent Staple (bought in >50% of orders) | 10% |
+| Regular Rotation (consistent 2-5 order gaps) | 7% |
+| Burst then Absence | 2% |
 
-This suggests meal subscriptions may see similar behavior: some customers order the same meals reliably (staples), others rotate through a set, others try once and stop.
+**Key insight:** True staples are rare (10%). Returns after breaks (31%) are 3× more common. Customers don't settle into fixed routines — they explore, pause, and return.
+
+### Prepared Foods Show Higher Rotation
+
+![Prepared vs Base](analysis/sequence_analysis/figures/prepared_vs_base.png)
+
+| Group | Immediate Reorders | Delayed Reorders |
+|-------|-------------------|------------------|
+| **Prepared dishes** | 31% | 69% |
+| **Base ingredients** | 40% | 60% |
+
+Prepared dishes have lower immediate reorder rates than staples like milk or eggs. Customers want more variety in "what's for dinner" than in pantry staples.
+
+### Example Sequences
+
+Real customer purchasing patterns showing product repetition vs brand switching:
+
+![Product Repetition](analysis/sequence_analysis/figures/product_repetition_examples.png)
+
+![Brand Switching](analysis/sequence_analysis/figures/brand_switching_examples.png)
+
+[Detailed sequence analysis with methodology, statistics, and meal subscription implications →](analysis/sequence_analysis/SEQUENCE_ANALYSIS.md)
 
 ---
 
-## What This Enables for Meal Analysis
+## Implications for Meal Subscriptions
+
+### Key Insights
+
+**1. Variety doesn't require novelty:** Customers are loyal to ingredient categories but flexible on products. Rotating presentations of familiar ingredients (chicken parmesan → chicken marsala) feels varied without dietary risk.
+
+**2. Brand switching is "safe variety":** 14% of purchases are familiar ingredients in different products. Customers want the same food prepared differently.
+
+**3. Temporary absences aren't churn:** 31% of ingredient patterns show long gaps followed by returns. Don't over-react to pauses in ordering.
+
+**4. Staples are rare:** Only 10% of ingredients are persistent staples. Most customers explore, rotate, and return rather than settling into fixed routines.
+
+**5. Prepared foods need more rotation:** Prepared dishes show lower immediate reordering (31% vs 40%) than base ingredients. Menu variety matters more for complete meals than pantry staples.
+
+### For Menu Design
+
+- **Emphasize familiar ingredients in new combinations** over genuinely exotic foods
+- **Plan for rotation:** Bring back popular dishes after gaps, don't force immediate repeats
+- **Maintain category consistency:** Always offer options in core categories customers prefer
+- **Accommodate irregular patterns:** Don't force fixed schedules or predictable ordering
 
 ### Current Foundation
 
 ✓ **49,688 products classified** into recipe-oriented ingredients  
-✓ **Ingredient taxonomy** preserving cooking-relevant distinctions  
-✓ **Prepared dishes separated** from base ingredients  
-✓ **Purchase sequence patterns** identified (repeat, rotate, return)
+✓ **Multi-level sequence analysis** (product, ingredient, category, aisle)  
+✓ **Basket composition** (familiar vs novel breakdown)  
+✓ **Pattern classification** (staples, rotation, returns, irregular)  
+✓ **Prepared food comparison** (prepared dishes vs base ingredients)
 
-### Next Steps
+### Future Work
 
-**Recipe similarity:**
-- Compare ingredient lists to measure meal overlap
-- Identify substitution patterns (meals differing by one ingredient)
-- Cluster meals by ingredient composition
-
-**Meal variety analysis:**
-- Track ingredient composition changes across sequential orders
-- Measure novelty: how many new ingredients per order?
-- Quantify variety: ingredient diversity within a time window
-
-**Customer segmentation:**
-- Identify repetition-preferring vs. exploration-seeking customers
-- Predict churn risk from declining variety or stagnant selections
-- Recommend meals that balance familiarity and novelty
-
-**Limitations to address:**
-- Current data is product-level, not recipe-level
-- Need ingredient decomposition for complex prepared items
-- Taxonomy refinement (clarify category boundaries, validate singleton ingredients)
+- Ingredient co-occurrence analysis (which ingredients appear together?)
+- Recipe decomposition for prepared foods (what's actually *in* a frozen meal?)
+- Customer segmentation (repeaters vs rotators vs explorers)
+- Temporal patterns (weekly cycles, seasonality)
+- Integration with actual meal subscription data and retention outcomes
 
 ---
 

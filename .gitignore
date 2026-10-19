@@ -91,5 +91,8 @@ analysis/outputs/*.csv
 !analysis/classification/methods_compared/*.csv
 !analysis/classification/archived/*.csv
 
-# EXCEPT: Sequence analysis summary (aggregate statistics only)
+# EXCEPT: Sequence analysis summaries (aggregate statistics only, no user IDs)
 !analysis/sequence_analysis/reorder_summary.csv
+!analysis/sequence_analysis/basket_composition_summary.csv
+!analysis/sequence_analysis/pattern_distribution.csv
+!analysis/sequence_analysis/prepared_vs_base.csv
