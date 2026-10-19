@@ -99,3 +99,7 @@ analysis/outputs/*.csv
 !analysis/sequence_analysis/top_ingredients_by_volume.csv
 !analysis/sequence_analysis/ingredient_lens_summary.csv
 !analysis/sequence_analysis/reorder_probability_audit.csv
+!analysis/sequence_analysis/prepared_food_audit.csv
+!analysis/sequence_analysis/lift_decomposition.csv
+!analysis/sequence_analysis/novelty_weighting.csv
+!analysis/sequence_analysis/novelty_by_order_position.csv

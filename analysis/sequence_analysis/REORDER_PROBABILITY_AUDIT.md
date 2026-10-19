@@ -102,9 +102,37 @@ defensible reading: the coarser the bucket, the more "loyalty" is just arithmeti
   persistence, which is the quantity of interest here.
 - **Order number ≠ calendar time.** Addressed separately (Part 10).
 
+## Why does product-level lift exceed ingredient-level lift? (Part 1.2b)
+
+Product lift (1.29×) > ingredient lift (1.15×) is counter-intuitive — a finer grain
+showing a *stronger* signal. It would be wrong to read this as "customers prefer
+exact products over ingredients." We decomposed by whether a customer buys one or
+several products for a given ingredient:
+
+| Subset (share of events) | grain | P(next) | expected | lift |
+|---|---|--:|--:|--:|
+| **Single-product** (customer,ingredient) — 44.5% | product ≡ ingredient | 28.1% | 23.2% | **1.21×** |
+| **Multi-product** (customer,ingredient) — 55.5% | product | 29.2% | 21.5% | **1.36×** |
+| **Multi-product** — 55.5% | ingredient | 41.4% | 37.1% | **1.12×** |
+
+When a customer buys only one product for an ingredient (44.5% of events), the two
+grains are identical by construction and lift matches exactly (1.21× / 1.21×) — a
+clean sanity check.
+
+The entire product>ingredient gap lives in **multi-product** pairs. There, specific
+SKUs cluster in time far more than the ingredient does (1.36× vs 1.12×). The
+mechanism: customers **commit to one product for a run of orders, then switch to a
+different product of the same ingredient**. The ingredient stays present (so its
+persistence is only mildly above chance), while each individual product arrives in
+temporal bursts (high product lift).
+
+So the grain difference is **not** evidence of product-over-ingredient preference.
+It is a signature of *serial SKU commitment within a stable ingredient* — which is
+exactly the substitution behavior examined in the substitution report (Part 6).
+
 ## Follow-up questions
 
 - Which *specific* ingredients/products carry the high lift (true habits) versus
-  near-1 lift (bought by everyone, persist by chance)? (Part 1.2 extension.)
-- Does product-level lift concentrate in staples (milk, bananas) or also appear
-  in discretionary items? Ties into the substitution analysis (Part 6).
+  near-1 lift (bought by everyone, persist by chance)?
+- How often does the within-ingredient switch stick vs. revert to the original
+  product? (Substitution report, Part 6.)

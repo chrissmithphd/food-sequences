@@ -106,59 +106,47 @@ With that lens in place, we analyzed how customers select and reorder foods at m
 
 It is tempting to say customers are loyal to food *categories* and flexible about *products* — a broad category like DAIRY reappears in the next order 59% of the time, an exact product only 29%. But that comparison is a trap: a broad bucket recurs often simply because it holds hundreds of products. The honest question is **how much more** a value recurs than its sheer popularity would predict.
 
-We compute the true next-order repeat probability (deduplicated to one event per customer/order/value) and compare it to a baseline that shuffles each customer's basket order — preserving what and how much they buy, destroying *when*. The ratio is lift:
+We compute the true next-order repeat probability (deduplicated to one event per customer/order/value) and compare it to a baseline that shuffles each customer's basket order — preserving what and how much they buy, destroying *when*. The ratio is lift.
 
-| Level | P(next order) | Expected by chance | **Lift** |
-|-------|--------------:|-------------------:|---------:|
-| **Product** (e.g., Organic 2% Milk) | 28.7% | 22.2% | **1.29×** |
-| **Ingredient** (e.g., milk) | 34.8% | 30.2% | **1.15×** |
-| **Aisle** | 43.3% | 39.6% | **1.09×** |
-| **Category** (e.g., DAIRY) | 58.8% | 56.4% | **1.04×** |
+![Reorder lift by level](analysis/sequence_analysis/figures/reorder_lift_by_level.png)
 
-**What this reveals:** the behavioral signal runs *opposite* to the raw numbers. Exact-product repurchase is 29% above chance — a genuine habit. Category recurrence is barely 4% above chance — almost entirely a mathematical consequence of aggregating many products, not loyalty to the family. Customers return to *specific things they like*; the apparent "category stickiness" is mostly arithmetic.
+**The behavioral signal runs opposite to the raw numbers.** Exact-product repurchase is 29% above chance — a genuine habit. Category recurrence is barely 4% above chance — almost entirely a mathematical consequence of aggregating many products, not loyalty to the family. Customers return to *specific things they like*; the apparent "category stickiness" is mostly arithmetic.
 
-> This corrects an earlier version of this README, which reported an "immediate reorder" rate (73% category / 45% product) that conditioned on a repeat existing and double-counted multi-product orders at coarse levels. See [the full audit →](analysis/sequence_analysis/REORDER_PROBABILITY_AUDIT.md).
+And the finer grain showing the *stronger* signal isn't "people prefer SKUs over ingredients" — it's a substitution signature. The whole product>ingredient gap comes from cases where a customer buys several products for one ingredient: they commit to one SKU for a run of orders, then switch to another of the same ingredient. The ingredient persists smoothly; each product arrives in bursts.
+
+> This corrects an earlier version of this README, which reported an "immediate reorder" rate (73% category / 45% product) that conditioned on a repeat existing and double-counted multi-product orders at coarse levels. Full detail, including the single- vs multi-product decomposition, in [the reorder audit →](analysis/sequence_analysis/REORDER_PROBABILITY_AUDIT.md).
 
 ### Variety Comes More from New Ingredients Than Brand Switching
 
-When we track what's actually *new* in each order (item-weighted across 30M purchases):
+Pooled over all orders, about 64% of items are exact product repeats, 22% are genuinely new ingredients, and 14% are a familiar ingredient bought as a different product. But that pooled number hides a trap: because the dataset starts mid-history, early orders look artificially novel — we simply can't see what the customer bought before. Tracking novelty by order position exposes it:
 
-![Basket Composition](analysis/sequence_analysis/figures/basket_composition.png)
+![Novelty decay](analysis/sequence_analysis/figures/novelty_decay.png)
 
-- **64% Familiar products** (exact repeats)
-- **22% New ingredients** (genuinely novel foods - never purchased this ingredient before)
-- **14% Familiar ingredients, new products** (brand switching within known ingredients)
+**The "22% new ingredients" headline is mostly truncation.** A customer's first observed order is 100% "new" by construction; novelty then decays steeply and settles at a **~6% floor** by order 50+. The real, steady-state exploration rate — once a customer's repertoire is established — is about one item in fifteen, not one in five. Exploration doesn't just decline, it collapses toward a low, stable plateau. (See the [novelty audit](analysis/sequence_analysis/NOVELTY_AUDIT.md).)
 
-**Key insight:** Novel ingredients (22%) drive more variety than brand switching (14%). Customers are trying genuinely new foods more often than they're just changing brands of familiar foods.
+### Most "Patterns" Are Just Frequency and History Length
 
-**Item-weighted vs customer-weighted:** These percentages reflect total volume (item-weighted). If we weight each customer equally instead (customer-weighted), novel ingredients rise to 34% - individual customers explore more than heavy buyers do, but heavy buyers stick to familiar products and dominate the volume.
+An earlier version sorted customer-ingredient pairs into staples, rotation, returns, and bursts, and reported "returns after breaks are common (31%)." Auditing that against a baseline that scatters each customer's purchases at random — preserving how often they buy each thing, destroying *when* — most of the taxonomy dissolves:
 
-### Patterns: Returns Are More Common Than Staples
+| Pattern | Observed | Random baseline | Verdict |
+|---------|---------:|----------------:|---------|
+| Persistent staple | 9.2% | 9.2% | at chance |
+| Regular rotation | 4.6% | 5.5% | below chance |
+| Return after break | 58%* | 69% | **below chance** |
+| Burst then absence | 1.6% | 0.3% | **5× above chance** |
 
-Analyzing 3.4M user-ingredient pairs with 2+ purchases:
+Staples, rotation, and "returns" occur at or *below* their random rates — they mostly re-describe purchase frequency and how long we observed the customer (returns rise from 27% to 85% as history grows). Random shopping actually produces *more* "returns" than real customers do. The one pattern that survives is **burst-then-absence** — an ingredient tried a few times then dropped — which is 5× above chance and isn't a window artifact (99% of bursts end well before the customer's last order). That's genuine early abandonment. (*The 31%→58% shift is itself a threshold artifact; see the [pattern audit](analysis/sequence_analysis/PATTERN_ANALYSIS.md).)
 
-![Pattern Prevalence](analysis/sequence_analysis/figures/pattern_prevalence.png)
+### Prepared Foods Behave Like Everything Else
 
-| Pattern | Percentage |
-|---------|------------|
-| Irregular/Mixed | 50% |
-| **Return after Break** (gap 5+ orders, then resume) | **31%** |
-| Persistent Staple (bought in >50% of orders) | 10% |
-| Regular Rotation (consistent 2-5 order gaps) | 7% |
-| Burst then Absence | 2% |
+Comparing prepared dishes (the 8,019 products flagged `is_prepared_dish`) to base ingredients at the fair exact-product grain:
 
-**Key insight:** True staples are rare (10%). Returns after breaks (31%) are 3× more common. Customers don't settle into fixed routines — they explore, pause, and return.
+| Group | P(next order) | Lift above chance |
+|-------|--------------:|------------------:|
+| **Prepared dishes** | 27.9% | 1.39× |
+| **Base ingredients** | 28.9% | 1.28× |
 
-### Prepared Foods Show Higher Rotation
-
-![Prepared vs Base](analysis/sequence_analysis/figures/prepared_vs_base.png)
-
-| Group | Immediate Reorders | Delayed Reorders |
-|-------|-------------------|------------------|
-| **Prepared dishes** | 31% | 69% |
-| **Base ingredients** | 40% | 60% |
-
-Prepared dishes have lower immediate reorder rates than staples like milk or eggs. Customers want more variety in "what's for dinner" than in pantry staples.
+An earlier claim that prepared foods "rotate more" (31% vs 40%) was an artifact of the broken metric and of comparing the giant `frozen_meal` bucket at ingredient grain. Corrected, prepared dishes and staples reorder at essentially the same rate — and a specific frozen meal someone likes is held *slightly more* tightly than a brand of milk. No evidence of distinctive prepared-food fatigue. ([Prepared-food audit](analysis/sequence_analysis/PREPARED_FOODS.md).)
 
 ### Example Sequences
 
@@ -182,20 +170,20 @@ These are patterns in grocery purchasing. Whether they generalize to meal subscr
 
 **3. A third of "variety" is packaging, not diet:** The median customer touches 45 products but only 34 ingredients (1.33×). Product-level churn overstates real dietary variety — a correction only the ingredient lens can make.
 
-**4. Returns after breaks are common:** 31% of ingredient patterns show long gaps (5+ orders) followed by returns. Only 10% are persistent staples. If meal subscriptions see similar patterns, temporary pauses might not signal churn.
+**4. The real habit is serial SKU commitment:** When a customer buys several products for one ingredient, they tend to stick with one for a run of orders, then switch — not alternate randomly. If this holds for meals, the unit of loyalty is a specific dish, held until something displaces it, rather than a cuisine or category.
 
-**5. Prepared foods show higher rotation:** Prepared dishes have lower immediate reordering (31% vs 40%) than base ingredients like milk. This could mean customers want more variety in "what's for dinner" than in pantry staples.
+**5. Steady-state exploration is low (~6%), not 22%:** Once a customer's repertoire is established, only about one item in fifteen is a genuinely new ingredient. Most "novelty" in the raw numbers is an artifact of short observed histories. A meal service should expect established subscribers to explore sparingly.
 
-**6. Most patterns are irregular:** 50% don't fit clean categories (staples, rotation, bursts). Customers explore, pause, and return unpredictably rather than following simple routines.
+**6. "Returns" and "rotation" are mostly statistical mirages:** Against a frequency-preserving baseline, those patterns occur at or below chance. The pattern that's real is *early abandonment* — an ingredient tried a few times then dropped — which could be an early churn signal worth watching.
 
 ### Current Foundation
 
 ✓ **49,688 products classified** into recipe-oriented ingredients  
 ✓ **Ingredient-lens views** (purchase volume vs catalog count, brand multiplier)  
-✓ **Multi-level sequence analysis** (product, ingredient, category, aisle)  
-✓ **Basket composition** (familiar vs novel breakdown)  
-✓ **Pattern classification** (staples, rotation, returns, irregular)  
-✓ **Prepared food comparison** (prepared dishes vs base ingredients)
+✓ **Audited reorder probability** with shuffle-baseline lift (not the old interval metric)  
+✓ **Novelty audit** correcting for early-history truncation  
+✓ **Pattern audit** against a frequency-preserving null  
+✓ **Prepared vs base ingredients** at the fair product grain
 
 ### Future Work
 
