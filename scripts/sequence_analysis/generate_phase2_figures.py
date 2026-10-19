@@ -85,59 +85,146 @@ def fig1_pattern_prevalence(classified):
     save_fig(fig, "pattern_prevalence")
 
 
+def find_replacement_pairs(n_examples=5, seed=43):
+    """
+    Find real same-ingredient replacements: customer stops buying product A and
+    starts buying product B, both mapping to the same recipe ingredient.
+
+    Returns list of dicts with both products' order numbers and the user's total.
+    """
+    import polars as pl
+    from food_sequences.config import DATA_PROCESSED
+
+    clf_path = Path(__file__).parent.parent.parent / "analysis" / "classification" / "food_classification.csv"
+    clf = pl.read_csv(clf_path).select(["product_id", "product_name", "ingredient", "is_food"])
+
+    orders = (pl.read_parquet(DATA_PROCESSED / "orders.parquet")
+              .filter(pl.col("eval_set").is_in(["prior", "train"]))
+              .select(["order_id", "user_id", "order_number"]))
+    prior = pl.read_parquet(DATA_PROCESSED / "order_products_prior.parquet").select(["order_id", "product_id"])
+    train = pl.read_parquet(DATA_PROCESSED / "order_products_train.parquet").select(["order_id", "product_id"])
+    purch = (pl.concat([prior, train]).join(orders, on="order_id", how="inner")
+             .join(clf, on="product_id", how="left")
+             .filter(pl.col("is_food") == True))
+
+    users = purch.select("user_id").unique().to_series().sample(n=6000, seed=seed).to_list()
+    examples = []
+    seen_ingredients = set()
+
+    for user_id in users:
+        if len(examples) >= n_examples:
+            break
+        udf = purch.filter(pl.col("user_id") == user_id).sort("order_number")
+        if len(udf) < 15:
+            continue
+        max_order = udf.select(pl.col("order_number").max()).item()
+
+        ing_products = {}
+        for r in udf.iter_rows(named=True):
+            ing = r["ingredient"]
+            if ing is None:
+                continue
+            ing_products.setdefault(ing, {}).setdefault(
+                r["product_id"], {"name": r["product_name"], "orders": []})["orders"].append(r["order_number"])
+
+        for ing, prods in ing_products.items():
+            if ing in seen_ingredients or len(prods) < 2:
+                continue
+            ordered = sorted(prods.items(), key=lambda x: min(x[1]["orders"]))
+            for i in range(len(ordered) - 1):
+                _, a = ordered[i]
+                _, b = ordered[i + 1]
+                oa, ob = sorted(a["orders"]), sorted(b["orders"])
+                gap = min(ob) - max(oa)
+                # Clean handoff: dropped product lives in the early part of the
+                # timeline, replacement has a solid run, small switch gap.
+                if (min(ob) > max(oa) and len(oa) >= 3 and len(ob) >= 4
+                        and 1 <= gap <= 5 and max(oa) <= 0.55 * max_order):
+                    examples.append({
+                        "user_id": user_id, "ingredient": ing, "max_order": min(max_order, 50),
+                        "a_name": a["name"], "a_orders": oa,
+                        "b_name": b["name"], "b_orders": ob,
+                    })
+                    seen_ingredients.add(ing)
+                    break
+            if len(examples) >= n_examples:
+                break
+    return examples
+
+
 def fig2_pattern_gallery(classified):
     """
     Gallery showing 5 example sequences per pattern.
-    Order columns, food rows, colored marks.
+    First four panels: one product per row. Replacement panel: paired products
+    (dropped vs. its same-ingredient replacement) shown in two colors per row.
     """
     fig, axes = plt.subplots(5, 1, figsize=(14, 14), gridspec_kw={"hspace": 0.4})
 
-    patterns_to_show = [
+    single_patterns = [
         "persistent_staple", "regular_rotation", "burst_then_absence",
-        "return_after_break", "replacement_by_another",
+        "return_after_break",
     ]
 
-    for ax_idx, pattern in enumerate(patterns_to_show):
+    for ax_idx, pattern in enumerate(single_patterns):
         ax = axes[ax_idx]
         subset = classified[classified["pattern"] == pattern]
         if len(subset) == 0:
             ax.set_visible(False)
             continue
 
-        # Pick 5 diverse examples: sample from different total_orders ranges
         examples = subset.sample(n=min(5, len(subset)), random_state=42 + ax_idx)
-
         color = PATTERN_COLORS[pattern]
         max_orders = 0
 
         for row_idx, (_, row) in enumerate(examples.iterrows()):
             nums = set(sorted(row["order_numbers"]))
-            total = int(row["user_total_orders"])
-            display_total = min(total, 50)
+            display_total = min(int(row["user_total_orders"]), 50)
             max_orders = max(max_orders, display_total)
-
             for o in range(1, display_total + 1):
                 if o in nums:
                     ax.scatter(o, row_idx, color=color, s=30, zorder=3, marker="s")
                 else:
                     ax.scatter(o, row_idx, color="#E0E0E0", s=8, zorder=2, marker=".")
 
-        # Labels
-        y_labels = []
-        for _, row in examples.iterrows():
-            name = str(row["product_name"])[:30]
-            freq = row["selection_frequency"]
-            y_labels.append(f"{name} ({freq:.0%})")
-
+        y_labels = [f"{str(row['product_name'])[:30]} ({row['selection_frequency']:.0%})"
+                    for _, row in examples.iterrows()]
         ax.set_yticks(range(len(examples)))
         ax.set_yticklabels(y_labels, fontsize=8)
-        ax.set_title(f"{PATTERN_LABELS[pattern]}", fontweight="bold", fontsize=11,
-                      color=color)
+        ax.set_title(f"{PATTERN_LABELS[pattern]}", fontweight="bold", fontsize=11, color=color)
         ax.set_xlim(0, max_orders + 2)
-        ax.set_xlabel("Order Number" if ax_idx == 4 else "")
         ax.spines["top"].set_visible(False)
         ax.spines["right"].set_visible(False)
         ax.invert_yaxis()
+
+    # Replacement panel: show real same-ingredient pairs
+    ax = axes[4]
+    pairs = find_replacement_pairs(n_examples=5)
+    drop_color, rise_color = "#F44336", "#1565C0"
+    max_orders = 0
+    y_labels = []
+    for row_idx, ex in enumerate(pairs):
+        display_total = ex["max_order"]
+        max_orders = max(max_orders, display_total)
+        a_set, b_set = set(ex["a_orders"]), set(ex["b_orders"])
+        for o in range(1, display_total + 1):
+            if o in a_set:
+                ax.scatter(o, row_idx, color=drop_color, s=30, zorder=3, marker="s")
+            elif o in b_set:
+                ax.scatter(o, row_idx, color=rise_color, s=30, zorder=3, marker="s")
+            else:
+                ax.scatter(o, row_idx, color="#E0E0E0", s=8, zorder=2, marker=".")
+        y_labels.append(f"{ex['ingredient']}: {str(ex['a_name'])[:18]} → {str(ex['b_name'])[:18]}")
+
+    ax.set_yticks(range(len(pairs)))
+    ax.set_yticklabels(y_labels, fontsize=8)
+    ax.set_title(f"{PATTERN_LABELS['replacement_by_another']}  "
+                 "(red = dropped product, blue = its replacement — same ingredient)",
+                 fontweight="bold", fontsize=11, color=PATTERN_COLORS["replacement_by_another"])
+    ax.set_xlim(0, max_orders + 2)
+    ax.set_xlabel("Order Number")
+    ax.spines["top"].set_visible(False)
+    ax.spines["right"].set_visible(False)
+    ax.invert_yaxis()
 
     fig.suptitle("Gallery of Observed Purchase Patterns\n"
                  "Each row = one product for one customer. ■ = purchased, · = not purchased.",
