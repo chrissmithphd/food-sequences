@@ -2,15 +2,15 @@
 
 **How do customers choose meals over time? What patterns of repetition, rotation, and novelty explain satisfaction and longevity?**
 
-This project grew out of an effort to understand meal subscriptions — specifically, how services like CookUnity might better understand customer preferences, fatigue, novelty-seeking, and retention. Before we can analyze meal sequences or predict satisfaction, we need to represent what meals contain in a way that supports comparison and similarity analysis.
+This project grew out of an effort to understand meal subscriptions — specifically, how services might better understand customer preferences, fatigue, novelty-seeking, and retention. Before we can analyze meal sequences or predict satisfaction, we need to represent what meals contain in a way that supports comparison and similarity analysis.
 
 The work here uses grocery purchase data to build that foundation: classifying products into recipe-oriented ingredients, analyzing how people select and repeat foods, and preparing to study meal composition and variety.
 
 ---
 
-## The CookUnity Context
+## The Meal Subscription Challenge
 
-CookUnity and similar meal delivery services face a challenge: **keeping customers engaged over time**.
+Meal delivery services face a common challenge: **keeping customers engaged over time**.
 
 Customers subscribe for convenience, variety, and quality. But after weeks or months, they may experience:
 - **Meal fatigue:** ordering the same types of meals repeatedly
@@ -233,7 +233,7 @@ python scripts/classification/classify_fabric.py
 
 **Original research question:** How customers repeat, rotate, and return to foods in grocery purchases.
 
-**CookUnity-inspired extension:** Understanding meal composition and variety for subscription retention.
+**Extension for meal subscriptions:** Understanding meal composition and variety patterns that may inform retention strategies.
 
 **Dataset:** [Instacart Market Basket Analysis](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis) (2017)
 
