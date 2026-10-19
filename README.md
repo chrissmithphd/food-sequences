@@ -102,21 +102,22 @@ Someone cycling through four yogurt brands and three kinds of milk looks like an
 
 With that lens in place, we analyzed how customers select and reorder foods at multiple levels: exact products, recipe ingredients, ingredient categories, and retail aisles.
 
-### Loyalty at the Category Level, Variety at the Product Level
+### The Real Loyalty Is at the Product Level, Not the Category
 
-Customers are remarkably consistent about food *categories* but highly variable about specific *products*:
+It is tempting to say customers are loyal to food *categories* and flexible about *products* — a broad category like DAIRY reappears in the next order 59% of the time, an exact product only 29%. But that comparison is a trap: a broad bucket recurs often simply because it holds hundreds of products. The honest question is **how much more** a value recurs than its sheer popularity would predict.
 
-| Level | Immediate Reorders | Delayed Reorders | Median Gap |
-|-------|-------------------|------------------|------------|
-| **Category** (e.g., DAIRY) | 73% | 27% | 1 order |
-| **Ingredient** (e.g., milk) | 49% | 51% | 2 orders |
-| **Product** (e.g., Organic 2% Milk) | 45% | 55% | 2 orders |
+We compute the true next-order repeat probability (deduplicated to one event per customer/order/value) and compare it to a baseline that shuffles each customer's basket order — preserving what and how much they buy, destroying *when*. The ratio is lift:
 
-![Reorder Comparison](analysis/sequence_analysis/figures/reorder_comparison.png)
+| Level | P(next order) | Expected by chance | **Lift** |
+|-------|--------------:|-------------------:|---------:|
+| **Product** (e.g., Organic 2% Milk) | 28.7% | 22.2% | **1.29×** |
+| **Ingredient** (e.g., milk) | 34.8% | 30.2% | **1.15×** |
+| **Aisle** | 43.3% | 39.6% | **1.09×** |
+| **Category** (e.g., DAIRY) | 58.8% | 56.4% | **1.04×** |
 
-**What this reveals:** Customers stick to food families (if they buy dairy, they keep buying dairy) but rotate within categories (milk → yogurt → cheese) and switch brands frequently.
+**What this reveals:** the behavioral signal runs *opposite* to the raw numbers. Exact-product repurchase is 29% above chance — a genuine habit. Category recurrence is barely 4% above chance — almost entirely a mathematical consequence of aggregating many products, not loyalty to the family. Customers return to *specific things they like*; the apparent "category stickiness" is mostly arithmetic.
 
-The gap between ingredient-level (49%) and product-level (45%) immediate reorders represents pure brand/variant switching while maintaining ingredient loyalty.
+> This corrects an earlier version of this README, which reported an "immediate reorder" rate (73% category / 45% product) that conditioned on a repeat existing and double-counted multi-product orders at coarse levels. See [the full audit →](analysis/sequence_analysis/REORDER_PROBABILITY_AUDIT.md).
 
 ### Variety Comes More from New Ingredients Than Brand Switching
 

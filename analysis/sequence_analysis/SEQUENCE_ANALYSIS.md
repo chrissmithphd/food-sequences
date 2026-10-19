@@ -83,7 +83,16 @@ Memory-efficient implementation using polars:
 
 ## Multi-Level Reorder Analysis
 
-### Results
+> ⚠️ **Superseded — read [REORDER_PROBABILITY_AUDIT.md](REORDER_PROBABILITY_AUDIT.md).**
+> The "Immediate Reorders" figures below come from a metric that (a) conditioned
+> on a repeat existing rather than measuring next-order probability, and (b)
+> double-counted multi-product orders at coarse levels. The corrected analysis
+> finds next-order probabilities of 29% (product) → 59% (category), and — crucially
+> — that category persistence is only **1.04× above chance** while product
+> persistence is **1.29× above chance**. The "category loyalty" conclusion below
+> does **not** survive the correction. Numbers retained here only for provenance.
+
+### Results (superseded)
 
 | Level | Immediate Reorders | Delayed Reorders | Median Gap |
 |-------|-------------------|------------------|------------|

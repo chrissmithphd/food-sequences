@@ -98,3 +98,4 @@ analysis/outputs/*.csv
 !analysis/sequence_analysis/prepared_vs_base.csv
 !analysis/sequence_analysis/top_ingredients_by_volume.csv
 !analysis/sequence_analysis/ingredient_lens_summary.csv
+!analysis/sequence_analysis/reorder_probability_audit.csv
