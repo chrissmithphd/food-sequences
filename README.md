@@ -76,9 +76,31 @@ We compared three approaches:
 
 ---
 
+## The Ingredient Lens
+
+The whole point of this project is to stop analyzing *products* and start analyzing *ingredients*. A product ID tells you someone bought "Chobani Blueberry Greek 5.3oz." An ingredient tells you they bought yogurt. Recipes, meals, and preferences live at the ingredient level — so that is where we look. Two findings only become visible once you apply this lens.
+
+### What Customers Buy ≠ What the Catalog Stocks
+
+Counting *products*, the catalog is dominated by packaged goods — thousands of candy, vitamin, and cracker SKUs. That tells you how sellers stock shelves, not what people eat. Re-rank by **actual purchase volume at the ingredient level** and the picture inverts:
+
+![What customers buy by ingredient](analysis/sequence_analysis/figures/ingredients_by_volume.png)
+
+Sixteen of the top twenty ingredients by volume are fresh, whole foods — yogurt, bananas, milk, apples, avocados, onions, tomatoes, spinach. Only granola bars, crackers, ice cream, and cereal represent packaged goods. The catalog is wide on packaged variety; the cart is deep on fresh staples. **You cannot see this without collapsing brands into ingredients** — at the product level, no single banana SKU outranks the sea of snack brands.
+
+### A Third of "Variety" Is Just the Same Ingredient in a Different Package
+
+The median customer buys **45 distinct products but only 34 distinct ingredients** — a 1.33× brand multiplier. A quarter of their apparent product variety dissolves the moment you look at ingredients:
+
+![Brand multiplier distribution](analysis/sequence_analysis/figures/brand_multiplier.png)
+
+Someone cycling through four yogurt brands and three kinds of milk looks like an explorer in product data and a creature of habit in ingredient data. The ingredient lens separates genuine dietary variety from packaging churn — a distinction product IDs physically cannot express.
+
+---
+
 ## Understanding Food Selection Patterns
 
-Using the Instacart dataset with LLM-based ingredient classifications, we analyzed how customers select and reorder foods at multiple levels: exact products, recipe ingredients, ingredient categories, and retail aisles.
+With that lens in place, we analyzed how customers select and reorder foods at multiple levels: exact products, recipe ingredients, ingredient categories, and retail aisles.
 
 ### Loyalty at the Category Level, Variety at the Product Level
 
@@ -153,19 +175,22 @@ Each row is one product for one customer. ■ = purchased, · = not purchased. P
 
 These are patterns in grocery purchasing. Whether they generalize to meal subscriptions is an open question, but they suggest some possibilities:
 
-**1. Repetition dominates, but there's more exploration than brand switching:** 64% of purchases are exact product repeats. Within the remaining 36%, novel ingredients (22%) happen more often than brand switching (14%). Most variety comes from trying genuinely new foods, not just changing brands of familiar ones.
+**1. The ingredient lens changes the headline:** Ranked by catalog product count, snacks and packaged goods dominate; ranked by what customers actually buy, fresh produce and dairy dominate. A meal service reading product-level data would badly misread demand. Ingredient-level volume is the signal that matters.
 
-**2. Novelty happens more than brand switching:** 22% of purchases are genuinely new ingredients vs 14% that are familiar ingredients in different products. Customers try new foods more often than they just try different brands of known foods. This contradicts the "safe variety through brand switching" narrative.
+**2. Repetition dominates, but exploration beats brand-switching:** 64% of purchases are exact product repeats. Within the remaining 36%, genuinely new ingredients (22%) outnumber brand switches within a known ingredient (14%). When customers reach past their staples, they tend to try new foods rather than new brands of familiar foods.
 
-**3. Returns after breaks are common:** 31% of ingredient patterns show long gaps (5+ orders) followed by returns. Only 10% are persistent staples. If meal subscriptions see similar patterns, temporary pauses might not signal churn.
+**3. A third of "variety" is packaging, not diet:** The median customer touches 45 products but only 34 ingredients (1.33×). Product-level churn overstates real dietary variety — a correction only the ingredient lens can make.
 
-**4. Prepared foods show higher rotation:** Prepared dishes have lower immediate reordering (31% vs 40%) than base ingredients like milk. This could mean customers want more variety in "what's for dinner" than in pantry staples.
+**4. Returns after breaks are common:** 31% of ingredient patterns show long gaps (5+ orders) followed by returns. Only 10% are persistent staples. If meal subscriptions see similar patterns, temporary pauses might not signal churn.
 
-**5. Most patterns are irregular:** 50% don't fit clean categories (staples, rotation, bursts). Customers explore, pause, and return unpredictably rather than following simple routines.
+**5. Prepared foods show higher rotation:** Prepared dishes have lower immediate reordering (31% vs 40%) than base ingredients like milk. This could mean customers want more variety in "what's for dinner" than in pantry staples.
+
+**6. Most patterns are irregular:** 50% don't fit clean categories (staples, rotation, bursts). Customers explore, pause, and return unpredictably rather than following simple routines.
 
 ### Current Foundation
 
 ✓ **49,688 products classified** into recipe-oriented ingredients  
+✓ **Ingredient-lens views** (purchase volume vs catalog count, brand multiplier)  
 ✓ **Multi-level sequence analysis** (product, ingredient, category, aisle)  
 ✓ **Basket composition** (familiar vs novel breakdown)  
 ✓ **Pattern classification** (staples, rotation, returns, irregular)  
