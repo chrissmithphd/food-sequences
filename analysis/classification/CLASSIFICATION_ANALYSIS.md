@@ -97,11 +97,11 @@ The distribution is highly concentrated: the top 50 ingredients (8% of unique in
 
 ### Interpretation
 
-**Snacks dominate:** The top ingredients are dominated by shelf-stable snacks (candy, cookies, granola bars, crackers) and beverages (tea, juice, coffee). This reflects Instacart's grocery delivery model — customers order packaged goods more than fresh produce.
+**Snacks dominate the product catalog:** The top ingredients by product count are dominated by shelf-stable snacks (candy, cookies, granola bars, crackers) and beverages (tea, juice, coffee). This reflects Instacart's catalog structure — packaged goods have many brand variations (each brand of crackers is a separate product), while fresh produce tends to be consolidated (all organic carrots might be one product). Product counts tell us about catalog diversity, not purchasing volume.
 
-**Personal care and household items rank high:** Vitamins (#2), pain relievers (#9), lotion (#13), and cleaning supplies (#14) show that Instacart shoppers use the platform for non-food essentials, not just groceries.
+**Personal care and household items rank high:** Vitamins (#2), pain relievers (#9), lotion (#13), and cleaning supplies (#14) show that Instacart's catalog includes non-food essentials. High product counts reflect brand variety (many vitamin brands), not necessarily purchasing volume.
 
-**Prepared foods well-represented:** Frozen meals (#8) and ice cream (#11) suggest convenience foods are popular. The taxonomy separates these from base ingredients — a frozen meal is not categorized as "pasta" even if pasta is its main component.
+**Prepared foods well-represented:** Frozen meals (#8) and ice cream (#11) have many product variations in the catalog. The taxonomy separates these from base ingredients — a frozen meal is not categorized as "pasta" even if pasta is its main component.
 
 **Dairy staples:** Yogurt (#4) ranks high, representing 1,177 products. This includes all varieties (plain, flavored, Greek, Icelandic, etc.) collapsed into one ingredient as recipes would treat them.
 
@@ -142,19 +142,19 @@ The 446-ingredient taxonomy is organized into 24 high-level categories. Products
 
 ### Major Families of Ingredients
 
-**SNACKS (11.8%):** Cookies, crackers, candy, chips, granola bars, popcorn, trail mix. The largest category, reflecting packaged goods popularity in online grocery.
+**SNACKS (11.8%):** Cookies, crackers, candy, chips, granola bars, popcorn, trail mix. The largest category by product count, reflecting high brand variety in packaged snacks.
 
-**BEVERAGES (9.8%):** Coffee, tea, juice, soda, water, energy drinks. High rank suggests beverages are a major part of online grocery orders.
+**BEVERAGES (9.8%):** Coffee, tea, juice, soda, water, energy drinks. High product count reflects many brands and flavors.
 
-**DAIRY (7.3%):** Yogurt, milk, cheese, butter, cream. Core cooking and breakfast staples.
+**DAIRY (7.3%):** Yogurt, milk, cheese, butter, cream. Core cooking and breakfast staples with significant brand/variety diversity.
 
 **PREPARED DISHES & MEALS (6.4%):** Frozen meals, canned soup, meal kits, frozen pizza, boxed mac and cheese. These are complete dishes, not base ingredients.
 
-**PRODUCE (7%):** Split into vegetables (4.7%) and fruit (2.1%). Lower than expected for a grocery store, likely because fresh produce has shorter shelf life and lower representation in the Instacart dataset.
+**PRODUCE (7%):** Split into vegetables (4.7%) and fruit (2.1%). Lower product counts than snacks, but this reflects catalog structure: "organic carrots" is one product while crackers have 100+ brand variations. Product counts say nothing about volume sold.
 
-**PROTEIN (3.8% combined):** Meat (2.65%), seafood (0.52%), plant-based (0.35%). Meat proteins well-represented; seafood and plant-based proteins are smaller niches.
+**PROTEIN (3.8% combined):** Meat (2.65%), seafood (0.52%), plant-based (0.35%). Meat proteins have more product diversity; seafood and plant-based have fewer SKUs in the catalog.
 
-**NON-FOOD (16.3% combined):** Personal care (11.3%) + household (5.0%). Instacart is used for more than food — vitamins, pain relievers, cleaning supplies, diapers.
+**NON-FOOD (16.3% combined):** Personal care (11.3%) + household (5.0%). Instacart's catalog includes non-food essentials — vitamins, pain relievers, cleaning supplies, diapers.
 
 ### Potential Taxonomy Issues
 

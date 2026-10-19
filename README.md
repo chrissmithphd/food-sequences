@@ -141,9 +141,9 @@ Prepared dishes have lower immediate reorder rates than staples like milk or egg
 
 Real customer purchasing patterns across order histories:
 
-![Pattern Gallery](analysis/sequence_analysis/figures/pattern_gallery.png)
+![Pattern Gallery](analysis/figures/pattern_gallery.png)
 
-Each dot represents a purchase. The timeline shows all orders, with highlights where this product/ingredient was purchased. Patterns reveal staples (frequent consecutive purchases), rotation (consistent gaps), bursts (early clustering), and returns (long gaps then resumption).
+Each row is one product for one customer. ■ = purchased, · = not purchased. Patterns reveal staples (frequent consecutive purchases), rotation (consistent gaps), bursts (early clustering), returns (long gaps then resumption), and replacements (switching to different products).
 
 [Detailed sequence analysis with methodology, statistics, and meal subscription implications →](analysis/sequence_analysis/SEQUENCE_ANALYSIS.md)
 
