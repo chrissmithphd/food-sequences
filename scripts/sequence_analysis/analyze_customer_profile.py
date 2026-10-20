@@ -30,8 +30,8 @@ from analyze_reorder import iter_events
 from food_sequences.config import DATA_PROCESSED
 
 sns.set_theme(style="whitegrid", font_scale=1.1)
-SEQ = Path(__file__).parent.parent.parent / "analysis" / "sequence_analysis"
-FIG = SEQ / "figures"
+SEQ = Path(__file__).parent.parent.parent / "analysis" / "customers"
+FIG = Path(__file__).parent.parent.parent / "analysis" / "figures"
 FIG.mkdir(exist_ok=True, parents=True)
 BLUE, GREEN, ORANGE, RED = "#1565C0", "#2E7D32", "#EF6C00", "#C62828"
 

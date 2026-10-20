@@ -91,24 +91,10 @@ analysis/outputs/*.csv
 !analysis/classification/methods_compared/*.csv
 !analysis/classification/archived/*.csv
 
-# EXCEPT: Sequence analysis summaries (aggregate statistics only, no user IDs)
-!analysis/sequence_analysis/pattern_distribution.csv
-!analysis/sequence_analysis/top_ingredients_by_volume.csv
-!analysis/sequence_analysis/ingredient_lens_summary.csv
-!analysis/sequence_analysis/reorder_probability_audit.csv
-!analysis/sequence_analysis/prepared_food_audit.csv
-!analysis/sequence_analysis/lift_decomposition.csv
-!analysis/sequence_analysis/novelty_weighting.csv
-!analysis/sequence_analysis/novelty_by_order_position.csv
-!analysis/sequence_analysis/substitution_summary.csv
-!analysis/sequence_analysis/substitution_by_ingredient.csv
-!analysis/sequence_analysis/cooccurrence_pairs.csv
-!analysis/sequence_analysis/repertoire_growth.csv
-!analysis/sequence_analysis/order_diversity.csv
-!analysis/sequence_analysis/calendar_gap_summary.csv
-!analysis/sequence_analysis/customer_profile_summary.csv
-!analysis/sequence_analysis/customer_segments.csv
-!analysis/sequence_analysis/basket_contents_summary.csv
-!analysis/sequence_analysis/prepared_topics.csv
-!analysis/sequence_analysis/prepared_engagement.csv
-!analysis/sequence_analysis/prepared_engagement_percentiles.csv
+# EXCEPT: per-analysis aggregate summary CSVs (no user IDs). Parquet stays ignored.
+!analysis/ingredients/*.csv
+!analysis/basket/*.csv
+!analysis/sequences/*.csv
+!analysis/novelty/*.csv
+!analysis/prepared/*.csv
+!analysis/customers/*.csv

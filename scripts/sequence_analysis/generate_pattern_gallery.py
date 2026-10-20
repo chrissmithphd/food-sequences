@@ -20,7 +20,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 from food_sequences.config import DATA_PROCESSED
 
 SEQ_ANALYSIS_DIR = Path(__file__).parent.parent.parent / "analysis" / "sequence_analysis"
-FIGURES_DIR = SEQ_ANALYSIS_DIR / "figures"
+FIGURES_DIR = Path(__file__).parent.parent.parent / "analysis" / "figures"
 FIGURES_DIR.mkdir(exist_ok=True, parents=True)
 
 

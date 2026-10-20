@@ -25,8 +25,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from analyze_reorder import iter_events
 
 sns.set_theme(style="whitegrid", font_scale=1.1)
-SEQ = Path(__file__).parent.parent.parent / "analysis" / "sequence_analysis"
-FIG = SEQ / "figures"
+SEQ = Path(__file__).parent.parent.parent / "analysis" / "basket"
+FIG = Path(__file__).parent.parent.parent / "analysis" / "figures"
 FIG.mkdir(exist_ok=True, parents=True)
 GREEN, ORANGE, BLUE = "#2E7D32", "#EF6C00", "#1565C0"
 FRESH_DEPTS = {"produce", "meat seafood", "dairy eggs", "deli"}

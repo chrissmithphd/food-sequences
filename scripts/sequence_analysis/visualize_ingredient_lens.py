@@ -12,14 +12,39 @@ import seaborn as sns
 
 sns.set_theme(style="whitegrid", font_scale=1.1)
 
-SEQ = Path(__file__).parent.parent.parent / "analysis" / "sequence_analysis"
-FIG = SEQ / "figures"
+SEQ = Path(__file__).parent.parent.parent / "analysis" / "ingredients"
+FIG = Path(__file__).parent.parent.parent / "analysis" / "figures"
 FIG.mkdir(exist_ok=True, parents=True)
 
 # Fresh / whole foods vs packaged, for color coding
 FRESH = {"yogurt", "banana", "milk", "water", "apple", "plant_milk", "avocado",
          "onion", "strawberry", "tomato", "lettuce", "fresh_herbs", "carrot",
          "eggs", "spinach", "deli_meat"}
+
+
+def fig_catalog_vs_volume():
+    """Paired bars: purchase-volume share vs catalog product-count share, per
+    ingredient (top by volume). Shows the catalog-size bias — fresh staples are a
+    large share of purchases but a tiny share of the catalog, and vice versa."""
+    vol = pl.read_csv(SEQ / "top_ingredients_by_volume.csv").head(15)
+    names = vol["ingredient"].to_list()
+    v = vol["pct"].to_list()
+    c = vol["catalog_pct"].to_list()
+    y = np.arange(len(names))
+    fig, ax = plt.subplots(figsize=(10, 7.5))
+    ax.barh(y - 0.2, v, height=0.4, color="#2E7D32", edgecolor="white", label="Share of purchases (what customers buy)")
+    ax.barh(y + 0.2, c, height=0.4, color="#EF6C00", edgecolor="white", label="Share of catalog products (what's stocked)")
+    ax.set_yticks(y); ax.set_yticklabels(names); ax.invert_yaxis()
+    ax.set_xlabel("Share (%)")
+    ax.set_title("What Customers Buy vs. What the Catalog Stocks\n"
+                 "top ingredients by purchase volume", fontweight="bold")
+    ax.legend(loc="lower right", frameon=True)
+    ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
+    fig.tight_layout()
+    for ext in ("png", "svg"):
+        fig.savefig(FIG / f"catalog_vs_volume.{ext}", dpi=200, bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+    print("  Saved catalog_vs_volume.png")
 
 
 def fig_volume():
@@ -82,6 +107,7 @@ def fig_multiplier():
 def main():
     print("Generating ingredient-lens figures...")
     fig_volume()
+    fig_catalog_vs_volume()
     fig_multiplier()
     print(f"Saved to {FIG}")
 

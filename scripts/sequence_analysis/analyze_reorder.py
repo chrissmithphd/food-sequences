@@ -29,7 +29,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
 from food_sequences.config import DATA_PROCESSED
 
 ROOT = Path(__file__).parent.parent.parent
-SEQ = ROOT / "analysis" / "sequence_analysis"
+SEQ = ROOT / "analysis" / "sequences"
 SEQ.mkdir(exist_ok=True)
 CLF = ROOT / "analysis" / "classification"
 

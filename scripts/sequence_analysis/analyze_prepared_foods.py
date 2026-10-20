@@ -31,8 +31,8 @@ sys.path.insert(0, str(Path(__file__).parent))
 from analyze_reorder import analyze_level, iter_events
 
 sns.set_theme(style="whitegrid", font_scale=1.1)
-SEQ = Path(__file__).parent.parent.parent / "analysis" / "sequence_analysis"
-FIG = SEQ / "figures"
+SEQ = Path(__file__).parent.parent.parent / "analysis" / "prepared"
+FIG = Path(__file__).parent.parent.parent / "analysis" / "figures"
 FIG.mkdir(exist_ok=True, parents=True)
 BLUE, GREEN, ORANGE, RED, PURPLE = "#1565C0", "#2E7D32", "#EF6C00", "#C62828", "#6A1B9A"
 
@@ -42,6 +42,8 @@ def engagement_and_topics():
     topic_items = Counter()
     topic_customers = Counter()
     topic_repeat = Counter()   # customers who bought the type in >=2 orders
+    prod_items = Counter()     # product-level purchases (prepared only)
+    prod_customers = Counter() # product-level distinct buyers (users disjoint across bursts)
 
     for chunk in iter_events():
         prep = chunk.with_columns((pl.col("is_prepared_dish") == True).alias("p"))
@@ -67,12 +69,17 @@ def engagement_and_topics():
         for ing, rc in ut.filter(pl.col("norders") >= 2).group_by("ingredient").agg(pl.len().alias("rc")).iter_rows():
             topic_repeat[ing] += rc
 
+        for pid, c in p.group_by("product_id").agg(pl.len().alias("c")).iter_rows():
+            prod_items[pid] += c
+        for pid, nu in p.group_by("product_id").agg(pl.col("user_id").n_unique().alias("nu")).iter_rows():
+            prod_customers[pid] += nu
+
     u = pl.concat(per_user)
-    return u, topic_items, topic_customers, topic_repeat
+    return u, topic_items, topic_customers, topic_repeat, prod_items, prod_customers
 
 
 def main():
-    u, topic_items, topic_customers, topic_repeat = engagement_and_topics()
+    u, topic_items, topic_customers, topic_repeat, prod_items, prod_customers = engagement_and_topics()
     n = u.height
     buyers = u.filter(pl.col("prep_items") > 0)
     reach = buyers.height / n * 100
@@ -109,6 +116,22 @@ def main():
         print(f"  {r['dish_type']:18s} customers={r['customers']:>7,}  items={r['items']:>9,}  "
               f"repeat-buyers={r['repeat_buyer_pct']:4.0f}%")
 
+    # product-level dive: which specific products within each dish type
+    clf = pl.read_csv(Path(__file__).parent.parent.parent / "analysis" / "classification" / "food_classification.csv")
+    pname = dict(zip(clf["product_id"].to_list(), clf["product_name"].to_list()))
+    ping = dict(zip(clf["product_id"].to_list(), clf["ingredient"].to_list()))
+    prod_rows = [{"dish_type": ping.get(pid, "?"), "product_id": pid,
+                  "product_name": pname.get(pid, str(pid)),
+                  "purchases": prod_items[pid], "customers": prod_customers.get(pid, 0)}
+                 for pid in prod_items]
+    products = pl.DataFrame(prod_rows).sort("purchases", descending=True)
+    products.write_csv(SEQ / "prepared_products.csv")
+    print("\nMost-bought individual products within the big dish types:")
+    for dt in ["frozen_meal", "soup", "deli_prepared"]:
+        print(f"  {dt}:")
+        for r in products.filter(pl.col("dish_type") == dt).head(5).iter_rows(named=True):
+            print(f"    {r['customers']:>6,} buyers  {r['product_name'][:54]}")
+
     # reorder comparison (product grain), prepared vs base
     print("\nReorder (product grain):")
     reorder_rows = []
@@ -129,6 +152,7 @@ def main():
 
     _fig_topics(topics)
     _fig_engagement(b, reach)
+    _fig_products(products)
     print("\nSaved prepared_topics.csv, prepared_engagement*.csv, prepared_food_audit.csv, figures")
 
 
@@ -161,6 +185,28 @@ def _fig_topics(topics):
         fig.savefig(FIG / f"prepared_topics.{ext}", dpi=200, bbox_inches="tight", facecolor="white")
     plt.close(fig)
     print("  Saved prepared_topics.png")
+
+
+def _fig_products(products):
+    """Top individual products within the three largest meal dish types."""
+    dish = [("frozen_meal", GREEN), ("soup", ORANGE), ("deli_prepared", BLUE)]
+    fig, axes = plt.subplots(1, 3, figsize=(16, 6))
+    for ax, (dt, color) in zip(axes, dish):
+        top = products.filter(pl.col("dish_type") == dt).head(8)
+        names = [n[:34] for n in top["product_name"].to_list()][::-1]
+        cust = [c / 1000 for c in top["customers"].to_list()][::-1]
+        y = np.arange(len(names))
+        ax.barh(y, cust, color=color, edgecolor="white")
+        ax.set_yticks(y); ax.set_yticklabels(names, fontsize=8)
+        ax.set_xlabel("buyers (thousands)")
+        ax.set_title(dt, fontweight="bold")
+        ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
+    fig.suptitle("Most-Bought Products Within the Big Prepared Dish Types", fontweight="bold", fontsize=14)
+    fig.tight_layout()
+    for ext in ("png", "svg"):
+        fig.savefig(FIG / f"prepared_products.{ext}", dpi=200, bbox_inches="tight", facecolor="white")
+    plt.close(fig)
+    print("  Saved prepared_products.png")
 
 
 def _fig_engagement(b, reach):

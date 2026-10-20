@@ -10,13 +10,13 @@ import polars as pl
 import seaborn as sns
 
 sns.set_theme(style="whitegrid", font_scale=1.1)
-SEQ = Path(__file__).parent.parent.parent / "analysis" / "sequence_analysis"
-FIG = SEQ / "figures"
+ANALYSIS = Path(__file__).parent.parent.parent / "analysis"
+FIG = ANALYSIS / "figures"
 FIG.mkdir(exist_ok=True, parents=True)
 
 
 def fig_lift():
-    d = pl.read_csv(SEQ / "reorder_probability_audit.csv")
+    d = pl.read_csv(ANALYSIS / "sequences" / "reorder_probability_audit.csv")
     order = ["product_id", "ingredient", "aisle", "category"]
     labels = {"product_id": "Product\n(exact SKU)", "ingredient": "Ingredient",
               "aisle": "Aisle", "category": "Category"}
@@ -49,7 +49,7 @@ def fig_lift():
 
 
 def fig_novelty():
-    d = pl.read_csv(SEQ / "novelty_by_order_position.csv").filter(pl.col("order_number") <= 80)
+    d = pl.read_csv(ANALYSIS / "novelty" / "novelty_by_order_position.csv").filter(pl.col("order_number") <= 80)
     x = d["order_number"].to_list()
     newi = (d["new_ing"] * 100).to_list()
     famp = (d["fam_prod"] * 100).to_list()

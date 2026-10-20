@@ -1,78 +1,91 @@
 #!/usr/bin/env python3
 """
-The ingredient lens: two views that product-level analysis cannot produce.
+The ingredient lens: what an ingredient is, and why ingredient-level views differ
+from product-level ones.
 
-1. Top ingredients by ACTUAL PURCHASE VOLUME (not catalog product count).
-   Corrects the catalog-size bias: many cracker brands vs one carrot product.
+1. What is inside an ingredient — how many products collapse into each, and the
+   products customers actually buy for it (an ingredient is a recipe role, not a SKU).
+2. What customers buy vs. what the catalog stocks — purchase volume share per
+   ingredient alongside catalog product-count share (the catalog-size bias).
+3. Distinct products vs distinct ingredients per customer (brand multiplier).
 
-2. Distinct products vs distinct ingredients per customer. Shows how much
-   apparent "variety" is really brand multiplicity on a smaller ingredient set.
-
-Pure polars group-bys (no per-user Python loops) -> fast and memory-safe.
+Memory-safe: purchase volume and per-customer repertoire stream in user-id bursts.
 """
-
 import sys
 from pathlib import Path
+from collections import Counter
 import polars as pl
 
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
-from food_sequences.config import DATA_PROCESSED
+sys.path.insert(0, str(Path(__file__).parent))
+from analyze_reorder import iter_events
 
-SEQ = Path(__file__).parent.parent.parent / "analysis" / "sequence_analysis"
+SEQ = Path(__file__).parent.parent.parent / "analysis" / "ingredients"
 SEQ.mkdir(exist_ok=True)
+CLF = Path(__file__).parent.parent.parent / "analysis" / "classification" / "food_classification.csv"
+N_TOP = 25
+N_EXAMPLES = 5
 
 
 def main():
-    clf_path = Path(__file__).parent.parent.parent / "analysis" / "classification" / "food_classification.csv"
-    clf = pl.read_csv(clf_path).select(["product_id", "ingredient", "is_food"])
+    clf = pl.read_csv(CLF).filter(pl.col("is_food") == True)
+    # catalog: how many products per ingredient
+    catalog = (clf.filter(pl.col("ingredient").is_not_null() & (pl.col("ingredient") != "unclassified"))
+               .group_by("ingredient").agg(pl.len().alias("catalog_products")))
+    n_catalog = catalog.select(pl.col("catalog_products").sum()).item()
+    pname = dict(zip(clf["product_id"].to_list(), clf["product_name"].to_list()))
+    ping = dict(zip(clf["product_id"].to_list(), clf["ingredient"].to_list()))
 
-    orders = (pl.read_parquet(DATA_PROCESSED / "orders.parquet")
-              .filter(pl.col("eval_set").is_in(["prior", "train"]))
-              .select(["order_id", "user_id"]))
-    prior = pl.read_parquet(DATA_PROCESSED / "order_products_prior.parquet").select(["order_id", "product_id"])
-    train = pl.read_parquet(DATA_PROCESSED / "order_products_train.parquet").select(["order_id", "product_id"])
+    ing_vol, prod_vol, cust_parts, total = Counter(), Counter(), [], 0
+    for chunk in iter_events():
+        total += chunk.height
+        for ing, c in chunk.group_by("ingredient").agg(pl.len().alias("c")).iter_rows():
+            ing_vol[ing] += c
+        for pid, c in chunk.group_by("product_id").agg(pl.len().alias("c")).iter_rows():
+            prod_vol[pid] += c
+        cust_parts.append(chunk.group_by("user_id").agg(
+            pl.col("product_id").n_unique().alias("n_products"),
+            pl.col("ingredient").n_unique().alias("n_ingredients")))
 
-    purch = (pl.concat([prior, train])
-             .join(orders, on="order_id", how="inner")
-             .join(clf, on="product_id", how="left")
-             .filter((pl.col("is_food") == True) & pl.col("ingredient").is_not_null()
-                     & (pl.col("ingredient") != "unclassified")))
+    # View 1+2: volume + catalog share + examples for top ingredients by volume
+    cat_map = dict(zip(catalog["ingredient"], catalog["catalog_products"]))
+    # most-bought product per ingredient
+    top_prod_by_ing = {}
+    for pid, c in prod_vol.most_common():
+        ing = ping.get(pid)
+        if ing and len(top_prod_by_ing.setdefault(ing, [])) < N_EXAMPLES:
+            top_prod_by_ing[ing].append(pname.get(pid, str(pid)))
 
-    # --- View 1: top ingredients by purchase volume ---
-    vol = (purch.group_by("ingredient")
-           .agg(pl.len().alias("purchases"))
-           .sort("purchases", descending=True)
-           .head(20))
-    total_purchases = purch.height
-    vol = vol.with_columns((pl.col("purchases") / total_purchases * 100).alias("pct"))
+    rows = []
+    for ing, pur in ing_vol.most_common(N_TOP):
+        rows.append({"ingredient": ing, "purchases": pur,
+                     "pct": pur / total * 100,
+                     "catalog_products": cat_map.get(ing, 0),
+                     "catalog_pct": cat_map.get(ing, 0) / n_catalog * 100,
+                     "examples": " | ".join(top_prod_by_ing.get(ing, [])[:N_EXAMPLES])})
+    vol = pl.DataFrame(rows)
     vol.write_csv(SEQ / "top_ingredients_by_volume.csv")
-    print("Top 20 ingredients by ACTUAL PURCHASE VOLUME:")
+    print(f"Top {N_TOP} ingredients by purchase volume (vs catalog share):")
     for r in vol.iter_rows(named=True):
-        print(f"  {r['ingredient']:20s} {r['purchases']:>9,}  ({r['pct']:.1f}%)")
+        print(f"  {r['ingredient']:16s} vol {r['pct']:4.1f}%  catalog {r['catalog_pct']:4.1f}% "
+              f"({r['catalog_products']} products)  e.g. {r['examples'][:60]}")
 
-    # --- View 2: distinct products vs distinct ingredients per customer ---
-    per_cust = (purch.group_by("user_id")
-                .agg(pl.col("product_id").n_unique().alias("n_products"),
-                     pl.col("ingredient").n_unique().alias("n_ingredients")))
-    per_cust = per_cust.with_columns(
-        (pl.col("n_products") / pl.col("n_ingredients")).alias("brand_multiplier"))
+    # per-customer repertoire + brand multiplier
+    per_cust = (pl.concat(cust_parts).group_by("user_id").agg(
+        pl.col("n_products").sum(), pl.col("n_ingredients").sum()))  # users disjoint across bursts
+    per_cust = per_cust.with_columns((pl.col("n_products") / pl.col("n_ingredients")).alias("brand_multiplier"))
     per_cust.write_parquet(SEQ / "per_customer_repertoire.parquet")
+    med_prod = per_cust["n_products"].median()
+    med_ing = per_cust["n_ingredients"].median()
+    med_mult = per_cust["brand_multiplier"].median()
+    print(f"\nPer-customer repertoire (medians): products {med_prod:.0f}, ingredients {med_ing:.0f}, "
+          f"brand multiplier {med_mult:.2f}x")
 
-    med_prod = per_cust.select(pl.col("n_products").median()).item()
-    med_ing = per_cust.select(pl.col("n_ingredients").median()).item()
-    med_mult = per_cust.select(pl.col("brand_multiplier").median()).item()
-    print("\nPer-customer repertoire (medians):")
-    print(f"  distinct products:    {med_prod:.0f}")
-    print(f"  distinct ingredients: {med_ing:.0f}")
-    print(f"  brand multiplier (products/ingredients): {med_mult:.2f}x")
-
-    summary = pl.DataFrame({
-        "metric": ["median_distinct_products", "median_distinct_ingredients",
-                   "median_brand_multiplier", "total_food_purchases"],
-        "value": [med_prod, med_ing, round(med_mult, 3), total_purchases],
-    })
-    summary.write_csv(SEQ / "ingredient_lens_summary.csv")
-    print("\nSaved: top_ingredients_by_volume.csv, per_customer_repertoire.parquet, ingredient_lens_summary.csv")
+    pl.DataFrame({"metric": ["median_distinct_products", "median_distinct_ingredients",
+                             "median_brand_multiplier", "total_food_purchases",
+                             "distinct_ingredients_catalog", "distinct_products_catalog_food"],
+                  "value": [med_prod, med_ing, round(med_mult, 3), total,
+                            catalog.height, clf.height]}).write_csv(SEQ / "ingredient_lens_summary.csv")
+    print("\nSaved top_ingredients_by_volume.csv, per_customer_repertoire.parquet, ingredient_lens_summary.csv")
 
 
 if __name__ == "__main__":

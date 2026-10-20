@@ -1,0 +1,26 @@
+ingredient,purchases,pct,catalog_products,catalog_pct,examples
+yogurt,1518733,4.999676560513223,1177,3.294888304126309,Total 2% with Strawberry Lowfat Greek Strained Yogurt | Total 0% Nonfat Greek Yogurt | Total Greek Strained Yogurt | Total 0% Greek Yogurt | Total 2% All Natural Greek Strained Yogurt with Honey
+banana,920644,3.030764609300737,18,0.05038911595095459,Banana | Bag of Organic Bananas | Organic Banana | Bananas | Dark Chocolate Covered Banana
+milk,918258,3.0229098854793777,277,0.775432506578579,Organic Whole Milk | Organic Reduced Fat 2% Milk | Whole Milk | Organic Reduced Fat Milk | Fat Free Milk
+water,739105,2.433137321871669,382,1.0693690162924807,Spring Water | Sparkling Natural Mineral Water | Sparkling Lemon Water | Italian Sparkling Mineral Water | Pure Sparkling Water
+apple,687657,2.2637702509742277,131,0.3667207883097251,Organic Fuji Apple | Apple Honeycrisp Organic | Honeycrisp Apple | Organic Large Extra Fancy Fuji Apple | Organic Gala Apples
+plant_milk,554579,1.8256768156436076,308,0.8622137618274452,Organic Unsweetened Almond Milk | Unsweetened Almondmilk | Unsweetened Original Almond Breeze Almond Milk | Vanilla Almond Breeze Almond Milk | Unsweetened Vanilla Almond Milk
+avocado,553377,1.8217198256883376,17,0.047589720620346006,Organic Hass Avocado | Organic Avocado | Hass Avocados | Small Hass Avocado | Hass Avocado
+onion,488816,1.6091846938229644,68,0.19035888248138402,Organic Yellow Onion | Yellow Onions | Organic Red Onion | Red Onion | Green Onions
+strawberry,482702,1.5890573755313502,28,0.07838306925704047,Organic Strawberries | Strawberries | Organic Whole Strawberries | Whole Strawberries | Frozen Organic Strawberries
+granola_bar,465035,1.5308975240007736,939,2.6286322154414643,Gluten Free Dark Chocolate Chunk Chewy with a Crunch Granola Bars | Crunchy Oats 'n Honey Granola Bars | Oats & Honey Gluten Free Granola | ZBar Organic Chocolate Brownie Energy Snack | Apple Pie Fruit & Nut Food Bar
+crackers,454011,1.4946064613827243,835,2.3374951010581713,Crackers Cheddar Bunnies Snack Packs | Hint Of Sea Salt Almond Nut Thins | Cheddar Bunnies Snack Crackers | Organic Wheat-Free & Gluten-Free Original Crackers | Goldfish Cheddar Baked Snack Crackers
+tomato,430541,1.4173431051013732,98,0.2743407423996417,Organic Grape Tomatoes | Organic Tomato Cluster | Red Vine Tomato | Roma Tomato | Cherubs Heavenly Salad Tomatoes
+lettuce,420057,1.3828297251587363,213,0.5962712054196293,Organic Romaine Lettuce | Organic Spring Mix | Romaine Hearts | Organic Romaine | Organic Spring Mix Salad
+fresh_herbs,401054,1.3202717550089913,139,0.3891159509545938,Organic Cilantro | Organic Italian Parsley Bunch | Bunched Cilantro | Organic Basil | Organic Mint
+carrot,392749,1.292931653862139,71,0.19875706847320979,Organic Baby Carrots | Carrots | Organic Peeled Whole Baby Carrots | Organic Carrot Bunch | Organic Shredded Carrots
+ice_cream,383271,1.2617300309036965,830,2.3234981244051283,Chocolate Ice Cream | Vanilla Ice Cream | Chocolate Chip Cookie Dough Ice Cream | Mediterranean Mint Gelato | Sea Salt Caramel Gelato
+eggs,382014,1.257591980675931,97,0.2715413470690331,Large Alfresco Eggs | Organic Grade A Free Range Large Brown Eggs | Organic Large Brown Grade AA Cage Free Eggs | Organic Large Grade AA Brown Eggs | Organic Grade A Large Brown Eggs
+cereal,378457,1.2458823190528903,428,1.1981412015004758,Honey Nut Cheerios | Raisin Bran Cereal | Cereal | Organic Cinnamon Crunch Cereal | Cheerios Cereal
+spinach,377724,1.2434692794212654,43,0.1203739992161693,"Organic Baby Spinach | Baby Spinach | Organic Baby Spinach Salad | Spinach | Super Spinach! Baby Spinach, Baby Bok Choy, Sweet Baby Kale"
+deli_meat,374343,1.232339010670211,389,1.0889647836067409,Uncured Genoa Salami | Organic Roasted Turkey Breast | Oven Roasted Turkey Breast | Roasted Turkey Breast | Uncured Slow Cooked Ham
+wheat_bread,369914,1.2177587207268747,253,0.7082470186439729,100% Whole Wheat Bread | Organic Bread with 21 Whole Grains | Ezekiel 4:9 Bread Organic Sprouted Whole Grain | Gluten Free Whole Grain Bread | Organic Good Seed Bread
+cucumber,355840,1.1714270429976996,199,0.5570796707911091,Cucumber Kirby | Organic Cucumber | Organic Hothouse Cucumbers | European Cucumber | Baby Cucumbers
+soda,338627,1.1147617617164514,406,1.136554504227087,Soda | Fridge Pack Cola | Ginger Ale | Cola | Coke Classic
+frozen_meal,323757,1.0658096480435202,881,2.4662672862661665,Macaroni & Cheese | Pesto Tortellini  Bowls | Organic Beans & Rice Cheddar Cheese Burrito | Broccoli & Cheddar Bake Meal Bowl | Pad Thai
+candy,295771,0.9736795973877941,1212,3.3928671406976094,Almonds & Sea Salt in Dark Chocolate | Organic Dark Chocolate Peanut Butter Cups | Organic 85% Cacao Dark Chocolate Bar | Dark with 70% Cacao Content Organic Chocolate Bar | Milk Chocolate Almonds

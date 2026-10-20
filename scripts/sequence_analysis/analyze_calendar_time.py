@@ -20,7 +20,7 @@ from analyze_reorder import iter_events
 from food_sequences.config import DATA_PROCESSED
 
 ROOT = Path(__file__).parent.parent.parent
-SEQ = ROOT / "analysis" / "sequence_analysis"
+SEQ = ROOT / "analysis" / "sequences"
 
 
 def main():

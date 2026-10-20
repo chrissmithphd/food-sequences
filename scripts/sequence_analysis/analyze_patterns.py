@@ -26,7 +26,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from analyze_reorder import iter_events
 
 ROOT = Path(__file__).parent.parent.parent
-SEQ = ROOT / "analysis" / "sequence_analysis"
+SEQ = ROOT / "analysis" / "sequences"
 MIN_ORDERS = 10
 RETURN_T = 5
 
