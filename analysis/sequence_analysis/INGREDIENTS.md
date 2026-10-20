@@ -30,27 +30,13 @@ product variety is packaging churn, not dietary variety: someone cycling four yo
 brands and three milks looks like an explorer in product data and a creature of habit
 in ingredient data.
 
-## Category loyalty is mostly arithmetic
+## The grain also sharpens reorder analysis
 
-The grain you measure at changes the story. A broad category (DAIRY) recurs in the
-next order 59% of the time; an exact product only 29%. But against a chance baseline
-that preserves each customer's basket mix, the **lift** inverts:
-
-| Grain | P(next order) | Lift above chance |
-|-------|--------------:|------------------:|
-| Product | 28.7% | **1.29×** |
-| Ingredient | 34.8% | 1.15× |
-| Aisle | 43.3% | 1.09× |
-| Category | 58.8% | 1.04× |
-
-![Reorder lift by level](figures/reorder_lift_by_level.png)
-
-Category recurrence is only 4% above chance — a broad bucket refills often simply
-because it holds hundreds of products, not because customers are loyal to the family.
-The genuine habit is at the **product** grain (29% above chance). The coarser the
-bucket, the more "loyalty" is just aggregation. Full treatment, including why the
-finer product grain carries the stronger signal, in the
-[reorder-probability report](REORDER_PROBABILITY.md).
+Measuring reorder behavior at the right grain matters too. The genuine order-to-order
+habit sits at the **product** grain — a specific product is reordered ~29% above a
+customer's own basket-mix baseline. Broader grains (ingredient, category) have higher
+raw reorder rates but that is mostly aggregation; see the
+[reorder-probability report](REORDER_PROBABILITY.md) for the full treatment.
 
 ## Limitations
 
