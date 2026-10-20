@@ -31,8 +31,8 @@ CATS = ["familiar_product", "familiar_ingredient_new_prod", "new_ingredient"]
 def main():
     cls_count = defaultdict(int)          # item-weighted numerators
     total_items = 0
-    ow_sum = defaultdict(float); ow_cnt = defaultdict(int)   # order-weighted
-    cw_sum = defaultdict(float); cw_cnt = defaultdict(int)   # customer-weighted
+    ow_sum = defaultdict(float); n_comp_orders = [0]   # order-weighted (common denominator)
+    cw_sum = defaultdict(float); n_comp_customers = [0]   # customer-weighted (common denominator)
     pos = defaultdict(lambda: [0, 0, 0])  # order_number -> [n, n_new, n_famprod]
     rep_parts = []
 
@@ -59,22 +59,26 @@ def main():
         for cls, n in comp.group_by("cls").agg(pl.len().alias("n")).iter_rows():
             cls_count[cls] += n
 
+        # order-weighted: each (user,order)'s category shares (0 for absent) averaged
+        # over ALL comp orders -> shares sum to 100%. Denominator is the common order count.
         per_order = (comp.group_by(["user_id", "order_number", "cls"]).agg(pl.len().alias("n"))
                      .with_columns((pl.col("n") / pl.col("n").sum().over(["user_id", "order_number"])).alias("frac")))
-        for cls, s, c in per_order.group_by("cls").agg(pl.col("frac").sum().alias("s"), pl.len().alias("c")).iter_rows():
-            ow_sum[cls] += s; ow_cnt[cls] += c
+        n_comp_orders[0] += comp.select(["user_id", "order_number"]).unique().height
+        for cls, s in per_order.group_by("cls").agg(pl.col("frac").sum().alias("s")).iter_rows():
+            ow_sum[cls] += s
 
         per_cust = (comp.group_by(["user_id", "cls"]).agg(pl.len().alias("n"))
                     .with_columns((pl.col("n") / pl.col("n").sum().over("user_id")).alias("frac")))
-        for cls, s, c in per_cust.group_by("cls").agg(pl.col("frac").sum().alias("s"), pl.len().alias("c")).iter_rows():
-            cw_sum[cls] += s; cw_cnt[cls] += c
+        n_comp_customers[0] += comp.select("user_id").n_unique()
+        for cls, s in per_cust.group_by("cls").agg(pl.col("frac").sum().alias("s")).iter_rows():
+            cw_sum[cls] += s
 
         rep_parts.append(chunk.group_by("user_id").agg(
             pl.col("product_id").n_unique().alias("P"), pl.col("ingredient").n_unique().alias("I")))
 
     iw = {c: cls_count[c] / total_items * 100 for c in CATS}
-    ow = {c: (ow_sum[c] / ow_cnt[c] * 100 if ow_cnt[c] else 0) for c in CATS}
-    cw = {c: (cw_sum[c] / cw_cnt[c] * 100 if cw_cnt[c] else 0) for c in CATS}
+    ow = {c: (ow_sum[c] / n_comp_orders[0] * 100 if n_comp_orders[0] else 0) for c in CATS}
+    cw = {c: (cw_sum[c] / n_comp_customers[0] * 100 if n_comp_customers[0] else 0) for c in CATS}
     print("Item-weighted:     " + "  ".join(f"{c}={iw[c]:.1f}%" for c in CATS))
     print("Order-weighted:    " + "  ".join(f"{c}={ow[c]:.1f}%" for c in CATS))
     print("Customer-weighted: " + "  ".join(f"{c}={cw[c]:.1f}%" for c in CATS))
