@@ -136,49 +136,59 @@ def iter_events(chunk_users=CHUNK_USERS):
         start = end + 1
 
 
-def level_partials(d, level):
+def _user_final_order():
+    """Per-customer true final order N (max order_number over ALL prior/train orders,
+    not just food-containing orders). Orders are 1..N consecutive, so N is the number
+    of baskets the shuffle baseline arranges a value across. Tiny (~206k rows)."""
+    return (pl.scan_parquet(DATA_PROCESSED / "orders.parquet")
+            .filter(pl.col("eval_set").is_in(["prior", "train"]))
+            .group_by("user_id").agg(pl.col("order_number").max().alias("N"))
+            .collect())
+
+
+def level_partials(d, level, finals):
     """Summable component counts for one grain over a single user-id burst.
 
-    Each (user, value) is whole within a burst, so these partials sum across bursts
-    to the exact whole-dataset metrics (next-order probability, horizons, eventual,
-    old interval fraction, and the shuffle-baseline numerator/denominator).
+    Observed next-order reorder and its shuffle baseline are conditioned on the SAME
+    event set: an occurrence of a value at order n is "observable" iff n < N (the
+    customer's true final order). For each observable occurrence the baseline is the
+    exact shuffle expectation (b-1)/(N-1) for a value present in b of N baskets, so
+    observed and expected share one denominator (the observable-occurrence count).
+    Each (user, value) is whole within a burst, so partials sum across bursts exactly.
     """
     d = (d.select(["user_id", "order_number", level])
          .filter(pl.col(level).is_not_null() & (pl.col(level).cast(pl.Utf8) != "Unknown"))
-         .unique())
-    umax = d.group_by("user_id").agg(pl.col("order_number").max().alias("umax"))
-    d = d.join(umax, on="user_id", how="left").sort(["user_id", level, "order_number"])
-    d = d.with_columns(pl.col("order_number").shift(-1).over(["user_id", level]).alias("next_occ"))
-    d = d.with_columns((pl.col("next_occ") - pl.col("order_number")).alias("gap"))
+         .unique()
+         .join(finals, on="user_id", how="left"))
+    d = d.sort(["user_id", level, "order_number"])
+    d = d.with_columns((pl.col("order_number").shift(-1).over(["user_id", level])
+                        - pl.col("order_number")).alias("gap"))
 
-    observable = pl.col("order_number") < pl.col("umax")
-    p = {"n_obs": d.filter(observable).height,
-         "n_gap1": d.filter(observable & (pl.col("gap") == 1).fill_null(False)).height,
-         "n_eventual": d.filter(observable & pl.col("gap").is_not_null()).height,
-         "n_repeated": d.filter(pl.col("gap").is_not_null()).height,
-         "n_rep_gap1": d.filter(pl.col("gap").is_not_null() & (pl.col("gap") == 1)).height}
+    obs = pl.col("order_number") < pl.col("N")                 # has a next order (n+1 .. N)
+    p = {"n_obs": d.filter(obs).height,
+         "n_gap1": d.filter(obs & (pl.col("gap") == 1).fill_null(False)).height,
+         "n_eventual": d.filter(obs & pl.col("gap").is_not_null()).height}
     for k in K_HORIZONS:
-        obs_k = (pl.col("umax") - pl.col("order_number")) >= k
+        obs_k = (pl.col("N") - pl.col("order_number")) >= k
         p[f"n_obs_{k}"] = d.filter(obs_k).height
         p[f"n_within_{k}"] = d.filter(obs_k & pl.col("gap").is_not_null() & (pl.col("gap") <= k)).height
 
+    # matched baseline: sum over (user,value) of (observable occurrences)*(b-1)/(N-1)
     bc = (d.group_by(["user_id", level])
-          .agg(pl.len().alias("b"), pl.col("umax").first().alias("B"))
-          .filter(pl.col("B") > 1))
-    agg = bc.select((pl.col("b") * (pl.col("b") - 1) / pl.col("B")).sum().alias("num"),
-                    ((pl.col("B") - 1) * pl.col("b") / pl.col("B")).sum().alias("den"))
-    p["exp_num"] = agg["num"][0] or 0.0
-    p["exp_den"] = agg["den"][0] or 0.0
+          .agg(pl.len().alias("b"), pl.col("N").first(),
+               (pl.col("order_number") < pl.col("N")).sum().alias("n_obs_uv"))
+          .filter(pl.col("N") > 1))
+    p["exp_num"] = bc.select(
+        (pl.col("n_obs_uv") * (pl.col("b") - 1) / (pl.col("N") - 1)).sum()).item() or 0.0
     return p
 
 
 def finalize_level(level, p):
     n = p["n_obs"]
     p_next = p["n_gap1"] / n if n else float("nan")
-    expected = p["exp_num"] / p["exp_den"] if p["exp_den"] else float("nan")
+    expected = p["exp_num"] / n if n else float("nan")     # same denominator as observed
     res = {"level": level, "n_events_observable_next": int(n), "p_next": p_next,
            "p_eventual_given_observable": p["n_eventual"] / n if n else float("nan"),
-           "old_interval_immediate_frac": p["n_rep_gap1"] / p["n_repeated"] if p["n_repeated"] else float("nan"),
            "expected_p_next_shuffle": expected,
            "lift": p_next / expected if expected else float("nan")}
     for k in K_HORIZONS:
@@ -189,27 +199,45 @@ def finalize_level(level, p):
 def analyze_level(level, keep=None):
     """Whole-dataset metrics for one grain, computed in memory-safe user-id bursts.
 
-    keep: optional callable applied to each burst frame to restrict the rows
-    (e.g. a prepared-dish filter, or a per-(customer, ingredient) product-count
-    filter). None processes all events.
+    keep: optional callable applied to each burst frame to restrict the rows.
     """
+    finals = _user_final_order()
     acc = defaultdict(float)
     for chunk in iter_events():
         d = chunk if keep is None else keep(chunk)
-        for k, v in level_partials(d, level).items():
+        for k, v in level_partials(d, level, finals).items():
             acc[k] += v
     return finalize_level(level, acc)
 
 
+def _validate():
+    """Brute-force check: the matched shuffle baseline (b-1)/(N-1) equals the exact
+    mean next-order reorder rate over all permutations of a customer's N baskets."""
+    from itertools import permutations
+    for N, occ in [(4, {1, 2, 4}), (5, {1, 3}), (3, {1, 2, 3})]:
+        b = len(occ)
+        num = den = 0
+        for perm in permutations(range(1, N + 1)):  # perm[i] = value's basket at slot i
+            has = [perm[i] in occ for i in range(N)]
+            for i in range(N - 1):
+                if has[i]:
+                    den += 1
+                    num += has[i + 1]
+        brute = num / den
+        formula = (b - 1) / (N - 1)
+        assert abs(brute - formula) < 1e-9, f"N={N} occ={occ}: brute {brute} vs formula {formula}"
+    return True
+
+
 def main():
+    assert _validate(), "shuffle baseline failed brute-force validation"
     rows = []
     for lvl in LEVELS:
         print(f"=== {lvl} ===")
         r = analyze_level(lvl)
         rows.append(r)
         print(f"  events w/ observable next : {r['n_events_observable_next']:,}")
-        print(f"  P(next order)             : {r['p_next']*100:5.1f}%   "
-              f"[old interval metric: {r['old_interval_immediate_frac']*100:5.1f}%]")
+        print(f"  P(next order)             : {r['p_next']*100:5.1f}%")
         print(f"  P(within 2/3/5/10)        : "
               + " ".join(f"{r[f'p_within_{k}']*100:4.1f}%" for k in K_HORIZONS))
         print(f"  P(eventual|observable)    : {r['p_eventual_given_observable']*100:5.1f}%")
