@@ -128,6 +128,13 @@ that start partway are later discoveries, and rows that stop are items not seen 
 in the window. These are illustrations, not a sample the quantitative results depend
 on.
 
+The same view, grouped by the named pattern each product-customer sequence resembles
+(■ = purchased), gives a feel for what "staple," "rotation," "burst," "return," and
+"replacement" look like as sequences — bearing in mind §3's caveat that most of these
+labels mostly track purchase frequency:
+
+![Pattern examples](../figures/pattern_gallery.png)
+
 ## 6. An order-gap is not a clock
 
 Cadence varies widely, so order-gaps don't map to fixed time:
