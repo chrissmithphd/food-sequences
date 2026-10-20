@@ -16,11 +16,11 @@ absence** (≥70% of purchases in the first 30% of history) → **regular rotati
 
 ## Findings
 
-### 1. 40% of pairs are silently excluded
-Among ≥10-order users, **2.26M (40%) of (customer, ingredient) pairs are bought only
+### 1. 42% of pairs are silently excluded
+Among ≥10-order users, **2.36M (41.6%) of (customer, ingredient) pairs are bought only
 once** and are dropped before classification. Reporting pattern shares among the
 remaining repeat pairs overstates how "patterned" behavior is. As a share of *all*
-pairs, even the largest pattern (returns) is ~35%, not ~58%.
+pairs, even the largest pattern (returns) is ~34%, not ~58%.
 
 ### 2. The headline figures are threshold-fragile
 "Return after break" prevalence among repeat pairs, by gap threshold:
