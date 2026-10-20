@@ -66,17 +66,22 @@ premise.
 
 ### [Sequences →](analysis/sequences/)
 
-![Reorder lift by grain](analysis/figures/reorder_lift_by_level.png)
+![Ingredient transition matrix](analysis/figures/ingredient_transition_matrix.png)
 
-- **Reordering is a real habit at the specific-product level** — a product is
-  reordered ~29% above a customer's own frequency baseline.
-- **Within an ingredient, commitment is mild; variety-seeking is category-specific**
-  (yogurt alternates *below* chance; staples stay because there's one product).
-- **Most named "patterns" are frequency in disguise** — staples, rotation, and
-  "returns" sit at or below a frequency-preserving null; the one real signal is early
-  abandonment (burst-then-absence, 5× above chance).
-- **An order-gap is not a clock** — a 5-order gap spans 15–88 days depending on the
-  customer (median cadence 13 days).
+- **Specific products are concentrated in time** — a product recurs in the next order
+  ~29% more often than a reshuffle of the same customer's baskets (lift 1.28×); the
+  excess shrinks to ~4% at the category grain, where recurrence is mostly arithmetic.
+- **Within an ingredient, order-to-order product changes are mild; most "variety" is
+  simultaneous** — buying several products of one ingredient in a single order is
+  common in flavored categories (yogurt 37% of its orders, ice cream 26%) and rare for
+  staples (~0.5%). Across orders the same product mostly recurs (stay lift 1.0–1.08).
+- **Named "patterns" mostly re-describe frequency** — staples and "returns" occur at
+  or below a frequency-preserving null. Burst-then-absence is above chance (an
+  ingredient bought early then absent in the observed window), but with no post-window
+  data this is not evidence of abandonment or churn.
+- **Ingredient transitions** show self-recurrence on the diagonal (banana 60%) and
+  kitchen clusters off it (onion↔herbs, lettuce↔tomato). **An order-gap is not a
+  clock** — a 5-order gap spans 15–88 days (median cadence 13 days).
 
 ### [Novelty & exploration →](analysis/novelty/)
 
@@ -98,8 +103,8 @@ premise.
   volume.
 - Frozen dominates (frozen_meal → 54k customers; then pizza, soup, mac & cheese). Down
   to the product: top frozen_meals are Mac & Cheese and Pad Thai; top soups are
-  chicken noodle and creamy tomato. Buyers lock onto specific dishes but rotate across
-  the menu within a type.
+  chicken noodle and creamy tomato. Prepared dishes recur slightly less regularly than
+  staples (26.9% vs 28.7% next-order) but more relative to their own frequency.
 
 ### [Customers →](analysis/customers/)
 
@@ -119,12 +124,12 @@ premise.
 Grocery patterns, offered as hypotheses rather than demonstrated subscription results:
 
 1. Read demand at the ingredient level — product data overweights packaged variety.
-2. Reordering is a real habit at the specific-product level (~29% above a baseline).
+2. Specific products are concentrated in time — reordered ~29% above a frequency baseline; broader grains add little beyond arithmetic.
 3. A third of apparent variety is packaging, not diet.
 4. Within-ingredient commitment is mild; variety-seeking concentrates in flavored/discretionary categories.
 5. Exploration is low (~6%) and falling; the repertoire grows slowly.
 6. Customer "type" is mostly purchase volume — product-switching is the exception worth segmenting on.
-7. "Returns" and "rotation" track frequency; the real signal is early abandonment, a possible churn cue.
+7. "Returns" and "rotation" mostly track frequency; burst-then-absence stands out but, without post-window data, isn't evidence of churn.
 8. Order-gaps are not calendar time.
 9. Prepared-meal demand is a minority, occasional behavior (60% reach, ~4% of items).
 

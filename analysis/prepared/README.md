@@ -80,25 +80,25 @@ customers actually buy within the three largest types:
 
 | Group | P(next order) | Lift above chance |
 |-------|--------------:|------------------:|
-| Prepared dishes | 29.8% | **1.44×** |
-| Base ingredients | 28.7% | 1.29× |
+| Prepared dishes | 26.9% | **1.38×** |
+| Base ingredients | 28.7% | 1.28× |
 
-A specific prepared dish is reordered slightly *more* than a base-ingredient product,
-and more above chance — when someone finds a frozen meal they like, they re-buy that
-exact SKU in runs at least as tightly as a staple. But *across* products within a dish
-type, buyers **rotate** rather than commit (within-type stay probability 49.5%, lift
-1.00 — chance; vs 63.6% for base ingredients). So prepared-dish behavior is: lock onto
-specific dishes you like, while rotating through the menu — both repetition and
-variety at once ([substitution detail](../sequences/)).
+A specific prepared dish recurs in the next order slightly *less* often than a
+base-ingredient product on the raw rate (26.9% vs 28.7%), but more relative to its own
+frequency baseline (1.38× vs 1.28×) — i.e. prepared dishes are bought less regularly
+but, when a customer does repeat one, it is somewhat more concentrated in time. Within
+a dish type, buyers also buy several products at once more than with staples
+(simultaneous coexistence 16% of prepared-dish orders vs 8% for base ingredients; see
+[substitution](../sequences/)). These are descriptions of timing, not of preference.
 
 ## What it might mean for a meal service
 
 - Prepared-meal demand is a **minority, occasional** grocery behavior (60% reach, ~4%
   of items for the median buyer). A prepared-only service is serving the heavy tail,
   not the median grocery shopper.
-- Stickiness is at the **specific-dish** level (re-buy the exact meal), while customers
-  **rotate across the menu** within a type — a menu needs both reliable favorites and
-  rotation.
+- Repeat buying happens at the **specific-dish** level, and customers often buy
+  several products of a dish type at once — both repeat favorites and variety appear,
+  though grocery data can't say whether this would hold for a meal service.
 - Frozen dominates; deli-prepared is the main non-frozen channel.
 
 ## Limitations

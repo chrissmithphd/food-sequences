@@ -1,141 +1,154 @@
 # Sequences
 
-How a customer's choices repeat, rotate, and space out across successive orders. Four
-questions: do they reorder the same thing? do they commit to a product or rotate
-within an ingredient? are the named "patterns" (staples, returns, bursts) real? and
-does an order-gap mean a fixed amount of time?
+How a customer's choices repeat, rotate, and space out across successive orders.
+Observations are stated first; possible explanations are flagged as such. The shuffle
+and random baselines here test **temporal concentration** — whether a value clusters
+in time beyond what a customer's purchase frequency alone implies. That is not the
+same as loyalty, preference, or predictability, and we do not read it as such.
 
 - Sources: `analyze_reorder.py` (`reorder_probability_audit.csv`,
-  `lift_decomposition.csv`), `analyze_patterns.py` (`pattern_distribution.csv`),
-  `analyze_substitution.py` (`substitution_*.csv`), `analyze_calendar_time.py`
-  (`calendar_gap_summary.csv`).
+  `lift_decomposition.csv`), `analyze_patterns.py` (`pattern_distribution.csv`,
+  `pattern_independent_rules.csv`), `analyze_substitution.py`,
+  `analyze_calendar_time.py`, `visualize_behavior.py`.
+- The reorder baseline is validated by a brute-force permutation check built into
+  `analyze_reorder._validate()` (run as an assert).
 
-## 1. Reordering: a real habit at the product level
+## 1. Next-order reordering
 
-Deduplicate to one event per (customer, order, value) at each grain, then ask: given
-an event with an observable next order, does the same value reappear in order *n+1*?
-Compare the observed rate to a **frequency baseline** — a random re-ordering of each
-customer's baskets that keeps what/how-much they buy but destroys *when*. For a value
-in *b* of *B* baskets the expectation is (b−1)/(B−1); `lift = observed / expected`.
+For an occurrence of a value at order *n* (observable iff *n* < the customer's true
+final order *N*), does the same value appear in order *n+1*? The baseline is a random
+re-ordering of that customer's *N* baskets; for a value in *b* of them the exact
+expectation is (b−1)/(N−1). Observed and expected are summed over the **same**
+observable occurrences, so the ratio (lift) is a like-for-like comparison.
 
-![Reorder lift by grain](../figures/reorder_lift_by_level.png)
+| Grain | P(next) | within 5 | expected | Lift |
+|-------|--------:|---------:|---------:|-----:|
+| Product | 28.6% | 58.3% | 22.3% | 1.28× |
+| Ingredient | 34.8% | 68.6% | 30.3% | 1.15× |
+| Aisle | 43.3% | 77.1% | 39.7% | 1.09× |
+| Category | 58.8% | 88.2% | 56.4% | 1.04× |
 
-| Grain | P(next) | within 5 | eventual | expected | Lift |
-|-------|--------:|---------:|---------:|---------:|-----:|
-| Product | 28.7% | 58.3% | 64.1% | 22.2% | 1.29× |
-| Ingredient | 34.8% | 68.6% | 74.7% | 30.2% | 1.15× |
-| Aisle | 43.3% | 77.1% | 81.6% | 39.6% | 1.09× |
-| Category | 58.8% | 88.3% | 90.2% | 56.4% | 1.04× |
+**Observation:** a specific product recurs in the next order ~29% more often than a
+reshuffle of the same customer's baskets would produce; the excess shrinks toward
+zero as the grain broadens. **Reading:** purchases of a specific product are somewhat
+*concentrated in time* rather than spread evenly across a customer's orders. Broader
+grains have higher raw reorder rates but near-1 lift — a wide bucket refills often
+simply because it holds more products, which is arithmetic, not behavior. We do not
+interpret the cross-grain ordering as evidence about whether customers "prefer"
+products over ingredients.
 
-The headline: **a specific product is reordered ~29% more often than a customer's own
-basket mix would produce by chance** — a genuine order-to-order habit at the exact
-SKU. Raw reorder rates rise as the grain broadens (product 29% → category 59%), but
-that is mostly aggregation (a broad bucket refills because it holds more products);
-lift, which removes frequency, is the comparable quantity and is highest at the
-product grain.
+**Where the product/ingredient lift gap comes from** (`lift_decomposition.csv`): for
+(customer, ingredient) pairs using a single product it is zero by construction (both
+grains 1.20×). It lives entirely in multi-product pairs (product 1.35× vs ingredient
+1.11×): the ingredient stays present while individual products arrive in temporal
+bunches. That is a description of timing, examined next.
 
-**Why lift is highest at the finest grain.** It is *not* that products are reordered
-more than ingredients — they cannot be, since every product reorder is also an
-ingredient reorder (ingredient P(next) 34.8% > product 28.7%). Splitting by how many
-products a customer uses per ingredient shows the mechanism:
+## 2. Within an ingredient: coexistence vs. transitions
 
-| Subset (share of events) | grain | P(next) | lift |
-|---|---|--:|--:|
-| Single-product (customer,ingredient) — 44.5% | product ≡ ingredient | 28.1% | 1.21× |
-| Multi-product — 55.5% | product | 29.2% | 1.36× |
-| Multi-product — 55.5% | ingredient | 41.4% | 1.12× |
+Two behaviors must be separated. A customer can buy several products of one ingredient
+**in the same order** (coexistence) or use different products **across orders**
+(transition). Counting simultaneous purchases as switches is a mistake that earlier
+inflated apparent alternation.
 
-Where a customer uses one product per ingredient the grains coincide (1.21× / 1.21× —
-a clean sanity check). The whole product-vs-ingredient gap lives in multi-product
-pairs, where customers **hold one product for a run of orders then switch to another
-of the same ingredient** — the ingredient stays present (mild lift) while each product
-arrives in bursts (higher lift). That substitution behavior is section 2.
+**Coexistence (simultaneous):** 8.5% of ingredient-orders contain ≥2 products of that
+ingredient at once — but it is highly concentrated in flavored/discretionary
+categories: **yogurt 37%, ice cream 26%, pasta 13%, milk 12%**, versus staples
+(banana, bread, eggs ~0.5%). Buying several yogurts in one trip is common; buying two
+loaves of different bread is not.
 
-## 2. Substitution: mild commitment, category-specific variety
+**Transitions (across orders), clean single-product subset:** stay-with-same-product
+probability vs a label-shuffle baseline.
 
-When a customer buys an ingredient again, do they keep the same product (commitment)
-or switch (rotation)? Compare observed P(stay the same product) to a null that
-shuffles each ingredient's product labels (counts preserved).
+| Ingredient | P(stay) | expected | lift | coexistence |
+|-----------|--------:|---------:|-----:|------------:|
+| banana | 92.8% | 89.5% | 1.04 | 0.5% |
+| bread | 98.2% | 97.9% | 1.00 | 0.5% |
+| eggs | 86.5% | 81.5% | 1.06 | 0.7% |
+| milk | 86.1% | 80.2% | 1.08 | 12% |
+| yogurt | 77.1% | 71.2% | 1.08 | 37% |
+| ice_cream | 64.4% | 59.5% | 1.08 | 26% |
+| pasta | 60.8% | 56.7% | 1.07 | 13% |
 
-| Scope | P(stay) | expected | lift |
-|-------|--------:|---------:|-----:|
-| All ingredients | 63.0% | 60.7% | 1.04 |
-| Multi-product pairs only | 43.7% | 40.3% | 1.09 |
-| Base ingredients | 63.6% | 61.2% | 1.04 |
-| Prepared dishes | 49.5% | 49.3% | 1.00 |
+**Observation:** across orders, the same product recurs slightly more than a label
+reshuffle predicts everywhere (lift 1.0–1.08) — mild temporal concentration, not
+alternation. (An earlier version reported yogurt *alternating below chance*; that was
+an artifact of treating same-order multi-yogurt purchases as switches.) Staples have
+high stay rates because the customer uses one product; discretionary categories have
+lower stay rates and much of their variety is **simultaneous**, not sequential.
 
-Commitment is **real but mild** (lift 1.04–1.09): product runs are only slightly more
-run-like than chance. The interesting variation is by ingredient:
+## 3. Pattern labels
 
-| Ingredient | P(stay) | lift | reading |
-|-----------|--------:|-----:|---------|
-| eggs | 84.8% | 1.06 | mild commitment |
-| banana | 91.5% | 1.04 | one product, bought repeatedly |
-| milk | 65.8% | 1.04 | mild commitment |
-| bread | 96.8% | 1.00 | random (one product dominates) |
-| ice_cream | 31.7% | 1.04 | low stay rate — variety category |
-| **yogurt** | **26.3%** | **0.96** | **alternates below chance — active variety-seeking** |
+Sorting (customer, ingredient) pairs (≥2 purchases, ≥10-order customers) into
+staple / return / burst / rotation requires precedence, which forces one label and
+hides overlap. The honest view is each rule evaluated **independently** (they overlap,
+so they do not sum to 100), next to a frequency-preserving random null:
 
-Staples (banana, bread, eggs) stay high simply because the customer has one product
-for them. Variety-seeking is concentrated in **discretionary, flavored categories** —
-yogurt actively alternates (stays *less* than chance), and ice cream / pasta have the
-lowest stay rates. Prepared dishes behave like a variety category: within a dish type,
-buyers rotate across SKUs at chance (49.5%, lift 1.00) rather than committing. Among
-multi-product (customer, ingredient) pairs, 72% are clean handoffs (A-run then B-run)
-rather than ongoing coexistence.
+| Rule (independent) | Observed | Random null |
+|--------------------|---------:|------------:|
+| return after break (gap ≥5) | 59.8% | 68.6% |
+| rotation (regular gaps) | 7.4% | 5.5% |
+| persistent staple | 9.2% | 9.2% |
+| burst then absence | 3.4% | 0.3% |
 
-## 3. "Patterns" mostly re-describe frequency and history length
+**Observations:** "returns" and "staples" occur at or below their random rates — a
+reshuffle of the same purchases produces as many, so these labels mostly re-describe
+how often a thing is bought and how long the customer was observed (the "return" rate
+also runs 75%→29% as the gap threshold moves 3→10, and rises with history length).
+**Burst-then-absence** — bought a few times early, then not again within the observed
+window — is the one rule clearly above its random rate (3.4% vs 0.3% independently;
+1.6% vs 0.3% after precedence). 99% of these end well before the customer's last
+observed order.
 
-Sorting (customer, ingredient) pairs into staples / rotation / returns / bursts, then
-re-classifying a frequency-preserving random null, shows most of the taxonomy is not
-distinctive behavior.
+**What this does and does not establish:** it establishes that a few ingredients are
+bought in an early cluster and then absent *for the rest of the observed window*. It
+does **not** establish abandonment or churn — we observe only a slice of each
+customer's history, have no post-window data, and cannot tell a dropped ingredient
+from one that returns after our window ends.
 
-| Pattern | Observed | Random baseline | Verdict |
-|---------|---------:|----------------:|---------|
-| Persistent staple | 9.2% | 9.2% | at chance |
-| Regular rotation | 4.6% | 5.5% | below chance |
-| Return after break | 58.1% | 68.6% | below chance |
-| Burst then absence | 1.6% | 0.3% | **5× above chance** |
-| Irregular | 26.5% | 16.5% | above chance |
+## 4. Which ingredients follow which (transition matrix)
 
-"Return after break" is also threshold-fragile — its share runs 75% → 29% as the gap
-threshold moves from 3 to 10 orders — and rises from 27% to 85% purely with history
-length (longer histories contain more opportunities for a gap). Random shopping
-produces *more* "returns" than real customers. The one pattern that survives is
-**burst-then-absence**: an ingredient bought a few times early then dropped, 5× above
-chance and not a censoring artifact (99.3% of bursts end ≥5 orders before the
-customer's last observed order). That is genuine **early abandonment** — a candidate
-churn signal.
+![Ingredient transition matrix](../figures/ingredient_transition_matrix.png)
 
-![Pattern gallery](../figures/pattern_gallery.png)
+P(ingredient in column appears in order *n+1* | row ingredient in order *n*), top
+ingredients, full dataset (`ingredient_transitions.csv`). The diagonal is next-order
+self-recurrence (banana 60%, milk 57%, yogurt 56%, water 56% — ~2–3× each
+ingredient's overall next-order rate). Off the diagonal, the strongest associations
+above base rate are recognizable kitchen clusters: onion ↔ fresh_herbs (~2.0×),
+lettuce ↔ tomato (~1.6×, salad), crackers ↔ granola_bar (snacking). These are
+population-level conditional rates normalized by each column's base rate; they
+describe co-timing, not causation.
 
-Each row is one product for one customer (■ = purchased). Staples, rotation, bursts,
-returns, and replacements are visible.
+## 5. Purchase histories (examples)
 
-## 4. An order-gap is not a clock
+![Purchase history heatmaps](../figures/purchase_history_heatmap.png)
 
-All the above measures gaps in *orders*. But cadence varies enormously, so an
-order-gap is not a fixed amount of time:
+Real customers, ingredient (row) × order (column). The grids make the raw behavior
+visible: dense rows are frequently-rebought ingredients, broken rows are gaps, rows
+that start partway are later discoveries, and rows that stop are items not seen again
+in the window. These are illustrations, not a sample the quantitative results depend
+on.
+
+## 6. An order-gap is not a clock
+
+Cadence varies widely, so order-gaps don't map to fixed time:
 
 | Order gap | Median days | p10–p90 |
 |----------:|------------:|--------:|
 | 1 | 8 | 3–30 |
-| 2 | 15 | 6–42 |
-| 3 | 23 | 9–59 |
 | 5 | 37 | 15–88 |
 | 10 | 71 | 32–147 |
 
-Shopping cadence ranges from a median of 5 days between orders (p10 of customers) to
-30 (p90), median 13. A single 5-order gap spans **15 to 88 days** depending on the
-customer. Order-space is the right frame for "how many shopping trips until they buy
-it again"; calendar-space needs the day index; the two must not be conflated. (The
-30-day cap on `days_since_prior_order` makes long day-gaps lower bounds.)
+Median cadence is 13 days (p10–p90 of customers: 5–30). A 5-order gap spans 15–88 days
+depending on the customer, so any order-space pattern is partly a statement about
+shopping frequency. (The 30-day cap on `days_since_prior_order` makes long day-gaps
+lower bounds.)
 
 ## Limitations
 
-- `P(within k)` conditions on ≥k observable future orders; eventual-return is a
-  right-censored lower bound. The shuffle/random nulls preserve each customer's
-  frequencies but not cross-customer structure — they isolate temporal structure,
-  which is the quantity of interest.
-- Pattern thresholds are arbitrary; the sensitivity analysis is the summary that
-  matters. No absolute calendar dates exist in the data.
+- The shuffle/random nulls preserve each customer's purchase frequencies but not
+  cross-customer structure; they isolate temporal concentration only.
+- `P(within k)` conditions on ≥k observable future orders; eventual return is a
+  right-censored lower bound. There is no post-window observation, so nothing here
+  speaks to churn.
+- The transition matrix uses a population base-rate normalization, not a per-customer
+  one; strong associations are co-timing at the population level.

@@ -204,8 +204,8 @@ soup,29112,Organic Spicy Chili,1449,704
 frozen_lasagna,1618,"Lasagna, Vegetable, with Daiya Cheeze",1443,566
 frozen_meal,45221,Indian Mattar Paneer,1440,648
 frozen_meal,25443,"Delights Turkey Sausage, Egg Whites & Cheese Croissant",1437,607
-frozen_appetizer,5268,Bagel Bites Three Cheese Mini Bagel Pizzas,1432,600
 chicken_nuggets,48784,Lightly Breaded Fish Sticks,1432,755
+frozen_appetizer,5268,Bagel Bites Three Cheese Mini Bagel Pizzas,1432,600
 deli_prepared,10315,Stuffed Grape Leaves,1431,453
 frozen_meal,36766,Chicken Biryani,1429,685
 frozen_meal,31533,Spinach Feta in a Pocket Sandwich,1423,525
@@ -282,8 +282,8 @@ soup,18923,Organic Minestrone Soup,1048,546
 frozen_appetizer,43488,Cheese Pizza Rolls,1044,555
 mac_and_cheese,49363,Freshly made pasta in a 100% Real Cheddar cheese sauce Macaroni & Cheese,1042,439
 frozen_burrito,49023,Breakfast Burrito,1041,581
-frozen_meal,37611,Spaghetti with Meatballs,1038,451
 frozen_appetizer,29471,Combination Pizza Rolls,1038,571
+frozen_meal,37611,Spaghetti with Meatballs,1038,451
 deli_prepared,5653,Chicken Curry Salad,1038,337
 frozen_meal,17581,Palak (Saag) Paneer,1034,413
 meal_kit,1076,Yellow Corn Taco Dinner Kit,1026,476
@@ -335,8 +335,8 @@ frozen_meal,27715,Farmstand Flaxbread Egg and Vegetarian Bacon Breakfast Sandwic
 frozen_burrito,45282,Gluten Free Tofu Scramble Breakfast Wrap,884,358
 chicken_nuggets,625,"Chicken Breast Nuggets, Dinosaur Shaped",883,464
 soup,45177,Organic Chicken Noodles Soup,880,507
-chicken_nuggets,13187,Original Chicken Patties,875,338
 soup,3213,Spicy Black Bean & Kale Organic Soup,875,527
+chicken_nuggets,13187,Original Chicken Patties,875,338
 frozen_meal,27522,Gluten Free Uncured Bacon Mac and Cheese,873,380
 canned_chili,20250,Homestyle Corned Beef Hash,863,384
 frozen_pizza,31495,Margherita Crispy Thin Crust Pizza,858,464
@@ -358,8 +358,8 @@ frozen_pizza,35584,Pizza Four Cheese,814,485
 frozen_meal,48182,Gluten Free Spinach Cakes,813,394
 deli_prepared,43136,Organic Southwest Salad,813,572
 instant_soup,37,Noodle Soup Mix With Chicken Broth,806,470
-frozen_meal,8730,Comfort Roasted Turkey Breast Dinner,805,349
 mac_and_cheese,12785,Deluxe Original Cheddar Macaroni & Cheese Dinner,805,419
+frozen_meal,8730,Comfort Roasted Turkey Breast Dinner,805,349
 instant_soup,24118,Vegan Big Cup Pad Thai Noodle Soup,798,452
 frozen_appetizer,10005,"Potstickers, Organic, Pork & Vegetable",794,423
 deli_prepared,24532,Cranberry Almond Chicken Salad,789,368
@@ -413,8 +413,8 @@ deli_prepared,44090,Roasted Pumpkin White Cheddar Tamales,666,288
 frozen_burrito,21294,Curry Tiger Burrito,663,302
 frozen_meal,29758,Extra Cheesy Pizza Lunchables,662,229
 mac_and_cheese,27304,Organic 5 Grain Elbows & White Cheddar Macaroni and Cheese,662,300
-soup,39692,"Creamy Potato Leek Organic Soup,",660,375
 frozen_pizza,35613,Original Thin Supreme Pizza,660,255
+soup,39692,"Creamy Potato Leek Organic Soup,",660,375
 frozen_meal,38978,Angus Cheeseburgers,652,198
 frozen_appetizer,1542,Mini Crispy Crabless Cakes,650,325
 soup,14131,Traditional Hearty Chicken and Rotini Soup,649,369
@@ -480,8 +480,8 @@ soup,26571,In Tomato Sauce Spaghetti & Meatballs,558,234
 frozen_appetizer,22062,The Original Thick Slice with Real Garlic Texas Toast,555,337
 soup,13396,Chicken Corn Chowder Soup,554,302
 chicken_nuggets,23015,Breaded Chicken Nuggets Family Pack,551,230
-soup,4516,Vegetable Classics Minestrone Soup,551,336
 frozen_meal,30814,Vegan Flaxbread Breakfast Sandwiches 2 Count,551,286
+soup,4516,Vegetable Classics Minestrone Soup,551,336
 frozen_meal,29061,Stuffed Peppers,549,257
 soup,19101,"Quinoa, Kale & Red Lentil Soup",548,295
 frozen_meal,14680,Breakfast Sausage  Egg & Cheese,546,264
@@ -514,8 +514,8 @@ mac_and_cheese,38240,Vegan White Cheddar Mac & Cheese,513,270
 chicken_nuggets,11258,Dino Buddies Chicken Breast Nuggets,512,262
 deli_prepared,1481,Santa Fe Style Salad Cafe Bowl,512,181
 frozen_pizza,1216,Dairy Free Gluten Free Mushroom & Roasted Garlic Pizza,512,318
-frozen_burrito,34446,Burrito Especial,512,289
 soup,19268,Minestrone Soup,512,259
+frozen_burrito,34446,Burrito Especial,512,289
 chicken_nuggets,46202,Super Duper Chicken Nuggets,511,167
 soup,26638,Organic Thai Sweet Potato Soup,511,393
 frozen_meal,10755,Peanut Butter & Grape Jelly Sandwiches,511,223
@@ -621,8 +621,8 @@ frozen_meal,13277,Microwaveable Hamburgers,407,197
 mac_and_cheese,34625,Macaroni & Cheese Dinner Nickelodeon Sponge Bob Square Pants Shapes,407,205
 deli_prepared,38885,Porcini & Truffle Ravioli In Egg Pasta,406,107
 frozen_meal,30824,Boneless Fried Chicken,403,169
-instant_soup,388,Stove Top Stuffing Mix for Turkey,402,317
 frozen_meal,28517,Culinary Collection Herb Roasted Chicken,402,165
+instant_soup,388,Stove Top Stuffing Mix for Turkey,402,317
 frozen_meal,38415,"Lean Pockets Applewood Bacon, Egg & Cheese Frozen Sandwiches with Whole Grain Crust",402,197
 frozen_pizza,17745,"Pizza, Cheese & Pesto",401,178
 frozen_meal,30387,Chicken Alfredo & Penne Classic Meal for 2,401,138
@@ -668,9 +668,9 @@ hot_pocket,5947,"Hot Pocket  Applewood Bacon, Egg and Low Fat Cheese Breakfast S
 frozen_appetizer,3384,All Natural Crispy with Panko Breading & Sea Salt Onion Rings,354,235
 frozen_burrito,12565,Family Pack Beef & Bean Chimichangas,353,128
 soup,33337,Signature Tortilla Organic Soup,352,228
-frozen_meal,41783,Meatloaf,352,129
-frozen_appetizer,31148,"Egg Rolls, Gluten-Free, Vegetable",352,184
 frozen_meal,36549,Light and Lean Mattar Paneer,352,145
+frozen_appetizer,31148,"Egg Rolls, Gluten-Free, Vegetable",352,184
+frozen_meal,41783,Meatloaf,352,129
 mac_and_cheese,47310,Shells & White Cheddar Mac & Cheese Family Size Macaroni and Cheese Organic,351,139
 frozen_meal,4,Smart Ones Classic Favorites Mini Rigatoni With Vodka Cream Sauce,351,190
 frozen_pizza,7405,Rising Crust Sausage & Pepperoni Pizza,350,216
@@ -680,8 +680,8 @@ frozen_pizza,16125,Deep Dish Four-Cheese Pizza Singles,348,144
 instant_ramen,19041,Chicken Flavor Cup Noodles,348,191
 soup,30763,Garden Vegetable Soup,348,195
 soup,17302,Lobster Bisque,347,211
-frozen_meal,3405,Mushroom Spinach & Salsa Tamales With 2 Cheeses,346,172
 frozen_meal,10300,Glazed Chicken,346,168
+frozen_meal,3405,Mushroom Spinach & Salsa Tamales With 2 Cheeses,346,172
 chicken_nuggets,3560,Crispy Strips,346,144
 mac_and_cheese,30754,Wheels & Cheese,345,124
 frozen_meal,19429,Garlic Chicken White Pizza Frozen Sandwiches,345,164
@@ -700,18 +700,18 @@ deli_prepared,38526,Garlic Bread With Mozzarella,337,154
 mac_and_cheese,5198,Broccoli au Gratin,337,209
 deli_prepared,27289,Elbow Macaroni & Cheese Side Dished,336,124
 frozen_meal,18834,Broccoli & Carrots with Brown & Wild Rice,335,184
-frozen_pizza,11686,"Pizza, Thin & Crispy, Ionian Awakening",333,121
 frozen_meal,11314,Chicken Vindaloo with Basmati Rice,333,173
+frozen_pizza,11686,"Pizza, Thin & Crispy, Ionian Awakening",333,121
 meal_kit,19539,Rice Sides Chicken Flavor,333,160
 frozen_meal,6334,Roasted Turkey and Vegetables,332,154
 frozen_pizza,6007,Original Pepperoni & Sausage Pizza,331,155
 mac_and_cheese,39735,Shells & White Cheddar Pasta,330,177
-instant_ramen,9647,Beef Flavor Top Ramen,330,198
 soup,22268,Organic French Onion Soup,330,253
+instant_ramen,9647,Beef Flavor Top Ramen,330,198
 frozen_pizza,19701,Thin & Crispy Spinach & Garlic Pizza,329,201
-frozen_burrito,33513,Snacks Burrito Bean & Cheese,329,141
 deli_prepared,27910,Chicken Burrito Bowl,329,135
 frozen_lasagna,5089,Meat Lovers Lasagna,329,191
+frozen_burrito,33513,Snacks Burrito Bean & Cheese,329,141
 frozen_meal,18871,Country Fried Chicken & Gravy Meal,328,135
 frozen_meal,9840,Grilled Chicken Pesto with Vegetables Cafe Steamers,327,168
 frozen_pizza,8838,French Bread Pizza Deluxe,327,166
@@ -719,8 +719,8 @@ frozen_meal,34360,Simply Favorites Chicken Friced Rice Entree,327,191
 deli_prepared,15406,Enchilada Wrap,326,81
 soup,1868,Hearty Meals Beef Stew,325,146
 frozen_pizza,46303,Gluten Free Rice Crust Pizza With Cheese,323,189
-soup,37929,Red Miso Soup,323,163
 soup,16659,New England Clam Chowder Soup,323,237
+soup,37929,Red Miso Soup,323,163
 soup,3898,Organic Rosemary Potato Chowder,322,196
 mac_and_cheese,25999,Organic White Cheddar Macaroni & Cheese,322,166
 soup,40788,Organic Black Bean Soup,322,144
@@ -734,8 +734,8 @@ frozen_meal,32902,Artichoke And Spinach Ravioli,318,128
 soup,26870,New England Clam Chowder,318,155
 soup,9401,Traditional Beef Barley Soup,317,174
 frozen_burrito,33354,Get Focused Breakfast Burrito,317,153
-frozen_meal,28076,Fettucini Alfredo Savory Italian Recipes,315,171
 mac_and_cheese,31235,Velveeta Reduced Fat 2% Milk Shells Cheese,315,181
+frozen_meal,28076,Fettucini Alfredo Savory Italian Recipes,315,171
 instant_soup,20364,Matzo Ball Mix,315,259
 frozen_meal,20305,Bacon Breakfast Bowl,315,105
 frozen_burrito,42827,"Egg White & Spinach Roasted Tomato, Potato & Cheddar Burrito",314,161
@@ -756,23 +756,23 @@ frozen_meal,33752,Meatless Sausage Egg Gouda Sandwich,304,176
 frozen_pizza,35903,Gluten Free Garden Margherita Pizza,304,143
 soup,20163,Organic Santa Fe Style Chicken Soup,303,165
 mac_and_cheese,22175,Cheddar Broccoli Pasta Sides,301,150
-frozen_appetizer,31218,Spinach & Artichoke Cheese Dip,301,189
 frozen_meal,15623,Ham & Cheese Sandwiches,301,180
+frozen_appetizer,31218,Spinach & Artichoke Cheese Dip,301,189
 instant_soup,40550,All Natural Asian Cuisine Vietnamese Pho Soup Bowl,301,188
 soup,9941,Vegetable Classics Green Split Pea Soup,300,159
-frozen_meal,38495,"Marketplace Cheese Tortellini in a Roasted Red Pepper Sauce with Aged Parmesan Cheese, Organic",299,144
 soup,14620,Light New England Clam Chowder,299,193
+frozen_meal,38495,"Marketplace Cheese Tortellini in a Roasted Red Pepper Sauce with Aged Parmesan Cheese, Organic",299,144
 frozen_pizza,38294,"Pizza, Margherita, Rice Crust",298,189
-deli_prepared,30742,Veggie Pepperoni Pizza,298,142
 frozen_burrito,21465,Uncured Ham & Egg Roasted Potato & Breakfast Buritto,298,135
+deli_prepared,30742,Veggie Pepperoni Pizza,298,142
 mac_and_cheese,27938,Quinoa Mac And Mild Cheddar Cheese,297,180
 frozen_meal,16885,"Pasta 'n Sauce, Elmo, Organic, with Carrots & Broccoli, 123 Sesame Street",296,153
 soup,6310,Chicken & Wild Rice Soup,296,218
 frozen_meal,46282,Chicken tenderloins in a tangy sweet & sour sauce with rice Sweet & Sour Chicken,295,139
 meal_kit,38773,Organic Brown Rice Bowl,295,113
 soup,46569,Lower Sodium Garden Vegetable Soup,294,157
-frozen_burrito,5241,Gluten Free Uncured Bacon Breakfast Burrito,293,180
 soup,14259,Organic Vegetable Quinoa Soup,293,209
+frozen_burrito,5241,Gluten Free Uncured Bacon Breakfast Burrito,293,180
 frozen_pizza,926,Crispy Thin Crust White Pizza,292,175
 mozzarella_sticks,43508,Breaded Mozzarella Sticks,292,197
 frozen_pizza,27023,"Pizza, Classic Cheese",292,90
@@ -835,14 +835,14 @@ chicken_nuggets,4807,Breaded Chicken Patties,263,134
 frozen_burrito,34108,"Burritos, Organic, Steak and Cheese",262,166
 soup,18779,Chunky Steak and Potato Soup,262,175
 frozen_meal,44265,"Roasted white meat chicken, whole wheat noodles, green beans & carrots in a creamy chili peanut sauce. Thai-Style Noodles With Chicken",262,155
-chicken_nuggets,14403,Gluten Free Breaded Chicken Nuggets,262,134
-mac_and_cheese,47177,"Smmmile, It's Three Cheesy Macaroni & Cheese Dinner",262,133
 frozen_meal,36390,Grilled Chicken Alfredo Bake Frozen Dinner,262,119
+mac_and_cheese,47177,"Smmmile, It's Three Cheesy Macaroni & Cheese Dinner",262,133
+chicken_nuggets,14403,Gluten Free Breaded Chicken Nuggets,262,134
 soup,14424,Rich & Hearty Savory Beef Barley Vegetable Soup,262,141
-meal_kit,22153,Scalloped Potatoes,262,177
 frozen_meal,1711,Beef Bulgogi With Brown Rice,262,176
-frozen_appetizer,45429,Beef & Cheese Mini Tacos,261,132
+meal_kit,22153,Scalloped Potatoes,262,177
 frozen_appetizer,4176,Loaded! Potato Skins Cheddar & Bacon,261,126
+frozen_appetizer,45429,Beef & Cheese Mini Tacos,261,132
 soup,20526,Tomato Soup,260,157
 frozen_meal,31296,Beef Fajitas,260,117
 pot_pie,14722,Top Chef Crustless Chicken Pot Pie,260,139
@@ -852,8 +852,8 @@ frozen_meal,29516,Ham and Cheese Scramble Tasty American Favorites,258,73
 soup,43894,"Chicken Noodle Soup, Cup",258,171
 frozen_pizza,16408,Pizza Margherita,256,81
 frozen_meal,29917,Ham & Cheddar Frozen Sandwiches,256,128
-frozen_meal,28169,Vegetable Pad Thai With Rice Noodles,255,140
 deli_prepared,21089,Lunchables Nachos with Cheese Dip and Salsa,255,106
+frozen_meal,28169,Vegetable Pad Thai With Rice Noodles,255,140
 deli_prepared,38540,Ham & Swiss with Crackers,255,97
 frozen_meal,31509,Sausage Biscuit,253,119
 frozen_appetizer,37895,Shredded Steak Taquitos,252,146
@@ -887,8 +887,8 @@ frozen_meal,47687,Channa Masala,243,120
 frozen_meal,8397,Simply Steamers Meatball Marinara,242,90
 deli_prepared,4638,Lunchables Uploaded 6-inch Turkey & Cheddar Sub Sandwich,242,100
 frozen_meal,21602,Chicken Marsala & Roasted Redskin Potatoes Classic Meal for 2,241,100
-mac_and_cheese,34398,Natural M&C Four Cheese,240,151
 chicken_nuggets,13783,Any'tizers Homestyle Chicken Fries,240,99
+mac_and_cheese,34398,Natural M&C Four Cheese,240,151
 soup,10497,Organic Star Pasta & Chicken Soup,240,151
 frozen_meal,26730,Shrimp & Angel Hair Pasta,240,92
 chicken_nuggets,45205,Classic Crunchy Fish Sticks,239,141
@@ -911,16 +911,16 @@ instant_soup,5615,White Miso Soup Mix,233,111
 frozen_appetizer,43975,Rice Crusted Fish Sticks,232,178
 mac_and_cheese,38546,Organic Macaroni & Mild Cheddar Cheese,232,140
 frozen_meal,38117,Pasta with Swedish Meatballs Tasty American Favorites,231,123
-meal_kit,46981,Deluxe Beef Stroganoff Hamburger Helper,231,151
 frozen_meal,46838,Cafe Steamers Beef Merlot Gluten Free,231,119
+meal_kit,46981,Deluxe Beef Stroganoff Hamburger Helper,231,151
 canned_chili,20706,Corned Beef Hash,230,115
 frozen_meal,28604,Garden Veggie Burger,229,166
 soup,12169,Organic Butternut Squash Bisque,228,165
 frozen_pizza,14346,Original Classic Sausage Pizza,228,97
 mac_and_cheese,32657,Cheeseburger Macaroni Hamburger Helper,228,127
 frozen_meal,9299,Deluxe White Cheddar Style Veggie Cheezy Mac,227,137
-frozen_meal,27472,Sausage Breakfast Bowl,227,95
 instant_ramen,45029,Wakame And Brown Rice Ramen,227,161
+frozen_meal,27472,Sausage Breakfast Bowl,227,95
 soup,37382,Organic Low Fat Minestrone Soup,227,142
 frozen_meal,1620,Glazed Turkey Tenderloins,226,106
 frozen_appetizer,11716,Chicken and Cheese Taquitos,225,103
@@ -932,11 +932,11 @@ frozen_burrito,27203,Red Hot Beef Burrito,223,85
 frozen_meal,30000,Home Menu Meals for 2 Orange Chicken,221,132
 soup,21055,Light Chicken & Cheese Enchilada Soup,221,134
 frozen_meal,360,Whole Wheat Spanakopita,220,93
-frozen_meal,20086,Green Chilly Beef & Bean,219,96
 frozen_meal,25329,Meatloaf in Gravy,219,110
+frozen_meal,20086,Green Chilly Beef & Bean,219,96
 chicken_nuggets,21554,Honey BBQ Flavored Chicken Strips,219,121
-frozen_meal,19898,Mac & Cheese with Chicken,218,105
 frozen_appetizer,18174,The Original Five Cheese Texas Toast,218,137
+frozen_meal,19898,Mac & Cheese with Chicken,218,105
 deli_prepared,19639,Spaghetti & Meatballs,218,111
 deli_prepared,14864,Low-Fat Chicken Tortilla Soup,217,109
 chicken_nuggets,26881,Breaded Chicken Breast Patties,217,84
@@ -947,9 +947,9 @@ soup,10939,Chunky Baked Potato with Cheddar & Bacon Bits Soup,213,131
 frozen_meal,12050,Special K Bacon Egg & Cheese Flatbread Breakfast Sandwich,213,78
 frozen_meal,15694,Spa Cuisine Grilled Chicken Primavera,213,128
 soup,49445,Baked Potato Soup,213,133
+soup,21713,Light Chicken Vegetable Rotini Soup,211,146
 frozen_pizza,8223,Cheese Stuffed Crust Three Meat Pizza,211,118
 soup,7830,Organic Lower Sodium French Lentil Soup,211,124
-soup,21713,Light Chicken Vegetable Rotini Soup,211,146
 instant_ramen,42632,Beef Flavor Instant Ramen Cup,210,99
 deli_prepared,44071,Sticky Toffee Pudding,210,116
 frozen_meal,12519,Chicken & Broccoli Alfredo,210,94
@@ -971,8 +971,8 @@ soup,41013,Healthy Request Grilled Chicken & Sausage Gumbo RTS Soup,203,120
 mac_and_cheese,23010,Deluxe Sharp Cheddar Macaroni & Cheese Dinner,203,95
 soup,13939,Organic Potato Quinoa & Spinach Soup,203,119
 deli_prepared,12055,"Salad Kit, Endless Summer",203,118
-frozen_pizza,17727,Five Cheese & Garlic French Bread Pizza Singles,202,98
 frozen_burrito,13389,Get Cultured  Functional Breakfast Burrito,202,131
+frozen_pizza,17727,Five Cheese & Garlic French Bread Pizza Singles,202,98
 soup,10288,Broccoli with Almond Soup,202,95
 frozen_meal,39898,Smart Ones Slow Roasted Turkey Breast,202,125
 frozen_meal,47803,Lighten Up Breakfast Burrito,202,137
@@ -982,10 +982,10 @@ frozen_meal,49350,Mini Chicken Egg Rolls with Signature Sauce Packet,201,126
 frozen_meal,17142,Tandoori Inspired Spiced Chicken,201,113
 frozen_appetizer,40732,"White meat chipotle chicken, corn, black beans, bell peppers, and onions Fajita-Style Chicken Spring Rolls",201,95
 soup,31224,Chunky Pub-Style Chicken Pot Pie Soup,200,121
-soup,39823,Traditional Split Pea with Ham Soup,200,97
 instant_ramen,13444,Hot Chili Flavor Ramen Noodle Soup,200,107
-soup,5671,Organic Light In Sodium Creamy Garden Broccoli Soup,200,107
+soup,39823,Traditional Split Pea with Ham Soup,200,97
 frozen_appetizer,8261,"Olive Oil, Parmesan & Roasted Garlic Oven Reds",200,130
+soup,5671,Organic Light In Sodium Creamy Garden Broccoli Soup,200,107
 frozen_meal,45669,Steak & Roasted Potato Dinner,198,94
 meal_kit,24597,Hamburger Helper Classic Ultimate Cheeseburger Macaroni,198,128
 frozen_meal,18188,"Grilled white meat chicken over cheese tortellini with Italian green beans, red bell peppers, and yellow carrots Creamy Basil Chicken with Tortellini",198,79
@@ -996,25 +996,25 @@ frozen_meal,32498,Lemon Pepper Fish Complete Meals,196,83
 instant_ramen,13173,Beef Ramen Noodle Soup,196,124
 deli_prepared,35729,Turkey Meatloaf,196,93
 frozen_pizza,42998,Classic Crust Special Deluxe Pizza,195,95
-frozen_meal,47140,7OZ SAUSAGE GRAVY BOWL,195,77
 mac_and_cheese,44898,Organic Mac And Trees Fun Shape Macaroni & Cheese,195,114
-soup,14285,Organic Light in Sodium Creamy Butternut Squash Soup,195,152
+frozen_meal,47140,7OZ SAUSAGE GRAVY BOWL,195,77
 frozen_meal,12296,Lean Pockets Philly Steak and Cheese Sandwiches,195,98
+soup,14285,Organic Light in Sodium Creamy Butternut Squash Soup,195,152
 deli_prepared,20761,California Roll,194,80
-instant_ramen,23445,Roast Chicken Flavor Ramen Noodle Soup,194,115
-soup,3348,Tuscan Tomato And Basil Bisque,194,87
 frozen_meal,4399,Uncrustables Peanut Butter & Strawberry Jam Sandwich,194,80
 frozen_meal,43732,Garlic Chicken,194,99
-frozen_meal,41608,Marketplace Bean and Cheese Enchilada Verde,193,108
+instant_ramen,23445,Roast Chicken Flavor Ramen Noodle Soup,194,115
+soup,3348,Tuscan Tomato And Basil Bisque,194,87
 deli_prepared,21630,Fried Chicken Wings,193,68
+frozen_meal,41608,Marketplace Bean and Cheese Enchilada Verde,193,108
 instant_soup,42111,"Instant Soup, Soybean Paste with Tofu, Tofu Miso",192,112
 frozen_meal,26554,Rigatoni With Chicken & Pesto,192,77
 frozen_meal,40166,Palak Paneer,191,126
 instant_ramen,20200,Organic Broth Ramen,191,145
 frozen_meal,47657,Macaroni & Cheese with Broccoli,191,74
 soup,34493,Reduced Sodium Chicken Noodle Soup,190,119
-deli_prepared,36185,Breaded Chicken Dunks Lunchables,190,84
 frozen_meal,24255,Bibimbop With Beef & Brown Rice,190,125
+deli_prepared,36185,Breaded Chicken Dunks Lunchables,190,84
 soup,40562,Carrot Ginger,190,107
 deli_prepared,47261,Uncured Pepperoni Pizza,190,109
 frozen_meal,30992,Shrimp Alfredo,189,74
@@ -1025,8 +1025,8 @@ frozen_meal,5041,Chicken Margherita,187,77
 frozen_lasagna,6387,Classics Meat Lovers Lasagna,187,106
 frozen_meal,13214,Gluten Free Teriyaki Wrap,186,97
 instant_ramen,17370,Original Flavor Ramen Noodles,186,92
-frozen_appetizer,15469,Three Cheese Mini Bagels,186,97
 frozen_appetizer,25169,Garlic Breadsticks,186,116
+frozen_appetizer,15469,Three Cheese Mini Bagels,186,97
 frozen_meal,46369,Signature Fried Rice,184,88
 frozen_burrito,43199,Signature Shredded Steak & Three–Cheese Burritos,184,94
 deli_prepared,4065,"Bean, Cheese, Rice, Salsa Wrap",183,38
@@ -1039,9 +1039,9 @@ frozen_burrito,37573,"Chimichanga, Steak & Cheese",182,87
 frozen_meal,16188,Chicken A La King,181,42
 soup,21282,Mini ABC's & 123's with Meatballs,181,80
 soup,22436,Light Vegetable Soup,181,117
-frozen_pizza,42413,Classic Uncured Pepperoni Pizza,180,72
-soup,31293,Chicken With Rice Soup,180,97
 frozen_meal,35607,Light in Sodium Country Cheddar Bowl,180,92
+soup,31293,Chicken With Rice Soup,180,97
+frozen_pizza,42413,Classic Uncured Pepperoni Pizza,180,72
 frozen_appetizer,48685,Gluten Free Carrot Puffs,178,132
 frozen_meal,23370,"Chicken Tandoori, with Spinach",178,98
 frozen_pizza,27897,Margherita Naan Frozen Pizza,178,94
@@ -1058,8 +1058,8 @@ deli_prepared,33677,Hard Salami Panino,173,68
 mac_and_cheese,17061,Bernie's Farm Fun Shape Macaroni & Cheese,173,86
 deli_prepared,17577,"8\"" Pepperoni Pizza",172,93
 instant_ramen,45000,With Shrimp Ramen Noodles,171,82
-frozen_meal,5891,Santa Fe Enchilada,171,81
 frozen_meal,20953,"Pocket Sandwich, Spinach Pizza",171,80
+frozen_meal,5891,Santa Fe Enchilada,171,81
 soup,23150,Vegetable Classics 99% Fat Free Lentil Soup,171,107
 canned_chili,37635,Chili with Beans,171,92
 chicken_nuggets,5966,Organic Chicken Meatballs,171,90
@@ -1076,30 +1076,30 @@ hot_pocket,46042,Microwavable Chicken Breast Sandwiches,167,91
 soup,14514,Organic Creamy Tomato & Bunny Pasta Soup,166,123
 soup,47548,Santa Fe Style Chicken Light Soup,165,107
 frozen_meal,47224,Florentine Quiche,165,78
-frozen_pizza,31975,"Original Thin Crust Supreme (Sausage, Pepperoni, Roasted Green, Red, & Yellow Peppers, Onions) Pizza",165,118
 frozen_meal,22406,"Craveables Chicken, Spinach & Mushroom Panini",165,91
-soup,22673,Recipe Secrets Beefy Onion Recipe Soup & Dip Mix,164,120
+frozen_pizza,31975,"Original Thin Crust Supreme (Sausage, Pepperoni, Roasted Green, Red, & Yellow Peppers, Onions) Pizza",165,118
 frozen_appetizer,16376,Chicken & Cheese Taquitos,164,85
+soup,22673,Recipe Secrets Beefy Onion Recipe Soup & Dip Mix,164,120
 mac_and_cheese,15663,Mac and Cheese Shells & White Cheddar Cheese,164,104
 deli_prepared,48556,Red Potato Salad,163,61
-frozen_appetizer,27904,White Meat Chicken Egg Rolls,162,96
 frozen_pizza,20312,Ultra Thin Crust Cheese Lovers Pizza,162,57
+frozen_appetizer,27904,White Meat Chicken Egg Rolls,162,96
 frozen_meal,1609,"Egg, Uncured Bacon & Cheese Scramble Cups",162,76
 frozen_pizza,10681,Brick Oven Pepperoni,162,80
 frozen_pizza,15868,Original Thin Crust Four Cheese Pizza,162,113
-frozen_meal,41929,Gluten Free Comfort Chicken In Sweet BBQ Sauce Frozen Dinner,162,80
 deli_prepared,18682,"Avocado, Jack and Tomato Sandwich",162,81
+frozen_meal,41929,Gluten Free Comfort Chicken In Sweet BBQ Sauce Frozen Dinner,162,80
 frozen_meal,32917,Chicken Marsala,161,90
 frozen_appetizer,25186,Vegan Shanghai Dumplings,161,53
 frozen_appetizer,27186,Vegetable Spring Rolls,159,97
 frozen_meal,2704,Tofu Rancheros,159,73
 frozen_burrito,18429,Beef & Bean Burrito,159,81
-meal_kit,47459,Suddenly Salad Pasta Kit Ranch & Bacon,158,92
 frozen_burrito,44315,"Burrito, Steak & Cheese",158,73
+meal_kit,47459,Suddenly Salad Pasta Kit Ranch & Bacon,158,92
 frozen_appetizer,4662,The Original Thick Slice with Real Cheese Texas Toast,158,94
 meal_kit,685,Organic Porcini Mushroom Risotto,157,94
-deli_prepared,13620,Decker Bundle,157,83
 frozen_meal,46391,Chicken Nuggets & Fries,157,74
+deli_prepared,13620,Decker Bundle,157,83
 mac_and_cheese,33479,Organic Mac Pasta Shells & White Cheddar Cheese Macaroni & Cheese,157,80
 frozen_burrito,14699,"Taquitos, Crispy, Large, Vegan Chorizo & Black Bean Style 8 Count",156,94
 soup,20116,Split Pea & Ham with Natural Smoke Flavor Soup,156,89
@@ -1112,9 +1112,9 @@ soup,4481,Mrs. Grass Soup Mix Noodle Soup,154,93
 deli_prepared,48593,Falafel Hummus Wrap,154,90
 deli_prepared,40144,"P3 Portable Protein Pack - Applewood Smoked Ham, Sharp Cheddar Cheese & Dry Roasted Almonds",154,77
 soup,30840,Light Beef Pot Roast Soup,154,124
-pot_pie,8344,"A golden crust surrounding pieces of all white meat chicken, peas, carrots, celery and onions, in a gravy made with real cream White Meat Chicken Pot Pie",154,100
 chicken_nuggets,14531,Organic Chicken Fingers,154,107
 frozen_meal,41395,Crispy Battered Fish Portions Value Pack,154,102
+pot_pie,8344,"A golden crust surrounding pieces of all white meat chicken, peas, carrots, celery and onions, in a gravy made with real cream White Meat Chicken Pot Pie",154,100
 frozen_meal,31329,"Tender white meat chicken, vegetables & rice in a Cheddar cheese sauce Grandma's Chicken & Vegetable Rice Bake",154,65
 hot_pocket,735,Four Cheese Pizza Frozen Sandwiches,154,69
 frozen_pizza,21562,Naturally Rising Crust Canadian Style Bacon & Pineapple Pizza,153,65
@@ -1128,22 +1128,22 @@ frozen_meal,2778,Classic Chicken Parmigiana & Penne,152,77
 frozen_meal,5218,Black Bean Chipotle Vegan,152,103
 canned_chili,15222,Bourbon and Brown Sugar Grillin' Beans,152,89
 instant_ramen,27692,Yakisoba Chicken Flavor Noodles,151,79
-frozen_meal,46551,Pierogi & Onion,151,99
 mac_and_cheese,15912,Spirals with Butter & Parmesan Mac & Cheese Macaroni & Cheese Natural,151,100
+frozen_meal,46551,Pierogi & Onion,151,99
 instant_soup,31826,Lemongrass & Chili Instant Rice Noodle Soup,151,114
 deli_prepared,43000,Quinoa Salad,151,84
 frozen_pizza,37877,Thin Crispy Crust Pepperoni Pizza,151,88
 pot_pie,5327,All Natural Chicken Pot Pie,150,74
 frozen_pizza,46432,Original Thin Crust Pepperoni Pizza,150,105
-frozen_appetizer,4763,Pork Potstickers,150,77
 mac_and_cheese,30034,Organic Shells & Cheddar Macaroni & Cheese Dinner,150,50
+frozen_appetizer,4763,Pork Potstickers,150,77
 soup,23943,Light Chicken Corn Chowder,150,83
-frozen_meal,18355,Goat Cheese and Portobello Ravioli Bowl,149,87
 frozen_meal,21517,Microwavable Buttery Homestyle Mashed Potatoes,149,79
+frozen_meal,18355,Goat Cheese and Portobello Ravioli Bowl,149,87
 frozen_pizza,48108,Broccoli & Spinach Frozen Pizza with 3 Cheeses,149,58
 mac_and_cheese,46480,Macaroni & Cheese Deluxe Four Cheese Sauce Dinner,149,97
-frozen_meal,19298,Turkey Sausage Breakfast Bowl,149,64
 frozen_burrito,38990,Bean & Cheddar Burrito,149,63
+frozen_meal,19298,Turkey Sausage Breakfast Bowl,149,64
 pot_pie,5490,Creamy Mushroom Chicken Pot Pie,149,96
 frozen_appetizer,33995,Five Cheese Garlic Bread,148,79
 instant_ramen,1273,"Ramen, Reduced Sodium, Asian Vegetable",148,102
@@ -1159,8 +1159,8 @@ frozen_pizza,45804,Thin & Crispy Pepperoni and Peppers Pizza,146,101
 frozen_meal,28304,Vegetable Enchilada,146,82
 frozen_pizza,15344,Supreme Party Pizza,146,76
 frozen_meal,3255,Chicken Tikka Masala Samosas with Cilantro Chutney,145,78
-hot_pocket,8954,Premium Pepperoni Pizza in Garlic Buttery Crust Sandwiches,145,78
 deli_prepared,10654,Rotisserie Chicken Salad,145,87
+hot_pocket,8954,Premium Pepperoni Pizza in Garlic Buttery Crust Sandwiches,145,78
 soup,19358,Country Vegetable Soup,145,56
 frozen_lasagna,36,Traditional Lasagna with Meat Sauce Savory Italian Recipes,144,99
 soup,13428,Curried Red Lentil Organic Soup,144,101
@@ -1185,11 +1185,11 @@ soup,40373,Chicken Noodle Soup Bowl,140,87
 frozen_meal,29706,Voila! Frozen Garlic Shrimp Dinner,140,81
 frozen_meal,42577,"Grilled white meat chicken in an apple reduction with cranberries, French cut green beans & carrots and whole wheat orzo pasta. Apple Cranberry Chicken",140,76
 frozen_pizza,46168,Gluten Free Signature Pepperoni Pizza,140,43
-soup,39705,Right Foods Lower Sodium Soup Lentil,140,91
 soup,24893,Organic Creamy Sweet Pea Soup,140,83
-soup,19930,Organic Hearty Lentil Vegetable Soup,139,71
-frozen_appetizer,28853,Mini Vegetable Spring Rolls,139,64
+soup,39705,Right Foods Lower Sodium Soup Lentil,140,91
 deli_prepared,25757,Spinach Artichoke Noodles,139,58
+frozen_appetizer,28853,Mini Vegetable Spring Rolls,139,64
+soup,19930,Organic Hearty Lentil Vegetable Soup,139,71
 deli_prepared,36246,Crunchy Shrimp Tempura Roll,139,78
 frozen_pizza,3592,Triple Meat Party Pizza,139,68
 deli_prepared,17574,American Classics Macaroni Salad,139,70
@@ -1209,29 +1209,29 @@ frozen_pizza,43582,Gluten Free Vegan Cheese Pizza,136,53
 frozen_meal,16608,Chicken Orange,136,71
 frozen_pizza,25455,Four Cheese,136,69
 frozen_meal,44992,General Chang's Chicken,136,79
-meal_kit,47121,Hamburger Helper Italian Four Cheese Lasagna,135,87
 mac_and_cheese,46275,Macaroni & Cheese Dinner Teenage Mutant Ninja Turtle Shapes,135,86
+meal_kit,47121,Hamburger Helper Italian Four Cheese Lasagna,135,87
 soup,23342,Carrot Pistachio & Tarragon Soup,134,91
 instant_ramen,16228,Pad Thai Noodle Bowl,134,96
 soup,21093,"Beef Ravioli, in Tomato & Meat Sauce",134,75
 meal_kit,38758,Tabouleh Wheat Salad Mix,134,104
-frozen_meal,30848,Cheddar Potatoes with Broccoli,133,89
 frozen_meal,12505,Sesame Teriyaki Noodle Bowl,133,74
+frozen_meal,30848,Cheddar Potatoes with Broccoli,133,89
 frozen_meal,25713,Smart Ones Anytime Selections Mini Cheeseburger,133,51
 instant_soup,19764,Hot & Sour Soup Bowl,132,84
 canned_chili,43461,"Chili with Beans, Hot",132,62
 frozen_pizza,47820,"Pizza, Naan, Artisan Crust, Spinach & Paneer Cheese",132,72
 frozen_appetizer,33194,Original Gluten Free Spring Rolls,131,92
 frozen_meal,10061,Meatloaf with Portobello Mushroom Gravy,131,56
-frozen_meal,31817,Chicken Fajitas,131,68
-instant_ramen,16189,Chicken Flavor Instant Lunch,131,71
 frozen_meal,5090,Marketplace Sweet Sriracha Braised Beef,131,69
+instant_ramen,16189,Chicken Flavor Instant Lunch,131,71
+frozen_meal,31817,Chicken Fajitas,131,68
 frozen_burrito,41306,Chicken Rice & Beans Burritos,131,69
+deli_prepared,33382,P3 Chicken and Cashews,130,50
+mac_and_cheese,30875,Macaroni & Cheese with Cheddar & Romano,130,56
+instant_soup,14500,Miso-Cup Ruduced Sodium Soup - 4 CT,130,95
 deli_prepared,34415,Light Bologna & American Cracker Stackers Lunchhable,130,47
 frozen_appetizer,46527,Lemon Garlic Falafel Popper,130,90
-deli_prepared,33382,P3 Chicken and Cashews,130,50
-instant_soup,14500,Miso-Cup Ruduced Sodium Soup - 4 CT,130,95
-mac_and_cheese,30875,Macaroni & Cheese with Cheddar & Romano,130,56
 soup,19062,Vegetable Classics 99% Fat Free Minestrone Soup,130,74
 frozen_meal,14343,Home Menu Meals for 2 Sweet & Sour Chicken,130,54
 soup,28760,Soup Secrets Chicken Noodle Soup Mix,130,104
@@ -1256,11 +1256,11 @@ soup,3804,Homestyle Healthy Request Mexican Style Chicken Tortilla Soup,125,75
 instant_soup,13957,Thai Style Tom Yum Noodle Soup Bowl,125,81
 frozen_appetizer,24401,Mini Pork And Ginger Wontons,125,72
 frozen_meal,43395,Egg White Chicken Maple Sausage & Cheese Breakfast Sandwich Gluten-Free,124,77
-instant_soup,28387,Peanut Sesame Noodle Bowl,124,85
 frozen_lasagna,8722,Ravioli with Spinach & Ricotta,124,51
 frozen_meal,20268,World's Best Gluten Free Mac & Cheese,124,46
-frozen_meal,40300,Chicken Alfredo,124,59
+instant_soup,28387,Peanut Sesame Noodle Bowl,124,85
 frozen_meal,6296,Farmhouse-Style Sausage Scramble,124,43
+frozen_meal,40300,Chicken Alfredo,124,59
 frozen_appetizer,3474,Shredded Beef Taquitos,124,74
 pot_pie,32858,White Meat Chicken Pot Pie,123,76
 frozen_meal,5140,Lean & Fit Coconut Lemongrass Chicken,123,70
@@ -1275,29 +1275,29 @@ frozen_meal,5563,Chicken & Broccoli Pasta Bake,121,42
 frozen_meal,46228,White Cheddar Mac & Cheese & Bacon,121,40
 mozzarella_sticks,35978,Mozzarella Sticks with Marinara Sauce,120,80
 chicken_nuggets,1817,Whole Grain Breaded Chicken Breast Chunks,120,69
-soup,38861,Gluten Free Cafe Veggie Noodle Soup,120,76
 frozen_meal,49067,Breaded filet of Alaskan Pollock with macaroni and cheese Fish Filet,120,43
+soup,38861,Gluten Free Cafe Veggie Noodle Soup,120,76
 frozen_meal,41106,Tiramisu,120,57
-soup,25357,Homestyle Harvest Tomato with Basil Soup,120,71
 frozen_meal,17598,"Skillet Meal for Two, Chicken Florentine & Farfalle",120,69
+soup,25357,Homestyle Harvest Tomato with Basil Soup,120,71
 frozen_pizza,11951,Singles Deep Dish Meat Trio Pizzas,119,41
 frozen_meal,10091,Beef Picadillo Empanadas,119,85
-frozen_pizza,25755,Singles Supreme French Bread Pizzas,119,41
 deli_prepared,32772,Shrimp Ceviche,119,61
+frozen_pizza,25755,Singles Supreme French Bread Pizzas,119,41
 frozen_meal,28932,Slow Roasted Beef,119,60
 frozen_meal,4495,Chicken Parmesan,119,64
 hot_pocket,32181,Uncrustables Hazelnut Spread Sandwich,119,46
 frozen_meal,36133,BBQ Recipe Beef Frozen Sandwiches,118,53
-meal_kit,36065,Italian-Style Entrees Tomato & Basil Penne,118,38
 frozen_appetizer,37536,Taquitos Steak & Cheese,118,72
+meal_kit,36065,Italian-Style Entrees Tomato & Basil Penne,118,38
 frozen_pizza,47939,Gluten Free Rice Crust Pesto Pizza,118,56
 frozen_pizza,28370,Original Thin Bacon Cheeseburger Pizza,118,63
-deli_prepared,45329,Tabuleh,118,66
-frozen_burrito,18584,Chicken Fajita Burrito Plus Guacamole,118,62
-mac_and_cheese,8735,Italian Entrees Marinara Penne Pasta,118,36
-deli_prepared,26557,Organic Southwest Powermeal Bowl,118,64
-deli_prepared,11257,Seasoned Squid Salad,118,57
 frozen_pizza,43727,Ultra Thin Crust Supreme Pizza,118,55
+deli_prepared,45329,Tabuleh,118,66
+deli_prepared,26557,Organic Southwest Powermeal Bowl,118,64
+frozen_burrito,18584,Chicken Fajita Burrito Plus Guacamole,118,62
+deli_prepared,11257,Seasoned Squid Salad,118,57
+mac_and_cheese,8735,Italian Entrees Marinara Penne Pasta,118,36
 frozen_appetizer,6126,Gluten Free Rice Crusted Fishies,117,85
 frozen_meal,17950,Vegetable & Pepper Jack Cheese Flatbread Breakfast Sandwich,117,45
 soup,37258,Butternut Squash Soup,116,78
@@ -1306,44 +1306,44 @@ frozen_meal,14230,Golden Battered Fish Fillet With Rice And Cheesy Broccoli,116,
 frozen_meal,518,Turkey Meatloaf & Mashed Potatoes,116,68
 soup,12924,Home Style Italian-Style Wedding Spinach & Meatballs Chicken Soup,116,49
 frozen_pizza,8042,Singles Deep Dish Supreme Pizza,115,58
-frozen_meal,42395,Muy Cheesy Quesadillas,115,41
 frozen_meal,12601,Pelmeni w/ Beef,115,45
+frozen_meal,42395,Muy Cheesy Quesadillas,115,41
 meal_kit,38912,Traditional Sage Stuffing Mix,115,82
-deli_prepared,11438,Loaded Mashed Potatoes,115,76
 frozen_meal,13662,Calzone Spinach Feta & Tomato,115,39
-frozen_meal,27769,Beef and Broccoli,115,53
+deli_prepared,11438,Loaded Mashed Potatoes,115,76
 frozen_pizza,30279,Dairy Free Pizza White Style,115,84
+frozen_meal,27769,Beef and Broccoli,115,53
 instant_soup,40536,Gluten-Free Garlic Goodness Vietnamese Brown Rice Noodle Soup,114,93
 frozen_meal,43770,Classic Meat Loaf Complete Meals,114,54
 frozen_meal,4450,Salisbury Steaks & Brown Gravy Frozen Dinner,114,58
 canned_chili,40283,Beef Tamales In Chili Sauce,113,56
 frozen_pizza,48623,Pizzetta Onion & Gorgonzola,113,45
-frozen_meal,40191,Roasted Carved White Meat Turkey Dinner,113,59
 instant_ramen,38128,Garlic & Vegetable Instant Rice Noodle Soup,113,90
+frozen_meal,40191,Roasted Carved White Meat Turkey Dinner,113,59
 mac_and_cheese,29242,Whole Grain Original Flavor Macaroni & Cheese Dinner,113,54
 corn_dogs,13400,"Corn Dogs, 100% Beef",113,68
-frozen_meal,12293,Gluten Free Burrito Chicken & Cheese,113,71
 frozen_meal,43998,Home Menu Meal for Two Beef with Broccoli,113,59
+frozen_meal,12293,Gluten Free Burrito Chicken & Cheese,113,71
 frozen_pizza,33223,Cheese Stuffed Crust Supreme,112,78
 frozen_meal,31609,100% Beef Jalapeno Cheeseburgers,112,60
 frozen_meal,41653,Biscuit & Sausage Gravy Breakfast Bowl,111,47
 frozen_burrito,36024,Organic Chicken Cilantro & Lime Burrito,111,63
 deli_prepared,25288,Italian Style Sub Sandwich Kit,111,50
-mac_and_cheese,44225,White Cheddar,110,46
-deli_prepared,13419,Tofu Black Bean Veggie Pie,110,46
 frozen_appetizer,42605,Cheesy Rice & Broccoli,110,53
 frozen_lasagna,46172,Three Meat & Four Cheese Lasagna,110,71
+deli_prepared,13419,Tofu Black Bean Veggie Pie,110,46
+mac_and_cheese,44225,White Cheddar,110,46
 instant_ramen,47911,Thai Peanut Asian Noodle Cup,110,80
 frozen_meal,7227,Smart Ones Spaghetti with Meat Sauce,110,68
+frozen_meal,47586,"Limited Edition Entree, Chicken Tiki Masala",109,52
 instant_ramen,5821,Asian Noodles Teriyaki,109,73
 soup,47979,Butternut Squash Bisque,109,46
 chicken_nuggets,17611,Chicken Breast Nuggets Gluten Free,109,68
-frozen_meal,47586,"Limited Edition Entree, Chicken Tiki Masala",109,52
 deli_prepared,37163,Hummus Cucumber and Tomato Sandwich,109,41
 instant_soup,28272,"Instant Noodle Soup, Tom Yum",109,46
 instant_ramen,48730,Hot & Spicy Chicken Flavor With Vegetables Ramen Noodles Bowl,108,51
-frozen_pizza,37503,"Pizza, Naan, Artisan Crust, Eggplant",108,46
 soup,5822,Chicken with Rice Soup Bowl,108,54
+frozen_pizza,37503,"Pizza, Naan, Artisan Crust, Eggplant",108,46
 deli_prepared,35975,Sweet Corn Tamales,107,58
 mac_and_cheese,28113,Classic Mac,107,57
 frozen_meal,14132,Chili Con Carne,107,46
@@ -1351,9 +1351,9 @@ deli_prepared,32862,Vegan Mac N Cheese,107,34
 frozen_lasagna,4623,Vegetable Lasagna Party Size,107,57
 soup,47970,Traditional Homestyle Chicken with Vegetables & Pearl Pasta Soup,107,58
 soup,22243,On The Go Chicken with Mini Noodles Soup,107,65
-frozen_pizza,14967,Favorites French Bread Supreme Pizza,106,60
-mac_and_cheese,35847,Mini Spaghetti Ring & Meatballs Bowl,106,40
 soup,35457,Zucchini Soup,106,45
+mac_and_cheese,35847,Mini Spaghetti Ring & Meatballs Bowl,106,40
+frozen_pizza,14967,Favorites French Bread Supreme Pizza,106,60
 frozen_appetizer,9275,Classics Parmesan Garlic Wings,106,54
 canned_chili,30295,Pork & Beans,106,73
 soup,466,Old Fashioned Vegetable Beef Soup,106,61
@@ -1372,14 +1372,14 @@ frozen_pizza,20602,Twisted 6 Cheese Pizza,104,43
 mac_and_cheese,44493,Tuna Helper Classic Creamy Broccoli,103,67
 mac_and_cheese,25203,Protein Mac Mild Cheddar  Macaroni & Cheese,103,55
 frozen_pizza,22280,Gluten Free Three Cheese Pizza,103,58
-chicken_nuggets,48799,"Fish Sticks, Classic Crunchy",103,52
 meal_kit,850,Crunchy & Soft Taco Dinner Kit,103,50
-frozen_meal,24410,Meatloaf With Home Style Mashed Potatoes & Gravy,103,62
+chicken_nuggets,48799,"Fish Sticks, Classic Crunchy",103,52
 frozen_pizza,32172,Deep Dish Minis Pepperoni Pizza,103,38
+frozen_meal,24410,Meatloaf With Home Style Mashed Potatoes & Gravy,103,62
 soup,104,High Fiber Tomato Basil Soup,103,66
 frozen_meal,16378,Smart Ones Classic Favorites Salisbury Steak,103,62
-frozen_appetizer,22163,Original Spring Rolls with Traditional Sauce,102,69
 instant_ramen,18266,Teriyaki Noodle Bowl,102,86
+frozen_appetizer,22163,Original Spring Rolls with Traditional Sauce,102,69
 mac_and_cheese,25328,Old Fashioned Mac & Cheese,102,59
 meal_kit,30509,Cheeseburger Macaroni Home Cooked Skillet Meal,102,62
 soup,8796,Traditional Chicken Barley Soup,102,60
@@ -1388,84 +1388,84 @@ deli_prepared,37450,Falafel Balls,102,63
 frozen_meal,11310,Chana Masala Roti Paratha,102,34
 frozen_meal,2644,Marketplace Chicken Pecan,101,40
 frozen_meal,43142,"Special K  Flatbread Breakfast Sandwich-Ham, Egg & Pepper Jack Cheese",101,50
+frozen_appetizer,24404,5 Cheese Texas Toast,101,67
+soup,6192,Vegetable Classics Tomato Rotini Soup,101,52
 frozen_burrito,14481,Huevos Rancheros Breakfast Wrap,101,40
 soup,2917,Dungeness Crab Bisque With Pink Shrimp,101,75
-soup,6192,Vegetable Classics Tomato Rotini Soup,101,52
-frozen_appetizer,24404,5 Cheese Texas Toast,101,67
-frozen_pizza,27698,Garlic Bread Pepperoni Pizza,100,73
 instant_ramen,5806,Premium Chow Mein Teriyaki Beef Flavor,100,43
 soup,35972,"Organic  Tuscan White Bean Soup, Lightly Salted",100,46
-canned_chili,3447,Vegetarian Chili with Beans,100,50
+frozen_pizza,27698,Garlic Bread Pepperoni Pizza,100,73
 canned_chili,37638,Lentils with Onion,100,50
+canned_chili,3447,Vegetarian Chili with Beans,100,50
 frozen_meal,28755,Uncured Bacon & Eggs Scramble Bowl Frozen Meal,99,53
 deli_prepared,13360,Ready-to-Eat Meals Salami & Cheese,99,43
-deli_prepared,46039,Lunchables Chicken Dunks,99,47
 frozen_meal,27687,Croissant Crust Philly Steak & Cheese,99,70
+deli_prepared,46039,Lunchables Chicken Dunks,99,47
 soup,467,"Soup, Lower Sodium, Organic, Split Pea",99,60
 frozen_burrito,21794,Beef Bean Chimichanga,98,49
-soup,15721,"Soup, Creamy, Split Pea",98,56
 frozen_meal,40453,Smart Ones Teriyaki Chicken & Vegetables,98,48
+soup,15721,"Soup, Creamy, Split Pea",98,56
 frozen_lasagna,3240,Lactose Free Tofu Vegetable Frozen Lasagna,98,44
 hot_pocket,6411,"Delights Honey Wheat Flatbread Turkey Sausage, Egg & Cheese",98,57
+soup,38691,Garlic Vegetable Soup Cup,98,62
 frozen_appetizer,1737,Popcorn Shrimp Oven Crispy,98,61
 soup,32793,Light Roasted Chicken & Vegetable Soup,98,68
-soup,38691,Garlic Vegetable Soup Cup,98,62
-frozen_meal,16484,Alfredo  Chicken,98,49
 frozen_meal,33544,Black Beans & Rice,98,53
+frozen_meal,16484,Alfredo  Chicken,98,49
 frozen_meal,10926,Pelmeni with Chicken,98,37
-frozen_meal,38002,with Seasoned Roasted Potatoes Scrambled Eggs & Sausage,98,17
 chicken_nuggets,7324,Gluten Free Breaded Chicken Patties,98,44
 mac_and_cheese,32887,Macaroni & Mild Chadder Cheese,98,48
+frozen_meal,38002,with Seasoned Roasted Potatoes Scrambled Eggs & Sausage,98,17
 frozen_meal,22288,Lemongrass Coconut Chicken,97,49
 chicken_nuggets,3883,Chicken Fingers,97,44
 soup,12009,Umbrian Lentil Soup,97,19
 frozen_meal,18438,Rice Bowl Chicken Fajita Frozen Dinner,97,20
 frozen_meal,47827,Cafe Steamers General Tso's Spicy Chicken,97,61
 deli_prepared,48474,Deli Fresh Coleslaw,96,56
+instant_ramen,46965,Korean Sweet Chili Noodle Bowl,96,59
 frozen_meal,15915,Disney Frozen Pasta & Peas with a Parmesan Cheese Sauce Entree,96,54
 deli_prepared,19842,Albacore Tuna Salad,96,39
-instant_ramen,46965,Korean Sweet Chili Noodle Bowl,96,59
 frozen_appetizer,32032,Beer Battered Onion Rings with Sea Salt,96,63
 frozen_burrito,18491,Signature Egg Sausage & Cheese Burritos,96,46
 frozen_pizza,6077,"Traditional Crust Supreme (Sausage, Pepperoni, Green Peppers, Red Peppers, Onions) Pizza",95,70
 frozen_meal,21520,Chicken Enchilada,95,49
-frozen_meal,46506,Taco Seasoned Beef & Cheese Extra Crunchy Taquitos,95,53
-frozen_meal,18942,Steamfresh Chef's Favorites Lightly Sauced Mushroom & Green Bean Risotto,95,52
-deli_prepared,32900,Paneer Tikka Masala,95,59
 instant_ramen,45169,Roast Chicken Flavor Ramen Noodles,95,53
+frozen_meal,18942,Steamfresh Chef's Favorites Lightly Sauced Mushroom & Green Bean Risotto,95,52
+frozen_meal,46506,Taco Seasoned Beef & Cheese Extra Crunchy Taquitos,95,53
+deli_prepared,32900,Paneer Tikka Masala,95,59
 frozen_meal,7266,Mini Cheeseburgers,95,51
 frozen_appetizer,32966,Garlic Toast,95,48
+canned_chili,7994,Hot No Beans Chili,95,56
+frozen_meal,43733,Sweet Onion And Red Pepper Chard Ravioli In Red Pepper Sauce,95,40
 soup,39580,Heart Healthy Reduced Sodium Chicken & Wild Rice Soup,95,68
 soup,36254,Organic Loaded Baked Potato Soup,95,68
-frozen_meal,43733,Sweet Onion And Red Pepper Chard Ravioli In Red Pepper Sauce,95,40
-canned_chili,7994,Hot No Beans Chili,95,56
 soup,9968,"Organic White Bean & Kale Soup, 25% Less Sodium",94,55
 frozen_meal,47686,Matar-Paneer,94,40
-soup,3247,Vegan Minestrone & Pasta Soup,94,54
 frozen_meal,20789,"English Muffin Sandwiches, Canadian Bacon, Whole Cracked Egg & Cheese",94,48
 frozen_appetizer,47781,Garlic Chicken Mini Wontons,94,47
+soup,3247,Vegan Minestrone & Pasta Soup,94,54
 frozen_appetizer,4973,Feisty Buffalo Poppers,93,61
 deli_prepared,18552,Hot Calabrese Salame with Natural Gouda Cheese & Toasted Rounds Small Plates,93,44
+frozen_pizza,40555,Mushroom Trio & Spinach Thin Crust Pizza,93,62
 deli_prepared,17719,Mediterranean Lentil Salad,93,23
 frozen_lasagna,14605,Gluten Free Broccoli and Kale Lasagna,93,51
-frozen_pizza,40555,Mushroom Trio & Spinach Thin Crust Pizza,93,62
 frozen_appetizer,27631,Cheddar & Bacon Potato Skins,93,46
 instant_ramen,14695,Ramen Noodle Soup Shrimp Flavor,93,73
-frozen_meal,3528,Chicken Tamales,93,58
 frozen_meal,26956,EF Butternut Squash Risotto,93,70
+frozen_meal,3528,Chicken Tamales,93,58
 frozen_meal,10816,Rainbow Rice + Chicken,93,53
 frozen_meal,40139,Mayan Harvest Bake,92,34
 frozen_appetizer,5594,Mini Egg Rolls Vegetable - 8 CT,92,64
 frozen_meal,39791,Comfort Cheddar Bacon Chicken,92,38
-frozen_meal,46928,Complete Skillet Meal For Two Beef & Broccoli,91,62
-frozen_meal,30,"Three Cheese Ziti, Marinara with Meatballs",91,50
 frozen_meal,38446,Macaroni & Cheese Meal,91,54
+frozen_meal,30,"Three Cheese Ziti, Marinara with Meatballs",91,50
+frozen_meal,46928,Complete Skillet Meal For Two Beef & Broccoli,91,62
 soup,30241,Chunky Hearty Bean and Ham Soup,91,45
 frozen_meal,40498,White Corn and Zucchini Tamales With Cheese,91,65
 frozen_burrito,30495,"Signature Egg, Sausage, Cheese & Potato Burritos",91,29
 frozen_meal,19394,Mrktpl Le Ginger Beef,91,46
-hot_pocket,6910,Bacon Egg & Cheese Frozen Sandwiches,91,56
 meal_kit,9774,Cheesy Italian Shells Hamburger Helper,91,58
+hot_pocket,6910,Bacon Egg & Cheese Frozen Sandwiches,91,56
 frozen_pizza,10561,Deep Dish Minis Cheese Pizza,90,47
 frozen_appetizer,42540,Dumpling Hunan,90,42
 frozen_pizza,20807,Authentic Deep Dish Cheese Pizza,90,42
@@ -1475,217 +1475,217 @@ deli_prepared,43400,Raspberry Vinaigrette Salad Snax,89,14
 frozen_appetizer,7864,Triple Meat Pizza Rolls,89,61
 frozen_meal,37277,"All Natural Gluten Free Green Chili, Cheese and Ranchero Sauce Egg White Omelette",89,26
 canned_chili,29518,Beef Chili With Beans,89,47
-frozen_pizza,41550,Original Crust,89,42
 soup,47582,Chicken & Dumplings Soup,89,71
+frozen_pizza,41550,Original Crust,89,42
 frozen_meal,49428,Lean and Fit Fire Grilled Chicken Poblano,89,58
 frozen_meal,23285,Charbroiled Chicken & Monterey Jack Cheese Quesadillas,89,39
 mac_and_cheese,46419,Table Cheddar Broccoli,88,57
-deli_prepared,209,Italian Pasta Salad,88,57
 canned_chili,28410,Chili Beans Hot Chili Sauce,88,54
+deli_prepared,209,Italian Pasta Salad,88,57
 frozen_burrito,40808,Chicken Apple Sausage-Egg & Smoked Gouda-Caramelized Onion & Roasted Potato Breakfast Burrito,88,56
-instant_ramen,23320,Chicken Flavor With Vegetables Ramen Noodles,88,38
 frozen_meal,12521,Chili Rellano Casserole Bowl,88,45
+pot_pie,40615,"Aussie Pies, Handheld, Southwest Chicken",88,43
 soup,33913,Chicken & Star Shaped Pasta RTS Soup,88,48
 instant_ramen,9538,Instant Lunch Chicken Flavor,88,47
-pot_pie,40615,"Aussie Pies, Handheld, Southwest Chicken",88,43
+instant_ramen,23320,Chicken Flavor With Vegetables Ramen Noodles,88,38
 soup,38671,Creamy Tomato Organic Soup,88,45
 mac_and_cheese,45025,Easy Mac Triple Cheese,88,54
 soup,19802,All Natural Chili Bean Soup,87,33
 frozen_meal,26903,Organic Green Thai Curry,87,75
 frozen_meal,18628,Organic Volcano Rice Ready To Eat Bowl,87,52
-frozen_meal,31800,Chicken Margherita & Penne Classic Meal for Two,87,55
-frozen_meal,41137,Home Style Meatless Meatloaf,87,55
 frozen_meal,37082,Top Chef Barbecue Seasoned Steak with Red Potatoes Cafe Steamers,87,54
+frozen_meal,41137,Home Style Meatless Meatloaf,87,55
+frozen_meal,31800,Chicken Margherita & Penne Classic Meal for Two,87,55
 deli_prepared,16661,Chipotle Pepper Hummus Wrap,86,42
-frozen_meal,13089,Spicy Mongolian Noodle Bowl,86,36
 frozen_appetizer,36559,Pork & Vegetable Dumplings Potstickers,86,45
-frozen_meal,45527,Signature Chicken & Monterey Jack Cheese Chimichangas,86,44
+frozen_meal,13089,Spicy Mongolian Noodle Bowl,86,36
 soup,2520,Light Savory Vegetable Barley Soup,86,61
+frozen_meal,45527,Signature Chicken & Monterey Jack Cheese Chimichangas,86,44
 instant_ramen,20500,Thai Ginger Instant Rice Noodle Soup,86,76
-soup,4286,Savory Black Bean Soup,86,49
 frozen_meal,22614,Chicken Tikka Masala with Saffron Rice,86,50
+soup,4286,Savory Black Bean Soup,86,49
 frozen_meal,47538,Compleats Homestyle Chicken & Dumplings,86,26
 frozen_meal,27354,Authentic Asia Shrimp Wonton Soup With Noodles,86,16
-frozen_pizza,17233,"Original 4 Meat Sausage, Pepperoni, Hamburger, Canadian Bacon Pizza",85,41
 frozen_meal,40518,Stuffed Pepper,85,46
+frozen_pizza,17233,"Original 4 Meat Sausage, Pepperoni, Hamburger, Canadian Bacon Pizza",85,41
 deli_prepared,18314,Greek Wrap,85,36
-soup,16421,Organic No Salt Added Lentil Soup,85,37
 frozen_meal,21640,Tai Pei Chicken Chow Mein,85,37
+soup,16421,Organic No Salt Added Lentil Soup,85,37
 frozen_pizza,1574,Pepperoni Pizza Pockets,85,39
 frozen_meal,22410,Ravioli Kale Ricotta,85,40
 frozen_meal,18950,Roast Turkey Breast Meal,85,37
 frozen_meal,25721,Zap Ems Fettuccine Alfredo,84,42
+mac_and_cheese,42165,Pizza Mac & Cheese,84,51
+instant_ramen,42558,Reduced Sodium Tofu & Miso Ramen,84,62
 frozen_meal,14616,Kung Pao Chicken Cafe Steamers,84,33
 soup,21059,Chipotle Chicken & Corn Chowder RTS Soup,84,65
-instant_ramen,42558,Reduced Sodium Tofu & Miso Ramen,84,62
-mac_and_cheese,42165,Pizza Mac & Cheese,84,51
 instant_soup,8150,Cup A Soup Chicken Noodle Instant Soup,84,57
-frozen_pizza,33931,Deep Dish Singles Cheese Pizza,84,29
 instant_ramen,34172,Top Ramen Shrimp Flavor Instant Noodle Soup,84,50
+frozen_pizza,33931,Deep Dish Singles Cheese Pizza,84,29
 soup,25285,Chunky Tomato Bisque Soups,84,55
 deli_prepared,48076,Lunchables Uploaded 6-Inch Turkey & Ham Sub Sandwich,84,43
 mac_and_cheese,5287,Gluten Free Penne and Cheese,84,47
 frozen_meal,43528,Raw Stuffed Chicken Breasts Broccoli & Cheese,83,48
-frozen_meal,33473,Chicken Melts,83,25
-frozen_meal,19158,Pesto Pasta Primavera,83,54
 frozen_appetizer,21686,Shredded Chicken Street Taco + Ancho Aioli,83,59
+frozen_meal,19158,Pesto Pasta Primavera,83,54
+frozen_meal,33473,Chicken Melts,83,25
 instant_ramen,37353,Spicy Szechuan Asian Noodle Cup,83,62
 deli_prepared,19940,6 Piece with 10 fl oz Spring Water Uploaded Chicken Dunks,83,44
 frozen_meal,38461,Chicken Fried Chicken Meal,82,43
-frozen_meal,37452,Chicken Fettuccini Alfredo,82,35
 soup,6122,Organic Tomato Soup,82,61
+frozen_meal,37452,Chicken Fettuccini Alfredo,82,35
 frozen_pizza,40948,Crispy Thin Crust BBQ Recipe Chicken Pizza,82,55
 frozen_meal,24016,Shrimp Lo Mein,82,55
 soup,19581,No Salt Added Minestrone Soup,82,40
-instant_soup,25427,Chinese Style Chicken Soup Bowl,81,62
 deli_prepared,37562,Rainbow Roll,81,35
+instant_soup,25427,Chinese Style Chicken Soup Bowl,81,62
 meal_kit,42916,1-Step 1-Minute Paneer Makhani,81,55
-frozen_meal,20614,Sunbutter & Crackers,81,33
 frozen_pizza,34792,Pepperoni & Italian Style Cheese Brick Oven Crust Pizza,81,49
 frozen_meal,49181,Country Fried Beef Steak & Gravy,81,35
+frozen_meal,20614,Sunbutter & Crackers,81,33
 frozen_pizza,15428,"Naturally Flavored Garlic Bread Supreme (Sausage, Pepperoni, Onions, Olives) Pizza",81,55
-soup,22764,Slow Kettle Tuscan Style Chicken & White Bean Soup,81,71
 frozen_meal,26697,Organic Spicy Kung Pao Noodles,81,58
+soup,22764,Slow Kettle Tuscan Style Chicken & White Bean Soup,81,71
 deli_prepared,27990,Chicken Burrito,80,41
 soup,44175,Noodle Chicken,80,49
 frozen_burrito,38307,Simply Unwrapped Burrito,80,48
-deli_prepared,38212,Tomato Basil Bisque,80,61
 deli_prepared,40052,Vegan Pesto Pasta,80,31
+deli_prepared,38212,Tomato Basil Bisque,80,61
 frozen_pizza,29760,Meat Lover's Pizza,80,52
 frozen_pizza,45436,Gluten Free 4 Cheese Medley Pizza,80,39
-frozen_meal,185,Chicken Nugget Meal,79,40
 mac_and_cheese,27138,Vermont White Cheddar Macaroni & Cheese Dinner,79,46
-soup,14286,Light Italian Style Meatball Soup,79,62
-frozen_appetizer,28514,Family Size Jumbo Coconut Shrimp,79,39
+frozen_meal,185,Chicken Nugget Meal,79,40
 canned_chili,22500,"Silverado Beef Chili with Beans, 97% Fat Free",79,45
+frozen_appetizer,28514,Family Size Jumbo Coconut Shrimp,79,39
 instant_ramen,32489,Pork Flavor Ramen Noodle Soup,79,45
+soup,14286,Light Italian Style Meatball Soup,79,62
 frozen_pizza,8713,Fire Roasted Vegetables Crispy Thin Crust Pizza,79,32
 frozen_meal,9785,All Natural Gluten Free Spinach and Mushroom Egg White Omelette,79,35
 frozen_appetizer,25449,Chopped spinach in a Parmesan & Romano cheese sauce Creamed Spinach,79,40
 soup,10617,Butternut Squash Cumin Soup,79,44
 soup,32688,Chunky Healthy Request Chicken Corn Chowder Soup,78,49
 frozen_meal,27722,Multi-Grain Blend W/Spinach Tomato & Onions Pasta & Vegetables,78,50
-frozen_burrito,14601,"Green Chili, Bean & Cheese Burrito",78,31
 frozen_pizza,3180,Ultra Thin Crust Ultimate Combo Pizza,78,31
+frozen_burrito,14601,"Green Chili, Bean & Cheese Burrito",78,31
 soup,7977,Organic Tomato Bisque Soup,78,55
 frozen_meal,49681,Spaghetti with Meatballs and Sauce Meal,78,34
 instant_ramen,41932,Instant Noodle Soup Chicken Style,78,39
 frozen_meal,43103,Mild Heat Level Teriyaki Chicken With Soba Noodles,77,62
 frozen_meal,28467,Beef Chile Colorado,77,40
 frozen_meal,3646,Eggo Breakfast Sandwich Bacon Egg Cheese,77,37
-frozen_lasagna,16600,"With seasoned meat sauce, tomato sauce & real low fat ricotta cheese Lasagna Italiano",77,38
 frozen_appetizer,13840,"Fillo Appetizers, Spinach & Feta, Spanakopita",77,51
+frozen_lasagna,16600,"With seasoned meat sauce, tomato sauce & real low fat ricotta cheese Lasagna Italiano",77,38
 frozen_appetizer,48615,Potato & Cheese Pierogi,77,61
 soup,17035,Heart Healthy Minestrone Soup,77,58
-mac_and_cheese,43525,Finding Dory Shapes Macaroni & Cheese Dinner,76,48
 frozen_pizza,43680,Holy Pepperoni Pizza,76,30
-frozen_meal,19353,Moroccan Lamb Stew with Couscous,76,55
+mac_and_cheese,43525,Finding Dory Shapes Macaroni & Cheese Dinner,76,48
 meal_kit,17010,Creamy Chicken Flavor Rice Sides,76,45
-deli_prepared,2928,Bean and Cheese Gorditas,76,20
-soup,27702,Alder Smoked Wild Salmon Chowder,76,47
+frozen_meal,19353,Moroccan Lamb Stew with Couscous,76,55
 meal_kit,13527,Jambalaya Original Rice Mix,76,49
+soup,27702,Alder Smoked Wild Salmon Chowder,76,47
 frozen_meal,11717,Family Size Cheesy Chicken,76,56
+deli_prepared,2928,Bean and Cheese Gorditas,76,20
 frozen_meal,42187,Broccoli & Cheddar Bake Bowl,76,53
 frozen_meal,3048,Cafe Steamers Beef Teriyaki,76,42
 mac_and_cheese,30973,Sharp Cheddar Macaroni & Cheese Dinner,75,45
 frozen_meal,48858,Cheese Enchilada,75,49
 deli_prepared,22182,Old Fashioned Potato Salad,75,30
 mac_and_cheese,17353,Macaroni & White Cheddar Cheese,75,36
+frozen_meal,19137,Chicken Chow Mein,75,39
 frozen_pizza,19997,7 in. Thin & Crispy Pizza Crusts,75,47
 frozen_pizza,37301,Boss Hog Italian Sausage Pizza,75,29
 frozen_meal,18300,Ziti & Meatballs,75,38
-frozen_meal,19137,Chicken Chow Mein,75,39
 frozen_pizza,45984,Margherita With Sausage Pizza,75,48
-frozen_meal,30991,Egg And Bacon Burritos,74,34
 frozen_meal,5136,Blueberry Blintzes Filled Crepes,74,30
+frozen_meal,30991,Egg And Bacon Burritos,74,34
 frozen_meal,15268,Tai Pei Orange Chicken,74,43
 frozen_burrito,33108,Bean & Cheese & Beef & Bean Variety Pack Burritos,74,35
 soup,15495,Organic Butternut Squash Soup,74,39
-frozen_appetizer,30147,Hot Spicy Vegetable Mini Wontons,74,46
 frozen_meal,20831,Broccoli & Cheese Breaded Stuffed Chicken Breasts,74,28
-soup,27926,13 Bean Soup Mix,74,61
+frozen_appetizer,30147,Hot Spicy Vegetable Mini Wontons,74,46
 deli_prepared,36224,Ham American Sub,74,31
 meal_kit,1762,Homestyle Creamy Butter Instant Mashed Potatoes,74,51
+soup,27926,13 Bean Soup Mix,74,61
 frozen_appetizer,12734,Jalapeno Swirls,73,55
 mac_and_cheese,47414,Mac & Trees Natural,73,38
-canned_chili,24989,Chili Con Carne With Beans,73,42
 frozen_meal,32766,Beef & Broccoli,73,29
+canned_chili,24989,Chili Con Carne With Beans,73,42
 frozen_meal,12136,Cafe Steamers Spaghetti & Meatballs,73,29
 soup,47745,Autumn Squash Soup,73,36
-soup,18526,Creamy Roasted Chicken with Herb Dumplings Soup,73,59
 meal_kit,19812,Brown Rice & Black Beans,73,37
-soup,18315,Chicken Noodle Soup Mix,73,50
+soup,18526,Creamy Roasted Chicken with Herb Dumplings Soup,73,59
 instant_ramen,12164,Neoguri Udon Type Noodle Spicy Seafood,73,34
-frozen_meal,11289,Flour Tortilla Rolled Tacos Vegan Chipotle Style,73,31
+soup,18315,Chicken Noodle Soup Mix,73,50
 frozen_meal,19012,Marketplace Spicy Mexican Black Beans and Rice,73,49
-soup,10063,Creamy Broccoli Cheddar Bisque,73,43
+frozen_meal,11289,Flour Tortilla Rolled Tacos Vegan Chipotle Style,73,31
 frozen_pizza,21966,Thin & Crispy Tomato Mozzarella with Pesto Pizza,73,43
+soup,10063,Creamy Broccoli Cheddar Bisque,73,43
 meal_kit,19859,Savory Herbs Stuffing Mix,72,60
 frozen_pizza,10174,Sicilian Recipe Crispy Thin Crust Pizza,72,61
 frozen_pizza,16698,Uncured Pepperoni & Uncured Bacon,72,30
+instant_soup,40820,Vietnamese Brown Rice Noodle Soup Gluten Free Shitake Mushroom,72,57
 frozen_pizza,13682,Original rising Crust Hawaiian Style Pizza,72,42
 frozen_meal,4890,Itsy Bitsy Cheese Ravioli,72,58
 frozen_burrito,1332,Gluten-Free Vegetarian Bean & Cheese Burrito,72,35
-instant_soup,40820,Vietnamese Brown Rice Noodle Soup Gluten Free Shitake Mushroom,72,57
 instant_soup,22272,Gluten Free Matzo Ball & Soup Mix,72,60
-frozen_lasagna,4251,Beef Lasagna Family Size,72,54
 soup,3456,Organic Black Bean Lower Sodium Soup,72,45
+frozen_lasagna,4251,Beef Lasagna Family Size,72,54
 frozen_meal,35593,Philly Steak & Cheese Seasoned Crust Sandwiches,72,31
 frozen_meal,5494,"Egg, Basil Pesto, & Cheese Scramble",72,42
 frozen_pizza,43820,Light & Lean Italian Vegetable Pizza,71,45
 frozen_appetizer,39997,Cheese Bread Snacks with Bacon,71,46
-frozen_appetizer,5682,Taro Puffs,71,56
 frozen_meal,31117,Artichoke & Roasted Peppers Quinoa Meal,71,43
+frozen_appetizer,5682,Taro Puffs,71,56
 instant_ramen,14093,Souper 6-Pack Shrimp Flavor Ramen Noodle Soup,71,36
 frozen_meal,34559,Southwest Style Chicken,71,30
 soup,15356,Organic Vegetable Lower Sodium Soup,71,57
 frozen_pizza,46579,Ultimate Pepperoni Ultra Thin Crust Pizza,71,33
 deli_prepared,24753,Okra Masala,71,32
-frozen_burrito,16158,Shredded Steak & Cheese Burrito,70,52
 frozen_lasagna,29005,Easy Exopress Cheesy Garlic Lasagna with Meat Sauce,70,35
+frozen_burrito,16158,Shredded Steak & Cheese Burrito,70,52
 frozen_meal,9882,No Sugar Added New York Cheesecake,70,50
+frozen_meal,5074,Frozen Five Cheese Ravioli,70,42
 mac_and_cheese,41397,Three Cheese Macaroni Tasty American Favorites,70,44
 frozen_appetizer,45297,"Cheese, Sausage & Pepperoni Mini Bagels",70,46
-frozen_meal,5074,Frozen Five Cheese Ravioli,70,42
+frozen_pizza,1663,Sausage Supreme Pizza with Fire Roasted Vegetables,70,33
 frozen_meal,36560,Broad Noodles with Chicken & Chinese Broccoli,70,43
 frozen_meal,43601,Street Tacos Shredded Chicken & Caramelized Onion,70,41
-frozen_pizza,1663,Sausage Supreme Pizza with Fire Roasted Vegetables,70,33
 frozen_meal,48544,Compleats Chicken Breast Gravy Mashed Potatoes Microwaveable Meal,70,42
-mac_and_cheese,40202,Ultimate Cheeseburger Mac Velveeta Cheesy Skillets,70,42
 frozen_burrito,1119,Street Tacos,70,41
 deli_prepared,1569,Cold Shredded Chicken,70,20
+mac_and_cheese,40202,Ultimate Cheeseburger Mac Velveeta Cheesy Skillets,70,42
 mac_and_cheese,24318,Quinoa Supergrain Mac & Cheese White Cheddar with Shells,70,58
 instant_ramen,7272,Yakisoba Instant Noodle Soup,69,42
 mac_and_cheese,45418,Star Wars Macaroni and Cheese,69,46
 frozen_pizza,7077,Thin Crust Cheese Pizza Savory Italian Recipes,69,31
-instant_soup,9730,Recipe Secrets Onion Mushroom Soup & Dip Mix,68,52
 frozen_meal,41697,Eggless Scramble Breakfast Pockets,68,34
-soup,9412,Healthy Request Harvest Tomato with Basil Soup,68,48
+instant_soup,9730,Recipe Secrets Onion Mushroom Soup & Dip Mix,68,52
 frozen_pizza,15596,Supreme Speciale Pizza Thin Crust,68,35
+soup,9412,Healthy Request Harvest Tomato with Basil Soup,68,48
 frozen_meal,4958,Disney Pixar Cars Pasta & Broccoli with a Cheese Sauce Entree,68,39
 instant_soup,33118,Bangkok Curry Instant Rice Noodle Soup,68,61
 instant_soup,42023,Gluten Free Miso Soup Tofu,68,29
+frozen_pizza,29424,Bbq Recipe Chicken Crispy Flatbread Pizza,68,37
+frozen_pizza,34000,Thin Crispy Crust Supreme Pizza,68,42
 frozen_meal,28209,"On the Go Turkey & Cheddar, Whole Wheat Crackers and Fruit Twist Meal",68,36
 frozen_pizza,34107,Three Meat French Bread Pizza Singles,68,36
-frozen_pizza,34000,Thin Crispy Crust Supreme Pizza,68,42
-frozen_pizza,29424,Bbq Recipe Chicken Crispy Flatbread Pizza,68,37
 frozen_meal,18563,Vegan Enchiladas,68,32
 deli_prepared,42523,Mild Chili Made with Grass Fed Beef,68,42
-frozen_meal,14196,Chicken Fried Beef Steak Meal,67,34
-meal_kit,27287,Pasta Sides Alfredo Broccoli,67,50
 frozen_pizza,20481,Four Cheese Pizza Flaky Crust Frozen Snacks,67,22
+frozen_meal,14196,Chicken Fried Beef Steak Meal,67,34
 deli_prepared,29231,Spicy Veggie Wraps,67,26
+meal_kit,27287,Pasta Sides Alfredo Broccoli,67,50
 frozen_pizza,9085,Naturally Rising Crust Classic Supreme Pizza,67,31
 soup,29721,Hearty Coconut Curry Soup,67,53
 pot_pie,10735,Peach Pie,67,41
+frozen_pizza,568,Artisan Style Melts Quattro Formaggi Pizza,67,59
+frozen_meal,48550,Orange Sesame Chicken Flavorful Asian Inspirations,67,46
+frozen_pizza,571,Thin & Crispy Crust Pepperoni Pizza,67,30
+frozen_meal,3563,Half Pumpkin Pie,67,51
+frozen_pizza,14868,Ultra Thin Crust Sausage Italia Pizza,67,26
 frozen_appetizer,20739,Chicken Egg Rolls,67,33
 frozen_pizza,1881,Italian Style Meat Trio Pizza,67,41
-frozen_meal,48550,Orange Sesame Chicken Flavorful Asian Inspirations,67,46
 frozen_meal,39725,Fettucini Alfredo & Garlic Bread,67,36
-frozen_pizza,571,Thin & Crispy Crust Pepperoni Pizza,67,30
-frozen_pizza,568,Artisan Style Melts Quattro Formaggi Pizza,67,59
-frozen_pizza,14868,Ultra Thin Crust Sausage Italia Pizza,67,26
-frozen_meal,3563,Half Pumpkin Pie,67,51
 soup,9795,Vegetable Barley Organic Soup,67,46
 meal_kit,5801,"Turkey, Pepperoni & Cheese Ready to Eat Meal Kit",67,27
 frozen_meal,32310,"Chicken Fried Rice, Side Dish, Family Style",66,31
@@ -1693,10 +1693,10 @@ frozen_lasagna,10555,Five Cheese Lasagna,66,43
 frozen_pizza,12104,Dgiorno Asm Pepperoni Speciale,66,41
 frozen_meal,5882,Viola! Family Size Alfredo Chicken,66,47
 frozen_pizza,47895,Rising Crust Spicy Chicken Supreme Pizza,66,44
-canned_chili,14109,Mild Chili Beans,66,46
-frozen_meal,20391,Tamale Bean Cheese,66,39
-chicken_nuggets,16229,Jumbo Popcorn Chicken,66,32
 chicken_nuggets,5070,Breaded Nuggets Chicken Breast,66,43
+chicken_nuggets,16229,Jumbo Popcorn Chicken,66,32
+frozen_meal,20391,Tamale Bean Cheese,66,39
+canned_chili,14109,Mild Chili Beans,66,46
 frozen_meal,25900,Turkey tenderloin with diced red skin & sweet potatoes and green beans Rotisserie Seasoned Turkey,66,30
 frozen_meal,45621,Manchurian Dumplings with Basmati Rice,65,54
 frozen_meal,45836,Swedish Meatballs Home Style Meals,65,44
@@ -1705,27 +1705,27 @@ frozen_meal,15728,Aloo Gobi Chana Masala & Biryani Bento,65,42
 canned_chili,41356,Turkey Chili With Beans,65,36
 frozen_meal,27828,Ricotta & Lobster Ravioli Classic Meal for 2,65,37
 frozen_appetizer,16502,Large Wraps Eggroll,65,45
-instant_ramen,42751,Spring Onion Rice Noodle Soup Bowl,64,41
+soup,29258,Spaghettio's In Tomato Sauce with Sliced Franks Pasta,64,21
 frozen_meal,24292,Artichoke Burgers French Herb,64,42
 frozen_burrito,38732,Beef & Cheese Burritos,64,42
-soup,29258,Spaghettio's In Tomato Sauce with Sliced Franks Pasta,64,21
+instant_ramen,42751,Spring Onion Rice Noodle Soup Bowl,64,41
 frozen_meal,37574,Vegetable Tikka Masala,64,53
 frozen_meal,37425,Cafe Steamers Cajun Style Chicken & Shrimp,64,26
 mac_and_cheese,26588,Macaroni & Cheese Tasty American Favorites,64,42
-instant_ramen,3288,Souper Meal Chicken Ramen Noodles,64,42
 frozen_pizza,22030,Ultra Thin Sausage Pizza,64,31
+instant_ramen,3288,Souper Meal Chicken Ramen Noodles,64,42
 frozen_appetizer,32103,Chicken Samosas With Cilantro Chutney,64,34
 mac_and_cheese,11146,Family Size Comfort Bakes Vermont White Cheddar Mac & Cheese,64,31
+frozen_meal,9771,Classic New York Style Cheesecake,64,45
 instant_ramen,47675,Chicken Flavor Chow Mein Noodles,64,33
 frozen_meal,14237,Cheeseburger,64,21
-frozen_meal,9771,Classic New York Style Cheesecake,64,45
-frozen_pizza,43019,Thin Crust Spinach And Mushroom Pizza,64,45
 frozen_meal,17212,Bacon Scramble,64,26
+frozen_pizza,43019,Thin Crust Spinach And Mushroom Pizza,64,45
 frozen_appetizer,9870,Stuffed Soft Pretzel Made in Nut Free Bakery Source of Whole Grains Grilled Cheese,63,32
 soup,8477,Crab Bisque New England Style,63,39
+deli_prepared,12387,Cracker Crunchers Cooked Ham,63,28
 frozen_appetizer,42627,Pork & Vegetable Potstickers,63,29
 frozen_meal,17219,Sweet Potato Cakes,63,33
-deli_prepared,12387,Cracker Crunchers Cooked Ham,63,28
 deli_prepared,28685,"Ready Snax Fruit, Cheese & Flatbread Snack Pack",63,30
 frozen_meal,48451,Triple Layer Gluten Free Enchilada Pie,63,40
 canned_chili,18866,Hot Chili Con Carne With Beans,63,29
@@ -1738,10 +1738,10 @@ deli_prepared,19768,Chinese Chicken Salad,62,35
 instant_ramen,27804,Spicy Kung Pao Noodle Bowl,62,37
 frozen_meal,15231,Beef Pot Roast Home Style Meals,62,20
 canned_chili,12774,Jumbo Spaghetti & Meatballs In Hearty Tomato Sauce,62,22
-frozen_appetizer,46940,Cream Cheese Stuffed Jalapenos Poppers,61,44
 frozen_meal,48932,Corn baked with skim milk and eggs Corn Souffle,61,38
-deli_prepared,41864,Chopped Chicken Liver,61,47
+frozen_appetizer,46940,Cream Cheese Stuffed Jalapenos Poppers,61,44
 frozen_pizza,34653,Italian Style Favorites Meatball Marinara Pizza,61,43
+deli_prepared,41864,Chopped Chicken Liver,61,47
 frozen_burrito,15585,Signature Egg Cheese & Jalapeno Burritos,61,32
 frozen_meal,47278,Roasted Turkey With Garlic Mashed Cauliflower,61,32
 frozen_pizza,10405,Ultra Thin Crust Margherita Pizza,61,27
@@ -1752,54 +1752,54 @@ soup,24734,Light Creamy Roasted Chicken with Herb Dumplings,61,47
 instant_ramen,39597,Ramen Cup Noodles Soup With Shrimp,61,40
 soup,14839,Red Lentil Veggie Soup,60,36
 deli_prepared,32507,Vegetable Combo Sp,60,10
-frozen_meal,9570,Macro Bowl,60,25
 frozen_meal,46444,"8\"" Cherry Pie",60,42
-frozen_pizza,32506,Gluten Free Thin Crust Meat Lovers Pizza,60,23
+frozen_meal,9570,Macro Bowl,60,25
 frozen_pizza,40226,Spinach And Mushroom Pizza,60,25
-frozen_appetizer,2900,Buffalo Style Strips,59,40
+frozen_pizza,32506,Gluten Free Thin Crust Meat Lovers Pizza,60,23
 frozen_meal,22449,Smart Beginnings Cheesy Scramble With Hash Browns,59,29
 deli_prepared,8402,Organic Mashed Potatoes,59,30
+frozen_appetizer,2900,Buffalo Style Strips,59,40
+soup,9328,Organic Split Pea & Potato Soup,59,30
+deli_prepared,20874,Pimento Cheese Spread,59,39
 deli_prepared,42346,Three Bean Salad,59,18
 frozen_burrito,34742,Organic Chicken & Cheese with Green Chilies Burrito,59,36
-deli_prepared,20874,Pimento Cheese Spread,59,39
-soup,9328,Organic Split Pea & Potato Soup,59,30
-instant_ramen,39551,Beef Flavored Cup Noodles,59,41
-instant_ramen,15194,Roasted Peanut Noodle Bowl,59,40
 frozen_appetizer,38402,Fire Grilled Steak Quesadillas,59,27
+instant_ramen,15194,Roasted Peanut Noodle Bowl,59,40
+instant_ramen,39551,Beef Flavored Cup Noodles,59,41
 frozen_meal,19425,Saag Paneer & Biryani Bento,59,39
 frozen_pizza,35991,"Pizza, Thin & Crispy, Sliced Tomato & 5 Cheese",59,30
-frozen_lasagna,9315,Lasagna Florentine Savory Italian Recipes,59,27
-soup,26792,Vegetable Classics Macaroni & Bean Soup,59,19
 deli_prepared,33878,Potato Salad,59,36
-frozen_meal,3575,Fit Kitchen Bourbon Steak,59,31
+frozen_lasagna,9315,Lasagna Florentine Savory Italian Recipes,59,27
 mac_and_cheese,26652,Dairy Free Cheddar Style Shells & Cheese,59,24
-soup,4308,Organic Chicken Pho Soup Starters,59,46
+soup,26792,Vegetable Classics Macaroni & Bean Soup,59,19
+frozen_meal,3575,Fit Kitchen Bourbon Steak,59,31
 frozen_burrito,8741,Veggie Fajita and Guacamole Burrito,59,39
-frozen_burrito,9676,"Egg, Bacon & Cheese Breakfast Taquitos",59,29
 frozen_lasagna,34807,Party Size Five Cheese Lasagna,59,50
+frozen_burrito,9676,"Egg, Bacon & Cheese Breakfast Taquitos",59,29
+soup,4308,Organic Chicken Pho Soup Starters,59,46
 frozen_meal,31774,Suiza Enchilada,58,44
-frozen_meal,49611,Mexican Style Fiesta,58,28
 soup,2680,Leek Recipe Mix,58,35
+frozen_meal,49611,Mexican Style Fiesta,58,28
 soup,4955,Minestrone Soup Mix,58,40
-frozen_appetizer,29250,Zesty Garlic Bread,58,36
 frozen_pizza,16171,"Italian Style Favorites Meat Trio (Italian Sausage, Genoa Salami, and Pepperoni with Mozzarella Cheese over a Marinara Sauce)",58,39
-frozen_meal,23153,Lean Fare Chicken Tikka Masala,58,41
+frozen_appetizer,29250,Zesty Garlic Bread,58,36
 instant_soup,9520,Onion Soup Mix,58,41
 frozen_appetizer,9255,Sweet Plantain and Cheese Empanadas,58,45
+frozen_meal,23153,Lean Fare Chicken Tikka Masala,58,41
 deli_prepared,22478,Moroccan Tagine,58,42
 frozen_burrito,49345,Beef & Bean Red Chili Burritos,58,23
 frozen_lasagna,37713,"Lasagna, Roasted Vegetable",58,35
-soup,32878,Clam Chowder,58,35
 canned_chili,19632,Chunky Beef & Bean Chili,58,39
+soup,32878,Clam Chowder,58,35
 frozen_meal,12179,Frozen Turkey Meal,58,22
-instant_soup,37246,"Soybean Paste (White), Shiro Miso Instant Soup",57,44
 instant_ramen,1206,"Noodle Soup, Shin Cup, Gourmet Spicy",57,28
 frozen_appetizer,13172,Mini Four Cheese Medley Pierogies,57,37
+instant_soup,37246,"Soybean Paste (White), Shiro Miso Instant Soup",57,44
 frozen_meal,3484,Ham And Cheese Style Pocket,57,25
 frozen_meal,37336,Gluten Free Mushroom Ravioli,57,29
 frozen_meal,16817,Philly Cheese Steak Sandwich,57,24
-frozen_meal,5673,Chana Saag With Cumin Rice,57,36
 soup,30572,Chunky Healthy Request Old Fashioned Vegetable Beef,57,37
+frozen_meal,5673,Chana Saag With Cumin Rice,57,36
 instant_ramen,4322,Cup Noodles Ramen Noodle Soup with Shrimp,57,40
 soup,21099,Mini Spaghetti & Meatballs,57,23
 soup,27253,"Soup, Creamy, Split Pea, Flavored with Real Bacon",57,34
@@ -1807,76 +1807,76 @@ frozen_appetizer,20471,Cheddar & Bacon Loaded Potato Skins,57,33
 frozen_meal,48815,Mussels in a Garlic Butter Sauce,57,31
 canned_chili,3998,No Beans Plain Chili,57,40
 frozen_meal,10026,Frozen Swiss And Bacon Petite Quiche Lorraine,57,17
-frozen_pizza,46032,Classic Crust 4 Meat Pizza,56,28
 frozen_pizza,4222,Small Spinach And Artichoke Flatbread,56,42
-soup,37952,Soup Lentil,56,31
-soup,15173,Dr. Mc Dougall's Gluten Free Vegetable Soup 18 Oz,56,34
-instant_ramen,20276,Kung Pao Noodle Bowl,56,39
+frozen_pizza,46032,Classic Crust 4 Meat Pizza,56,28
 soup,15021,Chunky Chili Mac Soup,56,37
+soup,37952,Soup Lentil,56,31
 deli_prepared,32608,Organic Cranberry Winter Salad,56,23
+instant_ramen,20276,Kung Pao Noodle Bowl,56,39
+soup,15173,Dr. Mc Dougall's Gluten Free Vegetable Soup 18 Oz,56,34
 frozen_appetizer,37232,Mushroom & Cheese Swirls,56,46
 frozen_appetizer,43714,Supreme Pizza Rolls,56,31
 frozen_meal,23135,Rustic Alpine,56,31
-canned_chili,43884,Beefaroni Bowl,56,31
-frozen_meal,26574,Tamales Sweet Corn,56,41
 frozen_meal,43982,Chicken Florentine,56,36
+canned_chili,43884,Beefaroni Bowl,56,31
 deli_prepared,109,Grape Leaf Hummus Wrap,56,23
 frozen_meal,34053,Grilled Chicken Caesar,56,31
+frozen_meal,26574,Tamales Sweet Corn,56,41
 deli_prepared,18259,"Goat Cheese, Pear & Arugula Ravioli",56,21
-soup,32836,Organic Creamy Butternut Squash,56,32
 soup,23056,Kosher Recipe Secrets Noodle Soup - 2 CT,56,43
 frozen_meal,21350,Classic Meal for 2 Tuscan-Style Braised Beef with Gold Potatoes,56,27
 mac_and_cheese,32083,Original in Tomato & Cheese Sauce Pasta,56,30
+soup,32836,Organic Creamy Butternut Squash,56,32
 canned_chili,1191,Country Brand Chili with Beans,56,27
 mac_and_cheese,9236,White Cheddar Macaroni & Cheese,55,35
 deli_prepared,46199,Coconut Red Lentil Rice Scooter,55,31
-frozen_lasagna,14649,Lasagna Italiano,55,44
 chicken_nuggets,32986,Fun Shaped Chicken Breast Nuggets,55,27
 frozen_appetizer,24977,"Meatballs, Turkey",55,29
-frozen_meal,4387,Home Style Meals Beef Steak & Noodles,55,36
-frozen_pizza,15513,"Thin Crust Four Meat (Sausage, Pepperoni, Canadian Style Bacon, Bacon) Pizza",55,40
-frozen_pizza,37134,Rising Crust Spinach and Mushroom Pizza,55,20
+frozen_lasagna,14649,Lasagna Italiano,55,44
 deli_prepared,17832,Chicken Kabobbles,55,31
-frozen_meal,36378,Smart Ones Chicken Oriental,55,16
+frozen_pizza,37134,Rising Crust Spinach and Mushroom Pizza,55,20
+frozen_pizza,15513,"Thin Crust Four Meat (Sausage, Pepperoni, Canadian Style Bacon, Bacon) Pizza",55,40
+frozen_meal,4387,Home Style Meals Beef Steak & Noodles,55,36
 soup,26690,Heart Healthy Chicken Gumbo Soup,55,39
+frozen_meal,36378,Smart Ones Chicken Oriental,55,16
 mac_and_cheese,15237,Macaroni & Cheese Refrigerated Sides,55,22
-frozen_appetizer,19596,Tempura Shrimp,55,37
 deli_prepared,44316,Fat Free Chocolate Pudding,55,26
-frozen_meal,31547,Marketplace Pomegranate Chicken,55,33
+frozen_appetizer,19596,Tempura Shrimp,55,37
 mac_and_cheese,19081,Curly Fettuccine with White Cheddar & Broccoli Sauce,55,32
+frozen_meal,31547,Marketplace Pomegranate Chicken,55,33
 frozen_meal,21489,Vegan & Gluten Free Nut Balls,55,22
 frozen_meal,14503,"Curry Chicken, Thai Style",55,18
 soup,17962,New England Clam Chowder with Fresh Cream & Thyme RTS Soup,54,33
 frozen_appetizer,42043,Hand-Tied Garlic Knots,54,38
-meal_kit,19669,Mexican Style Rice,54,38
-soup,44077,Tomato Basil Bisque Soup,54,44
 frozen_pizza,43130,Brick Oven Crust Cheese Trio Pizza,54,35
+soup,44077,Tomato Basil Bisque Soup,54,44
+meal_kit,19669,Mexican Style Rice,54,38
+frozen_meal,47112,Santa Fe Style Rice & Beans,54,22
 deli_prepared,38043,Chopped Bbq Seasoned Ranch Chicken Salad Bowl,54,30
 frozen_pizza,27018,Small Sicilian Flatbread,54,31
-frozen_meal,47112,Santa Fe Style Rice & Beans,54,22
-frozen_meal,16503,Meat Lovers English Muffin Breakfast Sandwiches,54,29
-soup,11778,Organic Tomato Lower Sodium Soup,54,38
-frozen_meal,27233,Lean Gourmet Teriyaki Chicken,54,31
 soup,27617,Organic No Salt Added Tomato Soup,54,46
-soup,22913,Borscht with Diced Beets,54,25
+frozen_meal,16503,Meat Lovers English Muffin Breakfast Sandwiches,54,29
 deli_prepared,32214,Sunflower Crisp Chopped Salad,54,30
+soup,11778,Organic Tomato Lower Sodium Soup,54,38
+soup,22913,Borscht with Diced Beets,54,25
+frozen_meal,27233,Lean Gourmet Teriyaki Chicken,54,31
 frozen_meal,24566,Extra Crunchy Beef & Cheese Mini Tacos,53,25
-hot_pocket,24769,Italian Style Meatballs & Mozzarella Frozen Sandwiches,53,40
-mozzarella_sticks,12148,Mozzarella Bites,53,34
-frozen_appetizer,1686,Thai Style Spring Rolls with Sweet & Sour Sauce,53,37
-frozen_meal,31185,Red Beans & Rice New Orleans Recipe,53,28
 frozen_meal,20181,Oatmeal Fruit & Berries,53,32
+frozen_meal,31185,Red Beans & Rice New Orleans Recipe,53,28
+hot_pocket,24769,Italian Style Meatballs & Mozzarella Frozen Sandwiches,53,40
+frozen_appetizer,1686,Thai Style Spring Rolls with Sweet & Sour Sauce,53,37
+mozzarella_sticks,12148,Mozzarella Bites,53,34
 frozen_appetizer,32415,Xtra Large Crunchy Fish Sticks,53,31
 mac_and_cheese,326,Deluxe Sauce Made with 2% Milk Cheese Macaroni & Cheese Dinner,53,39
-canned_chili,48359,Hot & Spicy Beef & Bean Firehouse Chili,53,28
 frozen_pizza,23281,Dgn Mlt Chk Brus 8.3 Z,53,44
+canned_chili,48359,Hot & Spicy Beef & Bean Firehouse Chili,53,28
 frozen_meal,46171,Southwestern Veggie Breakfast Bowl,53,21
 deli_prepared,11998,Rev #1 Pepperoni Pizza Snack Wrap,53,21
 frozen_meal,241,Shrimp with Pasta & Vegetables,53,23
 mac_and_cheese,592,SpongeBob Shapes Macaroni & Cheese Dinner,53,20
-deli_prepared,453,Hummus Wrap,52,20
 frozen_meal,41322,Puff Pastry Raspberry Turnovers,52,29
 frozen_meal,3314,Chicken Teriyaki,52,23
+deli_prepared,453,Hummus Wrap,52,20
 soup,41888,Wild Seafood Boulliabaisse,52,33
 frozen_pizza,14238,BBQ Recipe Chicken with Bacon Hand-Tossed Style Crust Pizza,52,29
 frozen_appetizer,42115,Spanakopita Spinach & Feta Cheese Fillo Appetizers,52,32
@@ -1884,47 +1884,47 @@ deli_prepared,6888,Buffalo Chicken Mac & Cheese,52,24
 soup,24761,Slow Kettle Roasted Chicken Noodle Soup,52,43
 deli_prepared,1068,Pork & Duck Live Mousse With Port Wine Topped With Aspic,52,32
 mac_and_cheese,37936,Freshly made pasta in a Real white Cheddar cheese sauce White Cheddar Macaroni & Cheese,52,40
-frozen_appetizer,22523,Parmesan Cheese Garlic Bread,52,28
 frozen_meal,42334,Spicy Black Bean Enchilada,52,26
+frozen_appetizer,22523,Parmesan Cheese Garlic Bread,52,28
 frozen_meal,21297,Satisfying Servings Salisbury Steak Dinner,51,26
 frozen_appetizer,43930,Crispy Onion Rings,51,40
 frozen_pizza,27305,Ultra Thin Crust Ultimate 5 Cheese,51,28
-frozen_meal,40340,"Stuffed Peppers, Family Size",51,33
 frozen_meal,40450,Classic Escalloped Chicken & Noodles,51,32
-frozen_meal,43119,Dairy & Gluten Free Frozen Mexican Tamale Pie,51,34
-deli_prepared,34547,LunchMakers Turkey Cracker Crunchers with Nestle Butterfinger Bar,51,29
+frozen_meal,40340,"Stuffed Peppers, Family Size",51,33
 canned_chili,13876,Laredo Chili With Beans,51,28
+frozen_meal,43119,Dairy & Gluten Free Frozen Mexican Tamale Pie,51,34
 instant_ramen,4926,Chicken & Broccoli Linguine Pasta,51,45
+deli_prepared,34547,LunchMakers Turkey Cracker Crunchers with Nestle Butterfinger Bar,51,29
 deli_prepared,24827,Pepperoni Provolone Cheese & Breadsticks,51,21
 frozen_meal,33699,Smart Ones Pasta Primavera,51,36
 frozen_meal,17381,Original Cheesecake,51,45
 canned_chili,42158,Chili Con Carne No Bean,51,31
-mac_and_cheese,40116,Gluten Free Sharp Cheddar Quinoa Supergrain Mac & Cheese,50,33
-frozen_appetizer,47369,Pork Egg Rolls,50,28
-frozen_meal,15878,"Burrito, Shredded Beef",50,25
 soup,13112,Organic Vegetarian Pho Soup Starter,50,34
+frozen_appetizer,47369,Pork Egg Rolls,50,28
+mac_and_cheese,40116,Gluten Free Sharp Cheddar Quinoa Supergrain Mac & Cheese,50,33
+frozen_meal,15878,"Burrito, Shredded Beef",50,25
 frozen_burrito,49195,Chicken Chorizo Cafe Wrap,50,27
 instant_soup,10559,"\""Darn Good\"" Chili Mix",50,34
 deli_prepared,37432,Lunchables Turkey & Low Fat Cheddar Cheese Meal Combinations,50,33
 frozen_pizza,14918,Original Deluxe Pizza,50,22
-frozen_appetizer,28093,Pork Potsticker,50,34
 deli_prepared,9479,Ham & Swiss Sandwich,50,8
 frozen_meal,12855,Compleats Turkey & Dressing,50,25
-meal_kit,18611,Hamburger Helper Cheddar Cheese Melt,50,38
-frozen_meal,19126,Cafe Steamers Asian Potstickers,50,26
+frozen_appetizer,28093,Pork Potsticker,50,34
 soup,2840,Original A to Z's Pasta,50,17
 deli_prepared,3516,Sushi Spicy Tuna Roll Ready To Eat,50,26
-frozen_meal,44844,California Style Protein Blends,49,40
+meal_kit,18611,Hamburger Helper Cheddar Cheese Melt,50,38
+frozen_meal,19126,Cafe Steamers Asian Potstickers,50,26
 frozen_meal,24039,"Kale and Brown Rice Gratin, Gluten Free",49,33
-frozen_meal,9010,Broccoli & Cheese Stuffed Chicken Breasts,49,20
+frozen_meal,44844,California Style Protein Blends,49,40
 frozen_meal,48703,Chicken Fingers With Macaroni & Cheese,49,32
-frozen_pizza,45408,Di Giorno Half & Half Pizza Cheese And Pepperoni,49,29
+frozen_meal,9010,Broccoli & Cheese Stuffed Chicken Breasts,49,20
 frozen_meal,9061,Italian Sausage & Rigatoni Pasta,49,24
+frozen_appetizer,9204,Garlic Bread Mini Frozen,49,37
+frozen_pizza,45408,Di Giorno Half & Half Pizza Cheese And Pepperoni,49,29
 frozen_meal,22188,Chicken Parmesan Home Style Meal,49,26
 frozen_appetizer,46161,Frozen Potato Onion Cheddar Pierogies,49,36
-frozen_appetizer,9204,Garlic Bread Mini Frozen,49,37
-deli_prepared,4527,Chicken Quesadillas,49,36
 frozen_meal,24975,Compleats Homestyle Chicken Alfredo,49,20
+deli_prepared,4527,Chicken Quesadillas,49,36
 frozen_pizza,46329,Uncured Pepperoni Pizza With Brown Rice Crust,49,31
 frozen_pizza,42968,Sausage & Pepperoni Pizza,49,35
 frozen_appetizer,21785,Tequila Lime Wings,48,34
@@ -1934,240 +1934,240 @@ frozen_appetizer,48510,Chicken Empanadas,48,36
 frozen_pizza,48966,Lotzza Motzza Sausage and Pepperoni Pizza,48,18
 meal_kit,38543,Red Lentil Penne With Roasted Red Pepper Sauce,48,33
 frozen_meal,27700,Chicken & Monterey Jack Cheese Chimichanga,48,33
+meal_kit,31434,Grande Taco Kit Hard & Soft,48,32
 mac_and_cheese,29859,Made with Organic Pasta & Cheddar Cheese Original Flavor Macaroni & Cheese Dinner,48,26
 frozen_appetizer,28510,Thick Sliced Battered Onion Rings,48,37
 soup,38481,Organic Vegetable Masala Stew,48,37
-meal_kit,31434,Grande Taco Kit Hard & Soft,48,32
 hot_pocket,44235,Pocket Pepperoni Pizza Style,48,26
 frozen_meal,27348,"Beef pot roast with roasted potatoes, carrots, sweet onions, green beans, and a rich gravy Beef Pot Roast",48,18
-meal_kit,13562,False Alarm Mild Chili Kit,47,30
 corn_dogs,34364,Mini Beef Corn Dogs,47,25
+meal_kit,13562,False Alarm Mild Chili Kit,47,30
 frozen_pizza,38958,Crispy Thin Crust Spinach & Artichoke Pizza,47,35
 frozen_meal,81,Blakes Chicken Parmesan Dinner,47,19
 soup,8171,Light Vegetable & Noodle Soup,47,38
-frozen_meal,7002,"Chicken, Broccoli & Cheddar Frozen Sandwiches",47,33
 frozen_appetizer,4757,The Original Thick Slice with Garlic Texas Toast,47,38
 frozen_meal,20340,Organic Thai Style Grass Fed Beef with Coconut Rice,47,23
+frozen_meal,7002,"Chicken, Broccoli & Cheddar Frozen Sandwiches",47,33
 soup,22496,"Chunky Jazzy Jambalaya with Chicken, Sausage & Ham Soup",47,22
-instant_ramen,49277,Spicy Shrimp Flavor Bowl Noodle  Soup,47,35
 mac_and_cheese,11221,Rotini Pasta With Three Cheese Sauce,47,27
 frozen_meal,36385,Natural Steamer Portabella Spinach Parmesan,47,29
+instant_ramen,49277,Spicy Shrimp Flavor Bowl Noodle  Soup,47,35
 frozen_meal,34490,Nut Tacos,47,19
 frozen_meal,20867,Mexican Style Chicken Bowl,47,29
 soup,3588,Organic Tortilla Style Soup,46,32
 canned_chili,31083,White Chicken Chili With Beans,46,33
 meal_kit,46351,"Pesto Bean & Vegetable Kit, Lentil Penne",46,35
-frozen_appetizer,47539,Vegetable Spring Roll,46,27
 soup,22798,Lobster Corn Chowder New England Style,46,37
+frozen_appetizer,47539,Vegetable Spring Roll,46,27
 frozen_meal,32954,Medium Spiced Chicken Curry,46,34
-frozen_meal,47707,Chorizo Breakfast Bowl,46,14
-frozen_appetizer,34196,Stuffed Jalapenos With Cream Cheese,46,25
 soup,43229,Onion Soup & Dip Mix,46,34
+frozen_appetizer,34196,Stuffed Jalapenos With Cream Cheese,46,25
 mac_and_cheese,13233,Vermont White Cheddar Mac & Cheese,46,29
+frozen_meal,47707,Chorizo Breakfast Bowl,46,14
+deli_prepared,49211,Spicy Peanut Noodles,46,22
 deli_prepared,29540,Chop Chipotle Chedder Kit,46,34
 deli_prepared,13007,Deli Snackers Turkey Breast/Bacon Pieces/Colby & Monterey Jack Cheese Portable Protein Pack,46,22
-deli_prepared,49211,Spicy Peanut Noodles,46,22
-frozen_meal,47693,Hormel Simple Ideas Loaded Mashed Potatoes,46,29
 deli_prepared,41521,Masala Veggies Paneer,46,31
+frozen_meal,47693,Hormel Simple Ideas Loaded Mashed Potatoes,46,29
 deli_prepared,30843,Detox Salad,46,29
 pot_pie,39637,Deep Dish Sausage & Gravy Pot Pie,45,25
-frozen_appetizer,12014,Gluten Free Thai Spring Rolls 4 Count,45,32
-meal_kit,36035,Reduced Sodium Jambalaya Mix,45,25
 frozen_pizza,47268,Lotzza Motzza Sausage Pizza,45,21
+meal_kit,36035,Reduced Sodium Jambalaya Mix,45,25
+frozen_appetizer,12014,Gluten Free Thai Spring Rolls 4 Count,45,32
 frozen_pizza,3419,Sausage & Mushroom Pizza,45,27
+instant_soup,26496,Spring Vegetable Rice Noodle Soup Bowl,45,28
 soup,40906,Organic Italian Vegetables and Beans Soup,45,26
 frozen_pizza,4628,Thin Crust with Mozzarella Pizza,45,13
-instant_soup,26496,Spring Vegetable Rice Noodle Soup Bowl,45,28
 frozen_meal,16796,Gluten Free Chicken Florentine,45,25
-frozen_appetizer,37054,5 Cheese Garlic Bread Loaf,45,30
 soup,45197,Moroccan Chickpea & Carrot Soup,45,33
+frozen_appetizer,37054,5 Cheese Garlic Bread Loaf,45,30
 soup,19143,Organic Old Fashioned Potato Soup,45,30
 frozen_appetizer,5481,Gluten Free Sweet Potato Baked Nuggets,45,36
 frozen_burrito,9207,Bean Three-Cheese & Jalepeno Burrito,45,22
 soup,27716,Traditional Creamy Tomato with Penne,44,30
-frozen_meal,6214,Signature Shredded Steak & Cheese Chimichanga,44,30
 frozen_meal,19192,Compleats Roast Beef & Gravy With Mashed Potatoes,44,29
+frozen_meal,6214,Signature Shredded Steak & Cheese Chimichanga,44,30
 frozen_appetizer,37958,Bread Sticks With a Twist,44,24
 canned_chili,12273,Compleats Beef Pot Roast,44,26
 frozen_meal,46048,Channa Masala with Lemon Rice,44,15
 frozen_meal,12893,Mushroom Cabbage Pierogi with Fresh Sauerkraut & Onion,44,25
 deli_prepared,10083,White Corn & Zucchini Tamales,44,29
-corn_dogs,22430,"Corn Dogs, Classic",44,27
-frozen_meal,178,Vegan Santa Fe Style Flour Tortilla Rolled Tacos,44,18
-frozen_appetizer,26542,Garden Ranch Broccoli Bites,44,19
 frozen_meal,25452,Beef Tamales,44,33
-chicken_nuggets,4433,Crispy Chicken,44,24
+frozen_appetizer,26542,Garden Ranch Broccoli Bites,44,19
+frozen_meal,178,Vegan Santa Fe Style Flour Tortilla Rolled Tacos,44,18
+corn_dogs,22430,"Corn Dogs, Classic",44,27
 soup,7943,Matzo Ball Soup,44,35
+chicken_nuggets,4433,Crispy Chicken,44,24
 frozen_meal,48952,Chipotle Chicken Mac & Cheese,44,26
 soup,17965,Sirloin Burger with Country Vegetables Soup,43,32
 frozen_meal,41632,Spicy Chicken Sliders,43,22
 mac_and_cheese,29003,Macaroni & Cheese Sauce with Broccoli Steamers,43,15
-soup,37780,Connecticut Cottage Chicken Noodle Soup,43,30
 deli_prepared,793,Organic Spinach Quinoa Powermeal Bowl,43,21
 instant_soup,33695,"Cup-a-Soup, Cream of Chicken Instant Soup",43,24
+soup,37780,Connecticut Cottage Chicken Noodle Soup,43,30
 frozen_meal,41285,Cinnamon Rolls with Vanilla Glaze,43,32
 instant_ramen,43242,Soy Ginger Noodle Bowl,43,15
 soup,28338,Vegetable Beef Soup,42,17
 hot_pocket,37812,Pepperoni Pizza Pocket,42,23
 meal_kit,22848,Creamy Mushroom Bean Pasta & Veggie Kit,42,29
 frozen_meal,10921,Turkey sausage with egg whites and reduced fat cheese on an English muffin Turkey Sausage English Muffin,42,34
-frozen_meal,27589,Ham and Cheese,42,31
 frozen_pizza,19806,Smart Ones Classic Favorites Thin Crust Pepperoni Pizza,42,22
+frozen_meal,27589,Ham and Cheese,42,31
 frozen_pizza,28962,Tuscan Inspired Uncured Two Meat Pizza,42,33
-soup,36352,Rich & Hearty Minestrone with Italian Sausage,42,30
 canned_chili,19926,Dynamite Hot Chili With Beans,42,20
+soup,36352,Rich & Hearty Minestrone with Italian Sausage,42,30
 frozen_appetizer,3507,Cheddar Cheese Stuffed Jalapenos Poppers,42,25
 frozen_meal,31327,Orange Chicken Complete Skillet Meal For Two,42,34
 frozen_meal,2595,"Tender white meat chicken, vegetables & rice in a cheddar cheese sauce Grandma's Chicken & Vegetable Rice Bake",42,18
 frozen_appetizer,9280,Zucchini Pancakes,42,28
-soup,3576,Cheddar Broccoli Soup Mix,41,37
 frozen_appetizer,46577,Ham and Cheese Snack Bites,41,29
-instant_soup,40069,"Soup Mix, Split Pea, with Seasonings",41,20
+soup,3576,Cheddar Broccoli Soup Mix,41,37
 soup,24760,Beef Stew,41,29
-frozen_meal,17043,Chicken Stir-Fry,41,16
+instant_soup,40069,"Soup Mix, Split Pea, with Seasonings",41,20
 mac_and_cheese,20452,Organic Cheddar Macaroni & Cheese Dinner,41,12
+frozen_meal,17043,Chicken Stir-Fry,41,16
 frozen_meal,14587,Abruzzese Italian Meatball,41,29
-frozen_meal,10327,Creamy Chicken & Shrimp in a Parmesan Alfredo Sauce,41,16
 frozen_pizza,16844,Ultimate Pepproni Ultra Thin/Crispy Pizza,41,15
+frozen_meal,10327,Creamy Chicken & Shrimp in a Parmesan Alfredo Sauce,41,16
 instant_soup,14171,Cook & Serve Butterscotch Pudding & Pie Filling,41,26
-deli_prepared,16035,Seafood Salad,41,31
 meal_kit,27974,Salisbury Hamburger Helper,41,23
+deli_prepared,16035,Seafood Salad,41,31
 frozen_meal,45969,Marie Clndr C/D Swd M/Ball Fet,41,23
 soup,28543,Organic Creamy Red Bliss Potato & Roasted Garlic Soup Light In Sodium,41,28
 frozen_pizza,43873,Mambo Italiano Italian Combination Pizza,41,24
 chicken_nuggets,31515,Gluten Free Breaded Chicken Breast Nuggets,40,27
 soup,43126,South Of The Border Tortilla Soup Mix,40,30
+hot_pocket,8641,Toaster Scrambles Sausage,40,29
 frozen_appetizer,38607,Mini Baked Fillo Shells,40,28
 frozen_lasagna,24215,Classics Lasagna Italiano,40,24
-hot_pocket,8641,Toaster Scrambles Sausage,40,29
-meal_kit,12503,Hamburger Helper Crunchy Taco,40,23
-instant_ramen,47727,Yakisoba Spicy Chicken Flavor Home Style Japanese Noodles,40,23
 deli_prepared,24570,Organic Sunny Caesar Salad with Grilled Chicken,40,26
-soup,9326,Low-Fat Chicken Noodle Soup,40,29
 instant_soup,32540,Hearty Chicken Instant Soup,40,23
+meal_kit,12503,Hamburger Helper Crunchy Taco,40,23
+soup,9326,Low-Fat Chicken Noodle Soup,40,29
+instant_ramen,47727,Yakisoba Spicy Chicken Flavor Home Style Japanese Noodles,40,23
 frozen_appetizer,41490,Breaded Jalapeno Peppers,40,22
 mozzarella_sticks,39930,Cheese Sticks with A Twist,40,28
-frozen_meal,12355,Catch A Wave Mac & Cheese Frozen Dinner,40,27
-mac_and_cheese,22296,Whole Grain Velveeta Rotini & Cheese,40,27
 deli_prepared,27956,Deli Snackers Turkey Breast/Ham/Mild Cheddar Cheese Portable Protein Pack,40,19
+mac_and_cheese,22296,Whole Grain Velveeta Rotini & Cheese,40,27
 instant_ramen,25738,Kimchi Flavor Noodle Soup,40,18
+frozen_meal,12355,Catch A Wave Mac & Cheese Frozen Dinner,40,27
 frozen_meal,14794,Green Pepper Steak over White Rice,40,18
 deli_prepared,34952,Gatherings Honey Ham Cheese & Crackers Snack Tray,40,20
 instant_ramen,10379,Tuna Creamy Pasta Tuna Helper,39,25
-deli_prepared,1951,La Cubana Meal,39,15
 chicken_nuggets,34853,Boneless BBQ Chicken Bites,39,28
-frozen_burrito,14661,Organic Southwestern Chicken Burrito,39,34
+deli_prepared,1951,La Cubana Meal,39,15
 frozen_appetizer,1555,Pierogi Potato & Cheddar,39,27
 soup,27219,Chicken Tortilla With Red Quinoa Soup,39,36
+frozen_burrito,14661,Organic Southwestern Chicken Burrito,39,34
 deli_prepared,10109,On-The-Go,39,27
-soup,28077,All Natural Lentil Soup,39,28
 deli_prepared,32528,Spicy Tuna Avocado,39,26
+soup,28077,All Natural Lentil Soup,39,28
 frozen_pizza,47314,Authentic Deep Dish Sausage Pizza,39,26
 frozen_meal,35497,"Gochujang Chicken, with Brown Rice",39,34
 frozen_pizza,48064,Sausage Party Pizza,39,24
 soup,8666,Organic Sun-Ripened Tomato & Basil Bisque,39,32
 frozen_meal,43072,Fit Kitchen Steak Fajita,39,23
-frozen_pizza,31056,Lotsa Mozza Supreme Pizza,39,19
 instant_ramen,13335,Happy Pho Zesty Ginger Brown Rice Noodle Soup,39,35
 frozen_meal,28037,Broccoli Cauliflower Pasta,39,31
+frozen_pizza,31056,Lotsa Mozza Supreme Pizza,39,19
 frozen_pizza,36966,Pepperoni Poblano Pizza,39,19
-meal_kit,30598,Bold Taco Dinner Kit with Nacho Cheese Flavored Taco Shells,38,29
 deli_prepared,22321,Gazpacho Verde Chilled Vegetable Soup,38,22
+meal_kit,30598,Bold Taco Dinner Kit with Nacho Cheese Flavored Taco Shells,38,29
 deli_prepared,4112,Chopped Salad Bowl Italian Salad with Salami & Turkey,38,20
-soup,13312,Healthy Request Cheddar Cheese Soup,38,36
 soup,7959,Cheese Tortellini Soup,38,24
+soup,13312,Healthy Request Cheddar Cheese Soup,38,36
 frozen_pizza,41835,4 Pull-Apart Dipping Strips Four Cheese with Marinara Dipping Sauce Packet Pizza Dipping Strips,38,25
 soup,41704,Chunky Kickin Buffalo-Style Chicken Soup,38,23
 frozen_meal,49490,Smart Ones Thai Style White Meat Chicken & Rice Noodles,38,25
 mac_and_cheese,13942,Organic Gluten-Free White Cheddar Macaroni & Cheese,38,26
-frozen_pizza,38401,Classic Crust Sausage Pizza,38,18
 mac_and_cheese,49515,Cheddar Havarti Macaroni & Cheese Dinner,38,17
 frozen_meal,24994,Mildly Spicy Beef & Broccoli,38,25
+frozen_pizza,38401,Classic Crust Sausage Pizza,38,18
 frozen_meal,4316,Cheese Trio Quiche,38,14
 instant_soup,7115,Vegetable with Mushrooms Soup Mix,38,20
 frozen_meal,40644,Chicken Penne Alfredo,38,13
-soup,33968,Organic Spicy Black Bean Soup,37,31
 soup,43567,Menudo,37,17
+soup,33968,Organic Spicy Black Bean Soup,37,31
 canned_chili,14565,Roadhouse with Bean Chili,37,24
 frozen_meal,48599,"Mediterranean Style Chicken, Rigatoni & Broccooli",37,22
 frozen_pizza,38366,Whole Grain Thin Crust Uncured Mild Pepperoni Pizza,37,22
 frozen_pizza,32459,Pizza Rice Crust Pesto,37,29
 frozen_meal,9764,Chicken Enchilada Casserole,37,30
-frozen_meal,44095,Family Size Chicken Alfredo Pasta Meal,37,23
 frozen_meal,192,Israeli Style Gefilte Fish,37,32
+frozen_meal,44095,Family Size Chicken Alfredo Pasta Meal,37,23
 deli_prepared,22155,Petite Caesar Salad,37,17
-frozen_meal,47147,Gluten Free Chicken Puttanesca,37,20
 frozen_meal,28569,Café Steamers 100% Natural Tortellini Primavera Parmesan,37,23
+frozen_meal,47147,Gluten Free Chicken Puttanesca,37,20
 frozen_meal,3995,Penne pasta with a spicy tomato basil sauce & parmesan cheese Spicy Penne Arrabbiata,37,22
+frozen_pizza,10703,Cheese Pizza Maker,37,20
 instant_soup,47133,Organic Jambalaya Soup & Seasoning Mix,37,27
 frozen_pizza,4061,Spinach And Cheese Pizza With Rice Crust,37,22
-frozen_pizza,10703,Cheese Pizza Maker,37,20
 soup,43433,Two Step Mix Green Chili Stew,36,22
 frozen_meal,48012,Frozen Coconut Cream Pie,36,29
 hot_pocket,24539,Pocket Turkey Broccoli & Cheddar,36,22
 frozen_meal,37878,Angel hair pasta in a chunky marinara sauce with Parmesan cheese. Angel Hair Pomodoro,36,19
 soup,114,Light Savory Beef Barley Vegetable Soup,36,32
+frozen_appetizer,17814,All Natural Pizza Munchies Classic Italian Flavors & Soy Cheese in Crispy Wheat Shell,36,11
 frozen_meal,3273,Home Menu Orange Chicken,36,31
 deli_prepared,1150,"AFC Sushi Spicy Salmon Roll Prepared In Store, Ready To Eat",36,18
-frozen_appetizer,17814,All Natural Pizza Munchies Classic Italian Flavors & Soy Cheese in Crispy Wheat Shell,36,11
 frozen_meal,35794,Kofta Curry,36,27
 instant_soup,14081,Cook & Serve Vanilla Pudding & Pie Filling,36,29
 frozen_meal,47710,Chicken Tamale,36,22
-soup,18613,Light Southwestern Style Vegetable Soup,36,27
-soup,20554,Miso-Cup Savory Soup With Seaweed,36,34
 frozen_pizza,29167,Deep Dish Sausage Pizza Singles,36,9
+soup,20554,Miso-Cup Savory Soup With Seaweed,36,34
+soup,18613,Light Southwestern Style Vegetable Soup,36,27
 frozen_pizza,42470,Gluten Free Personal Size Pizza Crusts,36,26
-frozen_pizza,15619,Pizza Pepperoni 3 Cheeses,36,17
 frozen_pizza,24051,Cheese Pizza Bites,36,25
+frozen_pizza,15619,Pizza Pepperoni 3 Cheeses,36,17
 frozen_appetizer,8068,Chicken & Vegetable Mini Spring Rolls,36,23
 frozen_meal,30556,Angel Hair Marinara Savory Italian Recipes,35,18
 frozen_meal,16030,Shrimp Fried Rice,35,21
 frozen_pizza,3496,Pepperoni Ultra Thin Crust Pizza,35,19
-frozen_lasagna,28389,Butternut Squash Lasagna,35,26
 deli_prepared,34832,Wild Rice Edamame Salad,35,20
-frozen_meal,48689,Chicken Bacon Cheddar Cheese Melt Frozen Sandwiches,35,21
+frozen_lasagna,28389,Butternut Squash Lasagna,35,26
 frozen_pizza,12205,Thin And Crispy Bbq Chicken,35,9
 frozen_lasagna,1850,Lasagna Bake with Meat Sauce,35,16
-frozen_meal,22772,Beef Tips & Gravy with Mashed Potatoes Compleats,35,20
+frozen_meal,48689,Chicken Bacon Cheddar Cheese Melt Frozen Sandwiches,35,21
 instant_soup,35464,Onion Soup And Dip Mix,35,28
 frozen_pizza,21700,Light & Lean Cheese Pizza,35,28
-frozen_meal,29001,Blueberry Pancakes & Sausage On A Stick,35,18
-frozen_meal,41991,Chicken Parmesan and Penne,35,24
+frozen_meal,22772,Beef Tips & Gravy with Mashed Potatoes Compleats,35,20
 frozen_meal,2518,Smart Ones Broccoli & Cheddar Cheese Baked Potato,35,27
-frozen_lasagna,16485,Lasagna With Meat Sauce,35,18
+frozen_meal,41991,Chicken Parmesan and Penne,35,24
+frozen_meal,29001,Blueberry Pancakes & Sausage On A Stick,35,18
 meal_kit,14919,Thai Peanut Noodle Kit,35,32
+frozen_lasagna,16485,Lasagna With Meat Sauce,35,18
 deli_prepared,32584,Honey Ham & Smoked White Turkey Sub Sandwich Kit,35,15
 frozen_meal,4851,Chicken Florentine Farfelle,35,7
 deli_prepared,45510,Meatless Lentil Sage Meatloaf,35,19
 hot_pocket,6136,Veggie Egg White English Muffin,35,11
-meal_kit,15220,"Vegetarian Tamales, Red Chile Vegetable",34,18
-meal_kit,4109,Three Cheese Hamburger Helper,34,28
-meal_kit,29017,Crunchy Taco Dinner Kit,34,22
-frozen_meal,41051,Ham & Cheese Croissant Sandwich,34,19
 frozen_meal,271,TAI PEI      14OZ.SWEET & SOUR CHKN,34,22
-soup,32474,Rich & Hearty Tomato Florentine with Italian Sausage Soup,34,28
+meal_kit,4109,Three Cheese Hamburger Helper,34,28
+meal_kit,15220,"Vegetarian Tamales, Red Chile Vegetable",34,18
+frozen_meal,41051,Ham & Cheese Croissant Sandwich,34,19
+meal_kit,29017,Crunchy Taco Dinner Kit,34,22
 frozen_meal,26865,"Peruvian Seasoned Chicken Stew, Organic, Med",34,20
+soup,32474,Rich & Hearty Tomato Florentine with Italian Sausage Soup,34,28
 soup,11848,Organic Creamy Carrot & Bunny Pasta Soup,34,25
 soup,14468,Heart Healthy Southwest Style Vegetable Soup,34,31
 hot_pocket,18464,Ham & Cheese Frozen Sandwiches,34,27
-frozen_meal,9753,Chicken Pasta Pomodoro,34,29
-deli_prepared,8946,Organic Spinach Pow Salad,34,11
 frozen_appetizer,27441,Swedish Style Meatballs,34,22
-frozen_meal,43081,Turkey Sausage Muffin Sandwiches,34,25
+deli_prepared,8946,Organic Spinach Pow Salad,34,11
+frozen_meal,9753,Chicken Pasta Pomodoro,34,29
 frozen_meal,14654,Home Menu Grilled with Lo Mein Noodles Chicken Teriyaki,34,24
+frozen_meal,43081,Turkey Sausage Muffin Sandwiches,34,25
 deli_prepared,35745,Broccoli Raisin Salad,34,12
 frozen_meal,21127,Vegetarian Feast,33,30
 frozen_meal,8563,Green Beans & Spaetzle In Bavarian Style Sauce,33,13
-frozen_meal,18469,Bean & Cheddar Enchilada Bake,33,25
-soup,37041,Homestyle Light Italian Style Wedding Spinach & Meatballs in Chicken Broth,33,22
-soup,23944,Organic Creamy Potato Leek Soup,33,24
-frozen_pizza,15938,Traditional Crust Three Meat Pizza,33,21
 deli_prepared,885,Lunchmakers Pizza Pepperoni with Nestle Crunch Bar,33,15
+soup,23944,Organic Creamy Potato Leek Soup,33,24
+soup,37041,Homestyle Light Italian Style Wedding Spinach & Meatballs in Chicken Broth,33,22
+frozen_pizza,15938,Traditional Crust Three Meat Pizza,33,21
+frozen_meal,18469,Bean & Cheddar Enchilada Bake,33,25
 frozen_meal,3422,Grilled Sesame Beef & Broccoli Meal,33,24
 chicken_nuggets,43202,Honey BBQ Sauce Boneless Chicken Bites,33,23
-deli_prepared,49068,"P3 Brown Sugar Ham, Cheddar Cheese & Peanut Almond Nut Clusters",33,21
 frozen_burrito,38588,Beef & Spicey Bean Burrito,33,17
 instant_ramen,10155,THAI KITCHEN THAIPNUT NDLCART,33,17
+deli_prepared,49068,"P3 Brown Sugar Ham, Cheddar Cheese & Peanut Almond Nut Clusters",33,21
 frozen_appetizer,43090,"Potstickers, Chicken & Vegetable Dumplings",33,18
 meal_kit,38973,Organic Whole Grain Southwestern Rice & Seasoning Mix,33,25
 soup,8227,Rich And Hearty Steak And Vegetables,33,17
@@ -2178,19 +2178,19 @@ deli_prepared,45115,Super Grains Tabbouleh,32,18
 deli_prepared,13735,Loaded Potato Salad,32,24
 deli_prepared,17897,Asian Slaw,32,22
 frozen_pizza,2749,Deep Dish Pepperoni Pizza,32,21
-frozen_meal,14456,Breaded Raw Stuffed Chicken Breasts Kiev,32,21
 frozen_meal,47364,Lamb Vindaloo w/ Basmati Rice,32,30
-soup,27660,Classic Corn Chowder Soup,32,25
+frozen_meal,14456,Breaded Raw Stuffed Chicken Breasts Kiev,32,21
 frozen_meal,43934,Nourish Bowls Sesame Sriracha,32,19
-mac_and_cheese,15323,Chickpea Pasta Mac & Cheese Classic Cheddar,32,28
+soup,27660,Classic Corn Chowder Soup,32,25
 frozen_meal,4280,Cheese Ravioli With Peas,32,25
-soup,49446,HW DR MCD    DR MCD SPL P OR 18.2Z,32,22
-frozen_pizza,4328,Bacon & Pepperoni Pizza Rolls,32,28
-frozen_appetizer,22156,with Sweet & Smoky BBQ Sauce Cheeseburger Sliders,32,16
+mac_and_cheese,15323,Chickpea Pasta Mac & Cheese Classic Cheddar,32,28
 corn_dogs,154,"Corn Dogs, Mini, Honey Crunchy Flavor",32,17
 soup,4876,Chunky Fajita Chicken with Rice and Beans Soup,32,22
-frozen_meal,45600,Brown Rice Risotto with Carrots Peas Onion & Kale in Parmesan Asiago Sauce Steamers,32,27
+frozen_pizza,4328,Bacon & Pepperoni Pizza Rolls,32,28
+frozen_appetizer,22156,with Sweet & Smoky BBQ Sauce Cheeseburger Sliders,32,16
+soup,49446,HW DR MCD    DR MCD SPL P OR 18.2Z,32,22
 mac_and_cheese,14544,"Freshly cooked pasta in a creamy garlic parmesan cheese sauce, topped with garlic seasoned bread crumbs Garlic Parmesan Macaroni & Cheese",32,16
+frozen_meal,45600,Brown Rice Risotto with Carrots Peas Onion & Kale in Parmesan Asiago Sauce Steamers,32,27
 frozen_pizza,14619,Margherita Crispy Flatbread Pizza,32,15
 frozen_meal,34306,Turkey Meatloaf With Cranberry Glaze,32,18
 deli_prepared,14559,Soba Noodles With Sesame Almond Sauce,31,14
@@ -2198,67 +2198,67 @@ frozen_pizza,40379,Italian Sausage & Fire-Roasted Veggie Pizza,31,23
 deli_prepared,4369,American Potato Salad,31,14
 mac_and_cheese,34904,Bernie's Farm Macaroni and Cheese,31,16
 deli_prepared,32749,Sweet Corn Roasted Chile Tamale,31,20
-frozen_meal,9410,Homestyle Salisbury Steak Complete Meals,31,15
 corn_dogs,36429,Classic Mini Corn Dogs,31,25
+frozen_meal,9410,Homestyle Salisbury Steak Complete Meals,31,15
 soup,48011,Light Chicken & Vegetables with Rosemary,31,26
-frozen_appetizer,9190,Chicken & Vegetable Spring Rolls,31,20
 frozen_meal,6067,Grilled Chicken Quesadilla with Guacamole,31,24
+frozen_appetizer,9190,Chicken & Vegetable Spring Rolls,31,20
 canned_chili,29701,Mary Kitchen 50% Reduced Fat Corned Beef Hash,31,20
 frozen_meal,47650,Scrambled Eggs and Bacon with Hash Brown Potato,31,12
 frozen_meal,18645,Special K Flatbread Egg Bacon & Cheese Medley Breakfast Sandwiches,31,16
 frozen_pizza,36335,Whole Grain Cheese Pizza All Natural Sesame Street,30,18
 frozen_pizza,3338,Rising Crust 5 Cheese Pizza,30,16
 frozen_meal,29535,Chicken With Spinach Fettuccine,30,23
+frozen_meal,5580,Smart Ones Tasty American Favorites Tuna Noodle Casserole,30,15
 frozen_meal,49278,Channa Masala Chickpea Curry,30,16
 mac_and_cheese,9522,Mac and Cheese Chickpea Elbows Pasta with White Cheddar,30,20
-frozen_meal,5580,Smart Ones Tasty American Favorites Tuna Noodle Casserole,30,15
 frozen_appetizer,38435,Cheddar Cheese Stuffed Jalapenos,30,20
 deli_prepared,29475,Salad Bar,30,11
 frozen_meal,32848,Stuffed Shells With Cheese in Marinara Sauce,30,15
 deli_prepared,42729,Roll N Wrap Roll Avocado Salad,30,15
 instant_soup,16794,Compleats Microwavable Meal Chicken & Rice,30,19
-frozen_burrito,11191,Spicy Taco Picante Burritos,30,10
 frozen_meal,25303,Zap Ems Pizza Snacks,30,10
-frozen_meal,36243,Cheese Raviolo,29,22
+frozen_burrito,11191,Spicy Taco Picante Burritos,30,10
 frozen_pizza,19317,Cheese Stuffed Crust Pizza Five Cheese,29,26
+frozen_meal,36243,Cheese Raviolo,29,22
+frozen_pizza,29134,Mini Pizza Bagels Combination,29,22
 mac_and_cheese,7397,Organic Macaroni & Cheese Alphabet Dinner,29,21
 frozen_meal,5000,Hearty Teriyaki Chicken Skillets for Two,29,22
-frozen_pizza,37491,Roasted Portabella Mushrooms & Spinach Brick Oven Crust Pizza,29,20
-frozen_pizza,47462,Classic Flatbread Pizza Wrap,29,18
-frozen_pizza,29134,Mini Pizza Bagels Combination,29,22
 instant_ramen,21649,Ramen Noodle Soup Roast Beef Flavor,29,13
-chicken_nuggets,2764,Crispy Variety Pack Chicken,29,18
 frozen_meal,17058,Sausage Scrambles,29,11
 mac_and_cheese,9841,Mac & Cheese Pasta in Cheese Sauce,29,18
+frozen_pizza,47462,Classic Flatbread Pizza Wrap,29,18
+chicken_nuggets,2764,Crispy Variety Pack Chicken,29,18
+frozen_pizza,37491,Roasted Portabella Mushrooms & Spinach Brick Oven Crust Pizza,29,20
 frozen_meal,5102,Signature Shredded Steak & Three–Cheese Chimichangas,29,15
 deli_prepared,17476,Nourish Bowls Monterey Risotto,29,17
 frozen_meal,19855,Strawberry French Cheesecake,29,24
-frozen_appetizer,8387,Loaded Potato Skins Stuffed With Cheddar Cheese & Bacon,29,19
-frozen_meal,7449,Fish & Chips,29,16
 deli_prepared,38612,The Vegan Caesar,29,15
+frozen_meal,7449,Fish & Chips,29,16
+frozen_appetizer,8387,Loaded Potato Skins Stuffed With Cheddar Cheese & Bacon,29,19
 canned_chili,9167,Big with Beef in Tomato Sauce Beefaroni,29,15
 frozen_meal,610,Mac & Cheezy Ravioli For Kids,29,16
 deli_prepared,35863,Typical Carribean Veggie Plate,29,13
-frozen_meal,29407,Root Vegetable Cakes,28,24
-canned_chili,31521,Homestyle Chili with Beans,28,20
 frozen_meal,10775,Rice With Chicken & Vegetables Bowl,28,12
 soup,32417,Home Style Creamy Gouda Bisque With Chicken Soup,28,12
-frozen_meal,29246,Eggplant Cutlets,28,24
 frozen_meal,37407,"Moroccan Seasoned Chicken Stew, Organic",28,18
+canned_chili,31521,Homestyle Chili with Beans,28,20
+frozen_meal,29407,Root Vegetable Cakes,28,24
+frozen_meal,29246,Eggplant Cutlets,28,24
 instant_ramen,36336,Shin Ramyun Noodle Soup,28,18
-soup,12848,Split Pea & Ham with Natural Smoke Flavor RTS Soup,28,17
 soup,21643,"Matzo Ball Soup, Ready To Serve",28,19
+soup,12848,Split Pea & Ham with Natural Smoke Flavor RTS Soup,28,17
+frozen_meal,14013,Bistro Wild Salmon Frozen Entree,28,18
+deli_prepared,10059,Quinoa Salad Pistachio Citrus,28,25
 soup,1175,Creamy Chicken Orzo with Mixed Vegetables,28,21
 soup,15302,Homestyle Healthy Request Savory Chicken with Brown Rice,28,18
-frozen_meal,14013,Bistro Wild Salmon Frozen Entree,28,18
-frozen_pizza,22403,Brick Oven Crust Meat Trio Pizza,28,17
 meal_kit,23007,Red Beans & Rice Reduced Sodium Rice Mix,28,16
-deli_prepared,10059,Quinoa Salad Pistachio Citrus,28,25
+frozen_pizza,22403,Brick Oven Crust Meat Trio Pizza,28,17
 frozen_meal,31427,Three Cheese Potatoes,28,20
 soup,690,Vegetable Hearty Garden Soup,28,18
-instant_soup,20966,Rice Pilaf Family Size Rice Blend,28,17
 frozen_appetizer,41232,Gluten-Free Shrimp & Vegetable Egg Rolls,28,24
 frozen_meal,1777,Home Menu Beef with Broccoli,28,15
+instant_soup,20966,Rice Pilaf Family Size Rice Blend,28,17
 deli_prepared,24935,All Bean Chili,28,12
 deli_prepared,18666,Spicy Jalapeno Quinoa Meal,28,18
 frozen_pizza,356,Ristorante Pizza Spinaci Thin Crust Pizza,28,9
@@ -2267,24 +2267,24 @@ soup,19939,Traditional Zuppa Toscana Tuscan White Bean Soup,27,12
 deli_prepared,28457,Lentil Curry,27,22
 soup,11186,Rich & Hearty Lentil & Andouille Sausage Soup,27,13
 frozen_burrito,20538,Gluten Free Bean and Green Chili Burrito,27,17
-soup,18701,Phineas and Pherb Shaped Chicken Soup,27,16
 frozen_meal,40057,Family Size Mexican Casserole,27,22
+soup,18701,Phineas and Pherb Shaped Chicken Soup,27,16
 frozen_appetizer,33734,Honey BBQ Glazed Wings,27,18
 soup,9439,Organic Kids Chicken & Stars Soup,27,20
 frozen_meal,33207,Italian-Style Pasta Bake,27,18
 frozen_meal,38998,Deep Dish Frozen Pie Shells,27,9
-deli_prepared,3673,Cranberry Walnut Salad,27,18
 frozen_appetizer,41312,Thin Cut Craft Beer Fries,27,17
-soup,38660,Matzo Balls in Chicken Broth,27,22
+deli_prepared,3673,Cranberry Walnut Salad,27,18
 frozen_lasagna,24902,Classic Lasagna With Meat Sauce,27,14
-frozen_appetizer,19698,"Egg Rolls, Pork",26,19
-frozen_meal,30321,Comfort Bakes - Scalloped Potatoes in a Creamy Cheese Sauce with Ham,26,15
+soup,38660,Matzo Balls in Chicken Broth,27,22
 frozen_appetizer,37133,Vegetable Eggroll,26,23
+frozen_meal,30321,Comfort Bakes - Scalloped Potatoes in a Creamy Cheese Sauce with Ham,26,15
 frozen_meal,4213,"Delights Turkey Sausage, Egg Whites, & Cheese English Muffin",26,20
+frozen_appetizer,19698,"Egg Rolls, Pork",26,19
+meal_kit,17129,Creamy Beef Stroganoff Velveeta Cheesy Skillets,26,17
 frozen_appetizer,25293,Crusty Mozzarella Garlic Bread,26,19
 frozen_pizza,36252,Uno Sausage Deep Dish Pizza,26,16
 soup,19222,Mini-Bites ABC's & 123's with Meatballs,26,18
-meal_kit,17129,Creamy Beef Stroganoff Velveeta Cheesy Skillets,26,17
 frozen_appetizer,26511,Sour Cream & Chive Mashed Potatoes,26,21
 soup,42237,Coconut Curry with Chicken Soup,26,17
 frozen_appetizer,32257,Pre-Steamed Vegetable & Chicken Gyoza Dumplings Potstickers,26,20
@@ -2294,44 +2294,44 @@ deli_prepared,10039,Vegetable Biryani,26,24
 soup,6407,Jambalaya Soup,26,14
 soup,25434,Wicked Thai-Style Chicken with Rice & Vegetables Soup,26,12
 frozen_pizza,36300,Lotzza Motzza 4-Meat Pizza,25,17
-frozen_lasagna,48156,Itlalian Sausage Lasagna,25,11
 chicken_nuggets,47754,Nuggets Chicken Breast,25,16
+frozen_lasagna,48156,Itlalian Sausage Lasagna,25,11
 soup,11836,Slow Kettle Andouille Sausage Jambalaya Soup,25,15
 deli_prepared,48680,"Ham, Cheddar & Mini Ritz Snack Duos",25,18
 frozen_meal,8028,Sf Pasta Broc White Cheese Sauce,25,19
-deli_prepared,886,Whole Grain Salad with Roasted Pecans & Mango Vinaigrette,25,12
-deli_prepared,30629,Southwest Couscous Salad,25,8
 frozen_meal,14156,Seasoned White Meat Chicken With Pasta and Vegetables in a Parmesan Sauce Grilled Chicken & Vegetables,25,15
 frozen_meal,30120,Backyard BBQ Meal,25,10
-deli_prepared,38358,Cheese Stuffed Shells,25,15
+deli_prepared,886,Whole Grain Salad with Roasted Pecans & Mango Vinaigrette,25,12
+deli_prepared,30629,Southwest Couscous Salad,25,8
 mac_and_cheese,25791,Ninja Turtle Shapes Macaroni & Cheese Dinner,25,12
+deli_prepared,38358,Cheese Stuffed Shells,25,15
+soup,22603,Light Creamy Chicken Alfredo with Pasta Soup,25,21
 meal_kit,47472,Cheesy Enchilada Hamburger Helper,25,19
 mac_and_cheese,32660,Pasta Sides Cheddar Chipotle Pasta Shells in Cheese Sauce Mix,25,9
-soup,22603,Light Creamy Chicken Alfredo with Pasta Soup,25,21
 instant_soup,44376,Thai Penang Ginger Curry,25,17
-mac_and_cheese,11236,Gluten Free Vegan Cheddar Mac And Cheese,25,19
-meal_kit,38535,Red Beans & Rice Mix,25,12
 mac_and_cheese,38258,Deluxe White Cheddar & Garlic & Herbs,25,18
 frozen_meal,27373,Meat Loaf Meal,25,14
+meal_kit,38535,Red Beans & Rice Mix,25,12
+mac_and_cheese,11236,Gluten Free Vegan Cheddar Mac And Cheese,25,19
 frozen_meal,48748,Burger Artichoke Tandoori,25,12
 canned_chili,24418,Spicy Turkey Chili with Beans,25,14
-frozen_meal,14802,Black Pepper Chicken,25,8
 frozen_meal,49392,Welsh Rarebit,25,11
+frozen_meal,14802,Black Pepper Chicken,25,8
 frozen_meal,44952,Uncrustables Peanut Butter & Raspberry Spread Sandwiches,25,9
 meal_kit,10010,Sesame Stir Fry Kit,24,20
 mac_and_cheese,38934,P+S Cheesy Bacon Mac Side Meal,24,6
-frozen_meal,7307,Sweet & Sour Chicken With Vegetables,24,16
 deli_prepared,44285,"Rice Pudding, Mexican Style",24,13
 soup,29753,Spaghettio's plus Calcium,24,16
-frozen_appetizer,19815,Mini Organic Fillo Shells,24,18
-frozen_pizza,44494,Spinach & Feta Pizza,24,20
-frozen_meal,22706,Baingan Bharta Roasted Eggplant,24,17
+frozen_meal,7307,Sweet & Sour Chicken With Vegetables,24,16
 soup,7096,Roasted Garlic & Potato Soup,24,22
-instant_soup,13736,Sesame Chicken Rice Noodle Soup Bowl,24,15
-frozen_meal,3110,Smart Creations Crustless Chicken Pot Pie,24,19
-frozen_pizza,48231,Ultra Thin Crust Spicy Italian Sausage Pizza,24,13
+frozen_pizza,44494,Spinach & Feta Pizza,24,20
+frozen_appetizer,19815,Mini Organic Fillo Shells,24,18
+frozen_meal,22706,Baingan Bharta Roasted Eggplant,24,17
 frozen_meal,28402,Lean Gourmet Buffalo Style Chicken Snackers,24,19
+frozen_pizza,48231,Ultra Thin Crust Spicy Italian Sausage Pizza,24,13
+instant_soup,13736,Sesame Chicken Rice Noodle Soup Bowl,24,15
 frozen_appetizer,32856,Crab Rangoon,24,21
+frozen_meal,3110,Smart Creations Crustless Chicken Pot Pie,24,19
 canned_chili,2762,Organic Vegetarian Chili Tame Tomato,24,13
 frozen_appetizer,3608,Brie & Raspberry Bake & Serve Fillo Rolls,24,19
 soup,44147,Spaghettio's Meatballs A to Z's Pasta,24,14
@@ -2342,77 +2342,77 @@ soup,30854,Chunky Philly-Style Cheesesteak,23,19
 chicken_nuggets,19829,Chicken Meatballs,23,11
 deli_prepared,44046,Sweet Potato Kale Quinoa Salad Cup,23,21
 frozen_appetizer,22032,Breaded Onion Rings,23,16
-soup,26871,Organic Kids Disney Frozen Pasta Soup,23,11
 deli_prepared,20270,Seabreeze Salad,23,19
+soup,26871,Organic Kids Disney Frozen Pasta Soup,23,11
 hot_pocket,24439,Hot Pockets Mexican Style Beef Taco Sandwiches,23,19
 frozen_meal,21593,Homestyle Loaded Instant Mashed Potatoes,23,19
 frozen_appetizer,14513,Mini White Meat Chicken Egg Rolls,23,12
 soup,24332,Carrot Ginger With Coconut Soup,23,19
 soup,4349,Chunky Chicken Pot Pie Soup Bowl,23,12
-meal_kit,38549,Roasted Vegetable & Chicken Long Grain & Wild Rice Mix,23,20
 deli_prepared,18649,Thai Veggie Chicken,23,15
-soup,37305,Vegan Tomato Basil Pasta Soup,23,13
-frozen_meal,46910,Roasted Chicken & Garden Vegetables,23,19
+meal_kit,38549,Roasted Vegetable & Chicken Long Grain & Wild Rice Mix,23,20
 frozen_pizza,27200,Original Mexican Style Pizza,23,10
+frozen_meal,46910,Roasted Chicken & Garden Vegetables,23,19
 soup,48887,Well Yes! Chicken Noodle Soup,23,22
+soup,37305,Vegan Tomato Basil Pasta Soup,23,13
 soup,43543,Pindi Chana Chick Peas Curry,23,15
 canned_chili,8334,Turkey Ranchero W/Beans Chili,23,17
 meal_kit,23404,With Rice Gumbo Mix,23,14
-frozen_meal,14342,Cafe Steamers Simply Beef & Broccoli,22,16
 frozen_meal,27153,Smart Ones Home Style Beef Pot Roast,22,19
+frozen_meal,14342,Cafe Steamers Simply Beef & Broccoli,22,16
 frozen_pizza,49084,Cheese Deep Dish Pizza,22,13
 frozen_appetizer,44496,Spinach Artichoke White Meat Chicken,22,18
-instant_soup,19499,Ring O Noodle Soup Mix with Real Chicken Broth,22,11
 frozen_burrito,989,Chapatti Chicken Tikki Masala Wrap,22,7
+instant_soup,19499,Ring O Noodle Soup Mix with Real Chicken Broth,22,11
 frozen_meal,47527,Homestyle Turkey Breast with Stuffing,22,14
 frozen_appetizer,27184,Chicken Enchilada Suiza,22,12
 frozen_appetizer,31870,Southwest Chicken In a Seasoned Batter Taquitos,22,18
-deli_prepared,21831,Curry Veggie Wrap,22,14
 frozen_appetizer,18422,Pepperoni Pizza Snack Bites,22,18
-soup,27453,Vegetable Classics Hearty Penne in Chicken Broth Soup,22,15
+deli_prepared,21831,Curry Veggie Wrap,22,14
 frozen_meal,10134,Palak Paneer Spinach with Cottage Cheese and Sauce,22,14
 soup,16157,Slow Cooker Sauces Beef Stew,22,19
+soup,27453,Vegetable Classics Hearty Penne in Chicken Broth Soup,22,15
 frozen_meal,22722,Bombay Lentils,22,17
 deli_prepared,35575,Sesame Miso Chopped Salad,22,15
-soup,13816,Chunky Baked Potato with Cheddar & Bacon Bits Soup Bowl,22,10
 pot_pie,10633,"Pie, Dutch Apple",22,21
+soup,13816,Chunky Baked Potato with Cheddar & Bacon Bits Soup Bowl,22,10
 frozen_pizza,15338,Brick Oven Style Pizza Pepperoni,22,12
 mac_and_cheese,42962,Zap Ems Macaroni & Cheese,22,12
 frozen_meal,33366,Philly Cheese Steak,22,17
-frozen_meal,7268,"Mac & Cheese, with Roasted Poblanos and Chicken",21,16
 frozen_burrito,45678,Gluten Free Shredded Beef Burrito,21,13
+frozen_meal,7268,"Mac & Cheese, with Roasted Poblanos and Chicken",21,16
 frozen_appetizer,4107,Crispy Samosas with Saag Paneer,21,19
 deli_prepared,42854,Nourish Bowls Southwest Chipotle,21,14
 frozen_meal,33514,Ready Meals Marinara & Italian Sausage Rotini,21,9
-deli_prepared,2941,Broccoli Salad,21,16
 meal_kit,2801,Bacon Cheeseburger Hamburger Helper,21,17
 instant_soup,20763,Idaho Outpost Potato Leek Soup Mix,21,18
-soup,8616,Minestrone with Kale Soup,21,16
-frozen_meal,7410,Steamers Chicken Fettuccine Alfredo,21,15
+deli_prepared,2941,Broccoli Salad,21,16
 deli_prepared,13728,Grilled Chicken,21,7
+frozen_meal,7410,Steamers Chicken Fettuccine Alfredo,21,15
 frozen_meal,9914,Honey Roasted Chicken,21,13
-frozen_meal,31586,Roasted Turkey & Vegetables,21,16
+soup,8616,Minestrone with Kale Soup,21,16
 frozen_pizza,46207,The Works Hand-Tossed Style Crust Pizza,21,16
+frozen_meal,31586,Roasted Turkey & Vegetables,21,16
 frozen_pizza,1679,Ultra Thin Crust Cheese Supreme Pizza,21,10
 deli_prepared,28144,Tabouli,21,10
 frozen_meal,40819,Voila! Cheesy Ranch Chicken,20,15
 deli_prepared,27317,Petite Party Tray,20,14
-frozen_meal,45047,Fit Kitchen Teriyaki Chicken,20,10
 deli_prepared,1400,Banana Pudding,20,16
-soup,32715,Spring Vegetable Recipe Mix,20,13
+frozen_meal,45047,Fit Kitchen Teriyaki Chicken,20,10
 soup,35514,Organic Split Pea Soup,20,18
-frozen_meal,47909,Bean Cheese XXL Burrito,20,3
+soup,32715,Spring Vegetable Recipe Mix,20,13
 deli_prepared,22167,Teriyaki Tofu Rice Scooter,20,15
 frozen_meal,46438,Gluten Free Asian Style Coconut Lemongrass with Chicken Bowls,20,18
-frozen_meal,16612,Sesame Noodles With Veggies,20,18
+frozen_meal,47909,Bean Cheese XXL Burrito,20,3
 deli_prepared,31576,Ginger Sushi,20,17
-deli_prepared,16279,Potato Kugel,20,14
-frozen_appetizer,21924,Vareniki w/ Potato and Onion,20,13
+frozen_meal,16612,Sesame Noodles With Veggies,20,18
 frozen_pizza,36105,Gluten Free Cheese Pizza,20,15
 frozen_meal,33461,Family Size Spaghetti & Meatballs,20,9
+deli_prepared,16279,Potato Kugel,20,14
+frozen_appetizer,21924,Vareniki w/ Potato and Onion,20,13
+meal_kit,23967,Purely Simple Vanilla Cake and Cupcake Mix,20,18
 mac_and_cheese,32461,Spaghetti Cool Shapes Star Wars,20,17
 frozen_appetizer,11876,Chicken & Vegetable Potstickers,20,16
-meal_kit,23967,Purely Simple Vanilla Cake and Cupcake Mix,20,18
 mac_and_cheese,7083,Broccoli Rotini & Cheese Dinner,20,15
 soup,10838,Large Soup,20,12
 mac_and_cheese,43431,Spaghetti & Meat Sauce Compleats,20,12
@@ -2429,21 +2429,21 @@ soup,32840,Roasted Chicken with Country Vegetables RTS Soup,19,16
 soup,6158,Vegetarian Soup Mix,19,14
 frozen_meal,1162,Complete Skillet Meal For Two Chicken Parmigiana & Penne,19,15
 frozen_meal,47474,Pork Carnitas,19,16
-frozen_meal,36622,Meat-filled Cabbage Roll with Tomato Sauce & Whipped Potatoes,19,12
 deli_prepared,26615,Rev #2 Ham & Cheese,19,10
+frozen_meal,36622,Meat-filled Cabbage Roll with Tomato Sauce & Whipped Potatoes,19,12
 instant_ramen,46471,Cup Noodles Chicken Vegetable,19,16
 frozen_pizza,16624,Garlic Chicken Alfredo Pizza,19,15
-deli_prepared,19810,Roast Beef Sandwich,19,15
-instant_ramen,7082,Brown Rice Ramen,19,17
-frozen_pizza,11968,Thin Sausage Pizza,19,14
 deli_prepared,38469,Lemongrass Tempeh Laab,19,5
-soup,41050,Tuscan Soup,19,7
+frozen_pizza,11968,Thin Sausage Pizza,19,14
+instant_ramen,7082,Brown Rice Ramen,19,17
 frozen_meal,15788,Organic Sesame Ginger Chicken,19,17
+deli_prepared,19810,Roast Beef Sandwich,19,15
 soup,36760,Potato Fennel Leek Soup,19,10
-frozen_meal,27132,Beefy Grande Stuffed Nachos,19,17
+soup,41050,Tuscan Soup,19,7
 meal_kit,14416,Skillets Nacho Supreme Dinner Kit,19,14
-deli_prepared,33006,Mediterranean Platter,19,19
+frozen_meal,27132,Beefy Grande Stuffed Nachos,19,17
 soup,30395,Healthy Request Spicy Vegetable Chili Soup,19,14
+deli_prepared,33006,Mediterranean Platter,19,19
 soup,13696,Soup on the Go Cheesy Potato With Bacon Flavor Soup,19,8
 canned_chili,22119,Beanee Weenee Original,19,9
 soup,18475,Organic Southweatern Black Bean Soup,19,13
@@ -2452,217 +2452,217 @@ frozen_meal,10282,Breakfast Bacon Egg & Cheese Mini Bagels,19,14
 frozen_appetizer,28689,Seaweed Salad with Sesame Soy Dressing,19,18
 deli_prepared,32354,German Potato Salad,19,12
 soup,17495,Organic No Salt Added Split Pea Soup,19,10
-frozen_pizza,14434,Hawaiian Recipe Crispy Thin Crust Pizza,18,12
-frozen_meal,9831,Signature Spicy Chicken,18,13
-deli_prepared,1218,Buffalo Style Chicken Wrap,18,8
 frozen_meal,7902,Top Chef Chicken & Potatoes with BBQ Sauce Cafe Steamers,18,11
-soup,38756,Well Yes! Italian Vegetables with Farro Soup,18,11
+frozen_pizza,14434,Hawaiian Recipe Crispy Thin Crust Pizza,18,12
+deli_prepared,1218,Buffalo Style Chicken Wrap,18,8
+frozen_meal,9831,Signature Spicy Chicken,18,13
 frozen_pizza,3657,Gluten Free Pizza Shell,18,12
 frozen_meal,29175,Fish Stick Meal,18,10
+soup,38756,Well Yes! Italian Vegetables with Farro Soup,18,11
+frozen_meal,9701,Wheat Free Gluten Free Pumpkin Pie,18,15
 frozen_meal,9847,Savory Beef & Pork Pierogi,18,11
 soup,13125,Creamy Chicken Noodle Soup,18,13
 instant_ramen,61,Ramen Noodles Soup Chicken Mushroom Flavor,18,14
-frozen_meal,9701,Wheat Free Gluten Free Pumpkin Pie,18,15
-instant_soup,47308,Country Kitchen Tortilla Soup Mix,18,16
+instant_soup,3408,Shiitake Mushrooms Rice Noodle Soup Bowl,18,5
+frozen_appetizer,2613,Chicken & Cheese Nacho Bites,18,13
 soup,31019,Soup at Hand Creamy Tomato Parmesan Bisque,18,13
 frozen_meal,31052,White Wine Chicken & Couscous,18,13
-instant_soup,3408,Shiitake Mushrooms Rice Noodle Soup Bowl,18,5
 frozen_pizza,33133,Rising Crust Spicy Italian Sausage Pizza,18,11
-frozen_appetizer,2613,Chicken & Cheese Nacho Bites,18,13
-chicken_nuggets,38942,Organic Gluten Free Whole Grain Chicken Nuggets,18,15
-deli_prepared,16130,Bistro Organic Caesar Salad Bowl with Chicken,18,9
-deli_prepared,45891,Chicken Pad Thai,18,14
-mac_and_cheese,49434,Velveeta Cheesy Skillets Singles Ultimate Cheeseburger Mac,18,16
+instant_soup,47308,Country Kitchen Tortilla Soup Mix,18,16
 frozen_pizza,29915,Thin And Crispy Bacon Lovers,18,7
-frozen_pizza,32273,Roasted Mushroom 'N Spinach Ultra Thin Crust Pizza,18,7
-deli_prepared,24833,Brown & Wild Rice Salad Curry Almond,18,17
+mac_and_cheese,49434,Velveeta Cheesy Skillets Singles Ultimate Cheeseburger Mac,18,16
 soup,3468,Hearty Cheeseburger Soup,18,10
+deli_prepared,24833,Brown & Wild Rice Salad Curry Almond,18,17
+deli_prepared,16130,Bistro Organic Caesar Salad Bowl with Chicken,18,9
+frozen_pizza,32273,Roasted Mushroom 'N Spinach Ultra Thin Crust Pizza,18,7
+chicken_nuggets,38942,Organic Gluten Free Whole Grain Chicken Nuggets,18,15
+deli_prepared,45891,Chicken Pad Thai,18,14
 frozen_burrito,49104,Gluten Free Beef and Potato Burrito,18,13
 instant_ramen,5243,Big Cup Noodles Homestyle Shrimp Flavor,18,14
-frozen_meal,33934,Chef's Favorites with Alfredo Sauce Penne & Vegetables,18,10
 deli_prepared,12292,"Salad, Baby Spinach & Chicken",18,9
+frozen_meal,33934,Chef's Favorites with Alfredo Sauce Penne & Vegetables,18,10
 frozen_pizza,14993,Pizza Five Cheese,18,8
 frozen_meal,2921,Gourmet Chicken Tamales,18,9
 deli_prepared,24052,Matar &Biryani Bento,18,13
-frozen_appetizer,15145,Loaded Baked Potato Bites,18,11
 frozen_appetizer,8199,Ranch Blasted Pepperoni Pizza Rolls,18,14
-frozen_meal,971,Chicken Alfredo with Rotini,17,14
-frozen_meal,12642,Sweet & Sour Chicken Complete Meals,17,12
+frozen_appetizer,15145,Loaded Baked Potato Bites,18,11
 mac_and_cheese,38330,Made with Organic Pasta & Cheddar Cheese Alphabet Shapes Macaroni & Cheese Dinner,17,13
+frozen_meal,971,Chicken Alfredo with Rotini,17,14
 frozen_pizza,414,Gluten Free Chicken Rustica Pizza,17,5
+frozen_meal,12642,Sweet & Sour Chicken Complete Meals,17,12
 soup,24078,All Natural Roasted Pepper Tomato Soup,17,10
 canned_chili,48319,Best Medium Sauce Chili Beans,17,14
+frozen_meal,22459,Wild Salmon With Pesto,17,12
 frozen_pizza,29241,"Pizza, Super",17,6
 meal_kit,7897,Ultimate Creamy Stroganoff Hamburger Helper,17,11
 instant_soup,21256,Punjab Potatoes Indian Cuisine,17,15
-frozen_meal,22459,Wild Salmon With Pesto,17,12
 soup,45718,Traditional Chicken Cheese Enchilada Flavor Soup,17,12
-frozen_meal,201,Sloppy Joe,17,12
 deli_prepared,18976,Organic Chicken Cacciatore,17,14
-deli_prepared,36450,Twice Baked Potato,17,14
-chicken_nuggets,48773,Beyond Chicken Homestyle Tenders,17,11
+frozen_meal,201,Sloppy Joe,17,12
 meal_kit,42661,Fettuccine Alfredo Chicken Helper,17,14
 mac_and_cheese,33470,Velveeta Cheesy Skillets Chicken Alfredo,17,9
 frozen_meal,45632,Pelmeni Farmers Cheese,17,14
+deli_prepared,36450,Twice Baked Potato,17,14
+chicken_nuggets,48773,Beyond Chicken Homestyle Tenders,17,11
 instant_soup,49092,Onion Soup & Seasoning Mix,17,4
 frozen_pizza,36281,Brick Oven Crust Three Meat Medley Pizza,17,13
 deli_prepared,31813,Sesame Noodle Salad,17,10
 instant_soup,30762,Hot & Sour  Chinese Style Egg Flower Soup Mix,17,10
 pot_pie,37325,Cheesy Chicken & Bacon Pot Pie,17,16
-deli_prepared,40133,Tuscan Flair Smoked Chicken Breast with Cheese & Almonds Small Snack Plate,17,13
 deli_prepared,30475,REV #13 Bacon Club,17,12
+deli_prepared,40133,Tuscan Flair Smoked Chicken Breast with Cheese & Almonds Small Snack Plate,17,13
 deli_prepared,22162,"Rev #12 Turkey, Ham & Cheese Snack Wrap",17,7
-mac_and_cheese,9661,Macaroni And Cheese Dinner,17,11
 soup,28671,Chunky Healthy Request Beef with Country Vegetables Soup,17,12
+mac_and_cheese,9661,Macaroni And Cheese Dinner,17,11
 canned_chili,18864,Chili,17,11
-soup,3171,Beef Raviolis Pasta in Meat Sauce,17,7
 meal_kit,18674,Spaghetti Tangy Italian Dinner,17,5
+soup,3171,Beef Raviolis Pasta in Meat Sauce,17,7
 frozen_meal,9793,No Sugar Added Apple Pie,17,9
 frozen_appetizer,21726,Classic Cheddar Pierogies,17,15
 deli_prepared,6968,"AFC Sushi Crunchy California Roll Special Prepared In Store, Ready To Eat",17,10
 soup,1809,Slow Kettle Style Santa Fe Chicken Enchilada Soup With White Meat Chicken,17,9
 frozen_pizza,24752,Pizza Mushroom T5,17,13
 mac_and_cheese,23494,Bacon Mac & Cheese,16,13
-mac_and_cheese,12449,Truffle Mac & Cheese,16,13
-frozen_meal,43493,Boneless Pork Rib Shaped Potty Meal,16,10
-deli_prepared,11472,Baked Scalloped Potatoes With Real Cheddar Cheese & Whole Milk,16,7
 meal_kit,47974,Tuna Helper Fettuccine Alfredo,16,14
-frozen_meal,42856,Roasted Beef Patties Topped with Sautéed Onions and Gravy,16,10
+frozen_meal,43493,Boneless Pork Rib Shaped Potty Meal,16,10
 frozen_pizza,992,Thin Crust Pepperoni & Pesto Pizza,16,13
-frozen_meal,49183,Sf Protein Thai Style,16,13
-frozen_pizza,20089,Four Meat & Four Cheese Pizza Garlic Buttery Crust,16,13
-frozen_meal,21521,Jaipur Karhi Organic Potato Dumplings in Spicy Buttermilk,16,6
-frozen_meal,15230,Grilled Chicken Teriyaki with Lo Mein Noodles,16,11
+deli_prepared,11472,Baked Scalloped Potatoes With Real Cheddar Cheese & Whole Milk,16,7
+frozen_meal,42856,Roasted Beef Patties Topped with Sautéed Onions and Gravy,16,10
+mac_and_cheese,12449,Truffle Mac & Cheese,16,13
 soup,48430,"Split Pea Soup, Sicilian, Spaccarelli",16,10
+frozen_meal,21521,Jaipur Karhi Organic Potato Dumplings in Spicy Buttermilk,16,6
+frozen_pizza,20089,Four Meat & Four Cheese Pizza Garlic Buttery Crust,16,13
+frozen_meal,49183,Sf Protein Thai Style,16,13
 frozen_appetizer,16269,Beef & Cheddar Rolled Tacos,16,11
+frozen_meal,15230,Grilled Chicken Teriyaki with Lo Mein Noodles,16,11
+deli_prepared,19735,Sushi Spicy Tuna Roll Special Brown Rice Ready To Eat,16,11
 deli_prepared,22486,Kale White Bean Salad,16,10
 frozen_appetizer,31534,Vegetarian Fillo Quiches,16,12
-deli_prepared,19735,Sushi Spicy Tuna Roll Special Brown Rice Ready To Eat,16,11
-soup,10122,Hot & Spicy Menudo Picoso,16,9
-pot_pie,25321,"Pierogies, Potato & Onion",16,12
 meal_kit,19989,Cholent Mix,16,10
-instant_soup,6954,Cowboy Chili,16,10
-frozen_pizza,2375,Three Cheese Pizza Pocket,16,8
 frozen_meal,15505,Turkey Meal,16,12
-deli_prepared,19912,Turkey Sandwich,16,11
-frozen_meal,24104,Chicken Stir Fry,16,15
+pot_pie,25321,"Pierogies, Potato & Onion",16,12
+frozen_pizza,2375,Three Cheese Pizza Pocket,16,8
+soup,10122,Hot & Spicy Menudo Picoso,16,9
+instant_soup,6954,Cowboy Chili,16,10
 deli_prepared,24247,Lunchable Uploaded Beef  Walking Taco,16,5
+deli_prepared,19912,Turkey Sandwich,16,11
 frozen_meal,34596,"Chicken, Tandoori",16,6
+frozen_meal,24104,Chicken Stir Fry,16,15
 pot_pie,20079,Chicken Pie,16,8
 frozen_appetizer,43844,Gourmet Onion Rings,16,11
 pot_pie,32179,Chicken & Broccoli Pot Pie,16,8
 frozen_meal,829,Compleats Good Mornings Bacon Breakfast Scramble,16,12
-soup,22555,Low Sodium Borscht,16,3
 soup,31106,Soup On The Go Healthy Request Classic Tomato RTS Soup,16,6
 canned_chili,40264,Hot & Spicy with Beans Chili,16,15
-soup,20677,Homestyle Creamy Chicken & Herb Dumplings Soup,16,16
+soup,22555,Low Sodium Borscht,16,3
 frozen_meal,20522,Homestyle Meatloaf & Mashed Potatoes Compleats,16,8
-deli_prepared,32604,Bbq Chicken Wings,16,11
+soup,20677,Homestyle Creamy Chicken & Herb Dumplings Soup,16,16
 soup,10748,Chicken with Rice Soup,16,9
+deli_prepared,32604,Bbq Chicken Wings,16,11
 deli_prepared,47583,Lunchables Light Bologna & American Cracker Stackers,16,10
 frozen_pizza,25465,Sausage Lotzza Motzza Pizza,16,6
 frozen_meal,43606,Breaded Chicken Sandwich,16,6
 mozzarella_sticks,35827,Breaded Mozzarella Cheese Sticks,16,12
-canned_chili,23267,"Chili, Organic, Vegetarian, Great Northern & Barley",16,5
 frozen_lasagna,37585,Lasagna & Meat Sauce,16,12
-instant_ramen,173,Habanero Lime Shrimp Flavor Ramen Noodle Soup,15,10
-soup,9343,Cheddar Potato Soup Mix,15,12
+canned_chili,23267,"Chili, Organic, Vegetarian, Great Northern & Barley",16,5
 frozen_meal,41739,Boneless Fried Chicken & Waffles,15,9
-frozen_meal,37261,French Cheesecake,15,9
-frozen_meal,20886,Cheese Chile Corn Tamales,15,13
+instant_ramen,173,Habanero Lime Shrimp Flavor Ramen Noodle Soup,15,10
 soup,26742,Beefaroni Big Size Bowl,15,9
+frozen_meal,20886,Cheese Chile Corn Tamales,15,13
+soup,9343,Cheddar Potato Soup Mix,15,12
+frozen_meal,37261,French Cheesecake,15,9
 frozen_lasagna,36049,Garden Vegetable Lasagna,15,13
 mac_and_cheese,45943,Cheesy Burger Macaroni,15,13
-soup,28011,Tuscan 3 Bean With Kale And Millet Soup,15,15
-frozen_meal,12321,Fish Sandwich Fillets Original Recipe,15,7
-meal_kit,15152,Crunchy Taco Hamburger Helper,15,11
 frozen_meal,30003,Tacos For Two,15,6
+meal_kit,15152,Crunchy Taco Hamburger Helper,15,11
+frozen_meal,12321,Fish Sandwich Fillets Original Recipe,15,7
+soup,28011,Tuscan 3 Bean With Kale And Millet Soup,15,15
+soup,32379,Gluten Free Minnesota Heartland Eleven Bean Soup,15,13
 canned_chili,19419,Chili Mac,15,12
 frozen_pizza,16302,Classic Crust Hawaiian Style Pizza,15,9
-soup,32379,Gluten Free Minnesota Heartland Eleven Bean Soup,15,13
 frozen_lasagna,3279,Spinach Ricotta Ravioli,15,7
 instant_ramen,13099,Instant Lunch Ramen Noodle Soup Sriracha Chicken,15,7
-frozen_pizza,31761,Crispy Thin Crust Gluten Free BBQ Chicken Pizza,15,9
 frozen_appetizer,4379,Tandoori Chicken Samosa,15,12
 soup,21415,Chicken Pot Pie Oven Sauce,15,9
-frozen_pizza,250,"Authentic Deep Dish, Spinach & Garlic Pizza",15,9
+frozen_pizza,31761,Crispy Thin Crust Gluten Free BBQ Chicken Pizza,15,9
+frozen_meal,47791,Powermeal Organic with Sesame Soy Tahini Dressing Asian Noodle Bowl,15,9
 soup,22910,Skilet Shrimp Scampi,15,13
 frozen_pizza,34679,Mozzarella And Pesto Pizza,15,7
 mac_and_cheese,48836,Cheesy Skillets Dinner Kit,15,11
-frozen_meal,47791,Powermeal Organic with Sesame Soy Tahini Dressing Asian Noodle Bowl,15,9
+frozen_pizza,250,"Authentic Deep Dish, Spinach & Garlic Pizza",15,9
 deli_prepared,11832,Louisiana Roll,15,9
-chicken_nuggets,1055,Naturals Grilled Chicken Nugget,15,13
 canned_chili,3077,Vegetarian Chili,15,12
+chicken_nuggets,1055,Naturals Grilled Chicken Nugget,15,13
+frozen_meal,11625,Home Menu with Dan Dan Noodles Garlic Chicken,15,12
 instant_soup,4685,Instant Aka Miso Soup,15,13
 chicken_nuggets,19652,Gluten Free Breast Strips,15,11
-frozen_meal,11625,Home Menu with Dan Dan Noodles Garlic Chicken,15,12
 canned_chili,38677,Chilli Beans In Sauce,15,13
-deli_prepared,44981,S'mores Dippers,15,11
 frozen_meal,13264,Sesame Ginger Wild Salmon,15,11
+deli_prepared,44981,S'mores Dippers,15,11
 frozen_lasagna,33670,Lasagna Alfredo with Broccoli,15,5
 mac_and_cheese,38630,Spaghetti Rings With Meatballs,15,5
-frozen_pizza,22997,Thin Cheese Pizza,14,9
 frozen_meal,18885,Mrktpl Sweet Potato Bake,14,11
+frozen_pizza,22997,Thin Cheese Pizza,14,9
+frozen_lasagna,3895,Lasagna With Meat & Sauce,14,10
+soup,1903,Chicken Noodle with Vegetables Soup,14,6
 frozen_meal,20550,Ss Creamy Mashed Potatoes,14,8
 deli_prepared,32206,Nachos LunchMakers,14,9
-soup,1903,Chicken Noodle with Vegetables Soup,14,6
-frozen_lasagna,3895,Lasagna With Meat & Sauce,14,10
 soup,10228,Creamy Portobello Mushroom Soup,14,12
 soup,16442,14 Garden Vegetable Soup,14,9
-deli_prepared,41630,Homestyle Potato Salad,14,13
 mac_and_cheese,31451,Mac And Cheese,14,11
 canned_chili,36122,Spicy Chili Beans,14,9
 mozzarella_sticks,2860,Mozzarella Cheese Breadsticks,14,6
-frozen_meal,9062,"Special K Crustless Quiche Sausage, Quinoa, Peppers, Mozzarella & Asiago",14,8
-frozen_appetizer,1735,Culinary Collection Monterey Jack Jalapeno Stuffed Pretzels,14,10
-frozen_meal,27819,Restaurant Quality & Oven Ready Crab Cakes,14,6
-deli_prepared,25488,"Sushi Chef Sampler Tra, Ready To Eat",14,7
+deli_prepared,41630,Homestyle Potato Salad,14,13
 frozen_burrito,49604,Beef and Bean Green Chili Burritos,14,12
 canned_chili,10682,W/Beans Chili,14,8
-frozen_meal,202,Spinach & Feta Pierogi,14,12
+frozen_appetizer,1735,Culinary Collection Monterey Jack Jalapeno Stuffed Pretzels,14,10
+frozen_meal,9062,"Special K Crustless Quiche Sausage, Quinoa, Peppers, Mozzarella & Asiago",14,8
+deli_prepared,25488,"Sushi Chef Sampler Tra, Ready To Eat",14,7
+frozen_meal,27819,Restaurant Quality & Oven Ready Crab Cakes,14,6
 frozen_burrito,25158,Spicy Chipotle Beef & Bean Burrito,14,11
-deli_prepared,33534,Scalloped with Gruyere Cheese Potatoes,14,6
+frozen_meal,202,Spinach & Feta Pierogi,14,12
 frozen_meal,15465,Cheddar Cheeseburger Crispy Buttery Crust Sandwiches,14,8
-soup,20613,Arizona Sunset Enchilada Soup Mix,14,12
+deli_prepared,33534,Scalloped with Gruyere Cheese Potatoes,14,6
 chicken_nuggets,3830,Country Fried Chicken Tenders,14,11
+soup,20613,Arizona Sunset Enchilada Soup Mix,14,12
 frozen_meal,9645,Vegetable Pad Thai,14,10
+frozen_pizza,8973,Sausage Pepperoni Pizza,14,10
 soup,5814,Chunky Jammin' Jerk Chicken with Rice & Beans Soup,14,11
 frozen_meal,46335,Lean & Fit Parmesan Polenta & Veggies,14,10
-frozen_pizza,8973,Sausage Pepperoni Pizza,14,10
-soup,2599,Organic Garden Vegetables with Herbs Soup,14,7
 canned_chili,3882,Beef Chili with Beans,14,10
+soup,2599,Organic Garden Vegetables with Herbs Soup,14,7
 instant_ramen,20799,Thai Vegetable Peanut,14,14
 frozen_meal,30940,Mexican Style Lasagna,14,9
-frozen_pizza,40106,Queso Fundido with Chorizo Crispy Thin Crust Pizza,14,10
 deli_prepared,8201,Naanwich Flatbread Sandwich Chicken Tikka Masala,14,5
+frozen_pizza,40106,Queso Fundido with Chorizo Crispy Thin Crust Pizza,14,10
 deli_prepared,3553,Kale Chicken Ceasar Bowl Non Gmo,14,7
 frozen_lasagna,38532,Farmers Harvest Whole Grain Veg Lasagna,14,8
-frozen_lasagna,31473,Turkey Lasagna,13,7
 frozen_pizza,22327,Canadian Bacon Pizza,13,6
-mac_and_cheese,38943,Mac & Cheese Cups,13,5
+frozen_lasagna,31473,Turkey Lasagna,13,7
 frozen_pizza,16783,Sausage and Pepperoni Pizza,13,10
+mac_and_cheese,38943,Mac & Cheese Cups,13,5
 soup,16099,Heart Healthy Italian Style White Bean & Chicken Sausage,13,13
 soup,20830,"Soup! Mix, Baked Burgundy French Onion",13,11
 frozen_pizza,20506,Roadhouse Double Down Deluxe Pizza,13,12
-frozen_meal,35541,with Mac & Cheese Fish Sticks,13,7
+frozen_appetizer,22462,Supreme Pizza Bites,13,10
 deli_prepared,28768,Cracker Crunchers Chicken with Nestle Crunch Bar LunchMakers,13,8
 soup,45417,Organic Creamy Sweet Potato Soup,13,13
-frozen_appetizer,22462,Supreme Pizza Bites,13,10
-soup,30263,Homestyle Healthy Request Chicken with Whole Grain Pasta,13,10
+frozen_meal,35541,with Mac & Cheese Fish Sticks,13,7
 frozen_meal,32582,Chili with Beans Pot Pie,13,8
-frozen_pizza,6469,Deep Dish Pizza,13,6
+soup,30263,Homestyle Healthy Request Chicken with Whole Grain Pasta,13,10
 frozen_pizza,41952,"Cheese Pizza Sticks, Cheese",13,8
-frozen_lasagna,21719,Roasted Vegetable Lasagna,13,7
+frozen_pizza,6469,Deep Dish Pizza,13,6
 frozen_meal,46249,Rice & Vegetables Stir Fry,13,13
 frozen_meal,41104,Tapioca Pudding Snack,13,6
-mac_and_cheese,32187,Buffalo Style MAC,13,12
+frozen_lasagna,21719,Roasted Vegetable Lasagna,13,7
 soup,43516,Chunky BBQ Seasoned Pork,13,8
 instant_ramen,37186,"Soup, Japanese Style Noodles & Beef Flavored",13,9
+mac_and_cheese,32187,Buffalo Style MAC,13,12
 frozen_burrito,27252,Nacho Cheese & Beef Extra Crunchy Mini Chimichangas,13,6
-frozen_appetizer,18904,Parmesan Garlic Bread,13,9
 mac_and_cheese,48013,Penne & Cheese,13,9
-frozen_meal,15677,Slow Kettle Thai Chicken with Rice,13,8
+frozen_appetizer,18904,Parmesan Garlic Bread,13,9
 soup,31704,Crab & Corn Chowder,13,6
+frozen_meal,15677,Slow Kettle Thai Chicken with Rice,13,8
 frozen_pizza,34857,"Thin Crust Supreme 22.1 Oz 12\""",13,6
 frozen_pizza,13543,Upside Down Regular Pizza,13,9
 frozen_meal,41101,Boneless Pork Rib Shaped Patties,13,8
@@ -2671,73 +2671,73 @@ frozen_meal,35710,Taste Of Asia Sukiyaki Beef,13,8
 deli_prepared,42161,Sesame Pasta Salad,13,11
 instant_ramen,19721,Lime Shrimp Flavor Ramen Noodle Soup,13,7
 soup,8932,Vegetable Classics Tuscan-Style White Bean Soup,13,11
-deli_prepared,17748,Rustic Harvest Chicken With Cheese & Nuts Small Snacking Plate,12,10
 frozen_meal,688,Sausage Gravy & Biscuit,12,9
-frozen_meal,42570,Three Cheese Ziti Marinara,12,10
+deli_prepared,17748,Rustic Harvest Chicken With Cheese & Nuts Small Snacking Plate,12,10
 frozen_pizza,7435,Naturally Rising Crust Sausage & Pepperoni Pizza,12,6
 mac_and_cheese,20839,Deluxe Shells & Cheese Dinner,12,8
+frozen_meal,42570,Three Cheese Ziti Marinara,12,10
+instant_ramen,7367,Teriyaki Noodles,12,8
 soup,6072,Chunky Sausage & Pepper Rigatoni Soup,12,10
+hot_pocket,6864,3 Meat Pizza Rolls,12,11
 frozen_meal,9591,Smooth & Creamy Cherry Original Cream Cheesecake,12,11
 frozen_meal,10788,Beef 6 Ct Tamales,12,10
-instant_ramen,7367,Teriyaki Noodles,12,8
-hot_pocket,6864,3 Meat Pizza Rolls,12,11
 frozen_lasagna,15838,Turkey Sausage & Roasted Vegetable Lasagna Bake Frozen Entree,12,10
 deli_prepared,43110,Rainbow Salad,12,6
 soup,25925,"Vegetable, Kale & Quinoa Soup Mix",12,12
 soup,13677,Split Pea & Ham Soup,12,8
-frozen_meal,28406,"Chicken, Broccoli & Cheese Casserole",12,9
-frozen_meal,18063,Comfort Bakes Chicken Alfredo,12,11
 frozen_meal,30350,Signature Classics Southwest-Style Chicken Panini,12,6
+frozen_meal,18063,Comfort Bakes Chicken Alfredo,12,11
 frozen_pizza,25262,Spicy Italian Sausage Rising Crust Pizza,12,5
-deli_prepared,49581,Pinto Bean and Cheese Pupusa,12,7
+frozen_meal,28406,"Chicken, Broccoli & Cheese Casserole",12,9
 frozen_meal,22440,Mega Salisbury Steak,12,6
+deli_prepared,49581,Pinto Bean and Cheese Pupusa,12,7
 frozen_meal,47143,Chef's Favorites Lightly Sauced Primavera Vegetable Risotto,12,10
-frozen_meal,47069,Mashed Potatoes & Mixed Vegetables Classic Fried Chicken Strips,12,10
 frozen_meal,37280,Steak & Potato Boom Bites,12,11
+frozen_meal,47069,Mashed Potatoes & Mixed Vegetables Classic Fried Chicken Strips,12,10
 deli_prepared,9276,Broccoli Cheddar Au Gratin Potatoes,12,4
 frozen_pizza,48195,Mulberry Pizza,12,10
 soup,18283,Vegetable Beef Soup Mix,12,10
 frozen_meal,42909,Country Fried Pork Chop & Gravy,12,7
 mac_and_cheese,44927,Deluxe Shells & Cheddar Dinner,12,12
-frozen_pizza,27808,Black Truffle Wild Mushroom Mozzarella Pizza,11,8
-frozen_meal,804,Ratatouille,11,10
-frozen_meal,20064,Lunchables Mini Hot Dogs with Capri Sun,11,5
-deli_prepared,11064,Cucumber Salad,11,9
-frozen_appetizer,7375,Cheddar Cheese Mashed Potatoes,11,5
 deli_prepared,11588,Pork Egg Roll,11,5
-frozen_appetizer,10370,Original Pretzel Dogs 12 Count,11,10
 soup,28850,Healthy Request Chicken with Mini Round Noodles Soup,11,7
-soup,42546,Organic Creamy Sweet Corn with Coconut Milk Soup,11,6
-frozen_appetizer,11478,Craft Beer Battered Onion Rings,11,8
+frozen_appetizer,7375,Cheddar Cheese Mashed Potatoes,11,5
+frozen_pizza,27808,Black Truffle Wild Mushroom Mozzarella Pizza,11,8
+deli_prepared,11064,Cucumber Salad,11,9
+frozen_meal,804,Ratatouille,11,10
+frozen_appetizer,10370,Original Pretzel Dogs 12 Count,11,10
+frozen_meal,20064,Lunchables Mini Hot Dogs with Capri Sun,11,5
 soup,41105,Traditional Potato Broccoli & Cheese Chowder Soup,11,9
+frozen_appetizer,11478,Craft Beer Battered Onion Rings,11,8
+soup,31054,Ready To Eat Tomato Basil Soup,11,5
 deli_prepared,22628,Hot Spicy Fried Chicken Leg,11,5
 deli_prepared,45973,Beef Meatballs In Slow Cooked Italian Sauce,11,10
-soup,31054,Ready To Eat Tomato Basil Soup,11,5
-soup,38304,Beef with Country Vegetables Soup,11,7
+soup,42546,Organic Creamy Sweet Corn with Coconut Milk Soup,11,6
 frozen_meal,41320,Italian Style Entrees Sausage & Tomato Rotini Pasta,11,6
-soup,21959,Traditional Beef & Vegetable Soup,11,9
+soup,38304,Beef with Country Vegetables Soup,11,7
 frozen_meal,4551,Cherry Berry Topped with Cinnamon Sugar Fruit Pie,11,9
+soup,21959,Traditional Beef & Vegetable Soup,11,9
 frozen_meal,18268,Grilled Chicken Parmesan,11,11
-frozen_meal,4257,Tilapia Fish Fillets,11,5
-soup,36203,Oven Sauces Cheesy Broccoli Chicken,11,9
-frozen_meal,4123,"Light Wheat Muffin Sandwiches With Egg Whites, Turkey Sausage & Cheese",11,9
 frozen_meal,41202,Home-Style Boneless Pork,11,6
+soup,36203,Oven Sauces Cheesy Broccoli Chicken,11,9
 soup,44498,Well Yes! Roasted Chicken with Wild Rice Soup,11,11
-frozen_meal,48497,Ricotta & Lobster Ravioli in a Seafood Bisque Meal Soup Meal for 2,11,10
+frozen_meal,4123,"Light Wheat Muffin Sandwiches With Egg Whites, Turkey Sausage & Cheese",11,9
+frozen_meal,4257,Tilapia Fish Fillets,11,5
 frozen_meal,47294,Family Size Fried Chicken & Rice,11,11
 frozen_appetizer,44933,Goat Cheese & Fig Fillo Rolls,11,11
+frozen_meal,48497,Ricotta & Lobster Ravioli in a Seafood Bisque Meal Soup Meal for 2,11,10
 instant_ramen,17057,Roast Chicken Flavor Big Cup Noodles,11,9
 frozen_meal,41188,Roasted Garlic Chicken,11,8
 meal_kit,22503,Asian Sesame Kit,11,8
 frozen_pizza,49650,California Style White Hand-Tossed Style Crust Pizza,11,10
-soup,1889,Chunky Hearty Beef Noodle Soup,11,6
 frozen_pizza,10785,Six Cheese Flatbread Pizza,11,6
+soup,1889,Chunky Hearty Beef Noodle Soup,11,6
 frozen_meal,4426,Raw Breaded White Chicken Patty Filled With Broccoli & Cheese,11,5
 frozen_meal,47671,Signature Mashed Potatoes With Whole Milk & Real Butter,11,9
 chicken_nuggets,27491,Gluten Free Whole Grain Southwest Breaded Chicken Tenders,11,7
 deli_prepared,32821,Zen Salad,11,8
-frozen_meal,7100,Frozen Mexican Style Pulled Pork Bowl,11,7
 frozen_meal,28894,Comfort Bakes Cheesy Chicken Lasagna,11,6
+frozen_meal,7100,Frozen Mexican Style Pulled Pork Bowl,11,7
 mac_and_cheese,3251,Mild Cheddar Macaroni & Cheese,11,8
 instant_soup,1091,"Pennsylvania Woodlands, Mushroom Barley Soup Mix",11,9
 instant_soup,33737,Miso Soup Green Onion,11,10
@@ -2745,85 +2745,85 @@ frozen_burrito,45354,"Burrito, Pinto Bean Rice & Cheese",11,7
 soup,47467,Soup on the Go Creamy Broccoli,11,8
 frozen_meal,10334,Selects Spicy Classic Fried Chicken,11,6
 frozen_meal,11641,Home Menu Signature Pork Dumplings,11,8
-frozen_meal,24146,Egg & Cheese Breakfast Sandwich,10,8
 soup,718,Traditional Chicken Tuscany Soup,10,8
+frozen_meal,24146,Egg & Cheese Breakfast Sandwich,10,8
 frozen_meal,17114,Sausage With Egg & Cheese,10,8
-canned_chili,448,White Chicken Chili,10,6
 frozen_pizza,44869,Little Italy Pizza Thin Crust Craft Pizza,10,7
-soup,40135,Homestyle Butternut Squash Bisque,10,10
+canned_chili,448,White Chicken Chili,10,6
 frozen_pizza,269,Stuffed Crust Five Cheese Pizza,10,9
-mac_and_cheese,16767,Chicken & Broccoli  Velveeta Cheesy Skillets,10,6
-instant_ramen,35589,Ramen Noodle Soup Sriracha Chicken Flavor,10,8
-instant_ramen,14760,Singapore Street Noodles Garlic Basil Noodle Bowl,10,8
-soup,25264,Chicken Broth with Noodles & Dumplings,10,9
+soup,40135,Homestyle Butternut Squash Bisque,10,10
 soup,21983,Split Pea with Barley Soup Mix,10,9
-soup,7124,Spaghetti & Meatballs - 4 PK,10,3
-soup,16255,Organic Chicken Tortilla Soup,10,6
-frozen_pizza,47600,New York City Slices Gourmet Pizza,10,8
+instant_ramen,35589,Ramen Noodle Soup Sriracha Chicken Flavor,10,8
+soup,25264,Chicken Broth with Noodles & Dumplings,10,9
+mac_and_cheese,16767,Chicken & Broccoli  Velveeta Cheesy Skillets,10,6
+instant_ramen,14760,Singapore Street Noodles Garlic Basil Noodle Bowl,10,8
 frozen_meal,10887,Sweet Potato Casserole,10,5
 mac_and_cheese,32830,Smokehouse Bacon Flavor Parmesan Fettuccini Pasta Sides,10,10
-frozen_pizza,17470,Limited Edition,10,10
+soup,7124,Spaghetti & Meatballs - 4 PK,10,3
+soup,16255,Organic Chicken Tortilla Soup,10,6
 frozen_pizza,13296,Deluxe Pizza,10,7
-soup,16342,Baked Potato with Bacon Soup,10,8
-instant_ramen,21097,Souper Meal Picante Shrimp Flavor Hot & Spicy,10,10
-mac_and_cheese,11501,Gluten-Free Supergrain Mild Cheddar Mac & Cheese,10,9
+frozen_pizza,17470,Limited Edition,10,10
+frozen_pizza,47600,New York City Slices Gourmet Pizza,10,8
 instant_ramen,14255,Soy Ginger Asian Noodles,10,9
+instant_ramen,21097,Souper Meal Picante Shrimp Flavor Hot & Spicy,10,10
+soup,16342,Baked Potato with Bacon Soup,10,8
+mac_and_cheese,11501,Gluten-Free Supergrain Mild Cheddar Mac & Cheese,10,9
 corn_dogs,11156,Beef Corn Dogs - 12 CT,10,8
 mac_and_cheese,41626,Truffle Mac & Cheese Whole Wheat,10,9
 mac_and_cheese,28133,In Tomato & Cheese Sauce Pasta,10,5
-deli_prepared,32936,Sensational Sides Loaded Mashed Potatoes,10,7
-deli_prepared,25960,Corn Souffle,10,8
 frozen_meal,41076,Chicken Corn Taquitos,10,7
-frozen_meal,24588,Quiche Port/Qui/Kal/Parm/As,10,6
+deli_prepared,25960,Corn Souffle,10,8
+deli_prepared,32936,Sensational Sides Loaded Mashed Potatoes,10,7
 soup,14123,Tuscan Peasant Soup,10,9
-meal_kit,19959,All Natural Lentil Curry Asian Pilafs,10,9
+frozen_meal,24588,Quiche Port/Qui/Kal/Parm/As,10,6
 frozen_meal,14463,Sf Protein Hawaiian Style,10,8
+meal_kit,19959,All Natural Lentil Curry Asian Pilafs,10,9
 chicken_nuggets,21531,Family Pack Chicken Breast Patties,10,8
 frozen_meal,2891,Buffalo Style Chicken With Creamy Noodles,10,7
 frozen_burrito,34603,Soyrizo and Potato Wrap,10,5
-frozen_meal,33442,"Legume Bowls Green Chickpeas, Kale, Potato, Tomato & Rosemary",10,8
 frozen_meal,16573,3 Cheese Ravioli,10,8
 frozen_meal,30804,Korean Style Beef,10,7
+frozen_meal,33442,"Legume Bowls Green Chickpeas, Kale, Potato, Tomato & Rosemary",10,8
 soup,29054,Creamy Chicken Soup,10,7
 chicken_nuggets,36141,Italian Style Breaded Chicken Patties,10,8
-hot_pocket,46809,Bakeries Smart Pockets,10,6
 meal_kit,27537,Hamburger Helper Cheesy Ranch Burger,10,8
+hot_pocket,46809,Bakeries Smart Pockets,10,6
 mac_and_cheese,27501,Shells & Cheese Aged White Cheddar,10,5
 frozen_meal,31339,Chicken Nugget Meal With Macaroni & Cheese,10,5
 soup,35698,Gluten Free Cafe Black Bean Soup,9,9
-frozen_meal,17510,Three Cheese & Spinach Sandwich,9,7
-soup,12282,Italian Lentil Soup w/ Fresh Tomato,9,9
-soup,37568,Traditional Lenticchie Sicilian Lentil Soup,9,7
 soup,32581,Great For Cooking Beefy Mushroom,9,9
 deli_prepared,41266,Asiago Creamed Spinach,9,6
-soup,32129,Mama Sorrenti's Minestrone,9,6
-instant_soup,20193,"Quinoa, Easy, Sundried Tomato Florentine",9,8
-frozen_burrito,14322,Gluten-Free Vegetarian and Dairy Free Burrito,9,6
-frozen_meal,12869,Vegetable Lumpia,9,5
+soup,37568,Traditional Lenticchie Sicilian Lentil Soup,9,7
+soup,12282,Italian Lentil Soup w/ Fresh Tomato,9,9
+frozen_meal,17510,Three Cheese & Spinach Sandwich,9,7
 frozen_pizza,46423,Mini Pepperoni Pizzas,9,7
-frozen_appetizer,1657,Kale & Quinoa Bites,9,8
-canned_chili,38403,Chunky No Beans Chili,9,6
-frozen_appetizer,3488,Cherry Blintzes Filled Crepes 6 ct,9,9
-mac_and_cheese,24192,Au Gratin Homestyle Casserole,9,8
-frozen_appetizer,49636,Vegetable & Chicken Dumpling,9,8
-frozen_meal,24728,White Bean Noodle And Broccoli Noodle With Teriyaki,9,7
-soup,46867,Split Pea Soup Low Sodium,9,8
+frozen_meal,12869,Vegetable Lumpia,9,5
+frozen_burrito,14322,Gluten-Free Vegetarian and Dairy Free Burrito,9,6
+instant_soup,20193,"Quinoa, Easy, Sundried Tomato Florentine",9,8
+soup,32129,Mama Sorrenti's Minestrone,9,6
 canned_chili,48743,Meatballs Super Mario Fun Shapes Canned Pasta,9,7
+frozen_appetizer,49636,Vegetable & Chicken Dumpling,9,8
+frozen_appetizer,1657,Kale & Quinoa Bites,9,8
+frozen_appetizer,3488,Cherry Blintzes Filled Crepes 6 ct,9,9
+canned_chili,38403,Chunky No Beans Chili,9,6
+frozen_meal,24728,White Bean Noodle And Broccoli Noodle With Teriyaki,9,7
+mac_and_cheese,24192,Au Gratin Homestyle Casserole,9,8
+soup,46867,Split Pea Soup Low Sodium,9,8
 frozen_appetizer,27661,Mini Crab Cakes,9,8
 frozen_pizza,31466,Craveables Spinach and Artichoke Snack Pizza,9,6
-soup,40875,Vegetable Quinoa Soup,9,9
-frozen_appetizer,32089,Broccoli & Sweet Potato Tots,9,9
 frozen_meal,21731,Beef Tamale,9,6
-frozen_pizza,6461,Roasted Vegetable & Goat Cheese Flatbread Crust Pizza,9,6
+frozen_appetizer,32089,Broccoli & Sweet Potato Tots,9,9
+soup,40875,Vegetable Quinoa Soup,9,9
 soup,7265,Vegetable Classics Southwestern-Style Corn with Potatoes & Peppers Soup,9,7
+frozen_pizza,6461,Roasted Vegetable & Goat Cheese Flatbread Crust Pizza,9,6
 soup,19371,Chipotle Sweet Potato Soup,9,7
 instant_ramen,20517,Ramen Shrimp Flavor Noodle Soup,9,7
 deli_prepared,16346,Tempura Shrimp Roll,9,6
-mac_and_cheese,8829,Original Cheesy Made Easy Macaroni & Cheese Dinner,9,5
 soup,34618,Menudo Soup,9,7
-frozen_meal,8972,Steak Burrito Bowl,9,5
 frozen_pizza,22956,Thin Crust Trio Bacon Pizza,9,5
+frozen_meal,8972,Steak Burrito Bowl,9,5
 frozen_meal,540,Beef Strips Portabella Complete Meals,9,7
+mac_and_cheese,8829,Original Cheesy Made Easy Macaroni & Cheese Dinner,9,5
 instant_ramen,22001,Instant Noodle Soup Imitation Beef Flavor,9,4
 mac_and_cheese,17065,Chili Mac & Cheese,9,6
 frozen_meal,2402,Beef Lo Mein,9,6
@@ -2836,59 +2836,59 @@ mac_and_cheese,1532,Deluxe Macaroni & Cheese Dinner,9,5
 frozen_meal,8610,Chicken Mesquite Delicious Mexican Flavors,9,6
 frozen_meal,11618,BBQ Chicken Pockets,9,5
 frozen_meal,16392,Salisbury Steak Meal,9,5
-deli_prepared,29294,Italian Style Wrap,8,6
-frozen_meal,5952,Cajun Style Chicken Alfredo,8,5
 frozen_meal,34245,Dal Makhani,8,6
 deli_prepared,45672,Rotolini Mozzarella And Prosciutto,8,8
+frozen_meal,5952,Cajun Style Chicken Alfredo,8,5
+deli_prepared,29294,Italian Style Wrap,8,6
 deli_prepared,1698,Chick Pea Salad,8,8
+mac_and_cheese,21318,White Cheddar Spirals Macaroni & Cheese Dinner,8,5
 canned_chili,42552,No Bean Chili,8,6
+pot_pie,19785,Chick'n Pot Pie,8,3
 mac_and_cheese,772,Deluxe White Cheddar & Bacon Macaroni & Cheese Dinner,8,6
 soup,1019,Spicy Bbq Chicken Soup,8,6
-mac_and_cheese,21318,White Cheddar Spirals Macaroni & Cheese Dinner,8,5
-pot_pie,19785,Chick'n Pot Pie,8,3
-instant_ramen,27943,Yakisoba Teriyaki Chicken Flavor Noodles,8,7
 frozen_meal,3428,Skillet Meals For 2 Chicken Biryani,8,7
+instant_ramen,27943,Yakisoba Teriyaki Chicken Flavor Noodles,8,7
 frozen_appetizer,27032,Loaded Buffalo Style Chicken Potato Skins,8,5
-frozen_pizza,46495,Ultra Thin Crust Sausage Italia,8,8
-frozen_pizza,36828,Four Cheese with Roasted Mushrooms and Tropea Onions Frozen Pizza,8,5
 frozen_pizza,21185,Roadhouse Pile High Pepperoni Pizza,8,7
+frozen_pizza,46495,Ultra Thin Crust Sausage Italia,8,8
 soup,8082,All Natural Minestrone Soup,8,5
-frozen_meal,1622,11.5OZ PECAN COFFEE CK,8,8
-mac_and_cheese,14555,Mild Cheddar Cheese Macaroni Dinner,8,6
+frozen_pizza,36828,Four Cheese with Roasted Mushrooms and Tropea Onions Frozen Pizza,8,5
 deli_prepared,11691,Quinoa Salad Black Bean,8,7
+mac_and_cheese,14555,Mild Cheddar Cheese Macaroni Dinner,8,6
+frozen_meal,1622,11.5OZ PECAN COFFEE CK,8,8
 corn_dogs,33908,Carnival Mini Corn Dogs Dinner,8,4
-frozen_meal,42590,Cafe Steamers Creamy Chicken & Noodles,8,5
-frozen_meal,16723,Spinach & Cheese Ravioli,8,8
+frozen_appetizer,13704,Combination Pizza Bites,8,6
+instant_ramen,45174,Lime Chili Shrimp Flavor Ramen Noodle Soup,8,6
 chicken_nuggets,28561,Breaded Organic Chicken Nuggets,8,6
 deli_prepared,46079,Fresh Spicy California Roll Special,8,7
+frozen_meal,42590,Cafe Steamers Creamy Chicken & Noodles,8,5
+frozen_meal,16723,Spinach & Cheese Ravioli,8,8
 soup,44153,White Chicken Chili Delicious Dinners,8,7
-instant_ramen,45174,Lime Chili Shrimp Flavor Ramen Noodle Soup,8,6
-frozen_appetizer,13704,Combination Pizza Bites,8,6
-canned_chili,15971,Original Chili,8,6
-deli_prepared,22152,Cauliflower Gratin,8,7
 instant_soup,30128,Garlic Sesame Rice Noodle Soup Bowl,8,5
-mac_and_cheese,10413,Bacon Macaroni & Cheese with Fruitwood-Smoked Uncured Bacon,8,8
+deli_prepared,22152,Cauliflower Gratin,8,7
+canned_chili,15971,Original Chili,8,6
 soup,1615,Organic Light Sodium Creamy Sweet Potato Soup,8,6
+mac_and_cheese,10413,Bacon Macaroni & Cheese with Fruitwood-Smoked Uncured Bacon,8,8
+deli_prepared,18324,Fun Pack Pepperoni Kabobble,8,4
 chicken_nuggets,20825,Chicken Breast Rings,8,4
+canned_chili,44155,100% Natural Chili with Beans,8,6
 pot_pie,10687,"Whole  8\"" Sweet Potato Pie",8,6
 meal_kit,1684,Stove Top Everyday Chicken Stuffing Mix,8,7
-canned_chili,44155,100% Natural Chili with Beans,8,6
-deli_prepared,18324,Fun Pack Pepperoni Kabobble,8,4
 soup,38853,Udon Soup,8,7
 instant_soup,41422,Chicken Tortilla Flavor Instant Lunch,8,8
-frozen_pizza,38645,Five Cheese Pizza Self Rising Crust,8,7
 mac_and_cheese,19099,Dairy Free Penne & Chreese Cheddar Style Organic Brown Rice Pasta Dinner,8,8
+frozen_pizza,38645,Five Cheese Pizza Self Rising Crust,8,7
 frozen_meal,4999,Dirt Cake,8,5
 frozen_meal,12553,Compleats Good Mornings Sausage Breakfast Scramble,8,8
-soup,18124,Split Pea Vegetarian Soup,8,5
 mac_and_cheese,37667,Deluxe Chickpea Elbow Pasta Mac &Cheese with White Cheddar,8,7
+soup,18124,Split Pea Vegetarian Soup,8,5
 frozen_appetizer,3089,Organic Broccoli Casserole Bites,8,5
 meal_kit,40109,Supreme Almond Poppyseed Muffin Mix,8,6
 soup,11360,Go Creamy Red Pepper with Smoked Gouda Soup,8,7
 frozen_meal,6812,Smothered Turkey,8,5
 frozen_meal,48830,Pav Bhaji Mashed Vegetable Curry,8,7
-soup,41667,Barley & Mushroom Soup,8,7
 frozen_meal,48342,Fettuccini Alfredo Meal,8,7
+soup,41667,Barley & Mushroom Soup,8,7
 mac_and_cheese,15018,Garlic & Herb Alfredo Macaroni & Cheese Dinner,8,4
 instant_ramen,42410,"Instant Lunch, Lime Chili Chicken Flavor",8,3
 frozen_meal,40258,Chickpea & Sweet Potato Picadillo,8,5
@@ -2897,92 +2897,92 @@ soup,27545,Italian Bean Soup,8,5
 canned_chili,5540,"Chili with Beans, Vegetarian",8,7
 frozen_meal,533,Stuffed Pasta Shells,7,7
 soup,38759,Low Sodium Vegetable Soup,7,6
-deli_prepared,19687,Butternut Squash With Cranberries,7,6
 frozen_pizza,10940,"Thin & Crispy Garden Vegetable (Tomatoes, Red & Yellow Peppers, Zucchini, and Red Onion) Pizza",7,6
+deli_prepared,19687,Butternut Squash With Cranberries,7,6
 frozen_meal,47689,Pancakes & Sausage on a Stick Original,7,7
-frozen_pizza,43947,Sausage & Mushroom Thin Pizza,7,6
 frozen_meal,43051,Pizza Meal,7,5
 deli_prepared,49056,Organic Blend Me Mixed Vegetables,7,7
+frozen_pizza,43947,Sausage & Mushroom Thin Pizza,7,6
 frozen_burrito,1101,Seasonal Tamale,7,4
+frozen_meal,46365,Turkey & Gravy,7,5
 meal_kit,11608,Reduced Sodium Matzo Ball Mix,7,7
 soup,43855,Tomato Bisque,7,4
-frozen_meal,46365,Turkey & Gravy,7,5
 canned_chili,21259,Lean Beef Chili with Beans,7,6
-frozen_pizza,32025,Pizza Pepperoni And Mushroom,7,6
 frozen_meal,11952,Simply Lemon Herb Chicken,7,7
+frozen_pizza,32025,Pizza Pepperoni And Mushroom,7,6
 deli_prepared,10086,JIMMYS       PINEAPPLE SLAW,7,5
-meal_kit,2423,Milk Chocolate Mousse Supreme Instant Mix,7,6
-mac_and_cheese,41175,Cheddar Silly Sea Life Macaroni & Cheese Dinner,7,6
 frozen_meal,2384,Spicy Peanut Chicken & Broccolli,7,5
-soup,30115,Homestyle Zesty Tomato Bisque Soup,7,7
+mac_and_cheese,41175,Cheddar Silly Sea Life Macaroni & Cheese Dinner,7,6
+meal_kit,2423,Milk Chocolate Mousse Supreme Instant Mix,7,6
 instant_soup,9563,Big Easy Heat & Serve Rice Red Beans & Rice,7,7
+soup,30115,Homestyle Zesty Tomato Bisque Soup,7,7
 soup,16905,Healthy Request Mexican-Style Chicken Tortilla Soup,7,6
 frozen_meal,10073,Roasted Chicken with Herb Gravy Tasty American Favorites,7,5
 canned_chili,35621,Original Chili con Carne with Beans,7,6
-deli_prepared,49210,Snack Box to Go Traditional Hummus Sea Salt Pita Chips,7,6
 deli_prepared,4604,Cannoli,7,5
-frozen_meal,8874,"Green Chickpeas Chimichurri, Coconut Butternut Squash Gluten-Free Non GMO Meal",7,6
+deli_prepared,49210,Snack Box to Go Traditional Hummus Sea Salt Pita Chips,7,6
 frozen_meal,12840,Hungry Man Country Fried Steak,7,5
 chicken_nuggets,19771,Simply Smart Lightly Breaded Chicken Filets,7,5
+frozen_meal,8874,"Green Chickpeas Chimichurri, Coconut Butternut Squash Gluten-Free Non GMO Meal",7,6
 frozen_pizza,42116,Organic Four Cheese Pizza,7,5
 mac_and_cheese,28162,"White Bean Crunch, Mac N' Cheese",7,4
 frozen_meal,42200,Chicken & Wild Rice with Kamut Soup,7,7
 frozen_meal,22964,Lemon Pepper Fish,7,6
-soup,39866,Cabbage Soup,7,5
 frozen_pizza,11296,Spinaci Pizza,7,3
+soup,39866,Cabbage Soup,7,5
 soup,47530,Hearty Lentil With Vegetables Soup With Chickenpeas & Roasted Garlic,7,7
-frozen_meal,40933,Turkey Sausage Bagel Sandwiches,7,4
 instant_soup,26886,Chicken Flavor Noodle Soup Mix,7,5
+frozen_meal,40933,Turkey Sausage Bagel Sandwiches,7,4
 mac_and_cheese,3234,Microwaveable Mac And Cheese Real Cheddar Cheese,7,5
 frozen_meal,47715,A Taste of Sri Lanka Meal,7,4
-frozen_meal,42994,Bites Ft Chicken Rollers,7,6
 canned_chili,13084,Original Spicy Chili,7,3
+frozen_meal,42994,Bites Ft Chicken Rollers,7,6
 canned_chili,24470,Original Chili with Beans,7,6
 frozen_meal,31104,Grilled white meat chicken & penne pasta in a creamy alfredo sauce Chicken Alfredo,6,6
 soup,14232,Slow Cooker Chicken & Dumplings Starter,6,4
-frozen_meal,48796,Frozen Palak Paneer Meal with Naan Bread,6,5
+instant_soup,24445,"Instant Noodle Soup, Miso",6,3
 soup,20726,Healthy Request Classic Chicken Noodle Soup Bowl,6,5
 frozen_meal,41838,Gluten Free Mongolian Beef With Asparagus And Scallions,6,6
-instant_soup,24445,"Instant Noodle Soup, Miso",6,3
+frozen_meal,48796,Frozen Palak Paneer Meal with Naan Bread,6,5
 frozen_burrito,26961,"Low Fat Burrito Beans, Rice & Cheese Style",6,5
 frozen_meal,7418,Bites Ft Bbq Burger,6,6
 soup,34020,Homestyle Minestrone Soup,6,6
-frozen_meal,19793,Voila! Fajita Chicken,6,4
-deli_prepared,43075,All Natural Vegan Chicken Lomein,6,6
-deli_prepared,4320,Bento Box,6,5
 soup,13442,Beef Ravioli Big Size Bowl,6,6
-mac_and_cheese,28788,Vermont Cheddar Mac & Cheese,6,5
+deli_prepared,4320,Bento Box,6,5
+deli_prepared,43075,All Natural Vegan Chicken Lomein,6,6
+frozen_meal,19793,Voila! Fajita Chicken,6,4
 soup,31024,"Soup, Roasted Chicken Rotini",6,4
-soup,41612,Rich & Hearty Creamy Alfredo with Penne & Chicken,6,6
-deli_prepared,33820,Ginger Bok Choy Soba Noodles,6,6
-soup,23468,Mississippi Delta Tomato Basil Soup Mix,6,5
+mac_and_cheese,28788,Vermont Cheddar Mac & Cheese,6,5
 soup,32692,Well Yes! Hearty Tomato with Toasted Barley Soup,6,6
+soup,23468,Mississippi Delta Tomato Basil Soup Mix,6,5
+deli_prepared,33820,Ginger Bok Choy Soba Noodles,6,6
+soup,41612,Rich & Hearty Creamy Alfredo with Penne & Chicken,6,6
 corn_dogs,36417,Mini Bagel Dogs,6,5
 canned_chili,26678,Grilled Steak with Beans Chili,6,5
-deli_prepared,31600,Jamaican Jerk Hemp Seed Salad,6,5
 frozen_meal,16050,Homestyle Patty Meal,6,3
 soup,28739,Tortilla Soup Base Organic Soup Starters,6,5
-frozen_meal,27385,Family Size Orange Chicken,6,6
+deli_prepared,31600,Jamaican Jerk Hemp Seed Salad,6,5
+frozen_appetizer,37829,Oven Crispy Clam Strips,6,5
 instant_soup,49116,Reduced Sodium Matzo Ball & Soup Mix,6,5
 meal_kit,29219,Homestyle Salisbury Steak,6,5
-frozen_appetizer,37829,Oven Crispy Clam Strips,6,5
+frozen_meal,27385,Family Size Orange Chicken,6,6
+chicken_nuggets,3580,Breaded Chicken Nuggets,6,5
+mac_and_cheese,44976,Homestyle Macaroni & Cheese Pasta,6,6
 frozen_meal,15501,Whole Grain Penne Pasta With Turkey Meatballs,6,4
 frozen_meal,20071,Cheesy Skillets Singles Chicken Alfredo,6,5
-mac_and_cheese,44976,Homestyle Macaroni & Cheese Pasta,6,6
-chicken_nuggets,3580,Breaded Chicken Nuggets,6,5
 mac_and_cheese,19273,Macaroni & Cheese Dinner Sharp Cheddar & Bacon,6,6
 frozen_appetizer,21474,Bacon Egg and Cheese Breakfast Bites,6,5
 instant_soup,43843,Mexican Mix,6,5
 frozen_meal,10879,Turkey Sausage Scramble,6,6
-canned_chili,33137,Mexican Style Chili Beans,6,6
 frozen_meal,37034,Roast Beef & Cheddar,6,4
-soup,41307,Tuscany Lentil Soup,6,6
+canned_chili,33137,Mexican Style Chili Beans,6,6
 frozen_pizza,3317,Chicken Carbonera Pizza,6,4
+soup,41307,Tuscany Lentil Soup,6,6
 canned_chili,11976,No Beans Less Sodium Chili,6,4
 frozen_meal,11044,Potato & Green Pea Curry,6,3
 frozen_pizza,46102,"Deep Dish Four Cheese (Mozzarella, Parmesan, Asiago & Romano) Pizza",6,6
-mac_and_cheese,46407,Aged White Cheddar Cheese Anchors & Cheese Macaroni Dinner,5,5
 frozen_meal,4633,Chocolate Fudge Pudding Snack,5,4
+mac_and_cheese,46407,Aged White Cheddar Cheese Anchors & Cheese Macaroni Dinner,5,5
 frozen_burrito,21172,"Burrito, Meatless, Chik'n & Tomato Roasted Corn Salsa",5,5
 soup,19383,"Soup, 99% Fat Free New England Clam Chowder",5,5
 mac_and_cheese,30864,Chili Cheese Mac Velveeta Cheesy Skillets,5,5
@@ -2992,22 +2992,22 @@ frozen_pizza,26708,Rustic Italian Sausage Onion Ultra Thin Crust Pizza,5,5
 soup,12337,Organic Chicken Noodle Soup With White Meat,5,3
 frozen_meal,11468,Sausage & Veggie Quiche,5,5
 frozen_meal,41122,Chicken Stuffed With Broccoli & Cheese,5,4
-frozen_meal,5526,Grass-Fed Beef with Mushroom Sauce,5,5
 soup,34242,Gumbo Soup Mix,5,5
-frozen_appetizer,39798,Spinach & Artichoke Dip,5,4
+frozen_meal,5526,Grass-Fed Beef with Mushroom Sauce,5,5
 mac_and_cheese,16105,Smart Ones Bacon Macaroni and Cheese,5,5
+frozen_appetizer,39798,Spinach & Artichoke Dip,5,4
+soup,25317,Old Fashioned Potato Soup,5,5
 frozen_burrito,10922,Gluten Free Grilled Steak Rice Bean Cheese Burrito,5,5
 frozen_pizza,43559,Rising Crust The Works Pizza,5,5
-soup,25317,Old Fashioned Potato Soup,5,5
-frozen_burrito,48570,Chimichangas Beef Bean,5,5
 frozen_pizza,16481,Cheese Pizza with Rice Crust,5,5
-soup,19438,Chunky Beef Soup,5,4
-deli_prepared,37025,Raw Spicy Veggie Wrappers,5,3
+frozen_burrito,48570,Chimichangas Beef Bean,5,5
 soup,684,Organic Elmo Vegetable Soup,5,4
+deli_prepared,37025,Raw Spicy Veggie Wrappers,5,3
+soup,19438,Chunky Beef Soup,5,4
 meal_kit,5344,POW! Pasta Meals Power Protein Complete Meal Italiano With Red Beans And Peppers,5,5
+meal_kit,17367,Pad Thai for Two,5,4
 deli_prepared,947,Cracker Crunchers Bologna with Nestle Butterfinger Bar LunchMakers,5,5
 frozen_meal,42212,Thai Style Yellow Curry Chicken,5,5
-meal_kit,17367,Pad Thai for Two,5,4
 canned_chili,570,White Chicken Chili with Beans Pouch,5,3
 frozen_meal,27807,Homestyle Beef Skillet,5,4
 soup,22226,Cheddar Broccoli Hearty Soup Bowl,5,5
@@ -3016,34 +3016,34 @@ soup,32157,Recipe Secrets Savory Herb with Garlic Recipe Soup & Dip Mix,5,5
 soup,4128,Zesty Gumbo W/Chicken & Sausage Soup,5,4
 soup,18086,Well Yes! Black Bean With Red Quinoa Soup,5,4
 frozen_pizza,29788,Roadhouse Bring On The Meat Pizza,5,5
+meal_kit,26498,Sweet & Sour Chicken Chicken Helper,4,4
 frozen_meal,37231,Georgia Pecan Pie Slices,4,4
 meal_kit,22458,Steakhouse Au Gratin Red Potatoes,4,4
-meal_kit,26498,Sweet & Sour Chicken Chicken Helper,4,4
 deli_prepared,27764,Chopped Chicken Livers,4,4
 frozen_pizza,24849,Cheese & Fresh Herb Flatbread Pizza,4,4
-canned_chili,24817,Southwest Chili Beans,4,3
 frozen_pizza,27026,Flatbread Pizza All Natural Tomato Sauce Pizza With 3 Cheeses,4,2
+canned_chili,24817,Southwest Chili Beans,4,3
+canned_chili,34348,Organic Vegetarian 3 Bean Chipolte Chili,4,4
 frozen_pizza,38040,Mission District Pizza,4,4
 soup,6302,Red Pepper Corn Chowder Mix,4,4
-canned_chili,34348,Organic Vegetarian 3 Bean Chipolte Chili,4,4
-frozen_pizza,7973,Lotzza Motzza Bacon Cheesburger Pizza,4,4
 frozen_meal,9929,"6\"" Organic Chocolate Cake",4,4
+frozen_pizza,7973,Lotzza Motzza Bacon Cheesburger Pizza,4,4
 deli_prepared,24820,Edamame Fettucine With Thai Coconut Sauce,4,4
 instant_ramen,42924,Gluten Free Sweet Citrus Ginger Rice Noodles,4,3
 frozen_meal,49304,Kung Pao Chicken,4,3
 meal_kit,16983,Pad Thai Meal Kit,4,2
 canned_chili,28663,Spicy Chili with Beans,4,4
-deli_prepared,35583,Veggie Platter,4,4
 frozen_meal,34782,Chapatti Chana Saag Wrap,4,2
+deli_prepared,35583,Veggie Platter,4,4
 frozen_meal,21820,Alaskan Salmon Cakes,4,4
 chicken_nuggets,34340,Sweet & Smoky Boneless Chicken Bites,4,4
 pot_pie,41269,Cheesy Bacon & Egg Pot Pie,4,3
 canned_chili,33213,"Chili with Pinto Beans, Spelt and Spices",4,4
-instant_ramen,30093,Lime Chili Flavor with Shrimp Instant Lunch,4,3
 instant_soup,48567,Egg Drop Soup Mix,4,3
+instant_ramen,30093,Lime Chili Flavor with Shrimp Instant Lunch,4,3
+soup,34345,Raw Carrot Soup,4,4
 frozen_pizza,27795,Rising Crust Pizza Four Cheese Family Size,4,4
 mac_and_cheese,11539,Chipotle Cheddar Mac & Cheese,4,4
-soup,34345,Raw Carrot Soup,4,4
 deli_prepared,42831,Chicken Parmigiana,4,4
 soup,30029,Home Style Light Chicken Noodle,4,3
 frozen_appetizer,40526,Pepperoni Pizza Bites,4,4
@@ -3058,8 +3058,8 @@ deli_prepared,48709,Petite Crab Cakes,3,3
 mac_and_cheese,34250,Classic Lasagna Velveeta Cheesy Skillets,3,3
 soup,46871,Heart Healthy Italian-Style Wedding Meatballs Soup,3,3
 mac_and_cheese,20722,Queso Blanco Velveeta Shells & Cheese,3,3
-deli_prepared,45749,Quinoa Salad Tomato Pine Nut,3,3
 soup,39756,"Soup, No Salt Added, Potato Leek",3,2
+deli_prepared,45749,Quinoa Salad Tomato Pine Nut,3,3
 soup,4110,Tomato Meatball Soup,3,2
 instant_soup,3306,Mrs. Grass Soup Mix Homestyle Vegetable Chicken Noodle,3,2
 soup,32097,Unsalted Mushroom Barley Soup,3,3
@@ -3071,18 +3071,18 @@ frozen_pizza,25282,Double Top *2X Total Meat Toppings As Our Original Pepperoni 
 instant_soup,46954,Vegetable Egg Flower Soup Mix,3,3
 frozen_meal,49146,"Whole Grain Pilaf with Brown Rice, Quinoa, Kale, Artichokes & Zucchini",3,2
 frozen_meal,28291,Thai Red Curry With Rice & Vegetables,3,2
-soup,47032,Light Chicken & Dumplings Soup,3,3
 deli_prepared,33762,Super Food Salad,3,2
+soup,47032,Light Chicken & Dumplings Soup,3,3
 frozen_appetizer,29290,Chicken Egg Roll,3,2
 soup,1066,Chicken with Noodles Low Sodium Ready To Serve Soup,2,2
 frozen_appetizer,8343,Aloo Tikki Indian Bites,2,2
 deli_prepared,31811,Chicken paella,2,2
 soup,31057,"Soup, Hearty Black Bean",2,2
+instant_soup,42313,Lentil Curry Couscous Low Fat Soup Cup,2,2
 deli_prepared,28308,Loaded Cheddar Potato Bake Cups,2,1
 soup,20394,Go! Moroccan Style Chicken with Chickpeas Soup,2,2
-instant_soup,42313,Lentil Curry Couscous Low Fat Soup Cup,2,2
-frozen_meal,32721,Roasted Chicken Risotto,2,2
 frozen_meal,30253,Gourmet Pork Tamales,2,1
+frozen_meal,32721,Roasted Chicken Risotto,2,2
 instant_soup,10584,Homestlye Cornbread Stuffing,2,2
 chicken_nuggets,40324,Gluten Free Sriracha Fire Sticks Chicken Patty Fritters,2,2
 frozen_meal,33266,Gluten Free Thai Style Red Curry with Beef Bowls,2,2

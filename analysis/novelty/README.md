@@ -18,13 +18,16 @@ each item by the customer's *prior observed* history:
 
 | Weighting | familiar product | familiar ingredient, new product | new ingredient |
 |-----------|-----------------:|---------------------------------:|---------------:|
-| Item-weighted | 63.9% | 11.7% | 24.4% |
-| Order-weighted | 69.4% | 21.6% | 38.8% |
-| Customer-weighted | 51.2% | 12.3% | 38.7% |
+| Item-weighted | 63.9% | 11.6% | 24.4% |
+| Order-weighted | 64.9% | 10.5% | 24.6% |
+| Customer-weighted | 50.5% | 11.0% | 38.5% |
 
-Item-weighting lets heavy, repetitive buyers dominate (so its novelty is lowest).
-But **none of these pooled numbers is a stable exploration rate** — because they
-average over early orders where novelty is inflated by truncation.
+Each row sums to 100% (the three categories are mutually exclusive; an earlier
+version used per-category denominators that excluded zero-occurrence categories and
+did not sum). Item- and order-weighting agree (~24–25% new ingredient);
+customer-weighting is higher (38.5%) because light buyers, who explore proportionally
+more, count equally. But **none of these pooled numbers is a stable exploration
+rate** — they average over early orders where novelty is inflated by truncation.
 
 ## The truncation artifact (the key correction)
 
