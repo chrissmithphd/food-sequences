@@ -92,10 +92,7 @@ analysis/outputs/*.csv
 !analysis/classification/archived/*.csv
 
 # EXCEPT: Sequence analysis summaries (aggregate statistics only, no user IDs)
-!analysis/sequence_analysis/reorder_summary.csv
-!analysis/sequence_analysis/basket_composition_summary.csv
 !analysis/sequence_analysis/pattern_distribution.csv
-!analysis/sequence_analysis/prepared_vs_base.csv
 !analysis/sequence_analysis/top_ingredients_by_volume.csv
 !analysis/sequence_analysis/ingredient_lens_summary.csv
 !analysis/sequence_analysis/reorder_probability_audit.csv

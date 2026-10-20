@@ -170,8 +170,6 @@ Real customer purchasing patterns across order histories:
 
 Each row is one product for one customer. ■ = purchased, · = not purchased. Patterns reveal staples (frequent consecutive purchases), rotation (consistent gaps), bursts (early clustering), returns (long gaps then resumption), and replacements (switching to different products).
 
-[Detailed sequence analysis with methodology, statistics, and meal subscription implications →](analysis/sequence_analysis/SEQUENCE_ANALYSIS.md)
-
 ---
 
 ## What This Might Mean for Meal Subscriptions
