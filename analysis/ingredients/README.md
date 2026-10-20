@@ -37,7 +37,13 @@ a real limitation.
 Rank ingredients two ways — by **share of actual purchases** and by **share of
 catalog products** — and the two orderings disagree sharply.
 
-![What customers buy vs what the catalog stocks](../figures/catalog_vs_volume.png)
+What customers buy (by purchase volume):
+
+![What customers buy, by ingredient](../figures/ingredients_by_volume.png)
+
+What stores stock (by catalog product count) — a separate ranking:
+
+![What stores stock, by ingredient](../figures/stores_stock.png)
 
 | Ingredient | % of purchases | % of catalog products | Catalog products |
 |-----------|---------------:|----------------------:|-----------------:|

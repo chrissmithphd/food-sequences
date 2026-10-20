@@ -14,6 +14,7 @@ sns.set_theme(style="whitegrid", font_scale=1.1)
 
 SEQ = Path(__file__).parent.parent.parent / "analysis" / "ingredients"
 FIG = Path(__file__).parent.parent.parent / "analysis" / "figures"
+CLF = Path(__file__).parent.parent.parent / "analysis" / "classification" / "food_classification.csv"
 FIG.mkdir(exist_ok=True, parents=True)
 
 # Fresh / whole foods vs packaged, for color coding
@@ -22,29 +23,38 @@ FRESH = {"yogurt", "banana", "milk", "water", "apple", "plant_milk", "avocado",
          "eggs", "spinach", "deli_meat"}
 
 
-def fig_catalog_vs_volume():
-    """Paired bars: purchase-volume share vs catalog product-count share, per
-    ingredient (top by volume). Shows the catalog-size bias — fresh staples are a
-    large share of purchases but a tiny share of the catalog, and vice versa."""
-    vol = pl.read_csv(SEQ / "top_ingredients_by_volume.csv").head(15)
-    names = vol["ingredient"].to_list()
-    v = vol["pct"].to_list()
-    c = vol["catalog_pct"].to_list()
+def fig_stores_stock():
+    """What stores STOCK: top ingredients by catalog product count (a separate graph
+    from what customers buy). Colored fresh vs packaged/UPF, same scheme as the
+    volume chart, so the two can be read side by side without being combined."""
+    clf = (pl.read_csv(CLF).filter((pl.col("is_food") == True)
+           & pl.col("ingredient").is_not_null() & (pl.col("ingredient") != "unclassified")))
+    cat = (clf.group_by("ingredient").agg(pl.len().alias("n"))
+           .sort("n", descending=True).head(20))
+    total = clf.height
+    names = cat["ingredient"].to_list()
+    pcts = [n / total * 100 for n in cat["n"].to_list()]
+    colors = ["#2E7D32" if n in FRESH else "#EF6C00" for n in names]
+    fig, ax = plt.subplots(figsize=(10, 7))
     y = np.arange(len(names))
-    fig, ax = plt.subplots(figsize=(10, 7.5))
-    ax.barh(y - 0.2, v, height=0.4, color="#2E7D32", edgecolor="white", label="Share of purchases (what customers buy)")
-    ax.barh(y + 0.2, c, height=0.4, color="#EF6C00", edgecolor="white", label="Share of catalog products (what's stocked)")
+    ax.barh(y, pcts, color=colors, edgecolor="white", linewidth=0.5)
     ax.set_yticks(y); ax.set_yticklabels(names); ax.invert_yaxis()
-    ax.set_xlabel("Share (%)")
-    ax.set_title("What Customers Buy vs. What the Catalog Stocks\n"
-                 "top ingredients by purchase volume", fontweight="bold")
-    ax.legend(loc="lower right", frameon=True)
+    ax.set_xlabel("Share of catalog food products (%)")
+    ax.set_title("What Stores Stock, by Ingredient\n(catalog product count — not purchase volume)",
+                 fontweight="bold")
+    for i, p in enumerate(pcts):
+        ax.text(p + 0.03, i, f"{p:.1f}%", va="center", fontsize=9)
+    from matplotlib.patches import Patch
+    ax.legend(handles=[Patch(color="#2E7D32", label="Fresh / whole food"),
+                       Patch(color="#EF6C00", label="Packaged / ultra-processed")],
+              loc="lower right", frameon=True)
+    ax.set_xlim(0, max(pcts) * 1.15)
     ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
     fig.tight_layout()
     for ext in ("png", "svg"):
-        fig.savefig(FIG / f"catalog_vs_volume.{ext}", dpi=200, bbox_inches="tight", facecolor="white")
+        fig.savefig(FIG / f"stores_stock.{ext}", dpi=200, bbox_inches="tight", facecolor="white")
     plt.close(fig)
-    print("  Saved catalog_vs_volume.png")
+    print("  Saved stores_stock.png")
 
 
 def fig_volume():
@@ -66,7 +76,7 @@ def fig_volume():
         ax.text(p + 0.03, i, f"{p:.1f}%", va="center", fontsize=9)
     from matplotlib.patches import Patch
     ax.legend(handles=[Patch(color="#2E7D32", label="Fresh / whole food"),
-                       Patch(color="#EF6C00", label="Packaged")],
+                       Patch(color="#EF6C00", label="Packaged / ultra-processed")],
               loc="lower right", frameon=True)
     ax.set_xlim(0, max(pcts) * 1.15)
     ax.spines["top"].set_visible(False)
@@ -107,7 +117,7 @@ def fig_multiplier():
 def main():
     print("Generating ingredient-lens figures...")
     fig_volume()
-    fig_catalog_vs_volume()
+    fig_stores_stock()
     fig_multiplier()
     print(f"Saved to {FIG}")
 

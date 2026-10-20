@@ -123,6 +123,8 @@ def fig_transition_matrix(topk=20):
     L = np.full((len(tops), len(tops)), np.nan)
     for i, A in enumerate(tops):
         for jx, B in enumerate(tops):
+            if A == B:
+                continue   # self-recurrence (diagonal) is the reorder result, not a transition
             if rowtot[A]:
                 p = obs[(A, B)] / rowtot[A]
                 P[i, jx] = p
@@ -134,7 +136,7 @@ def fig_transition_matrix(topk=20):
 
     fig, axes = plt.subplots(1, 2, figsize=(20, 9))
     im0 = axes[0].imshow(P * 100, cmap="magma", aspect="auto")
-    axes[0].set_title("P(row ingredient reappears, or col appears, in next order | row now)\nobserved next-order probability (%)", fontsize=10, fontweight="bold")
+    axes[0].set_title("P(column ingredient in next order | row ingredient now)\ntransitions to a DIFFERENT ingredient (self-recurrence excluded), %", fontsize=10, fontweight="bold")
     im1 = axes[1].imshow(np.clip(L, 0, 3), cmap="RdBu_r", aspect="auto", vmin=0, vmax=2)
     axes[1].set_title("Association beyond base rate\nP(col next | row now) / P(col in any next order)", fontsize=10, fontweight="bold")
     for ax, im in [(axes[0], im0), (axes[1], im1)]:

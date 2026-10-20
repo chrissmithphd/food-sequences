@@ -42,7 +42,7 @@ every analysis streams it in customer-id bursts to stay within memory
 Analyzing by ingredient (a recipe role) instead of product (a SKU) is the project's
 premise.
 
-![What customers buy vs what the catalog stocks](analysis/figures/catalog_vs_volume.png)
+![What customers buy, by ingredient](analysis/figures/ingredients_by_volume.png)
 
 - **What customers buy ≠ what the catalog stocks.** Bananas are 3% of all food
   purchases from **18 products**; candy is 1% of purchases from **1,212**. 16 of the
