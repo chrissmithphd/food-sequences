@@ -505,6 +505,7 @@ Recipe-grounded ingredient categories for classifying grocery products. Built fr
 - `beef_broth`: Beef broth, beef stock
 - `vegetable_broth`: Vegetable broth, vegetable stock
 - `bone_broth`: Bone broth
+- `condensed_soup`: Condensed / cream-of soups used as a cooking base (cream of mushroom, condensed tomato). A recipe ingredient, NOT a ready-to-eat prepared dish.
 
 **Wine & Beer for Cooking**
 - `red_wine`: Red wine (for cooking)
@@ -666,7 +667,7 @@ These are complete dishes, not base ingredients.
 - `meal_kit`: Meal kits, dinner kits (Hamburger Helper, etc.)
 
 **Soup**
-- `soup`: Canned soup, condensed soup, ready-to-eat soup
+- `soup`: Ready-to-eat soup eaten as a meal (canned/boxed ready-to-serve). Condensed / cream-of cooking-base soups are `condensed_soup` (a cooking ingredient), not this.
 - `instant_soup`: Instant soup cups
 
 **Instant Noodles**

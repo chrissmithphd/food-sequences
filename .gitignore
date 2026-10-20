@@ -106,3 +106,9 @@ analysis/outputs/*.csv
 !analysis/sequence_analysis/repertoire_growth.csv
 !analysis/sequence_analysis/order_diversity.csv
 !analysis/sequence_analysis/calendar_gap_summary.csv
+!analysis/sequence_analysis/customer_profile_summary.csv
+!analysis/sequence_analysis/customer_segments.csv
+!analysis/sequence_analysis/basket_contents_summary.csv
+!analysis/sequence_analysis/prepared_topics.csv
+!analysis/sequence_analysis/prepared_engagement.csv
+!analysis/sequence_analysis/prepared_engagement_percentiles.csv

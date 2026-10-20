@@ -1,57 +1,106 @@
-# Prepared Dishes vs. Base Ingredients
+# Prepared Dishes
 
-## Research question
+## What counts as a prepared dish
 
-Do customers treat prepared dishes (frozen meals, soups, pizzas) differently from
-base ingredients (milk, eggs, rice) — more rotation, more "fatigue," faster
-abandonment?
+A prepared dish is a **pre-made meal that still typically needs warming or cooking**
+— a frozen dinner, frozen pizza, lasagna, pot pie, mac & cheese, deli-prepared meal.
+It is not a snack (crackers, candy, cookies), not a drink, and not a cooking
+ingredient. We define it as the 17 ingredient types in the taxonomy's *Prepared
+Dishes & Meals* section:
 
-## Method
+> frozen_meal, frozen_pizza, frozen_burrito, frozen_lasagna, pot_pie, hot_pocket,
+> chicken_nuggets, mozzarella_sticks, corn_dogs, frozen_appetizer, mac_and_cheese,
+> meal_kit, soup (ready-to-eat), instant_soup, instant_ramen, canned_chili, deli_prepared
 
-Split products by the classifier's authoritative `is_prepared_dish` flag (8,019
-food products) and compare next-order **probability** plus shuffle-baseline
-**lift** at the **exact-product grain**. The product grain is the fair comparison:
-at the ingredient grain `frozen_meal` is a single giant bucket of thousands of
-distinct dishes while `milk` is one tight ingredient, so any difference there is an
-aggregation artifact rather than behavior. Full dataset, no sampling.
+This replaces the raw per-product `is_prepared_dish` classifier flag, which was
+noisy — it also marked snacks, drinks, condiments, and even produce as "prepared."
+Condensed / cream-of soups are a cooking base (recipe ingredient), so they are split
+into `condensed_soup` and excluded; ready-to-eat soup remains a dish.
 
-## Results
+## Reach — how many customers buy prepared meals
 
-| Group | grain | P(next order) | lift | P(within 5) | events |
-|-------|-------|--------------:|-----:|------------:|-------:|
-| Prepared dishes | **product** | 27.9% | **1.39×** | 55.4% | 3.2M |
-| Base ingredients | **product** | 28.9% | **1.28×** | 58.7% | 25.1M |
-| Prepared dishes | ingredient | 32.5% | 1.29× | 63.2% | 2.8M |
-| Base ingredients | ingredient | 34.5% | 1.15× | 68.2% | 22.9M |
+**59.6% of customers (122,794 of 206,062) buy at least one prepared dish.** A
+majority, but far from universal — and well below the 90% you get if you count every
+ready-to-eat snack as "prepared."
 
-## Interpretation
+## How much they rely on them
 
-**At the exact-product grain, prepared dishes and base ingredients reorder at
-essentially the same rate** (27.9% vs 28.9% next order; 55% vs 59% within five
-orders).
+Among prepared-dish buyers:
 
-If anything, the **lift runs the other way**: a specific prepared-dish product is
-*more* temporally clustered above chance (1.39×) than a specific base-ingredient
-product (1.28×). When a customer finds a frozen meal they like, they stick to that
-exact SKU in runs at least as tightly as they stick to a brand of milk.
+| Measure | p10 | median | p90 |
+|---------|----:|-------:|----:|
+| Prepared dishes as % of food items | 1.0% | **4.4%** | 15.7% |
+| Orders containing a prepared dish | 7.7% | **30.0%** | 77.8% |
+| Distinct prepared dish types bought | 1 | **2** | 5 |
 
-**There is no evidence here of distinctive "prepared-food fatigue."** The two groups
-behave alike on repurchase, with prepared dishes showing marginally stronger
-single-SKU habit; we do not claim the reverse as a strong result either.
+For the typical buyer, prepared dishes are an occasional convenience — about one in
+twenty items and under a third of orders — not a dietary staple. A minority lean on
+them heavily (top decile: ~16% of items, ~78% of orders).
+
+Prepared reliance does **not** rise with overall purchase volume (correlation of
+prepared-item-share with order count = −0.21): heavy grocery shoppers do not buy
+proportionally more prepared meals — if anything slightly less.
+
+## Which prepared dishes are popular
+
+![Prepared dish types by reach](figures/prepared_topics.png)
+
+| Dish type | Customers | Items | Repeat-buyers\* |
+|-----------|----------:|------:|---------------:|
+| frozen_meal | 54,229 | 323,757 | 62% |
+| frozen_pizza | 41,479 | 166,969 | 59% |
+| soup (ready-to-eat) | 41,033 | 154,365 | 50% |
+| mac_and_cheese | 35,777 | 118,454 | 54% |
+| deli_prepared | 31,445 | 122,057 | 53% |
+| frozen_appetizer | 25,452 | 71,095 | 47% |
+| chicken_nuggets | 21,925 | 69,636 | 54% |
+| frozen_burrito | 13,635 | 51,054 | 53% |
+| instant_ramen | 9,284 | 21,592 | 39% |
+| frozen_lasagna | 8,191 | 20,700 | 45% |
+
+\*share of a type's buyers who bought it in ≥2 separate orders.
+
+Frozen meals lead by a wide margin, and the category is dominated by the freezer:
+frozen meals, pizza, appetizers, burritos, lasagna. Repeat-buyer rates cluster
+around 50–60% — once someone buys a prepared dish type, a slim majority come back to
+it, with frozen_meal (62%) and frozen_pizza (59%) the stickiest.
+
+## Do prepared dishes reorder differently?
+
+At the fair exact-product grain:
+
+| Group | P(next order) | Lift above chance |
+|-------|--------------:|------------------:|
+| **Prepared dishes** | 29.8% | **1.44×** |
+| **Base ingredients** | 28.7% | 1.29× |
+
+A specific prepared-dish product is reordered *slightly more* than a base-ingredient
+product, and more above chance (1.44× vs 1.29×) — when someone finds a frozen meal
+they like, they re-buy that exact one in runs at least as tightly as a staple.
+
+But across *different* prepared dishes for the same dish type, buyers **switch more
+than they commit**: within a prepared dish type, the probability of keeping the same
+product order-to-order is 49.5% (lift 1.004 — essentially chance), versus 63.6%
+(lift 1.038) for base ingredients. So prepared-dish buyers lock onto individual SKUs
+they like, but rotate among them within a type more readily than they rotate staples.
+
+## What it means for a meal service
+
+- Prepared-meal demand is real but a **minority, occasional** behavior in grocery —
+  60% reach, ~4% of items for the typical buyer. A service selling *only* prepared
+  meals is serving the heavy tail, not the median grocery shopper.
+- The stickiness is at the **specific-dish** level (re-buy the exact frozen meal you
+  liked), while customers **rotate** across the menu within a type — both repetition
+  and variety matter.
+- Frozen dominates. Deli-prepared is the main non-frozen prepared channel.
 
 ## Limitations
 
-- `is_prepared_dish` is itself an LLM classification; edge cases (e.g. a rotisserie
-  chicken, a salad kit) are judgment calls.
-- Next-order probability does not capture *how many* distinct prepared dishes a
-  customer cycles through overall — only whether a given one recurs. The high
-  ingredient-grain breadth of `frozen_meal` is real; it just is not "rotation" in
-  the reorder sense.
-- Order sequence, not calendar time (see the [calendar-time report](CALENDAR_TIME.md)).
-
-## Follow-up
-
-- Within prepared dishes, does the commit-then-switch pattern (see
-  [reorder](REORDER_PROBABILITY.md) / [substitution](SUBSTITUTION.md))
-  look different from base ingredients — e.g., do customers churn through frozen
-  meals via many short runs, vs. long runs on a staple milk?
+- Even restricted to the taxonomy's dish list, grocery "prepared dishes" (frozen
+  dinners, canned chili) are not a clean proxy for chef-prepared meal-kit services;
+  treat generalizations as hypotheses.
+- Reach and shares are item/order based within the observed window; a customer who
+  bought one frozen pizza once counts toward reach.
+- `soup` retains ready-to-eat canned/boxed soups; the condensed/cream-of cooking
+  bases were split to `condensed_soup`, but the ready-to-eat/cooking line is drawn by
+  product name and has edge cases.

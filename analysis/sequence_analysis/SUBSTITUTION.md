@@ -27,8 +27,8 @@ commitment); < 1 means **alternation** beyond chance; ≈ 1 means random.
 |-------|-----------------:|---------:|-----:|
 | All ingredients | 63.0% | 60.7% | 1.04 |
 | Multi-product pairs only | 43.7% | 40.3% | 1.09 |
-| Prepared dishes | 65.3% | 64.8% | 1.01 |
-| Base ingredients | 66.2% | 63.7% | 1.04 |
+| Prepared dishes | 49.5% | 49.3% | 1.00 |
+| Base ingredients | 63.6% | 61.2% | 1.04 |
 
 By ingredient:
 

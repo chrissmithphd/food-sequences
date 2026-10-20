@@ -49,6 +49,23 @@ def taxonomy_map():
     return out
 
 
+def prepared_dish_ingredients():
+    """Ingredient slugs under the taxonomy's 'PREPARED DISHES & MEALS' section.
+
+    This is the authoritative definition of a prepared *dish* (a pre-made meal that
+    typically needs warming/cooking) — not the noisy per-product is_prepared_dish
+    flag, which also marks snacks, drinks, and condiments.
+    """
+    content = (CLF / "INGREDIENT_TAXONOMY.md").read_text()
+    out, inside = set(), False
+    for line in content.split("\n"):
+        if line.startswith("### "):
+            inside = "PREPARED DISHES" in line.upper()
+        elif inside and (m := re.match(r"^- `([a-z_]+)`:", line)):
+            out.add(m.group(1))
+    return out
+
+
 CHUNK_USERS = 20000
 
 
@@ -60,9 +77,11 @@ def _events_lazy(user_lo=None, user_hi=None):
     overruns the 6GB WSL budget once a downstream sort/self-join copies it).
     """
     tax = taxonomy_map()
+    prepared = prepared_dish_ingredients()
     clf = (pl.scan_csv(CLF / "food_classification.csv")
-           .select(["product_id", "aisle", "ingredient", "is_food", "is_prepared_dish"])
-           .with_columns(pl.col("ingredient").replace_strict(tax, default="Unknown").alias("category")))
+           .select(["product_id", "aisle", "department", "ingredient", "is_food"])
+           .with_columns(pl.col("ingredient").replace_strict(tax, default="Unknown").alias("category"),
+                         pl.col("ingredient").is_in(prepared).alias("is_prepared_dish")))
 
     orders = (pl.scan_parquet(DATA_PROCESSED / "orders.parquet")
               .filter(pl.col("eval_set").is_in(["prior", "train"])))
