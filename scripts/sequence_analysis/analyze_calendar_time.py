@@ -16,7 +16,7 @@ from pathlib import Path
 import polars as pl
 
 sys.path.insert(0, str(Path(__file__).parent))
-from audit_reorder_probability import iter_events
+from analyze_reorder import iter_events
 from food_sequences.config import DATA_PROCESSED
 
 ROOT = Path(__file__).parent.parent.parent

@@ -15,7 +15,7 @@ budget.
 
 ## Approach: one lazy pipeline, two collect modes
 
-`scripts/sequence_analysis/audit_reorder_probability.py` defines a single lazy polars
+`scripts/sequence_analysis/analyze_reorder.py` defines a single lazy polars
 pipeline (`_events_lazy`) and exposes it two ways:
 
 - **`load_events()`** — collects the whole table at once (streaming engine). Used by

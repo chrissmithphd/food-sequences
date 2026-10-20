@@ -19,7 +19,7 @@ from pathlib import Path
 import polars as pl
 
 sys.path.insert(0, str(Path(__file__).parent))
-from audit_reorder_probability import load_events
+from analyze_reorder import load_events
 
 ROOT = Path(__file__).parent.parent.parent
 SEQ = ROOT / "analysis" / "sequence_analysis"

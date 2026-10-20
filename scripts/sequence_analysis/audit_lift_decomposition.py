@@ -21,25 +21,31 @@ from pathlib import Path
 import polars as pl
 
 sys.path.insert(0, str(Path(__file__).parent))
-from audit_reorder_probability import load_events, analyze_level
+from analyze_reorder import analyze_level, iter_events
 
 ROOT = Path(__file__).parent.parent.parent
 SEQ = ROOT / "analysis" / "sequence_analysis"
 
 
+def _nprod(d):
+    """Attach distinct products per (user, ingredient) within a burst."""
+    npp = d.group_by(["user_id", "ingredient"]).agg(pl.col("product_id").n_unique().alias("n_prod"))
+    return d.join(npp, on=["user_id", "ingredient"], how="left")
+
+
+def keep_single(d):
+    return _nprod(d).filter(pl.col("n_prod") == 1)
+
+
+def keep_multi(d):
+    return _nprod(d).filter(pl.col("n_prod") >= 2)
+
+
 def main():
-    purch = load_events()
-    # distinct products per (user, ingredient)
-    npp = (purch.group_by(["user_id", "ingredient"])
-           .agg(pl.col("product_id").n_unique().alias("n_prod")))
-    purch = purch.join(npp, on=["user_id", "ingredient"], how="left")
-
-    single = purch.filter(pl.col("n_prod") == 1)
-    multi = purch.filter(pl.col("n_prod") >= 2)
-
     rows = []
-    def record(name, df, grain):
-        r = analyze_level(df, grain)
+
+    def record(name, keep, grain):
+        r = analyze_level(grain, keep=keep)
         r["subset"] = name
         r["grain"] = grain
         rows.append(r)
@@ -47,18 +53,23 @@ def main():
               f"expected={r['expected_p_next_shuffle']*100:5.1f}%  lift={r['lift']:.3f}x")
 
     print("--- single-product (customer,ingredient): grains must coincide ---")
-    record("single_product", single, "product_id")
-    record("single_product", single, "ingredient")
+    record("single_product", keep_single, "product_id")
+    record("single_product", keep_single, "ingredient")
     print("--- multi-product (customer,ingredient): grains diverge ---")
-    record("multi_product", multi, "product_id")
-    record("multi_product", multi, "ingredient")
+    record("multi_product", keep_multi, "product_id")
+    record("multi_product", keep_multi, "ingredient")
 
     pl.DataFrame(rows).write_csv(SEQ / "lift_decomposition.csv")
     print(f"\nSaved {SEQ/'lift_decomposition.csv'}")
-    # share of events in each subset
-    tot = purch.height
-    print(f"single-product events: {single.height/tot*100:.1f}%   "
-          f"multi-product events: {multi.height/tot*100:.1f}%")
+
+    # share of events in each subset (one extra burst pass)
+    tot = single_rows = multi_rows = 0
+    for chunk in iter_events():
+        tot += chunk.height
+        single_rows += keep_single(chunk).height
+        multi_rows += keep_multi(chunk).height
+    print(f"single-product events: {single_rows/tot*100:.1f}%   "
+          f"multi-product events: {multi_rows/tot*100:.1f}%")
 
 
 if __name__ == "__main__":
