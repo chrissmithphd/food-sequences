@@ -1,31 +1,19 @@
-# Prepared Dishes vs. Base Ingredients (Part 1.4 — corrected)
+# Prepared Dishes vs. Base Ingredients
 
 ## Research question
 
 Do customers treat prepared dishes (frozen meals, soups, pizzas) differently from
 base ingredients (milk, eggs, rice) — more rotation, more "fatigue," faster
-abandonment — or did the earlier comparison just mis-measure it?
+abandonment?
 
-## What was wrong before
+## Method
 
-The original comparison had two flaws:
-
-1. **Wrong population.** It defined "prepared" from a hardcoded list of 18
-   ingredient names, matching only **1,749** products. The classifier's
-   authoritative `is_prepared_dish` flag marks **8,019** food products. The old
-   analysis looked at ~22% of prepared dishes.
-2. **Wrong metric and unfair grain.** It used the buggy "immediate reorder" rate
-   and compared at the *ingredient* grain, where `frozen_meal` is a single giant
-   bucket of thousands of distinct dishes while `milk` is one tight ingredient.
-   Of course a mega-bucket looks different — that is an aggregation artifact, not
-   behavior.
-
-## Corrected approach
-
-Use the `is_prepared_dish` flag (8,019 products) and the corrected next-order
-**probability** plus shuffle-baseline **lift**, at the **exact-product grain** —
-the only fair comparison, since it removes the "one bucket vs many dishes" problem.
-Full dataset, no sampling.
+Split products by the classifier's authoritative `is_prepared_dish` flag (8,019
+food products) and compare next-order **probability** plus shuffle-baseline
+**lift** at the **exact-product grain**. The product grain is the fair comparison:
+at the ingredient grain `frozen_meal` is a single giant bucket of thousands of
+distinct dishes while `milk` is one tight ingredient, so any difference there is an
+aggregation artifact rather than behavior. Full dataset, no sampling.
 
 ## Results
 
@@ -47,10 +35,9 @@ If anything, the **lift runs the other way**: a specific prepared-dish product i
 product (1.28×). When a customer finds a frozen meal they like, they stick to that
 exact SKU in runs at least as tightly as they stick to a brand of milk.
 
-**There is no evidence here of distinctive "prepared-food fatigue."** We also do not
-claim the opposite as a strong result — the point is that the earlier claim rested
-on a mis-measurement, and once corrected the two groups behave alike on repurchase,
-with prepared dishes showing marginally stronger single-SKU habit.
+**There is no evidence here of distinctive "prepared-food fatigue."** The two groups
+behave alike on repurchase, with prepared dishes showing marginally stronger
+single-SKU habit; we do not claim the reverse as a strong result either.
 
 ## Limitations
 
@@ -60,10 +47,11 @@ with prepared dishes showing marginally stronger single-SKU habit.
   customer cycles through overall — only whether a given one recurs. The high
   ingredient-grain breadth of `frozen_meal` is real; it just is not "rotation" in
   the reorder sense.
-- Order sequence, not calendar time (see Part 10).
+- Order sequence, not calendar time (see the [calendar-time report](CALENDAR_TIME.md)).
 
 ## Follow-up
 
-- Within prepared dishes, does the commit-then-switch pattern (Part 1.2b / Part 6)
+- Within prepared dishes, does the commit-then-switch pattern (see
+  [reorder](REORDER_PROBABILITY.md) / [substitution](SUBSTITUTION.md))
   look different from base ingredients — e.g., do customers churn through frozen
   meals via many short runs, vs. long runs on a staple milk?

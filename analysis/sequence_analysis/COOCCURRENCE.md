@@ -1,4 +1,4 @@
-# Ingredient Co-occurrence Within Orders (Part 8)
+# Ingredient Co-occurrence Within Orders
 
 ## Research question
 

@@ -1,12 +1,12 @@
-# Purchase Pattern Classification — Audit (Part 1.3)
+# Purchase Pattern Classification
 
 ## Research question
 
-The original analysis sorted 3.4M customer-ingredient pairs into staples, rotation,
-bursts, returns, and irregular. Are those patterns distinctive behaviors, or do they
-mostly re-describe purchase frequency and the length of the observed history?
+Customer-ingredient pairs sort into staples, rotation, bursts, returns, and
+irregular. Are those patterns distinctive behaviors, or do they mostly re-describe
+purchase frequency and the length of the observed history?
 
-## Definitions audited
+## Definitions
 
 For users with ≥10 orders, each (customer, ingredient) pair with ≥2 purchases is
 labelled by precedence: **persistent staple** (bought in >50% of orders with a run
@@ -29,10 +29,8 @@ pairs, even the largest pattern (returns) is ~34%, not ~58%.
 |-------|--:|--:|--:|--:|--:|---:|
 | share | 75.0% | 66.5% | 58.1% | 50.5% | 38.1% | 29.1% |
 
-A defensible change in one threshold moves the headline from 29% to 75%. (The
-earlier report's 31% used an additional "gap not first" restriction; a slightly more
-inclusive and equally defensible rule gives 58% at the same threshold.) These labels
-are not robust descriptions.
+A defensible change in one threshold moves the headline from 29% to 75%. These
+labels are not robust descriptions.
 
 ### 3. Prevalence is dominated by history length, not behavior
 By customer history length B:
@@ -78,13 +76,13 @@ none (→ irregular). Precedence order affects ~6% of labels.
 ## Interpretation
 
 The pattern taxonomy mostly re-describes two nuisance variables — purchase frequency
-and observation-window length — rather than distinctive behavior. The earlier
-conclusions "returns after breaks are common" and "most behavior is irregular" do
-**not** survive as behavioral claims: a frequency+history null reproduces or exceeds
-them. The durable, distinctive finding is **early abandonment** (burst-then-absence),
-which exceeds chance and is not a censoring artifact.
+and observation-window length — rather than distinctive behavior. "Returns after
+breaks are common" and "most behavior is irregular" do **not** hold as behavioral
+claims: a frequency+history null reproduces or exceeds them. The durable, distinctive
+finding is **early abandonment** (burst-then-absence), which exceeds chance and is
+not a censoring artifact.
 
-## Reporting correction
+## Reporting note
 
 Pattern prevalence should be reported **by (customer, ingredient) pair**, not as a
 percentage of customers. By customer, 97.5% exhibit at least one "irregular" pair and
@@ -93,12 +91,12 @@ shows every pattern at least once. That is not "96% of customers are returners."
 
 ## Limitations
 
-- Thresholds are inherently arbitrary; the sensitivity analysis is the honest summary.
+- Thresholds are inherently arbitrary; the sensitivity analysis is the summary that matters.
 - The random baseline preserves per-customer frequency but not cross-ingredient
   correlations; it isolates temporal structure, which is the quantity of interest.
-- Order sequence, not calendar time (Part 10).
+- Order sequence, not calendar time (see the [calendar-time report](CALENDAR_TIME.md)).
 
 ## Follow-up
 
 - Characterize burst-then-absence ingredients: are they discretionary/novel items
-  (tried and dropped) vs. staples? Ties to novelty (Part 1.5) and substitution (Part 6).
+  (tried and dropped) vs. staples? Ties to [novelty](NOVELTY.md) and [substitution](SUBSTITUTION.md).

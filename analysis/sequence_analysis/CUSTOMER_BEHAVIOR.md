@@ -1,4 +1,4 @@
-# Customer-Level Behavior (Part 9)
+# Customer-Level Behavior
 
 ## Research question
 

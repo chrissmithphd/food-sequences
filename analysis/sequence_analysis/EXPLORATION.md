@@ -1,4 +1,4 @@
-# Exploration Over a Customer's Lifetime (Part 7)
+# Exploration Over a Customer's Lifetime
 
 ## Research question
 
@@ -64,6 +64,6 @@ individual trait (r=0.66) layered on a universal slowdown.
 - Repertoire growth is right-truncated: the oldest-observed order is not necessarily
   a customer's true first order, so early repertoire is an overcount of genuinely new
   foods and the first-half new-ingredient rate is inflated.
-- Order position, not calendar time (Part 10).
+- Order position, not calendar time (see the [calendar-time report](CALENDAR_TIME.md)).
 - "Distinct ingredients" counts the classification's 542 observed ingredients; finer
   or coarser taxonomy would shift absolute counts.

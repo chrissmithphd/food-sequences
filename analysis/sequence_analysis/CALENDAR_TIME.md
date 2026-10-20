@@ -1,4 +1,4 @@
-# Calendar Time vs. Order Sequence (Part 10)
+# Calendar Time vs. Order Sequence
 
 ## Research question
 

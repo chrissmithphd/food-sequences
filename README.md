@@ -112,7 +112,7 @@ We measure the next-order repeat probability (deduplicated to one event per cust
 
 **Lift runs opposite to the raw rates.** Exact-product repurchase is 29% above chance — a genuine habit. Category recurrence is 4% above chance — a mathematical consequence of aggregating many products, not loyalty to the family. Customers return to *specific things they like*.
 
-The finer grain carrying the stronger signal is a substitution signature, not a preference for SKUs over ingredients: when a customer uses several products for one ingredient, they tend to hold one product for a run of orders, then switch. The ingredient persists smoothly; each product arrives in bursts. [Full decomposition →](analysis/sequence_analysis/REORDER_PROBABILITY_AUDIT.md)
+The finer grain carrying the stronger signal is a substitution signature, not a preference for SKUs over ingredients: when a customer uses several products for one ingredient, they tend to hold one product for a run of orders, then switch. The ingredient persists smoothly; each product arrives in bursts. [Full decomposition →](analysis/sequence_analysis/REORDER_PROBABILITY.md)
 
 ### Exploration Is a Falling Rate Over a Still-Growing Repertoire
 
@@ -120,7 +120,7 @@ Novelty share depends sharply on how long a customer has been observed. Because 
 
 ![Novelty decay](analysis/sequence_analysis/figures/novelty_decay.png)
 
-Steady-state exploration — once a repertoire is established — is about **one item in fifteen**. Yet a customer's personal repertoire never saturates: the average customer has bought 40 distinct ingredients by their 10th order, 56 by their 20th, and 101 by their 100th, still climbing (out of 542 distinct ingredients in the catalog). Basket diversity stays flat at ~8 distinct ingredients per order throughout. The repertoire grows by accumulation, not by more adventurous baskets, and **97.7% of customers explore less in the second half** of their history than the first. ([Novelty audit](analysis/sequence_analysis/NOVELTY_AUDIT.md), [exploration report](analysis/sequence_analysis/EXPLORATION.md).)
+Steady-state exploration — once a repertoire is established — is about **one item in fifteen**. Yet a customer's personal repertoire never saturates: the average customer has bought 40 distinct ingredients by their 10th order, 56 by their 20th, and 101 by their 100th, still climbing (out of 542 distinct ingredients in the catalog). Basket diversity stays flat at ~8 distinct ingredients per order throughout. The repertoire grows by accumulation, not by more adventurous baskets, and **97.7% of customers explore less in the second half** of their history than the first. ([Novelty audit](analysis/sequence_analysis/NOVELTY.md), [exploration report](analysis/sequence_analysis/EXPLORATION.md).)
 
 ### Most "Patterns" Are Just Frequency and History Length
 

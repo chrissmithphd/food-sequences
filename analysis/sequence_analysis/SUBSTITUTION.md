@@ -1,4 +1,4 @@
-# Substitution vs. Coexistence (Part 6)
+# Substitution vs. Coexistence
 
 ## Research question
 
@@ -48,8 +48,8 @@ By ingredient:
 **The "serial SKU commitment" tendency is real but weak.** Once you hold a
 customer's product mix fixed, the temporal arrangement is only slightly more
 run-like than random (lift 1.04–1.09 for most ingredients). This tempers the
-reorder-audit reading (Part 1.2b): the high product-level *lift* there is partly a
-property of the baseline, not strong evidence that customers lock onto one SKU.
+[reorder reading](REORDER_PROBABILITY.md): the high product-level *lift* there is
+partly a property of the baseline, not strong evidence that customers lock onto one SKU.
 
 **The exception is the interesting part.** Yogurt is *anti*-persistent (lift 0.96):
 customers alternate yogurt products more than random choice would — active flavor
@@ -74,11 +74,11 @@ switched to B," not "buys both ongoing."
   lift isolates temporal clustering — a customer who always buys one milk shows
   lift ≈ 1, not because they lack preference but because there is nothing to
   arrange. Absolute P(stay) and lift should be read together.
-- Order sequence, not calendar time (Part 10).
+- Order sequence, not calendar time (see the [calendar-time report](CALENDAR_TIME.md)).
 
 ## Follow-up
 
 - Does a within-ingredient switch predict a later reversion to the original
   product, or is it permanent? (27.6% coexistence suggests some reversion.)
 - Are yogurt/ice-cream alternation customers a distinct "variety-seeking" type?
-  (Customer-behavior report, Part 9.)
+  ([Customer-behavior report](CUSTOMER_BEHAVIOR.md).)

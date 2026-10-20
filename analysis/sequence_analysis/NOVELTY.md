@@ -1,10 +1,10 @@
-# Novelty & Repertoire Audit (Part 1.5)
+# Novelty & Repertoire
 
 ## Research question
 
-How much of each order is genuinely new food versus familiar? And is the headline
-"22% new ingredients" a real exploration rate, or an artifact of only observing a
-slice of each customer's history?
+How much of each order is genuinely new food versus familiar? And is a pooled
+"~22% new ingredients" figure a real exploration rate, or an artifact of only
+observing a slice of each customer's history?
 
 ## Definitions
 
@@ -24,10 +24,9 @@ each item by the customer's *prior observed* history:
 | Customer-weighted | 51.2% | 12.3% | 38.7% |
 
 Item-weighting lets heavy, large-basket buyers dominate; they are more repetitive,
-so item-weighted novelty (24.4%) is lower than customer-weighted (38.7%). The
-earlier README reported the item-weighted 22–24% and customer-weighted ~34% — both
-roughly reproduced. But **neither number is a stable "exploration rate"**, because
-both pool early orders where novelty is inflated by truncation (below).
+so item-weighted novelty (24.4%) is lower than customer-weighted (38.7%). But
+**neither number is a stable "exploration rate"**, because both pool early orders
+where novelty is inflated by truncation (below).
 
 ## The truncation artifact (the important finding)
 
@@ -53,8 +52,9 @@ cannot see prior purchases. Any statement about exploration must condition on or
 position or restrict to established customers — the pooled average is a truncation
 average, not a behavior.
 
-This also reframes exploration-over-lifetime (Part 7): exploration does not merely
-"decline," it decays steeply toward a low, stable floor.
+This also reframes exploration over a customer's lifetime
+([exploration report](EXPLORATION.md)): exploration does not merely "decline," it
+decays steeply toward a low, stable floor.
 
 ## Repertoire multiplier (robust)
 
@@ -64,9 +64,8 @@ Median distinct products per customer = 45; median distinct ingredients = 34.
 - **median of per-customer ratios = 1.333×** ← the correct statistic
 - mean of per-customer ratios = 1.401× (right-skewed)
 
-Here the median-of-ratios (1.333×) essentially matches the ratio-of-medians, so the
-earlier "1.33×" was not misleading. About a quarter of a customer's product variety
-collapses when viewed as ingredients.
+The median-of-ratios (1.333×) essentially matches the ratio-of-medians. About a
+quarter of a customer's product variety collapses when viewed as ingredients.
 
 ## Limitations
 
@@ -79,5 +78,6 @@ collapses when viewed as ingredients.
 ## Follow-up
 
 - Do new ingredients arrive independently or in clusters (several new ingredients in
-  one order)? (Part 7 / Part 8.)
-- Is the novelty floor the same for all customers, or do some remain explorers? (Part 9.)
+  one order)? ([exploration](EXPLORATION.md), [co-occurrence](COOCCURRENCE.md).)
+- Is the novelty floor the same for all customers, or do some remain explorers?
+  ([customer behavior](CUSTOMER_BEHAVIOR.md).)
