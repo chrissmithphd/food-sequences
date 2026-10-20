@@ -55,6 +55,19 @@ uv run pytest
 4. **Provenance**: Record source, date, checksums → `data/processed/provenance.json`
 5. **Audit** (`audit_data.py`): Validate quality → `docs/DATA_AUDIT.md`
 
+### Sequence Analysis Pipeline (`scripts/sequence_analysis/`)
+One production pipeline — no `audit_*` / `*_v2` / duplicate variants (fix the
+production script in place; git holds history). `analyze_reorder.py` is the shared
+core: `load_events()` (full purchase table as one frame) and `iter_events()`
+(user-id bursts), plus `analyze_level(level, keep=...)` for next-order probability +
+shuffle-baseline lift. Every heavy analysis (`analyze_patterns`, `analyze_novelty`,
+`analyze_prepared_foods`, `analyze_lift_decomposition`, `analyze_substitution`,
+`analyze_exploration`, `analyze_cooccurrence`, `analyze_customer_behavior`,
+`analyze_calendar_time`) consumes `iter_events()` and accumulates per-customer
+partials across bursts — exact results at ~1.2GB peak. See `docs/PROCESSING.md`.
+**Never subsample input to save memory; chunk it.** Prepared-food grouping uses the
+classifier's `is_prepared_dish` flag, never a hardcoded ingredient list.
+
 ### Project Structure
 ```
 src/food_sequences/
