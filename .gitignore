@@ -103,3 +103,9 @@ analysis/outputs/*.csv
 !analysis/sequence_analysis/lift_decomposition.csv
 !analysis/sequence_analysis/novelty_weighting.csv
 !analysis/sequence_analysis/novelty_by_order_position.csv
+!analysis/sequence_analysis/substitution_summary.csv
+!analysis/sequence_analysis/substitution_by_ingredient.csv
+!analysis/sequence_analysis/cooccurrence_pairs.csv
+!analysis/sequence_analysis/repertoire_growth.csv
+!analysis/sequence_analysis/order_diversity.csv
+!analysis/sequence_analysis/calendar_gap_summary.csv

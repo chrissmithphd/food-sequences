@@ -72,13 +72,6 @@ For each customer, track purchases across orders:
 
 **Key distinction**: "Eventually reordered" (delayed) is not the same as "immediately repeated". Both are reorders, but they reveal different behaviors.
 
-### Batched Processing
-
-Memory-efficient implementation using polars:
-- Process 5,000 users per batch
-- Accumulate statistics incrementally
-- Avoids loading entire dataset into memory
-
 ---
 
 ## Multi-Level Reorder Analysis

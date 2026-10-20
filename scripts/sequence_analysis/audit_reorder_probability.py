@@ -48,29 +48,72 @@ def taxonomy_map():
     return out
 
 
-def load_events():
-    """One row per (user_id, order_number, product_id) with level columns; food only."""
-    clf = pl.read_csv(CLF / "food_classification.csv").select(
-        ["product_id", "aisle", "ingredient", "is_food", "is_prepared_dish"])
+CHUNK_USERS = 20000
+
+
+def _events_lazy(user_lo=None, user_hi=None):
+    """Lazy purchase-event pipeline; food only, one row per (user, order, product).
+
+    Optionally restricted to a user_id range so callers can process in bursts
+    rather than materializing the whole ~30M-row table (which, with no swap,
+    overruns the 6GB WSL budget once a downstream sort/self-join copies it).
+    """
     tax = taxonomy_map()
-    clf = clf.with_columns(
-        pl.col("ingredient").replace_strict(tax, default="Unknown").alias("category"))
+    clf = (pl.scan_csv(CLF / "food_classification.csv")
+           .select(["product_id", "aisle", "ingredient", "is_food", "is_prepared_dish"])
+           .with_columns(pl.col("ingredient").replace_strict(tax, default="Unknown").alias("category")))
 
-    orders = (pl.read_parquet(DATA_PROCESSED / "orders.parquet")
-              .filter(pl.col("eval_set").is_in(["prior", "train"]))
-              .select(["order_id", "user_id", "order_number"]))
-    prior = pl.read_parquet(DATA_PROCESSED / "order_products_prior.parquet").select(["order_id", "product_id"])
-    train = pl.read_parquet(DATA_PROCESSED / "order_products_train.parquet").select(["order_id", "product_id"])
+    orders = (pl.scan_parquet(DATA_PROCESSED / "orders.parquet")
+              .filter(pl.col("eval_set").is_in(["prior", "train"])))
+    if user_lo is not None:
+        orders = orders.filter((pl.col("user_id") >= user_lo) & (pl.col("user_id") <= user_hi))
+    orders = orders.select(["order_id", "user_id", "order_number"])
 
-    purch = (pl.concat([prior, train])
-             .join(orders, on="order_id", how="inner")
-             .join(clf, on="product_id", how="left")
-             .filter(pl.col("is_food") == True)
-             .filter(pl.col("ingredient").is_not_null() & (pl.col("ingredient") != "unclassified"))
-             .with_columns([pl.col("user_id").cast(pl.Int32),
-                            pl.col("order_number").cast(pl.Int32),
-                            pl.col("product_id").cast(pl.Int32)]))
-    return purch
+    prior = pl.scan_parquet(DATA_PROCESSED / "order_products_prior.parquet").select(["order_id", "product_id"])
+    train = pl.scan_parquet(DATA_PROCESSED / "order_products_train.parquet").select(["order_id", "product_id"])
+
+    return (pl.concat([prior, train])
+            .join(orders, on="order_id", how="inner")
+            .join(clf, on="product_id", how="left")
+            .filter(pl.col("is_food") == True)
+            .filter(pl.col("ingredient").is_not_null() & (pl.col("ingredient") != "unclassified"))
+            .with_columns([pl.col("user_id").cast(pl.Int32),
+                           pl.col("order_number").cast(pl.Int32),
+                           pl.col("product_id").cast(pl.Int32)]))
+
+
+def _user_bounds():
+    o = (pl.scan_parquet(DATA_PROCESSED / "orders.parquet")
+         .filter(pl.col("eval_set").is_in(["prior", "train"]))
+         .select(pl.col("user_id").min().alias("lo"), pl.col("user_id").max().alias("hi"))
+         .collect())
+    return int(o["lo"][0]), int(o["hi"][0])
+
+
+def load_events():
+    """Full purchase-event table as one DataFrame (streaming collect, ~1.6GB).
+
+    Safe to hold, but a downstream whole-table sort or self-join can double it and
+    overrun memory — for those, iterate with iter_events() instead.
+    """
+    return _events_lazy().collect(engine="streaming")
+
+
+def iter_events(chunk_users=CHUNK_USERS):
+    """Yield the purchase-event table in user-id bursts.
+
+    Each user's full history lands in a single chunk, so per-user operations
+    (dedup, within-(user,value) windows/sorts, per-user aggregation) are exact
+    within a chunk; callers accumulate across chunks. Peak memory stays ~1GB.
+    """
+    lo, hi = _user_bounds()
+    start = lo
+    while start <= hi:
+        end = start + chunk_users - 1
+        frame = _events_lazy(start, end).collect(engine="streaming")
+        if frame.height:
+            yield frame
+        start = end + 1
 
 
 def analyze_level(purch, level):

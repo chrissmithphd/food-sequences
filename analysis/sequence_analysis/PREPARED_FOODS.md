@@ -38,10 +38,9 @@ Full dataset, no sampling.
 
 ## Interpretation
 
-**At the fair exact-product grain, prepared dishes and base ingredients reorder at
+**At the exact-product grain, prepared dishes and base ingredients reorder at
 essentially the same rate** (27.9% vs 28.9% next order; 55% vs 59% within five
-orders). The earlier "prepared foods rotate more / 31% vs 40%" gap was an artifact
-of the broken metric and the mega-bucket ingredient grain — it does not survive.
+orders).
 
 If anything, the **lift runs the other way**: a specific prepared-dish product is
 *more* temporally clustered above chance (1.39×) than a specific base-ingredient
