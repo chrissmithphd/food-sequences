@@ -97,7 +97,18 @@ def main():
     f = f_all.filter(pl.col("n") >= 2)
     c = classify(f)
     print(f"\nPairs classified (n>=2): {c.height:,}")
-    print("\nBy (customer,ingredient) PAIR:")
+
+    # Independent rule prevalence (each rule evaluated on its own; rules OVERLAP, so
+    # these do not sum to 100). This is the honest view: precedence labels below hide
+    # that a pair can satisfy several rules at once.
+    ind_rows = [{"rule": r, "share_pct": c.select(pl.col(f"m_{r}").mean()).item() * 100}
+                for r in ["staple", "return", "burst", "rotation"]]
+    print("\nIndependent rule prevalence (overlapping, before precedence):")
+    for r in ind_rows:
+        print(f"  {r['rule']:10s} {r['share_pct']:5.1f}%")
+    pl.DataFrame(ind_rows).write_csv(SEQ / "pattern_independent_rules.csv")
+
+    print("\nBy (customer,ingredient) PAIR (precedence-assigned single label):")
     for r in prevalence(c).iter_rows(named=True):
         print(f"  {r['pattern']:20s} {r['n']:>9,}  {r['pct']:5.1f}%")
 
