@@ -1,0 +1,6 @@
+metric,value
+baskets_with_prepared,687599.0
+baskets_without_prepared,2622083.0
+median_size_with,12.0
+median_size_without,7.0
+pct_customers_zero_prepared,40.4

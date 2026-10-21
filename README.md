@@ -97,15 +97,16 @@ premise. 35,722 food products → 543 ingredients across 24 categories.
 
 ### [Prepared dishes →](analysis/prepared/)
 
-![Prepared dish types by reach](analysis/figures/prepared_topics.png)
+![Prepared items per basket](analysis/figures/prepared_basket_distribution.png)
 
-- **60% of customers buy a prepared meal**; for the typical buyer they're ~4% of items
-  and ~30% of orders — a convenience, not a base — and reliance doesn't rise with
-  volume.
-- Frozen dominates (frozen_meal → 54k customers; then pizza, soup, mac & cheese). Down
-  to the product: top frozen_meals are Mac & Cheese and Pad Thai; top soups are
-  chicken noodle and creamy tomato. Prepared dishes recur slightly less regularly than
-  staples (26.9% vs 28.7% next-order) but more relative to their own frequency.
+- **79% of baskets have zero prepared items.** 60% of customers buy one eventually,
+  but it's typically 4% of their food items. Prepared food is an occasional addition,
+  not a dietary base.
+- **Baskets with prepared food look like bigger versions of normal baskets** — the
+  rest of the basket has nearly identical category composition (produce, dairy, fruit
+  shares within ±0.5%). No evidence of systematic substitution for cooking ingredients.
+- Frozen dominates (frozen_meal 54k customers, pizza 42k, soup 41k); chicken nuggets
+  have the most concentrated demand (1,055 purchases per product).
 
 ### [Customers →](analysis/customers/)
 
