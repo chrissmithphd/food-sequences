@@ -1,0 +1,544 @@
+ingredient,category,organic_purchases,total_purchases,organic_pct
+yogurt,DAIRY,302584,1518733,19.9
+banana,PRODUCE - FRUIT,417040,920644,45.3
+milk,DAIRY,546095,918258,59.5
+water,BEVERAGES,591,739105,0.1
+apple,PRODUCE - FRUIT,456601,687657,66.4
+plant_milk,DAIRY,142458,554579,25.7
+avocado,PRODUCE - FRUIT,414132,553377,74.8
+onion,PRODUCE - VEGETABLES,248551,488816,50.8
+strawberry,PRODUCE - FRUIT,318126,482702,65.9
+granola_bar,SNACKS,53707,465035,11.5
+crackers,SNACKS,70468,454011,15.5
+tomato,PRODUCE - VEGETABLES,187651,430541,43.6
+lettuce,PRODUCE - VEGETABLES,232030,420057,55.2
+fresh_herbs,PRODUCE - VEGETABLES,271112,401054,67.6
+carrot,PRODUCE - VEGETABLES,273696,392749,69.7
+ice_cream,FROZEN FOODS,21832,383271,5.7
+eggs,DAIRY,216219,382014,56.6
+cereal,BREAKFAST,65836,378457,17.4
+spinach,PRODUCE - VEGETABLES,288022,377724,76.3
+deli_meat,PROTEIN - MEAT,66302,374343,17.7
+wheat_bread,BREAD & BAKERY,124719,369914,33.7
+cucumber,PRODUCE - VEGETABLES,128566,355840,36.1
+soda,BEVERAGES,959,338627,0.3
+frozen_meal,PREPARED DISHES & MEALS,12533,323757,3.9
+candy,SNACKS,69293,295771,23.4
+bell_pepper,PRODUCE - VEGETABLES,100027,293930,34.0
+lemon,PRODUCE - FRUIT,98118,282694,34.7
+hummus,CONDIMENTS & SAUCES,35858,280269,12.8
+cookies,SNACKS,10844,263286,4.1
+tea,BEVERAGES,62268,253077,24.6
+pasta,"GRAINS, PASTA & RICE",73458,250130,29.4
+butter,DAIRY,59283,243379,24.4
+raspberry,PRODUCE - FRUIT,143846,238963,60.2
+half_and_half,DAIRY,80071,234345,34.2
+potato_chips,SNACKS,6084,231476,2.6
+blueberry,PRODUCE - FRUIT,147616,224041,65.9
+juice_blend,BEVERAGES,46008,217396,21.2
+grape,PRODUCE - FRUIT,34298,215782,15.9
+broccoli,PRODUCE - VEGETABLES,106344,215573,49.3
+cheddar,DAIRY,19137,213185,9.0
+baby_food,BABY PRODUCTS,104021,209843,49.6
+tortilla_chips,SNACKS,54592,206598,26.4
+orange_juice,BEVERAGES,32587,204645,15.9
+orange,PRODUCE - FRUIT,57300,202997,28.2
+kale,PRODUCE - VEGETABLES,168369,196173,85.8
+garlic,PRODUCE - VEGETABLES,126225,187104,67.5
+coffee,BEVERAGES,16750,183521,9.1
+pear,PRODUCE - FRUIT,117711,172704,68.2
+sausage,PROTEIN - MEAT,23351,169734,13.8
+frozen_pizza,PREPARED DISHES & MEALS,18920,166969,11.3
+potato,PRODUCE - VEGETABLES,83419,165748,50.3
+marinara,CONDIMENTS & SAUCES,44240,165626,26.7
+tortilla,BREAD & BAKERY,32188,160172,20.1
+chicken_breast,PROTEIN - MEAT,29458,159711,18.4
+soup,PREPARED DISHES & MEALS,78374,154365,50.8
+kombucha,BEVERAGES,82960,150297,55.2
+parmesan,DAIRY,1893,146921,1.3
+canned_tomato,PRODUCE - VEGETABLES,69479,145486,47.8
+cream_cheese,DAIRY,13462,142867,9.4
+bacon,PROTEIN - MEAT,28817,140400,20.5
+zucchini,PRODUCE - VEGETABLES,130201,138676,93.9
+salsa,CONDIMENTS & SAUCES,21804,134365,16.2
+celery,PRODUCE - VEGETABLES,101507,133698,75.9
+white_bread,BREAD & BAKERY,6683,130408,5.1
+popcorn,SNACKS,13870,130057,10.7
+cauliflower,PRODUCE - VEGETABLES,24207,129559,18.7
+chicken_broth,COOKING LIQUIDS,91952,124094,74.1
+mozzarella,DAIRY,25279,123387,20.5
+deli_prepared,PREPARED DISHES & MEALS,2266,122057,1.9
+asparagus,PRODUCE - VEGETABLES,23680,120981,19.6
+string_cheese,DAIRY,71114,120135,59.2
+mac_and_cheese,PREPARED DISHES & MEALS,31878,118454,26.9
+frozen_waffles,FROZEN FOODS,56389,117669,47.9
+hot_pepper,PRODUCE - VEGETABLES,23148,115990,20.0
+sweet_potato,PRODUCE - VEGETABLES,78418,113585,69.0
+mushroom,PRODUCE - VEGETABLES,49453,113191,43.7
+coconut_water,BEVERAGES,11880,110439,10.8
+granola,BREAKFAST,27554,110259,25.0
+bagel,BREAD & BAKERY,5358,110138,4.9
+peanut_butter,SPREADS & JAMS,27472,109582,25.1
+cheese_blend,DAIRY,27414,100856,27.2
+olive_oil,"OILS, FATS & VINEGARS",19064,98120,19.4
+english_muffin,BREAD & BAKERY,33417,98116,34.1
+arugula,PRODUCE - VEGETABLES,79952,96528,82.8
+pretzels,SNACKS,2285,95403,2.4
+peas,PRODUCE - VEGETABLES,38824,94612,41.0
+fruit_snacks,SNACKS,48502,92476,52.4
+ginger,PRODUCE - VEGETABLES,56348,92285,61.1
+heavy_cream,DAIRY,37376,91214,41.0
+black_beans,PROTEIN - PLANT-BASED,41977,90243,46.5
+blackberry,PRODUCE - FRUIT,64589,88930,72.6
+veggie_chips,SNACKS,5614,87236,6.4
+salad_dressing,CONDIMENTS & SAUCES,16878,86813,19.4
+frozen_vegetables,FROZEN FOODS,58523,85934,68.1
+green_beans,PRODUCE - VEGETABLES,33709,85911,39.2
+oats,"GRAINS, PASTA & RICE",44036,83139,53.0
+almond_butter,SPREADS & JAMS,3016,81400,3.7
+lemonade,BEVERAGES,10140,80825,12.5
+applesauce,SPREADS & JAMS,42843,80471,53.2
+cottage_cheese,DAIRY,40997,76682,53.5
+hot_dog,PROTEIN - MEAT,36160,76284,47.4
+sour_cream,DAIRY,30750,76057,40.4
+tofu,PROTEIN - PLANT-BASED,49608,75626,65.6
+dried_fruit,PRODUCE - FRUIT,39017,74513,52.4
+mango,PRODUCE - FRUIT,13102,73473,17.8
+cabbage,PRODUCE - VEGETABLES,40393,71505,56.5
+frozen_appetizer,PREPARED DISHES & MEALS,4985,71095,7.0
+chicken_nuggets,PREPARED DISHES & MEALS,603,69636,0.9
+sourdough,BREAD & BAKERY,1789,68653,2.6
+kiwi,PRODUCE - FRUIT,52259,66258,78.9
+apple_juice,BEVERAGES,33157,65717,50.5
+sports_drink,BEVERAGES,1099,62917,1.7
+hash_browns,FROZEN FOODS,14139,61586,23.0
+pita_chips,SNACKS,9373,61222,15.3
+plant_based_meat,PROTEIN - PLANT-BASED,1294,61205,2.1
+pineapple,PRODUCE - FRUIT,6055,61039,9.9
+ground_turkey,PROTEIN - MEAT,5035,60387,8.3
+chocolate_chips,BAKING,3582,59138,6.1
+oatmeal,BREAKFAST,3740,57495,6.5
+peach,PRODUCE - FRUIT,37756,56791,66.5
+white_rice,"GRAINS, PASTA & RICE",30846,56216,54.9
+chickpeas,PROTEIN - PLANT-BASED,37912,55338,68.5
+muffin,BREAD & BAKERY,52,55187,0.1
+popsicles,FROZEN FOODS,2261,55131,4.1
+hamburger_bun,BREAD & BAKERY,1466,54145,2.7
+mayonnaise,CONDIMENTS & SAUCES,10879,54074,20.1
+feta,DAIRY,558,53778,1.0
+ground_beef,PROTEIN - MEAT,5085,51703,9.8
+white_sugar,BAKING,8713,51509,16.9
+frozen_burrito,PREPARED DISHES & MEALS,12159,51054,23.8
+corn,PRODUCE - VEGETABLES,23053,48197,47.8
+swiss,DAIRY,1250,47657,2.6
+watermelon,PRODUCE - FRUIT,3696,47099,7.8
+brown_rice,"GRAINS, PASTA & RICE",36566,46743,78.2
+hot_sauce,CONDIMENTS & SAUCES,835,46350,1.8
+beer,BEVERAGES,49,45850,0.1
+ketchup,CONDIMENTS & SAUCES,22388,45795,48.9
+tomato_sauce,PRODUCE - VEGETABLES,18588,45574,40.8
+goat_cheese,DAIRY,679,45365,1.5
+all_purpose_flour,BAKING,5980,45163,13.2
+strawberry_jam,SPREADS & JAMS,16862,45000,37.5
+american_cheese,DAIRY,19131,44621,42.9
+tomato_paste,PRODUCE - VEGETABLES,28288,44243,63.9
+almonds,NUTS & SEEDS,1311,43579,3.0
+egg_whites,DAIRY,20234,42548,47.6
+canned_tuna,PROTEIN - SEAFOOD,903,42543,2.1
+energy_drink,BEVERAGES,2829,41891,6.8
+nectarine,PRODUCE - FRUIT,13252,41012,32.3
+dinner_roll,BREAD & BAKERY,46,40003,0.1
+chicken_tenders,PROTEIN - MEAT,11657,39944,29.2
+grapefruit,PRODUCE - FRUIT,1247,39758,3.1
+wine,BEVERAGES,134,39666,0.3
+cherry,PRODUCE - FRUIT,14746,39001,37.8
+mustard,CONDIMENTS & SAUCES,11960,38399,31.1
+vegetable_broth,COOKING LIQUIDS,28337,37941,74.7
+raisin,PRODUCE - FRUIT,19547,37937,51.5
+butternut_squash,PRODUCE - VEGETABLES,22450,37683,59.6
+guacamole,CONDIMENTS & SAUCES,3431,37556,9.1
+plant_based_burger,PROTEIN - PLANT-BASED,2622,37322,7.0
+salt,SPICES & SEASONINGS,1487,37238,4.0
+radish,PRODUCE - VEGETABLES,31730,36475,87.0
+chips_pretzels,Unknown,1968,35390,5.6
+filled_pasta,"GRAINS, PASTA & RICE",5297,35248,15.0
+trail_mix,SNACKS,1569,34941,4.5
+beet,PRODUCE - VEGETABLES,25704,34721,74.0
+pancake_mix,BREAKFAST,2445,33854,7.2
+white_beans,PROTEIN - PLANT-BASED,16047,33668,47.7
+baguette,BREAD & BAKERY,185,33480,0.6
+eggplant,PRODUCE - VEGETABLES,2662,33161,8.0
+taco_seasoning,SPICES & SEASONINGS,2820,32911,8.6
+refried_beans,PROTEIN - PLANT-BASED,12288,32438,37.9
+rice_cakes,SNACKS,18178,32282,56.3
+frozen_yogurt,FROZEN FOODS,4618,31917,14.5
+instant_rice,"GRAINS, PASTA & RICE",1388,31874,4.4
+monterey_jack,DAIRY,1362,31701,4.3
+honey,BAKING,16143,31254,51.7
+chicken_thigh,PROTEIN - MEAT,11113,30890,36.0
+graham_crackers,SNACKS,2245,30845,7.3
+jerky,SNACKS,8,30566,0.0
+plum,PRODUCE - FRUIT,5466,30459,17.9
+cold_brew,BEVERAGES,1444,30416,4.7
+coconut_oil,"OILS, FATS & VINEGARS",13294,30324,43.8
+hot_dog_bun,BREAD & BAKERY,433,29902,1.4
+pesto,CONDIMENTS & SAUCES,34,29509,0.1
+edamame,PROTEIN - PLANT-BASED,12513,28290,44.2
+spirits,Unknown,7,28108,0.0
+jam_other,SPREADS & JAMS,3108,27591,11.3
+cantaloupe,PRODUCE - FRUIT,0,27254,0.0
+quinoa,"GRAINS, PASTA & RICE",17207,26281,65.5
+provolone,DAIRY,2076,26170,7.9
+vegetable_oil,"OILS, FATS & VINEGARS",5684,25596,22.2
+soy_sauce,CONDIMENTS & SAUCES,7362,25587,28.8
+mixed_berries,PRODUCE - FRUIT,6985,25159,27.8
+sorbet,FROZEN FOODS,1592,25055,6.4
+walnuts,NUTS & SEEDS,402,24502,1.6
+salmon,PROTEIN - SEAFOOD,0,24104,0.0
+apple_cider_vinegar,"OILS, FATS & VINEGARS",12110,23908,50.7
+condensed_soup,COOKING LIQUIDS,5928,23559,25.2
+lime,PRODUCE - FRUIT,7191,23350,30.8
+chard,PRODUCE - VEGETABLES,21676,23225,93.3
+beef_broth,COOKING LIQUIDS,11593,23014,50.4
+pinto_beans,PROTEIN - PLANT-BASED,12025,22715,52.9
+frozen_pancakes,FROZEN FOODS,4438,22637,19.6
+biscuit,BREAD & BAKERY,142,22327,0.6
+cranberry,PRODUCE - FRUIT,5093,21831,23.3
+instant_ramen,PREPARED DISHES & MEALS,191,21592,0.9
+cranberry_juice,BEVERAGES,4231,21457,19.7
+black_pepper,SPICES & SEASONINGS,6988,21221,32.9
+frozen_lasagna,PREPARED DISHES & MEALS,421,20700,2.0
+brussels_sprouts,PRODUCE - VEGETABLES,5761,20279,28.4
+pomegranate,PRODUCE - FRUIT,1122,20048,5.6
+tilapia,PROTEIN - SEAFOOD,0,19584,0.0
+cocoa_powder,BAKING,3369,19537,17.2
+couscous,"GRAINS, PASTA & RICE",162,19421,0.8
+bbq_sauce,CONDIMENTS & SAUCES,1558,19144,8.1
+vanilla_extract,BAKING,10183,18928,53.8
+pita,BREAD & BAKERY,4119,18581,22.2
+croissant,BREAD & BAKERY,0,18468,0.0
+pickled_goods_olives,Unknown,0,18346,0.0
+red_wine,COOKING LIQUIDS,141,17972,0.8
+bread,Unknown,5590,17856,31.3
+lentils,PROTEIN - PLANT-BASED,12681,17596,72.1
+flatbread,BREAD & BAKERY,2193,17434,12.6
+pumpkin,PRODUCE - VEGETABLES,8251,17408,47.4
+spaghetti_squash,PRODUCE - VEGETABLES,14022,17408,80.5
+mixed_nuts,NUTS & SEEDS,41,17189,0.2
+whole_chicken,PROTEIN - MEAT,6586,16850,39.1
+maple_syrup,BAKING,6699,16845,39.8
+raspberry_jam,SPREADS & JAMS,1774,16705,10.6
+frozen_fruit,FROZEN FOODS,11726,16560,70.8
+alfredo_sauce,CONDIMENTS & SAUCES,0,16457,0.0
+kidney_beans,PROTEIN - PLANT-BASED,1987,16333,12.2
+white_vinegar,"OILS, FATS & VINEGARS",9495,16182,58.7
+gum,SNACKS,143,15896,0.9
+raw_sugar,BAKING,3828,15880,24.1
+steak,PROTEIN - MEAT,5,15796,0.0
+balsamic_vinegar,"OILS, FATS & VINEGARS",6194,15744,39.3
+curry_paste,CONDIMENTS & SAUCES,319,15668,2.0
+honeydew,PRODUCE - FRUIT,1817,14970,12.1
+chia_seeds,NUTS & SEEDS,6115,14620,41.8
+rice_noodles,"GRAINS, PASTA & RICE",419,14425,2.9
+instant_soup,PREPARED DISHES & MEALS,37,14269,0.3
+pot_pie,PREPARED DISHES & MEALS,3967,14227,27.9
+garlic_powder,SPICES & SEASONINGS,4910,14189,34.6
+cumin,SPICES & SEASONINGS,5448,13827,39.4
+brown_sugar,BAKING,3559,13696,26.0
+canned_chili,PREPARED DISHES & MEALS,5648,13533,41.7
+powdered_sugar,BAKING,4543,13372,34.0
+egg_noodles,"GRAINS, PASTA & RICE",1991,12817,15.5
+ricotta,DAIRY,0,12799,0.0
+cashews,NUTS & SEEDS,1286,12768,10.1
+cooking_spray,"OILS, FATS & VINEGARS",771,12562,6.1
+pistachios,NUTS & SEEDS,2177,12392,17.6
+buttermilk,DAIRY,773,12348,6.3
+cornstarch,BAKING,2188,12194,17.9
+peanuts,NUTS & SEEDS,0,11768,0.0
+grape_juice,BEVERAGES,7028,11440,61.4
+meal_kit,PREPARED DISHES & MEALS,485,11421,4.2
+cinnamon,SPICES & SEASONINGS,2833,11263,25.2
+sardines,PROTEIN - SEAFOOD,0,11224,0.0
+collard_greens,PRODUCE - VEGETABLES,0,11180,0.0
+baking_powder,BAKING,30,11095,0.3
+apricot,PRODUCE - FRUIT,5354,10769,49.7
+seaweed_snacks,Unknown,10690,10690,100.0
+ramen_noodles,"GRAINS, PASTA & RICE",3146,10323,30.5
+baking_soda,BAKING,0,10053,0.0
+ghee,DAIRY,470,10053,4.7
+brie,DAIRY,0,9898,0.0
+blue_cheese,DAIRY,0,9630,0.0
+cornmeal,BAKING,533,9492,5.6
+canned_salmon,PROTEIN - SEAFOOD,0,9141,0.0
+agave,BAKING,9045,9094,99.5
+tahini,CONDIMENTS & SAUCES,7136,8870,80.5
+pecans,NUTS & SEEDS,745,8697,8.6
+rye_bread,BREAD & BAKERY,996,8593,11.6
+pancake_syrup,BREAKFAST,1839,8576,21.4
+tempeh,PROTEIN - PLANT-BASED,6864,8516,80.6
+pickled_goods,Unknown,5276,8467,62.3
+ground_chicken,PROTEIN - MEAT,2440,8409,29.0
+coconut_flour,BAKING,3241,8337,38.9
+baby_cereal,BABY PRODUCTS,7265,8336,87.2
+wild_rice,"GRAINS, PASTA & RICE",1645,8332,19.7
+chili_powder,SPICES & SEASONINGS,2532,8117,31.2
+champagne,BEVERAGES,0,8100,0.0
+paprika,SPICES & SEASONINGS,1927,8089,23.8
+chips,Unknown,4855,7842,61.9
+rice_vinegar,"OILS, FATS & VINEGARS",3492,7793,44.8
+onion_powder,SPICES & SEASONINGS,1904,7687,24.8
+teriyaki_sauce,CONDIMENTS & SAUCES,36,7266,0.5
+worcestershire,CONDIMENTS & SAUCES,2116,7193,29.4
+baby_formula,BABY PRODUCTS,3641,7137,51.0
+queso,CONDIMENTS & SAUCES,0,7102,0.0
+bay_leaves,SPICES & SEASONINGS,2578,6916,37.3
+almond_flour,BAKING,59,6804,0.9
+fig,PRODUCE - FRUIT,3375,6745,50.0
+turmeric,SPICES & SEASONINGS,3260,6565,49.7
+yeast,BAKING,5,6448,0.1
+red_pepper_flakes,SPICES & SEASONINGS,1600,6428,24.9
+protein_meal_replacements,Unknown,1243,6335,19.6
+vodka_sauce,CONDIMENTS & SAUCES,0,6324,0.0
+acorn_squash,PRODUCE - VEGETABLES,3670,6316,58.1
+cod,PROTEIN - SEAFOOD,0,6254,0.0
+energy_granola_bar,Unknown,0,6145,0.0
+oregano_dried,Unknown,3678,6085,60.4
+doughs_gelatins_bake_mixes,Unknown,0,6065,0.0
+red_wine_vinegar,"OILS, FATS & VINEGARS",2942,5998,49.0
+sunflower_seeds,NUTS & SEEDS,337,5726,5.9
+shrimp,PROTEIN - SEAFOOD,0,5696,0.0
+polenta,"GRAINS, PASTA & RICE",3406,5677,60.0
+whole_wheat_flour,BAKING,3328,5668,58.7
+bread_flour,BAKING,1452,5605,25.9
+white_wine,COOKING LIQUIDS,44,5546,0.8
+italian_seasoning,SPICES & SEASONINGS,1170,5535,21.1
+avocado_oil,"OILS, FATS & VINEGARS",64,5514,1.2
+arborio_rice,"GRAINS, PASTA & RICE",152,5429,2.8
+grapefruit_juice,Unknown,0,5368,0.0
+condensed_milk,DAIRY,1211,5318,22.8
+queso_fresco,DAIRY,0,5256,0.0
+soba,"GRAINS, PASTA & RICE",3387,5177,65.4
+sunflower_butter,SPREADS & JAMS,4388,5042,87.0
+turnip,PRODUCE - VEGETABLES,685,5013,13.7
+ham,PROTEIN - MEAT,0,4984,0.0
+baking_chocolate,BAKING,478,4849,9.9
+grapeseed_oil,"OILS, FATS & VINEGARS",0,4831,0.0
+white_wine_vinegar,"OILS, FATS & VINEGARS",1221,4761,25.6
+sesame_seeds,NUTS & SEEDS,832,4746,17.5
+flax_seeds,NUTS & SEEDS,1655,4729,35.0
+miso_paste,CONDIMENTS & SAUCES,1863,4717,39.5
+cayenne,SPICES & SEASONINGS,1716,4657,36.8
+cream,Unknown,0,4628,0.0
+anchovies,PROTEIN - SEAFOOD,0,4597,0.0
+parsnip,PRODUCE - VEGETABLES,0,4595,0.0
+hoisin_sauce,CONDIMENTS & SAUCES,2205,4576,48.2
+chicken_wings,PROTEIN - MEAT,310,4520,6.9
+pumpkin_seeds,NUTS & SEEDS,1355,4482,30.2
+lemon_juice,Unknown,0,4447,0.0
+ciabatta,BREAD & BAKERY,0,4417,0.0
+breakfast_bars,Unknown,940,4385,21.4
+sesame_oil,"OILS, FATS & VINEGARS",1108,4375,25.3
+beef_roast,PROTEIN - MEAT,4,4263,0.1
+hot_pocket,PREPARED DISHES & MEALS,0,4213,0.0
+papaya,PRODUCE - FRUIT,572,4108,13.9
+grape_jelly,SPREADS & JAMS,792,4002,19.8
+pine_nuts,NUTS & SEEDS,2043,3916,52.2
+curry_powder,SPICES & SEASONINGS,608,3866,15.7
+ginger_powder,SPICES & SEASONINGS,1619,3846,42.1
+lasagna_noodles,"GRAINS, PASTA & RICE",240,3831,6.3
+crab,PROTEIN - SEAFOOD,0,3690,0.0
+pico_de_gallo,CONDIMENTS & SAUCES,0,3664,0.0
+ground_pork,PROTEIN - MEAT,0,3635,0.0
+evaporated_milk,DAIRY,1718,3620,47.5
+fish_sauce,CONDIMENTS & SAUCES,0,3523,0.0
+rosemary_dried,Unknown,92,3430,2.7
+corn_dogs,PREPARED DISHES & MEALS,0,3355,0.0
+egg_substitute,DAIRY,0,3310,0.0
+macadamia_nuts,NUTS & SEEDS,0,3122,0.0
+hazelnuts,NUTS & SEEDS,361,3066,11.8
+stew_meat,PROTEIN - MEAT,0,3053,0.0
+artichoke_hearts,Unknown,0,2874,0.0
+condiments,Unknown,1108,2871,38.6
+canned_fruit,Unknown,0,2859,0.0
+tomatillo,Unknown,0,2853,0.0
+cake_flour,BAKING,609,2709,22.5
+udon,"GRAINS, PASTA & RICE",1915,2619,73.1
+cookie_dough,Unknown,0,2461,0.0
+pickles,Unknown,0,2401,0.0
+naan,BREAD & BAKERY,0,2392,0.0
+matcha,BEVERAGES,310,2366,13.1
+cornbread,BREAD & BAKERY,0,2314,0.0
+split_peas,PROTEIN - PLANT-BASED,394,2289,17.2
+lime_juice,Unknown,0,2265,0.0
+french_fries,Unknown,2190,2250,97.3
+mozzarella_sticks,PREPARED DISHES & MEALS,0,2216,0.0
+molasses,BAKING,773,2212,34.9
+coriander,SPICES & SEASONINGS,590,2169,27.2
+ribs,PROTEIN - MEAT,0,2147,0.0
+frozen_dessert,Unknown,129,2130,6.1
+passion_fruit,PRODUCE - FRUIT,0,2109,0.0
+cajun_seasoning,SPICES & SEASONINGS,78,2098,3.7
+nutmeg,SPICES & SEASONINGS,1240,2078,59.7
+peanut_oil,"OILS, FATS & VINEGARS",413,2007,20.6
+canned_meals,Unknown,1991,1991,100.0
+marmalade,SPREADS & JAMS,0,1985,0.0
+plantain,PRODUCE - FRUIT,0,1982,0.0
+barley,"GRAINS, PASTA & RICE",496,1979,25.1
+pork_shoulder,PROTEIN - MEAT,0,1925,0.0
+french_toast,FROZEN FOODS,0,1887,0.0
+farro,"GRAINS, PASTA & RICE",1362,1883,72.3
+cloves,SPICES & SEASONINGS,817,1871,43.7
+frozen_breakfast,Unknown,0,1771,0.0
+sauerkraut,Unknown,0,1770,0.0
+cashew_butter,SPREADS & JAMS,220,1721,12.8
+lima_beans,PROTEIN - PLANT-BASED,505,1706,29.6
+melon,PRODUCE - FRUIT,0,1681,0.0
+cardamom,SPICES & SEASONINGS,1106,1657,66.7
+baking_ingredients,Unknown,0,1655,0.0
+corn_syrup,BAKING,315,1632,19.3
+cheese_snacks,Unknown,0,1596,0.0
+oyster_sauce,CONDIMENTS & SAUCES,0,1574,0.0
+pork_tenderloin,PROTEIN - MEAT,0,1542,0.0
+pork_chop,PROTEIN - MEAT,0,1522,0.0
+bone_broth,COOKING LIQUIDS,1489,1498,99.4
+short_ribs,PROTEIN - MEAT,0,1451,0.0
+lamb,PROTEIN - MEAT,0,1439,0.0
+breakfast_bars_pastries,Unknown,0,1384,0.0
+paneer,Unknown,0,1294,0.0
+allspice,SPICES & SEASONINGS,1162,1259,92.3
+sunflower_oil,"OILS, FATS & VINEGARS",1245,1257,99.0
+bean_sprouts,Unknown,0,1249,0.0
+clams,PROTEIN - SEAFOOD,0,1191,0.0
+soft_drinks,Unknown,0,1137,0.0
+oysters,PROTEIN - SEAFOOD,0,1123,0.0
+pickle_goods_olives,Unknown,0,1095,0.0
+canned_vegetables,Unknown,0,1076,0.0
+canned_jarred_vegetables,Unknown,0,1068,0.0
+veal,PROTEIN - MEAT,0,1062,0.0
+brisket,PROTEIN - MEAT,0,1021,0.0
+gochujang,CONDIMENTS & SAUCES,0,1011,0.0
+liquid_smoke,CONDIMENTS & SAUCES,0,924,0.0
+mustard_greens,PRODUCE - VEGETABLES,794,924,85.9
+coconut,Unknown,0,848,0.0
+pasta_sauce,Unknown,0,846,0.0
+mint_gum,Unknown,51,844,6.0
+thyme_dried,Unknown,182,839,21.7
+bulgur,"GRAINS, PASTA & RICE",179,819,21.9
+almond_extract,BAKING,728,816,89.2
+turkey_breast,PROTEIN - MEAT,0,808,0.0
+dragon_fruit,PRODUCE - FRUIT,318,778,40.9
+poppy_seeds,NUTS & SEEDS,323,775,41.7
+frozen_meat_seafood,Unknown,0,765,0.0
+basil_dried,Unknown,0,740,0.0
+packaged_vegetables,Unknown,0,733,0.0
+spices_seasonings,Unknown,148,701,21.1
+pudding,Unknown,243,596,40.8
+trout,PROTEIN - SEAFOOD,0,589,0.0
+parsley_dried,Unknown,0,588,0.0
+cocoa_drink_mixes,Unknown,0,557,0.0
+lobster,PROTEIN - SEAFOOD,0,519,0.0
+frozen_meat,Unknown,0,486,0.0
+cinnamon_rolls,Unknown,103,470,21.9
+instant_foods,Unknown,20,447,4.5
+nuts_seeds_dried_fruit,Unknown,0,444,0.0
+juice_nectars,Unknown,441,441,100.0
+ice_cream_toppings,Unknown,0,412,0.0
+focaccia,BREAD & BAKERY,206,398,51.8
+garam_masala,SPICES & SEASONINGS,98,393,24.9
+tartar_sauce,Unknown,0,379,0.0
+waffle_mix,BREAKFAST,0,373,0.0
+fruit_vegetable_snacks,Unknown,48,362,13.3
+canned_meat,Unknown,0,360,0.0
+brownie_mix,Unknown,0,359,0.0
+asian_sauces,Unknown,0,346,0.0
+fresh_vegetables,Unknown,16,343,4.7
+self_rising_flour,BAKING,0,333,0.0
+sesame_sauce,CONDIMENTS & SAUCES,0,313,0.0
+chestnuts,Unknown,0,308,0.0
+specialty_cheeses,Unknown,0,308,0.0
+gouda,Unknown,0,292,0.0
+snapper,PROTEIN - SEAFOOD,0,276,0.0
+frozen_juice,Unknown,0,248,0.0
+apple_butter,SPREADS & JAMS,0,244,0.0
+tuna,PROTEIN - SEAFOOD,0,221,0.0
+whipped_cream,Unknown,200,212,94.3
+gravy,Unknown,0,202,0.0
+pizza_dough,Unknown,0,198,0.0
+apricot_jam,Unknown,0,187,0.0
+mussels,PROTEIN - SEAFOOD,0,175,0.0
+canned_meals_beans,Unknown,0,172,0.0
+dry_pasta,Unknown,0,166,0.0
+canned_fruit_applesauce,Unknown,0,144,0.0
+apple_chips,Unknown,0,140,0.0
+ice_cream_topping,Unknown,0,138,0.0
+sushi,Unknown,0,138,0.0
+scallops,PROTEIN - SEAFOOD,0,133,0.0
+food_coloring,Unknown,0,132,0.0
+saffron,Unknown,0,125,0.0
+sweetener,Unknown,0,121,0.0
+cookie_mix,Unknown,118,118,100.0
+cookies_mix,Unknown,114,114,100.0
+duck,Unknown,0,111,0.0
+poultry_seasoning,Unknown,0,111,0.0
+spices_other,Unknown,0,99,0.0
+whole_turkey,PROTEIN - MEAT,0,98,0.0
+frozen_breads,Unknown,0,93,0.0
+baking_supplies,Unknown,0,87,0.0
+canned_meal,Unknown,0,87,0.0
+coffee_filters,Unknown,0,87,0.0
+packaged_seafood,Unknown,0,82,0.0
+breadcrumbs,Unknown,0,81,0.0
+canned_fish,Unknown,0,80,0.0
+bakery_desserts,Unknown,0,72,0.0
+frosting,Unknown,0,70,0.0
+breakfast_bakery,Unknown,0,67,0.0
+olives,Unknown,0,65,0.0
+spices,Unknown,0,63,0.0
+sauce_mix,Unknown,0,60,0.0
+specialty_cheese,Unknown,0,59,0.0
+lemongrass,Unknown,58,58,100.0
+oils,Unknown,0,58,0.0
+star_anise,Unknown,0,58,0.0
+stuffing_mix,Unknown,0,57,0.0
+baking_supplies_decor,Unknown,0,56,0.0
+canned_beans,Unknown,0,55,0.0
+cheese_block,Unknown,0,54,0.0
+jerk_seasoning,Unknown,0,54,0.0
+refrigerated_pudding_desserts,Unknown,0,54,0.0
+mahi_mahi,PROTEIN - SEAFOOD,0,45,0.0
+seaweed,Unknown,0,43,0.0
+marinades_meat_preparation,Unknown,0,40,0.0
+popcorn_seasonings,Unknown,0,37,0.0
+artichoke,Unknown,0,35,0.0
+meatballs,Unknown,0,35,0.0
+salad,Unknown,0,34,0.0
+fish_fillet,Unknown,0,30,0.0
+beers_coolers,Unknown,0,26,0.0
+cake_mix,Unknown,0,25,0.0
+mint_extract,Unknown,23,23,100.0
+poultry_counter,Unknown,0,23,0.0
+sugar_substitute,Unknown,0,23,0.0
+cherry_juice,Unknown,22,22,100.0
+pie_crust,Unknown,0,21,0.0
+white_pepper,Unknown,0,18,0.0
+cocktail_sauce,Unknown,0,15,0.0
+seafood_counter,Unknown,0,15,0.0
+vegetables,Unknown,0,14,0.0
+caviar,Unknown,0,13,0.0
+gelatin_mix,Unknown,0,13,0.0
+marinades,Unknown,0,13,0.0
+muffin_mix,Unknown,0,13,0.0
+canned_crab,Unknown,0,12,0.0
+buns_rolls,Unknown,0,9,0.0
+caraway,Unknown,0,9,0.0
+puff_pastry,Unknown,0,9,0.0
+swordfish,PROTEIN - SEAFOOD,0,9,0.0
+bass,PROTEIN - SEAFOOD,0,8,0.0
+cooking_wine,Unknown,0,7,0.0
+fruit_exotic,Unknown,0,7,0.0
+pudding_mix,Unknown,0,7,0.0
+sauce,Unknown,0,7,0.0
+gelatin,Unknown,0,6,0.0
+packaged_vegetables_fruits,Unknown,0,6,0.0
+sugar_cane,Unknown,0,6,0.0
+horseradish,Unknown,0,4,0.0

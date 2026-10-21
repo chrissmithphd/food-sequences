@@ -88,6 +88,7 @@ analysis/outputs/*.csv
 
 # EXCEPT: Classification results (product-level, no customer IDs)
 !analysis/classification/food_classification.csv
+!analysis/classification/product_ingredient_lookup.csv
 !analysis/classification/methods_compared/*.csv
 !analysis/classification/archived/*.csv
 

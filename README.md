@@ -40,18 +40,18 @@ every analysis streams it in customer-id bursts to stay within memory
 ### [Ingredients →](analysis/ingredients/)
 
 Analyzing by ingredient (a recipe role) instead of product (a SKU) is the project's
-premise.
+premise. 35,722 food products → 543 ingredients across 24 categories.
 
 ![What customers buy, by ingredient](analysis/figures/ingredients_by_volume.png)
 
-- **What customers buy ≠ what the catalog stocks.** Bananas are 3% of all food
-  purchases from **18 products**; candy is 1% of purchases from **1,212**. 16 of the
-  top 20 ingredients by volume are fresh whole foods; the catalog is wide where
-  branding is the product, the cart is deep where the food is.
+- **Fresh foods are 57% of purchases but only 25% of the catalog.** Packaged foods
+  are the opposite: 45% of the catalog, 25% of purchases. The catalog is wide where
+  branding is the product; the cart is deep where the food is.
+- **19% of products capture 80% of all purchase volume.** Demand concentration varies
+  from banana (1 product = 53% of sales) to yogurt (you need 190 of 1,177 products
+  to reach 80%).
 - **A third of "variety" is packaging** — the median customer buys 45 products but 34
   ingredients (1.33×).
-- An ingredient collapses anywhere from 18 (`banana`) to 1,177 (`yogurt`) products;
-  the report shows the actual products people buy for each.
 
 ### [Basket contents →](analysis/basket/)
 

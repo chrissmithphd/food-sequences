@@ -29,6 +29,12 @@ Three classification methods were evaluated; the LLM-based classifier was select
 The committed `food_classification.csv` uses the LLM output with post-hoc corrections
 applied by `apply_corrections.py` (e.g., condensed soup reclassification).
 
+For reproducing on the same or overlapping products without an LLM,
+`classify_lookup.py` provides an exact-match lookup table
+([`product_ingredient_lookup.csv`](../analysis/classification/product_ingredient_lookup.csv))
+mapping each product name to its ingredient and category. Products not in the table
+are flagged for manual or LLM classification.
+
 ## Coverage
 
 | | Products | Share of purchase volume |

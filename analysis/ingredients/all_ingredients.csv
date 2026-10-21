@@ -1,0 +1,544 @@
+ingredient,category,purchases,purchase_pct,catalog_products,catalog_pct,top_products
+yogurt,DAIRY,1518733,4.999676560513223,1177,3.294888304126309,Total 2% with Strawberry Lowfat Greek Strained Yogurt | Total 0% Nonfat Greek Yogurt | Total Greek Strained Yogurt | Total 0% Greek Yogurt | Total 2% All Natural Greek Strained Yogurt with Honey
+banana,PRODUCE - FRUIT,920644,3.030764609300737,18,0.05038911595095459,Banana | Bag of Organic Bananas | Organic Banana | Bananas | Dark Chocolate Covered Banana
+milk,DAIRY,918258,3.0229098854793777,277,0.775432506578579,Organic Whole Milk | Organic Reduced Fat 2% Milk | Whole Milk | Organic Reduced Fat Milk | Fat Free Milk
+water,BEVERAGES,739105,2.433137321871669,382,1.0693690162924807,Spring Water | Sparkling Natural Mineral Water | Sparkling Lemon Water | Italian Sparkling Mineral Water | Pure Sparkling Water
+apple,PRODUCE - FRUIT,687657,2.2637702509742277,131,0.3667207883097251,Organic Fuji Apple | Apple Honeycrisp Organic | Honeycrisp Apple | Organic Large Extra Fancy Fuji Apple | Organic Gala Apples
+plant_milk,DAIRY,554579,1.8256768156436076,308,0.8622137618274452,Organic Unsweetened Almond Milk | Unsweetened Almondmilk | Unsweetened Original Almond Breeze Almond Milk | Vanilla Almond Breeze Almond Milk | Unsweetened Vanilla Almond Milk
+avocado,PRODUCE - FRUIT,553377,1.8217198256883376,17,0.047589720620346006,Organic Hass Avocado | Organic Avocado | Hass Avocados | Small Hass Avocado | Hass Avocado
+onion,PRODUCE - VEGETABLES,488816,1.6091846938229644,68,0.19035888248138402,Organic Yellow Onion | Yellow Onions | Organic Red Onion | Red Onion | Green Onions
+strawberry,PRODUCE - FRUIT,482702,1.5890573755313502,28,0.07838306925704047,Organic Strawberries | Strawberries | Organic Whole Strawberries | Whole Strawberries | Frozen Organic Strawberries
+granola_bar,SNACKS,465035,1.5308975240007736,939,2.6286322154414643,Gluten Free Dark Chocolate Chunk Chewy with a Crunch Granola Bars | Crunchy Oats 'n Honey Granola Bars | Oats & Honey Gluten Free Granola | ZBar Organic Chocolate Brownie Energy Snack | Apple Pie Fruit & Nut Food Bar
+crackers,SNACKS,454011,1.4946064613827243,835,2.3374951010581713,Crackers Cheddar Bunnies Snack Packs | Hint Of Sea Salt Almond Nut Thins | Cheddar Bunnies Snack Crackers | Organic Wheat-Free & Gluten-Free Original Crackers | Goldfish Cheddar Baked Snack Crackers
+tomato,PRODUCE - VEGETABLES,430541,1.4173431051013732,98,0.2743407423996417,Organic Grape Tomatoes | Organic Tomato Cluster | Red Vine Tomato | Roma Tomato | Cherubs Heavenly Salad Tomatoes
+lettuce,PRODUCE - VEGETABLES,420057,1.3828297251587363,213,0.5962712054196293,Organic Romaine Lettuce | Organic Spring Mix | Romaine Hearts | Organic Romaine | Organic Spring Mix Salad
+fresh_herbs,PRODUCE - VEGETABLES,401054,1.3202717550089913,139,0.3891159509545938,Organic Cilantro | Organic Italian Parsley Bunch | Bunched Cilantro | Organic Basil | Organic Mint
+carrot,PRODUCE - VEGETABLES,392749,1.292931653862139,71,0.19875706847320979,Organic Baby Carrots | Carrots | Organic Peeled Whole Baby Carrots | Organic Carrot Bunch | Organic Shredded Carrots
+ice_cream,FROZEN FOODS,383271,1.2617300309036965,830,2.3234981244051283,Chocolate Ice Cream | Vanilla Ice Cream | Chocolate Chip Cookie Dough Ice Cream | Mediterranean Mint Gelato | Sea Salt Caramel Gelato
+eggs,DAIRY,382014,1.257591980675931,97,0.2715413470690331,Large Alfresco Eggs | Organic Grade A Free Range Large Brown Eggs | Organic Large Brown Grade AA Cage Free Eggs | Organic Large Grade AA Brown Eggs | Organic Grade A Large Brown Eggs
+cereal,BREAKFAST,378457,1.2458823190528903,428,1.1981412015004758,Honey Nut Cheerios | Raisin Bran Cereal | Cereal | Organic Cinnamon Crunch Cereal | Cheerios Cereal
+spinach,PRODUCE - VEGETABLES,377724,1.2434692794212654,43,0.1203739992161693,"Organic Baby Spinach | Baby Spinach | Organic Baby Spinach Salad | Spinach | Super Spinach! Baby Spinach, Baby Bok Choy, Sweet Baby Kale"
+deli_meat,PROTEIN - MEAT,374343,1.232339010670211,389,1.0889647836067409,Uncured Genoa Salami | Organic Roasted Turkey Breast | Oven Roasted Turkey Breast | Roasted Turkey Breast | Uncured Slow Cooked Ham
+wheat_bread,BREAD & BAKERY,369914,1.2177587207268747,253,0.7082470186439729,100% Whole Wheat Bread | Organic Bread with 21 Whole Grains | Ezekiel 4:9 Bread Organic Sprouted Whole Grain | Gluten Free Whole Grain Bread | Organic Good Seed Bread
+cucumber,PRODUCE - VEGETABLES,355840,1.1714270429976996,199,0.5570796707911091,Cucumber Kirby | Organic Cucumber | Organic Hothouse Cucumbers | European Cucumber | Baby Cucumbers
+soda,BEVERAGES,338627,1.1147617617164514,406,1.136554504227087,Soda | Fridge Pack Cola | Ginger Ale | Cola | Coke Classic
+frozen_meal,PREPARED DISHES & MEALS,323757,1.0658096480435202,881,2.4662672862661665,Macaroni & Cheese | Pesto Tortellini  Bowls | Organic Beans & Rice Cheddar Cheese Burrito | Broccoli & Cheddar Bake Meal Bowl | Pad Thai
+candy,SNACKS,295771,0.9736795973877941,1212,3.3928671406976094,Almonds & Sea Salt in Dark Chocolate | Organic Dark Chocolate Peanut Butter Cups | Organic 85% Cacao Dark Chocolate Bar | Dark with 70% Cacao Content Organic Chocolate Bar | Milk Chocolate Almonds
+bell_pepper,PRODUCE - VEGETABLES,293930,0.9676190162666194,92,0.25754437041599015,Organic Red Bell Pepper | Red Peppers | Green Bell Pepper | Orange Bell Pepper | Organic Bell Pepper
+lemon,PRODUCE - FRUIT,282694,0.9306300485982232,31,0.08678125524886625,Large Lemon | Organic Lemon | Meyer Lemon | Pure Lemon Juice | Bag of Lemons
+hummus,CONDIMENTS & SAUCES,280269,0.9226469365836395,208,0.5822742287665864,Original Hummus | Roasted Red Pepper Hummus | Lemon Hummus | Organic Original Hommus | Classic Hummus
+cookies,SNACKS,263286,0.8667388164419189,1074,3.006550585073624,Chocolate Chip Cookies | Gluten Free Chocolate Chip Cookies | Fig Newmans Fruit Filled Cookies | Oreo Chocolate Sandwich Cookies | Peanut Butter Cookie
+tea,BEVERAGES,253077,0.8331307378617605,889,2.488662448911035,Green Tea With Ginseng and Honey | Premium Unsweetened Iced Tea | Zen Tea | Unsweetened Premium Iced Tea | Just Green Unsweetened Tea
+pasta,"GRAINS, PASTA & RICE",250130,0.8234291992609449,446,1.2485303174514306,Spaghetti | Penne Rigate | Spaghetti  No 12 | Spaghetti Pasta | Penne Pasta
+butter,DAIRY,243379,0.801204873813335,154,0.4311068809137226,Unsalted Butter | Pure Irish Butter | Organic Unsalted Butter | Organic Salted Butter | Organic Whipped Naturally Buttery Spread
+raspberry,PRODUCE - FRUIT,238963,0.7866673799344068,15,0.04199092995912883,"Organic Raspberries | Raspberries | Red Raspberries | Medium Scarlet Raspberries | Raspberries, Organic, Freeze-Dried"
+half_and_half,DAIRY,234345,0.7714649010546761,128,0.3583226023178993,Organic Half & Half | Half & Half | French Vanilla Creamer | Half And Half Cream | Coconut Almond Unsweetened Creamer Blend
+potato_chips,SNACKS,231476,0.762020138840309,395,1.1057611555903926,Sea Salt & Vinegar Potato Chips | Sea Salt Potato Chips | Aged White Cheddar Baked Rice & Corn Puffs Gluten Free Lunch Packs | Backyard Barbeque Potato Chips | Plantain Chips
+blueberry,PRODUCE - FRUIT,224041,0.7375440820038435,28,0.07838306925704047,Organic Blueberries | Blueberries | Frozen Organic Wild Blueberries | Frozen Organic Blueberries | Blueberries Pint
+juice_blend,BEVERAGES,217396,0.7156687090814071,761,2.130339846593136,"Juice Beverage, Cold Pressed, Kale Apple Ginger Romaine Spinach Cucumber Celery Parsley Lemon | Naked Green Machine Boosted Juice Smoothie | Organic Super Fruit Punch Juice Drink | Sparkling Blackberry Juice | Beet Apple Carrot Lemon Ginger Organic Cold Pressed Juice Beverage"
+grape,PRODUCE - FRUIT,215782,0.7103554130848967,29,0.08118246458764906,Seedless Red Grapes | Grape White/Green Seedless | Organic Green Seedless Grapes | XL Emerald White Seedless Grapes | Green Seedless Grapes
+broccoli,PRODUCE - VEGETABLES,215573,0.709667384049413,51,0.14276916186103802,Broccoli Crown | Organic Broccoli | Organic Baby Broccoli | Organic Broccoli Crowns | Asparation/Broccolini/Baby Broccoli
+cheddar,DAIRY,213185,0.7018060762181447,219,0.6130675774032809,Sharp Cheddar Cheese | Shredded Mild Cheddar Cheese | Medium Cheddar Cheese Block | Organic Shredded Mild Cheddar | Natural Sharp Cheddar Sliced Cheese
+baby_food,BABY PRODUCTS,209843,0.6908041956603145,382,1.0693690162924807,"Broccoli & Apple Stage 2 Baby Food | Organic Mixed Berry Yogurt & Fruit Snack | Stage 1 Apples Sweet Potatoes Pumpkin & Blueberries Organic Pureed Baby Food | Peach,  Apricot & Banana Stage 2 Baby Food | Organic Pears, Peas and Broccoli Puree Stage 1"
+tortilla_chips,SNACKS,206598,0.6801216395830676,233,0.6522591120318011,Organic Tortilla Chips | Organic Blue Corn Tortilla Chips | Corn Chips | Sweet Potato Tortilla Chips | Thick & Crispy Tortilla Chips
+orange_juice,BEVERAGES,204645,0.6736923539069927,136,0.38071776496276805,Original Orange Juice | Original No Pulp 100% Florida Orange Juice | Orange Juice | Orange Calcium & Vitamin D Pulp Free | Pulp Free Orange Juice
+orange,PRODUCE - FRUIT,202997,0.6682671297420302,75,0.20995464979564415,"Organic Navel Orange | Clementines, Bag | Clementines | Mandarin Oranges | Blood Oranges"
+kale,PRODUCE - VEGETABLES,196173,0.6458024879327443,54,0.1511673478528638,Michigan Organic Kale | Organic Lacinato (Dinosaur) Kale | Organic Baby Kale | I Heart Baby Kale | Organic Baby Kale Mix
+garlic,PRODUCE - VEGETABLES,187104,0.6159472950006789,41,0.11477520855495214,Organic Garlic | Garlic | Peeled Garlic | Minced Garlic | Organic Chopped Garlic
+coffee,BEVERAGES,183521,0.604152041248822,612,1.7132299423324564,Cold Brew Coffee | Cold Brew Coffee Double Espresso with Almond Milk | Major Dickason's Blend Ground Coffee Dark Roast | French Roast Ground Coffee | House Blend Deep Roast Ground Coffee
+pear,PRODUCE - FRUIT,172704,0.5685424236563476,50,0.13996976653042942,Organic D'Anjou Pears | Organic Bartlett Pear | Bartlett Pears | Organic Bosc Pear | Bosc Pear
+sausage,PROTEIN - MEAT,169734,0.5587651689415792,256,0.7166452046357986,Chicken & Maple Breakfast Sausage | Natural Chicken & Sage Breakfast Sausage | Organic Chicken & Apple Sausage | Natural Classic Pork Breakfast Sausage | Naturals Savory Turkey Breakfast Sausage
+frozen_pizza,PREPARED DISHES & MEALS,166969,0.5496627752424768,332,0.9293992497620513,Organic Cheese Frozen Pizza | Thin Crust Pepperoni Pizza | Cheese Pizza | Margherita Pizza | Four Cheese Thin Crust Pizza
+potato,PRODUCE - VEGETABLES,165748,0.545643237193072,132,0.3695201836403337,Organic Russet Potato | Russet Potato | Potato Yukon Gold Organic | Red Potatoes | Organic Red Potato
+marinara,CONDIMENTS & SAUCES,165626,0.5452416125886269,300,0.8398185991825766,Marinara Sauce | Organic Tomato Basil Pasta Sauce | Marinara Pasta Sauce | All Natural Marinara Sauce | Organic Marinara Pasta Sauce
+tortilla,BREAD & BAKERY,160172,0.5272870175669614,185,0.5178881361625889,Corn Tortillas | Sonoma Traditional Flour Tortillas 10 Count | Super Soft Taco Flour Tortillas | White Corn Tortillas | Large Burrito Flour Tortillas
+chicken_breast,PROTEIN - MEAT,159711,0.525769403282952,81,0.22675102177929568,Boneless Skinless Chicken Breasts | Boneless Skinless Chicken Breast | Air Chilled Organic Boneless Skinless Chicken Breasts | Organic Boneless Skinless Chicken Breast | Original Rotisserie Chicken
+soup,PREPARED DISHES & MEALS,154365,0.5081703447963689,501,1.402497060634903,Organic Creamy Tomato Soup | Organic Chicken Noodle Soup | Organic Lentil Soup | Organic Lentil Vegetable Soup | Traditional Chicken Noodle Soup
+kombucha,BEVERAGES,150297,0.4947784686415953,136,0.38071776496276805,Organic Raw Kombucha Gingerade | Trilogy Kombucha Drink | Synergy Organic Kombucha Gingerberry | Organic & Raw Strawberry Serenity Kombucha | Enlightened Organic Raw Kombucha
+parmesan,DAIRY,146921,0.48366465991531316,77,0.2155534404568613,Grated Parmesan | Shredded Parmesan | Grated Parmesan Cheese | 100% Grated Parmesan Cheese | Parmesan Shredded Cheese
+canned_tomato,PRODUCE - VEGETABLES,145486,0.47894063280565236,171,0.4786966015340686,Organic Diced Tomatoes | Diced Tomatoes | Crushed Tomatoes | Organic No Salt Added Diced Tomatoes | Organic Crushed Fire Roasted Tomatoes
+cream_cheese,DAIRY,142867,0.4703188718299022,139,0.3891159509545938,Whipped Cream Cheese | Cream Cheese Spread | Original Whipped Cream Cheese | Organic Cream Cheese Bar | Garlic & Fine Herbs Gournay Cheese
+bacon,PROTEIN - MEAT,140400,0.4621974956072309,113,0.3163316723587705,Uncured Hickory Smoked Sunday Bacon | Organic Turkey Bacon | Organic Sunday Bacon | Applewood Smoked Bacon | Turkey Bacon
+zucchini,PRODUCE - VEGETABLES,138676,0.45652207906572895,21,0.05878730194278036,Organic Zucchini | Organic Yellow Squash | Organic Zucchini Spirals | Organic Yellow Zucchini | Zucchini Noodles
+salsa,CONDIMENTS & SAUCES,134365,0.44233024570701984,261,0.7306421812888416,Organic Medium Salsa | Mild Salsa | Medium Salsa Roja | Mild Salsa Roja | New Mexico Taco Skillet Sauce For Chicken
+celery,PRODUCE - VEGETABLES,133698,0.44013447840239,21,0.05878730194278036,Organic Small Bunch Celery | Organic Celery Hearts | Celery Hearts | Celery Sticks | Celery
+white_bread,BREAD & BAKERY,130408,0.4293037821021921,137,0.3835171602933766,Panko Bread Crumbs | Classic White Bread | Gluten Free White Sandwich Bread | White Sandwich Bread | Cinnamon Raisin Bread
+popcorn,SNACKS,130057,0.4281482883631739,237,0.6634566933542355,Baked Aged White Cheddar Rice and Corn Puffs | 100 Calorie  Per Bag Popcorn | Original Popcorn | White Cheddar Popcorn | Organic White Cheddar Popcorn
+cauliflower,PRODUCE - VEGETABLES,129559,0.4265088698958492,30,0.08398185991825766,Fresh Cauliflower | Organic Cauliflower | Organic Riced Cauliflower | Cauliflower Florets | Cauliflower
+chicken_broth,COOKING LIQUIDS,124094,0.4085180628196845,132,0.3695201836403337,Organic Low Sodium Chicken Broth | Organic Free Range Chicken Broth | Organic Chicken Broth | Organic Chicken Stock | Organic Chicken Bone Broth
+mozzarella,DAIRY,123387,0.40619061531687606,105,0.2939365097139018,Shredded Mozzarella | Organic Shredded Mozzarella | Mozzarella String Cheese | Fresh Mozzarella Ball | Organic Fancy Shredded Mozzarella Cheese
+deli_prepared,PREPARED DISHES & MEALS,122057,0.4018122487274343,348,0.9741895750517888,Avocado Roll | Classic Chicken Salad | Chicken Noodle Soup | Sesame Seaweed Salad | Taboule Salad
+asparagus,PRODUCE - VEGETABLES,120981,0.39827005139642735,53,0.1483679525222552,Asparagus | Organic Large Green Asparagus | Artichokes | Fresh Asparagus | Cut Hearts Of Palm
+string_cheese,DAIRY,120135,0.3954850152049479,35,0.0979788365713006,Organic Whole String Cheese | Mini Original Babybel Cheese | Mild Cheddar Cheese Sticks | Organic Stringles Mozzarella String Cheese | Light Mozzarella String Cheese
+mac_and_cheese,PREPARED DISHES & MEALS,118454,0.38995115487648807,188,0.5262863221544146,Organic Macaroni Shells & Real Aged Cheddar | Bunny Pasta with Yummy Cheese Macaroni & Cheese | Shells & Real Aged Cheddar Macaroni & Cheese | Organic Shells And White Cheddar | Macaroni & Cheese Dinner Original Flavor
+frozen_waffles,FROZEN FOODS,117669,0.3873669309872312,80,0.22395162644868707,Organic Multigrain Waffles | Eggo Homestyle Waffles | Organic Homestyle Waffles | Gluten Free Blueberry Waffles | Wheat Gluten Free Waffles
+hot_pepper,PRODUCE - VEGETABLES,115990,0.3818396546686803,138,0.38631655562398526,Jalapeno Peppers | Organic Jalapeno Pepper | Serrano Chile Peppers | Poblano Pepper | Mild Diced Green Chiles
+sweet_potato,PRODUCE - VEGETABLES,113585,0.37392238275318607,36,0.10077823190190918,Organic Garnet Sweet Potato (Yam) | Organic Yams | Sweet Potatoes | Garnet Sweet Potato (Yam) | Sweet Potato Yam
+mushroom,PRODUCE - VEGETABLES,113191,0.37262533280112586,105,0.2939365097139018,Sliced White Mushrooms | Organic Sliced White Mushrooms | Organic Sliced Crimini Mushrooms | Organic Baby Bella Mushrooms | White Sliced Mushrooms
+coconut_water,BEVERAGES,110439,0.3635657351664314,91,0.2547449750853816,100% Raw Coconut Water | Pure Coconut Water | Natural Premium Coconut Water | Coconut Water | Organic Coconut Water
+granola,BREAKFAST,110259,0.3629731742746273,215,0.6018699960808466,Ancient Grain Original Granola | Vanilla Blueberry Clusters With Flax Seeds Granola | Flax Plus Organic Pumpkin Flax Granola | Peanut Butter Whole Grain Clusters | Healthy Grains Oats & Honey Clusters with Toasted Coconut Gluten Free
+bagel,BREAD & BAKERY,110138,0.3625748416751367,78,0.21835283578746992,Plain Bagels | Plain Pre-Sliced Bagels | Plain Mini Bagels | Everything Bagels | Presliced Everything Bagels
+peanut_butter,SPREADS & JAMS,109582,0.3607444869204528,124,0.347125020995465,Creamy Peanut Butter | Organic Creamy Peanut Butter | Peanut Butter Creamy With Salt | Crunchy Peanut Butter | Classic Peanut Butter
+cheese_blend,DAIRY,100856,0.33201845168776983,137,0.3835171602933766,Organic Mexican Blend Finely Shredded Cheese | Original Semisoft Cheese | Organic Muenster Cheese Slices | Light Semisoft Cheese | Mexican Finely Shredded Cheese
+olive_oil,"OILS, FATS & VINEGARS",98120,0.32301152613234685,101,0.2827389283914674,Extra Virgin Olive Oil | Organic Extra Virgin Olive Oil | Italian Extra Virgin Olive Oil | Unfiltered Extra Virgin Olive Oil | Organic Extra Virgin Oil Olive
+english_muffin,BREAD & BAKERY,98116,0.32299835811252897,51,0.14276916186103802,Original Nooks & Crannies English Muffins | Organic Whole Grain Wheat English Muffins | Whole Wheat English Muffins | Organic Sprouted English Muffin | Light Multi-Grain English Muffins
+arugula,PRODUCE - VEGETABLES,96528,0.31777065424483464,16,0.044790325289737414,Organic Baby Arugula | Baby Arugula | Wild Arugula | Organic Alfalfa Sprouts | Organic Bunch Arugula
+pretzels,SNACKS,95403,0.3140671486710587,134,0.3751189743015509,Pretzel Crisps Original Deli Style Pretzel Crackers | Dark Chocolate Pretzels with Sea Salt | Gluten Free Pretzel Sticks | Tiny Twists Pretzels | Gluten Free Pretzel Twists
+peas,PRODUCE - VEGETABLES,94612,0.31146317275207497,63,0.17636190582834108,Organic Frozen Peas | Sugar Snap Peas | Green Peas | Organic Sugar Snap Peas | Stringless Sugar Snap Peas
+fruit_snacks,SNACKS,92476,0.3044314501693325,184,0.5150887408319803,Organic Bunny Fruit Snacks Berry Patch | Organic Summer Strawberry Bunny Fruit Snacks | Kids Sensible Foods Broccoli Littles | Organic Bunny Fruit Tropical Treat Fruit Snacks | Sea Salt Roasted Seaweed
+ginger,PRODUCE - VEGETABLES,92285,0.3038026772230292,29,0.08118246458764906,Organic Ginger Root | Fresh Ginger Root | Turmeric Root | Minced Ginger | Chopped Ginger
+heavy_cream,DAIRY,91214,0.3002769399167946,44,0.12317339454677789,Organic Heavy Whipping Cream | Heavy Whipping Cream | Organic Whipping Cream | Heavy Cream | Classic Whipped Cream
+black_beans,PROTEIN - PLANT-BASED,90243,0.2970804031060067,45,0.12597278987738647,Organic Black Beans | No Salt Added Black Beans | Black Beans No Salt Added | Baked Beans | Low Sodium Black Beans
+blackberry,PRODUCE - FRUIT,88930,0.2927580006007909,7,0.019595767314260118,Organic Blackberries | Blackberries | Honestly Healthy Blackberries | Frozen Marion Blackberries | Marion Blackberries
+veggie_chips,SNACKS,87236,0.287181344207923,137,0.3835171602933766,Original Veggie Straws | Veggie Chips | Original Real Vegetable Chips | Baked Caesar Snapea Crisps | Mediterranean Vegetable Chips
+salad_dressing,CONDIMENTS & SAUCES,86813,0.2857888261121833,479,1.340910363361514,Ranch Dressing | Organic Ranch Dressing | Real French Vinaigrette Dressing | Olive Oil & Vinegar Dressing | Poppy Seed Dressing
+frozen_vegetables,FROZEN FOODS,85934,0.2828951537572064,112,0.3135322770281619,Organic Broccoli Florets | Organic Chopped Spinach | Organic Mixed Vegetables | Mixed Vegetables | Vegetable Medley
+green_beans,PRODUCE - VEGETABLES,85911,0.2828194376432537,57,0.15956553384468955,Green Beans | Organic Snipped Green Beans | Organic Cut Green Beans | Organic Green Beans | Cut Green Beans
+oats,"GRAINS, PASTA & RICE",83139,0.27369399990946985,88,0.24634678909355578,Organic Old Fashioned Rolled Oats | Organic Quick Oats | Organic Rolled Oats | Steel Cut Oats | Gluten Free Old Fashioned Rolled Oats
+almond_butter,SPREADS & JAMS,81400,0.2679692032936509,84,0.23514920777112144,Creamy Almond Butter | Crunchy Almond Butter | Classic Almond Butter | Hazelnut Spread With Skim Milk & Cocoa | Roasted Almond Butter
+lemonade,BEVERAGES,80825,0.26607630044483216,147,0.4115111135994626,Lemonade | All Natural Virgin Lemonade | Raspberry Lemonade | Berry Berry Good Lemonade Organic Juice Drink | Limeade
+applesauce,SPREADS & JAMS,80471,0.26491093069095073,100,0.27993953306085884,Organic AppleApple | Apple Cinnamon GoGo Squeez | Apple Sauce | Gogo Squeez Organic Apple Strawberry Applesauce on the Go | Organic Apple Banana GoGo Squeez
+cottage_cheese,DAIRY,76682,0.2524375239184735,78,0.21835283578746992,Organic Small Curd Cottage Cheese | Organic Cottage Cheese | Lowfat Small Curd Cottage Cheese | Organic 4% Milk Fat Whole Milk Cottage Cheese | Lowfat 2% Milkfat Cottage Cheese
+hot_dog,PROTEIN - MEAT,76284,0.25112730594659544,84,0.23514920777112144,Organic Beef Hot Dogs | Organic Beef Uncured Hot Dogs | Beef Franks | Uncured Beef Hot Dogs | Organic Turkey Hot Dogs
+sour_cream,DAIRY,76057,0.25038002082193134,52,0.1455685571916466,Organic Sour Cream | Pure & Natural Sour Cream | Creme Fraiche | Pure & Natural Light Sour Cream | French Onion Dip
+tofu,PROTEIN - PLANT-BASED,75626,0.24896116668655585,80,0.22395162644868707,Organic Extra Firm Tofu | Firm Tofu | Organic SprouTofu Extra Firm Tofu | Organic SprouTofu Teriyaki Tofu Cutlets | Hickory Smoked Ultra Thin Deli Slices
+dried_fruit,PRODUCE - FRUIT,74513,0.24529716517223357,183,0.5122893455013716,Organic Medjool Dates | Pitted Dates | Pitted Prunes | Organic Shredded Unsweetened Coconut | Dried Mangos
+mango,PRODUCE - FRUIT,73473,0.24187348001958744,32,0.08958065057947483,Mango Chunks | Dried Mango | Organic Mango | Tommy/Kent/Keitt/Haden Mango | Red Mango
+cabbage,PRODUCE - VEGETABLES,71505,0.23539481426919548,72,0.20155646380381836,Organic Green Cabbage | Organic Red Cabbage | Bok Choy | Green Cabbage | Red Cabbage
+frozen_appetizer,PREPARED DISHES & MEALS,71095,0.23404509223786382,216,0.6046693914114551,"Cheese Pizza Snacks | Shoestring Fries | Pizza Poppers, Three Cheese | Pepperoni Pizza Rolls | Brazilian Cheese Bread Original Cheddar and Parmesan"
+chicken_nuggets,PREPARED DISHES & MEALS,69636,0.22924205700929579,66,0.18476009182016684,Naturals Chicken Nuggets | Air Chilled Breaded Chicken Breast Nuggets | Seven Grain Crispy Tenders | Kidz All Natural Baked Chicken Nuggets | Gluten-Free Chicken Nuggets
+sourdough,BREAD & BAKERY,68653,0.22600601613905427,49,0.13717037119982084,Sourdough Bread | California Sourdough Bread | Sourdough Baguette | Sliced Sourdough Bread | Rocky Mountain Sourdough Bread
+kiwi,PRODUCE - FRUIT,66258,0.21812166427310473,15,0.04199092995912883,Organic Kiwi | Kiwi | Gold Kiwi | Star Fruit | Kiwifruit
+apple_juice,BEVERAGES,65717,0.21634068959273783,75,0.20995464979564415,Organic Apple Juice | Apple Juice | Organic Apple Juice Boxes | 100% Pure Apple Juice | Appley Ever After Organic Juice Drink
+sports_drink,BEVERAGES,62917,0.20712307572022895,152,0.4255080902525054,Vitamin Water Zero Squeezed Lemonade | Fruit Punch Sports Drink | Vitamin Water Zero Rise Orange | VitaminWater Zero™ XXX Acai Blueberry Pomegranate | Lemon Lime Thirst Quencher
+hash_browns,FROZEN FOODS,61586,0.20274141712583277,95,0.26594255640781594,Shredded Hash Browns | Sweet Potato Fries with Sea Salt | Organic Seasoned Yukon Select Potatoes Hashed Browns | Organic Yukon Select Fries | Crinkle Cut French Fries
+pita_chips,SNACKS,61222,0.2015431273224066,32,0.08958065057947483,"Sea Salt Pita Chips | Pita Chips Simply Naked | Organic Simply Naked Pita Chips | Multigrain Pita Chips | Pita Chips, Simply Naked, Party Size"
+plant_based_meat,PROTEIN - PLANT-BASED,61205,0.20148716323818067,106,0.2967359050445104,Beyond Beef Beefy Crumble | Classic Meatless Meatballs | Vegan Apple Maple Breakfast Sausage | Beyond Beef Fiesty Crumble | Mandarin Orange Crispy Chick'n
+pineapple,PRODUCE - FRUIT,61039,0.2009406904157391,47,0.13157158053860366,Pineapple Chunks | Pineapple | Large Pineapple Chunks | Golden Pineapple | Pure Organic Pineapple Juice
+ground_turkey,PROTEIN - MEAT,60387,0.1987943031854263,33,0.09238004591008342,Ground Turkey Breast | Lean Ground Turky | Organic Ground Turkey | Extralean Ground Turkey Breast | Ground Turkey
+chocolate_chips,BAKING,59138,0.19468258899729643,133,0.37231957897094226,Semi-Sweet Chocolate Premium Baking Chips | Toll House Semi-Sweet Chocolate Morsels | Semi-Sweet Mini Chocolate Chips | 60% Cacao Bittersweet Premium Baking Chips | Semisweet Chocolate Chips
+oatmeal,BREAKFAST,57495,0.1892738248571064,133,0.37231957897094226,Original Instant Oatmeal | Apple Cinnamon Instant Oatmeal | Instant Oatmeal Maple & Brown Sugar | Steel Cut Irish Oatmeal | Brown Sugar Maple Oatmeal with Ancient Grains
+peach,PRODUCE - FRUIT,56791,0.18695625336916133,41,0.11477520855495214,Organic Yellow Peaches | Organic Sliced Peaches | Frozen Peaches | Organic Large White Flesh Peach | Peaches
+white_rice,"GRAINS, PASTA & RICE",56216,0.18506335052034253,96,0.2687419517384245,Organic Long Grain White Rice | Organic Jasmine Rice | Organic White Basmati Rice | Organic California White Basmati Rice | Extra Long Grain Enriched Rice
+chickpeas,PROTEIN - PLANT-BASED,55338,0.1821729701703201,51,0.14276916186103802,Organic Garbanzo Beans | Organic Garbanzo Beans No Salt Added | Garbanzo Beans | Chick Peas | Garbanzo Beans No Salt Added
+muffin,BREAD & BAKERY,55187,0.18167587742219551,213,0.5962712054196293,"Gluten Free Blueberry Muffins | Mini Blueberry Muffins | Blueberry Muffins | Little Bites Chocolate Chip Muffins | Muffins, Flax, Wild Blueberry"
+popsicles,FROZEN FOODS,55131,0.18149152514474534,138,0.38631655562398526,"Watermelon Agave Frozen Pops | Strawberry Lemonade Frozen Pops | Coconut Almond Minis Frozen Dessert Bars | Coconut Fruit Bars | Ice Pops Sugar Free, Orange, Cherry, Grape"
+hamburger_bun,BREAD & BAKERY,54145,0.17824560825964042,84,0.23514920777112144,Authentic French Brioche Hamburger Buns | Soft Pretzel Burger Buns | Soft Pretzel Mini Buns | Thin Whole Wheat Sandwich Buns | 100% Whole Wheat Pre-Sliced Sandwich Thins
+mayonnaise,CONDIMENTS & SAUCES,54074,0.17801187590787323,110,0.30793348636694473,"Real Mayonnaise | Organic Mayonnaise | Just Mayo | Mayonnaise, Classic | Mayonnaise"
+feta,DAIRY,53778,0.1770374424413509,44,0.12317339454677789,Feta Cheese Crumbles | Feta Cheese | Traditional Crumbled Feta Cheese | Feta Crumbled Traditional Cheese | Feta Cheese In Brine
+ground_beef,PROTEIN - MEAT,51703,0.1702065321608309,48,0.13437097586921226,85% Lean Ground Beef | 93% Ground Beef | 90% Lean Ground Beef | Ground Buffalo | 80% Lean Ground Beef
+white_sugar,BAKING,51509,0.1695678831996642,109,0.30513409103633615,Premium Pure Cane Granulated Sugar | Organic Cane Sugar | Pure Granulated Cane Sugar | No Calorie Sweetener Packets | Classic Air-Puffed Vanilla Flavored Marshmallows
+frozen_burrito,PREPARED DISHES & MEALS,51054,0.1680700209453815,94,0.2631431610772073,Bean & Cheese Burrito | Organic Gluten Free Non-Dairy Beans & Rice Burrito | Cheddar Cheese Burrito | Made With Organic Beans & Rice Burrito Non-Dairy | Black Bean Vegetables Burrito
+corn,PRODUCE - VEGETABLES,48197,0.15866476279046798,97,0.2715413470690331,Organic Whole Kernel Sweet Corn No Salt Added | Sweet Corn On The Cob | Fully Husked & Trimmed Super Sweet Corn | Vegetarian Organic Golden Corn | Organic Fire Roasted Corn
+swiss,DAIRY,47657,0.1568870801150556,101,0.2827389283914674,Emmentaler Swiss Slices | Creamy Swiss Original Wedges Cheese | Baby Swiss Slices Cheese | Natural Deli Style Sliced Swiss Cheese | Le Gruyere Cheese
+watermelon,PRODUCE - FRUIT,47099,0.15505014135046274,15,0.04199092995912883,"Watermelon Chunks | Mini Seedless Watermelon Pack | Cold-pressed, Deliciously Hydrating Watermelon Water | Organic Seedless Watermelon | Seedless Watermelon"
+brown_rice,"GRAINS, PASTA & RICE",46743,0.15387818758667232,59,0.1651643245059067,Organic Brown Rice | Organic Short Grain Brown Rice | Organic Long Grain Brown Rice | Whole Grain Brown Ready Rice | Whole Grain Brown Rice
+hot_sauce,CONDIMENTS & SAUCES,46350,0.1525844296395666,133,0.37231957897094226,Original Hot Sauce | Sriracha Chili Sauce | Sriracha Hot Chili Sauce | Hot Sauce | Red Hot Original Cayenne Pepper Sauce
+beer,BEVERAGES,45850,0.15093842716233288,347,0.9713901797211802,Beer | India Pale Ale | Belgian White Wheat Ale | Little Sumpin' Sumpin' Ale | Premium Lager Beer
+ketchup,CONDIMENTS & SAUCES,45795,0.15075736688983718,45,0.12597278987738647,Organic Ketchup | Squeeze Tomato Ketchup | Original Sauce | Pitted Kalamata Olives | Organic Sweet Relish
+tomato_sauce,PRODUCE - VEGETABLES,45574,0.15002983379489987,48,0.13437097586921226,Organic Tomato Sauce | Tomato Sauce | 100% Natural Tomato Sauce | Strained Tomatoes | Organic Strained Tomatoes
+goat_cheese,DAIRY,45365,0.14934180475941616,81,0.22675102177929568,Goat Cheese Crumbles | Goat Cheese Log | Humboldt Fog | Triple Creme Goat Brie | Fresh Goat Cheese
+all_purpose_flour,BAKING,45163,0.14867681975861374,174,0.4870947875258944,"All Purpose Flour | Unbleached All-Purpose Flour | Chocolate Chip Cookie Dough | Pie Crusts | Organic Traditional 9\"" Pie Shells 2 ct"
+strawberry_jam,SPREADS & JAMS,45000,0.14814022295103554,41,0.11477520855495214,"Strawberry Preserves | Organic Strawberry Fruit Spread | Fruit Spread, Deluxe, Strawberry | Premium Organic Strawberry Spread | Seedless Strawberry Jam"
+american_cheese,DAIRY,44621,0.14689255307329238,61,0.1707631151671239,Organic American Cheese Singles | Singles American Cheese Slices | American Cheese Slices 12 Count | Unprocessed American Singles Colby-Style Cheese | American Cheese slices
+tomato_paste,PRODUCE - VEGETABLES,44243,0.14564817520050366,21,0.05878730194278036,"Organic Tomato Paste | Tomato Paste | Organic Premium Tomato Paste | Organic Tomato Paste, No Salt Added | Natural Tomato Paste"
+almonds,NUTS & SEEDS,43579,0.1434622839107373,65,0.18196069648955826,Roasted & Salted Almonds | Almonds | Marcona Almonds | Dry Roasted Almonds | Sliced Almonds
+egg_whites,DAIRY,42548,0.14006822680268133,15,0.04199092995912883,Organic Egg Whites | Liquid Egg Whites | Cage Free  100% Liquid Egg Whites | All Whites 100% Egg Whites | All Whites 100% Liquid Egg Whites
+canned_tuna,PROTEIN - SEAFOOD,42543,0.140051766777909,139,0.3891159509545938,Wild Albacore Tuna No Salt Added | Solid White Albacore Tuna In Water | Chunk Light Tuna In Water | Chunk Light Tuna | Solid White Albacore Tuna
+energy_drink,BEVERAGES,41891,0.1379053795475962,160,0.44790325289737415,Energy Drink | Sugar Free Energy Drink | Zero Go-Go Mixed Berry Vitamin Water | Sugarfree | Energy Tropical Citrus Vitamin Water Drink
+nectarine,PRODUCE - FRUIT,41012,0.13501170719261932,10,0.027993953306085884,Large Yellow Flesh Nectarine | Organic Nectarine | Nectarines | White Nectarine | Yellow Nectarines
+dinner_roll,BREAD & BAKERY,40003,0.13169007419356166,75,0.20995464979564415,Crescent Rolls | Sweet Rolls | Original Crescent Rolls | Original Hawaiian Sweet Rolls | Authentic French Brioche Rolls
+chicken_tenders,PROTEIN - MEAT,39944,0.13149584590124808,38,0.10637702256312635,Organic Chicken Strips | Chicken Breast Tenders Breaded | Gluten Free Breaded Chicken Breast Tenders | Chicken Tenders | Grilled Chicken Strips
+grapefruit,PRODUCE - FRUIT,39758,0.13088353297971714,30,0.08398185991825766,"Large Grapefruit | Red Grapefruit | Ruby Red Grapefruit Juice | Premium Grapefruit Large | Grapefruit, Bag"
+wine,BEVERAGES,39666,0.13058066852390612,290,0.8118246458764907,Chardonnay | Pinot Grigio | Malbec | Chardonnay Wine | Red Blend
+cherry,PRODUCE - FRUIT,39001,0.12839148522918528,40,0.11197581322434354,Bing Cherries | Organic Dark Sweet Cherries | Organic Cherries | Dark Sweet Cherries | Rainier Cherries
+mustard,CONDIMENTS & SAUCES,38399,0.12640969824659587,126,0.35272381165668215,Organic Yellow Mustard | Classic Yellow Mustard | Dijon Mustard | Organic Honey Mustard | Spicy Brown Mustard
+vegetable_broth,COOKING LIQUIDS,37941,0.12490195997744977,46,0.12877218520799508,"Organic Vegetable Broth | Organic Low Sodium Vegetable Broth | Vegetable Broth Low Sodium | Simply Stock Organic Vegetable Unsalted Stock | Vegetable Base, Organic"
+raisin,PRODUCE - FRUIT,37937,0.12488879195763189,34,0.09517944124069201,Organic Thompson Seedless Raisins | Raisins | Organic Thompson Raisins | Natural California Raisins | Snack Size Vanilla Yogurt Raisins
+butternut_squash,PRODUCE - VEGETABLES,37683,0.12405262269919717,18,0.05038911595095459,Organic Butternut Squash | Butternut Squash | Diced Butternut Squash | Organic Delicata Squash | Fresh Cut Butternut Squash
+guacamole,CONDIMENTS & SAUCES,37556,0.12363453806997979,36,0.10077823190190918,Guacamole | Organic Guacamole | Chunky Guacamole | Mild Guacamole | Guacamole Authentic
+plant_based_burger,PROTEIN - PLANT-BASED,37322,0.1228642089106344,83,0.23234981244051284,California Veggie Burgers - 4 CT | Sensible Foods Kale Veggie Burgers - 4 CT | Beast Burger | Super Greens Veggie Burgers | Black Bean Veggie Burger
+salt,SPICES & SEASONINGS,37238,0.12258768049445916,118,0.3303286490118134,Sea Salt Fine Crystals | Coarse Kosher Salt | Iodized Salt | Kosher Salt | Sea Salt Flakes Original
+radish,PRODUCE - VEGETABLES,36475,0.12007588071420049,17,0.047589720620346006,"Organic Red Radish, Bunch | Organic Daikon Root, Bunch | Radish | White Horseradish | Spicy Red Radish Kimchi"
+chips_pretzels,Unknown,35390,0.11650405533860328,17,0.047589720620346006,"Lightly Salted Baked Snap Pea Crisps | Vegan Aged White Cheddar Flavor Puffs | Aged White Cheddar Gluten-Free Baked Rice And Corn Puffs | Kale Krunch, Organic, Southwest Ranch | Organic Seaweed Snack Sea Salt"
+filled_pasta,"GRAINS, PASTA & RICE",35248,0.1160365906350689,129,0.36112199764850794,"Freshly Made. Filled with Creamy Ricotta, Aged Parmesan and Romano Cheeses Three Cheese Tortellini | Ravioli, Spinach & Cheese | Wild Chanterelle Mushroom Ravioli | Organic Cheesy Ravioli | Four Cheese Ravioli"
+trail_mix,SNACKS,34941,0.1150259451140474,104,0.2911371143832932,Trail Mix | Pub Mix | Traditional Snack Mix | Blueberry Blaze Trail Mix | Berry Bounty Trail Mix
+beet,PRODUCE - VEGETABLES,34721,0.11430170402406456,41,0.11477520855495214,Organic Bunch Beets | Organic Peeled & Cooked Beets | Sliced Beets No Salt Added | Organic Gold Beet Bunch | Beets Bunch
+pancake_mix,BREAKFAST,33854,0.11144753572854128,185,0.5178881361625889,Natural Buttermilk Pancake & Waffle Mix | Buttermilk Complete Pancake & Waffle Mix | Gluten-Free Pancake Mix | Double Chocolate Brownie Mix | Banana Bread Mix
+white_beans,PROTEIN - PLANT-BASED,33668,0.11083522280701033,54,0.1511673478528638,Organic Cannellini Beans | Cannellini White Kidney Beans No Salt Added | Organic Great Northern Beans | Cannellini Beans | Black Eyed Peas
+baguette,BREAD & BAKERY,33480,0.11021632587557044,47,0.13157158053860366,Sweet Baguette | French Baguette | French Loaf | French Baguette Bread | Baguette Sourdough
+eggplant,PRODUCE - VEGETABLES,33161,0.10916617629509534,16,0.044790325289737414,Globe Eggplant | Fancy Eggplant | Organic Eggplant | Chinese Eggplant | Eggplant Large
+taco_seasoning,SPICES & SEASONINGS,32911,0.10834317505647845,81,0.22675102177929568,Taco Seasoning | Original Taco Seasoning Mix | Taco Seasoning Mix Original | Fajita Seasoning | Taco Seasoning Mix
+refried_beans,PROTEIN - PLANT-BASED,32438,0.10678605671301535,55,0.15396674318347237,Traditional Refried Beans | Organic Refried Black Beans | Vegetarian Refried Beans | Low Sodium Refried Black Beans | Black Beans Refried Beans
+rice_cakes,SNACKS,32282,0.10627250394011845,42,0.11757460388556072,Organic Lightly Salted Brown Rice Cakes | Organic Brown Rice Cake Salt-Free | Lightly Salted Rice Cakes | Lightly Salted Brown Rice Cakes | Cinnamon Toast Organic Rice Cakes
+frozen_yogurt,FROZEN FOODS,31917,0.1050709221317378,82,0.2295504171099043,Half Baked Frozen Yogurt | Mocha Almond Fudge Minis Almond Milk Frozen Dessert | Mint Chocolate Chip Frozen Greek Yogurt Bars | Cherry Garcia Frozen Yogurt | Sea Salt Caramel Frozen Greek Yogurt Bars
+instant_rice,"GRAINS, PASTA & RICE",31874,0.10492936591869571,93,0.26034376574659873,Original Rice Pilaf Mix | Spanish Rice Pilaf Mix | Original Mashed Potatoes | Jasmine Ready Rice | Garlic & Herb Rice Pilaf Mix
+monterey_jack,DAIRY,31701,0.10435984906157283,82,0.2295504171099043,Monterey Jack Cheese | Natural Muenster Cheese | Colby-Jack Cheese Sticks | Pepper Jack Cheese | Big Slice Colby Jack Cheese Slices
+honey,BAKING,31254,0.1028883228469259,108,0.3023346957057276,Organic Mountain Forest Amber Honey | Organic Honey | Pure Clover Honey | Organic Mountain Forest Honey Light Amber | Orange Blossom Honey
+chicken_thigh,PROTEIN - MEAT,30890,0.10169003304349973,26,0.0727842785958233,Boneless Skinless Chicken Thighs | Organic Chicken Thighs | Chicken Thighs | Organic Chicken Drumsticks | Organic Boneless Skinless Chicken Thighs
+graham_crackers,SNACKS,30845,0.10154189282054871,61,0.1707631151671239,Honey Maid Graham Crackers | Honey Graham Sticks | Honey Bunny Grahams | Organic Honey Graham Crackers | Chocolate Whole Grain Graham Snacks Bunny Grahams
+jerky,SNACKS,30566,0.10062342343825227,84,0.23514920777112144,Original Beef Jerky | Peppered Turkey Jerky | Uncured Cracked Pepper Beef | Steak Strips | Teriyaki Beef Jerky
+plum,PRODUCE - FRUIT,30459,0.10027117890812424,11,0.030793348636694473,Black Plum | Red Plums | Organic Black Plum | Red Plum | Pluot
+cold_brew,BEVERAGES,30416,0.10012962269508215,60,0.1679637198365153,Cold-Brew Black Coffee | Cafe Latte Pure Lightly Sweetened Iced Coffee With Almond Milk | Cold Brew Coffee Mocha | Original Cold Brew  Coffee With Milk | Concentrated Cold Brew Coffee
+coconut_oil,"OILS, FATS & VINEGARS",30324,0.09982675823927115,41,0.11477520855495214,Unrefined Virgin Coconut Oil | Organic Refined Coconut Oil | Organic Coconut Oil | Expeller Pressed Coconut Oil Spray | Organic Unrefined Coconut Oil
+hot_dog_bun,BREAD & BAKERY,29902,0.0984375321484859,42,0.11757460388556072,Hot Dog Buns | Potato Hot Dog Buns | Sausage Buns | Euro Classic Brioche Hot Dog Buns | Gluten Free Classic Hotdog Buns
+pesto,CONDIMENTS & SAUCES,29509,0.09714377420138018,45,0.12597278987738647,Basil Pesto | Traditional Basil Pesto Sauce | Made with Extra Virgin Olive Oil Pesto sauce with Basil | Pesto Alla Genovese Basil | Pesto Sauce
+edamame,PROTEIN - PLANT-BASED,28290,0.09313082016188434,33,0.09238004591008342,Organic Edamame | Edamame In Pod | Organic Mung-Bean Sprouts | Shelled Edamame | Edamame
+spirits,Unknown,28108,0.09253167526017127,199,0.5570796707911091,"Vodka | 80  Vodka Holiday Edition | Handmade Vodka From Austin, Texas | Handmade Vodka | Frontier Whiskey"
+jam_other,SPREADS & JAMS,27591,0.0908297086987116,160,0.44790325289737415,Apricot Preserves | Wild Blueberry Preserves | Four Fruits Preserves | Cherry Preserves | Blackberry Preserves
+cantaloupe,PRODUCE - FRUIT,27254,0.08972030302905606,10,0.027993953306085884,Cantaloupe | Small Cantaloupe | Cantaloupe Chunks | Cantaloupe Spears | Cantaloupe Half
+quinoa,"GRAINS, PASTA & RICE",26281,0.08651718220835923,63,0.17636190582834108,Organic Quinoa & Brown Rice With Garlic | Rosemary & Olive Oil Quinoa Blend | Organic Traditional Gluten Freen Quinoa | Organic Quinoa | Gluten Free Inca Red
+provolone,DAIRY,26170,0.08615176965841334,21,0.05878730194278036,Provolone | Provolone Slices | Organic Sliced Provalone Cheese | Ultra Thin Sliced Provolone Cheese | Smoked Gouda
+vegetable_oil,"OILS, FATS & VINEGARS",25596,0.08426215881454902,46,0.12877218520799508,Canola Oil | Organic Canola Oil | Pure Vegetable Oil | Vegetable Oil | Pure Canola Oil
+soy_sauce,CONDIMENTS & SAUCES,25587,0.08423253076995882,55,0.15396674318347237,37% Less Sodium Soy Sauce | Ccnut Raw Cocoaminos | Soy Sauce | Tamari Gluten Free Soy Sauce Reduced Sodium | Tamari Gluten Free Soy Sauce
+mixed_berries,PRODUCE - FRUIT,25159,0.08282355264944674,19,0.053188511281563176,Berry Medley | Organic Berry Blend | Mixed Berries | Mixed Berries Wildly Nutritious Signature Blends | Tropical Mix
+sorbet,FROZEN FOODS,25055,0.08248118413418212,61,0.1707631151671239,Roman Raspberry Sorbetto | Sorbet Pops Strawberry | Mango Sorbet | Mango Sorbet Pops | Raspberry Sorbet
+walnuts,NUTS & SEEDS,24502,0.08066070539436161,18,0.05038911595095459,Walnut Halves & Pieces | Chopped Walnuts | Shelled Walnuts | Walnuts | Walnut Halves And Pieces
+salmon,PROTEIN - SEAFOOD,24104,0.07935048742248357,61,0.1707631151671239,Coho Salmon | Wild Caught Frozen Sockeye Salmon Fillet | Wild Sockeye Salmon | Alaskan Salmon Burgers | Traditional Scottish Style Smoked Salmon
+apple_cider_vinegar,"OILS, FATS & VINEGARS",23908,0.07870525445140794,21,0.05878730194278036,"Apple Cider Vinegar | Organic Raw Unfiltered Apple Cider Vinegar | Organic Apple Cider Vinegar Ginger Spice All Natural Drink | Organic Apple Cider Vinegar Drink, Concord Grape-Acai | Organic Apple Cider Vinegar All Natural Drink Apple Cinnamon"
+condensed_soup,COOKING LIQUIDS,23559,0.0775563447222988,71,0.19875706847320979,Organic Cream of Mushroom Condensed Soup | Condensed Cream of Mushroom Soup | Condensed Cream of Chicken Soup | Organic Cream Of Chicken Condensed Soup | Tomato Condensed Soup
+lime,PRODUCE - FRUIT,23350,0.07686831568681511,18,0.05038911595095459,Lime | Organic Biologique Limes | Key Limes | Organic Pure Lime Juice | Bag of Key Limes
+chard,PRODUCE - VEGETABLES,23225,0.07645681506750668,13,0.03639213929791165,"Organic Red Chard Greens | Organic Rainbow Chard Vegetable | Organic Chard Green | Chard, Green, New England Grown | Red Swisschard"
+beef_broth,COOKING LIQUIDS,23014,0.07576220202211405,56,0.15676613851408094,Organic Beef Broth | Low Sodium Beef Broth | Organic Beef Bone Broth | Beef Broth | Organic Beef Base
+pinto_beans,PROTEIN - PLANT-BASED,22715,0.07477789254072828,33,0.09238004591008342,Organic Pinto Beans | Pinto Beans No Salt Added | Pinto Beans | Original Baked Beans | Vegetarian Tangy Sauce With Brown Sugar & Spices Baked Beans
+frozen_pancakes,FROZEN FOODS,22637,0.07452111615427981,37,0.10357762723251777,Eggo Pancakes Minis | All Natural French Toast Sticks | A+ Cinnamon Sweet Potato Pancakes | Sesame Street Organic Mini Blueberry Pancakes | Buttermilk Pancakes 8 Count
+biscuit,BREAD & BAKERY,22327,0.0735005946183949,52,0.1455685571916466,Flaky Biscuits | Buttermilk Biscuits | Cinnamon Roll Dough With Icing | Grands! Flaky Layers Original Biscuits | Cinnabon Cinnamon Rolls With Icing
+cranberry,PRODUCE - FRUIT,21831,0.07186776016097904,39,0.10917641789373496,Dried Sweetened Cranberries | Organic Sweetened Cranberries | Original Dried Cranberries | Original Craisins | Dried Cranberries
+instant_ramen,PREPARED DISHES & MEALS,21592,0.07108097097686132,100,0.27993953306085884,Chicken Flavor Ramen Noodle Soup | Cup Noodles Chicken Flavor | Tofu Miso Ramen | Vegan Ramen Chicken Flavor | Souper 6-Pack Chicken Flavor Ramen Noodle Soup
+cranberry_juice,BEVERAGES,21457,0.07063655030800822,69,0.19315827781199263,Cranberry Juice Cocktail | 100% Cranberry Juice | Organic Cranberry Pomegranate Juice | Diet Cranberry Fruit Juice | Organic Fresh Pressed Pure Cranberry Juice
+black_pepper,SPICES & SEASONINGS,21221,0.06985963713875389,76,0.2127540451262527,Ground Black Pepper | Black Peppercorns | Organic Ground Black Pepper | Organic Black Peppercorns | Organic Tellicherry Black Peppercorns
+frozen_lasagna,PREPARED DISHES & MEALS,20700,0.06814450255747635,48,0.13437097586921226,"Light & Lean Spinach Lasagna | Vegetable Lasagna | Simple Favorites Lasagna with Meat Sauce | Baked Cheese Ravioli | Lasagna, Vegetable, with Daiya Cheeze"
+brussels_sprouts,PRODUCE - VEGETABLES,20279,0.06675856847164555,26,0.0727842785958233,Petite Brussels Sprouts | Organic Brussel Sprouts | Organic Brussels Sprouts | Baby Brussels Sprouts | Brussel Sprouts
+pomegranate,PRODUCE - FRUIT,20048,0.06599811532716357,9,0.025194557975477296,Pomegranate | Wonderful 100% Pomegranate Juice | Pomegranate Arils | Pomegranate Seeds | Hand Picked Pomegranate Seeds/Arils
+tilapia,PROTEIN - SEAFOOD,19584,0.06447062502829067,19,0.053188511281563176,Tilapia Filet | Fresh Tilapia Fillet | Tilapia Fillets | Blue Tilapia Fillets | Fresh Tilapia Fillets
+cocoa_powder,BAKING,19537,0.06431590079543069,115,0.3219304630199877,Unsweetened Cocoa Powder | Cacao Powder | Cocoa Powder | Organic Hot Cocoa Mix | Milk Chocolate Hot Cocoa Mix
+couscous,"GRAINS, PASTA & RICE",19421,0.06393402822071247,33,0.09238004591008342,Garlic Couscous | Parmesan Couscous Mix | Pearled Couscous Original Plain | Toasted Pine Nut Couscous Mix | Roasted Garlic & Olive Oil Pearled Couscous
+bbq_sauce,CONDIMENTS & SAUCES,19144,0.06302214284832498,131,0.3667207883097251,Original Barbecue Sauce | Original BBQ Sauce | Original Bar BBQ Sauce | Barbecue Sauce | Thicker Style Barbecue Sauce
+vanilla_extract,BAKING,18928,0.06231106977816001,63,0.17636190582834108,"Organic Vanilla Extract | Pure Vanilla Extract | Madagascar Pure Vanilla Extract | Pure Madagascar Vanilla Extract | Vanilla Extract, Pure, Madagascar"
+pita,BREAD & BAKERY,18581,0.061168744058959806,34,0.09517944124069201,One Bun Multigrain Whole Grain Pita | Pita Bread | White Pita | Organic White Pita Bread | Mini Whole Wheat Pita Bread
+croissant,BREAD & BAKERY,18468,0.06079674749910499,28,0.07838306925704047,Authentic French Brioche | Pastry Kitchens Classic Puff Pastry | Petite Butter Croissant | Croissants | Mini Chocolate Croissant
+pickled_goods_olives,Unknown,18346,0.06039512289465995,31,0.08678125524886625,"Sliced Black Olives | Wild Non-Pareil Capers, Sunkissed in the Mediterranean | Italian Dill Spears Hot | Marinated Artichoke Hearts | Garlic Pickle Spears"
+red_wine,COOKING LIQUIDS,17972,0.05916391304168913,69,0.19315827781199263,"Cabernet Sauvignon | Pinot Noir | Cabernet Sauvignon Wine | California Red Wine | Cabernet Sauvignon, Central Coast, 2011"
+bread,Unknown,17856,0.05878204046697091,52,0.1455685571916466,Cinnamon Swirl Raisin Bread | Organic Multigrain Bread | Organic Pack Peasant Bread | Sweet Sliced Bread | Bread
+lentils,PROTEIN - PLANT-BASED,17596,0.05792611917880936,37,0.10357762723251777,Organic Red Lentils | Organic Lentil Beans | Lentils | Madras Lentils Indian Cuisine | Organic Mung Beans
+flatbread,BREAD & BAKERY,17434,0.05739281437618564,57,0.15956553384468955,Gluten Free Pizza Crust | Olive Oil & Sel Gris Sourdough Flatbread | Two Organic Cornmeal Pizza Crusts | Traditional Lavash Flatbread | Bolani Spinach Filled Flatbread
+pumpkin,PRODUCE - VEGETABLES,17408,0.057307222247369484,13,0.03639213929791165,100% Pure Pumpkin | Organic Pumpkin | Organic Pumpkin Puree | Organic Pumpkin Pie Mix | Easy Pumpkin Pie Mix
+spaghetti_squash,PRODUCE - VEGETABLES,17408,0.057307222247369484,2,0.005598790661217177,Organic Spaghetti Squash | Spaghetti Squash
+mixed_nuts,NUTS & SEEDS,17189,0.05658627316234111,38,0.10637702256312635,Extra Fancy Unsalted Mixed Nuts | Mixed Nuts | Deluxe Mixed Nuts | Mixed Nuts Lightly Salted | Natural Walnuts And Almonds 100 Calorie Packs
+whole_chicken,PROTEIN - MEAT,16850,0.05547028348277664,24,0.06718548793460613,Organic Air Chilled Whole Chicken | Fresh Whole Chicken | Chicken Drumsticks | Whole Chicken | Rotisserie Chicken
+maple_syrup,BAKING,16845,0.0554538234580043,91,0.2547449750853816,Genuine Chocolate Flavor Syrup | Organic Grade B Maple Syrup | Organic Chocolate Syrup | Original Lite Syrup | Organic Maple Syrup
+raspberry_jam,SPREADS & JAMS,16705,0.05499294276437887,26,0.0727842785958233,Raspberry Preserves | Organic Premium Raspberry Spread | Deluxe Red Raspberry Fruit Spread | Raspberry Fruit Spread | Santa Cruz OG Sdls Red Raspberry Fruit Spread
+frozen_fruit,FROZEN FOODS,16560,0.05451560204598108,29,0.08118246458764906,Organic Acai Berry Smoothie Packs | Organic Original Acai Berry + Guarana Smoothie Packs | Organic Triple Berry Blend | Triple Berry Blend | Frozen Organic Dark Sweet Cherries
+alfredo_sauce,CONDIMENTS & SAUCES,16457,0.054176525535670934,42,0.11757460388556072,Four Cheese Pasta Sauce | Alfredo Pasta Sauce | Signature Recipes Creamy Alfredo Pasta Sauce | Alfredo Sauce | Alfredo Sauce With Aged Parmesan Cheese
+kidney_beans,PROTEIN - PLANT-BASED,16333,0.05376831692131697,31,0.08678125524886625,Dark Red Kidney Beans No Salt Added | Red Kidney Beans | Dark Red Kidney Beans | Kidney Beans | Organic Kidney Beans Low Sodium
+white_vinegar,"OILS, FATS & VINEGARS",16182,0.05327122417319238,9,0.025194557975477296,Organic Distilled White Vinegar | Distilled White Vinegar | White Distilled Vinegar | White Vinegar | Vinegar
+gum,SNACKS,15896,0.05232971075621468,130,0.3639213929791165,Wrigley's Orbit Wintermint Sugar Free Gum- 3 PK | Natural Mint Gum | Sugarfree Gum Sweet Mint | White Sugar Free Peppermint Gum | Original Flavor Sugar Free Gum 3 Pk
+raw_sugar,BAKING,15880,0.05227703867694321,23,0.06438609260399754,"Cane Sugar | Organic Blonde Coconut Palm Sugar | Turbinado Cane Sugar Packets | Organic Turbinado, Raw Cane Sugar | Turbinado Cane Sugar"
+steak,PROTEIN - MEAT,15796,0.05200051026076794,30,0.08398185991825766,Beef Skirt Steak | Boneless Beef Sirloin Steak | Beef Loin New York Strip Steak | Flank Steak | Bone In Beef Rib Steak
+balsamic_vinegar,"OILS, FATS & VINEGARS",15744,0.05182932600313563,44,0.12317339454677789,Organic Balsamic Vinegar Of Modena | Balsamic Vinegar Of Modena | Balsamic Vinegar of Modena | Balsamic Vinegar | Aged Balsamic Vinegar
+curry_paste,CONDIMENTS & SAUCES,15668,0.05157913362659611,73,0.20435585913442694,Authentic Red Curry Paste | Green Curry Paste | Tikka Masala Mild Indian Simmer Sauce | Tikka Masala Simmer Sauce | Kashmiri Curry Mild Indian Simmer Sauce
+honeydew,PRODUCE - FRUIT,14970,0.049281314168377825,6,0.016796371983651533,Honeydew Melon | Honeydew Chunks | Organic Honeydew | Orange Honeydew Melon | Honeydew
+chia_seeds,NUTS & SEEDS,14620,0.04812911243431421,24,0.06718548793460613,Whole Chia Seeds | Hemp Hearts Raw Shelled Hemp Seeds | Organic Vitality Snack Chia Squeeze Blackberry Bliss | Organic White Chia Seed | Green Magic Chia Squeeze
+rice_noodles,"GRAINS, PASTA & RICE",14425,0.047487171468193055,42,0.11757460388556072,Stir-fry Rice Noodles | Pad Thai Brown Rice Noodles | Thin Rice Noodles | Kelp Noodles | Pad Thai Rice Noodles
+instant_soup,PREPARED DISHES & MEALS,14269,0.046973618695296135,77,0.2155534404568613,"Recipe Secrets Onion Soup & Dip Mix | Ramen, Vegan, Miso | Udon Soup Bowl | Miso Soup Bowl | Noodle Soup Mix With Chicken Broth"
+pot_pie,PREPARED DISHES & MEALS,14227,0.046835354487208505,24,0.06718548793460613,Chicken Pot Pie | Organic Chicken Pot Pie | Turkey Pot Pie | Frozen Microwaveable Chicken Pot Pie | Beef Pot Pie
+garlic_powder,SPICES & SEASONINGS,14189,0.04671025829893874,30,0.08398185991825766,Garlic Powder | Organic Garlic Powder | Garlic Salt | Organic Garlic Granules | Garlic Granules
+cumin,SPICES & SEASONINGS,13827,0.04551855250542152,32,0.08958065057947483,Ground Cumin | Organic Ground Cumin | Cumin Seed | Fennel Seed | Cumin
+brown_sugar,BAKING,13696,0.045087299856386286,19,0.053188511281563176,Dark Brown Sugar | Pure Dark Brown Cane Sugar | Pure Cane Golden Brown Sugar | Organic Dark Brown Sugar | Golden Brown Pure Cane Sugar
+canned_chili,PREPARED DISHES & MEALS,13533,0.044550703048808094,85,0.23794860310173005,Organic Medium Chili | Organic Bernie O's | Low Sodium Organic Medium Chili | No Beans Chili | Homestyle Corned Beef Hash
+powdered_sugar,BAKING,13372,0.044020690251138826,86,0.2407479984323386,Organic Powdered Sugar | Pure Cane Confectioners Powdered Sugar | Pure Cane Confectioners 10-X Powdered Sugar | Powdered Confectioners Sugar | Confectioners Powdered Sugar
+egg_noodles,"GRAINS, PASTA & RICE",12817,0.04219362750140939,44,0.12317339454677789,Wide Egg Noodles | Extra Wide Egg Noodles | Organic Tagliatelle Traditional Egg Pasta | Gluten Free 100% Organic Whole Grain Traditional Egg Pasta | Chow Mein Noodles
+ricotta,DAIRY,12799,0.04213437141222898,21,0.05878730194278036,Part Skim Ricotta Cheese | Almond Milk Ricotta | Part Skim Ricotta | Whole Milk Ricotta Con Latte | Ricotta Cheese
+cashews,NUTS & SEEDS,12768,0.04203231925864048,40,0.11197581322434354,Roasted Salted Cashews | Organic Raw Cashews | Deluxe Whole Cashews | Cashews Halves & Pieces | Lightly Salted Cashews Halves & Pieces
+cooking_spray,"OILS, FATS & VINEGARS",12562,0.041354166238020185,37,0.10357762723251777,Original Cooking Spray | Olive Oil Cooking Spray | Original Spray | High Heat Canola Spray Oil | Organic Olive Oil Cooking Spray
+pistachios,NUTS & SEEDS,12392,0.04079452539576072,27,0.0755836739264319,Pistachios | Shelled Pistachios | Roasted & Salted Shelled Pistachios | Roasted & Salted Pistachios | Salt & Pepper Pistachios
+buttermilk,DAIRY,12348,0.04064967717776415,17,0.047589720620346006,Cultured Low Fat Buttermilk | 1% Milkfat Low Fat Buttermilk | Organic 2% Buttermilk | Bulgarian Cultured Buttermilk | Buttermilk
+cornstarch,BAKING,12194,0.040142708414776164,64,0.17916130115894965,Corn Starch | 100% Pure Corn Starch | Original Unflavored Gelatine Mix | Arrowroot Starch/Flour | Organic Corn Starch
+peanuts,NUTS & SEEDS,11768,0.03874031430417303,39,0.10917641789373496,Roasted Salted Peanuts | Dry Roasted Lightly Salted Peanuts | Dry Roasted Peanuts | Honey Roasted Peanuts | Dry Roasted Unsalted Peanuts
+grape_juice,BEVERAGES,11440,0.0376605366791077,46,0.12877218520799508,Goodness Grapeness Organic Juice Drink | Grape 100% Juice | Concord Grape Juice | 100% Pure Grape Juice | Organic Grape Juice
+meal_kit,PREPARED DISHES & MEALS,11421,0.03759798858497282,83,0.23234981244051284,Yellow Corn Taco Dinner Kit | Blue Corn Taco Dinner Kit | Chicken Rice Mix | Stove Top Stuffing Mix For Chicken | Toasted Almond Rice Pilaf Mix
+cinnamon,SPICES & SEASONINGS,11263,0.03707785180216696,29,0.08118246458764906,Cinnamon | Ground Cinnamon | Cinnamon Sticks | Organic Cinnamon Sticks | Organic Ground Korintje Cinnamon
+sardines,PROTEIN - SEAFOOD,11224,0.03694946360894273,62,0.1735625104977325,Wild Sardines in Extra Virgin Olive Oil | Wild Caught Skinless & Boneless Sardines Packed in Pure Olive Oil | Wild Sardines in Spring Water | Natural Skinless & Boneless Sardines In Water | Lightly Smoked Sardines in Olive Oil
+collard_greens,PRODUCE - VEGETABLES,11180,0.03680461539094616,10,0.027993953306085884,Collard Greens | Seasoned Collard Greens | Turnip Greens | Collards | Seasoned Southern Style Mixed Greens
+baking_powder,BAKING,11095,0.036524794969816435,39,0.10917641789373496,Baking Powder | Double Acting Baking Powder | Classic Vanilla Flavor Marshmallow Minis | Cream Of Tartar | Baking Powder Aluminum-Free
+apricot,PRODUCE - FRUIT,10769,0.03545160135466004,15,0.04199092995912883,Apricots | Organic  Dried & Unsulfured Orchard Select Apricots | Apricot | Mediterranean Apricots | Organic Apricots
+seaweed_snacks,Unknown,10690,0.03519153296325711,1,0.0027993953306085883,Organic Sea Salt Roasted Seaweed Snacks
+ramen_noodles,"GRAINS, PASTA & RICE",10323,0.03398336714496755,36,0.10077823190190918,Chicken Flavor Top Ramen Noodles | Garlic Pepper Ramen | Mushroom Ramen | Organic Ramen Noodles | Organic Lemongrass Ginger Ramen
+baking_soda,BAKING,10053,0.03309452580726134,2,0.005598790661217177,Pure Baking Soda | Baking Soda
+ghee,DAIRY,10053,0.03309452580726134,14,0.039191534628520236,"Purity Farms Ghee Clarified Butter | Ghee, Original | Duck Fat | Himalayan Salted Ghee | Ghee"
+brie,DAIRY,9898,0.03258426503931889,44,0.12317339454677789,Brie | Camembert | Triple Creme Brie | Le Brie Mini Soft Ripened Cheese | Soft‑Ripened Brie Cheese
+blue_cheese,DAIRY,9630,0.03170200771152161,29,0.08118246458764906,"Blue Cheese Crumbles | Crumbled Blue Cheese | Cheese, Crumbles, Amish Blue | Amish Blue Cheese | Blue Cheese Crumbles Cheese"
+cornmeal,BAKING,9492,0.0312477110278051,56,0.15676613851408094,Corn Muffin Mix | Gluten Free Panko Breadcrumbs | Cornmeal Medium Grind | Original Gluten Free Breadcrumbs | Cornbread & Muffin Mix
+canned_salmon,PROTEIN - SEAFOOD,9141,0.030092217288787023,28,0.07838306925704047,Smoked Salmon | Wild Alaskan Pink Salmon | Boneless & Skinless Wild Alaskan Sockeye Salmon | Wild Pink Salmon | Pink Salmon
+agave,BAKING,9094,0.029937493055927047,13,0.03639213929791165,Organic Light Agave Nectar | Organic Raw Agave Nectar | Organic Blue Agave | Light Organic Agave Nectar | Organic Agave Nectar
+tahini,CONDIMENTS & SAUCES,8870,0.029200083946126342,20,0.05598790661217177,Organic Tahini | Organic Sesame Tahini | Tahini | Sesame Tahini | Hummus Tahini
+pecans,NUTS & SEEDS,8697,0.02863056708900347,21,0.05878730194278036,"Chopped Pecans | Pecan Halves | Baking Chopped Pecans | Organic Pecans | Valdosta Pecans With Cranberries, Black Pepper & Orange Zest"
+rye_bread,BREAD & BAKERY,8593,0.028288198573738856,44,0.12317339454677789,"Whole Rye Bread | Bread, Natural Pumpernickel | Bread, Jewish Rye | Organic Sour Rye Bread | Pumpernickel Dark Pump Bread"
+pancake_syrup,BREAKFAST,8576,0.028232234489512904,34,0.09517944124069201,Original Syrup | Organic Chocolate Flavored Syrup | Organic Pancake Syrup | Chocolate Syrup | Original Pancake Syrup
+tempeh,PROTEIN - PLANT-BASED,8516,0.028034714192244858,15,0.04199092995912883,"Organic Soy Tempeh | Fakin' Bacon Organic Smoky Tempeh Strips | Organic Three Grain Tempeh | Traditional Seitan | Organic Tempeh, Garden Veggie"
+pickled_goods,Unknown,8467,0.027873405949475953,16,0.044790325289737414,"Organic Kosher Dill Pickles | Sliced California Olives | Olives, Spanish, Manzanilla | Spicy Bread and Butter Pickles | Organic Smoked Jalapeno Kraut"
+ground_chicken,PROTEIN - MEAT,8409,0.027682469662116842,13,0.03639213929791165,Ground Chicken Breast | Organic Ground Chicken Breast | Organic Ground Chicken | Italian Style Chicken Meatballs with Mozarella Cheese | Ground Chicken
+coconut_flour,BAKING,8337,0.027445445305395187,14,0.039191534628520236,Coconut Flakes | Organic High Fiber Coconut Flour | Organic Coconut Flour | Shredded Coconut Unsweetened | Coconut Flour
+baby_cereal,BABY PRODUCTS,8336,0.027442153300440718,17,0.047589720620346006,Organic Whole Grain Oatmeal Cereal Baby Food | Organic Baby Foods Whole Grain Multi-Grain Cereal | Happy Bellies Organic Oatmeal Baby Cereal | Baby Mum-Mum Banana  Rice Rusks | Organic Multi-grain Baby Cereal
+wild_rice,"GRAINS, PASTA & RICE",8332,0.027428985280622847,28,0.07838306925704047,Wild Blend Rice | Organic Seven Whole Grains | Original Long Grain & Wild Rice Mix | Long Grain Wild Rice | Wild Rice
+chili_powder,SPICES & SEASONINGS,8117,0.026721204215412343,26,0.0727842785958233,Chili Powder | Organic Chili Powder Blend | Spicy Chili Seasoning | Original Chili Seasoning Mix | Vegetarian Chili Seasoning
+champagne,BEVERAGES,8100,0.0266652401311864,54,0.1511673478528638,Prosecco Sparkling Wine | Prosecco | Brut | Brut California Champagne | California Champagne Extra Dry
+paprika,SPICES & SEASONINGS,8089,0.026629028076687256,21,0.05878730194278036,Paprika | Organic Paprika | Seasoning Paprika | Smoked Paprika | Ground Smoked Paprika
+chips,Unknown,7842,0.025815902852933795,15,0.04199092995912883,Sea Salt Made With Organic Grain Rice Chips | Crunchy Flamin' Hot | Onion Flavored Rings | Cucumber Dill Lentil Chips | Seaweed Rice Chips Sea Salt
+rice_vinegar,"OILS, FATS & VINEGARS",7793,0.02565459461016489,14,0.039191534628520236,Organic Rice Vinegar | Genuine Brewed Rice Vinegar | Rice Vinegar | All Natural Rice Vinegar | Lite Rice Vinegar
+onion_powder,SPICES & SEASONINGS,7687,0.02530564208499134,19,0.053188511281563176,Onion Powder | Organic Onion Powder | French Onion Dip Mix | Minced Onion | Chopped Onion
+teriyaki_sauce,CONDIMENTS & SAUCES,7266,0.023919707999160537,83,0.23234981244051284,Teriyaki Sauce | Veri Veri Teriyaki Marinade & Sauce Less Sodium | Soy Ginger Sauce | Teriyaki Marinade & Sauce | Coconut Aminos Teriyaki Sauce
+worcestershire,CONDIMENTS & SAUCES,7193,0.023679391637484414,34,0.09517944124069201,The Original Worcestershire Sauce | Organic Worcestershire | Organic Steak Sauce | Worcestershire Sauce | Original Worcestershire Sauce
+baby_formula,BABY PRODUCTS,7137,0.023495039360034237,36,0.10077823190190918,Organic Infant Formula With Iron | Oral Electrolyte Solution Mixed Fruit | Organic LactoRelief Iron Fortified Toddler Formula | Grow & Gain Chocolate Shake Nutritional Drink | Oral Electrolyte Solution Strawberry
+queso,CONDIMENTS & SAUCES,7102,0.023379819186627876,27,0.0755836739264319,Salsa Con Queso Medium | Medium Salsa Con Queso | Salsa Con Queso With Smoked Jalapeno Medium | Nacho Cheese Sauce | Jalapeno Cheddar Flavored Cheese Dip
+bay_leaves,SPICES & SEASONINGS,6916,0.022767506265096927,15,0.04199092995912883,"Bay Leaves | Organic Bay Leaves | Seasoning Bay Leaf | Bay Leaves, Turkish, Organic | Whole Laurel Bay Leaves"
+almond_flour,BAKING,6804,0.02239880171019657,14,0.039191534628520236,"Almond Meal/Flour | Finely Ground Natural Almond Meal | Gluten Free Almond Flour | Muffin & Cake Mix, Almond Flour, Chocolate | Gluten Free Pizza Dough Almond Flour Mix"
+fig,PRODUCE - FRUIT,6745,0.022204573417882994,12,0.033592743967303065,Organic Black Mission Figs | Persimmon Sharon Fruit Cv | Black Figs | Organic Hachiya Persimmons | Brown Fig
+turmeric,SPICES & SEASONINGS,6565,0.02161201252607885,13,0.03639213929791165,Organic Turmeric | Turmeric | Ground Turmeric | Spanish Saffron | Saffron Threads
+yeast,BAKING,6448,0.021226847946406162,13,0.03639213929791165,Active Dry Yeast | Rapid Rise Fast Acting Instant Yeast | Bread Machine Yeast | Quick-Rise Yeast for Bread Machines | Nutritional Yeast Flakes
+red_pepper_flakes,SPICES & SEASONINGS,6428,0.02116100784731681,14,0.039191534628520236,Crushed Red Pepper | Organic Crushed Red Pepper | Crushed Red Peppers | Crushed Red Chili Pepper | Red Chili Flakes
+protein_meal_replacements,Unknown,6335,0.020854851386551337,40,0.11197581322434354,Chocolate Protein Soy & Dairy Protein Shake | Chocolate Peanut Butter Builder's Bar | Organic Fuel High Protein Vanilla Milk Shake | Chocolate Protein Nutrition Shake | All In One Coconut Almond Packet
+vodka_sauce,CONDIMENTS & SAUCES,6324,0.020818639332052195,23,0.06438609260399754,"Homemade Vodka Sauce | La Vodka Cooking Sauce | Signature Recipes Vodka Sauce Pasta Sauce | Pasta Sauce, Vodka Sauce | Alla Vodka Sauce"
+acorn_squash,PRODUCE - VEGETABLES,6316,0.020792303292416457,4,0.011197581322434353,Organic Acorn Squash | Acorn Squash | Buttercup Squash | Golden Acorn Squash
+cod,PROTEIN - SEAFOOD,6254,0.020588198985239472,49,0.13717037119982084,Breaded Fish Sticks | Pacific Cod Fillet | Crunchy Breaded Fish Fillets | Beer Battered Fish Fillets | Fish Sticks Family Pack
+energy_granola_bar,Unknown,6145,0.02022937044520252,4,0.011197581322434353,Crunchy Peanut Butter Energy Bar | Trail Mix Fruit & Nut Chewy Granola Bars | GFB The Gluten Free Bar Peanut Butter | Chocolate Cherry Almond Bites
+oregano_dried,Unknown,6085,0.020031850147934474,22,0.061586697273388946,Organic Oregano | Dried Parsley Flakes | Oregano Leaves | Organic Oregano Leaf | All Natural Zaatar Seasoning
+doughs_gelatins_bake_mixes,Unknown,6065,0.019966010048845125,21,0.05878730194278036,Ready-to-Bake 9 Inch Pie Crusts | Chocolate Chip Vegan Cookie Dough | Honey Cornbread & Muffin Mix | Dark Chocolate Brownie Mix | Cooked Chocolate Pudding And Pie Filling Mix
+red_wine_vinegar,"OILS, FATS & VINEGARS",5998,0.019745445716895803,16,0.044790325289737414,Organic Red Wine Vineger | Sherry Reserve Vinegar | Red Wine Vinegar | Selected Red Wine Vinegar | Italian Kitchen Red Wine Vinegar
+sunflower_seeds,NUTS & SEEDS,5726,0.018850020369280653,27,0.0755836739264319,Hemp Seeds | David Seeds Sunflower Seeds | Roasted Salted Sunflower Kernels | Sprouted Sunflower Seeds | Cinnamon Crunch Sunflower Seed Bites
+shrimp,PROTEIN - SEAFOOD,5696,0.01875126022064663,22,0.061586697273388946,Raw Shrimp | Cooked Shrimp | Jumbo Butterfly Shrimp | Butterfly Shrimp | Raw Shrimp 41-50
+polenta,"GRAINS, PASTA & RICE",5677,0.01868871212651175,21,0.05878730194278036,"Polenta, Organic, Traditional Italian | Organic Polenta Corn Grits | Corn Grits | Organic Basil Garlic Polenta Pre-Cooked | Southern Style White Corn Grits"
+whole_wheat_flour,BAKING,5668,0.018659084081921542,34,0.09517944124069201,Organic Whole Wheat Flour | Whole Wheat Flour | 100% Organic Premium Whole Wheat Flour | Organic Spelt Flour | 100% Whole Grain White Whole Wheat Flour
+bread_flour,BAKING,5605,0.018451687769790094,15,0.04199092995912883,Unbleached Bread Flour | Organic Unbleached Bread Flour | Panko Breadcrumbs Original | Panko Crispy Bread Crumbs | Organic Original Panko
+white_wine,COOKING LIQUIDS,5546,0.018257459477476513,55,0.15396674318347237,Mirin Rice Cooking Wine | White Cooking Wine | Vintners Reserve Sauvignon Blanc | Mirin Sweet Cooking Rice Wine | Marsala Cooking Wine
+italian_seasoning,SPICES & SEASONINGS,5535,0.01822124742297737,56,0.15676613851408094,"Seasoning, Italian | Italian Seasoning | Organic Sprinkle 24 Herbs & Spices Seasoning | Perfect Pinch Italian Seasoning | Organic Saffron"
+avocado_oil,"OILS, FATS & VINEGARS",5514,0.018152115318933553,11,0.030793348636694473,"Avocado Oil | Gourmet Delicate Avocado Oil | 100% Pure Avocado Oil | Avocado Oil, Refined | Organic Avocado Oil"
+arborio_rice,"GRAINS, PASTA & RICE",5429,0.01787229489780382,17,0.047589720620346006,Arborio White Rice | Creamy Parmesan Risotto | Arborio Rice | Organic Alfredo Risotto | Long Grain Arborio
+grapefruit_juice,Unknown,5368,0.017671482595581305,3,0.008398185991825766,Grapefruit Juice | 100% Florida Grapefruit Juice | Grapefruit Citrus Zing
+condensed_milk,DAIRY,5318,0.017506882347857935,13,0.03639213929791165,"Organic Sweetened Condensed Milk | Condensed Milk, Sweetened, Full Cream | Carnation Sweetened Condensed Milk | Eagle Brand Sweetened Condensed Milk | Sweetened Condensed Milk"
+queso_fresco,DAIRY,5256,0.01730277804068095,18,0.05038911595095459,Queso Fresco | Ranchero Queso Fresco Cheese | Cotija Cheese | Creamy Queso Fresco Chipotle | Queso Fresco Cheese
+soba,"GRAINS, PASTA & RICE",5177,0.017042709649278023,16,0.044790325289737414,Organic Soba | Soba Pasta Wheat And Buckwheat | Traditionally Crafted Soba Pasta | Organic Traditional Soba | Buckwheat Soba Noodles
+sunflower_butter,SPREADS & JAMS,5042,0.016598288980424914,12,0.033592743967303065,Organic Sunflower Seed Spread | Organic  Unsweetened & Salt Free Sunflower Seed Butter | Organic Lightly Sweetened Sunflower Seed Butter | Sunflower Seed Spread Crunch | Sunflower Seed Butter
+turnip,PRODUCE - VEGETABLES,5013,0.01650282083674536,10,0.027993953306085884,Jicama | Rutabaga Organic | Jicama Sticks | Rutabagas | Turnip
+ham,PROTEIN - MEAT,4984,0.016407352693065803,36,0.10077823190190918,Smoked Ham | Boneless Ham Steak | Classic Smoked Ham Steaks | Sliced Cooked Ham | Smoked Ham Shanks
+baking_chocolate,BAKING,4849,0.015962932024212693,37,0.10357762723251777,Mini Marshmallows | 100% Cacao Unsweetened Chocolate Baking Bar | Baking Bar Ghirardelli 60% Cacao | Unsweetened 100% Cacao Baking Chocolate | Reese's Peanut Butter Chips
+grapeseed_oil,"OILS, FATS & VINEGARS",4831,0.01590367593503228,9,0.025194557975477296,"Grapeseed Oil | High Heat Cooking Grapeseed Oil | 100% Grapeseed Oil | Grape Seed Oil, All Natural | Expeller Pressed Refined Grapeseed Oil"
+white_wine_vinegar,"OILS, FATS & VINEGARS",4761,0.01567323558821956,10,0.027993953306085884,Aged White Wine Vinegar | Organic White Wine Vinegar | Champagne Vinegar | White Wine Vinegar | California White Balsamic Vinegar
+sesame_seeds,NUTS & SEEDS,4746,0.01562385551390255,22,0.061586697273388946,Sesame Seed | Roasted White Sesame Seeds | Sesame Sticks | Toasted Sesame Seeds | Organic White Sesame Seeds
+flax_seeds,NUTS & SEEDS,4729,0.0155678914296766,26,0.0727842785958233,"Whole Ground Flaxseed Meal | Flaxseed Meal, Whole Ground | 100% Whole Ground Organic Golden Flaxseed Meal | Organic Premium Whole Flaxseed | Organic Cold-Milled Ground Flaxseed"
+miso_paste,CONDIMENTS & SAUCES,4717,0.015528387370222994,27,0.0755836739264319,"Mellow White Miso | Miso, Organic, Mellow, White | Miso, Organic, Mellow, Red | Sweet White Miso | Organic Traditional Red Miso"
+cayenne,SPICES & SEASONINGS,4657,0.015330867072954946,14,0.039191534628520236,Cayenne Pepper | Organic Cayenne Pepper | Ground Cayenne Red Pepper | Cayenne | Organic Ground Chipotle Chili
+cream,Unknown,4628,0.015235398929275386,9,0.025194557975477296,Natural Bliss Salted Caramel Flavor All-Natural Coffee Creamer | Coffee Mate Natural Bliss Sweet Creme Coffee Creamer | Cold Stone Creamery Sweet Cream Coffee Creamer | Mini I.D.'s Caramel Macchiato Non-Dairy Coffee Creamer | French Vanilla Powder Coffee Creamer
+anchovies,PROTEIN - SEAFOOD,4597,0.015133346775686899,35,0.0979788365713006,Flat Fillets of Anchovies | Flat Fillet Anchovies in Olive Oil with Salt Added | Wild Caught Anchovy Paste | Fillets of Anchovies in Olive Oil | Anchovy Fillets In Oil
+parsnip,PRODUCE - VEGETABLES,4595,0.015126762765777964,3,0.008398185991825766,Parsnip | Fresh Parsnips | Parsley Root
+hoisin_sauce,CONDIMENTS & SAUCES,4576,0.015064214671643083,12,0.033592743967303065,Organic Hoisin Sauce | Hoisin Sauce | Hoisen Sauce | Thai Peanut Sauce | Tamarind Stir-Fry Paste
+chicken_wings,PROTEIN - MEAT,4520,0.014879862394192903,24,0.06718548793460613,Chicken Wings | Buffalo Chicken Wings | Sweet and Tangy Barbecue Wings | Chicken Wings Family Pack | Organic Chicken Wings
+pumpkin_seeds,NUTS & SEEDS,4482,0.01475476620592314,30,0.08398185991825766,Sprouted Pumpkin Seeds with Celtic Sea Salt | Dry Roasted Pumpkin Seeds | Organic Pumpkin Seeds | Pumpkin Seeds | Super Seedz Sea Salt Shelled Gourmet Pumpkin Seeds
+lemon_juice,Unknown,4447,0.014639546032516777,1,0.0027993953306085883,100% Lemon Juice
+ciabatta,BREAD & BAKERY,4417,0.014540785883882754,10,0.027993953306085884,Ciabatta | Ciabatta Bread | Italian Round Loaf | Ciabatta Rolls | Ciabatta Rolls Take & Bake
+breakfast_bars,Unknown,4385,0.014435441725339797,7,0.019595767314260118,Frosted berry Strawberry Toaster Pastries | Organic Razzi Raspberry Frosted Toaster Pastries 6 Count | Pop Tarts Variety Pack | Blueberry Soft-Baked Oatmeal Squares | Pop-Tarts Frosted Chocolate Fudge Toaster Pastries
+sesame_oil,"OILS, FATS & VINEGARS",4375,0.014402521675795123,23,0.06438609260399754,"100% Pure Sesame Seed Oil | Organic Unrefined Sesame Oil | Organic Unrefined Toasted Sesame Oil | Sesame Oil, Toasted | Toasted Sesame Oil, Unrefined"
+beef_roast,PROTEIN - MEAT,4263,0.014033817120894767,12,0.033592743967303065,Boneless Beef Chuck Roast | Beef Chuck Roast | Beef Chuck Roast Boneless | Beef Eye Round Roast | Beef Rib Roast
+hot_pocket,PREPARED DISHES & MEALS,4213,0.013869216873171395,25,0.06998488326521471,"Pepproni Pockets | Sausage, Egg, & Cheese Croissant | Vegetable Pie In A Pocket Sandwich | Hot Pocket  Applewood Bacon, Egg and Low Fat Cheese Breakfast Sandwich | Smart Ones Canadian Style Turkey Bacon English Muffin Sandwich"
+papaya,PRODUCE - FRUIT,4108,0.01352355635295231,10,0.027993953306085884,Papaya | Red Papaya | Mexican Papaya | Organic Guava | Cherimoya
+grape_jelly,SPREADS & JAMS,4002,0.013174603827778762,14,0.039191534628520236,Concord Grape Jelly | Squeeze Grape Jelly | Organic Concord Grape Fruit Spread | Muscat Grape Jelly | Organic Premium Concord Grape Spread
+pine_nuts,NUTS & SEEDS,3916,0.01289149140169456,8,0.022395162644868707,Organic Pine Nuts | Pine Nuts | Whole Pine Nut | All Natural Extra Fancy Pine Nuts | Pine Nuts Natural Unsalted
+curry_powder,SPICES & SEASONINGS,3866,0.012726891153971187,15,0.04199092995912883,"Seasoning Curry Powder | Curry Powder | Organic Curry Powder | Curry Powder, Madras | Indian Curry Seasoning"
+ginger_powder,SPICES & SEASONINGS,3846,0.012661051054881838,8,0.022395162644868707,Ground Ginger | Organic Ground Ginger | Ginger | Wasabi Powder | Organic Ginger Root Powder
+lasagna_noodles,"GRAINS, PASTA & RICE",3831,0.012611670980564827,16,0.044790325289737414,"Dry Pasta Lasagne | Lasagne Pasta | Gluten Free Rice Lasagna | Lasagna | Lasagna, Whole Wheat"
+crab,PROTEIN - SEAFOOD,3690,0.012147498281984914,27,0.0755836739264319,"Jumbo Lump Crab Cake | Fancy Lump White, Crab Meat | Flake Style Imitation Crab | Imitation Crab Flakes | Imitation Crab Sticks"
+pico_de_gallo,CONDIMENTS & SAUCES,3664,0.01206190615316876,4,0.011197581322434353,Pico De Gallo Chunky Salsa | Pico De Gallo | Mild Pico De Gallo | Pico De Gallo Recipe Guacamole
+ground_pork,PROTEIN - MEAT,3635,0.011966438009489204,3,0.008398185991825766,"Regular Pork Sausage Tube | Ground Pork | Ground Pork, Extra Lean, 4% Fat"
+evaporated_milk,DAIRY,3620,0.011917057935172193,7,0.019595767314260118,Organic Evaporated Milk | Evaporated Milk | Low Fat 2% Evaporated Milk | Carnation Fat Free Evaporated Milk | Carnation Evaporated Milk
+fish_sauce,CONDIMENTS & SAUCES,3523,0.011597733454588848,3,0.008398185991825766,Premium Fish Sauce | Fish Sauce | All Natural Clam Juice
+rosemary_dried,Unknown,3430,0.011291576993823375,9,0.025194557975477296,Rosemary | Ground Sage | Rosemary Leaves | Organic Whole Rosemary | All Natural Crushed Rosemary
+corn_dogs,PREPARED DISHES & MEALS,3355,0.011044676622238316,15,0.04199092995912883,Mini Corn Dogs | Corn Dogs | Natural Gluten-Free Beef Corn Dogs | Classic Corn Dogs | Honey Crunchy Flavor Corn Dogs 6 Count
+egg_substitute,DAIRY,3310,0.010896536399287282,10,0.027993953306085884,Original Egg Substitute | Vegan Egg | Southwestern Egg Substitute | Egg Replacer | Egg Substitute
+macadamia_nuts,NUTS & SEEDS,3122,0.0102776394678474,12,0.033592743967303065,Sea Salt Macadamias | Dry Roasted Macadamias with Sea Salt | Natural Unsalted Macadamia | Dry Roasted Macadamias | Fresh from Hawaii Unsalted Macadamia Nuts
+hazelnuts,NUTS & SEEDS,3066,0.010093287190397222,7,0.019595767314260118,Chocolate Hazelnut Butter | Organic Hazelnuts | Hazelnuts | Blanched Unsalted Hazelnuts (Filberts) | Filberts
+stew_meat,PROTEIN - MEAT,3053,0.010050491125989144,9,0.025194557975477296,Beef Stew Meat | Grass Fed Beef Stew Meat | Stew Meat | Boneless Beef Stew | Beef For Stew
+artichoke_hearts,Unknown,2874,0.00946122223913947,1,0.0027993953306085883,Artichoke Hearts
+condiments,Unknown,2871,0.009451346224276068,15,0.04199092995912883,Organic Dill Relish | Dill Relish | Special Sauce | Sweet & Spicy Dip Cooking Sauce | Seafood Cocktail Sauce
+canned_fruit,Unknown,2859,0.009411842164822458,20,0.05598790661217177,Gelatin Free Snacks Natural Orange Gels | Diced Peaches in Light Syrup Fruit Cups | No Sugar Added Mandarin Oranges in Water | Peaches in Strawberry Gel | Mixed Fruit  No Sugar Added
+tomatillo,Unknown,2853,0.009392090135095652,1,0.0027993953306085883,Tomatillo
+cake_flour,BAKING,2709,0.00891804142165234,24,0.06718548793460613,Funfetti Premium Cake Mix With Candy Bits | Organic Vanilla Cake Mix | Cake Flour | Delights Super Moist Triple Chocolate Fudge Cake Mix | Unbleached Enriched Super-Fine Cake Flour
+udon,"GRAINS, PASTA & RICE",2619,0.008621760975750268,19,0.053188511281563176,"Organic Udon Japanese Wheat Noodles | Organic Round Udon Asian Pasta | Organic Traditional Udon | Japanese Udon Noodles | Noodles, Udon, Japanese"
+cookie_dough,Unknown,2461,0.00810162419294441,2,0.005598790661217177,Gluten Free Chocolate Chunk Cookies | Toll House Double Chocolate Chip Frozen Cookie Dough
+pickles,Unknown,2401,0.007904103895676362,4,0.011197581322434353,Dill Pickle Spears | Diakon Radish Kimchi | Crispy Sauerkraut | Sliced Peperoncini
+naan,BREAD & BAKERY,2392,0.007874475851086155,12,0.033592743967303065,Tandoor Baked Naan | Mini Naan | Tandoori Naan | Naan | Garlic Naan
+matcha,BEVERAGES,2366,0.0077888837222700015,22,0.061586697273388946,Matcha Powder | Double Green Matcha Tea Bags | Matcha Latte | Organic Matcha Green Tea | Matcha Green Tea Powder
+cornbread,BREAD & BAKERY,2314,0.007617699464637693,14,0.039191534628520236,Cornbread | Corn Bread Mix | Stovetop Cornbread Stuffing Mix | Authentic Cornbread & Muffin Mix | Corn Bread Stuffing
+split_peas,PROTEIN - PLANT-BASED,2289,0.007535399340776007,11,0.030793348636694473,Green Split Peas | Organic Split Green Peas | Green Split Pea | Dry Split Green Peas | Organic Green Split Peas
+lime_juice,Unknown,2265,0.007456391221868789,1,0.0027993953306085883,100% Lime Juice
+french_fries,Unknown,2250,0.007407011147551777,2,0.005598790661217177,Organic Classic Sea Salt  Oven Crinkles Fries | Seasoned Steak Fries
+mozzarella_sticks,PREPARED DISHES & MEALS,2216,0.007295082979099884,9,0.025194557975477296,Italian Herbs & Olive Oil Mozzarella Stix | Mozzarella Sticks | Mozzarella Sticks With Marinara Sauce | Breaded Mozzarella Sticks | Mozzarella Sticks with Marinara Sauce
+molasses,BAKING,2212,0.0072819149592820145,11,0.030793348636694473,Unsulphured Blackstrap Molasses | Original Molasses | Organic Unsulphured Molasses | Organic Black Molasses | Pomegranate Molasses
+coriander,SPICES & SEASONINGS,2169,0.007140358746239913,16,0.044790325289737414,Ground Coriander | Organic Coriander Seeds | Coriander | Whole Celery Seed | Organic Fennel Seeds
+ribs,PROTEIN - MEAT,2147,0.00706793463724163,12,0.033592743967303065,Baby Back Pork Ribs | Fresh Pork Spareribs | Pork Loin Back Ribs | Pork Baby Back Ribs | Bbq Babyback Pork Ribs
+frozen_dessert,Unknown,2130,0.007011970553015682,31,0.08678125524886625,Marble Pound Cake | Deep Dish Pie Shells - 2 CT | Frozen Classic Coconut Layer Cake | Key Lime Pie Singles | Apple Puff Pastry Turnovers
+passion_fruit,PRODUCE - FRUIT,2109,0.0069428384489718655,2,0.005598790661217177,Passion Fruit | 14oz Passion Fruit
+cajun_seasoning,SPICES & SEASONINGS,2098,0.0069066263944727235,60,0.1679637198365153,Cajun Seasoning | Original Creole Seasoning | Perfect Pinch Cajun Seasoning | Chicken Seasoning | Cajun Street Seasoning
+nutmeg,SPICES & SEASONINGS,2078,0.006840786295383374,7,0.019595767314260118,"Organic Ground Nutmeg | Ground Nutmeg | Nutmeg, Ground | Organic Whole Nutmeg | Whole Nutmeg"
+peanut_oil,"OILS, FATS & VINEGARS",2007,0.006607053943616184,6,0.016796371983651533,Roasted Peanut Oil | Peanut Oil | Organic Peanut Oil | 100% Pure Peanut Oil | Pure Peanut Oil
+canned_meals,Unknown,1991,0.006554381864344707,1,0.0027993953306085883,Organic All Stars Pasta In Tomato & Cheese Sauce
+marmalade,SPREADS & JAMS,1985,0.006534629834617901,13,0.03639213929791165,Orange Marmalade | Deluxe Orange Marmalade Fruit Spread | Sweet Orange Marmalade | Sicilian Orange Marmalade | Orange Medium Cut Marmalade
+plantain,PRODUCE - FRUIT,1982,0.006524753819754498,8,0.022395162644868707,Green Plantains | Plantains | Plantain Bananas | Naturally Sweet Plantain Chips | Tostones Plantain Patties
+barley,"GRAINS, PASTA & RICE",1979,0.006514877804891096,11,0.030793348636694473,Pearled Barley | Pearl Barley | Organic Pearled Barley | Whole Grain Millet | Barley Beans
+pork_shoulder,PROTEIN - MEAT,1925,0.006337109537349854,15,0.04199092995912883,Boneless Pork Shoulder Butt | Pulled Pork | Boneless Pork Loin Roast | Carnitas Fried Pork | Pulled Pork with Barbecue Sauce
+french_toast,FROZEN FOODS,1887,0.00621201334908009,10,0.027993953306085884,Cinnamon French Toaster Sticks | Cinnamon French Toast Sticks | Original French Toast Sticks | Homestyle French Toast Sticks | Cinnamon Swirl French Toast
+farro,"GRAINS, PASTA & RICE",1883,0.0061988453292622205,9,0.025194557975477296,Organic Farro | Italian Pearled Farro | Farro Perlato | Organic Whole Grain Kamut | Organic Emmer Farro
+cloves,SPICES & SEASONINGS,1871,0.006159341269808611,9,0.025194557975477296,"Ground Cloves | Organic Ground Cloves | Whole Star Anise | Organic Whole Cloves | Cloves, Whole"
+frozen_breakfast,Unknown,1771,0.005830140774361866,7,0.019595767314260118,Uncured Ham-Egg & Cheddar Multi-Grain Flatbread Breakfast Sandwich | Hot Pocket Sausage Egg & Cheese Breakfast Sandwich | Toaster Strudel Pastries Strawberry | Egg & Bacon Breakfast Burrito | Canadian Style Turkey Bacon Muffin Sandwiches
+sauerkraut,Unknown,1770,0.005826848769407398,1,0.0027993953306085883,Sauerkraut
+cashew_butter,SPREADS & JAMS,1721,0.0056655405266384925,9,0.025194557975477296,"Raw Cashew Nut Butter | Raw Cashew Butter | Raw Pecan Nut Butter With Cashews | Cashew Butter, Organic | Garlic Herb Cashew Chia Spread"
+lima_beans,PROTEIN - PLANT-BASED,1706,0.005616160452321481,8,0.022395162644868707,Butter Beans | Organic Butter Beans | Baby Lima Beans | Fava Beans | Green Lima Beans
+melon,PRODUCE - FRUIT,1681,0.005533860328459794,10,0.027993953306085884,Mixed Melons | Sleeve of Tuscan Melons | Canary Melon | Mixed Melon Chunks | Kiwano Horned Melon
+cardamom,SPICES & SEASONINGS,1657,0.005454852209552575,11,0.030793348636694473,Organic Ground Cardamom | Ground Cardamom | Organic Green Cardamom | Cardamom | Organic Black Cardamom
+baking_ingredients,Unknown,1655,0.005448268199643641,5,0.013996976653042942,Natural Vanilla Miniature Marshmallows | Brownie Scratch Baking Mix | Original Country Cherry Pie Filling & Topping | Sweetened Coconut Flakes | Chips Coconut Sweet N Heat
+corn_syrup,BAKING,1632,0.005372552085690889,16,0.044790325289737414,Light Corn Syrup with Real Vanilla | Organic Light Corn Syrup | Dark Corn Syrup | Cane Sugar Cocktail Simple Syrup | Simple Syrup
+cheese_snacks,Unknown,1596,0.00525403990733006,1,0.0027993953306085883,Gluten-Free Smart Puffs Real Wisconsin Cheddar Baked Cheese Puffs
+oyster_sauce,CONDIMENTS & SAUCES,1574,0.005181615798331776,10,0.027993953306085884,Oyster Sauce | Panda Brand Gluten-Free Oyster Flavored Sauce | Oyster Flavored Sauce | Sauce Oyster | Premium Oyster Flavored Sauce
+pork_tenderloin,PROTEIN - MEAT,1542,0.0050762716397888185,7,0.019595767314260118,Pork Tenderloin | Original Pork Loin Filet | Pork Loin Tenderloin | Lemon Garlic Pork Loin Filet | Tenderloins
+pork_chop,PROTEIN - MEAT,1522,0.005010431540699469,11,0.030793348636694473,Boneless Pork Loin Chops | Bone In Pork Loin Chops | Boneless Center Cut Pork Loin Chops | Boneless Pork Chop | Boneless Whole Pork Chops
+bone_broth,COOKING LIQUIDS,1498,0.0049314234217922494,3,0.008398185991825766,Organic Chicken with Lemongrass Bone Broth | Organic Turkey Bone Broth | Beef Bone Broth
+short_ribs,PROTEIN - MEAT,1451,0.004776699188932279,4,0.011197581322434353,Beef Short Ribs | Rib Bone | Boneless Beef Short Ribs | Beef Chuck Short Ribs
+lamb,PROTEIN - MEAT,1439,0.00473719512947867,13,0.03639213929791165,Lamb Rib Chops | Lamb Shoulder Chop | Lamb Shank | Small Lamb Loin Chops | Grass Fed Ground Lamb
+breakfast_bars_pastries,Unknown,1384,0.004556134856982959,1,0.0027993953306085883,Pop-Tarts Frosted Brown Sugar Cinnamon Toaster Pastries
+paneer,Unknown,1294,0.0042598544110808885,1,0.0027993953306085883,Paneer
+allspice,SPICES & SEASONINGS,1259,0.004144634237674528,12,0.033592743967303065,"Organic Allspice | Organic Whole Star Anise | Whole Organic Allspice | Allspice, Ground, Organic | Whole Organic Anise"
+sunflower_oil,"OILS, FATS & VINEGARS",1257,0.004138050227765593,5,0.013996976653042942,Organic Refined Sunflower Oil | Organic Refined High Heat Sunflower Oil | Organic High Heat Sunflower Spray Oil | Organic Sunflower Oil | Sunflower Oil
+bean_sprouts,Unknown,1249,0.0041117141881298535,1,0.0027993953306085883,Bean Sprouts
+clams,PROTEIN - SEAFOOD,1191,0.00392077790077074,11,0.030793348636694473,Littleneck Clams | Wild Caught Boiled Baby Clams | Clams Minced In Clam Juice | Natural Smoked Baby Clams In Olive Oil | Whole Maine Cherrystone Clams
+soft_drinks,Unknown,1137,0.0037430096332294977,2,0.005598790661217177,Sparkling Peach Nectarine Soda | Aranciata Rossa Blood Orange Juice
+oysters,PROTEIN - SEAFOOD,1123,0.0036969215638669537,6,0.016796371983651533,Naturally Smoked Oysters in Pure Olive Oil | Naturally Smoked Oysters with Red Chili Peppers Mildly Spiced | Fancy Whole Smoked Oysters in Cottonseed Oil | Medium Smoked Oysters | Smoked Oysters
+pickle_goods_olives,Unknown,1095,0.0036047454251418648,4,0.011197581322434353,Capers | Imported Capote Capers | Nonpareilles Capers | Mediterranean Olives
+canned_vegetables,Unknown,1076,0.0035421973310069835,3,0.008398185991825766,"Water Chestnuts, Sliced | Water Chestnuts, Sliced, No Salt Added | Quarted Artichoke Hearts"
+canned_jarred_vegetables,Unknown,1068,0.0035158612913712434,4,0.011197581322434353,"Fancy Whole Artichoke Hearts | California Style Marinated Artichoke Hearts | Artichoke Bottoms | Artichoke Hearts, Quartered & Marinated"
+veal,PROTEIN - MEAT,1062,0.0034961092616444386,3,0.008398185991825766,Ground Veal | Boneless Veal Stew Meat | Veal Loin Chop
+brisket,PROTEIN - MEAT,1021,0.003361137058511273,7,0.019595767314260118,Beef Brisket Flat Cut | Season and Cooked Pulled Beef | Seasoned Cooked & Sliced Beef Brisket with Jack Daniel's Glaze | Corned Beef Brisket | Beef Brisket
+gochujang,CONDIMENTS & SAUCES,1011,0.0033282170089665984,8,0.022395162644868707,Gochujang Fermented Chile Paste Concentrate | Gochujang Fermented Garlic Chile Paste | Gochujang Fermented Sesame Chile Paste | Korean Gochujang Sauce | Gochujang Sauce
+liquid_smoke,CONDIMENTS & SAUCES,924,0.00304181257792793,6,0.016796371983651533,All Natural Hickory Liquid Smoke | Liquid Smoke Hickory Concentrated Seasoning | Hickory Liquid Smoke | Liquid Smoke Mesquite | Mesquite Liquid Smoke
+mustard_greens,PRODUCE - VEGETABLES,924,0.00304181257792793,3,0.008398185991825766,Organic Mustard Greens | Dandelion Greens | Curly Mustard Greens Bunch
+coconut,Unknown,848,0.0027916202013884028,1,0.0027993953306085883,Young Coconut
+pasta_sauce,Unknown,846,0.002785036191479468,6,0.016796371983651533,Traditional Sweet Basil Pasta Sauce | Red Enchilada Sauce | Creamy Pesto Sauce Mix | Family Favorites Parmesan and Romano Pasta Sauce | Roasted Garlic Parmesan Pasta Sauce
+mint_gum,Unknown,844,0.0027784521815705336,5,0.013996976653042942,Peppermint Gum | Sugar Free Peppermint Chewing Gum | Wrigley's Juicy Fruit Gum | Cinnamon Mint Tin | Organic Peppermint Mints
+thyme_dried,Unknown,839,0.002761992156798196,8,0.022395162644868707,Thyme Leaves | Ground Thyme | Organic Thyme Leaves | Gourmet Organic Thyme | Gourmet Thyme
+bulgur,"GRAINS, PASTA & RICE",819,0.0026961520577088467,10,0.027993953306085884,"Tabouli Salad | Red Bulgur Wheat | Organic Whole Grain Buckwheat Groats | Buckwheat Hulled Whole Grain | Kasha, Medium Granulation"
+almond_extract,BAKING,816,0.0026862760428454447,5,0.013996976653042942,Organic Almond Extract | Almond Extract | Poppy Seed Cake & Pastry Filling | Pure Almond Extract All Natural No Corn Syrup Added | Almond Flavor Alcohol-Free
+turkey_breast,PROTEIN - MEAT,808,0.0026599400032097046,17,0.047589720620346006,Oven Ready Boneless with Gravy Packet Turkey Breast | Boneless Breast Meat Turkey Breast Roast | Smoked Turkey Drumsticks | Turkey Tenderloins | Boneless Turkey Breast Roast
+dragon_fruit,PRODUCE - FRUIT,778,0.0025611798545756813,3,0.008398185991825766,"Dragon Fruit | Pitaya Dragonfruit Raw, Organic Smoothie Packs | Red Prickly Pears"
+poppy_seeds,NUTS & SEEDS,775,0.0025513038397122784,6,0.016796371983651533,Poppy Seed | Organic Poppy Seed | Poppy Seeds | Organic Poppy Seeds | Whole Poppy Seed
+frozen_meat_seafood,Unknown,765,0.002518383790167604,5,0.013996976653042942,Homestyle Turkey Meatballs | Maryland Style Crab Cakes | Tortilla Crusted Tilapia | Meatballs | Sweet Chili Chicken
+basil_dried,Unknown,740,0.002436083666305918,6,0.016796371983651533,Basil Leaves | Freeze-Dried Basil | Sweet Basil | Sweet Cut Basil Leaf & Sifted Mini Spice | Sweet Basil Leaf Flakes
+packaged_vegetables,Unknown,733,0.002413039631624646,1,0.0027993953306085883,Vegetable Tray With Ranch Dip
+spices_seasonings,Unknown,701,0.002307695473081687,12,0.033592743967303065,Lemon Pepper | Grill Mates Less Sodium Montreal Steak Seasoning | Organic Mulling Spices | Rib Rub Seasoning | Organic Pickling Seasoning
+pudding,Unknown,596,0.001962034952862604,4,0.011197581322434353,Organic Cooked Vanilla Pudding & Pie Filling Mix | Pudding Snacks Chocolate Vanilla Swirls Fat Free | Tapioca Pudding Snacks | Caramel Flan
+trout,PROTEIN - SEAFOOD,589,0.0019389909181813318,3,0.008398185991825766,Rainbow Trout Fillet | Smoked Rainbow Trout | Golden Smoked Filets of Trout
+parsley_dried,Unknown,588,0.0019356989132268644,1,0.0027993953306085883,Parsley Flakes
+cocoa_drink_mixes,Unknown,557,0.0018336467596383734,6,0.016796371983651533,Strawberry Lemonade Liquid Drink Mix | Spiced Apple Cider Original Instant Drink Mix | Instant Breakfast Essentials Rich Milk Chocolate Drink Packets | Tropical Punch Unsweetened Soft Drink Mix | Raspberry Ice Drink Mix
+lobster,PROTEIN - SEAFOOD,519,0.00170855057136861,4,0.011197581322434353,Lobster Tails | Lobster Tail | Cold Water Lobster Tail | Pure All Natural Maine Lobster Juice
+frozen_meat,Unknown,486,0.001599914407871184,3,0.008398185991825766,Homestyle Meatballs | Classic Italian Style Meatballs | Homestyle (101744) Meatballs
+cinnamon_rolls,Unknown,470,0.0015472423285997046,3,0.008398185991825766,Cinnabon Cream Cheese Icing Cinnamon Rolls | Organic Cinnamon Rolls With Icing | Gluten Free Cinnamon Rolls
+instant_foods,Unknown,447,0.0014715262146469531,9,0.025194557975477296,"Rice A Roni Fried Rice | Cheddar Broccoli Rice | Home Style Butter and Herb Mashed Potato | Rice, Thai Fried | Creamy Chicken Fettuccine Mix"
+nuts_seeds_dried_fruit,Unknown,444,0.0014616501997835507,2,0.005598790661217177,Brazil Nuts | Greek Yogurt Coated Toasted Coconut Chips
+juice_nectars,Unknown,441,0.0014517741849201483,1,0.0027993953306085883,Organic Lime Juice
+ice_cream_toppings,Unknown,412,0.001356306041240592,7,0.019595767314260118,Ice Cream Cups | Original Vanilla Frosting | Salted Caramel | Classic Waffle Cones | Bourbon Caramel Sauce
+focaccia,BREAD & BAKERY,398,0.0013102179718780477,5,0.013996976653042942,Organic Rosemary Diamante | Rosemary & Thyme Focaccia | Rosemary Focaccia | Focaccia With Olive Oil & Rosemary | 2pk Artisan Thin Pizza Crust
+garam_masala,SPICES & SEASONINGS,393,0.0012937579471057105,7,0.019595767314260118,Garam Masala | Blend Garam Masala | Organic Tandoori Masala | Kashmir Garam Masala | Organic Tikka Masala
+tartar_sauce,Unknown,379,0.001247669877743166,3,0.008398185991825766,Tartar Sauce | Natural Lemon Flavor & Herb Tartar Sauce | Tartar Fat Free Sauce for Seafood
+waffle_mix,BREAKFAST,373,0.0012279178480163612,1,0.0027993953306085883,Belgian Waffle Mix
+fruit_vegetable_snacks,Unknown,362,0.0011917057935172193,5,0.013996976653042942,"Stix Crispy Seaweed Strips Sesame | Organic Teriyaki Greens Veggie Krunch | Roasted Seaweed Snack Coconut Oil | Organic Broccoli Garlic Poppers | Zucchini Chips, Pesto"
+canned_meat,Unknown,360,0.0011851217836082843,3,0.008398185991825766,Vienna Sausage In Chicken Broth | Classic Spam | Canned Spam With Real Bacon
+brownie_mix,Unknown,359,0.001181829778653817,2,0.005598790661217177,Chocolate Fudge Brownie Mix | Brownie Mix
+asian_sauces,Unknown,346,0.0011390337142457398,1,0.0027993953306085883,Aji-Mirin Sweet Cooking Rice Seasoning
+fresh_vegetables,Unknown,343,0.0011291576993823376,2,0.005598790661217177,Barbecue Jackfruit | Organic Veggies Snack Tray
+self_rising_flour,BAKING,333,0.001096237649837663,5,0.013996976653042942,Unbleached Self Rising Flour | Self-Rising Flour | Best Self Rising Flour | Self Rising Flour | Flour Self- Rising
+sesame_sauce,CONDIMENTS & SAUCES,313,0.0010303975507483139,6,0.016796371983651533,"Asian Sauces, Gourmet, Thai Peanut | Sesame Ginger with Mandarin Orange Juice Marinade | Wasabi Sauce | Sesame Cooking Sauce | Peanut Satay Asian Cuisine"
+chestnuts,Unknown,308,0.0010139375259759767,1,0.0027993953306085883,RSTD WHL CHSNTS
+specialty_cheeses,Unknown,308,0.0010139375259759767,3,0.008398185991825766,"Double Cream Cremont | Cheese, Aged Dutch, Vincent | Winter Truffle"
+gouda,Unknown,292,0.0009612654467044973,1,0.0027993953306085883,"Cheese, Gouda, Apple Smoked"
+snapper,PROTEIN - SEAFOOD,276,0.0009085933674330179,1,0.0027993953306085883,Whole American Red Snapper
+frozen_juice,Unknown,248,0.0008164172287079292,1,0.0027993953306085883,All Natural Smoothies Razzmatazz
+apple_butter,SPREADS & JAMS,244,0.0008032492088900594,8,0.022395162644868707,Apple Butter | Apple Butter Spread | Country Apple Butter | Pure Unsweetened Apple Butter | Cider Apple Butter
+tuna,PROTEIN - SEAFOOD,221,0.000727533094937308,4,0.011197581322434353,"Tuna Steaks | Yellowfin Tuna Steak | Ahi Tuna | Super Fresh Seared Ahi Tuna, Garlic Peppercorn Rub"
+whipped_cream,Unknown,212,0.0006979050503471007,2,0.005598790661217177,Organic Coco Whip | Cw Aerosol Rich & Creamy
+gravy,Unknown,202,0.0006649850008024261,2,0.005598790661217177,Turkey Gravy | Home Style Fat Free Gravy - Classic Chicken
+pizza_dough,Unknown,198,0.0006518169809845564,1,0.0027993953306085883,Gluten & Dairy FreeWheat  Pizza Dough
+apricot_jam,Unknown,187,0.0006156049264854144,1,0.0027993953306085883,Simply Fruit Apricot Preserves
+mussels,PROTEIN - SEAFOOD,175,0.0005761008670318049,3,0.008398185991825766,Smoked Mussels | Mussels | Cooked Mussel Meats
+canned_meals_beans,Unknown,172,0.0005662248521684025,2,0.005598790661217177,Meatballs Canned Pasta | Pasta with Chunky Tomato & Meat Sauce Lasagna
+dry_pasta,Unknown,166,0.0005464728224415978,1,0.0027993953306085883,Veggie Curls
+canned_fruit_applesauce,Unknown,144,0.0004740487134433137,6,0.016796371983651533,in 100% Juice Mixed Fruit | Cherry Flavored Mixed Fruit Cups | Tropical Fruit Cups in Lightly Sweetened Fruit Juices | Super Squeeze Mixed Berry Burst Fruit Blend | Light Pear Halves
+apple_chips,Unknown,140,0.0004608806936254439,1,0.0027993953306085883,Bare Apple Cinnamon Chips
+ice_cream_topping,Unknown,138,0.00045429668371650895,1,0.0027993953306085883,Magic Shell Chocolate
+sushi,Unknown,138,0.00045429668371650895,1,0.0027993953306085883,Spicy Salmon Roll
+scallops,PROTEIN - SEAFOOD,133,0.0004378366589441717,5,0.013996976653042942,"Bacon Wrapped Scallops | Bay Scallops | Wild Caught Sea Scallops | New England Style Stuffed Scallops | Scallops, Vegan, Breaded"
+food_coloring,Unknown,132,0.0004345446539897043,1,0.0027993953306085883,Food Coloring
+saffron,Unknown,125,0.0004115006193084321,1,0.0027993953306085883,Saffron
+sweetener,Unknown,121,0.0003983325994905623,1,0.0027993953306085883,Sweet Drops Sweetener Vanilla Creme
+cookie_mix,Unknown,118,0.00038845658462715986,1,0.0027993953306085883,Organics Chocolate Chip Organic Cookie Mix
+cookies_mix,Unknown,114,0.00037528856480929004,1,0.0027993953306085883,Organic Chocolate Chip Cookie Mix
+duck,Unknown,111,0.0003654125499458877,1,0.0027993953306085883,Boneless Duck Breast
+poultry_seasoning,Unknown,111,0.0003654125499458877,1,0.0027993953306085883,Poultry Seasoning
+spices_other,Unknown,99,0.0003259084904922782,1,0.0027993953306085883,Pure Ground
+whole_turkey,PROTEIN - MEAT,98,0.0003226164855378107,7,0.019595767314260118,Frozen Whole Turkey | Whole Turkey | Turkey Necks | Young Turkey | Fresh Hen Turkey
+frozen_breads,Unknown,93,0.00030615646076547344,1,0.0027993953306085883,Five Cheese Garlic Toast
+baking_supplies,Unknown,87,0.0002864044310386687,3,0.008398185991825766,Gel Food Colors | Creamy Supreme Strawberry Frosting | White Sugar Pearls Sprinkles
+canned_meal,Unknown,87,0.0002864044310386687,2,0.005598790661217177,Mini & Meatballs in Tomato Sauce Beef Ravioli | Mini Beef Ravioli
+coffee_filters,Unknown,87,0.0002864044310386687,1,0.0027993953306085883,Bonded Filters
+packaged_seafood,Unknown,82,0.00026994440626633144,1,0.0027993953306085883,Herring in Cream Sauce
+breadcrumbs,Unknown,81,0.000266652401311864,1,0.0027993953306085883,"Bread Crumbs, Italian"
+canned_fish,Unknown,80,0.00026336039635739653,1,0.0027993953306085883,Echo Caviar
+bakery_desserts,Unknown,72,0.00023702435672165684,1,0.0027993953306085883,Iced Carrot Pound Cake
+frosting,Unknown,70,0.00023044034681272196,4,0.011197581322434353,Whipped Chocolate Frosting | Pink Decorating Gel | Decorating Gel White | Fluffly Vanilla Marshmallow Frosting
+breakfast_bakery,Unknown,67,0.00022056433194931956,1,0.0027993953306085883,Cinnamon Horns
+olives,Unknown,65,0.00021398032204038468,1,0.0027993953306085883,"Olives, Spanish, Manzanillas, Stuffed with Minced Pimiento"
+spices,Unknown,63,0.00020739631213144977,2,0.005598790661217177,Whole Fennel Seed | Dried Chile Guajilli
+sauce_mix,Unknown,60,0.0001975202972680474,1,0.0027993953306085883,Bearnaise Sauce Mix
+specialty_cheese,Unknown,59,0.00019422829231357993,2,0.005598790661217177,Les Petites Fromage Garlic & Herb | Garlic And Herb
+lemongrass,Unknown,58,0.00019093628735911245,1,0.0027993953306085883,Organic Lemongrass
+oils,Unknown,58,0.00019093628735911245,1,0.0027993953306085883,Pumpkin Seed Oil
+star_anise,Unknown,58,0.00019093628735911245,1,0.0027993953306085883,Star Anise
+stuffing_mix,Unknown,57,0.00018764428240464502,1,0.0027993953306085883,Stuffing Mix for Pork
+baking_supplies_decor,Unknown,56,0.00018435227745017756,3,0.008398185991825766,Chocolate Decorating Decors | Whipped Strawberry Mist Frosting | Green Decorating Icing
+canned_beans,Unknown,55,0.0001810602724957101,1,0.0027993953306085883,"Vegetarian Beans in Rich Tomato Sauce, No Meat"
+cheese_block,Unknown,54,0.00017776826754124266,1,0.0027993953306085883,Colby Cheese Block
+jerk_seasoning,Unknown,54,0.00017776826754124266,1,0.0027993953306085883,Authentic Jerk Seasoning
+refrigerated_pudding_desserts,Unknown,54,0.00017776826754124266,2,0.005598790661217177,Chocolate Fudge | Milk Chocolate and Chocolate Fudge/Milk Chocolate Swirl Pudding
+mahi_mahi,PROTEIN - SEAFOOD,45,0.00014814022295103554,2,0.005598790661217177,Mahi Mahi | Mahi Mahi Fillet
+seaweed,Unknown,43,0.00014155621304210063,3,0.008398185991825766,Roasted Seaweed Sushi Nori | Wakame | Sweet Seaweed Snack
+marinades_meat_preparation,Unknown,40,0.00013168019817869826,1,0.0027993953306085883,Seasoned Chicken Fry Batter Mix
+popcorn_seasonings,Unknown,37,0.0001218041833152959,1,0.0027993953306085883,Nacho Cheddar Seasoning
+artichoke,Unknown,35,0.00011522017340636098,1,0.0027993953306085883,Artichoke Hearts In Water
+meatballs,Unknown,35,0.00011522017340636098,1,0.0027993953306085883,Angus Beef Homestyle Meatballs
+salad,Unknown,34,0.00011192816845189352,1,0.0027993953306085883,Greens & Avocado
+fish_fillet,Unknown,30,0.0000987601486340237,1,0.0027993953306085883,Lemon Pepper & Garlic Smoked Fillet Trout
+beers_coolers,Unknown,26,0.00008559212881615387,1,0.0027993953306085883,Fuzzy Navel Cooler
+cake_mix,Unknown,25,0.0000823001238616864,2,0.005598790661217177,Signature Fudge Marble Cake Mix | Purple Rain Premium Cake Mix
+mint_extract,Unknown,23,0.0000757161139527515,1,0.0027993953306085883,Organic Peppermint
+poultry_counter,Unknown,23,0.0000757161139527515,1,0.0027993953306085883,Smoked Turkey Necks
+sugar_substitute,Unknown,23,0.0000757161139527515,1,0.0027993953306085883,Zero Calorie Stevia Sweetener Born Sweet
+cherry_juice,Unknown,22,0.00007242410899828404,1,0.0027993953306085883,Organic 100% Juice Black Cherry
+pie_crust,Unknown,21,0.00006913210404381659,1,0.0027993953306085883,Gluten Free Pie Crusts
+white_pepper,Unknown,18,0.00005925608918041421,1,0.0027993953306085883,White Ground Pepper
+cocktail_sauce,Unknown,15,0.00004938007431701185,1,0.0027993953306085883,New England Cocktail Sauce
+seafood_counter,Unknown,15,0.00004938007431701185,1,0.0027993953306085883,Seafood Mix
+vegetables,Unknown,14,0.00004608806936254439,1,0.0027993953306085883,Instant Sea Vegetable Wakame
+caviar,Unknown,13,0.000042796064408076937,1,0.0027993953306085883,Whitefish Caviar
+gelatin_mix,Unknown,13,0.000042796064408076937,2,0.005598790661217177,Orange Gelatin Mix | Mixed Berry Simply Good Gelatin
+marinades,Unknown,13,0.000042796064408076937,3,0.008398185991825766,Gourmet Gobbler Turkey Complete Brine and Rub Kit | Crispy Shrimp Fry Seasoned | White Wine & Garlic Sauces Skillet Shrimp Scampi
+muffin_mix,Unknown,13,0.000042796064408076937,2,0.005598790661217177,Simple Mornings Triple Chocolate Chunk Muffin Mix | Gluten Free Cinnamon Roll Mix
+canned_crab,Unknown,12,0.000039504059453609475,1,0.0027993953306085883,Fancy White Crab Meat
+buns_rolls,Unknown,9,0.000029628044590207105,1,0.0027993953306085883,Sweet Hawiian Buns
+caraway,Unknown,9,0.000029628044590207105,1,0.0027993953306085883,Caraway
+puff_pastry,Unknown,9,0.000029628044590207105,1,0.0027993953306085883,Puff Pastry Dough For Turnovers
+swordfish,PROTEIN - SEAFOOD,9,0.000029628044590207105,1,0.0027993953306085883,Swordfish
+bass,PROTEIN - SEAFOOD,8,0.00002633603963573965,1,0.0027993953306085883,Catfish Fillets
+cooking_wine,Unknown,7,0.000023044034681272196,1,0.0027993953306085883,White with Lemon Flavor Cooking Wine
+fruit_exotic,Unknown,7,0.000023044034681272196,1,0.0027993953306085883,Starfruit (Carambola)
+pudding_mix,Unknown,7,0.000023044034681272196,1,0.0027993953306085883,Instant Cheesecake Pudding & Pie Filling Mix
+sauce,Unknown,7,0.000023044034681272196,1,0.0027993953306085883,Black Mole Sauce
+gelatin,Unknown,6,0.000019752029726804738,1,0.0027993953306085883,Simply Good Strawberry Gelatin
+packaged_vegetables_fruits,Unknown,6,0.000019752029726804738,1,0.0027993953306085883,Superfruit + Mango Puree & Passion Fruit Juice Blend Mixed Fruit Chunks
+sugar_cane,Unknown,6,0.000019752029726804738,1,0.0027993953306085883,Sugar Cane
+horseradish,Unknown,4,0.000013168019817869825,1,0.0027993953306085883,Sassy Creamy Horseradish Sauce

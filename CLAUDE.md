@@ -4,86 +4,90 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-**food-sequences** is a data science portfolio project studying food selection patterns in sequential purchases using the Instacart Online Grocery Shopping Dataset 2017. The project investigates how customers repeat, rotate, stop selecting, and return to foods (especially prepared meals) over successive purchases.
+**food-sequences** is a data science portfolio project studying food selection
+patterns in sequential purchases using the Instacart Online Grocery Shopping Dataset
+2017. The project classifies 49,688 products into 543 recipe-level ingredients, then
+analyzes purchasing behavior at the ingredient level across each customer's order
+history.
 
-The current phase focuses on **data acquisition and validation only**. Modeling is explicitly out of scope until data quality is confirmed.
+The dataset is public (Kaggle), with anonymized integer user IDs. There is no
+sensitive or proprietary data.
 
 ## Core Commands
 
 ### Environment Setup
 ```bash
-# Install all dependencies (including dev tools)
-uv sync
-
-# Install only production dependencies
-uv sync --no-dev
+uv sync                    # Install all dependencies (including dev tools)
 ```
 
-### Data Pipeline (Primary Workflow)
+### Data Pipeline
 ```bash
-# Full pipeline: download, extract, convert to Parquet, save provenance
-python scripts/ingest_data.py
+python scripts/data_pipeline/ingest_data.py          # Kaggle → data/processed/
+python scripts/data_pipeline/audit_data.py           # Validate quality → docs/DATA_AUDIT.md
+```
 
-# Skip download if files already exist in data/raw/
-python scripts/ingest_data.py --skip-download
+### Classification
+```bash
+python scripts/classification/classify_fabric.py     # LLM classification (~8h; CSV committed)
+python scripts/classification/apply_corrections.py   # Taxonomy fixes
+python scripts/classification/classify_lookup.py build  # Build exact-match lookup table
+```
 
-# Audit data quality and generate report
-python scripts/audit_data.py
+### Analysis (each writes to its analysis/<topic>/ directory)
+```bash
+for s in analyze_reorder analyze_patterns analyze_substitution analyze_calendar_time \
+         analyze_lift_decomposition analyze_novelty analyze_exploration \
+         analyze_cooccurrence analyze_basket_contents analyze_prepared_foods \
+         analyze_ingredient_lens analyze_customer_profile analyze_customer_behavior; do
+  python scripts/sequence_analysis/$s.py
+done
+python scripts/sequence_analysis/visualize_ingredient_lens.py
+python scripts/sequence_analysis/visualize_audit.py
+python scripts/sequence_analysis/generate_pattern_gallery.py
 ```
 
 ### Development
 ```bash
-# Run linting
 uv run ruff check scripts/
-
-# Auto-fix linting issues
-uv run ruff check --fix src/ scripts/
-
-# Format code
+uv run ruff check --fix scripts/
 uv run ruff format scripts/
-
-# Run tests (when test suite exists)
 uv run pytest
 ```
 
 ## Architecture
-
-### Data Flow
-1. **Download** (`ingest_data.py`): Kaggle API → `data/raw/*.zip`
-2. **Extract**: ZIP → `data/raw/*.csv`
-3. **Convert**: CSV → `data/processed/*.parquet` (Parquet for speed/compression)
-4. **Provenance**: Record source, date, checksums → `data/processed/provenance.json`
-5. **Audit** (`audit_data.py`): Validate quality → `docs/DATA_AUDIT.md`
 
 ### Sequence Analysis Pipeline (`scripts/sequence_analysis/`)
 One production pipeline — no `audit_*` / `*_v2` / duplicate variants (fix the
 production script in place; git holds history). `analyze_reorder.py` is the shared
 core: `load_events()` (full purchase table as one frame) and `iter_events()`
 (user-id bursts), plus `analyze_level(level, keep=...)` for next-order probability +
-shuffle-baseline lift. Every heavy analysis (`analyze_patterns`, `analyze_novelty`,
-`analyze_prepared_foods`, `analyze_lift_decomposition`, `analyze_substitution`,
-`analyze_exploration`, `analyze_cooccurrence`, `analyze_customer_behavior`,
-`analyze_calendar_time`) consumes `iter_events()` and accumulates per-customer
-partials across bursts — exact results at ~1.2GB peak. See `docs/PROCESSING.md`.
-**Never subsample input to save memory; chunk it.** Prepared-food grouping uses the
-classifier's `is_prepared_dish` flag, never a hardcoded ingredient list.
+shuffle-baseline lift. Every heavy analysis consumes `iter_events()` and accumulates
+per-customer partials across bursts — exact results at ~1.2GB peak. See
+`docs/PROCESSING.md`. **Never subsample input to save memory; chunk it.**
 
 ### Project Structure
 ```
 scripts/
   ├── config.py          # Shared configuration: paths, schemas, keywords
-  ├── data_pipeline/
-  │   ├── ingest_data.py # Download and convert dataset
-  │   └── audit_data.py  # Validate data quality
-  ├── classification/    # LLM + alternative classifiers
+  ├── data_pipeline/     # Kaggle → Parquet ingestion + audit
+  ├── classification/    # LLM classifier, lookup-table classifier, taxonomy corrections
   └── sequence_analysis/ # One script per result; analyze_reorder.py is the shared core
 
-data/
-  ├── raw/               # Original CSV files (gitignored)
-  └── processed/         # Parquet files + provenance.json (gitignored)
+analysis/
+  ├── classification/    # food_classification.csv, product_ingredient_lookup.csv, taxonomy
+  ├── ingredients/       # Demand vs assortment, concentration, organic penetration
+  ├── basket/            # Basket size, composition, co-occurrence
+  ├── sequences/         # Reorder, patterns, substitution, calendar
+  ├── novelty/           # Novelty, repertoire growth
+  ├── prepared/          # Reach, dish types, products, reorder
+  ├── customers/         # Profile, segments, behavior
+  └── figures/           # All figures (png/svg)
 
-docs/
-  └── DATA_AUDIT.md      # Generated quality report
+data/
+  ├── raw/               # Original CSV files
+  └── processed/         # Parquet files + provenance.json
+
+docs/                    # PROCESSING.md, DATA_AUDIT.md, FOOD_CLASSIFICATION.md
 ```
 
 ### Configuration (`scripts/config.py`)
@@ -101,7 +105,6 @@ All scripts import from `config.py` to ensure consistency.
 - `order_number`: Customer-relative sequence (1, 2, 3, ...), NOT a timestamp
 - `days_since_prior_order`: Inter-purchase interval, **capped at 30 days**
 - **No absolute calendar dates** in the dataset
-- Cannot reconstruct true elapsed time beyond ~30-day windows
 
 **Order sets:**
 - `prior`: Historical orders with item labels → `order_products__prior`
@@ -109,38 +112,23 @@ All scripts import from `config.py` to ensure consistency.
 - `test`: Competition test orders, **no published item labels** (NOT empty baskets)
 
 **Prepared food identification:**
-- Must inspect actual aisle/department taxonomy (see `audit_data.py`)
-- Keywords in `config.PREPARED_FOOD_KEYWORDS` are initial search terms
-- Audit refines categories based on real taxonomy structure
-- Grocery products ≠ restaurant meals
-
-## Data Quality Requirements
-
-The audit validates:
-
-1. **Schema completeness**: All expected columns present in each table
-2. **ID uniqueness**: No duplicate primary keys
-3. **Join coverage**: >95% of prior orders have item records
-4. **Missing values**: Document nulls, especially `days_since_prior_order` (expected for first orders)
-5. **User order counts**: Distribution must support repeat-purchase analysis
-6. **Prepared food coverage**: Sufficient products and purchases for meaningful sequences
-
-**Critical constraint**: Must preserve every observed order as an opportunity to select prepared foods, even if that order contains none (zero-purchase signal).
+Defined by the taxonomy's "Prepared Dishes & Meals" section (17 meal types), not a
+hardcoded ingredient list. The per-product `is_prepared_dish` flag is broader; the
+taxonomy section is the authoritative definition.
 
 ## Data Handling Rules
 
 **NEVER commit to git:**
-- Raw CSV files (`data/raw/**`)
-- Processed Parquet files (`data/processed/**`)
 - Kaggle credentials (`~/.kaggle/kaggle.json`)
-- Customer-level derived data
-- Any file with purchase sequences or user identifiers
+- The original data files from Kaggle (too large for GitHub)
 
 **DO commit:**
 - Data directory structure (`.gitkeep` files)
-- Provenance metadata schema (documentation only, not files with actual checksums)
-- Aggregated statistics in audit reports
-- Code, documentation, visualizations
+- Processed Parquet files (`data/processed/`)
+- Classification outputs (`analysis/classification/`)
+- Aggregate analysis results (CSVs under `analysis/<topic>/`)
+- Figures (PNG/SVG under `analysis/figures/`)
+- Code, documentation, derived data that other researchers could use
 
 ## Kaggle API Authentication
 
@@ -152,84 +140,24 @@ Kaggle uses token-based authentication (as of 2026). The user must:
    - **Environment variable**: `export KAGGLE_API_TOKEN=KGAT_...` (session-only)
    - **Token file**: Save token to `~/.kaggle/access_token` and `chmod 600` it (persists)
 
-**Note**: Kaggle changed from `kaggle.json` (username/key) to token-based auth. Old accounts may still have `kaggle.json`, which also works.
-
-**Dataset source**: The original Kaggle competition page is no longer active. The dataset is now available at:
-https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis
-
-**Scripts will detect missing credentials and provide exact manual steps.** Never request credentials in chat or commit them.
-
-## Expected File Variations
-
-The dataset may have filename variations:
-- `order_products__prior.csv` OR `order_products_prior.csv`
-- `order_products__train.csv` OR `order_products_train.csv`
-
-Ingestion script searches for both patterns. All Parquet outputs use normalized names (underscores, no dunder).
-
-## Analysis Goals (Future Phases)
-
-After data validation succeeds:
-
-1. Identify prepared food selection sequences per customer
-2. Measure repeat purchase intervals and rotation patterns  
-3. Detect "stop" events (prepared food drop-off) and "return" events
-4. Compare prepared food behavior to broader grocery categories
-5. Generate visual sequence diagrams for GitHub report
-
-## Testing Strategy (When Implemented)
-
-Tests should validate:
-- Schema expectations in `config.py` match actual dataset structure
-- Checksum verification for data integrity
-- Join coverage calculations
-- Category identification logic (prepared food keywords → actual products)
-- Edge cases: single-order users, orders with no prior purchases, null `days_since_prior_order`
-
-Use `pytest` with fixtures that load small subsets of real data (not synthetic).
-
-## Dependencies
-
-**Core:**
-- `pandas`: Data manipulation and analysis
-- `polars`: Alternative high-performance dataframe library (optional)
-- `pyarrow`: Parquet file format support
-- `kaggle`: Kaggle API client for dataset download
-
-**Dev:**
-- `jupyterlab`: Interactive exploration (not required for pipeline)
-- `pytest`: Testing framework
-- `ruff`: Fast Python linter and formatter
-- `ipykernel`: Jupyter kernel for notebooks
-
-**Why Parquet?**
-- 5-10x smaller than CSV
-- Column-oriented storage enables fast filtering/aggregation
-- Preserves dtypes (no re-parsing strings as ints/floats)
-- Standard in data science pipelines
+**Dataset source**: https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis
 
 ## Known Limitations
 
 1. **No absolute timestamps**: Cannot reconstruct calendar dates or seasonal patterns
 2. **30-day cap on inter-purchase intervals**: Long gaps are censored
-3. **Order continuity**: Some users have non-continuous `order_number` sequences (audit flags these)
-4. **Test set opacity**: Test orders lack item labels, cannot be used for sequence analysis
-5. **Category ambiguity**: "Prepared food" taxonomy requires human judgment on edge cases (e.g., frozen pizzas vs. meal kits)
+3. **Test set opacity**: Test orders lack item labels, cannot be used for sequence analysis
+4. **Category ambiguity**: "Prepared food" taxonomy requires human judgment on edge cases
+5. **Instacart-specific**: Customer base skews urban and convenience-oriented; organic penetration and plant-milk shares are platform-specific, not nationally representative
+6. **2,807 unclassified products** (5.6%): The LLM declined low-confidence guesses
 
 ## Vocabulary
 
+- **Ingredient**: The recipe-level role a product plays (milk, yogurt, banana) — brand, size, and flavor stripped away
+- **Category**: Taxonomy grouping of ingredients (PRODUCE - VEGETABLES, DAIRY, SNACKS, etc.)
 - **Prepared foods**: Ready-to-eat meals requiring minimal cooking (frozen meals, deli items, etc.)
-- **Order opportunity**: Any order where customer could have selected prepared food (includes zero-purchase orders)
+- **Brand multiplier**: Distinct products ÷ distinct ingredients per customer (median 1.33×)
 - **Repeat**: Purchasing the same product in successive orders
 - **Rotation**: Alternating between products in a category
 - **Stop**: Ceasing to purchase prepared foods after a history of purchases
 - **Return**: Resuming prepared food purchases after a gap
-
-## Future Deliverable
-
-GitHub Pages report with:
-- Aggregate statistics on prepared food selection patterns
-- Visual sequence diagrams (anonymized, no user IDs)
-- Insights on repeat vs. rotation behavior
-- Comparison to broader grocery categories
-- Methodology and limitations documentation
