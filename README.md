@@ -110,14 +110,15 @@ premise. 35,722 food products → 543 ingredients across 24 categories.
 
 ### [Customers →](analysis/customers/)
 
-![Customer segments](analysis/figures/customer_segments.png)
+![Behavior correlations](analysis/figures/behavior_correlations.png)
 
-- The median customer places 10 orders over ~5 observed months, baskets of ~8,
-  shopping every ~13 days. Four balanced segments on frequency × basket size;
-  frequency, not basket size, drives order volume.
-- Behavioral traits are stable within a customer (r 0.73–0.82 across halves) but
-  mostly track purchase volume — **except within-ingredient product-switching**, the
-  one volume-independent trait worth segmenting on.
+- **Most behavioral "types" are really volume differences** — repeat rate, novelty,
+  and diversity correlate r > 0.9 with each other and ±0.5–0.6 with order count.
+  Two exceptions: **product switching** (r = −0.04 with volume) and **prepared-food
+  share** (r = −0.08) are genuinely independent dimensions.
+- **Within-customer variation rivals between-customer** — basket size SD within a
+  customer (4.2) is 81% of SD between customers (5.2). "Customer types" are less
+  stable than they appear.
 
 ---
 
