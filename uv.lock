@@ -757,7 +757,7 @@ wheels = [
 [[package]]
 name = "food-sequences"
 version = "0.1.0"
-source = { editable = "." }
+source = { virtual = "." }
 dependencies = [
     { name = "anthropic" },
     { name = "kaggle" },

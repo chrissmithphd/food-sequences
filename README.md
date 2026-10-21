@@ -74,7 +74,8 @@ premise.
 - **Within an ingredient, order-to-order product changes are mild; most "variety" is
   simultaneous** — buying several products of one ingredient in a single order is
   common in flavored categories (yogurt 37% of its orders, ice cream 26%) and rare for
-  staples (~0.5%). Across orders the same product mostly recurs (stay lift 1.0–1.08).
+  staples (~0.5%). Across orders the same product mostly recurs; the probability of
+  staying with the same product is 1.0–1.08× the shuffle-baseline expectation.
 - **Named "patterns" mostly re-describe frequency** — staples and "returns" occur at
   or below a frequency-preserving null. Burst-then-absence is above chance (an
   ingredient bought early then absent in the observed window), but with no post-window
@@ -149,6 +150,7 @@ analysis/
   figures/          # all figures (png/svg)
 docs/               # PROCESSING.md, DATA_AUDIT.md
 scripts/
+  config.py         # shared paths, schemas, keywords
   data_pipeline/    # Kaggle → Parquet ingestion + audit
   classification/   # classifiers + taxonomy corrections
   sequence_analysis/# one script per result; analyze_reorder.py is the shared core

@@ -11,8 +11,8 @@ import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
-from food_sequences.config import DATA_PROCESSED, ANALYSIS_OUTPUTS
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from config import DATA_PROCESSED, ANALYSIS_OUTPUTS
 
 
 def load_taxonomy():

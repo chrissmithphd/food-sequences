@@ -117,7 +117,15 @@ This report validates the Instacart dataset for quality and completeness.
 
 - ✓ All users have continuous order_number sequences (1, 2, 3, ...)
 
-## Prepared Food Categories
+## Prepared Food Categories (keyword-based pre-classification estimate)
+
+> **Note:** This section uses a keyword-based aisle/department filter to estimate
+> prepared food coverage before the LLM classification was run. The subsequent
+> classification identified 8,278 prepared dishes using a recipe-grounded taxonomy
+> (see `analysis/classification/`). The numbers below are the pre-classification
+> estimate; the 8,278 figure is the authoritative count.
+
+
 
 ### Aisles (Prepared Foods)
 

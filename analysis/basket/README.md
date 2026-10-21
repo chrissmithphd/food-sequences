@@ -38,7 +38,8 @@ Share of all food items by department:
 **Fresh dominates.** Produce alone is nearly a third of every basket; produce + dairy
 + meat/seafood + deli (the fresh departments) are over half. Packaged categories —
 snacks, beverages, frozen, pantry — fill most of the remainder. Prepared meals are a
-small slice: **3.9% of items, and 20.8% of baskets contain at least one** (see
+small slice: **3.9% of items, and 20.8% of baskets contain at least one** — but 60%
+of *customers* buy a prepared dish at some point, just not in most orders (see
 [prepared dishes](../prepared/)).
 
 ## What travels together

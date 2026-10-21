@@ -2,8 +2,8 @@
 
 from pathlib import Path
 
-# Project paths
-PROJECT_ROOT = Path(__file__).parent.parent.parent
+# Project paths — scripts/ is one level below the project root
+PROJECT_ROOT = Path(__file__).parent.parent
 DATA_RAW = PROJECT_ROOT / "data" / "raw"
 DATA_PROCESSED = PROJECT_ROOT / "data" / "processed"
 DOCS_DIR = PROJECT_ROOT / "docs"

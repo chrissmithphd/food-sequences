@@ -26,8 +26,9 @@ import polars as pl
 import seaborn as sns
 
 sys.path.insert(0, str(Path(__file__).parent))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 from analyze_reorder import iter_events
-from food_sequences.config import DATA_PROCESSED
+from config import DATA_PROCESSED
 
 sns.set_theme(style="whitegrid", font_scale=1.1)
 SEQ = Path(__file__).parent.parent.parent / "analysis" / "customers"

@@ -25,8 +25,8 @@ import re
 from collections import defaultdict
 import polars as pl
 
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
-from food_sequences.config import DATA_PROCESSED
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from config import DATA_PROCESSED
 
 ROOT = Path(__file__).parent.parent.parent
 SEQ = ROOT / "analysis" / "sequences"
@@ -92,6 +92,9 @@ def _events_lazy(user_lo=None, user_hi=None):
     prior = pl.scan_parquet(DATA_PROCESSED / "order_products_prior.parquet").select(["order_id", "product_id"])
     train = pl.scan_parquet(DATA_PROCESSED / "order_products_train.parquet").select(["order_id", "product_id"])
 
+    # Excludes non-food products and the 2,807 unclassified food products (~5.6%
+    # of the catalog, ~2% of purchase volume) where the LLM declined to assign an
+    # ingredient.  All downstream analyses inherit this filter.
     return (pl.concat([prior, train])
             .join(orders, on="order_id", how="inner")
             .join(clf, on="product_id", how="left")

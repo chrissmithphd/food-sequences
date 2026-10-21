@@ -7,8 +7,8 @@ import sys
 import pandas as pd
 from pathlib import Path
 
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
-from food_sequences.config import ANALYSIS_OUTPUTS
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from config import ANALYSIS_OUTPUTS
 
 
 def refine_classification(df):

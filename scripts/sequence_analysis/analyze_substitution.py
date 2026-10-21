@@ -49,6 +49,10 @@ def partials(d):
     sp_trans = tr.height
     sp_stay = tr.filter(pl.col("sig") == pl.col("psig")).height
 
+    # Expected P(stay) under random permutation: for a (user, ingredient) pair with m
+    # single-product orders and product p appearing c_p times, the exact expectation is
+    # sum_p c_p(c_p-1) / (m(m-1)).  Aggregated transition-weighted: each transition
+    # contributes equally (pairs with more transitions weigh more, matching observed).
     cnt = sp.group_by(["user_id", "ingredient", "sig"]).agg(pl.len().alias("c"))
     pa = cnt.group_by(["user_id", "ingredient"]).agg(
         (pl.col("c") * (pl.col("c") - 1)).sum().alias("same"), pl.col("c").sum().alias("m"))

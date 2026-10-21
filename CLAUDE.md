@@ -34,13 +34,13 @@ python scripts/audit_data.py
 ### Development
 ```bash
 # Run linting
-uv run ruff check src/ scripts/
+uv run ruff check scripts/
 
 # Auto-fix linting issues
 uv run ruff check --fix src/ scripts/
 
 # Format code
-uv run ruff format src/ scripts/
+uv run ruff format scripts/
 
 # Run tests (when test suite exists)
 uv run pytest
@@ -70,13 +70,13 @@ classifier's `is_prepared_dish` flag, never a hardcoded ingredient list.
 
 ### Project Structure
 ```
-src/food_sequences/
-  ├── __init__.py        # Package initialization
-  └── config.py          # Centralized configuration: paths, schemas, keywords
-
 scripts/
-  ├── ingest_data.py     # Download and convert dataset
-  └── audit_data.py      # Validate data quality
+  ├── config.py          # Shared configuration: paths, schemas, keywords
+  ├── data_pipeline/
+  │   ├── ingest_data.py # Download and convert dataset
+  │   └── audit_data.py  # Validate data quality
+  ├── classification/    # LLM + alternative classifiers
+  └── sequence_analysis/ # One script per result; analyze_reorder.py is the shared core
 
 data/
   ├── raw/               # Original CSV files (gitignored)
@@ -86,7 +86,7 @@ docs/
   └── DATA_AUDIT.md      # Generated quality report
 ```
 
-### Configuration (`src/food_sequences/config.py`)
+### Configuration (`scripts/config.py`)
 
 Centralized definitions for:
 - **Paths**: Project root, data directories, docs

@@ -19,10 +19,9 @@ from pathlib import Path
 
 import pandas as pd
 
-# Add src to path
-sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from food_sequences.config import (
+from config import (
     DATA_PROCESSED,
     DATA_RAW,
     KAGGLE_DATASET,

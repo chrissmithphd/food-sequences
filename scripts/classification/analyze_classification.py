@@ -17,8 +17,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 from collections import Counter
 
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
-from food_sequences.config import ANALYSIS_OUTPUTS
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from config import ANALYSIS_OUTPUTS
 
 # Set visualization style
 plt.style.use('seaborn-v0_8-darkgrid')

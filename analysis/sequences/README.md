@@ -17,9 +17,11 @@ same as loyalty, preference, or predictability, and we do not read it as such.
 
 For an occurrence of a value at order *n* (observable iff *n* < the customer's true
 final order *N*), does the same value appear in order *n+1*? The baseline is a random
-re-ordering of that customer's *N* baskets; for a value in *b* of them the exact
-expectation is (b−1)/(N−1). Observed and expected are summed over the **same**
-observable occurrences, so the ratio (lift) is a like-for-like comparison.
+re-ordering of that customer's *N* baskets: if a value appears in *b* of *N* baskets
+and one of them is the current order, the other *b*−1 occurrences are distributed
+across the remaining *N*−1 slots, so the chance the next slot holds one is
+(b−1)/(N−1). Observed and expected are summed over the **same** observable
+occurrences, so the ratio (lift) is a like-for-like comparison.
 
 | Grain | P(next) | within 5 | expected | Lift |
 |-------|--------:|---------:|---------:|-----:|
@@ -79,9 +81,12 @@ lower stay rates and much of their variety is **simultaneous**, not sequential.
 ## 3. Pattern labels
 
 Sorting (customer, ingredient) pairs (≥2 purchases, ≥10-order customers) into
-staple / return / burst / rotation requires precedence, which forces one label and
-hides overlap. The honest view is each rule evaluated **independently** (they overlap,
-so they do not sum to 100), next to a frequency-preserving random null:
+staple / return / burst / rotation requires precedence: staple wins first, then
+return, then burst, then rotation, with the remainder labeled irregular/mixed. This
+forces one label per pair and hides overlap — a pair can match several rules at once.
+The more informative view is each rule evaluated **independently** (they overlap,
+so they do not sum to 100), next to a frequency-preserving random null that scatters
+the same purchases at random across the same history length:
 
 | Rule (independent) | Observed | Random null |
 |--------------------|---------:|------------:|
@@ -159,3 +164,9 @@ lower bounds.)
   speaks to churn.
 - The transition matrix uses a population base-rate normalization, not a per-customer
   one; strong associations are co-timing at the population level.
+- All comparisons report descriptive lift (observed/expected) without p-values. Given
+  event counts in the tens of millions, virtually any nonzero lift clears statistical
+  significance; the question is practical magnitude, not sampling noise.
+- "Return after break" is sensitive to its gap threshold: 75% of pairs qualify at
+  gap≥3, dropping to 29% at gap≥10. The reported 58% (gap≥5) should be read alongside
+  the threshold-sensitivity figures in the data, not as a stable rate.

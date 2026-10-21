@@ -51,7 +51,7 @@ The 632 assigned ingredients exceeds the 446-ingredient taxonomy because the LLM
 
 **8 unused taxonomy ingredients:** basil, cleaning_supplies, everything_bagel_seasoning, halibut, oregano, rosemary, shaving_cream, thyme
 
-These are mostly specific herbs (basil, oregano, rosemary, thyme) that may have been collapsed into `fresh_herbs` or `dried_herbs`, and niche items with low representation in the Instacart dataset.
+The herbs (basil, oregano, rosemary, thyme) are defined as separate dried-spice entries in the taxonomy, but the LLM classified products containing them into broader groups (`fresh_herbs`, `dried_herbs`, or `italian_seasoning`) instead. This is a mismatch between the taxonomy's intent and the LLM's behavior — the taxonomy defines them, the LLM chose coarser labels. The remaining unused entries (`cleaning_supplies`, `shaving_cream`) are non-food that the scope filter handles before ingredient assignment; `halibut` and `everything_bagel_seasoning` had no matching products.
 
 ### Distribution Concentration
 

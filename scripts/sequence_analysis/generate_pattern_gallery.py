@@ -16,8 +16,8 @@ import matplotlib.patches as mpatches
 import polars as pl
 import numpy as np
 
-sys.path.insert(0, str(Path(__file__).parent.parent.parent / "src"))
-from food_sequences.config import DATA_PROCESSED
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from config import DATA_PROCESSED
 
 SEQ_ANALYSIS_DIR = Path(__file__).parent.parent.parent / "analysis" / "sequence_analysis"
 FIGURES_DIR = Path(__file__).parent.parent.parent / "analysis" / "figures"
