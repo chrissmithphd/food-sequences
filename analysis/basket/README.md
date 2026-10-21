@@ -1,11 +1,16 @@
 # Basket Contents
 
-What a single order looks like: how big it is, how varied, what departments fill it,
-and which ingredients travel together.
+What do grocery baskets contain, and what meaningful relationships exist among the
+items purchased together?
 
-- Source: `analyze_basket_contents.py` → `basket_contents_summary.csv`;
-  `analyze_cooccurrence.py` → `cooccurrence_pairs.csv`
-- Scope: 3,309,682 orders, 30,376,625 food item-events.
+This is within-basket analysis: what co-occurs in a single order. It does not cover
+reorder behavior, sequences across orders, or customer segments — those belong to
+their own reports.
+
+- Sources: `analyze_basket_contents.py`, `visualize_basket.py`
+- Scope: 3,309,682 orders, 30,376,625 food item-events, 543 ingredients.
+
+---
 
 ## How big is a basket?
 
@@ -14,42 +19,61 @@ and which ingredients travel together.
 - **Median 8 food items** per order (mean 9.2; p10–p90: 2–18).
 - **Median 7 distinct ingredients** per order (mean 8.2).
 
-Within a single basket, item count and distinct-ingredient count track each other
-closely (8 vs 7) — customers rarely buy the same ingredient twice in one order. And
-basket variety is flat across a customer's lifetime: ~8 distinct ingredients per order
-at order 1 and at order 50 alike (the repertoire grows across orders, not within them;
-see [novelty & exploration](../novelty/)).
+Items and ingredients track closely — customers rarely buy the same ingredient twice
+in one order.
 
 ## What's in the basket?
 
 ![Basket composition by department](../figures/basket_composition.png)
 
-Share of all food items by department:
+**Fresh dominates.** Produce is nearly a third of every basket; produce + dairy +
+meat/seafood + deli exceed half. Packaged categories (snacks, beverages, frozen,
+pantry) fill most of the remainder. Prepared meals are 3.9% of items; 20.8% of
+baskets contain at least one — but 60% of *customers* buy a prepared dish at some
+point, just not in most orders ([prepared dishes →](../prepared/)).
 
-| Department | Share | | Department | Share |
-|------------|------:|-|------------|------:|
-| produce | **31.2%** | | canned goods | 3.5% |
-| dairy eggs | 17.2% | | deli | 3.4% |
-| snacks | 9.2% | | dry goods pasta | 2.8% |
-| beverages | 8.3% | | meat seafood | 2.4% |
-| frozen | 7.3% | | breakfast | 2.3% |
-| pantry | 5.9% | | bakery | 3.8% |
+### How composition shifts with basket size
 
-**Fresh dominates.** Produce alone is nearly a third of every basket; produce + dairy
-+ meat/seafood + deli (the fresh departments) are over half. Packaged categories —
-snacks, beverages, frozen, pantry — fill most of the remainder. Prepared meals are a
-small slice: **3.9% of items, and 20.8% of baskets contain at least one** — but 60%
-of *customers* buy a prepared dish at some point, just not in most orders (see
-[prepared dishes](../prepared/)).
+![Composition by basket size](../figures/composition_by_size.png)
 
-## What travels together
+Small and large baskets are not the same trip scaled up. Small baskets (1–3 items)
+are disproportionately beverages and single-category pickups. As baskets grow,
+produce and dairy increase their share while beverages and snacks shrink. The largest
+baskets (16+) look like weekly shops: heavy on produce, dairy, and proteins, with
+snacks and frozen as minor additions.
 
-Deduplicate to one (order, ingredient), count orders containing each pair, and compare
-to independence: `lift = P(a,b) / P(a)·P(b)`. Two different questions get two
-different answers.
+## Basket diversity and density
 
-**Highest support (what fills carts):** produce-and-dairy staples, common because each
-item is in a huge share of baskets — and only modestly above chance.
+![Basket diversity](../figures/basket_diversity.png)
+
+Distinct ingredients grow roughly linearly with basket size — but not quite 1:1. The
+ingredient-per-item ratio falls from 1.0 (a 1-item basket is always 1 ingredient) to
+0.84 at 30 items: larger baskets include more duplicate-ingredient items (e.g.,
+multiple yogurt flavors, several produce items mapping to one ingredient). Categories
+saturate faster: a 30-item basket covers about 10 of 22 food categories, not 30.
+
+Larger baskets are broader, not just bigger — but the breadth gain decelerates. A
+10-item basket spans 5.6 categories; doubling to 20 items only adds 2.8 more.
+
+## What category dominates each basket?
+
+![Dominant category](../figures/dominant_category.png)
+
+The plurality of items in 25% of baskets is vegetables, 21% dairy, 18% fruit. Only 3%
+are dominated by prepared dishes. Most baskets are fresh-food-centered even when they
+contain packaged items.
+
+---
+
+## What travels together: ingredient pairs
+
+28,264 ingredient pairs appear in at least 500 orders. Two different questions get
+two different answers.
+
+![Support vs lift](../figures/cooccurrence_support_lift.png)
+
+**High support (what fills carts):** popular staples that appear together because each
+is in a huge share of baskets. Lift near 1 — barely above chance.
 
 | Pair | Orders (support) | Lift |
 |------|-----------------:|-----:|
@@ -58,8 +82,9 @@ item is in a huge share of baskets — and only modestly above chance.
 | apple + banana | 290,063 | 1.70 |
 | avocado + banana | 238,192 | 1.56 |
 
-**Highest lift (what actually goes together):** intact recipe signatures — specialty
-ingredients that are individually uncommon but almost never bought except together.
+**High lift (what actually goes together):** specialty ingredients that rarely appear
+alone but almost always appear together. These are co-purchasing signatures — baking
+runs, spice blends, specific dishes.
 
 | Pair | Lift | Support |
 |------|-----:|--------:|
@@ -73,21 +98,99 @@ ingredients that are individually uncommon but almost never bought except togeth
 | cumin + paprika | 26.9 | 878 |
 
 These resolve into recognizable contexts: **baking** (cake flour + powdered sugar,
-bread flour + yeast, baking powder + soda), **spice blends** (the cumin / chili /
-paprika / turmeric cluster — the makings of chili and curry), **specific dishes**
-(lasagna noodles + ricotta), and **alcohol runs** (red wine + wine, champagne + wine).
-Evaluating *all* 542 ingredients, not just the frequent ones, is what surfaces them —
-the strongest signals are rare, specialized ingredients.
+bread flour + yeast, baking powder + soda), **spice blends** (cumin / chili / paprika
+— the makings of chili and curry), **specific dishes** (lasagna noodles + ricotta),
+and **alcohol runs** (red wine + wine, champagne + wine).
 
-**For a recommender:** support finds what's already in the cart (no prompting needed);
-lift finds the recipe a customer is assembling and the partner ingredient they might
-still need.
+The scatterplot shows the trade-off: the upper-left holds rare-but-strongly-associated
+pairs (baking, specialty dishes); the lower-right holds common-but-expected staple
+combinations. Hot dog + hot dog bun sits interestingly in the middle — common enough
+to have real support (20k+ orders) and strongly associated (lift ~21).
+
+**Important caveat:** high lift with low support can be misleading. Cake flour +
+powdered sugar appears in only 862 of 3.3M orders. The lift is real (these ingredients
+genuinely co-occur far above chance), but its rarity means it describes a specific
+behavior (baking projects) rather than a general shopping pattern.
+
+## Category co-occurrence
+
+![Category heatmap](../figures/category_heatmap.png)
+
+The heatmap shows which food categories appear together more (warm) or less (cool)
+than expected.
+
+Strongest positive associations:
+- **Cooking clusters:** vegetables + cooking liquids, vegetables + spices, vegetables +
+  oils, grains/pasta + condiments/sauces — the building blocks of cooking from scratch.
+- **Protein + cooking ingredients:** meat and seafood associate with vegetables, grains,
+  and spices more than with other categories.
+- **Baking cluster:** baking + dairy, baking + spreads/jams — flour, sugar, butter,
+  eggs travel together.
+
+Negative or neutral:
+- **Snacks + cooking:** snacks show weak or negative association with spices, cooking
+  liquids, and oils — snack-heavy baskets are not cooking-from-scratch baskets.
+- **Prepared meals + cooking ingredients:** prepared dishes weakly associate with
+  vegetables and spices — customers buying prepared meals are buying less from scratch.
+- **Beverages** are near-neutral with most categories — they go in every kind of basket.
+
+## Conditional companions
+
+![Conditional companions](../figures/conditional_companions.png)
+
+Given that a basket contains a specific ingredient, what else is more likely to
+appear? Four examples:
+
+**Banana** companions are other fruit (pear 1.9×, kiwi 1.8×, cantaloupe 1.8×, apple
+1.7×) plus kid-friendly items (baby food, applesauce, string cheese). Banana is a
+fruit-basket anchor.
+
+**Pasta** companions are sauces: pasta_sauce 5.6×, alfredo_sauce 5.3×, vodka_sauce
+5.2×, marinara 4.5×, pesto 3.7×, parmesan 3.1×. Pasta is the clearest recipe signal
+in the data — when someone buys pasta, they're assembling a pasta dinner.
+
+**Eggs** companions split between breakfast (pancake_mix 1.8×, french_toast 1.8×) and
+baking (cake_flour 1.9×, buttermilk 1.8×, powdered_sugar 1.8×). Eggs serve two
+distinct cooking contexts.
+
+**Garlic** companions are aromatic/cooking ingredients: bay_leaves 5.1×, tomatillo
+4.4×, cumin 4.3×, ginger 4.3×, fish_sauce 4.2×, coriander 4.2×. Garlic is a
+from-scratch cooking signal — its presence predicts other scratch-cooking ingredients.
+
+## Three-ingredient combinations
+
+![Ingredient triplets](../figures/ingredient_triplets.png)
+
+The top triplets (among the 60 most-purchased ingredients, support ≥ 300 baskets) are
+dominated by cooking aromatics and produce:
+
+- **fresh_herbs + garlic + onion** (28k baskets, lift 12×): the classic aromatic base
+  — appears 12 times more often than if each ingredient were purchased independently.
+- **fresh_herbs + lemon + onion** (26k baskets, lift 7×): Mediterranean cooking base.
+- **cucumber + lettuce + tomato** (27k baskets, lift 5×): salad.
+- **avocado + garlic + onion** (21k baskets, lift 5×): guacamole ingredients.
+- **apple + banana + pear** (36k baskets, lift 4×): the fruit-basket core.
+
+These are *co-purchasing patterns*, not confirmed recipes. A basket containing herbs,
+garlic, and onion is consistent with cooking from scratch, but we cannot see what was
+actually cooked. The triplet lift measures how much more common the combination is
+than independence would predict, not whether the ingredients were used together.
 
 ## Limitations
 
-- Co-occurrence is within an order, not within a recipe or a meal — one order can mix
-  several meals and household needs.
-- Pairs are ranked down to a support floor of 500 orders; rarer pairings are still
-  counted toward each ingredient's totals but not ranked.
-- "Fresh" is a department reading, not a nutrition judgment; item counts are food
-  items only (non-food excluded), so baskets are larger than shown.
+- Co-occurrence is within an order, not within a recipe or a meal. One order can mix
+  several meals and household needs. A basket containing pasta + chicken + ice cream
+  does not mean these were cooked together.
+- Pair lift can be misleading for very rare ingredients: two ingredients that each
+  appear in 0.1% of baskets will have high lift if they co-occur in even a few hundred
+  baskets. Support counts are always reported alongside lift.
+- Three-way lift uses a simple independence baseline (P(a)·P(b)·P(c)). This
+  overstates the significance of triplets whose pairwise associations are already
+  strong — herbs+garlic+onion has high three-way lift partly because each *pair* is
+  already associated. A more rigorous test would condition on pairwise rates.
+- Triplets are restricted to the top 60 ingredients by purchase volume, so rare
+  specialty combinations (baking triplets, ethnic cuisine signatures) are not captured.
+- "Dominant category" uses plurality of items; a basket with 3 vegetables, 2 dairy,
+  and 2 snacks is labeled "vegetable-dominant" even though it's mixed.
+- Fresh/packaged coloring in the bar charts is based on department, not nutrition
+  labeling.

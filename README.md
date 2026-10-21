@@ -57,12 +57,16 @@ premise. 35,722 food products → 543 ingredients across 24 categories.
 
 ![Basket composition by department](analysis/figures/basket_composition.png)
 
-- A basket is small and fresh: median 8 food items, 7 distinct ingredients; produce
-  is 31% of items, fresh departments over half. Prepared meals are 3.9% of items.
-- **What travels together** splits two ways: high-*support* pairs are staples
-  (banana+yogurt, 354k orders); high-*lift* pairs are intact recipes — cake flour +
-  powdered sugar (85×), bread flour + yeast (61×), lasagna noodles + ricotta (51×), a
-  cumin/chili/paprika spice cluster.
+- **Baskets are small and fresh:** median 8 food items, 7 distinct ingredients;
+  produce is 31% of items. Small baskets are quick pickups; large baskets are weekly
+  shops with broader category coverage.
+- **Co-purchasing signals are real:** baking ingredients (cake flour + powdered sugar,
+  85× lift), spice blends (garlic_powder + onion_powder, 55×), dish kits (lasagna
+  noodles + ricotta, 51×). Three-ingredient combinations surface cooking aromatics
+  (herbs + garlic + onion, 12× lift in 28k baskets) and salad (cucumber + lettuce +
+  tomato).
+- **Garlic predicts cooking from scratch** — its companions are bay leaves,
+  tomatillo, cumin, ginger, fish sauce. Pasta predicts sauce (pasta_sauce 5.6×).
 
 ### [Sequences →](analysis/sequences/)
 
@@ -167,11 +171,12 @@ python scripts/classification/apply_corrections.py          # taxonomy fixes (co
 # results (memory-safe, full dataset) — each writes to its analysis/<topic>/ directory
 for s in analyze_reorder analyze_patterns analyze_substitution analyze_calendar_time \
          analyze_lift_decomposition analyze_novelty analyze_exploration \
-         analyze_cooccurrence analyze_basket_contents analyze_prepared_foods \
+         analyze_basket_contents analyze_prepared_foods \
          analyze_ingredient_lens analyze_customer_profile analyze_customer_behavior; do
   python scripts/sequence_analysis/$s.py
 done
-python scripts/sequence_analysis/visualize_ingredient_lens.py   # figures
+python scripts/sequence_analysis/visualize_ingredient_lens.py   # ingredient figures
+python scripts/sequence_analysis/visualize_basket.py            # basket figures
 python scripts/sequence_analysis/visualize_audit.py
 python scripts/sequence_analysis/generate_pattern_gallery.py
 ```

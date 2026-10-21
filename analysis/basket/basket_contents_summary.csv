@@ -1,21 +1,21 @@
 department,item_share_pct,fresh
-produce,31.20672227411702,true
-dairy eggs,17.200166246250202,true
-snacks,9.207553505368026,false
-beverages,8.346480229452744,false
-frozen,7.258307991753528,false
-pantry,5.893176085230008,false
-bakery,3.8449169385999924,false
-canned goods,3.488745046561295,false
-deli,3.4251764308905286,true
-dry goods pasta,2.7817639385547275,false
-meat seafood,2.3792142807174925,true
-breakfast,2.318180508861666,false
-international,0.8841403546312336,false
-babies,0.7915197952372919,false
-alcohol,0.4594387954553872,false
-missing,0.2301835704262735,false
-bulk,0.11828832202392464,false
-personal care,0.08362680185833679,false
-other,0.07801393341096978,false
-household,0.004384950599350652,false
+produce,31.21,true
+dairy eggs,17.2,true
+snacks,9.21,false
+beverages,8.35,false
+frozen,7.26,false
+pantry,5.89,false
+bakery,3.84,false
+canned goods,3.49,false
+deli,3.43,true
+dry goods pasta,2.78,false
+meat seafood,2.38,true
+breakfast,2.32,false
+international,0.88,false
+babies,0.79,false
+alcohol,0.46,false
+missing,0.23,false
+bulk,0.12,false
+personal care,0.08,false
+other,0.08,false
+household,0.0,false

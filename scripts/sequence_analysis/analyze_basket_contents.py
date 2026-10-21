@@ -1,126 +1,280 @@
 #!/usr/bin/env python3
 """
-Basket contents: how big a basket is and what is in it.
+Basket contents: what grocery baskets contain and what travels together.
 
-Over all food item-events (one row per user/order/product), measure:
-  - basket size: food items per order (distribution)
-  - distinct ingredients per order (variety within a basket)
-  - composition by department (share of all food items)
-  - prepared-dish share: item share and share of baskets containing >=1 prepared dish
+Passes are run sequentially, each writing its output before the next starts.
+Each pass streams the full dataset in user-id bursts.
 
-Streams the purchase table in user-id bursts; only compact per-order sizes and
-department/prepared counters accumulate. Aggregate summary only (no user IDs).
+Pass 1: Basket metrics — size, composition, diversity, dominant category
+Pass 2: Ingredient co-occurrence pairs (reuses analyze_cooccurrence logic)
+Pass 3: Category co-occurrence matrix
+Pass 4: Ingredient triplets (restricted to top-60 ingredients)
+Pass 5: Conditional companions for selected ingredients
 """
 import sys
 from pathlib import Path
-from collections import Counter
-import matplotlib
-matplotlib.use("Agg")
-import matplotlib.pyplot as plt
+from collections import Counter, defaultdict
 import numpy as np
 import polars as pl
-import seaborn as sns
 
 sys.path.insert(0, str(Path(__file__).parent))
-from analyze_reorder import iter_events
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from analyze_reorder import iter_events, taxonomy_map
 
-sns.set_theme(style="whitegrid", font_scale=1.1)
-SEQ = Path(__file__).parent.parent.parent / "analysis" / "basket"
-FIG = Path(__file__).parent.parent.parent / "analysis" / "figures"
-FIG.mkdir(exist_ok=True, parents=True)
-GREEN, ORANGE, BLUE = "#2E7D32", "#EF6C00", "#1565C0"
+ROOT = Path(__file__).parent.parent.parent
+SEQ = ROOT / "analysis" / "basket"
+SEQ.mkdir(exist_ok=True)
 FRESH_DEPTS = {"produce", "meat seafood", "dairy eggs", "deli"}
 
 
-def main():
-    sizes = []                # food items per (user, order)
-    distinct = []             # distinct ingredients per (user, order)
+def pass1_metrics():
+    """Basket size, composition, diversity, dominant category."""
+    print("Pass 1: basket metrics...")
+    sizes, distincts, cat_counts = [], [], []
     dept_items = Counter()
-    prep_items = 0
     total_items = 0
-    baskets_with_prep = 0
     n_baskets = 0
+
+    size_bins = {"1-3": (1, 3), "4-6": (4, 6), "7-10": (7, 10),
+                 "11-15": (11, 15), "16+": (16, 999)}
+    size_dept = {b: Counter() for b in size_bins}
+    size_cat = {b: Counter() for b in size_bins}
+    size_dept_n = {b: 0 for b in size_bins}
+    dom_cat_counter = Counter()
 
     for chunk in iter_events():
         per_basket = chunk.group_by(["user_id", "order_number"]).agg(
             pl.len().alias("items"),
-            pl.col("ingredient").n_unique().alias("distinct"),
+            pl.col("ingredient").n_unique().alias("distinct_ingredients"),
+            pl.col("category").n_unique().alias("distinct_categories"),
             (pl.col("is_prepared_dish") == True).any().alias("has_prep"))
         sizes.append(per_basket["items"].to_numpy())
-        distinct.append(per_basket["distinct"].to_numpy())
+        distincts.append(per_basket["distinct_ingredients"].to_numpy())
+        cat_counts.append(per_basket["distinct_categories"].to_numpy())
         n_baskets += per_basket.height
-        baskets_with_prep += int(per_basket["has_prep"].sum())
-
         total_items += chunk.height
-        prep_items += int((chunk["is_prepared_dish"] == True).sum())
+
         for dept, c in chunk.group_by("department").agg(pl.len().alias("c")).iter_rows():
             dept_items[dept if dept is not None else "unknown"] += c
 
+        bsizes = per_basket.select(["user_id", "order_number", "items"])
+        tagged = chunk.join(bsizes, on=["user_id", "order_number"], how="left")
+        for bname, (lo, hi) in size_bins.items():
+            sub = tagged.filter((pl.col("items") >= lo) & (pl.col("items") <= hi))
+            if sub.height == 0:
+                continue
+            size_dept_n[bname] += sub.height
+            for dept, c in sub.group_by("department").agg(pl.len().alias("c")).iter_rows():
+                size_dept[bname][dept if dept is not None else "unknown"] += c
+            for cat, c in sub.group_by("category").agg(pl.len().alias("c")).iter_rows():
+                size_cat[bname][cat if cat is not None else "Unknown"] += c
+
+        basket_cats = chunk.group_by(["user_id", "order_number", "category"]).agg(pl.len().alias("n"))
+        dom = (basket_cats.sort(["user_id", "order_number", "n"], descending=[False, False, True])
+               .group_by(["user_id", "order_number"]).first())
+        for cat, c in dom.group_by("category").agg(pl.len().alias("c")).iter_rows():
+            dom_cat_counter[cat] += c
+
     sizes = np.concatenate(sizes)
-    distinct = np.concatenate(distinct)
+    distincts = np.concatenate(distincts)
+    cat_counts = np.concatenate(cat_counts)
 
     pct = lambda a, q: float(np.quantile(a, q))
     print(f"Baskets: {n_baskets:,}  food items: {total_items:,}")
-    print(f"Basket size (food items): p10={pct(sizes,.1):.0f} p25={pct(sizes,.25):.0f} "
-          f"median={pct(sizes,.5):.0f} p75={pct(sizes,.75):.0f} p90={pct(sizes,.9):.0f} mean={sizes.mean():.1f}")
-    print(f"Distinct ingredients per basket: median={pct(distinct,.5):.0f} mean={distinct.mean():.1f}")
-    print(f"Prepared-dish items: {prep_items/total_items*100:.1f}% of items; "
-          f"baskets with >=1 prepared dish: {baskets_with_prep/n_baskets*100:.1f}%")
+    print(f"Basket size: median={pct(sizes,.5):.0f} mean={sizes.mean():.1f}")
+    print(f"Distinct ingredients: median={pct(distincts,.5):.0f}")
 
-    dept_share = {d: c / total_items * 100 for d, c in dept_items.items()}
-    top = sorted(dept_share.items(), key=lambda kv: kv[1], reverse=True)
-    print("\nComposition by department (share of food items):")
-    for d, s in top[:12]:
-        print(f"  {d:16s} {s:5.1f}%")
+    top_depts = sorted(dept_items.items(), key=lambda kv: kv[1], reverse=True)
+    pl.DataFrame([{"department": d, "item_share_pct": round(c / total_items * 100, 2),
+                    "fresh": d in FRESH_DEPTS} for d, c in top_depts]
+                 ).write_csv(SEQ / "basket_contents_summary.csv")
 
-    # summary CSV (aggregate)
-    pl.DataFrame([{"department": d, "item_share_pct": s, "fresh": d in FRESH_DEPTS}
-                  for d, s in top]).write_csv(SEQ / "basket_contents_summary.csv")
+    comp_rows = []
+    for bname in size_bins:
+        n = size_dept_n[bname]
+        if n == 0:
+            continue
+        row = {"basket_size": bname, "n_items": n}
+        for dept, c in size_dept[bname].items():
+            row[f"dept_{dept}"] = round(c / n * 100, 2)
+        for cat, c in size_cat[bname].items():
+            row[f"cat_{cat}"] = round(c / n * 100, 2)
+        comp_rows.append(row)
+    pl.DataFrame(comp_rows).write_csv(SEQ / "composition_by_size.csv")
 
-    _fig_size(sizes)
-    _fig_composition(top)
-    print("\nSaved basket_contents_summary.csv, figures")
+    dom_rows = [{"category": c, "baskets": n, "pct": round(n / n_baskets * 100, 1)}
+                for c, n in dom_cat_counter.most_common()]
+    pl.DataFrame(dom_rows).write_csv(SEQ / "dominant_category.csv")
+
+    div_rows = []
+    for sz in range(1, 31):
+        mask = sizes == sz
+        if mask.sum() < 100:
+            continue
+        div_rows.append({
+            "basket_size": sz, "n_baskets": int(mask.sum()),
+            "mean_ingredients": round(float(distincts[mask].mean()), 2),
+            "mean_categories": round(float(cat_counts[mask].mean()), 2),
+            "ingredients_per_item": round(float(distincts[mask].mean()) / sz, 3),
+        })
+    pl.DataFrame(div_rows).write_csv(SEQ / "diversity_by_size.csv")
+    print("  Saved basket_contents_summary, composition_by_size, dominant_category, diversity_by_size")
+    return n_baskets
 
 
-def _fig_size(sizes):
-    fig, ax = plt.subplots(figsize=(10, 6))
-    ax.hist(np.clip(sizes, 1, 30), bins=np.arange(1, 31), color=BLUE, alpha=0.85, edgecolor="white", linewidth=0.3)
-    med = float(np.median(sizes))
-    ax.axvline(med, color="#C62828", linestyle="--", linewidth=2, label=f"median {med:.0f} items")
-    ax.set_xlabel("Food items per order"); ax.set_ylabel("Baskets")
-    ax.set_title("How Big Is a Basket?", fontweight="bold")
-    ax.legend(loc="upper right")
-    ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
-    fig.tight_layout()
-    for ext in ("png", "svg"):
-        fig.savefig(FIG / f"basket_size.{ext}", dpi=200, bbox_inches="tight", facecolor="white")
-    plt.close(fig)
-    print("  Saved basket_size.png")
+def pass2_cooccurrence():
+    """Ingredient pair co-occurrence with support, lift, conditional probability."""
+    print("\nPass 2a: ingredient frequencies...")
+    ing_orders = Counter()
+    n_orders = 0
+    for chunk in iter_events():
+        oi = chunk.select(["user_id", "order_number", "ingredient"]).unique()
+        n_orders += oi.select(["user_id", "order_number"]).unique().height
+        for ing, c in oi.group_by("ingredient").agg(pl.len().alias("c")).iter_rows():
+            ing_orders[ing] += c
+
+    pmap = {ing: c / n_orders for ing, c in ing_orders.items()}
+    print(f"  orders={n_orders:,}  distinct ingredients={len(ing_orders):,}")
+
+    print("Pass 2b: ingredient pair counts...")
+    pair = Counter()
+    for chunk in iter_events():
+        oi = (chunk.select(["user_id", "order_number", "ingredient"]).unique()
+              .with_columns((pl.col("user_id").cast(pl.Int64) * 100000
+                             + pl.col("order_number")).alias("oid"))
+              .select(["oid", "ingredient"]))
+        a = oi.rename({"ingredient": "a"})
+        b = oi.rename({"ingredient": "b"})
+        pairs = a.join(b, on="oid").filter(pl.col("a") < pl.col("b"))
+        for ar, br, c in pairs.group_by(["a", "b"]).agg(pl.len().alias("c")).iter_rows():
+            pair[(ar, br)] += c
+
+    MIN_SUPPORT = 500
+    rows = []
+    for (a, b), co in pair.items():
+        if co < MIN_SUPPORT:
+            continue
+        pa, pb = pmap.get(a, 0), pmap.get(b, 0)
+        p_ab = co / n_orders
+        lift = p_ab / (pa * pb) if pa * pb > 0 else 0
+        p_b_given_a = co / ing_orders[a] if ing_orders[a] else 0
+        p_a_given_b = co / ing_orders[b] if ing_orders[b] else 0
+        rows.append({
+            "a": a, "b": b, "support": co, "p_ab": round(p_ab, 6),
+            "pa": round(pa, 4), "pb": round(pb, 4), "lift": round(lift, 2),
+            "p_b_given_a": round(p_b_given_a, 4),
+            "p_a_given_b": round(p_a_given_b, 4),
+        })
+    co_df = pl.DataFrame(rows).sort("lift", descending=True)
+    co_df.write_csv(SEQ / "cooccurrence_pairs.csv")
+    print(f"  Pairs (support>={MIN_SUPPORT}): {co_df.height:,}")
+
+    # conditional companions for selected ingredients
+    focus = ["banana", "yogurt", "milk", "eggs", "chicken", "pasta",
+             "rice", "onion", "garlic", "butter"]
+    comp_rows = []
+    for ing in focus:
+        ing_n = ing_orders.get(ing, 0)
+        if ing_n < 1000:
+            continue
+        companions = []
+        for (a, b), co in pair.items():
+            partner = None
+            if a == ing:
+                partner = b
+            elif b == ing:
+                partner = a
+            if partner and co >= 100:
+                p_partner_given = co / ing_n
+                p_partner = pmap.get(partner, 0)
+                lift = p_partner_given / p_partner if p_partner > 0 else 0
+                companions.append({
+                    "ingredient": ing, "companion": partner,
+                    "p_companion_given_ingredient": round(p_partner_given, 4),
+                    "p_companion_marginal": round(p_partner, 4),
+                    "lift": round(lift, 2), "support": co,
+                })
+        companions.sort(key=lambda r: r["lift"], reverse=True)
+        comp_rows.extend(companions[:20])
+    pl.DataFrame(comp_rows).write_csv(SEQ / "conditional_companions.csv")
+    print("  Saved cooccurrence_pairs, conditional_companions")
+    return n_orders, ing_orders, pmap, pair
 
 
-def _fig_composition(top):
-    top = top[:12]
-    names = [d for d, _ in top]
-    shares = [s for _, s in top]
-    colors = [GREEN if d in FRESH_DEPTS else ORANGE for d in names]
-    fig, ax = plt.subplots(figsize=(10, 6.5))
-    y = np.arange(len(names))
-    ax.barh(y, shares, color=colors, edgecolor="white")
-    ax.set_yticks(y); ax.set_yticklabels(names); ax.invert_yaxis()
-    ax.set_xlabel("Share of all food items (%)")
-    ax.set_title("What's in the Basket? Item share by department", fontweight="bold")
-    for i, s in enumerate(shares):
-        ax.text(s + 0.3, i, f"{s:.1f}%", va="center", fontsize=9)
-    from matplotlib.patches import Patch
-    ax.legend(handles=[Patch(color=GREEN, label="Fresh (produce, meat, dairy, deli)"),
-                       Patch(color=ORANGE, label="Packaged / pantry")], loc="lower right", frameon=True)
-    ax.set_xlim(0, max(shares) * 1.18)
-    ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
-    fig.tight_layout()
-    for ext in ("png", "svg"):
-        fig.savefig(FIG / f"basket_composition.{ext}", dpi=200, bbox_inches="tight", facecolor="white")
-    plt.close(fig)
-    print("  Saved basket_composition.png")
+def pass3_category_cooccurrence(n_orders):
+    """Category-level co-occurrence matrix."""
+    print("\nPass 3: category co-occurrence...")
+    cat_orders = Counter()
+    cat_pair = Counter()
+    for chunk in iter_events():
+        oi = (chunk.select(["user_id", "order_number", "category"]).unique()
+              .with_columns((pl.col("user_id").cast(pl.Int64) * 100000
+                             + pl.col("order_number")).alias("oid"))
+              .select(["oid", "category"]))
+        for cat, c in oi.group_by("category").agg(pl.len().alias("c")).iter_rows():
+            cat_orders[cat] += c
+        a = oi.rename({"category": "a"})
+        b = oi.rename({"category": "b"})
+        cpairs = a.join(b, on="oid").filter(pl.col("a") < pl.col("b"))
+        for ar, br, c in cpairs.group_by(["a", "b"]).agg(pl.len().alias("c")).iter_rows():
+            cat_pair[(ar, br)] += c
+
+    cat_pmap = {c: n / n_orders for c, n in cat_orders.items()}
+    rows = []
+    for (a, b), co in cat_pair.items():
+        pa, pb = cat_pmap.get(a, 0), cat_pmap.get(b, 0)
+        lift = (co / n_orders) / (pa * pb) if pa * pb > 0 else 0
+        rows.append({"a": a, "b": b, "support": co, "lift": round(lift, 3)})
+    pl.DataFrame(rows).write_csv(SEQ / "category_cooccurrence.csv")
+    print("  Saved category_cooccurrence")
+
+
+def pass4_triplets(n_orders, ing_orders, pmap):
+    """Ingredient triplets among top-60 ingredients."""
+    print("\nPass 4: ingredient triplets (top-60 ingredients)...")
+    MIN_TRIP = 300
+    top60 = set(sorted(ing_orders, key=ing_orders.get, reverse=True)[:60])
+    trip_counter = Counter()
+    for chunk in iter_events():
+        oi = (chunk.filter(pl.col("ingredient").is_in(top60))
+              .select(["user_id", "order_number", "ingredient"]).unique()
+              .with_columns((pl.col("user_id").cast(pl.Int64) * 100000
+                             + pl.col("order_number")).alias("oid"))
+              .select(["oid", "ingredient"]))
+        basket_ings = oi.group_by("oid").agg(pl.col("ingredient").alias("ings"))
+        for row in basket_ings.filter(
+                (pl.col("ings").list.len() >= 3) & (pl.col("ings").list.len() <= 15)
+        ).iter_rows():
+            ings = sorted(set(row[1]))
+            n = len(ings)
+            for i in range(n):
+                for j in range(i + 1, n):
+                    for k in range(j + 1, n):
+                        trip_counter[(ings[i], ings[j], ings[k])] += 1
+
+    rows = []
+    for (a, b, c), co in trip_counter.most_common(500):
+        if co < MIN_TRIP:
+            break
+        pa, pb, pc = pmap.get(a, 0), pmap.get(b, 0), pmap.get(c, 0)
+        expected = pa * pb * pc * n_orders
+        lift3 = co / expected if expected > 0 else 0
+        rows.append({"a": a, "b": b, "c": c, "support": co,
+                     "lift3": round(lift3, 1)})
+    trip_df = pl.DataFrame(rows).sort("lift3", descending=True)
+    trip_df.write_csv(SEQ / "ingredient_triplets.csv")
+    print(f"  Triplets (support>={MIN_TRIP}): {trip_df.height}")
+    for r in trip_df.head(10).iter_rows(named=True):
+        print(f"    {r['a']:14s} + {r['b']:14s} + {r['c']:14s}  "
+              f"support={r['support']:,}  lift3={r['lift3']:.0f}")
+
+
+def main():
+    pass1_metrics()
+    n_orders, ing_orders, pmap, pair = pass2_cooccurrence()
+    pass3_category_cooccurrence(n_orders)
+    pass4_triplets(n_orders, ing_orders, pmap)
+    print(f"\nAll outputs in {SEQ}")
 
 
 if __name__ == "__main__":
