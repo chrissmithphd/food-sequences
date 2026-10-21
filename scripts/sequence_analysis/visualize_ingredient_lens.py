@@ -32,12 +32,13 @@ FIG.mkdir(exist_ok=True, parents=True)
 BLUE, GREEN, ORANGE, RED, PURPLE, GRAY = "#1565C0", "#2E7D32", "#EF6C00", "#C62828", "#6A1B9A", "#757575"
 
 FRESH_INGS = {
-    "yogurt", "banana", "milk", "apple", "avocado", "onion", "strawberry",
-    "tomato", "lettuce", "fresh_herbs", "carrot", "eggs", "spinach",
-    "cucumber", "blueberry", "pepper", "potato", "chicken", "lemon",
-    "garlic", "mushroom", "broccoli", "celery", "grapes", "pear",
-    "ginger", "cheese", "butter", "sour_cream", "cream_cheese",
-    "ground_beef", "salmon", "shrimp", "pork", "turkey",
+    "yogurt", "banana", "milk", "water", "apple", "plant_milk", "avocado",
+    "onion", "strawberry", "tomato", "lettuce", "fresh_herbs", "carrot",
+    "eggs", "spinach", "cucumber", "blueberry", "pepper", "potato",
+    "chicken", "lemon", "garlic", "mushroom", "broccoli", "celery",
+    "grapes", "pear", "ginger", "cheese", "butter", "sour_cream",
+    "cream_cheese", "ground_beef", "salmon", "shrimp", "pork", "turkey",
+    "deli_meat", "juice", "coffee", "tea",
 }
 
 
@@ -202,43 +203,41 @@ def fig_concentration():
 
 
 def fig_effective_assortment():
-    """Products needed for 80% of volume vs total catalog size."""
+    """For selected ingredients: total catalog vs products needed for 80% of volume."""
     conc = pl.read_csv(SEQ / "ingredient_concentration.csv")
-    df = conc.filter(pl.col("catalog_products") >= 10)
 
-    x = df["catalog_products"].to_numpy()
-    y = df["n_for_80pct"].to_numpy()
+    showcase = ["banana", "spinach", "eggs", "milk", "apple", "lettuce",
+                "coffee", "pasta", "ice_cream", "crackers", "frozen_meal",
+                "granola_bar", "candy", "yogurt"]
+    df = conc.filter(pl.col("ingredient").is_in(showcase))
+    # sort by catalog size for visual flow
+    df = df.sort("catalog_products", descending=True)
+
     names = df["ingredient"].to_list()
-    colors = [_color(n) for n in names]
-    pct_used = y / x * 100
+    total = df["catalog_products"].to_list()
+    n80 = df["n_for_80pct"].to_list()
 
-    fig, ax = plt.subplots(figsize=(11, 8))
-    sc = ax.scatter(x, y, c=colors, s=40, alpha=0.6, edgecolors="white", linewidth=0.3)
+    fig, ax = plt.subplots(figsize=(12, 7))
+    y = np.arange(len(names))
+    h = 0.4
 
-    # diagonal: y=x (100% of catalog needed)
-    lim = max(max(x), max(y)) * 1.1
-    ax.plot([0, lim], [0, lim], color=GRAY, linestyle="--", linewidth=0.8, alpha=0.5, label="y = x (all products needed)")
+    ax.barh(y, total, h, color=GRAY, alpha=0.4, edgecolor="white", label="Total catalog products")
+    bars = ax.barh(y, n80, h, color=BLUE, edgecolor="white", label="Products needed for 80% of purchases")
 
-    # label outliers
-    labeled = set()
-    for i, name in enumerate(names):
-        if pct_used[i] < 15 and x[i] > 50:
-            if name not in labeled:
-                ax.annotate(name, (x[i], y[i]), fontsize=7.5, alpha=0.85,
-                            xytext=(5, 3), textcoords="offset points")
-                labeled.add(name)
-        elif x[i] > 500 or y[i] > 250:
-            if name not in labeled:
-                ax.annotate(name, (x[i], y[i]), fontsize=7.5, alpha=0.85,
-                            xytext=(5, 3), textcoords="offset points")
-                labeled.add(name)
-
-    ax.set_xlabel("Catalog products (total assortment)")
-    ax.set_ylabel("Products needed for 80% of purchases")
-    ax.set_title("Effective Assortment: Most Catalog Variety Goes Unbought\n"
-                 "Distance below the diagonal = unused assortment",
+    ax.set_yticks(y)
+    ax.set_yticklabels(names, fontsize=10)
+    ax.invert_yaxis()
+    ax.set_xlabel("Number of products")
+    ax.set_title("How Much of the Catalog Captures 80% of Demand?\n"
+                 "Gray = full catalog · Blue = products needed for 80% of purchases",
                  fontweight="bold")
-    _legend_fresh_packaged(ax)
+    ax.legend(loc="lower right", frameon=True)
+
+    for i, (t, n) in enumerate(zip(total, n80)):
+        pct = n / t * 100
+        ax.text(t + 8, i, f"{n} of {t}  ({pct:.0f}%)", va="center", fontsize=8.5)
+
+    ax.set_xlim(0, max(total) * 1.35)
     ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
     fig.tight_layout()
     _save(fig, "effective_assortment")
@@ -304,33 +303,41 @@ def fig_multiplier():
 
 
 def fig_category_comparison():
-    """Category-level demand vs assortment with concentration overlay."""
+    """Two side-by-side panels: what people buy vs what the catalog offers, by category."""
     cat = pl.read_csv(SEQ / "category_summary.csv")
-    # exclude non-food and tiny categories
     cat = cat.filter(
         ~pl.col("category").str.contains("NON-FOOD|PET|BABY")
         & (pl.col("purchases") > 0)
     ).sort("purchases", descending=True)
 
-    names = cat["category"].to_list()
+    names = [n.title() for n in cat["category"].to_list()]
     pur_pct = cat["purchase_pct"].to_list()
     cat_pct = cat["catalog_pct"].to_list()
+    max_pct = max(max(pur_pct), max(cat_pct)) * 1.15
 
-    fig, ax = plt.subplots(figsize=(12, 8))
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(16, 8), sharey=True)
     y = np.arange(len(names))
-    h = 0.35
-    ax.barh(y - h/2, pur_pct, h, color=BLUE, label="Purchase share", edgecolor="white")
-    ax.barh(y + h/2, cat_pct, h, color=ORANGE, label="Catalog share", edgecolor="white")
 
-    ax.set_yticks(y)
-    ax.set_yticklabels([n.title() for n in names], fontsize=9)
-    ax.invert_yaxis()
-    ax.set_xlabel("Percentage (%)")
-    ax.set_title("Demand vs. Catalog Share by Category\n"
-                 "Blue exceeding orange = purchased more than stocked; orange exceeding blue = overstocked",
-                 fontweight="bold")
-    ax.legend(loc="lower right", frameon=True)
-    ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
+    ax1.barh(y, pur_pct, color=BLUE, edgecolor="white", linewidth=0.5)
+    ax1.set_yticks(y); ax1.set_yticklabels(names, fontsize=9)
+    ax1.invert_yaxis()
+    ax1.set_xlabel("Share of purchases (%)")
+    ax1.set_title("What People Buy", fontweight="bold", fontsize=13)
+    ax1.set_xlim(0, max_pct)
+    for i, p in enumerate(pur_pct):
+        ax1.text(p + 0.2, i, f"{p:.1f}%", va="center", fontsize=8)
+    ax1.spines["top"].set_visible(False); ax1.spines["right"].set_visible(False)
+
+    ax2.barh(y, cat_pct, color=ORANGE, edgecolor="white", linewidth=0.5)
+    ax2.invert_yaxis()
+    ax2.set_xlabel("Share of catalog products (%)")
+    ax2.set_title("What the Catalog Stocks", fontweight="bold", fontsize=13)
+    ax2.set_xlim(0, max_pct)
+    for i, p in enumerate(cat_pct):
+        ax2.text(p + 0.2, i, f"{p:.1f}%", va="center", fontsize=8)
+    ax2.spines["top"].set_visible(False); ax2.spines["right"].set_visible(False)
+
+    fig.suptitle("Demand vs. Catalog Share by Category", fontweight="bold", fontsize=14, y=0.98)
     fig.tight_layout()
     _save(fig, "category_comparison")
 
