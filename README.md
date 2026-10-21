@@ -50,7 +50,7 @@ premise. 35,722 food products → 543 ingredients across 24 categories.
 - **19% of products capture 80% of all purchase volume.** Demand concentration varies
   from banana (1 product = 53% of sales) to yogurt (you need 190 of 1,177 products
   to reach 80%).
-- **A third of "variety" is packaging** — the median customer buys 45 products but 34
+- **A quarter of "variety" is packaging** — the median customer buys 45 products but 34
   ingredients (1.33×).
 
 ### [Basket contents →](analysis/basket/)
@@ -72,9 +72,9 @@ premise. 35,722 food products → 543 ingredients across 24 categories.
 
 ![Prediction comparison](analysis/figures/prediction_comparison.png)
 
-- **Recent history predicts the next order 33% better than overall frequency** —
-  knowing what someone bought in the last 2 orders carries real information that
-  their lifetime rate misses (tested on 549k held-out items).
+- **Overall frequency is the best simple predictor** — adding recency to purchase
+  frequency makes next-order prediction worse, not better (properly scored on 5M
+  predictions across 50k customers). The signal is in the rate, not the sequence.
 - **Product-level temporal concentration is real but small** — reorder lift 1.28×,
   consecutive-purchase runs 5–10% longer than a frequency-preserving shuffle.
   Most apparent "patterns" (staples, returns) match their random-baseline rates;
@@ -87,10 +87,10 @@ premise. 35,722 food products → 543 ingredients across 24 categories.
 
 ![Novelty by category](analysis/figures/novelty_by_category.png)
 
-- **Steady-state exploration is ~6%, not ~22%** — the pooled number is inflated by
-  truncation. Spices and baking have 75–81% novelty (bought rarely); dairy and fruit
-  have 30–33% (bought every order). Snacks and frozen add the most *product-only*
-  novelty (new brands for familiar ingredients).
+- **Late-history exploration is ~6%, not the ~22% pooled figure** — the pooled number
+  is inflated by truncation; the rate is still declining at order 100. Spices and
+  baking have 75–81% novelty (bought rarely); dairy and fruit have 30–33% (bought
+  every order).
 - **Discoveries are spread toward the long tail** — the top 20 ingredients are 37%
   of purchases but only 24% of first-time discoveries. Customer variation is wide
   (p10=6% to p90=41%) even at comparable history positions.
@@ -102,9 +102,10 @@ premise. 35,722 food products → 543 ingredients across 24 categories.
 - **79% of baskets have zero prepared items.** 60% of customers buy one eventually,
   but it's typically 4% of their food items. Prepared food is an occasional addition,
   not a dietary base.
-- **Baskets with prepared food look like bigger versions of normal baskets** — the
-  rest of the basket has nearly identical category composition (produce, dairy, fruit
-  shares within ±0.5%). No evidence of systematic substitution for cooking ingredients.
+- **Baskets with prepared food have nearly identical composition** to those without —
+  category shares within ±0.5% (excluding the prepared items themselves). The baskets
+  are larger (median 12 vs 7 items); cross-sectional comparison cannot determine
+  substitution.
 - Frozen dominates (frozen_meal 54k customers, pizza 42k, soup 41k); chicken nuggets
   have the most concentrated demand (1,055 purchases per product).
 
@@ -128,9 +129,9 @@ Grocery patterns, offered as hypotheses rather than demonstrated subscription re
 
 1. Read demand at the ingredient level — product data overweights packaged variety.
 2. Specific products are concentrated in time — reordered ~29% above a frequency baseline; broader grains add little beyond arithmetic.
-3. A third of apparent variety is packaging, not diet.
+3. About a quarter of apparent variety is packaging, not diet.
 4. Within-ingredient commitment is mild; variety-seeking concentrates in flavored/discretionary categories.
-5. Exploration is low (~6%) and falling; the repertoire grows slowly.
+5. Exploration declines with observed history (~6% at order 50, still falling); the repertoire grows slowly.
 6. Customer "type" is mostly purchase volume — product-switching is the exception worth segmenting on.
 7. "Returns" and "rotation" mostly track frequency; burst-then-absence stands out but, without post-window data, isn't evidence of churn.
 8. Order-gaps are not calendar time.

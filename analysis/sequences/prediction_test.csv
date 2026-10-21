@@ -1,3 +1,4 @@
-model,mean_ll,n_test_items
-overall_frequency,-1.9559,549204
-recent_2_orders,-1.311,549204
+model,log_loss,brier_score,n_predictions,n_customers
+overall_frequency,0.1826,0.04991,5000000,50000
+frequency_plus_recency,0.1996,0.05234,5000000,50000
+binary_recency,0.2122,0.05728,5000000,50000

@@ -52,10 +52,12 @@ construction. Apparent novelty decays as the observed window lengthens:
 | 50 | 7.6% | 82.7% |
 | 100 | 5.3% | 86.8% |
 
-**Steady-state exploration is ~5–7%, not ~22%.** Once a repertoire is established
-(order 50+), about one item in fifteen is a genuinely new ingredient. Any statement
-about exploration must condition on order position or restrict to established
-customers.
+**Late-history exploration is ~5–7%, not ~22%.** At orders 50+, about one item in fifteen is a new-to-observed-history ingredient,
+though the rate is still declining (5.3% at order 100). Part of this decline is
+mechanical: as the observed repertoire grows, fewer catalog ingredients remain to
+discover. Whether exploration would plateau at some floor given a longer window
+cannot be determined from this data. Any statement about exploration must condition
+on order position or restrict to late-history customers.
 
 ## Where novelty happens: categories
 
@@ -167,7 +169,7 @@ the basket, not concentrated in a single adventurous category.
 
 ## Limitations
 
-- Truncation can be conditioned around but not removed; the ~5–7% steady-state floor
+- Truncation can be conditioned around but not removed; the ~5–7% late-history rate
   is a lower bound if customers also explored before the observed window.
 - "New to the observed history" ≠ "new to the customer." Some first-observed purchases
   are routine items the customer bought before the dataset began.

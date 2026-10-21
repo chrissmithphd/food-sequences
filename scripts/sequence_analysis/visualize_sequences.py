@@ -131,28 +131,47 @@ def fig_gap_regularity():
 
 
 def fig_prediction():
-    """Frequency vs recent-history prediction comparison."""
+    """Three-model prediction comparison with proper scoring."""
     df = pl.read_csv(SEQ / "prediction_test.csv")
+
+    labels_map = {
+        "overall_frequency": "Overall\nfrequency",
+        "frequency_plus_recency": "Frequency\n+ recency",
+        "binary_recency": "Binary\nrecency",
+    }
     models = df["model"].to_list()
-    lls = df["mean_ll"].to_list()
-    n = df["n_test_items"][0]
+    log_losses = df["log_loss"].to_list()
+    brier = df["brier_score"].to_list()
+    n_cust = df["n_customers"][0]
+    n_pred = df["n_predictions"][0]
 
-    labels = ["Overall frequency\n(how often in all history)",
-              "Recent 2 orders\n(was it bought recently?)"]
-    colors = [GRAY, BLUE]
+    labels = [labels_map.get(m, m) for m in models]
+    colors = [GREEN, BLUE, ORANGE]
 
-    fig, ax = plt.subplots(figsize=(8, 5))
-    bars = ax.bar(range(len(models)), [-l for l in lls], color=colors, edgecolor="white")
-    ax.set_xticks(range(len(models)))
-    ax.set_xticklabels(labels, fontsize=10)
-    ax.set_ylabel("Negative mean log-likelihood\n(lower = better prediction)")
-    ax.set_title(f"Does Recent History Help Predict the Next Order?\n"
-                 f"Tested on {n:,} held-out items from last orders",
-                 fontweight="bold")
-    for bar, ll in zip(bars, lls):
-        ax.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.02,
-                f"{-ll:.3f}", ha="center", fontsize=11, fontweight="bold")
-    ax.spines["top"].set_visible(False); ax.spines["right"].set_visible(False)
+    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(12, 5))
+    x = range(len(models))
+
+    bars1 = ax1.bar(x, log_losses, color=colors, edgecolor="white")
+    ax1.set_xticks(x); ax1.set_xticklabels(labels, fontsize=10)
+    ax1.set_ylabel("Log-loss (lower = better)")
+    ax1.set_title("Log-loss", fontweight="bold")
+    for bar, ll in zip(bars1, log_losses):
+        ax1.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.002,
+                 f"{ll:.4f}", ha="center", fontsize=10, fontweight="bold")
+    ax1.spines["top"].set_visible(False); ax1.spines["right"].set_visible(False)
+
+    bars2 = ax2.bar(x, brier, color=colors, edgecolor="white")
+    ax2.set_xticks(x); ax2.set_xticklabels(labels, fontsize=10)
+    ax2.set_ylabel("Brier score (lower = better)")
+    ax2.set_title("Brier score", fontweight="bold")
+    for bar, bs in zip(bars2, brier):
+        ax2.text(bar.get_x() + bar.get_width()/2, bar.get_height() + 0.0005,
+                 f"{bs:.4f}", ha="center", fontsize=10, fontweight="bold")
+    ax2.spines["top"].set_visible(False); ax2.spines["right"].set_visible(False)
+
+    fig.suptitle(f"Next-Order Prediction: Frequency Beats Recency\n"
+                 f"Scored on {n_pred:,} predictions ({n_cust:,} customers × 100 ingredients)",
+                 fontweight="bold", fontsize=13)
     fig.tight_layout()
     _save(fig, "prediction_comparison")
 

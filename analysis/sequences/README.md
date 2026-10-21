@@ -18,20 +18,29 @@ it as such. Observations are stated first; possible explanations are flagged.
 
 ## 1. Does recent history help predict the next order?
 
-The strongest finding in this section: **yes, substantially.**
-
 ![Prediction comparison](../figures/prediction_comparison.png)
 
-Tested on 549k held-out items from each customer's last order: a simple model using
-only whether the ingredient appeared in the last 2 orders (P=0.7 if yes, P=0.1 if
-no) outperforms a model using the ingredient's overall purchase frequency across
-all history (mean negative log-likelihood 1.31 vs 1.96 — a 33% improvement). Recent
-purchases carry real information about the next basket that lifetime frequency alone
-misses.
+Tested on 5M predictions (50k customers × 100 ingredients, scored on both present and
+absent ingredients in the held-out last order): **overall purchase frequency is the
+best simple predictor.** Adding recency (boosting probability for recently-purchased
+ingredients) makes predictions worse, not better.
 
-This does not mean purchases are highly *predictable* — both models are crude. It
-means **the sequence matters**: knowing what someone bought recently tells you
-something that their average rate does not.
+| Model | Log-loss | Brier score |
+|-------|--------:|------------:|
+| Overall frequency | **0.183** | **0.050** |
+| Frequency + recency | 0.200 | 0.052 |
+| Binary recency only | 0.212 | 0.057 |
+
+The frequency model already captures most of what's predictable about the next order:
+a customer's long-run purchase rate for each ingredient is a well-calibrated
+probability. Recency adjustments shift probability toward recently-purchased items,
+which helps for items that appear but hurts for items that don't — and the latter
+dominates because most ingredients are *absent* from any given order.
+
+**Correction:** An earlier version of this test scored only ingredients *present* in
+the test order, which made recency appear 33% better than frequency. That was a
+scoring error — proper log-loss must penalize both false positives and false negatives.
+With proper scoring, recency adds noise rather than information.
 
 ## 2. Next-order reordering and temporal concentration
 
@@ -104,12 +113,15 @@ For context: banana's 25% of runs reaching 3+ orders vs 23% shuffled means about
 ![Gap regularity](../figures/gap_regularity.png)
 
 The coefficient of variation (CV) of inter-purchase gaps measures how regular
-repurchase timing is. CV = 1 corresponds to exponential (random) spacing; CV < 1 is
-more regular; CV > 1 is more irregular (bursty).
+repurchase timing is. For continuous random arrivals CV = 1 (exponential); CV < 1 is
+more regular; CV > 1 is more irregular (bursty). For discrete gaps in finite
+histories, the expected CV under random placement depends on the ingredient's
+frequency — sparse ingredients have higher expected CV — so 1.0 is an approximate
+reference, not an exact null.
 
-The median CV across ingredients is **1.41 — more irregular than random**, not more
-regular. Repurchase intervals are bursty: periods of frequent purchasing interspersed
-with longer gaps. More-frequently-purchased ingredients (lower mean gap) tend to be
+The median CV across ingredients is **1.41**, and nearly all ingredients exceed 1.0.
+Repurchase intervals are irregular: periods of frequent purchasing interspersed with
+longer gaps. More-frequently-purchased ingredients (lower mean gap) tend to be
 slightly more regular, but almost nothing reaches CV < 1.
 
 This is consistent with §4's run-length finding: purchases are mildly streaky
@@ -211,8 +223,9 @@ long day-gaps lower bounds.
 
 ## Summary: what the sequence adds
 
-1. **Recent history carries real predictive information** — a simple recency signal
-   outperforms overall frequency by 33% on held-out next-order items.
+1. **Overall frequency is the best simple predictor** — adding recency to frequency
+   makes next-order prediction worse, not better (an earlier version had a scoring
+   error that overstated recency's value).
 2. **Product-level temporal concentration is real but small** — reorder lift 1.28×,
    run lengths 5–10% above shuffled. The signal is consistent but modest.
 3. **Most apparent "patterns" are consequences of frequency** — staples and returns

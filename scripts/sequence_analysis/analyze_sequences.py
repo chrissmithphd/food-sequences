@@ -3,9 +3,9 @@
 Sequence analysis: temporal structure beyond purchase frequency.
 
 Supplements the existing reorder/patterns/substitution/calendar scripts. Adds:
-1. Return-probability curves (already computed if return_curves.csv exists)
+1. Return-probability curves (skip if already computed)
 2. Run-length and gap distributions (vectorized)
-3. Next-order prediction test
+3. Next-order prediction test (proper scoring: log-loss over all ingredients)
 
 Memory-safe: streams in user-id bursts.
 """
@@ -72,19 +72,15 @@ def pass2_runs_and_gaps():
     print("\nPass 2: run lengths and gap distributions...")
     finals = _user_final_order()
 
-    # Accumulate per-ingredient gap and run stats across bursts
     ing_gap_sum = Counter()
     ing_gap_sq_sum = Counter()
     ing_gap_count = Counter()
     ing_gap1_count = Counter()
     ing_gap_ge5 = Counter()
-
     ing_run_sum = Counter()
     ing_run_count = Counter()
     ing_run_ge3 = Counter()
     ing_run_max = Counter()
-
-    # shuffled baseline for runs
     rng = np.random.default_rng(42)
     shuf_run_sum = Counter()
     shuf_run_count = Counter()
@@ -94,14 +90,11 @@ def pass2_runs_and_gaps():
         d = (chunk.select(["user_id", "order_number", "ingredient"]).unique()
              .join(finals, on="user_id", how="left")
              .sort(["user_id", "ingredient", "order_number"]))
-
-        # gaps: difference between consecutive purchases of same (user, ingredient)
         d = d.with_columns(
             (pl.col("order_number") - pl.col("order_number").shift(1)
              .over(["user_id", "ingredient"])).alias("gap"))
         gaps = d.filter(pl.col("gap").is_not_null())
 
-        # aggregate gap stats per ingredient (vectorized)
         gstats = gaps.group_by("ingredient").agg(
             pl.col("gap").sum().alias("gsum"),
             (pl.col("gap") ** 2).sum().alias("gsq"),
@@ -116,17 +109,12 @@ def pass2_runs_and_gaps():
             ing_gap1_count[ing] += r["g1"]
             ing_gap_ge5[ing] += r["g5"]
 
-        # runs: consecutive purchases (gap==1) streaks
-        # A run starts where gap != 1 or is the first purchase
         is_break = (pl.col("gap") != 1).fill_null(True)
         d2 = d.with_columns(is_break.cum_sum().over(["user_id", "ingredient"]).alias("run_id"))
-        runs = d2.group_by(["user_id", "ingredient", "run_id"]).agg(
-            pl.len().alias("rl"))
+        runs = d2.group_by(["user_id", "ingredient", "run_id"]).agg(pl.len().alias("rl"))
         rstats = runs.group_by("ingredient").agg(
-            pl.col("rl").sum().alias("rsum"),
-            pl.len().alias("rn"),
-            (pl.col("rl") >= 3).sum().alias("rge3"),
-            pl.col("rl").max().alias("rmax"))
+            pl.col("rl").sum().alias("rsum"), pl.len().alias("rn"),
+            (pl.col("rl") >= 3).sum().alias("rge3"), pl.col("rl").max().alias("rmax"))
         for r in rstats.iter_rows(named=True):
             ing = r["ingredient"]
             ing_run_sum[ing] += r["rsum"]
@@ -134,11 +122,8 @@ def pass2_runs_and_gaps():
             ing_run_ge3[ing] += r["rge3"]
             ing_run_max[ing] = max(ing_run_max.get(ing, 0), r["rmax"])
 
-        # shuffled baseline: per (user, ingredient), scatter b purchases in N slots
-        ui = d.group_by(["user_id", "ingredient"]).agg(
-            pl.len().alias("b"), pl.col("N").first())
+        ui = d.group_by(["user_id", "ingredient"]).agg(pl.len().alias("b"), pl.col("N").first())
         ui = ui.filter(pl.col("b") >= 2)
-        # sample up to 50k pairs per chunk to keep runtime bounded
         sample = ui if ui.height <= 50000 else ui.sample(50000, seed=42)
         for row in sample.iter_rows(named=True):
             b, N = row["b"], row["N"]
@@ -152,15 +137,11 @@ def pass2_runs_and_gaps():
                 if g == 1:
                     s_run += 1
                 else:
-                    shuf_run_sum[ing] += s_run
-                    shuf_run_count[ing] += 1
-                    shuf_run_ge3[ing] += (s_run >= 3)
-                    s_run = 1
-            shuf_run_sum[ing] += s_run
-            shuf_run_count[ing] += 1
+                    shuf_run_sum[ing] += s_run; shuf_run_count[ing] += 1
+                    shuf_run_ge3[ing] += (s_run >= 3); s_run = 1
+            shuf_run_sum[ing] += s_run; shuf_run_count[ing] += 1
             shuf_run_ge3[ing] += (s_run >= 3)
 
-    # Write gap distributions
     gap_rows = []
     for ing in sorted(ing_gap_count.keys()):
         n = ing_gap_count[ing]
@@ -170,91 +151,132 @@ def pass2_runs_and_gaps():
         var = ing_gap_sq_sum[ing] / n - mean ** 2
         std = var ** 0.5 if var > 0 else 0
         cv = std / mean if mean > 0 else None
-        gap_rows.append({
-            "ingredient": ing, "n_gaps": n,
-            "mean_gap": round(mean, 2), "gap_cv": round(cv, 3) if cv else None,
-            "pct_gap1": round(ing_gap1_count[ing] / n * 100, 1),
-            "pct_gap_ge5": round(ing_gap_ge5[ing] / n * 100, 1),
-        })
+        gap_rows.append({"ingredient": ing, "n_gaps": n, "mean_gap": round(mean, 2),
+                         "gap_cv": round(cv, 3) if cv else None,
+                         "pct_gap1": round(ing_gap1_count[ing] / n * 100, 1),
+                         "pct_gap_ge5": round(ing_gap_ge5[ing] / n * 100, 1)})
     pl.DataFrame(gap_rows).sort("n_gaps", descending=True).write_csv(SEQ / "gap_distributions.csv")
 
-    # Write run lengths
     run_rows = []
     for ing in sorted(ing_run_count.keys()):
         n = ing_run_count[ing]
         if n < 100:
             continue
         sn = shuf_run_count.get(ing, 0)
-        run_rows.append({
-            "ingredient": ing, "n_runs": n,
-            "mean_run_obs": round(ing_run_sum[ing] / n, 2),
-            "mean_run_shuffled": round(shuf_run_sum[ing] / sn, 2) if sn else None,
-            "pct_run_ge3_obs": round(ing_run_ge3[ing] / n * 100, 1),
-            "pct_run_ge3_shuf": round(shuf_run_ge3[ing] / sn * 100, 1) if sn else None,
-            "max_run": int(ing_run_max.get(ing, 0)),
-        })
+        run_rows.append({"ingredient": ing, "n_runs": n,
+                         "mean_run_obs": round(ing_run_sum[ing] / n, 2),
+                         "mean_run_shuffled": round(shuf_run_sum[ing] / sn, 2) if sn else None,
+                         "pct_run_ge3_obs": round(ing_run_ge3[ing] / n * 100, 1),
+                         "pct_run_ge3_shuf": round(shuf_run_ge3[ing] / sn * 100, 1) if sn else None,
+                         "max_run": int(ing_run_max.get(ing, 0))})
     pl.DataFrame(run_rows).sort("n_runs", descending=True).write_csv(SEQ / "run_lengths.csv")
-
     print(f"  Gap distributions for {len(gap_rows)} ingredients")
     print(f"  Run lengths for {len(run_rows)} ingredients")
-    for ing in ["banana", "yogurt", "ice_cream", "pasta"]:
-        r = [x for x in run_rows if x["ingredient"] == ing]
-        if r:
-            r = r[0]
-            print(f"    {ing}: mean run {r['mean_run_obs']:.1f} (shuffled {r['mean_run_shuffled']}), "
-                  f"runs>=3: {r['pct_run_ge3_obs']}% (shuffled {r['pct_run_ge3_shuf']}%)")
 
 
 def pass3_next_order_prediction():
-    """Does recent history predict the next order better than overall frequency?"""
-    print("\nPass 3: next-order prediction test...")
+    """Proper next-order prediction: score ALL ingredients (present and absent).
+
+    For each customer's last order, compute the probability of each ingredient being
+    present or absent under three models:
+      A) Overall frequency: P = (orders containing ingredient) / (total history orders)
+      B) Recency: P = frequency * 1.5 if in last 2 orders, * 0.5 otherwise (preserves
+         calibration while incorporating recency)
+      C) Last-2-orders binary: P = 0.5 if in last 2 orders, 0.05 otherwise
+
+    Scores: mean log-loss over all (customer, ingredient) predictions (both present=1
+    and absent=0 in the test order). Also Brier score.
+    """
+    print("\nPass 3: next-order prediction test (proper scoring)...")
     finals = _user_final_order()
-    ll_freq, ll_recent, n_test = 0.0, 0.0, 0
+
+    # first pass: collect the ingredient universe (top-100 by volume)
+    ing_counts = Counter()
+    for chunk in iter_events():
+        for ing, c in chunk.group_by("ingredient").agg(pl.len().alias("c")).iter_rows():
+            ing_counts[ing] += c
+    top_ings = [ing for ing, _ in ing_counts.most_common(100)]
+    top_set = set(top_ings)
+
+    ll_freq, ll_recency, ll_binary = 0.0, 0.0, 0.0
+    bs_freq, bs_recency, bs_binary = 0.0, 0.0, 0.0
+    n_preds = 0
+    n_customers = 0
 
     for chunk in iter_events():
         d = (chunk.select(["user_id", "order_number", "ingredient"]).unique()
+             .filter(pl.col("ingredient").is_in(top_ings))
              .join(finals, on="user_id", how="left")
              .filter(pl.col("N") >= 10))
         if d.height == 0:
             continue
 
-        # vectorized: per user, compute frequency and recent presence
         for uid in d["user_id"].unique().to_list():
             ug = d.filter(pl.col("user_id") == uid)
             N = int(ug["N"][0])
             hist = ug.filter(pl.col("order_number") < N)
-            test = ug.filter(pl.col("order_number") == N)
-            if hist.height == 0 or test.height == 0:
+            test_ings = set(ug.filter(pl.col("order_number") == N)["ingredient"].to_list())
+            if hist.height == 0:
                 continue
 
             n_hist = N - 1
-            freq_map = dict(zip(*hist.group_by("ingredient").agg(
-                pl.col("order_number").n_unique().alias("n")).select(
-                ["ingredient", (pl.col("n") / n_hist).alias("p")]).get_columns()))
+            # frequency per ingredient
+            freq_map = {}
+            for ing, n_ord in hist.group_by("ingredient").agg(
+                    pl.col("order_number").n_unique().alias("n")).iter_rows():
+                freq_map[ing] = n_ord / n_hist
 
-            recent_ings = set(
-                hist.filter(pl.col("order_number") >= N - 2)["ingredient"].to_list())
+            # recent ingredients (last 2 orders)
+            recent = set(hist.filter(pl.col("order_number") >= N - 2)["ingredient"].to_list())
 
-            eps = 0.01
-            for ing in test["ingredient"].to_list():
-                p_f = max(freq_map.get(ing, eps), eps)
-                p_r = 0.7 if ing in recent_ings else 0.1
-                ll_freq += np.log(p_f)
-                ll_recent += np.log(p_r)
-                n_test += 1
+            eps = 0.005
+            for ing in top_ings:
+                y = 1.0 if ing in test_ings else 0.0
+                # Model A: overall frequency
+                p_f = np.clip(freq_map.get(ing, eps), eps, 1 - eps)
+                # Model B: frequency adjusted by recency
+                if ing in recent:
+                    p_r = np.clip(p_f * 1.5, eps, 1 - eps)
+                else:
+                    p_r = np.clip(p_f * 0.5, eps, 1 - eps)
+                # Model C: binary recency
+                p_b = 0.5 if ing in recent else 0.05
 
-        if n_test > 500000:
+                ll_freq += y * np.log(p_f) + (1 - y) * np.log(1 - p_f)
+                ll_recency += y * np.log(p_r) + (1 - y) * np.log(1 - p_r)
+                ll_binary += y * np.log(p_b) + (1 - y) * np.log(1 - p_b)
+                bs_freq += (p_f - y) ** 2
+                bs_recency += (p_r - y) ** 2
+                bs_binary += (p_b - y) ** 2
+                n_preds += 1
+
+            n_customers += 1
+            if n_customers >= 50000:
+                break
+        if n_customers >= 50000:
             break
 
-    avg_freq = ll_freq / n_test if n_test else 0
-    avg_recent = ll_recent / n_test if n_test else 0
-    print(f"  Test items: {n_test:,}")
-    print(f"  Mean log-likelihood (overall frequency): {avg_freq:.4f}")
-    print(f"  Mean log-likelihood (recent 2 orders):   {avg_recent:.4f}")
+    avg = lambda x: x / n_preds if n_preds else 0
+    print(f"  Customers: {n_customers:,}, predictions: {n_preds:,} "
+          f"({n_preds // n_customers if n_customers else 0} ingredients/customer)")
+    print(f"  Log-loss:  frequency={-avg(ll_freq):.4f}  "
+          f"freq+recency={-avg(ll_recency):.4f}  binary_recency={-avg(ll_binary):.4f}")
+    print(f"  Brier:     frequency={avg(bs_freq):.4f}  "
+          f"freq+recency={avg(bs_recency):.4f}  binary_recency={avg(bs_binary):.4f}")
+
+    improvement = (-avg(ll_freq) - (-avg(ll_recency))) / (-avg(ll_freq)) * 100
+    print(f"  Recency improvement over frequency: {improvement:.1f}% (log-loss reduction)")
 
     pl.DataFrame([
-        {"model": "overall_frequency", "mean_ll": round(avg_freq, 4), "n_test_items": n_test},
-        {"model": "recent_2_orders", "mean_ll": round(avg_recent, 4), "n_test_items": n_test},
+        {"model": "overall_frequency", "log_loss": round(-avg(ll_freq), 4),
+         "brier_score": round(avg(bs_freq), 5), "n_predictions": n_preds,
+         "n_customers": n_customers},
+        {"model": "frequency_plus_recency", "log_loss": round(-avg(ll_recency), 4),
+         "brier_score": round(avg(bs_recency), 5), "n_predictions": n_preds,
+         "n_customers": n_customers},
+        {"model": "binary_recency", "log_loss": round(-avg(ll_binary), 4),
+         "brier_score": round(avg(bs_binary), 5), "n_predictions": n_preds,
+         "n_customers": n_customers},
     ]).write_csv(SEQ / "prediction_test.csv")
 
 

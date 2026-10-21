@@ -75,15 +75,17 @@ For both basket size and prepared-food share, the variation *within* a single
 customer across their orders is almost as large as the variation *between*
 customers:
 
-| Measure | Between-customer SD | Within-customer mean SD | Ratio |
-|---------|--------------------:|------------------------:|------:|
-| Basket size | 5.15 | 4.20 | 1.23× |
-| Prepared-food share | 0.059 | 0.056 | 1.06× |
+| Measure | Between-customer SD | Within-customer mean SD | ICC |
+|---------|--------------------:|------------------------:|----:|
+| Basket size | 5.15 | 4.20 | 0.60 |
+| Prepared-food share | 0.059 | 0.056 | 0.53 |
 
-A customer who averages 8 items per basket might place orders ranging from 3 to 15.
-A customer with 5% prepared-food share has some orders with zero and some with 20%.
-**Stable "customer types" are less stable than they appear** — much of what looks
-like a between-customer difference is really order-to-order noise.
+The intraclass correlation (ICC) measures what fraction of total variance is between
+customers rather than within: 0.60 for basket size, 0.53 for prepared-food share.
+Values near 0.5 mean between-customer and within-customer variation contribute roughly
+equally. A customer who averages 8 items per basket might place orders ranging from
+3 to 15. **Customer differences are real but modest** — order-to-order variation
+within a customer accounts for nearly half of the total variation.
 
 ## Product switching: the volume-independent trait
 
@@ -110,7 +112,11 @@ rather than a volume artifact.
 
 ## Split-half stability
 
-For customers with ≥20 orders, first-half vs second-half correlations:
+For customers with ≥20 orders, first-half vs second-half correlations.
+**Caveat:** these correlations mix genuine stability with mechanical effects —
+the second half has a longer accumulated repertoire, so novelty is mechanically
+lower and repetition higher for every customer. The rank-order is meaningful (who
+explores more stays exploring more), but the magnitude is inflated.
 
 | Measure | r(first, second) |
 |---------|------------------:|

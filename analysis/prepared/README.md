@@ -97,8 +97,7 @@ has wide assortment (100 products) but the lowest per-product demand (216).
 
 ![Basket composition comparison](../figures/prepared_basket_comparison.png)
 
-Baskets containing prepared dishes are **larger** (median 12 items vs 7) — prepared
-items are added to bigger shopping trips, not substituting for other food. But the
+Baskets containing prepared dishes are **larger** (median 12 items vs 7). The
 composition of the *rest of the basket* barely changes:
 
 - Produce, dairy, and fruit are slightly lower in prepared-food baskets (the basket
@@ -108,9 +107,10 @@ composition of the *rest of the basket* barely changes:
 - Snacks, bread, and protein are marginally higher.
 
 **The honest reading:** baskets with prepared food look almost exactly like baskets
-without, except bigger and with prepared items added. There is no evidence of
-systematic substitution — customers buying a frozen dinner are also buying produce,
-dairy, and meat at roughly the same rates.
+without, except bigger. Cross-sectional basket comparisons cannot establish whether
+prepared items replace or supplement other foods — the same customer may shop
+differently on different occasions, and prepared-food buyers may differ from
+non-buyers in ways not visible here.
 
 ## How prepared dishes reorder
 
