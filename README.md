@@ -85,14 +85,15 @@ premise. 35,722 food products → 543 ingredients across 24 categories.
 
 ### [Novelty & exploration →](analysis/novelty/)
 
-![Novelty decay](analysis/figures/novelty_decay.png)
+![Novelty by category](analysis/figures/novelty_by_category.png)
 
-- **Steady-state exploration is ~6%, not the ~22% pooled figure** — the pooled number
-  is inflated by short observed histories. Once established, about one item in fifteen
-  is a new ingredient.
-- The repertoire keeps growing (40 ingredients by order 10, 101 by order 100) but
-  baskets don't get more varied (~8 throughout); 97.7% of customers explore less later
-  than earlier, though exploration is a stable individual trait.
+- **Steady-state exploration is ~6%, not ~22%** — the pooled number is inflated by
+  truncation. Spices and baking have 75–81% novelty (bought rarely); dairy and fruit
+  have 30–33% (bought every order). Snacks and frozen add the most *product-only*
+  novelty (new brands for familiar ingredients).
+- **Discoveries are spread toward the long tail** — the top 20 ingredients are 37%
+  of purchases but only 24% of first-time discoveries. Customer variation is wide
+  (p10=6% to p90=41%) even at comparable history positions.
 
 ### [Prepared dishes →](analysis/prepared/)
 
@@ -168,12 +169,13 @@ for s in analyze_reorder analyze_patterns analyze_substitution analyze_calendar_
          analyze_lift_decomposition analyze_novelty analyze_exploration \
          analyze_basket_contents analyze_prepared_foods \
          analyze_ingredient_lens analyze_customer_profile analyze_customer_behavior \
-         analyze_sequences; do
+         analyze_sequences analyze_novelty_extended; do
   python scripts/sequence_analysis/$s.py
 done
 python scripts/sequence_analysis/visualize_ingredient_lens.py   # ingredient figures
 python scripts/sequence_analysis/visualize_basket.py            # basket figures
 python scripts/sequence_analysis/visualize_sequences.py         # sequence figures
+python scripts/sequence_analysis/visualize_novelty.py           # novelty figures
 python scripts/sequence_analysis/visualize_audit.py
 python scripts/sequence_analysis/generate_pattern_gallery.py
 ```
