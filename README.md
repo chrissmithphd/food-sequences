@@ -70,23 +70,18 @@ premise. 35,722 food products → 543 ingredients across 24 categories.
 
 ### [Sequences →](analysis/sequences/)
 
-![Ingredient transition matrix](analysis/figures/ingredient_transition_matrix.png)
+![Prediction comparison](analysis/figures/prediction_comparison.png)
 
-- **Specific products are concentrated in time** — a product recurs in the next order
-  ~29% more often than a reshuffle of the same customer's baskets (lift 1.28×); the
-  excess shrinks to ~4% at the category grain, where recurrence is mostly arithmetic.
-- **Within an ingredient, order-to-order product changes are mild; most "variety" is
-  simultaneous** — buying several products of one ingredient in a single order is
-  common in flavored categories (yogurt 37% of its orders, ice cream 26%) and rare for
-  staples (~0.5%). Across orders the same product mostly recurs; the probability of
-  staying with the same product is 1.0–1.08× the shuffle-baseline expectation.
-- **Named "patterns" mostly re-describe frequency** — staples and "returns" occur at
-  or below a frequency-preserving null. Burst-then-absence is above chance (an
-  ingredient bought early then absent in the observed window), but with no post-window
-  data this is not evidence of abandonment or churn.
-- **Ingredient transitions** show self-recurrence on the diagonal (banana 60%) and
-  kitchen clusters off it (onion↔herbs, lettuce↔tomato). **An order-gap is not a
-  clock** — a 5-order gap spans 15–88 days (median cadence 13 days).
+- **Recent history predicts the next order 33% better than overall frequency** —
+  knowing what someone bought in the last 2 orders carries real information that
+  their lifetime rate misses (tested on 549k held-out items).
+- **Product-level temporal concentration is real but small** — reorder lift 1.28×,
+  consecutive-purchase runs 5–10% longer than a frequency-preserving shuffle.
+  Most apparent "patterns" (staples, returns) match their random-baseline rates;
+  burst-then-absence is the exception.
+- **Repurchase timing is bursty, not periodic** — inter-purchase gap CV is 1.41
+  (median across ingredients), well above the 1.0 of random spacing.
+  "Regular rotation" is rare; irregular bursts are the norm.
 
 ### [Novelty & exploration →](analysis/novelty/)
 
@@ -172,11 +167,13 @@ python scripts/classification/apply_corrections.py          # taxonomy fixes (co
 for s in analyze_reorder analyze_patterns analyze_substitution analyze_calendar_time \
          analyze_lift_decomposition analyze_novelty analyze_exploration \
          analyze_basket_contents analyze_prepared_foods \
-         analyze_ingredient_lens analyze_customer_profile analyze_customer_behavior; do
+         analyze_ingredient_lens analyze_customer_profile analyze_customer_behavior \
+         analyze_sequences; do
   python scripts/sequence_analysis/$s.py
 done
 python scripts/sequence_analysis/visualize_ingredient_lens.py   # ingredient figures
 python scripts/sequence_analysis/visualize_basket.py            # basket figures
+python scripts/sequence_analysis/visualize_sequences.py         # sequence figures
 python scripts/sequence_analysis/visualize_audit.py
 python scripts/sequence_analysis/generate_pattern_gallery.py
 ```
