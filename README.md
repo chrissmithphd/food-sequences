@@ -1,173 +1,196 @@
-# Meal Selection, Variety, and Retention in Grocery Purchasing
+# What Grocery Purchases Reveal About Food Choice
 
-How do customers choose foods over time — what they repeat, rotate, and try once —
-and what might that suggest for a meal-subscription service? Grocery data can't answer
-subscription questions directly, but it shows the underlying selection patterns.
+3.4 million Instacart orders from 206,000 customers, with 49,688 products classified
+into 543 recipe-level ingredients. This project analyzes what people buy, what they
+combine, what they repeat, and how their choices vary — at the level of *food*, not
+brand.
 
-The project classifies 49,688 Instacart products into recipe ingredients, then
-analyzes purchasing at the ingredient level across each customer's order history.
-
-Each result below is a full analysis with its own report (click through for detail,
-tables, and methods); the README is the overview.
-
----
-
-## Dataset & data
-
-**Instacart Online Grocery Shopping Dataset 2017** — 206,000 customers, 3.4M orders,
-49,688 products, sequential purchase history per customer (anonymized integer IDs; no
-absolute dates; inter-order gaps capped at 30 days). Public on Kaggle:
-[source](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis).
-
-- **Inputs** are the public Instacart parquet tables; regenerate them with
-  `python scripts/data_pipeline/ingest_data.py` (not re-hosted here — they're the
-  public source, and one file exceeds GitHub's size limit). See [data/](data/).
-- **What we created** and publish: the ingredient classification
-  ([`analysis/classification/food_classification.csv`](analysis/classification/food_classification.csv),
-  49,688 products → 632 ingredients, with `is_food` / `is_prepared_dish`), the
-  [recipe taxonomy](analysis/classification/INGREDIENT_TAXONOMY.md), and every
-  aggregate result table under `analysis/<topic>/`.
-
-Prepared *dishes* are defined by the taxonomy's "Prepared Dishes & Meals" section (17
-meal types), not the raw per-product flag. The full purchase table is ~30M rows;
-every analysis streams it in customer-id bursts to stay within memory
-([docs/PROCESSING.md](docs/PROCESSING.md)).
+Why ingredients instead of products? "Organic 2% Milk," "Whole Milk," and a
+store-brand gallon all map to `milk`. "Chobani Blueberry" and "Fage Plain" both map
+to `yogurt`. An ingredient collapses 18 products (banana) to 1,177 (yogurt), stripping
+away brand, size, and flavor to reveal what customers actually eat.
+([Classification methodology →](docs/FOOD_CLASSIFICATION.md))
 
 ---
 
-## Results
+## What customers buy vs. what stores stock
 
 ### [Ingredients →](analysis/ingredients/)
 
-Analyzing by ingredient (a recipe role) instead of product (a SKU) is the project's
-premise. 35,722 food products → 543 ingredients across 24 categories.
-
 ![What customers buy, by ingredient](analysis/figures/ingredients_by_volume.png)
 
-- **Fresh foods are 57% of purchases but only 25% of the catalog.** Packaged foods
-  are the opposite: 45% of the catalog, 25% of purchases. The catalog is wide where
-  branding is the product; the cart is deep where the food is.
-- **19% of products capture 80% of all purchase volume.** Demand concentration varies
-  from banana (1 product = 53% of sales) to yogurt (you need 190 of 1,177 products
-  to reach 80%).
-- **A quarter of "variety" is packaging** — the median customer buys 45 products but 34
-  ingredients (1.33×).
+![What stores stock, by ingredient](analysis/figures/stores_stock.png)
+
+Fresh foods — produce, dairy, meat — are **57% of what customers buy but only 25% of
+the products the catalog offers**. Packaged foods are the opposite: 45% of the catalog,
+25% of purchases. The catalog is wide where branding differentiates (1,212 candy
+products, 939 granola bars); the cart is deep where the food itself is the product
+(18 banana SKUs account for 3% of all purchases).
+
+Only **19% of products capture 80% of purchase volume.** Banana needs 2 products to
+reach 80% of its sales; yogurt needs 190 of 1,177. One third of the Instacart food
+catalog is labeled organic, accounting for 33.5% of food purchases — far above the
+~6% US grocery average, reflecting this platform's customer base.
+
+## What customers buy together
 
 ### [Basket contents →](analysis/basket/)
 
-![Basket composition by department](analysis/figures/basket_composition.png)
+![Support vs lift](analysis/figures/cooccurrence_support_lift.png)
 
-- **Baskets are small and fresh:** median 8 food items, 7 distinct ingredients;
-  produce is 31% of items. Small baskets are quick pickups; large baskets are weekly
-  shops with broader category coverage.
-- **Co-purchasing signals are real:** baking ingredients (cake flour + powdered sugar,
-  85× lift), spice blends (garlic_powder + onion_powder, 55×), dish kits (lasagna
-  noodles + ricotta, 51×). Three-ingredient combinations surface cooking aromatics
-  (herbs + garlic + onion, 12× lift in 28k baskets) and salad (cucumber + lettuce +
-  tomato).
-- **Garlic predicts cooking from scratch** — its companions are bay leaves,
-  tomatillo, cumin, ginger, fish sauce. Pasta predicts sauce (pasta_sauce 5.6×).
+The median basket is 8 food items spanning 7 distinct ingredients. Two kinds of
+ingredient associations emerge. **High-support pairs** — banana + yogurt (354k orders),
+milk + yogurt (320k) — are staples that fill most carts, barely above chance. **High-
+lift pairs** are ingredients that rarely appear alone but almost always appear together:
+cake flour + powdered sugar (85×), bread flour + yeast (61×), lasagna noodles + ricotta
+(51×). These are co-purchasing signatures — baking projects, spice blends, specific
+dishes.
+
+Lift measures how much more often two ingredients co-occur than their individual
+popularity would predict. A lift of 85× means the pair appears 85 times more often
+than independence. Three-ingredient combinations surface recognizable cooking contexts:
+fresh herbs + garlic + onion (28k baskets, 12× lift), cucumber + lettuce + tomato
+(salad), avocado + garlic + onion (guacamole). These are co-purchasing patterns, not
+confirmed recipes.
+
+## What customers buy again
 
 ### [Sequences →](analysis/sequences/)
 
-![Prediction comparison](analysis/figures/prediction_comparison.png)
+![Purchase history heatmaps](analysis/figures/purchase_history_heatmap.png)
 
-- **Overall frequency is the best simple predictor** — adding recency to purchase
-  frequency makes next-order prediction worse, not better (properly scored on 5M
-  predictions across 50k customers). The signal is in the rate, not the sequence.
-- **Product-level temporal concentration is real but small** — reorder lift 1.28×,
-  consecutive-purchase runs 5–10% longer than a frequency-preserving shuffle.
-  Most apparent "patterns" (staples, returns) match their random-baseline rates;
-  burst-then-absence is the exception.
-- **Repurchase timing is bursty, not periodic** — inter-purchase gap CV is 1.41
-  (median across ingredients), well above the 1.0 of random spacing.
-  "Regular rotation" is rare; irregular bursts are the norm.
+A specific product recurs in the next order **28% more often** than a
+frequency-preserving shuffle of the same customer's baskets (lift 1.28×). The excess
+shrinks as the grain broadens — at the category level it's 4%, mostly arithmetic.
+Purchase runs are slightly longer than shuffled (5–10%), and repurchase timing is
+**bursty, not periodic** — gap CV of 1.41 across ingredients, well above random.
+
+When properly scored against both present and absent ingredients, **overall purchase
+frequency is the best simple predictor** of the next order. Adding recency makes
+predictions worse — the signal is in the long-run rate, not the recent sequence.
+Most named "patterns" (staples, returns, rotation) match their random-baseline rates.
+The exception is burst-then-absence: ingredients bought in an early cluster then
+absent for the rest of the observed window (3.4% of ingredient histories vs 0.3%
+random).
+
+## How customers introduce variety
 
 ### [Novelty & exploration →](analysis/novelty/)
 
 ![Novelty by category](analysis/figures/novelty_by_category.png)
 
-- **Late-history exploration is ~6%, not the ~22% pooled figure** — the pooled number
-  is inflated by truncation; the rate is still declining at order 100. Spices and
-  baking have 75–81% novelty (bought rarely); dairy and fruit have 30–33% (bought
-  every order).
-- **Discoveries are spread toward the long tail** — the top 20 ingredients are 37%
-  of purchases but only 24% of first-time discoveries. Customer variation is wide
-  (p10=6% to p90=41%) even at comparable history positions.
+A new yogurt flavor and a first purchase of lentils are different kinds of novelty. The
+blue bars are **new ingredients** (never before in this customer's observed history);
+orange bars are **new products for a familiar ingredient** (a different brand or
+flavor). Spices and baking have 75–81% novelty because they're bought rarely — each
+purchase is likely the first observed. Dairy and fruit have 30–33% because staples
+repeat almost every order.
+
+The pooled new-ingredient rate (~22%) is inflated by truncation — the dataset starts
+mid-history, so early orders are mechanically "new." By order 50+, the rate is ~6%
+and still declining. Discoveries tilt toward the catalog's long tail: the top 20
+ingredients are 37% of purchases but only 24% of first-time discoveries. Customer
+exploration rates vary widely (p10 = 6%, p90 = 41%) even at comparable history
+positions.
+
+## Where prepared dishes fit
 
 ### [Prepared dishes →](analysis/prepared/)
 
 ![Prepared items per basket](analysis/figures/prepared_basket_distribution.png)
 
-- **79% of baskets have zero prepared items.** 60% of customers buy one eventually,
-  but it's typically 4% of their food items. Prepared food is an occasional addition,
-  not a dietary base.
-- **Baskets with prepared food have nearly identical composition** to those without —
-  category shares within ±0.5% (excluding the prepared items themselves). The baskets
-  are larger (median 12 vs 7 items); cross-sectional comparison cannot determine
-  substitution.
-- Frozen dominates (frozen_meal 54k customers, pizza 42k, soup 41k); chicken nuggets
-  have the most concentrated demand (1,055 purchases per product).
+**79% of baskets contain zero prepared items.** 60% of customers buy a prepared dish
+at some point, but it's typically 4% of their food items, in about 30% of their
+orders. Frozen meals (54k customers), pizza (42k), and soup (41k) dominate. Chicken
+nuggets have the most concentrated demand: 1,055 purchases per product from just 66
+catalog items.
+
+Baskets with prepared food are larger (median 12 vs 7 items), but the composition of
+the rest of the basket is nearly identical — produce, dairy, and fruit shares within
+±0.5%. Cross-sectional comparisons cannot establish whether prepared items replace or
+supplement home cooking.
+
+## How customers differ
 
 ### [Customers →](analysis/customers/)
 
 ![Behavior correlations](analysis/figures/behavior_correlations.png)
 
-- **Most behavioral "types" are really volume differences** — repeat rate, novelty,
-  and diversity correlate r > 0.9 with each other and ±0.5–0.6 with order count.
-  Two exceptions: **product switching** (r = −0.04 with volume) and **prepared-food
-  share** (r = −0.08) are genuinely independent dimensions.
-- **Within-customer variation rivals between-customer** — basket size SD within a
-  customer (4.2) is 81% of SD between customers (5.2). "Customer types" are less
-  stable than they appear.
+Most apparent behavioral "types" are really **volume differences**. Repeat rate,
+novelty rate, and diversity correlate r > 0.9 with each other and ±0.5–0.6 with order
+count. Two dimensions survive after volume is removed: **product switching** (whether
+a customer rotates among products within an ingredient, r = −0.04 with volume) and
+**prepared-food share** (r = −0.08).
+
+Between-customer and within-customer variation are comparable: the intraclass
+correlation is 0.60 for basket size and 0.53 for prepared-food share. A customer who
+averages 8 items per basket routinely places orders ranging from 3 to 15. Customer
+differences are real but modest — order-to-order variation accounts for nearly half of
+the total.
 
 ---
 
-## What it might mean for meal subscriptions
+## What this suggests about food selection
 
-Grocery patterns, offered as hypotheses rather than demonstrated subscription results:
+These are descriptive patterns from a grocery delivery platform, not demonstrated
+results about meal subscriptions, cooking behavior, or dietary preferences.
 
-1. Read demand at the ingredient level — product data overweights packaged variety.
-2. Specific products are concentrated in time — reordered ~29% above a frequency baseline; broader grains add little beyond arithmetic.
-3. About a quarter of apparent variety is packaging, not diet.
-4. Within-ingredient commitment is mild; variety-seeking concentrates in flavored/discretionary categories.
-5. Exploration declines with observed history (~6% at order 50, still falling); the repertoire grows slowly.
-6. Customer "type" is mostly purchase volume — product-switching is the exception worth segmenting on.
-7. "Returns" and "rotation" mostly track frequency; burst-then-absence stands out but, without post-window data, isn't evidence of churn.
-8. Order-gaps are not calendar time.
-9. Prepared-meal demand is a minority, occasional behavior (60% reach, ~4% of items).
+1. **Read demand at the ingredient level.** Product data overstates variety — about a
+   quarter of apparent product diversity is the same food in different packaging.
+2. **Frequency is the dominant signal.** A customer's long-run purchase rate for each
+   ingredient is a well-calibrated predictor. Sequence, recency, and named patterns
+   add little beyond what frequency already explains.
+3. **Prepared-meal demand is occasional and minority.** 60% of customers participate,
+   but baskets are overwhelmingly raw ingredients and staples.
 
 ---
+
+## Dataset and methodology
+
+**Instacart Online Grocery Shopping Dataset 2017** — 206k customers, 3.4M orders,
+49,688 products. Public on Kaggle:
+[source](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis).
+Anonymized integer IDs; no absolute dates; inter-order gaps capped at 30 days.
+
+**Classification:** 49,688 products → 543 ingredients via LLM classification
+(Claude, ~8h). A deterministic lookup table
+([`product_ingredient_lookup.csv`](analysis/classification/product_ingredient_lookup.csv))
+reproduces the mapping without an LLM.
+[Taxonomy →](analysis/classification/INGREDIENT_TAXONOMY.md) ·
+[Method →](docs/FOOD_CLASSIFICATION.md)
+
+**Key limitations:** No absolute timestamps or seasonal patterns. 30-day cap on
+inter-order gaps. Test-set orders lack item labels. The dataset begins mid-history
+for each customer. Instacart's customer base skews urban and convenience-oriented;
+organic penetration (33.5%) and plant-milk share (38% of milk purchases) are
+platform-specific, not nationally representative.
 
 ## Repository structure
 
 ```
 analysis/
-  classification/   # ingredient classification (our input) + taxonomy + method comparison
-  ingredients/      # README.md + aggregate CSVs  (one directory per result)
-  basket/           # README.md + CSVs (basket size, composition, co-occurrence)
-  sequences/        # README.md + CSVs (reorder, patterns, substitution, calendar)
-  novelty/          # README.md + CSVs (novelty, repertoire growth)
-  prepared/         # README.md + CSVs (reach, dish types, products, reorder)
-  customers/        # README.md + CSVs (profile, segments, behavior)
-  figures/          # all figures (png/svg)
-docs/               # PROCESSING.md, DATA_AUDIT.md
+  classification/   # ingredient classification + taxonomy + lookup table
+  ingredients/      # demand vs assortment, concentration, organic penetration
+  basket/           # basket composition, co-occurrence, triplets
+  sequences/        # reorder, patterns, substitution, prediction
+  novelty/          # novelty classification, repertoire growth, categories
+  prepared/         # reach, dish types, basket composition
+  customers/        # profiles, segments, behavioral correlations
+  figures/          # all figures (PNG/SVG)
 scripts/
-  config.py         # shared paths, schemas, keywords
+  config.py         # shared paths and schemas
   data_pipeline/    # Kaggle → Parquet ingestion + audit
-  classification/   # classifiers + taxonomy corrections
-  sequence_analysis/# one script per result; analyze_reorder.py is the shared core
-data/               # processed inputs (regenerate via ingest_data.py; see data/README.md)
+  classification/   # LLM classifier, lookup table, taxonomy corrections
+  sequence_analysis/# one script per analysis; analyze_reorder.py is the shared core
 ```
 
 ## Reproducing
 
 ```bash
 uv sync
-python scripts/data_pipeline/ingest_data.py                 # Kaggle → data/processed/
-python scripts/classification/classify_fabric.py            # LLM classification (~8h; CSV committed)
-python scripts/classification/apply_corrections.py          # taxonomy fixes (condensed_soup)
-# results (memory-safe, full dataset) — each writes to its analysis/<topic>/ directory
+python scripts/data_pipeline/ingest_data.py
+python scripts/classification/classify_fabric.py     # ~8h; CSV already committed
+python scripts/classification/apply_corrections.py
 for s in analyze_reorder analyze_patterns analyze_substitution analyze_calendar_time \
          analyze_lift_decomposition analyze_novelty analyze_exploration \
          analyze_basket_contents analyze_prepared_foods \
@@ -175,14 +198,9 @@ for s in analyze_reorder analyze_patterns analyze_substitution analyze_calendar_
          analyze_sequences analyze_novelty_extended; do
   python scripts/sequence_analysis/$s.py
 done
-python scripts/sequence_analysis/visualize_ingredient_lens.py   # ingredient figures
-python scripts/sequence_analysis/visualize_basket.py            # basket figures
-python scripts/sequence_analysis/visualize_sequences.py         # sequence figures
-python scripts/sequence_analysis/visualize_novelty.py           # novelty figures
-python scripts/sequence_analysis/visualize_audit.py
-python scripts/sequence_analysis/generate_pattern_gallery.py
+for v in visualize_ingredient_lens visualize_basket visualize_sequences \
+         visualize_novelty visualize_prepared visualize_customers visualize_audit \
+         generate_pattern_gallery; do
+  python scripts/sequence_analysis/$v.py
+done
 ```
-
-**Method note:** descriptive patterns are kept separate from prediction; when a
-sequence feature doesn't beat a frequency baseline, that is reported rather than
-overfit.
