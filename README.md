@@ -1,15 +1,41 @@
 # What Grocery Purchases Reveal About Food Choice
 
-3.4 million Instacart orders from 206,000 customers, with 49,688 products classified
-into 543 recipe-level ingredients. This project analyzes what people buy, what they
-combine, what they repeat, and how their choices vary — at the level of *food*, not
-brand.
+Grocery transaction data records what people actually put in their carts — not what
+they say they eat, not what nutritionists recommend, just what gets purchased week
+after week. This project explores that record to see what's in it.
 
-Why ingredients instead of products? "Organic 2% Milk," "Whole Milk," and a
-store-brand gallon all map to `milk`. "Chobani Blueberry" and "Fage Plain" both map
-to `yogurt`. An ingredient collapses 18 products (banana) to 1,177 (yogurt), stripping
-away brand, size, and flavor to reveal what customers actually eat.
+The data is the [Instacart Online Grocery Shopping Dataset 2017](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis):
+3.4 million orders from 206,000 customers, with the full sequence of products in each
+order. It's one of the few large public datasets where you can follow individual
+customers across dozens of shopping trips and see how their choices change.
+
+The dataset has 49,688 products, but products are a poor unit of analysis for
+understanding food. A grocery store carries 277 kinds of milk and 1,177 yogurts —
+organic, conventional, whole, skim, Greek, Icelandic, flavored, plain — and most of
+that variation is branding, not food. So the first step was classifying every product
+into an **ingredient**: the recipe-level role the food plays. "Organic 2% Milk,"
+"Whole Milk," and a store-brand gallon all become `milk`. "Chobani Blueberry" and
+"Fage Plain" both become `yogurt`. This collapses 49,688 products into 543 ingredients
+across 24 food categories, and everything downstream works at that level.
 ([Classification methodology →](docs/FOOD_CLASSIFICATION.md))
+
+The project then asks six questions, each its own analysis with a detailed report:
+
+- **What do people buy?** How does the grocery catalog compare with actual demand?
+- **What goes together?** Which ingredients appear in the same basket, and which
+  combinations are more common than their individual popularity predicts?
+- **What repeats?** How much of purchasing is the same foods reappearing, and does
+  the sequence contain information beyond purchase frequency?
+- **What's new?** How much of each order involves foods the customer hasn't bought
+  before, and where does that exploration happen?
+- **Where do prepared meals fit?** How much grocery shopping involves ready-to-eat
+  food, and what does the rest of the basket look like?
+- **How do customers differ?** Which differences between shoppers are real and
+  persistent, and which are artifacts of how much we observe?
+
+Each question led somewhere interesting — often not where expected. The results are
+below; click through any section header for the full analysis, data tables, and
+methodology.
 
 ---
 
