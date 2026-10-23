@@ -25,12 +25,13 @@ shopping about every 13 days. Every measure is strongly right-skewed — a heavy
 shops weekly with 37+ orders. (Tenure and order counts are window-censored; the
 30-day cap on inter-order gaps makes tenure a lower bound.)
 
-## Frequency × basket size segments
+## Frequency × basket size
 
 ![Customer segments](../figures/customer_segments.png)
 
-Splitting at the medians of shopping frequency and basket size gives four balanced
-groups (23–27% each):
+Splitting at the medians of shopping frequency and basket size creates four
+roughly equal groups. These are descriptive bins, not discovered clusters — the
+underlying distributions are continuous:
 
 | Segment | Share | Mean orders | Mean basket | Mean cadence |
 |---------|------:|------------:|------------:|-------------:|
@@ -55,19 +56,21 @@ dimension (how much of a customer's purchasing is familiar vs new), and it corre
 ±0.5–0.6 with order count. "Repeater vs explorer" is largely "high-volume vs
 low-volume."
 
-**Independent of volume:** Two behaviors stand out:
+**Low correlation with volume:** Two behaviors have near-zero Pearson correlation
+with order count:
 - **Product switching** (corrected, cross-order only): r = −0.04 with order count.
   Whether a customer sticks to one product per ingredient or rotates among several
-  is a genuine preference that survives after volume is removed.
+  does not track purchasing volume. (Low linear correlation does not rule out other
+  relationships, and it does not by itself establish a stable individual preference.)
 - **Prepared-food share**: r = −0.08 with order count, +0.07 with basket size.
-  How much a customer buys prepared food is essentially unrelated to how often or
-  how much they shop.
+  How much a customer buys prepared food shows little linear relationship with how
+  often or how much they shop overall.
 
 **Effective ingredients** (inverse HHI) correlates +0.61 with basket size —
 mechanically, bigger baskets spread across more ingredients. This is not a behavioral
 trait; it's arithmetic.
 
-## Most variation is within customers, not between them
+## How much variation is within customers versus between them
 
 ![Within vs between](../figures/within_vs_between.png)
 
@@ -87,18 +90,20 @@ equally. A customer who averages 8 items per basket might place orders ranging f
 3 to 15. **Customer differences are real but modest** — order-to-order variation
 within a customer accounts for nearly half of the total variation.
 
-## Product switching: the volume-independent trait
+## Product switching
 
 ![Switch rate distribution](../figures/switch_rate_distribution.png)
 
 The corrected switch rate (cross-order transitions only, excluding within-order
 coexistence) has median 0.26: about 1 in 4 consecutive uses of the same ingredient
 involves a different product. This varies widely across customers (p10 = 0.13,
-p90 = 0.59) and is essentially independent of shopping volume.
+p90 = 0.59) and has low linear correlation with shopping volume (r = −0.04).
 
-If you want one behavioral dimension to segment customers on beyond "how much do
-they buy," switch rate is the strongest candidate — it measures a genuine preference
-rather than a volume artifact.
+Among the behavioral metrics examined, switch rate is the least confounded by
+purchase volume. Whether that makes it a stable individual characteristic or simply
+a measure that doesn't correlate with the most obvious confounder is a distinction
+this data cannot fully resolve — it would require experimental or longitudinal
+evidence beyond what purchase records provide.
 
 ## Behavioral metric distributions
 

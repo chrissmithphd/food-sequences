@@ -40,7 +40,10 @@ dominates because most ingredients are *absent* from any given order.
 **Correction:** An earlier version of this test scored only ingredients *present* in
 the test order, which made recency appear 33% better than frequency. That was a
 scoring error — proper log-loss must penalize both false positives and false negatives.
-With proper scoring, recency adds noise rather than information.
+With proper scoring, the tested recency adjustments hurt rather than help. This does
+not prove that sequence information has no value — a more sophisticated model might
+extract useful signal — but the simple frequency baseline is well-calibrated and hard
+to beat with crude recency rules.
 
 ## 2. Next-order reordering and temporal concentration
 
@@ -119,10 +122,12 @@ histories, the expected CV under random placement depends on the ingredient's
 frequency — sparse ingredients have higher expected CV — so 1.0 is an approximate
 reference, not an exact null.
 
-The median CV across ingredients is **1.41**, and nearly all ingredients exceed 1.0.
-Repurchase intervals are irregular: periods of frequent purchasing interspersed with
-longer gaps. More-frequently-purchased ingredients (lower mean gap) tend to be
-slightly more regular, but almost nothing reaches CV < 1.
+The median CV across ingredients is **1.41**. Under random placement of the same number
+of purchases in the same history length, the expected CV is typically 0.5–0.8
+(depending on frequency), so the observed 1.41 is genuinely above random — repurchase
+intervals are more irregular than chance. Purchases come in bursts interspersed with
+longer gaps. More-frequently-purchased ingredients tend to be slightly more regular,
+but almost nothing reaches CV < 1.
 
 This is consistent with §4's run-length finding: purchases are mildly streaky
 (slightly above-random runs) but not periodic. "Regular rotation" as a pattern label
@@ -223,9 +228,10 @@ long day-gaps lower bounds.
 
 ## Summary: what the sequence adds
 
-1. **Overall frequency is the best simple predictor** — adding recency to frequency
-   makes next-order prediction worse, not better (an earlier version had a scoring
-   error that overstated recency's value).
+1. **Overall frequency is hard to beat** — adding simple recency adjustments to
+   frequency makes next-order prediction worse under proper scoring. More
+   sophisticated sequence models might do better, but the frequency baseline is
+   well-calibrated.
 2. **Product-level temporal concentration is real but small** — reorder lift 1.28×,
    run lengths 5–10% above shuffled. The signal is consistent but modest.
 3. **Most apparent "patterns" are consequences of frequency** — staples and returns

@@ -127,12 +127,13 @@ Strongest positive associations:
 - **Baking cluster:** baking + dairy, baking + spreads/jams — flour, sugar, butter,
   eggs travel together.
 
-Negative or neutral:
-- **Snacks + cooking:** snacks show weak or negative association with spices, cooking
-  liquids, and oils — snack-heavy baskets are not cooking-from-scratch baskets.
-- **Prepared meals + cooking ingredients:** prepared dishes weakly associate with
-  vegetables and spices — customers buying prepared meals are buying less from scratch.
-- **Beverages** are near-neutral with most categories — they go in every kind of basket.
+Weaker or negative:
+- **Snacks** show weak association with spices, cooking liquids, and oils.
+- **Prepared meals** weakly associate with vegetables and spices in the category
+  heatmap, though direct basket comparison shows nearly identical composition
+  (see [prepared dishes](../prepared/) for the controlled comparison).
+- **Beverages** are near-neutral with most categories — they appear in every kind of
+  basket.
 
 ## Conditional companions
 
@@ -155,7 +156,8 @@ distinct cooking contexts.
 
 **Garlic** companions are aromatic/cooking ingredients: bay_leaves 5.1×, tomatillo
 4.4×, cumin 4.3×, ginger 4.3×, fish_sauce 4.2×, coriander 4.2×. Garlic is a
-from-scratch cooking signal — its presence predicts other scratch-cooking ingredients.
+strong co-purchasing signal — its presence predicts other aromatic and cooking
+ingredients.
 
 ## Three-ingredient combinations
 

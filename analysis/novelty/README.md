@@ -143,13 +143,16 @@ preference for exploration. But even after controlling for history length, the
 spread is substantial: some customers are encountering a new ingredient in nearly
 half their items while others are below 6%.
 
-## Exploration slows, but it's a stable trait
+## Exploration slows, but relative differences persist
 
 For customers with ≥20 orders, the new-ingredient rate falls from **34% in the first
 half of their history to 15% in the second**, and **97.7% of customers slow down**.
 But the first-half/second-half correlation is 0.66 — a customer who explores more
-than average early still does so late. Exploration is a persistent individual
-trait layered on a near-universal decline.
+than average early still does so late. This rank-order consistency is real, but its
+magnitude is partly inflated by the same mechanical decline affecting everyone: all
+customers have lower novelty in their second half because their accumulated repertoire
+is larger. The correlation reflects both genuine individual differences and this
+shared effect, and we cannot cleanly separate the two.
 
 ## Brand multiplier
 
@@ -165,12 +168,13 @@ Across all observed history, the median customer's new-ingredient discoveries sp
 **12 food categories and 34 distinct ingredients**. Exploration is broad — customers
 don't discover new ingredients only in one or two favorite categories. This is
 consistent with the flat-across-basket-size finding: exploration is distributed across
-the basket, not concentrated in a single adventurous category.
+the basket, not concentrated in a single category.
 
 ## Limitations
 
-- Truncation can be conditioned around but not removed; the ~5–7% late-history rate
-  is a lower bound if customers also explored before the observed window.
+- Truncation can be conditioned around but not removed. The ~5–7% late-history rate
+  reflects the observed data; we cannot determine whether it would stabilize, continue
+  declining, or represent a genuine exploration rate given longer observation.
 - "New to the observed history" ≠ "new to the customer." Some first-observed purchases
   are routine items the customer bought before the dataset began.
 - "Familiar ingredient, new product" mixes brand switches, size changes, and genuine

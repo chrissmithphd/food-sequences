@@ -133,13 +133,14 @@ Virtually every product in the catalog *was* purchased at least once (only 3 of
 demand — it is extreme skew: a few products per ingredient drive most volume, and the
 long tail of variants contributes very little each.
 
-## A quarter of "variety" is packaging, not diet
+## A quarter of product variety collapses at the ingredient level
 
 ![Brand multiplier distribution](../figures/brand_multiplier.png)
 
 The median customer buys **45 distinct products but only 34 distinct ingredients** — a
-**1.33× brand multiplier**. About 24% of a customer's apparent product variety
-dissolves at the ingredient level: four yogurt brands and three milks read as variety
+**1.33× multiplier**. About 24% of a customer's apparent product variety represents
+different brands, sizes, flavors, or formulations of the same ingredient rather than
+different foods. This dissolves at the ingredient level: four yogurt brands and three milks read as variety
 in product data and as habit in ingredient data.
 
 ## What an ingredient actually contains

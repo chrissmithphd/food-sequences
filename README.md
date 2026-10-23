@@ -54,8 +54,8 @@ products, 939 granola bars); the cart is deep where the food itself is the produ
 (18 banana SKUs account for 3% of all purchases).
 
 Only **19% of products capture 80% of purchase volume.** Banana needs 2 products to
-reach 80% of its sales; yogurt needs 190 of 1,177. One third of the Instacart food
-catalog is labeled organic, accounting for 33.5% of food purchases — far above the
+reach 80% of its sales; yogurt needs 190 of 1,177. Products labeled "organic" are
+12% of the food catalog but account for **33.5% of food purchases** — far above the
 ~6% US grocery average, reflecting this platform's customer base.
 
 ## What customers buy together
@@ -93,7 +93,8 @@ Purchase runs are slightly longer than shuffled (5–10%), and repurchase timing
 
 When properly scored against both present and absent ingredients, **overall purchase
 frequency is the best simple predictor** of the next order. Adding recency makes
-predictions worse — the signal is in the long-run rate, not the recent sequence.
+predictions worse under the models tested. More sophisticated models might extract
+value from recency, but the simple frequency baseline is hard to beat.
 Most named "patterns" (staples, returns, rotation) match their random-baseline rates.
 The exception is burst-then-absence: ingredients bought in an early cluster then
 absent for the rest of the observed window (3.4% of ingredient histories vs 0.3%
@@ -140,19 +141,19 @@ supplement home cooking.
 
 ### [Customers →](analysis/customers/)
 
-![Behavior correlations](analysis/figures/behavior_correlations.png)
+![Customer profile distributions](analysis/figures/customer_profile_distributions.png)
 
-Most apparent behavioral "types" are really **volume differences**. Repeat rate,
-novelty rate, and diversity correlate r > 0.9 with each other and ±0.5–0.6 with order
-count. Two dimensions survive after volume is removed: **product switching** (whether
-a customer rotates among products within an ingredient, r = −0.04 with volume) and
-**prepared-food share** (r = −0.08).
+The median customer places **10 orders** over ~5 observed months, in baskets of **8
+food items**, shopping every **13 days**. Every measure is right-skewed — a heavy tail
+shops weekly with 37+ orders. Shopping frequency and basket size vary independently,
+creating genuine variety in how customers use the platform.
 
-Between-customer and within-customer variation are comparable: the intraclass
-correlation is 0.60 for basket size and 0.53 for prepared-food share. A customer who
-averages 8 items per basket routinely places orders ranging from 3 to 15. Customer
-differences are real but modest — order-to-order variation accounts for nearly half of
-the total.
+Much of what looks like a difference between customers is actually variation within
+a single customer's orders. The intraclass correlation is 0.60 for basket size and
+0.53 for prepared-food share — meaning order-to-order noise within a customer accounts
+for roughly half the total variation. Behavioral metrics like repeat rate and novelty
+correlate strongly with purchase volume (r = 0.5–0.6), so apparent "types" often
+reflect how much we observe, not how someone shops.
 
 ---
 
@@ -162,10 +163,11 @@ These are descriptive patterns from a grocery delivery platform, not demonstrate
 results about meal subscriptions, cooking behavior, or dietary preferences.
 
 1. **Read demand at the ingredient level.** Product data overstates variety — about a
-   quarter of apparent product diversity is the same food in different packaging.
-2. **Frequency is the dominant signal.** A customer's long-run purchase rate for each
-   ingredient is a well-calibrated predictor. Sequence, recency, and named patterns
-   add little beyond what frequency already explains.
+   quarter of apparent product diversity collapses when viewed by ingredient (different
+   brands, sizes, flavors, and formulations of the same food).
+2. **Frequency is a strong baseline.** A customer's long-run purchase rate for each
+   ingredient is well-calibrated. Simple recency adjustments don't improve on it;
+   most named sequence "patterns" match their frequency-preserving baselines.
 3. **Prepared-meal demand is occasional and minority.** 60% of customers participate,
    but baskets are overwhelmingly raw ingredients and staples.
 
