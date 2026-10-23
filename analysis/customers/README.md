@@ -138,22 +138,37 @@ of customers into types.
 
 ## Limitations
 
-- Tenure and order counts are window-censored (observed, not lifetime).
-- Behavioral correlations are descriptive — no causal claim about why volume and
-  repetition move together.
-- The repeat/novelty/diversity cluster's correlation with order count means that
-  apparent "behavioral types" partly reflect observation length. A customer observed
-  for 50 orders will mechanically show higher repetition and lower novelty than one
-  observed for 10, even if their underlying behavior is identical.
-- Split-half stability uses first vs second half of observed history, which
-  introduces a confound: the second half has a longer accumulated repertoire, so
-  novelty is mechanically lower. The 0.81 correlation for new_ing_rate mixes
-  genuine stability with this truncation effect.
-- Product switching (corrected) uses the most-purchased product per order as the
-  representative; when a customer buys multiple products of an ingredient in one
-  order, only one is counted. This is more conservative than the uncorrected version,
-  which inflated switch rates by ~10 percentage points.
-- Within-vs-between variation is measured on per-order metrics. Averaging across more
-  orders naturally stabilizes per-customer means, so the within-customer SD overstates
-  the *predictive* uncertainty about a customer's next order relative to their
-  long-run average.
+Each item below names the problem and the direction of bias.
+
+- **Censoring.** Order counts and tenure are observed, not lifetime. Everything is
+  conditioned on a truncated window.
+
+- **Repertoire metrics are mechanically tied to order count.** Repeat rate, novelty,
+  and diversity are cumulative: more observed orders → higher repeat, lower novelty,
+  by construction, independent of behavior. Their ±0.5–0.6 correlation with order
+  count is mostly this artifact, so "high-volume vs low-volume" and
+  "repeater vs explorer" are nearly the same axis. Treat these three as one
+  observation-length-confounded measure, not three traits.
+
+- **Split-half stability is inflated.** First vs second half differ in accumulated
+  repertoire, so novelty is lower and repetition higher in the second half for
+  *everyone*. A positive r (0.81 for new_ing_rate) therefore reflects a shared time
+  trend plus genuine rank-order persistence; we cannot separate the two. Read it as
+  an upper bound on true individual stability.
+
+- **ICC is approximate here.** The design is badly unbalanced (order counts range from
+  10 to 100+) and within-customer variance is not constant across customers, so the
+  0.60 / 0.53 values are descriptive summaries, not a clean one-way random-effects
+  decomposition. The qualitative point — within- and between-customer variation are
+  the same order of magnitude — is robust; the exact numbers are not.
+
+- **Switch rate uses one product per order.** When a customer buys several products of
+  an ingredient in one order, only the most-purchased is kept, so simultaneous variety
+  is not counted as switching. This is deliberate (the uncorrected version counted
+  within-order coexistence as switches and ran ~10 points higher) but it discards
+  information and the choice of representative is arbitrary.
+
+- **Low Pearson r ≠ independence.** Switch rate and prepared-food share have r ≈ 0
+  with order count. That rules out a linear volume relationship only. It does not
+  establish statistical independence, nor that either is a stable individual trait —
+  both would need longitudinal or experimental evidence this data can't provide.
