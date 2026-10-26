@@ -357,7 +357,7 @@ uv run python scripts/classification/analyze_classification.py
 
 **Data sources:**
 - `analysis/classification/food_classification.csv` (49,688 products, LLM classification)
-- `analysis/classification/INGREDIENT_TAXONOMY.md` (446 ingredients, definitions)
+- `data/INGREDIENT_TAXONOMY.md` (ingredient definitions by category)
 - `analysis/classification/methods_compared/` (TF-IDF, embeddings, LLM results for comparison)
 
 **Method details:**

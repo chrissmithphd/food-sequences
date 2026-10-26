@@ -13,7 +13,7 @@ catalog is wide where branding is the product; the cart is deep where the food i
   206k customers.
 - Classification: [food_classification.csv](../classification/food_classification.csv)
   maps each product to an ingredient (a recipe role, not a SKU). See
-  [taxonomy](../classification/INGREDIENT_TAXONOMY.md).
+  [taxonomy](../../data/INGREDIENT_TAXONOMY.md).
 
 ## The big picture
 

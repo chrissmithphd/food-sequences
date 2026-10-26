@@ -31,7 +31,7 @@ def load_taxonomy():
 
     Shared logic with classify_complete.py (TF-IDF variant).
     """
-    taxonomy_path = Path(__file__).parent.parent / "analysis" / "INGREDIENT_TAXONOMY.md"
+    taxonomy_path = Path(__file__).parent.parent.parent / "data" / "INGREDIENT_TAXONOMY.md"
 
     with open(taxonomy_path) as f:
         content = f.read()

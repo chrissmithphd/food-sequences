@@ -27,7 +27,7 @@ ROOT = Path(__file__).parent.parent.parent
 SEQ = ROOT / "analysis" / "ingredients"
 SEQ.mkdir(exist_ok=True)
 CLF_PATH = ROOT / "analysis" / "classification" / "food_classification.csv"
-TAX_PATH = ROOT / "analysis" / "classification" / "INGREDIENT_TAXONOMY.md"
+TAX_PATH = ROOT / "data" / "INGREDIENT_TAXONOMY.md"
 
 
 def load_clf():

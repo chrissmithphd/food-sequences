@@ -6,7 +6,7 @@ the thing a recipe's ingredient line would call it ("milk", "chicken broth", "ch
 
 - Classification file: [`analysis/classification/food_classification.csv`](../analysis/classification/food_classification.csv)
   (one row per product: product_id, ingredient, is_food, is_prepared_dish, ...)
-- Taxonomy: [`analysis/classification/INGREDIENT_TAXONOMY.md`](../analysis/classification/INGREDIENT_TAXONOMY.md)
+- Taxonomy: [`data/INGREDIENT_TAXONOMY.md`](../data/INGREDIENT_TAXONOMY.md)
 - Method comparison: [`analysis/classification/methods_compared/`](../analysis/classification/methods_compared/)
 - Detailed analysis: [`analysis/classification/CLASSIFICATION_ANALYSIS.md`](../analysis/classification/CLASSIFICATION_ANALYSIS.md)
 
@@ -64,7 +64,7 @@ are flagged for manual or LLM classification.
 Products flagged `is_prepared_dish` include frozen meals, pizza, soup, deli-prepared
 items, mac & cheese, and similar heat-and-eat or ready-to-eat items. The downstream
 analysis uses a narrower definition: the 17 meal types under the taxonomy's "Prepared
-Dishes & Meals" section (see [`INGREDIENT_TAXONOMY.md`](../analysis/classification/INGREDIENT_TAXONOMY.md)).
+Dishes & Meals" section (see [`INGREDIENT_TAXONOMY.md`](../data/INGREDIENT_TAXONOMY.md)).
 The per-product flag is broader; the taxonomy section is the authoritative definition.
 
 ## Reproduce

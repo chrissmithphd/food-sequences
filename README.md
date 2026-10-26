@@ -185,7 +185,7 @@ Anonymized integer IDs; no absolute dates; inter-order gaps capped at 30 days.
 (Claude, ~8h). A deterministic lookup table
 ([`product_ingredient_lookup.csv`](analysis/classification/product_ingredient_lookup.csv))
 reproduces the mapping without an LLM.
-[Taxonomy →](analysis/classification/INGREDIENT_TAXONOMY.md) ·
+[Taxonomy →](data/INGREDIENT_TAXONOMY.md) ·
 [Method →](docs/FOOD_CLASSIFICATION.md)
 
 **Key limitations:** No absolute timestamps or seasonal patterns. 30-day cap on

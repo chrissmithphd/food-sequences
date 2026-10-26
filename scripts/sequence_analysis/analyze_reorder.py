@@ -32,13 +32,14 @@ ROOT = Path(__file__).parent.parent.parent
 SEQ = ROOT / "analysis" / "sequences"
 SEQ.mkdir(exist_ok=True)
 CLF = ROOT / "analysis" / "classification"
+TAX = ROOT / "data" / "INGREDIENT_TAXONOMY.md"  # taxonomy is reference data, not analysis
 
 LEVELS = ["product_id", "ingredient", "category", "aisle"]
 K_HORIZONS = [2, 3, 5, 10]
 
 
 def taxonomy_map():
-    content = (CLF / "INGREDIENT_TAXONOMY.md").read_text()
+    content = TAX.read_text()
     out, cur = {}, None
     for line in content.split("\n"):
         if line.startswith("### "):
@@ -56,7 +57,7 @@ def prepared_dish_ingredients():
     typically needs warming/cooking) — not the noisy per-product is_prepared_dish
     flag, which also marks snacks, drinks, and condiments.
     """
-    content = (CLF / "INGREDIENT_TAXONOMY.md").read_text()
+    content = TAX.read_text()
     out, inside = set(), False
     for line in content.split("\n"):
         if line.startswith("### "):

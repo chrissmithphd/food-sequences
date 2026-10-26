@@ -9,7 +9,7 @@ and how does it fit into their overall grocery shopping?
 - Definition: 17 meal types in the taxonomy's *Prepared Dishes & Meals* section —
   frozen dinners, pizza, soup (ready-to-eat), mac & cheese, deli-prepared meals, etc.
   Not snacks, not drinks, not cooking ingredients.
-  [Taxonomy →](../classification/INGREDIENT_TAXONOMY.md)
+  [Taxonomy →](../../data/INGREDIENT_TAXONOMY.md)
 
 ---
 

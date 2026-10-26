@@ -17,7 +17,7 @@ from config import DATA_PROCESSED, ANALYSIS_OUTPUTS
 
 def load_taxonomy():
     """Parse full taxonomy from markdown file."""
-    taxonomy_path = Path(__file__).parent.parent / "analysis" / "INGREDIENT_TAXONOMY.md"
+    taxonomy_path = Path(__file__).parent.parent.parent / "data" / "INGREDIENT_TAXONOMY.md"
 
     with open(taxonomy_path) as f:
         content = f.read()

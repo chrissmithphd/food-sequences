@@ -29,8 +29,9 @@ would reuse:
 - **`analysis/classification/food_classification.csv`** — all 49,688 products mapped
   to 632 recipe ingredients, with `is_food` and `is_prepared_dish`. This is the key
   derived dataset.
-- **`analysis/classification/INGREDIENT_TAXONOMY.md`** — the 446-ingredient recipe
-  taxonomy the classification targets.
+- **`INGREDIENT_TAXONOMY.md`** — the recipe-ingredient taxonomy (24 categories,
+  21 of them food) the classification targets. Parsed at runtime by the analysis
+  pipeline, so it lives here as reference data rather than under `analysis/`.
 - **`analysis/<topic>/*.csv`** — every aggregate result table (no user IDs).
 
 Per-customer derived tables (`*.parquet` under `analysis/`) are intermediate and
