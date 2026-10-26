@@ -97,20 +97,23 @@ discovery, but not a disproportionate amount.
 ![Repertoire growth bands](../figures/repertoire_growth_bands.png)
 
 Cumulative distinct ingredients by order position, with percentile bands across
-customers:
+customers. "Customers reaching it" counts only those whose observed history is at
+least that many orders long — each row describes the customers who actually got that
+deep, so the count declines as the window lengthens:
 
 | Order | Median ingredients | p25–p75 | Customers reaching it |
 |------:|-------------------:|--------:|----------------------:|
-| 1 | 7 | 5–11 | 203k |
-| 5 | 23 | 16–31 | 137k |
-| 10 | 35 | 25–47 | 71k |
-| 20 | 50 | 37–66 | 28k |
-| 50 | 75 | 59–93 | 4k |
+| 1 | 7 | 4–11 | 203k |
+| 5 | 22 | 14–32 | 175k |
+| 10 | 34 | 21–47 | 107k |
+| 20 | 48 | 31–65 | 53k |
+| 50 | 71 | 47–93 | 11k |
 
-The repertoire grows steadily but never saturates — at order 50, customers have
-encountered 75 of 543 catalog ingredients (median). The p25–p75 band is wide: by
-order 20, the most varied quartile has tried 66+ ingredients while the narrowest
-has tried 37 or fewer. Customer variation is real, even at comparable history lengths.
+The repertoire grows steadily but never saturates — among customers who reach order
+50, the median has encountered 71 of 543 catalog ingredients. The p25–p75 band is
+wide: at order 20, the most varied quartile has tried 65+ ingredients while the
+narrowest has tried 31 or fewer. Customer variation is real, even at comparable
+history lengths.
 
 Yet within-order diversity is flat at ~8 distinct ingredients regardless of order
 position. The repertoire grows by slow accumulation — a trickle of new items into

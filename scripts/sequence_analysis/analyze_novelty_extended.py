@@ -110,15 +110,22 @@ def main():
             a[1] += ni
             a[2] += np_
 
-        # --- Repertoire growth percentiles ---
-        cum = d.sort(["user_id", "order_number"])
+        # --- Repertoire growth percentiles (reached-subset) ---
+        # At each order position k, include only customers whose observed history
+        # actually reaches k orders (B >= k), and record their cumulative distinct-
+        # ingredient count as of order k. Short-history customers are excluded, not
+        # carried forward: carrying them forward would freeze each at their final
+        # repertoire and drag the later-position percentiles down toward the mass of
+        # customers who never reached that depth. n_customers is therefore "customers
+        # with at least k orders", matching the README's "customers reaching it".
         first_order = fi.rename({"fi": "fo"})
         new_per = first_order.group_by(["user_id", "fo"]).agg(pl.len().alias("new"))
         cum2 = (new_per.sort(["user_id", "fo"])
                 .with_columns(pl.col("new").cum_sum().over("user_id").alias("cum")))
         for order_num in [1, 2, 3, 5, 10, 15, 20, 30, 50]:
-            at_pos = cum2.filter(pl.col("fo") <= order_num).group_by("user_id").agg(
-                pl.col("cum").max().alias("rep"))
+            at_pos = (cum2.filter(pl.col("fo") <= order_num)
+                      .group_by("user_id").agg(pl.col("cum").max().alias("rep"))
+                      .join(B.filter(pl.col("B") >= order_num), on="user_id", how="inner"))
             if at_pos.height > 0:
                 growth_by_pos[order_num].extend(at_pos["rep"].to_list())
 
