@@ -25,6 +25,12 @@ absent ingredients in the held-out last order): **overall purchase frequency is 
 best simple predictor.** Adding recency (boosting probability for recently-purchased
 ingredients) makes predictions worse, not better.
 
+Log-loss and Brier score both measure prediction error — lower is better. Unlike plain
+accuracy, both punish a model for being *confidently wrong*: predicting 90% for an
+ingredient that doesn't show up costs far more than predicting 55%. A model is scored
+on every one of the 100 ingredients per customer, present or absent, so it is penalized
+for both false alarms and misses.
+
 | Model | Log-loss | Brier score |
 |-------|--------:|------------:|
 | Overall frequency | **0.183** | **0.050** |

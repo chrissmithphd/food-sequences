@@ -66,7 +66,9 @@ with order count:
   How much a customer buys prepared food shows little linear relationship with how
   often or how much they shop overall.
 
-**Effective ingredients** (inverse HHI) correlates +0.61 with basket size —
+**Effective ingredients** (inverse HHI — the number of equally-used ingredients that
+would produce the same spread; a basket split evenly across 10 ingredients scores 10,
+one dominated by a single ingredient scores near 1) correlates +0.61 with basket size:
 mechanically, bigger baskets spread across more ingredients. This is not a behavioral
 trait; it's arithmetic.
 

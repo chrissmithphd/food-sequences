@@ -106,8 +106,8 @@ composition of the *rest of the basket* barely changes:
   with less from-scratch cooking, but within noise.
 - Snacks, bread, and protein are marginally higher.
 
-**The honest reading:** baskets with prepared food look almost exactly like baskets
-without, except bigger. Cross-sectional basket comparisons cannot establish whether
+**What the data actually supports:** baskets with prepared food look almost exactly
+like baskets without, except bigger. Cross-sectional basket comparisons cannot establish whether
 prepared items replace or supplement other foods — the same customer may shop
 differently on different occasions, and prepared-food buyers may differ from
 non-buyers in ways not visible here.

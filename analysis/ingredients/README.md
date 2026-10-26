@@ -99,7 +99,11 @@ nine ingredients spanning different structures:
 
 ![Concentration curves](../figures/ingredient_concentration.png)
 
-**Concentrated** ingredients have a dominant product or two:
+**Concentrated** ingredients have a dominant product or two. ("Effective number of
+products" is the inverse-HHI count — how many equally-popular products would give the
+same concentration; an ingredient where one SKU dominates scores near 1, one spread
+evenly across 100 SKUs scores near 100.)
+
 - **spinach**: 43 products, but one (Organic Baby Spinach) is 67% of purchases;
   2 products capture 80%. Effective number of products: 2.
 - **banana**: 18 products, one is 53%. Eff.N = 2.
