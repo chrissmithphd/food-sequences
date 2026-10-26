@@ -16,7 +16,8 @@ that variation is branding, not food. So the first step was classifying every pr
 into an **ingredient**: the recipe-level role the food plays. "Organic 2% Milk,"
 "Whole Milk," and a store-brand gallon all become `milk`. "Chobani Blueberry" and
 "Fage Plain" both become `yogurt`. This collapses 49,688 products into 543 ingredients
-across 24 food categories, and everything downstream works at that level.
+across 21 food categories (24 taxonomy categories in all, three of them non-food —
+household, personal care, and pet), and everything downstream works at that level.
 ([Classification methodology →](docs/FOOD_CLASSIFICATION.md))
 
 The project then asks six questions, each its own analysis with a detailed report:

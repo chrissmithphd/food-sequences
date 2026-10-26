@@ -50,7 +50,7 @@ Distinct ingredients grow roughly linearly with basket size — but not quite 1:
 ingredient-per-item ratio falls from 1.0 (a 1-item basket is always 1 ingredient) to
 0.84 at 30 items: larger baskets include more duplicate-ingredient items (e.g.,
 multiple yogurt flavors, several produce items mapping to one ingredient). Categories
-saturate faster: a 30-item basket covers about 10 of 22 food categories, not 30.
+saturate faster: a 30-item basket covers about 10 of 21 food categories, not 30.
 
 Larger baskets are broader, not just bigger — but the breadth gain decelerates. A
 10-item basket spans 5.6 categories; doubling to 20 items only adds 2.8 more.
