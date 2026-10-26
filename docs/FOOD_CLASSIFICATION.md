@@ -4,7 +4,7 @@ Every product in the Instacart catalog is mapped to a **recipe-ingredient label*
 the thing a recipe's ingredient line would call it ("milk", "chicken broth", "cheese",
 "onion") — so purchase sequences can be analyzed by food rather than by exact SKU.
 
-- Classification file: [`analysis/classification/food_classification.csv`](../analysis/classification/food_classification.csv)
+- Classification file: [`data/food_classification.csv`](../data/food_classification.csv)
   (one row per product: product_id, ingredient, is_food, is_prepared_dish, ...)
 - Taxonomy: [`data/INGREDIENT_TAXONOMY.md`](../data/INGREDIENT_TAXONOMY.md)
 - Method comparison: [`analysis/classification/methods_compared/`](../analysis/classification/methods_compared/)
@@ -31,7 +31,7 @@ applied by `apply_corrections.py` (e.g., condensed soup reclassification).
 
 For reproducing on the same or overlapping products without an LLM,
 `classify_lookup.py` provides an exact-match lookup table
-([`product_ingredient_lookup.csv`](../analysis/classification/product_ingredient_lookup.csv))
+([`product_ingredient_lookup.csv`](../data/product_ingredient_lookup.csv))
 mapping each product name to its ingredient and category. Products not in the table
 are flagged for manual or LLM classification.
 

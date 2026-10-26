@@ -25,7 +25,7 @@ from analyze_reorder import iter_events, taxonomy_map
 ROOT = Path(__file__).parent.parent.parent
 SEQ = ROOT / "analysis" / "prepared"
 SEQ.mkdir(exist_ok=True)
-CLF_PATH = ROOT / "analysis" / "classification" / "food_classification.csv"
+CLF_PATH = ROOT / "data" / "food_classification.csv"
 TAX = taxonomy_map()
 
 

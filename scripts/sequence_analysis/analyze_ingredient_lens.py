@@ -26,7 +26,7 @@ from config import DATA_PROCESSED
 ROOT = Path(__file__).parent.parent.parent
 SEQ = ROOT / "analysis" / "ingredients"
 SEQ.mkdir(exist_ok=True)
-CLF_PATH = ROOT / "analysis" / "classification" / "food_classification.csv"
+CLF_PATH = ROOT / "data" / "food_classification.csv"
 TAX_PATH = ROOT / "data" / "INGREDIENT_TAXONOMY.md"
 
 

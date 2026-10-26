@@ -183,7 +183,7 @@ Anonymized integer IDs; no absolute dates; inter-order gaps capped at 30 days.
 
 **Classification:** 49,688 products → 543 ingredients via LLM classification
 (Claude, ~8h). A deterministic lookup table
-([`product_ingredient_lookup.csv`](analysis/classification/product_ingredient_lookup.csv))
+([`product_ingredient_lookup.csv`](data/product_ingredient_lookup.csv))
 reproduces the mapping without an LLM.
 [Taxonomy →](data/INGREDIENT_TAXONOMY.md) ·
 [Method →](docs/FOOD_CLASSIFICATION.md)

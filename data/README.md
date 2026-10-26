@@ -26,9 +26,11 @@ That produces (under `data/processed/`, gitignored):
 The project's own contributions live in the repo and are what another researcher
 would reuse:
 
-- **`analysis/classification/food_classification.csv`** — all 49,688 products mapped
-  to 632 recipe ingredients, with `is_food` and `is_prepared_dish`. This is the key
-  derived dataset.
+- **`food_classification.csv`** — all 49,688 products mapped to their recipe
+  ingredient, with `is_food` and `is_prepared_dish`. This is the key derived dataset
+  (543 food ingredients analyzed downstream).
+- **`product_ingredient_lookup.csv`** — deterministic product→ingredient+category
+  lookup table; reproduces the mapping without re-running the LLM.
 - **`INGREDIENT_TAXONOMY.md`** — the recipe-ingredient taxonomy (24 categories,
   21 of them food) the classification targets. Parsed at runtime by the analysis
   pipeline, so it lives here as reference data rather than under `analysis/`.

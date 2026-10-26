@@ -117,7 +117,7 @@ def main():
               f"repeat-buyers={r['repeat_buyer_pct']:4.0f}%")
 
     # product-level dive: which specific products within each dish type
-    clf = pl.read_csv(Path(__file__).parent.parent.parent / "analysis" / "classification" / "food_classification.csv")
+    clf = pl.read_csv(Path(__file__).parent.parent.parent / "data" / "food_classification.csv")
     pname = dict(zip(clf["product_id"].to_list(), clf["product_name"].to_list()))
     ping = dict(zip(clf["product_id"].to_list(), clf["ingredient"].to_list()))
     prod_rows = [{"dish_type": ping.get(pid, "?"), "product_id": pid,

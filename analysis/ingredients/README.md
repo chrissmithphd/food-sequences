@@ -11,7 +11,7 @@ catalog is wide where branding is the product; the cart is deep where the food i
   `visualize_ingredient_lens.py` → all figures below.
 - Scope: 35,722 classified food products, 543 ingredients, 30.4M food purchase events,
   206k customers.
-- Classification: [food_classification.csv](../classification/food_classification.csv)
+- Classification: [food_classification.csv](../../data/food_classification.csv)
   maps each product to an ingredient (a recipe role, not a SKU). See
   [taxonomy](../../data/INGREDIENT_TAXONOMY.md).
 

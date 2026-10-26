@@ -17,7 +17,7 @@ from config import DATA_PROCESSED
 
 FIGURES_DIR = Path(__file__).parent.parent.parent / "analysis" / "figures"
 FIGURES_DIR.mkdir(exist_ok=True, parents=True)
-CLF_PATH = Path(__file__).parent.parent.parent / "analysis" / "classification" / "food_classification.csv"
+CLF_PATH = Path(__file__).parent.parent.parent / "data" / "food_classification.csv"
 
 PATTERNS = {
     "Persistent Staple": {"color": "#1565C0"},

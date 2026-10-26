@@ -31,8 +31,8 @@ from config import DATA_PROCESSED
 ROOT = Path(__file__).parent.parent.parent
 SEQ = ROOT / "analysis" / "sequences"
 SEQ.mkdir(exist_ok=True)
-CLF = ROOT / "analysis" / "classification"
-TAX = ROOT / "data" / "INGREDIENT_TAXONOMY.md"  # taxonomy is reference data, not analysis
+DATA = ROOT / "data"  # classification data (taxonomy + product map) lives under data/
+TAX = DATA / "INGREDIENT_TAXONOMY.md"
 
 LEVELS = ["product_id", "ingredient", "category", "aisle"]
 K_HORIZONS = [2, 3, 5, 10]
@@ -79,7 +79,7 @@ def _events_lazy(user_lo=None, user_hi=None):
     """
     tax = taxonomy_map()
     prepared = prepared_dish_ingredients()
-    clf = (pl.scan_csv(CLF / "food_classification.csv")
+    clf = (pl.scan_csv(DATA / "food_classification.csv")
            .select(["product_id", "aisle", "department", "ingredient", "is_food"])
            .with_columns(pl.col("ingredient").replace_strict(tax, default="Unknown").alias("category"),
                          pl.col("ingredient").is_in(prepared).alias("is_prepared_dish")))

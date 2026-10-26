@@ -29,10 +29,10 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from config import DATA_PROCESSED
 
 ROOT = Path(__file__).parent.parent.parent
-CLF_DIR = ROOT / "analysis" / "classification"
-CLF_PATH = CLF_DIR / "food_classification.csv"
-TAXONOMY_PATH = ROOT / "data" / "INGREDIENT_TAXONOMY.md"
-LOOKUP_PATH = CLF_DIR / "product_ingredient_lookup.csv"
+DATA_DIR = ROOT / "data"
+CLF_PATH = DATA_DIR / "food_classification.csv"
+TAXONOMY_PATH = DATA_DIR / "INGREDIENT_TAXONOMY.md"
+LOOKUP_PATH = DATA_DIR / "product_ingredient_lookup.csv"
 
 import re
 

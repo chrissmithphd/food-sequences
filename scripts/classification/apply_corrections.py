@@ -14,7 +14,7 @@ Corrections:
 from pathlib import Path
 import polars as pl
 
-CLF = Path(__file__).parent.parent.parent / "analysis" / "classification" / "food_classification.csv"
+CLF = Path(__file__).parent.parent.parent / "data" / "food_classification.csv"
 
 
 def main():

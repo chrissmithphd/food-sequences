@@ -27,7 +27,7 @@ sns.set_palette("husl")
 
 def load_classification():
     """Load final classification results."""
-    path = Path(__file__).parent.parent.parent / "analysis" / "classification" / "food_classification.csv"
+    path = Path(__file__).parent.parent.parent / "data" / "food_classification.csv"
     return pd.read_csv(path)
 
 

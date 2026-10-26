@@ -26,7 +26,7 @@ sns.set_theme(style="whitegrid", font_scale=1.1)
 
 SEQ = Path(__file__).parent.parent.parent / "analysis" / "ingredients"
 FIG = Path(__file__).parent.parent.parent / "analysis" / "figures"
-CLF = Path(__file__).parent.parent.parent / "analysis" / "classification" / "food_classification.csv"
+CLF = Path(__file__).parent.parent.parent / "data" / "food_classification.csv"
 FIG.mkdir(exist_ok=True, parents=True)
 
 BLUE, GREEN, ORANGE, RED, PURPLE, GRAY = "#1565C0", "#2E7D32", "#EF6C00", "#C62828", "#6A1B9A", "#757575"
