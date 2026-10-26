@@ -75,4 +75,5 @@ Neither TF-IDF nor embeddings alone is sufficient. Methods have **complementary 
 
 ## Final Decision
 
-**`fabric_llm.csv` is the authoritative classification** and is copied to `../food_classification.csv`.
+**`fabric_llm.csv` is the authoritative classification** and is copied (with post-hoc
+corrections) to `data/food_classification.csv`.

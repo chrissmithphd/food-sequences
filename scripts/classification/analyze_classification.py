@@ -293,8 +293,8 @@ def main():
 
     # Generate visualizations
     print("\n### Generating Visualizations")
-    figures_dir = Path(__file__).parent.parent.parent / "analysis" / "classification" / "figures"
-    figures_dir.mkdir(exist_ok=True)
+    figures_dir = Path(__file__).parent.parent.parent / "docs" / "classification" / "figures"
+    figures_dir.mkdir(parents=True, exist_ok=True)
 
     plot_top_ingredients(dist_analysis['distribution'], n=30,
                         output_path=figures_dir / "top_ingredients.png")
@@ -315,7 +315,7 @@ def main():
                 print(f"  - {ex['product_name']} ({ex['aisle']})")
 
     print("\n" + "="*70)
-    print("Analysis complete. Figures saved to analysis/classification/figures/")
+    print("Analysis complete. Figures saved to docs/classification/figures/")
     print("="*70)
 
 

@@ -197,8 +197,12 @@ platform-specific, not nationally representative.
 ## Repository structure
 
 ```
+data/
+  INGREDIENT_TAXONOMY.md        # recipe-ingredient taxonomy (parsed by the pipeline)
+  food_classification.csv       # product → ingredient map (key derived dataset)
+  product_ingredient_lookup.csv # deterministic lookup table (reproduce without an LLM)
+  raw/ processed/               # Kaggle CSVs → Parquet
 analysis/
-  classification/   # ingredient classification + taxonomy + lookup table
   ingredients/      # demand vs assortment, concentration, organic penetration
   basket/           # basket composition, co-occurrence, triplets
   sequences/        # reorder, patterns, substitution, prediction
@@ -206,6 +210,9 @@ analysis/
   prepared/         # reach, dish types, basket composition
   customers/        # profiles, segments, behavioral correlations
   figures/          # all figures (PNG/SVG)
+docs/
+  FOOD_CLASSIFICATION.md        # how the classification was built
+  classification/               # method comparison, figures, archived attempts
 scripts/
   config.py         # shared paths and schemas
   data_pipeline/    # Kaggle → Parquet ingestion + audit

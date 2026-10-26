@@ -122,7 +122,7 @@ This report validates the Instacart dataset for quality and completeness.
 > **Note:** This section uses a keyword-based aisle/department filter to estimate
 > prepared food coverage before the LLM classification was run. The subsequent
 > classification identified 8,278 prepared dishes using a recipe-grounded taxonomy
-> (see `analysis/classification/`). The numbers below are the pre-classification
+> (see `docs/FOOD_CLASSIFICATION.md` and `data/food_classification.csv`). The numbers below are the pre-classification
 > estimate; the 8,278 figure is the authoritative count.
 
 

@@ -7,8 +7,8 @@ the thing a recipe's ingredient line would call it ("milk", "chicken broth", "ch
 - Classification file: [`data/food_classification.csv`](../data/food_classification.csv)
   (one row per product: product_id, ingredient, is_food, is_prepared_dish, ...)
 - Taxonomy: [`data/INGREDIENT_TAXONOMY.md`](../data/INGREDIENT_TAXONOMY.md)
-- Method comparison: [`analysis/classification/methods_compared/`](../analysis/classification/methods_compared/)
-- Detailed analysis: [`analysis/classification/CLASSIFICATION_ANALYSIS.md`](../analysis/classification/CLASSIFICATION_ANALYSIS.md)
+- Method comparison: [`docs/classification/methods_compared/`](classification/methods_compared/)
+- Ingredient-level findings: [`analysis/ingredients/`](../analysis/ingredients/)
 
 ## How it was built
 
@@ -80,6 +80,6 @@ python scripts/classification/apply_corrections.py
 - 2,807 products (5.6%) are unclassified — the LLM declined low-confidence guesses.
 - The taxonomy has judgment calls: prepared dish vs. base ingredient, herb/spice
   granularity, where to draw the milk/protein-shake boundary.
-- 632 labels emerged from 446 defined — the LLM invented finer distinctions that
-  aren't in the original taxonomy (documented in CLASSIFICATION_ANALYSIS.md §1).
+- More labels emerged than the taxonomy defined — the LLM invented finer distinctions
+  (e.g. `frozen_waffles`, `instant_noodles`) not in the original taxonomy.
 - "Fresh vs. packaged" is read per ingredient, not from a nutrition label.

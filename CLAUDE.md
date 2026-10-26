@@ -73,8 +73,7 @@ scripts/
   ├── classification/    # LLM classifier, lookup-table classifier, taxonomy corrections
   └── sequence_analysis/ # One script per result; analyze_reorder.py is the shared core
 
-analysis/
-  ├── classification/    # food_classification.csv, product_ingredient_lookup.csv, taxonomy
+analysis/                # Analysis findings only (one dir per topic)
   ├── ingredients/       # Demand vs assortment, concentration, organic penetration
   ├── basket/            # Basket size, composition, co-occurrence
   ├── sequences/         # Reorder, patterns, substitution, calendar
@@ -83,11 +82,15 @@ analysis/
   ├── customers/         # Profile, segments, behavior
   └── figures/           # All figures (png/svg)
 
-data/
+data/                    # Inputs + derived data (not analysis findings)
+  ├── INGREDIENT_TAXONOMY.md          # Recipe-ingredient taxonomy (parsed by the pipeline)
+  ├── food_classification.csv         # Product → ingredient map
+  ├── product_ingredient_lookup.csv   # Deterministic lookup table
   ├── raw/               # Original CSV files
   └── processed/         # Parquet files + provenance.json
 
 docs/                    # PROCESSING.md, DATA_AUDIT.md, FOOD_CLASSIFICATION.md
+  └── classification/    # Method comparison, figures, archived classification attempts
 ```
 
 ### Configuration (`scripts/config.py`)
@@ -125,7 +128,7 @@ taxonomy section is the authoritative definition.
 **DO commit:**
 - Data directory structure (`.gitkeep` files)
 - Processed Parquet files (`data/processed/`)
-- Classification outputs (`analysis/classification/`)
+- Classification data (`data/food_classification.csv`, `data/product_ingredient_lookup.csv`, `data/INGREDIENT_TAXONOMY.md`)
 - Aggregate analysis results (CSVs under `analysis/<topic>/`)
 - Figures (PNG/SVG under `analysis/figures/`)
 - Code, documentation, derived data that other researchers could use
