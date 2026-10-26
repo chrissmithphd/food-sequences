@@ -92,8 +92,9 @@ Return probability within *k* orders, conditioned on having ≥*k* future orders
 
 The spread across ingredients is large; the shape (rapid initial return, then slow
 climb) is universal. Most of this is explained by purchase frequency — frequent items
-return faster — but §1's prediction test shows that recent timing adds information
-beyond the rate.
+return faster. The curves describe *how fast* items come back, but §1's prediction
+test shows that simple recency rules do not beat the frequency rate at predicting the
+next order.
 
 ## 4. Purchase runs and streaks
 
@@ -260,8 +261,10 @@ long day-gaps lower bounds.
   gap≥3, dropping to 29% at gap≥10. The reported 58% (gap≥5) should be read alongside
   the threshold-sensitivity figures in the data, not as a stable rate.
 - The prediction test uses crude probability models (binary recency, raw frequency).
-  A proper recommender would do better than either; the test establishes that sequence
-  information *helps*, not how much a tuned model could extract.
+  Under proper scoring these recency rules *do not* beat frequency; the test
+  establishes only that crude recency hurts, not that sequence information is
+  worthless. A tuned recommender might extract signal these rules miss — the test
+  cannot rule that out.
 - Run-length and gap-regularity comparisons use a sampled shuffled baseline (50k
   pairs per chunk) rather than an exact expectation. The sample is large enough for
   stable estimates but introduces minor sampling noise.
