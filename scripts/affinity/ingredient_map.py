@@ -42,8 +42,11 @@ AFFINITY_DIR = ROOT / "data" / "affinity"
 # Intentionally excludes color and type words (green, red, sweet, hot) that often DO
 # change identity (green onion, sweet potato, hot pepper).
 DESCRIPTORS = {
-    "ground", "fresh", "freshly", "dried", "dry", "chopped", "minced", "sliced",
-    "diced", "crushed", "grated", "shredded", "ground", "whole", "halved", "quartered",
+    # NOTE: "ground" is intentionally NOT a descriptor — it changes identity for meats
+    # ("ground beef" -> ground_beef, distinct from steak). Spice cases like "ground
+    # cumin" still resolve to cumin via single-token containment.
+    "fresh", "freshly", "dried", "dry", "chopped", "minced", "sliced",
+    "diced", "crushed", "grated", "shredded", "whole", "halved", "quartered",
     "large", "small", "medium", "extra", "virgin", "extravirgin", "kosher", "sea",
     "fine", "finely", "coarse", "coarsely", "boneless", "skinless", "unsalted",
     "salted", "reduced", "lowfat", "nonfat", "fat", "free", "light", "lite", "lean",
@@ -52,7 +55,7 @@ DESCRIPTORS = {
     "sweetened", "soft", "firm", "hard", "warm", "cold", "hot", "cool", "room",
     "temperature", "boiling", "melted", "softened", "beaten", "peeled", "seeded",
     "stemmed", "trimmed", "rinsed", "drained", "packed", "sifted", "crumbled",
-    "shaved", "julienned", "cubed", "mashed", "ground", "powdered", "granulated",
+    "shaved", "julienned", "cubed", "mashed", "powdered", "granulated",
     "allpurpose", "purpose", "all", "pure", "good", "quality", "best", "store",
     "bought", "homemade", "low", "high", "no", "with", "without", "and", "or", "of",
     "for", "to", "into", "in", "the", "a", "an", "about", "approximately",
@@ -66,7 +69,18 @@ DESCRIPTORS = {
     "packages", "pkg", "container", "box", "bag", "pinch", "dash", "handful",
 }
 
-_WORD_RE = re.compile(r"[a-z]+(?:-[a-z]+)?")
+_WORD_RE = re.compile(r"[a-z]+")
+
+# Single generic words that are the *head* of many compound slugs. A bare occurrence is
+# ambiguous, so it must not be registered as a synonym of any one specific slug (that is
+# how "cheese" came to mean american_cheese and "beef" ground_beef). Compound slug names
+# like "american cheese" are unaffected — only the lone generic token is blocked.
+GENERIC_BLOCK = {
+    "cheese", "beef", "pork", "chicken", "oil", "sauce", "milk", "cream", "flour",
+    "sugar", "vinegar", "pepper", "rice", "bread", "nut", "nuts", "bean", "beans",
+    "meat", "fish", "wine", "broth", "stock", "powder", "paste", "butter", "seed",
+    "seeds", "greens", "juice", "vegetable", "vegetables",
+}
 
 
 def _singularize(w: str) -> str:
@@ -85,12 +99,11 @@ def clean(s: str) -> tuple[str, frozenset[str]]:
     """Return (normalized phrase, token set) with descriptors/units/quantities stripped."""
     s = s.lower()
     s = re.sub(r"\([^)]*\)", " ", s)          # drop parentheticals
-    s = s.replace("&", " ")
+    s = s.replace("&", " ").replace("-", " ")  # hyphen -> space (parmigiano-reggiano)
     toks = _WORD_RE.findall(s)
     out = []
     for t in toks:
-        t = t.replace("-", "")
-        if not t or t in DESCRIPTORS or t.isdigit():
+        if not t or t in DESCRIPTORS:
             continue
         out.append(_singularize(t))
     return " ".join(out), frozenset(out)
@@ -110,27 +123,50 @@ def parse_taxonomy(path: Path = TAXONOMY_PATH):
             continue
         slug, desc = m.group(1), m.group(2)
         phrases: set[str] = set()
-        name_norm, _ = clean(slug.replace("_", " "))
-        if name_norm:
+        name_norm, name_toks = clean(slug.replace("_", " "))
+        parts = slug.split("_")
+        # register the (descriptor-stripped) name, UNLESS a multi-part slug collapses to
+        # a single generic word ("ground_beef" -> "beef", "instant_rice" -> "rice"):
+        # that bare generic would swallow everything. Single-word generic slugs that are
+        # themselves the identity (butter, flour, sugar) are kept.
+        collapses_to_generic = (len(parts) > 1 and len(name_toks) == 1
+                                and next(iter(name_toks)) in GENERIC_BLOCK)
+        if name_norm and not collapses_to_generic:
             phrases.add(name_norm)
         # synonyms = comma / "or" / semicolon separated fragments of the description
         desc_clean = re.sub(r"\([^)]*\)", " ", desc)
         for frag in re.split(r"[,;]| or | and ", desc_clean):
             norm, toks = clean(frag)
             # keep short, specific fragments; drop empties and over-long clauses
-            if norm and 1 <= len(toks) <= 4:
-                phrases.add(norm)
+            if not norm or len(toks) > 4:
+                continue
+            # a lone generic head word (cheese, beef, oil, ...) is too ambiguous to
+            # pin to one specific slug
+            if len(toks) == 1 and next(iter(toks)) in GENERIC_BLOCK:
+                continue
+            phrases.add(norm)
         slugs[slug] = {"category": category, "description": desc, "phrases": phrases}
     return slugs
 
 
+def _is_nonfood(category: str | None) -> bool:
+    c = category or ""
+    return "NON-FOOD" in c or "PET PRODUCTS" in c
+
+
 class IngredientMapper:
-    def __init__(self):
+    def __init__(self, include_nonfood: bool = False):
         self.slugs = parse_taxonomy()
         self.phrase2slug: dict[str, str] = {}
         self.head2slugs: dict[str, set[str]] = {}
+        # Recipe ingredients are food. Household / personal-care / pet slugs must never
+        # be mapping targets, or non-food terms leak in as food signatures
+        # ("rice paper" -> head "paper" -> toilet_paper; literal "aluminum foil" ->
+        # aluminum_foil). Exclude them unless explicitly asked for.
+        targets = {s: i for s, i in self.slugs.items()
+                   if include_nonfood or not _is_nonfood(i["category"])}
         # longer (more specific) phrases registered first so they win ties
-        for slug, info in self.slugs.items():
+        for slug, info in targets.items():
             for ph in sorted(info["phrases"], key=lambda p: -len(p.split())):
                 self.phrase2slug.setdefault(ph, slug)
                 head = ph.split()[-1]
@@ -140,24 +176,35 @@ class IngredientMapper:
             ((ph, slug) for ph, slug in self.phrase2slug.items() if " " in ph),
             key=lambda kv: -len(kv[0].split()),
         )
-        self.overrides = self._load_overrides()
+        # single-token specific phrases (generics already blocked) for a safe,
+        # unambiguous containment match ("part skim mozzarella cheese" -> mozzarella)
+        self._single = {ph: slug for ph, slug in self.phrase2slug.items() if " " not in ph}
+        self.overrides, self.block = self._load_overrides()
 
-    def _load_overrides(self) -> dict[str, str]:
+    def _load_overrides(self) -> tuple[dict[str, str], set[str]]:
+        """Return (term -> slug, blocked terms). An UNMAPPED row is a deliberate
+        "do not map this" decision (ambiguous generic, or a taxonomy gap) and must
+        block fallback matching, not be silently dropped."""
         ov: dict[str, str] = {}
+        block: set[str] = set()
         if OVERRIDES_PATH.exists():
             with open(OVERRIDES_PATH) as f:
                 for row in csv.DictReader(f):
                     key, _ = clean(row["external_string"])
                     slug = row["slug"].strip()
-                    if slug and slug != "UNMAPPED":
+                    if slug == "UNMAPPED":
+                        block.add(key)
+                    elif slug:
                         ov[key] = slug
-        return ov
+        return ov, block
 
     def map(self, s: str) -> tuple[str | None, str]:
         """Return (slug or None, method)."""
         norm, toks = clean(s)
         if not norm:
             return None, "empty"
+        if norm in self.block:
+            return None, "blocked"
         if norm in self.overrides:
             return self.overrides[norm], "override"
         if norm in self.phrase2slug:
@@ -178,6 +225,10 @@ class IngredientMapper:
             pt = ph.split()
             if all(t in toks for t in pt):
                 return slug, "subset"
+        # a single specific ingredient token present, only if unambiguous
+        single = {self._single[t] for t in toks if t in self._single}
+        if len(single) == 1:
+            return next(iter(single)), "subset1"
         # unambiguous head-noun match
         head = norm.split()[-1]
         cands = self.head2slugs.get(head)
