@@ -20,7 +20,7 @@ plays. "Organic 2% Milk," "Whole Milk," and a store-brand gallon all become `mil
 into 543 ingredients across 21 food categories, and everything downstream works there.
 ([Classification methodology →](docs/FOOD_CLASSIFICATION.md))
 
-One theme kept surfacing across all six analyses below. Reading food choice from
+One theme kept surfacing across the analyses below. Reading food choice from
 purchase data means constantly separating four things that look identical in the raw
 numbers:
 
@@ -33,7 +33,8 @@ Several of the most-assumed shopping "patterns" turn out to be one of the last t
 wearing the costume of the first. The findings that survive that scrutiny are the
 interesting ones.
 
-The six questions, each with its own detailed report (click any section header):
+Six questions probe the Instacart transactions directly, each with its own detailed
+report (click any section header):
 
 - **What do people buy?** How does the catalog compare with actual demand?
 - **What goes together?** Which ingredients share a basket more than chance predicts?
@@ -44,6 +45,11 @@ The six questions, each with its own detailed report (click any section header):
   in that cart?
 - **How do customers differ?** Which differences are real and persistent, and which are
   artifacts of how much we observe?
+
+A seventh analysis, **Food Profiles**, is a supporting reference built from *external*
+recipe data rather than the Instacart transactions: it asks what kinds of food — curries,
+salads, baking — our ingredients can signal, as groundwork for later recognizing food
+styles in baskets.
 
 ---
 
@@ -196,7 +202,7 @@ stable. Customer differences are real, but more modest than the raw metrics sugg
 
 ---
 
-## Building toward food preferences: Food Profiles
+## What kinds of food can the ingredients signal? Food Profiles
 
 ### [Food Profiles →](analysis/food_profiles/)
 
@@ -211,22 +217,24 @@ claim about anyone's taste yet.
 
 ![Which food profiles are recognizable from ingredients](analysis/figures/profiles_detectability.png)
 
-The headline is that detectability varies enormously and honestly. Seafood, sweet baking,
-salads, and pasta are recognized well from ingredients; chili and curries are rare but
-distinctive (kidney beans and curry paste are strong tells). Roasting, grilling, and
-"spicy" are barely detectable — they're cooking *methods* and *sensory* qualities that
-ingredients don't pin down. And the recurring lesson returns: garlic and olive oil are in
-every Italian recipe but, being in everything, signal nothing; the real signatures are
-ricotta, marinara, and filled pasta. A 20-way cuisine classifier reaches **58% accuracy
-from ingredients alone** (vs. 20% for guessing), and where it confuses cuisines —
-Thai with Vietnamese, Italian with Greek — it's telling us where finer distinctions stop
-being worth drawing. [Full analysis and method →](analysis/food_profiles/)
+The headline is that detectability varies enormously and honestly — tested by learning
+signatures on one half of the recipes and classifying the held-out half. Seafood, sweet
+baking, salads, and pasta are recognized well; chili and curries are rare but distinctive
+(kidney beans and curry paste are strong tells). Roasting, grilling, and "spicy" are
+barely detectable — they're cooking *methods* and sensory qualities whose ingredients
+aren't distinctive. And the recurring lesson returns: garlic and olive oil are in every
+Italian recipe but, being in everything, signal nothing; the real signatures are ricotta,
+marinara, and filled pasta. A 20-way cuisine classifier reaches **58% accuracy from
+ingredients alone** — about 2.9× the 20% you'd get always guessing the most common
+cuisine — and where it confuses cuisines (Thai with Vietnamese, Italian with Greek), it's
+showing where ingredient evidence alone can't separate traditions that cook from
+overlapping pantries. [Full analysis and method →](analysis/food_profiles/)
 
 ---
 
 ## What we learned
 
-Across the six analyses, a few conclusions hold up — several of them by dissolving a
+Across these analyses, a few conclusions hold up — several of them by dissolving a
 tempting story rather than confirming one.
 
 1. **Product variety is not food variety.** A quarter of a customer's apparent product
@@ -257,6 +265,12 @@ tempting story rather than confirming one.
    shape. Whether it substitutes for or supplements fresh cooking is a real question this
    data cannot settle.
 
+6. **Food styles are legible in ingredients — unevenly.** Built from external recipes,
+   the Food Profiles reference recognizes seafood, baking, salads, and pasta well from
+   ingredients and is near-useless for cooking *methods* (roasting, grilling) that lack
+   distinctive ingredients. It's a reference and a recipe-level validation, not yet a
+   statement about any Instacart customer.
+
 The connecting thread: reading food choice from purchase records means continually
 separating stable preference from temporary behavior, food from packaging, and signal
 from the shape of the observation window. The strongest results here are often the ones
@@ -271,6 +285,10 @@ Questions worth more or better data:
 - Which individual differences survive once observation length is held constant — is
   there a stable "explorer" at all?
 - How much of co-purchase structure reflects planned meals versus routine restocking?
+- Can food styles be recognized in real grocery baskets, which are partial and mix
+  several meals, rather than in the complete recipes the reference was validated on?
+- Do a customer's food styles shift over time beyond what their stable purchasing habits
+  and ordinary sampling variation already produce?
 
 ---
 
@@ -344,5 +362,13 @@ for v in visualize_ingredient_lens visualize_basket visualize_sequences \
          visualize_novelty visualize_prepared visualize_customers visualize_audit \
          generate_pattern_gallery; do
   python scripts/sequence_analysis/$v.py
+done
+
+# Food Profiles (uses external recipe corpora, not the Instacart data).
+# Download first into data/external/ (git-ignored; redistribution-restricted):
+#   kaggle datasets download -d kaggle/recipe-ingredients-dataset -p data/external/whats_cooking --unzip
+#   kaggle datasets download -d shuyangli94/food-com-recipes-and-user-interactions -p data/external/food_com --unzip
+for s in build_associations validate evaluate visualize_profiles; do
+  python scripts/affinity/$s.py          # map recipes→ingredients, measure, validate, plot
 done
 ```

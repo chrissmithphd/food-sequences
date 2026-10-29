@@ -32,7 +32,7 @@ times more likely than chance. Lift is what separates a *characteristic* ingredi
 a merely *common* one.
 
 Two numbers frame everything: the reference covers ingredients making up **90% of
-Instacart food purchase volume**, but only **64% of the 543 ingredients** appear in any
+Instacart food purchase volume**, but only **65% of the 543 ingredients** appear in any
 profile — the missing third is snacks and convenience items (granola bars, deli meat,
 chips) that simply aren't recipe ingredients and carry no cooking signal.
 
@@ -59,16 +59,20 @@ high-lift ingredients: `marinara`, `ricotta`, `filled_pasta`, `pesto`. Ranking b
 frequency would surface garlic and miss ricotta; ranking by lift does the opposite. Any
 detector built on this reference must weight by distinctiveness, not popularity.
 
-## Do ingredient pairs beat single ingredients?
+## Some ingredient pairs are more distinctive than any single ingredient
 
 ![Best pair lift vs. best single-ingredient lift](../figures/profiles_combos_vs_singles.png)
 
-Yes — combinations carry more signal than individual ingredients, echoing the published
-cuisine-network result. The best *pair* lift exceeds the best *single* lift for every
-flagship style (curry_paste + turmeric reaches ~85× within curries vs ~48× for the best
-single). The catch: pair evidence is thinner — many high-lift pairs rest on only 15–40
-recipes (coffee + kidney_beans hits 110× in chili on just 16 recipes, a real but niche
-trick). Pairs are a candidate pool to be filtered by support, not taken at face value.
+Specific pairs reach a higher association strength (lift) with a food style than any
+single ingredient does: curry_paste + turmeric hits ~85× within curries vs. ~48× for the
+best single ingredient. This is consistent with the published cuisine-network work that
+inspired looking at combinations. But a higher *maximum lift* is not the same as better
+*classification* — rarer pairs naturally reach higher lift on thinner support, and the
+held-out evaluation here uses single ingredients only. Whether adding pairs actually
+improves profile detection is an open question we have not tested. Pair evidence is also
+thin (many high-lift pairs rest on 15–40 recipes; coffee + kidney_beans hits 110× in
+chili on just 16), so treat it as a candidate pool to be filtered by support, not as a
+demonstrated gain.
 
 ## Which profiles are actually recognizable?
 
@@ -76,33 +80,46 @@ trick). Pairs are a candidate pool to be filtered by support, not taken at face 
 
 A list of associated ingredients proves nothing until you test it. Recipes were split
 train/test, signatures learned from the training half only, and held-out recipes
-classified. The bars are average precision; the dots are the prevalence a blind guess
-would hit — the gap is real detectability.
+classified one-vs-rest. The bars are **average precision** (how well the profile's score
+ranks true positives ahead of the rest — not classification accuracy); the dots are each
+profile's **prevalence**, which is the average precision a random ranking would score.
+The gap between bar and dot is what the ingredient signature actually buys.
 
-**Reliable:** seafood (0.72), meat (0.72), sweet baking (0.70), salads (0.66), pasta
-(0.63). **Rare but highly distinctive:** chili, pizza, and curries sit lower in absolute
-precision but tower over their chance baseline (chili 0.53 vs a 0.9% prevalence). **Weak
-— the honest negatives:** roasts (0.03), spicy (0.16), stir-fries (0.16), grilling
-(0.17). Roasting and grilling are *methods* with few distinctive ingredients, and "spicy"
-is a sensory flavor ingredients can't pin down — exactly the limit we expected, now
-measured.
+**Detected well:** seafood (AP 0.72), meat (0.72), sweet baking (0.70), salads (0.66),
+pasta (0.63). **Rare but far above their base rate:** chili (AP 0.53 on a 0.9% base
+rate), pizza, curries — modest absolute precision but a large gain over prevalence, which
+reflects a few near-decisive ingredients (kidney beans, curry paste). A big ratio over
+prevalence does not imply high absolute precision; it means the signature ranks the rare
+positives well. **Weak — the honest negatives:** roasts (0.03), spicy (0.16), stir-fries
+(0.16), grilling (0.17). Roasting and grilling are *methods* with few distinctive
+ingredients, and the "spicy" tag is detected only through the presence of chili/heat
+ingredients, which ingredients can't translate into how hot a dish actually tastes.
 
-## Where cuisine identification confuses — and where to stop splitting
+## Which cuisines share ingredient evidence
 
 ![Cuisine confusion matrix](../figures/profiles_cuisine_confusion.png)
 
 On a 20-way cuisine task, the ingredient classifier reaches **57.7% accuracy** (macro-F1
-0.48) against a 19.7% majority baseline — nearly 3× chance, from ingredients alone. The
-mistakes are not random: Southern US ↔ Cajun/Creole, Italian ↔ Greek/Spanish, Japanese ↔
-Chinese, French ↔ British. Those confusions are the data telling us where cuisine-level
-detail stops paying off.
+0.48), about 2.9× the 19.7% majority-class baseline (always guessing Italian, the most
+common label) — from ingredients alone. The mistakes are not random: Southern US ↔
+Cajun/Creole, Italian ↔ Greek/Spanish, Japanese ↔ Chinese, French ↔ British. These are
+pairs whose dishes draw on overlapping ingredients, so **ingredient evidence alone
+struggles to separate them** — which is a statement about detectability with this
+taxonomy, not about whether the cuisines differ or whether the distinction matters to
+anyone.
 
-The same message comes from measured signature overlap (Jaccard of distinctive
-ingredients): `vegetarian ≈ plant_forward` (0.52), `curries ≈ Indian` (0.49),
-`Thai ≈ Vietnamese` (0.46), `British ≈ Irish` (0.38). The practical reading: keep a
-single broad **curry** profile rather than splitting Thai from Indian, merge
-vegetarian/vegan and the East/Southeast-Asian cuisines, and treat cuisine as supporting
-evidence beneath the more robust food-style and composition profiles.
+Measured signature overlap (Jaccard of distinctive ingredients) tells the same story:
+`vegetarian ≈ plant_forward` (0.52), `Thai ≈ Vietnamese` (0.46), `British ≈ Irish`
+(0.38). The practical reading is about *evidence*, not taxonomy: where two profiles share
+most of their distinctive ingredients, a detector will struggle to tell them apart, so a
+broader grouping may be the honest unit when evidence is thin — while finer distinctions
+should be kept wherever the ingredients support them, not permanently discarded.
+
+One overlap needs care: `curries ≈ Indian` (0.49) is *not* evidence that Indian and Thai
+cuisines are the same thing. Curry is a **food style that spans cuisines** (Indian, Thai,
+and others); cuisine and food style are complementary dimensions, and a dish can score on
+both. The overlap means curry ingredients and Indian ingredients coincide heavily — not
+that regional cuisines should collapse.
 
 ## What this means for grocery baskets
 
@@ -118,10 +135,16 @@ Three cautions carry forward:
   become `fresh_herbs`; chipotle and poblano become `hot_pepper`), and the grocery
   taxonomy has no slug for some signatures at all (olives, lemongrass, capers). That caps
   Mediterranean/Greek and some Asian detection regardless of method.
-- **Any profile claim must clear a frequency baseline.** As the sequence analysis showed,
-  plausible food stories often evaporate against a proper null: a customer only has an
-  affinity for curries if curry ingredients recur *beyond* what their overall ingredient
-  mix already predicts.
+- **Purchases are evidence of food choices, not proof of enjoyment**, and a future
+  customer layer should separate three distinct questions rather than collapse them:
+  *strength* — which food styles are consistently represented in a customer's purchases
+  (repeated buying of distinctive ingredients is itself evidence of a persistent
+  preference); *stability* — how consistently that evidence appears across their observed
+  history; and *evolution* — whether the mix of food styles shifts over time beyond what
+  stable purchase frequencies and sampling variation would produce. A frequency-preserving
+  baseline is the right tool for the third question (as the sequence analysis showed, it
+  deflates temporal stories that are really just stable habits) — but it is not required
+  to establish that a preference *exists*.
 
 ## Limitations
 
@@ -132,6 +155,9 @@ Three cautions carry forward:
 - Sensory-flavor profiles (savory, creamy, herbal, citrusy, smoky) are carried as
   definitions only — ingredients can't establish how a dish tastes — and are not scored.
 - Combination evidence is lower-confidence than single-ingredient evidence.
+- Detectability is measured on **complete recipe ingredient lists**; grocery baskets are
+  partial and multi-meal, so these numbers are an upper reference, not demonstrated
+  basket performance. Lift is an association statistic, not a calibrated probability that
+  a basket contains a given food style.
 - This phase measures ingredient→profile associations and their detectability on recipes.
-  It does **not** profile customers or infer taste; that is the next layer, and it will
-  need the frequency baseline above.
+  It does **not** profile customers or infer taste; that is the next layer.

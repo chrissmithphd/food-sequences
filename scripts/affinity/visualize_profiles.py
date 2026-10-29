@@ -52,13 +52,13 @@ def fig_detectability():
         ax.text(a + 0.01, yi, f"{a:.2f}", va="center", fontsize=8.5)
     ax.set_yticks(y)
     ax.set_yticklabels(names)
-    ax.set_xlabel("Held-out average precision  (bar)   ·   prevalence (dot = chance)")
+    ax.set_xlabel("Held-out average precision  (bar)   ·   prevalence = base rate (dot)")
     ax.set_xlim(0, 0.85)
     handles = [plt.Rectangle((0, 0), 1, 1, color=DIM_COLOR[k]) for k in DIM_COLOR]
     ax.legend(handles + [plt.Line2D([0], [0], marker="o", color="black", linestyle="")],
-              list(DIM_COLOR) + ["prevalence (chance)"], loc="lower right", fontsize=9)
-    ax.set_title("Which food profiles are actually recognizable from ingredients?\n"
-                 "Held-out average precision vs. the prevalence a blind guess would hit",
+              list(DIM_COLOR) + ["prevalence (random-ranking AP)"], loc="lower right", fontsize=9)
+    ax.set_title("How well do ingredients identify each food profile in held-out recipes?\n"
+                 "Average precision (one-vs-rest) vs. prevalence, the score a random ranking gets",
                  fontweight="bold", fontsize=12)
     _save(fig, "profiles_detectability")
 
@@ -131,7 +131,7 @@ def fig_cuisine_confusion():
     ax.set_ylabel("true cuisine")
     ax.set_title("Ingredient-based cuisine identification: diagonal = correct\n"
                  "Off-diagonal clusters (southern↔cajun, italian↔greek, japanese↔chinese) "
-                 "are natural merge candidates",
+                 "are where ingredients alone can't separate cuisines",
                  fontweight="bold", fontsize=12)
     _save(fig, "profiles_cuisine_confusion")
 
@@ -158,11 +158,12 @@ def fig_combos_vs_singles():
     ax.barh(y - h / 2, pair_max, h, color=PURPLE, label="best ingredient pair")
     ax.set_yticks(y)
     ax.set_yticklabels(names)
-    ax.set_xlabel("Lift (log scale)")
+    ax.set_xlabel("Lift — association strength (log scale)")
     ax.set_xscale("log")
     ax.legend(loc="lower right")
-    ax.set_title("Ingredient pairs carry more signal than single ingredients\n"
-                 "Best-pair lift vs best-single lift per food style (support-filtered)",
+    ax.set_title("Some ingredient pairs are more distinctive than any single ingredient\n"
+                 "Best-pair vs best-single lift per food style — a stronger association, "
+                 "not a demonstrated classification gain",
                  fontweight="bold", fontsize=12)
     _save(fig, "profiles_combos_vs_singles")
 
