@@ -28,42 +28,25 @@ for customers with just 10–14 orders, so it's genuine — not a side effect of
 some people longer. **Grocery baskets are omnivorous.** A model assigning each customer
 to one or two cuisines would be describing noise.
 
-### But some food styles are leaned into heavily
+### But some food styles are bought much more consistently than others
 
-![Pantry size drives breadth; intensity drops off fast](../figures/profiles_pantry_vs_core.png)
+![Pantry size vs food styles bought consistently](../figures/profiles_pantry_vs_core.png)
 
-Nearly everyone *touches* every style, but not equally. A customer's **core food
-styles** — those whose distinctive ingredients appear in at least half their orders —
-number anywhere from 0 to 11+, and pantry size (how many distinct ingredients a customer
-has ever bought) is a strong driver:
+Nearly everyone *touches* every style, but not equally. How many food styles a customer
+buys **consistently** — whose distinctive ingredients appear in at least half their
+orders — ranges from 3 to 11, driven by pantry size:
 
-| Ingredient repertoire | Median orders | Median distinct ings | Core meal styles (of 14) |
+| Ingredient repertoire | Median distinct ings | Styles sampled (of 14) | Styles bought consistently |
 |---|---:|---:|---:|
-| 1–19 ingredients | 14 | 13 | 3 |
-| 20–34 | 15 | 27 | 5 |
-| 35–49 | 16 | 42 | 8 |
-| 50–74 | 20 | 61 | 10 |
-| 75+ | 35 | 91 | 11 |
+| 1–19 ingredients | 13 | 9 | 3 |
+| 20–34 | 27 | 13 | 5 |
+| 35–49 | 42 | 13 | 8 |
+| 50–74 | 61 | 14 | 10 |
+| 75+ | 91 | 14 | 11 |
 
-A customer buying 13 ingredients has ~3 core food styles; one buying 91 has ~11. The
-relationship is strong and monotonic: bigger pantries don't just mean more of the same —
-they mean more kinds of cooking.
-
-### Intensity concentrates at the top
-
-The median customer's *strongest* meal style appears in **58% of their orders** (p25 =
-31%, p75 = 80%). How strongly does each ranked profile show up?
-
-| Customer's Nth strongest | p25 share | Median share | p75 share |
-|---|---:|---:|---:|
-| #1 strongest | 31% | **58%** | 80% |
-| #2 | — | — | — |
-| #3 | — | — | — |
-| #5 | — | — | — |
-
-*(Ranks 2–5 drop below the minimum display threshold for the held-out test; this
-reflects the fast intensity drop-off shown in the figure — the lean is real but
-concentrated in 1–3 top profiles for most customers.)*
+Bigger pantries don't just mean more of the same — they mean more kinds of cooking.
+And even within omnivorous sampling there's a dominant lean: the median customer's
+strongest single food style appears in **58% of their orders**.
 
 ### Which profiles reach the most customers?
 

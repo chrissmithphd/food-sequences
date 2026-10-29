@@ -170,40 +170,30 @@ def fig_combos_vs_singles():
 
 def fig_pantry_vs_profiles():
     d = pl.read_csv(AFF.parent.parent / "analysis" / "food_profiles" / "customer_pantry_vs_profiles.csv")
-    fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(13, 6))
+    fig, ax = plt.subplots(figsize=(10, 6))
     x = d["median_ings"].to_list()
     y_touch = d["median_ms_touched"].to_list()
     y_core = d["median_ms_core"].to_list()
     labels = d["ing_band"].to_list()
-    ax1.bar(range(len(x)), y_touch, color=BLUE, alpha=0.85, label="ever touched")
-    ax1.bar(range(len(x)), y_core, color=PURPLE, alpha=0.85, label="core (≥50% of orders)")
-    ax1.set_xticks(range(len(x)))
-    ax1.set_xticklabels([f"{l}\n(med {xi} ings)" for l, xi in zip(labels, x)], fontsize=9)
-    ax1.set_ylabel("Meal-style profiles (of 14)")
-    ax1.set_ylim(0, 15)
-    ax1.set_xlabel("Customer's ingredient repertoire (band)")
-    ax1.legend(loc="upper left", fontsize=9)
-    ax1.set_title("Bigger pantries → more core food styles", fontweight="bold")
-    # right: core distribution
-    core = pl.read_csv(AFF.parent.parent / "analysis" / "food_profiles" / "customer_profile_reach.csv")
-    # we need per-customer core counts — read from the breadth summary instead
-    # histogram: read from intensity file
-    inten = pl.read_csv(AFF.parent.parent / "analysis" / "food_profiles" / "customer_profile_intensity.csv")
-    med = [float(inten.filter(pl.col("rank") == r)["median"][0])
-           for r in inten["rank"].to_list()]
-    ranks = inten["rank"].to_list()
-    ax2.barh(range(len(ranks)), [m * 100 for m in med], color=GREEN, alpha=0.85)
-    ax2.set_yticks(range(len(ranks)))
-    ax2.set_yticklabels([f"#{r} strongest" for r in ranks])
-    for i, m in enumerate(med):
-        ax2.text(m * 100 + 1, i, f"{m:.0%}", va="center", fontsize=10)
-    ax2.set_xlabel("Median order share (%)")
-    ax2.set_xlim(0, 75)
-    ax2.set_title("Intensity drops off fast beyond #1", fontweight="bold")
-    fig.suptitle("Customers lean into a few food styles, not one\n"
-                 "Left: pantry size predicts breadth. Right: how concentrated "
-                 "the lean is, by rank.",
-                 fontweight="bold", fontsize=12, y=1.02)
+    width = 0.38
+    pos = np.arange(len(x))
+    ax.bar(pos - width / 2, y_touch, width, color=BLUE, alpha=0.85,
+           label="food styles ever sampled")
+    ax.bar(pos + width / 2, y_core, width, color=PURPLE, alpha=0.85,
+           label="food styles bought consistently (≥50% of orders)")
+    for i, (t, c) in enumerate(zip(y_touch, y_core)):
+        ax.text(i - width / 2, t + 0.2, f"{t:.0f}", ha="center", fontsize=9, color=BLUE)
+        ax.text(i + width / 2, c + 0.2, f"{c:.0f}", ha="center", fontsize=9, color=PURPLE)
+    ax.set_xticks(pos)
+    ax.set_xticklabels([f"{l}\n({xi} ings)" for l, xi in zip(labels, x)], fontsize=9)
+    ax.set_ylabel("Meal-style food profiles (of 14)")
+    ax.set_ylim(0, 16)
+    ax.set_xlabel("Customer's ingredient repertoire")
+    ax.legend(loc="upper left", fontsize=9)
+    ax.set_title("Bigger pantries mean more kinds of cooking\n"
+                 "Customers with 13 ingredients buy 3 food styles consistently; "
+                 "at 91 ingredients, 11",
+                 fontweight="bold", fontsize=12)
     fig.tight_layout()
     _save(fig, "profiles_pantry_vs_core")
 

@@ -207,15 +207,13 @@ regularly. Grocery baskets are **omnivorous**: a model assigning each customer t
 cuisine would describe noise. But breadth isn't the whole story — pantry size predicts
 how many food styles a customer *leans into consistently*:
 
-![Pantry size drives breadth; intensity drops fast](analysis/figures/profiles_pantry_vs_core.png)
+![Bigger pantries mean more kinds of cooking](analysis/figures/profiles_pantry_vs_core.png)
 
-A customer buying 13 distinct ingredients has ~3 core meal styles (appearing in ≥50% of
-their orders); one buying 91 has ~11. The strongest single profile shows up in **58% of
-the median customer's orders**, so there *is* a dominant lean, even within the broad
-sampling. The interesting signal isn't which cuisine a customer "belongs to" — none
-specialize — but which styles they lean into, how deeply, and whether that shifts over
-time. And a methodological caution: several apparent personality metrics ("repeater vs.
-explorer") actually track how many orders we happen to observe, not how someone shops.
+A customer buying 13 distinct ingredients buys 3 food styles consistently (in ≥50% of
+their orders); one buying 91 buys 11. The strongest single food style shows up in
+**58% of the median customer's orders**, so there *is* a dominant lean, even within the
+broad sampling. The interesting signal isn't which cuisine a customer "belongs to" —
+none specialize — but which styles they lean into, how deeply, and whether that shifts.
 [Full analysis →](analysis/customers/)
 
 ---

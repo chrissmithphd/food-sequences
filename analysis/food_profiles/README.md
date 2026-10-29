@@ -175,7 +175,7 @@ noise, not behavior.
 Since breadth is near-universal, the more revealing question is how many food styles
 each customer *leans into consistently*:
 
-![Pantry size drives core food styles](../figures/profiles_pantry_vs_core.png)
+![Bigger pantries mean more kinds of cooking](../figures/profiles_pantry_vs_core.png)
 
 Two cautions keep this honest. "Touching a cuisine's distinctive ingredients" is a lower
 bar than *cooking that cuisine* — distinctive ingredients are not exclusive, and one
