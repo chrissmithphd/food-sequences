@@ -196,6 +196,34 @@ stable. Customer differences are real, but more modest than the raw metrics sugg
 
 ---
 
+## Building toward food preferences: Food Profiles
+
+### [Food Profiles →](analysis/food_profiles/)
+
+The six analyses above read the cart at the ingredient level. A natural next layer asks
+what *kind* of food those ingredients add up to — a curry, a salad, a baking project —
+without needing to identify the exact recipe. Using two public recipe corpora (231k
+Food.com recipes, 40k labeled by cuisine), each of our 543 ingredients is scored for how
+**distinctively** it signals a food style, measured as *lift*: how many times more often
+it appears in that style than chance. The result is a reusable reference, validated on
+held-out recipes — groundwork for eventually recognizing food styles in baskets, not a
+claim about anyone's taste yet.
+
+![Which food profiles are recognizable from ingredients](analysis/figures/profiles_detectability.png)
+
+The headline is that detectability varies enormously and honestly. Seafood, sweet baking,
+salads, and pasta are recognized well from ingredients; chili and curries are rare but
+distinctive (kidney beans and curry paste are strong tells). Roasting, grilling, and
+"spicy" are barely detectable — they're cooking *methods* and *sensory* qualities that
+ingredients don't pin down. And the recurring lesson returns: garlic and olive oil are in
+every Italian recipe but, being in everything, signal nothing; the real signatures are
+ricotta, marinara, and filled pasta. A 20-way cuisine classifier reaches **58% accuracy
+from ingredients alone** (vs. 20% for guessing), and where it confuses cuisines —
+Thai with Vietnamese, Italian with Greek — it's telling us where finer distinctions stop
+being worth drawing. [Full analysis and method →](analysis/food_profiles/)
+
+---
+
 ## What we learned
 
 Across the six analyses, a few conclusions hold up — several of them by dissolving a
@@ -275,6 +303,7 @@ data/
   INGREDIENT_TAXONOMY.md        # recipe-ingredient taxonomy (parsed by the pipeline)
   food_classification.csv       # product → ingredient map (key derived dataset)
   product_ingredient_lookup.csv # deterministic lookup table (reproduce without an LLM)
+  affinity/                     # Food Profiles reference data (associations, combinations)
   raw/ processed/               # Kaggle CSVs → Parquet
 analysis/
   ingredients/      # demand vs assortment, concentration, organic penetration
@@ -283,14 +312,17 @@ analysis/
   novelty/          # novelty classification, repertoire growth, categories
   prepared/         # reach, dish types, basket composition
   customers/        # profiles, segments, behavioral correlations
+  food_profiles/    # food-style/cuisine signatures from ingredients + validation
   figures/          # all figures (PNG/SVG)
 docs/
   FOOD_CLASSIFICATION.md        # how the classification was built
+  AFFINITY_REFERENCE.md         # Food Profiles reference methodology
   classification/               # method comparison, figures, archived attempts
 scripts/
   config.py         # shared paths and schemas
   data_pipeline/    # Kaggle → Parquet ingestion + audit
   classification/   # LLM classifier, lookup table, taxonomy corrections
+  affinity/         # Food Profiles: ingredient mapping, associations, evaluation, figures
   sequence_analysis/# one script per analysis; analyze_reorder.py is the shared core
 ```
 

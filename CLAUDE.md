@@ -80,18 +80,30 @@ analysis/                # Analysis findings only (one dir per topic)
   ├── novelty/           # Novelty, repertoire growth
   ├── prepared/          # Reach, dish types, products, reorder
   ├── customers/         # Profile, segments, behavior
+  ├── food_profiles/     # Food-style/cuisine signatures from ingredients + validation
   └── figures/           # All figures (png/svg)
 
 data/                    # Inputs + derived data (not analysis findings)
   ├── INGREDIENT_TAXONOMY.md          # Recipe-ingredient taxonomy (parsed by the pipeline)
   ├── food_classification.csv         # Product → ingredient map
   ├── product_ingredient_lookup.csv   # Deterministic lookup table
+  ├── affinity/          # Food Profiles reference (associations, combinations, overrides)
   ├── raw/               # Original CSV files
   └── processed/         # Parquet files + provenance.json
 
+scripts/
+  └── affinity/          # Food Profiles: recipe→ingredient mapping, associations, evaluation, figures
+
 docs/                    # PROCESSING.md, DATA_AUDIT.md, FOOD_CLASSIFICATION.md
+  ├── AFFINITY_REFERENCE.md   # Food Profiles reference methodology
   └── classification/    # Method comparison, figures, archived classification attempts
 ```
+
+**Food Profiles layer** (`scripts/affinity/` → `data/affinity/` → `analysis/food_profiles/`):
+a reference mapping the 543 ingredients to food styles / composition / cuisine via measured
+recipe-corpus statistics (lift, support), validated on held-out recipes. Public name is
+"food profile"; the data schema key is `affinity_id` (kept for compatibility). Raw recipe
+corpora live in git-ignored `data/external/`; only derived stats are committed.
 
 ### Configuration (`scripts/config.py`)
 

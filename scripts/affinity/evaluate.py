@@ -136,7 +136,9 @@ def eval_cuisine(cuisine):
     logratio, logfreq, priors, vocab = train_logweights(tr, labels, multilabel=False)
     majority = max(priors, key=priors.get)
 
-    def accuracy(weights):
+    full_conf = Counter()
+
+    def accuracy(weights, capture=False):
         correct = 0
         conf = Counter()
         per = defaultdict(lambda: [0, 0, 0])  # label -> [tp, fp, fn]
@@ -144,6 +146,8 @@ def eval_cuisine(cuisine):
             sc = score(slugs, weights, labels, vocab)
             pred = max(sc, key=sc.get) if sc else majority
             correct += (pred == true)
+            if capture:
+                full_conf[(true, pred)] += 1
             if pred != true:
                 conf[(true, pred)] += 1
             per[true][0 if pred == true else 2] += 1
@@ -158,8 +162,13 @@ def eval_cuisine(cuisine):
             f1s.append(2 * prec * rec / (prec + rec) if prec + rec else 0)
         return acc, sum(f1s) / len(f1s), conf
 
-    acc_lr, f1_lr, conf = accuracy(logratio)
+    acc_lr, f1_lr, conf = accuracy(logratio, capture=True)
     acc_maj = priors[majority]
+    with open(OUT / "cuisine_confusion.csv", "w", newline="") as f:
+        w = csv.writer(f)
+        w.writerow(["true", "predicted", "count"])
+        for (t, p), c in sorted(full_conf.items()):
+            w.writerow([t[2:], p[2:], c])
     print("=== CUISINE (What's Cooking, 20-way single-label, held-out 20%) ===")
     print(f"  test recipes: {len(te):,}")
     print(f"  majority baseline (always {majority[2:]}):   acc {acc_maj:.3f}")

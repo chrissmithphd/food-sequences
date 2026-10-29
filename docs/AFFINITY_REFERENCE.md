@@ -1,4 +1,9 @@
-# Food-Affinity Reference Dataset
+# Food Profiles — Reference Dataset & Methodology
+
+> This is the detailed methodology behind the [Food Profiles analysis](../analysis/food_profiles/).
+> "Food profile" is the public-facing name for what the data schema calls an *affinity*
+> (the stable key `affinity_id` and the `data/affinity/` paths are kept to avoid breaking
+> compatibility). The two terms mean the same thing.
 
 A reusable, evidence-backed reference describing how the project's 543 recipe
 ingredients — and their combinations — relate to **food/meal styles, composition
