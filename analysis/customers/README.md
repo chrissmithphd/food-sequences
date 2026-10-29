@@ -21,14 +21,12 @@ inflate the count — gives a first concrete picture.
 
 ### Everyone samples broadly
 
-![How broadly customers sample food profiles](../figures/profiles_customer_breadth.png)
-
 The median customer buys the distinctive ingredients of **18–20 of 20 cuisines**, most
 of them regularly (in ≥20% of orders). Meal styles (13–14 of 14) and composition
-patterns (all 8 of 8) are touched almost completely. This breadth is near-complete
-even for customers with just 10–14 orders, so it's genuine — not a side effect of
-observing some people longer. **Grocery baskets are omnivorous.** A model assigning
-each customer to one or two cuisines would be describing noise.
+patterns (all 8 of 8) are touched almost completely. This breadth is near-complete even
+for customers with just 10–14 orders, so it's genuine — not a side effect of observing
+some people longer. **Grocery baskets are omnivorous.** A model assigning each customer
+to one or two cuisines would be describing noise.
 
 ### But some food styles are leaned into heavily
 
@@ -129,17 +127,14 @@ ingredients — see [ingredients](../ingredients/)).
 
 ### Order-to-order variation is nearly as large as customer differences
 
-For both basket size and prepared-food share, the variation *within* a single customer
-across orders is almost as large as the variation *between* customers:
+For basket size, the variation *within* a single customer across their orders is almost
+as large as the variation *between* customers. The intraclass correlation (ICC — the
+fraction of total variation that is between customers rather than within) is **0.60**:
+a customer averaging 8 items per basket places individual orders from 3 to 15.
 
 | Measure | Between-customer SD | Within-customer mean SD | ICC |
 |---|---:|---:|---:|
 | Basket size | 5.15 | 4.20 | 0.60 |
-| Prepared-food share | 0.059 | 0.056 | 0.53 |
-
-ICC (intraclass correlation) measures what fraction of total variation is between
-customers rather than within: 0.60 for basket size, 0.53 for prepared-food share. A
-customer averaging 8 items per basket places individual orders from 3 to 15.
 
 ### Many "personality" metrics really measure history length
 

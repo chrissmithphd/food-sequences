@@ -165,15 +165,17 @@ every profile reaches 75–99% of customers. The exceptions are the weakly-detec
 from the recipe evaluation — roasts (50%), Japanese (75%) — not evidence of specialization
 so much as thin signatures.
 
-![Breadth by order count](../figures/profiles_customer_breadth.png)
-
 The obvious objection is the observation window: a customer with 100 orders will touch
 more profiles than one with 10, mechanically. But breadth is already near-complete for
 customers with just 10–14 orders (median 18 of 20 cuisines) and barely rises with more
 history — so this is genuine breadth, not a counting artifact. **Grocery baskets are
-omnivorous**: in ingredient terms, essentially everyone samples essentially every
-cuisine and food style, most of them often. A model that assigned each customer to one or
-two cuisines would be describing noise, not behavior.
+omnivorous**: a model assigning each customer to one or two cuisines would be describing
+noise, not behavior.
+
+Since breadth is near-universal, the more revealing question is how many food styles
+each customer *leans into consistently*:
+
+![Pantry size drives core food styles](../figures/profiles_pantry_vs_core.png)
 
 Two cautions keep this honest. "Touching a cuisine's distinctive ingredients" is a lower
 bar than *cooking that cuisine* — distinctive ingredients are not exclusive, and one
