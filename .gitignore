@@ -15,6 +15,9 @@ data/processed/**
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 
+# External recipe corpora (licenses prohibit redistribution — derived stats only)
+data/external/
+
 # Python
 __pycache__/
 *.py[cod]
@@ -86,11 +89,14 @@ temp/
 analysis/outputs/*.parquet
 analysis/outputs/*.csv
 
-# EXCEPT: Classification results (product-level, no customer IDs)
-!analysis/classification/food_classification.csv
-!analysis/classification/product_ingredient_lookup.csv
-!analysis/classification/methods_compared/*.csv
-!analysis/classification/archived/*.csv
+# EXCEPT: classification data (product-level, no customer IDs)
+!data/food_classification.csv
+!data/product_ingredient_lookup.csv
+!docs/classification/methods_compared/*.csv
+!docs/classification/archived/*.csv
+
+# EXCEPT: food-affinity reference dataset (derived stats, no customer IDs)
+!data/affinity/*.csv
 
 # EXCEPT: per-analysis aggregate summary CSVs (no user IDs). Parquet stays ignored.
 !analysis/ingredients/*.csv

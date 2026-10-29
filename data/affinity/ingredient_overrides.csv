@@ -1,0 +1,102 @@
+external_string,slug,note
+rice,white_rice,generic rice -> white_rice (generic bucket)
+cooked rice,white_rice,generic rice
+jasmine rice,white_rice,variety -> generic rice
+basmati rice,white_rice,variety -> generic rice
+long grain rice,white_rice,variety -> generic rice
+long-grain rice,white_rice,variety -> generic rice
+white rice,white_rice,exact variety
+brown rice,brown_rice,variety
+oil,vegetable_oil,generic cooking oil
+cooking oil,vegetable_oil,generic cooking oil
+canola oil,vegetable_oil,canola -> generic vegetable oil
+corn oil,vegetable_oil,corn oil -> generic vegetable oil
+vegetable oil,vegetable_oil,exact
+vinegar,white_vinegar,generic distilled vinegar
+cider vinegar,apple_cider_vinegar,cider vinegar = apple cider vinegar
+white vinegar,white_vinegar,exact
+vanilla,vanilla_extract,common shorthand
+cocoa,cocoa_powder,common shorthand
+unsweetened cocoa,cocoa_powder,baking cocoa
+margarine,butter,butter substitute (lossy; baking fat)
+cream,heavy_cream,generic cream -> heavy_cream
+whipping cream,heavy_cream,whipping cream = heavy cream
+heavy whipping cream,heavy_cream,heavy whipping cream = heavy cream
+gingerroot,ginger,fresh ginger root
+fresh ginger,ginger,fresh ginger root
+nuts,mixed_nuts,generic nuts
+mixed nuts,mixed_nuts,exact
+pinenuts,pine_nuts,pine nuts
+pine nuts,pine_nuts,pine nuts
+cumin seed,cumin,seed form of cumin
+cumin seeds,cumin,seed form of cumin
+coriander seed,coriander,seed form of coriander
+coriander seeds,coriander,seed form of coriander
+ground cloves,cloves,ground form
+clove,cloves,singular
+whole cloves,cloves,whole form
+garlic clove,garlic,"""garlic cloves"" is a count unit -> garlic"
+garlic cloves,garlic,count unit -> garlic
+clove garlic,garlic,count unit -> garlic
+cinnamon sticks,cinnamon,stick form
+cinnamon stick,cinnamon,stick form
+black peppercorns,black_pepper,peppercorn form
+peppercorns,black_pepper,peppercorn form
+white pepper,black_pepper,pepper (white) -> pepper
+shiitake,mushroom,mushroom variety (taxonomy lumps types)
+shiitake mushrooms,mushroom,mushroom variety
+mushrooms,mushroom,plural
+chiles,hot_pepper,chiles -> hot_pepper
+chilies,hot_pepper,chilies -> hot_pepper
+green chilies,hot_pepper,green chiles -> hot_pepper
+red chile,hot_pepper,red chile -> hot_pepper
+dried chiles,hot_pepper,dried chiles -> hot_pepper
+jalapeno,hot_pepper,jalapeno -> hot_pepper (lumped)
+jalapenos,hot_pepper,jalapeno -> hot_pepper (lumped)
+serrano,hot_pepper,serrano -> hot_pepper (lumped)
+bread,white_bread,generic bread -> white_bread
+corn starch,cornstarch,spelling variant
+egg yolk,eggs,yolk -> eggs
+egg yolks,eggs,yolk -> eggs
+egg white,eggs,white -> eggs
+egg whites,eggs,white -> eggs
+scallion,onion,scallion -> onion (taxonomy lumps alliums)
+scallions,onion,scallion -> onion (taxonomy lumps alliums)
+leek,onion,leek -> onion (lumped)
+leeks,onion,leek -> onion (lumped)
+shallot,onion,shallot -> onion (lumped)
+shallots,onion,shallot -> onion (lumped)
+tumeric,turmeric,misspelling
+mayonaise,mayonnaise,misspelling
+all-purpose flour,flour,all-purpose -> flour
+plain flour,flour,UK all-purpose -> flour
+self-rising flour,flour,self-rising -> flour
+confectioners sugar,powdered_sugar,confectioners = powdered sugar
+icing sugar,powdered_sugar,icing = powdered sugar
+light brown sugar,brown_sugar,shade variant
+dark brown sugar,brown_sugar,shade variant
+olives,UNMAPPED,"GAP: no olives slug (olive_oil only) — weakens Mediterranean/Greek"
+black olives,UNMAPPED,GAP: no olives slug
+kalamata olives,UNMAPPED,GAP: no olives slug
+green olives,UNMAPPED,GAP: no olives slug
+capers,UNMAPPED,GAP: no capers slug (Mediterranean/Italian)
+lemongrass,UNMAPPED,GAP: no lemongrass slug (SE Asian signature)
+mirin,UNMAPPED,GAP: no mirin slug (Japanese)
+sake,UNMAPPED,GAP: no sake slug (Japanese)
+rice wine,UNMAPPED,GAP: no rice wine/mirin slug
+tomatillo,UNMAPPED,GAP: no tomatillo slug (Mexican)
+tomatillos,UNMAPPED,GAP: no tomatillo slug (Mexican)
+fennel seeds,UNMAPPED,GAP: no fennel/fennel-seed slug
+fennel seed,UNMAPPED,GAP: no fennel/fennel-seed slug
+fennel,UNMAPPED,GAP: no fennel slug
+shredded coconut,UNMAPPED,GAP: no baking-coconut slug (coconut_oil/flour/water only)
+flaked coconut,UNMAPPED,GAP: no baking-coconut slug
+coconut,UNMAPPED,GAP: ambiguous; no shredded-coconut slug
+shortening,UNMAPPED,GAP: no shortening slug (baking fat)
+breadcrumbs,UNMAPPED,GAP: no breadcrumb/panko slug
+bread crumbs,UNMAPPED,GAP: no breadcrumb/panko slug
+panko,UNMAPPED,GAP: no panko slug (East Asian/breaded)
+star anise,UNMAPPED,GAP: no star anise slug
+sumac,UNMAPPED,GAP: no sumac slug (Middle Eastern)
+zaatar,UNMAPPED,GAP: no za'atar slug (Middle Eastern)
+harissa,UNMAPPED,GAP: no harissa slug (North African)
