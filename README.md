@@ -179,68 +179,44 @@ and prepared-food buyers may simply differ from non-buyers. Whether prepared mea
 substitute for or ride alongside fresh cooking is a question this data frames cleanly
 and then leaves open.
 
-## How much of a customer is a "type"
-
-### [Customers →](analysis/customers/)
-
-![Within- vs. between-customer variation](analysis/figures/within_vs_between.png)
-
-The median customer places 10 orders over ~5 observed months, 8 items at a time, every
-~13 days, with a heavy tail that shops weekly. Shopping frequency and basket size vary
-independently, so there's real variety in how people use the platform.
-
-But much of what looks like a difference *between* customers is actually variation
-*within* one customer across their own orders. For both basket size and prepared-food
-share, the order-to-order swing inside a single customer is nearly as large as the gap
-between customers (it accounts for roughly half of all variation). And the familiar
-"repeater vs. explorer" axis turns out to track something mundane: repeat rate, novelty,
-and diversity move together and correlate 0.5–0.6 with *how many orders we happen to
-observe* — so an apparent "type" is often just history length. The one behavior that
-doesn't follow observation length is product-switching within an ingredient — the
-cleanest candidate for a genuine individual trait, though this data can't confirm it's
-stable. Customer differences are real, but more modest than the raw metrics suggest.
-
----
-
 ## What kinds of food can the ingredients signal? Food Profiles
 
 ### [Food Profiles →](analysis/food_profiles/)
 
-The six analyses above read the cart at the ingredient level. A natural next layer asks
-what *kind* of food those ingredients add up to — a curry, a salad, a baking project —
-without needing to identify the exact recipe. Using two public recipe corpora (231k
-Food.com recipes, 40k labeled by cuisine), each of our 543 ingredients is scored for how
-**distinctively** it signals a food style, measured as *lift*: how many times more often
-it appears in that style than chance. The result is a reusable reference, validated on
-held-out recipes — groundwork for eventually recognizing food styles in baskets, not a
-claim about anyone's taste yet.
+What *kind* of food do those ingredients add up to — a curry, a salad, a baking project?
+Using two public recipe corpora (231k Food.com recipes, 40k labeled by cuisine), each of
+our 543 ingredients is scored for how **distinctively** it signals a food style, measured
+as *lift*. The result is validated on held-out recipes — seafood, sweet baking, salads,
+and pasta are recognized well; roasting and grilling are not (they're methods, not
+ingredients). Garlic is in every Italian recipe but, being in everything, signals
+nothing; ricotta, marinara, and filled pasta are the real tells.
 
 ![Which food profiles are recognizable from ingredients](analysis/figures/profiles_detectability.png)
 
-The headline is that detectability varies enormously and honestly — tested by learning
-signatures on one half of the recipes and classifying the held-out half. Seafood, sweet
-baking, salads, and pasta are recognized well; chili and curries are rare but distinctive
-(kidney beans and curry paste are strong tells). Roasting, grilling, and "spicy" are
-barely detectable — they're cooking *methods* and sensory qualities whose ingredients
-aren't distinctive. And the recurring lesson returns: garlic and olive oil are in every
-Italian recipe but, being in everything, signal nothing; the real signatures are ricotta,
-marinara, and filled pasta. A 20-way cuisine classifier reaches **58% accuracy from
-ingredients alone** — about 2.9× the 20% you'd get always guessing the most common
-cuisine — and where it confuses cuisines (Thai with Vietnamese, Italian with Greek), it's
-showing where ingredient evidence alone can't separate traditions that cook from
-overlapping pantries.
+## Who are the customers, and what do they cook?
 
-![How broadly customers sample food profiles](analysis/figures/profiles_customer_breadth.png)
+### [Customers →](analysis/customers/)
 
-Pointed at Instacart customers, the reference gives a first, striking result. Scoring each
-customer only on profiles' *distinctive* ingredients (so staples don't make everyone look
-adventurous), the median customer buys the signatures of **18–20 of 20 cuisines**, most of
-them regularly — and that breadth is already near-complete for customers with just 10–14
-orders, so it isn't an artifact of watching some people longer. Grocery baskets are
-**omnivorous**: almost everyone samples almost every cuisine and food style. The open
-question isn't *which* cuisine a customer belongs to — essentially none specialize — but
-how strongly each leans toward particular profiles, and whether that shifts over time.
-[Full analysis and method →](analysis/food_profiles/)
+The median customer places **10 orders** over ~5 months, **8 items** per trip, every
+~13 days. A heavy tail shops weekly. Basket size barely varies with engagement — **it's
+frequency that differs**, not trip size.
+
+Scored against food-profile signatures (distinctive ingredients only — staples excluded),
+the median customer buys the ingredients of **18–20 of 20 cuisines**, most of them
+regularly. Grocery baskets are **omnivorous**: a model assigning each customer to one
+cuisine would describe noise. But breadth isn't the whole story — pantry size predicts
+how many food styles a customer *leans into consistently*:
+
+![Pantry size drives breadth; intensity drops fast](analysis/figures/profiles_pantry_vs_core.png)
+
+A customer buying 13 distinct ingredients has ~3 core meal styles (appearing in ≥50% of
+their orders); one buying 91 has ~11. The strongest single profile shows up in **58% of
+the median customer's orders**, so there *is* a dominant lean, even within the broad
+sampling. The interesting signal isn't which cuisine a customer "belongs to" — none
+specialize — but which styles they lean into, how deeply, and whether that shifts over
+time. And a methodological caution: several apparent personality metrics ("repeater vs.
+explorer") actually track how many orders we happen to observe, not how someone shops.
+[Full analysis →](analysis/customers/)
 
 ---
 

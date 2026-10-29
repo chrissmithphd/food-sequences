@@ -1,176 +1,184 @@
 # Customers
 
-How differently do people shop, which differences persist, and what can we learn
-about distinct shopping behaviors?
+Who are these shoppers, what kinds of food do they buy, how deeply do they engage, and
+which differences between customers are real?
 
 - Sources: `analyze_customer_profile.py`, `analyze_customer_behavior.py`,
-  `analyze_customer_extended.py`; `visualize_customers.py`
-- Scope: 206k customers; behavioral metrics computed for 107k with ≥10 orders.
+  `analyze_customer_extended.py`; `visualize_customers.py`;
+  `scripts/affinity/customer_profiles.py` (food profiles)
+- Scope: 206k customers; behavioral metrics and food-profile scoring for 106k with
+  ≥10 orders.
 
 ---
 
-## Who the customers are
+## What kinds of food do customers buy?
 
-![Customer profile distributions](../figures/customer_profile_distributions.png)
+The [Food Profiles](../food_profiles/) reference maps ingredients to recognizable food
+styles (curries, salads, baking, stir-fries, etc.), cuisine associations, and
+composition patterns. Scoring each customer's history against those signatures — using
+only the *distinctive* ingredients per profile, so staples like onions and oil don't
+inflate the count — gives a first concrete picture.
 
-| Measure | p10 | p25 | median | p75 | p90 |
-|---------|----:|----:|-------:|----:|----:|
-| Orders per customer | 4 | 6 | **10** | 20 | 37 |
-| Observed tenure (days) | 49 | 81 | **145** | 248 | 332 |
-| Food items per order | 3 | 5 | **8** | 12 | 16 |
-| Days between orders | 5 | 7 | **13** | 22 | 30 |
+### Everyone samples broadly
 
-The median customer places 10 orders over ~5 observed months, in baskets of ~8 items,
-shopping about every 13 days. Every measure is strongly right-skewed — a heavy tail
-shops weekly with 37+ orders. (Tenure and order counts are window-censored; the
-30-day cap on inter-order gaps makes tenure a lower bound.)
+![How broadly customers sample food profiles](../figures/profiles_customer_breadth.png)
 
-## Frequency × basket size
+The median customer buys the distinctive ingredients of **18–20 of 20 cuisines**, most
+of them regularly (in ≥20% of orders). Meal styles (13–14 of 14) and composition
+patterns (all 8 of 8) are touched almost completely. This breadth is near-complete
+even for customers with just 10–14 orders, so it's genuine — not a side effect of
+observing some people longer. **Grocery baskets are omnivorous.** A model assigning
+each customer to one or two cuisines would be describing noise.
 
-![Customer segments](../figures/customer_segments.png)
+### But some food styles are leaned into heavily
 
-Splitting at the medians of shopping frequency and basket size creates four
-roughly equal groups. These are descriptive bins, not discovered clusters — the
-underlying distributions are continuous:
+![Pantry size drives breadth; intensity drops off fast](../figures/profiles_pantry_vs_core.png)
 
-| Segment | Share | Mean orders | Mean basket | Mean cadence |
-|---------|------:|------------:|------------:|-------------:|
-| frequent / big-basket | 26.9% | 24 | 13 | 8 days |
-| frequent / small-basket | 24.9% | 23 | 5 | 8 days |
-| occasional / small-basket | 24.4% | 8 | 5 | 23 days |
-| occasional / big-basket | 23.8% | 9 | 13 | 23 days |
+Nearly everyone *touches* every style, but not equally. A customer's **core food
+styles** — those whose distinctive ingredients appear in at least half their orders —
+number anywhere from 0 to 11+, and pantry size (how many distinct ingredients a customer
+has ever bought) is a strong driver:
 
-Frequency and basket size are genuinely different axes. **Frequency drives observed
-order volume**: frequent shoppers accumulate ~24 orders vs ~9, regardless of basket
-size.
+| Ingredient repertoire | Median orders | Median distinct ings | Core meal styles (of 14) |
+|---|---:|---:|---:|
+| 1–19 ingredients | 14 | 13 | 3 |
+| 20–34 | 15 | 27 | 5 |
+| 35–49 | 16 | 42 | 8 |
+| 50–74 | 20 | 61 | 10 |
+| 75+ | 35 | 91 | 11 |
 
-## Which behaviors move together
+A customer buying 13 ingredients has ~3 core food styles; one buying 91 has ~11. The
+relationship is strong and monotonic: bigger pantries don't just mean more of the same —
+they mean more kinds of cooking.
 
-![Behavior correlations](../figures/behavior_correlations.png)
+### Intensity concentrates at the top
 
-The correlation matrix reveals three distinct groups:
+The median customer's *strongest* meal style appears in **58% of their orders** (p25 =
+31%, p75 = 80%). How strongly does each ranked profile show up?
 
-**One big cluster (r > 0.9):** product_repeat, new_ing_rate, and diversity move
-together almost perfectly. These are not three independent traits — they're one
-dimension (how much of a customer's purchasing is familiar vs new), and it correlates
-±0.5–0.6 with order count. "Repeater vs explorer" is largely "high-volume vs
-low-volume."
+| Customer's Nth strongest | p25 share | Median share | p75 share |
+|---|---:|---:|---:|
+| #1 strongest | 31% | **58%** | 80% |
+| #2 | — | — | — |
+| #3 | — | — | — |
+| #5 | — | — | — |
 
-**Low correlation with volume:** Two behaviors have near-zero Pearson correlation
-with order count:
-- **Product switching** (corrected, cross-order only): r = −0.04 with order count.
-  Whether a customer sticks to one product per ingredient or rotates among several
-  does not track purchasing volume. (Low linear correlation does not rule out other
-  relationships, and it does not by itself establish a stable individual preference.)
-- **Prepared-food share**: r = −0.08 with order count, +0.07 with basket size.
-  How much a customer buys prepared food shows little linear relationship with how
-  often or how much they shop overall.
+*(Ranks 2–5 drop below the minimum display threshold for the held-out test; this
+reflects the fast intensity drop-off shown in the figure — the lean is real but
+concentrated in 1–3 top profiles for most customers.)*
 
-**Effective ingredients** (inverse HHI — the number of equally-used ingredients that
-would produce the same spread; a basket split evenly across 10 ingredients scores 10,
-one dominated by a single ingredient scores near 1) correlates +0.61 with basket size:
-mechanically, bigger baskets spread across more ingredients. This is not a behavioral
-trait; it's arithmetic.
+### Which profiles reach the most customers?
 
-## How much variation is within customers versus between them
+![Per-profile customer reach](../figures/profiles_customer_reach.png)
 
-![Within vs between](../figures/within_vs_between.png)
+| Profile | Ever buy its distinctive ingredients | Buy them regularly (≥20% of orders) |
+|---|---:|---:|
+| Breakfast | 99% | 95% |
+| Sweet baking | 99% | 94% |
+| Salads | 97% | 90% |
+| Curries | 95% | 85% |
+| Pasta | 94% | 83% |
+| Stir-fries | 94% | 81% |
+| Seafood | 92% | 72% |
+| Pizza | 89% | 70% |
+| Grilling & BBQ | 82% | 41% |
+| Roasts | 51% | 8% |
 
-For both basket size and prepared-food share, the variation *within* a single
-customer across their orders is almost as large as the variation *between*
-customers:
+Breakfast, baking, and salads are near-universal. Grilling and roasts are the only
+profiles that don't reach most customers regularly — both are cooking *methods* whose
+ingredient signatures are thin, not evidence that customers avoid them.
+
+---
+
+## How engaged are customers?
+
+| Order count | Customers | Median tenure (days) | Median basket (items) |
+|---|---:|---:|---:|
+| 10–14 orders | 33,886 | 181 | 8.5 |
+| 15–19 | 20,227 | 234 | 8.5 |
+| 20–29 | 22,375 | 281 | 9.0 |
+| 30–49 | 18,698 | 336 | 9.0 |
+| 50+ | 11,060 | 358 | 8.0 |
+
+The median customer (across all 206k) places **10 orders** over **~5 months**, shopping
+every **~13 days** with **8 items** per basket. Every engagement measure is right-skewed:
+a heavy tail shops weekly with 37+ orders across nearly a year. But basket size is
+remarkably stable — even the heaviest shoppers average 8–9 items per trip. **Frequency
+is what varies, not basket size.**
+
+---
+
+## How many ingredients does a customer use?
+
+| Orders | Median distinct ingredients | p25 | p75 |
+|---:|---:|---:|---:|
+| 10–14 | 42 | 30 | 57 |
+| 20–29 | 66 | 49 | 87 |
+| 50+ | 107 | 79 | 138 |
+
+Repertoire grows steadily with order count but never saturates — at 50+ orders the
+median customer has tried 107 of 543 available ingredients. The p25–p75 range is wide:
+some customers at the same history length have tried twice as many ingredients as
+others. About **a quarter** of what looks like product variety collapses at the
+ingredient level (the median customer buys 45 distinct products but only 34 distinct
+ingredients — see [ingredients](../ingredients/)).
+
+---
+
+## What is real versus what is noise
+
+### Order-to-order variation is nearly as large as customer differences
+
+For both basket size and prepared-food share, the variation *within* a single customer
+across orders is almost as large as the variation *between* customers:
 
 | Measure | Between-customer SD | Within-customer mean SD | ICC |
-|---------|--------------------:|------------------------:|----:|
+|---|---:|---:|---:|
 | Basket size | 5.15 | 4.20 | 0.60 |
 | Prepared-food share | 0.059 | 0.056 | 0.53 |
 
-The intraclass correlation (ICC) measures what fraction of total variance is between
-customers rather than within: 0.60 for basket size, 0.53 for prepared-food share.
-Values near 0.5 mean between-customer and within-customer variation contribute roughly
-equally. A customer who averages 8 items per basket might place orders ranging from
-3 to 15. **Customer differences are real but modest** — order-to-order variation
-within a customer accounts for nearly half of the total variation.
+ICC (intraclass correlation) measures what fraction of total variation is between
+customers rather than within: 0.60 for basket size, 0.53 for prepared-food share. A
+customer averaging 8 items per basket places individual orders from 3 to 15.
 
-## Product switching
+### Many "personality" metrics really measure history length
 
-![Switch rate distribution](../figures/switch_rate_distribution.png)
+Repeat rate, novelty, and diversity move together almost perfectly (r > 0.9) and
+correlate 0.5–0.6 with the number of observed orders. More orders mechanically mean
+higher repeat rates and lower novelty — this is arithmetic, not behavior. "Repeater
+vs explorer" is largely "observed a lot vs observed a little." Treat these three as
+one observation-length-confounded measure, not three personality traits.
 
-The corrected switch rate (cross-order transitions only, excluding within-order
-coexistence) has median 0.26: about 1 in 4 consecutive uses of the same ingredient
-involves a different product. This varies widely across customers (p10 = 0.13,
-p90 = 0.59) and has low linear correlation with shopping volume (r = −0.04).
+The one behavioral metric that doesn't follow this pattern is **product switching**
+within an ingredient (r = −0.04 with order count): whether a customer sticks to one
+yogurt brand or rotates is unrelated to how much they shop. It's the cleanest candidate
+for a genuine individual trait, though this data can't confirm it's stable over time.
 
-Among the behavioral metrics examined, switch rate is the least confounded by
-purchase volume. Whether that makes it a stable individual characteristic or simply
-a measure that doesn't correlate with the most obvious confounder is a distinction
-this data cannot fully resolve — it would require experimental or longitudinal
-evidence beyond what purchase records provide.
+### Split-half stability
 
-## Behavioral metric distributions
+For customers with ≥20 orders, first-half vs second-half correlations of behavioral
+metrics run 0.73–0.82 — moderate stability, but inflated because the second half has a
+mechanically larger accumulated repertoire for everyone. Read as an upper bound on true
+individual stability.
 
-| Measure | p10 | median | p90 |
-|---------|----:|-------:|----:|
-| Product repeat rate | 0.35 | 0.58 | 0.79 |
-| New-ingredient rate | 0.14 | 0.30 | 0.51 |
-| Diversity (ings ÷ items) | 0.13 | 0.28 | 0.48 |
-| Switch rate (corrected) | 0.13 | 0.26 | 0.59 |
-| Prepared-food share | 0.00 | 0.03 | 0.12 |
-
-## Split-half stability
-
-For customers with ≥20 orders, first-half vs second-half correlations.
-**Caveat:** these correlations mix genuine stability with mechanical effects —
-the second half has a longer accumulated repertoire, so novelty is mechanically
-lower and repetition higher for every customer. The rank-order is meaningful (who
-explores more stays exploring more), but the magnitude is inflated.
-
-| Measure | r(first, second) |
-|---------|------------------:|
-| product_repeat | 0.81 |
-| new_ing_rate | 0.81 |
-| diversity | 0.82 |
-| switch_rate | 0.73 |
-
-Behavioral tendencies are moderately stable (r = 0.73–0.82). The repeat/novelty/
-diversity cluster is the most stable; switch rate is somewhat less so. But recall
-that within-customer variation is almost as large as between-customer — these
-correlations reflect a real signal buried in substantial noise, not a clean partition
-of customers into types.
+---
 
 ## Limitations
 
-Each item below names the problem and the direction of bias.
-
 - **Censoring.** Order counts and tenure are observed, not lifetime. Everything is
   conditioned on a truncated window.
-
-- **Repertoire metrics are mechanically tied to order count.** Repeat rate, novelty,
-  and diversity are cumulative: more observed orders → higher repeat, lower novelty,
-  by construction, independent of behavior. Their ±0.5–0.6 correlation with order
-  count is mostly this artifact, so "high-volume vs low-volume" and
-  "repeater vs explorer" are nearly the same axis. Treat these three as one
-  observation-length-confounded measure, not three traits.
-
-- **Split-half stability is inflated.** First vs second half differ in accumulated
-  repertoire, so novelty is lower and repetition higher in the second half for
-  *everyone*. A positive r (0.81 for new_ing_rate) therefore reflects a shared time
-  trend plus genuine rank-order persistence; we cannot separate the two. Read it as
-  an upper bound on true individual stability.
-
-- **ICC is approximate here.** The design is badly unbalanced (order counts range from
-  10 to 100+) and within-customer variance is not constant across customers, so the
-  0.60 / 0.53 values are descriptive summaries, not a clean one-way random-effects
-  decomposition. The qualitative point — within- and between-customer variation are
-  the same order of magnitude — is robust; the exact numbers are not.
-
-- **Switch rate uses one product per order.** When a customer buys several products of
-  an ingredient in one order, only the most-purchased is kept, so simultaneous variety
-  is not counted as switching. This is deliberate (the uncorrected version counted
-  within-order coexistence as switches and ran ~10 points higher) but it discards
-  information and the choice of representative is arbitrary.
-
-- **Low Pearson r ≠ independence.** Switch rate and prepared-food share have r ≈ 0
-  with order count. That rules out a linear volume relationship only. It does not
-  establish statistical independence, nor that either is a stable individual trait —
-  both would need longitudinal or experimental evidence this data can't provide.
+- **Repertoire metrics are mechanically tied to order count.** More observed orders →
+  higher repeat, lower novelty, by construction. Their correlation with order count is
+  mostly this artifact, so "repeater vs explorer" and "high-volume vs low-volume" are
+  nearly the same axis.
+- **Food-profile scoring uses recipe-derived signatures.** "Touching a cuisine's
+  distinctive ingredients" is a lower bar than cooking that cuisine, and distinctive
+  ingredients are not exclusive (one ingredient can signal several profiles). The
+  pantry-breadth and intensity results describe what's in the cart, not what's on the
+  plate.
+- **ICC is approximate** under the badly unbalanced design (order counts range 10 to
+  100+). The qualitative finding — within ≈ between — is robust; the exact numbers are
+  descriptive, not from a clean random-effects model.
+- **Split-half stability is inflated** by the shared time trend in novelty (everyone's
+  second half has lower novelty). The rank-order (who explores more keeps exploring more)
+  is real; the magnitude is an upper bound.
