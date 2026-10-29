@@ -105,3 +105,4 @@ analysis/outputs/*.csv
 !analysis/novelty/*.csv
 !analysis/prepared/*.csv
 !analysis/customers/*.csv
+!analysis/food_profiles/*.csv

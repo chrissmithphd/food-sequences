@@ -14,7 +14,8 @@ and legume-heavy at once. These are associations between ingredients and food ty
 care.
 
 - Sources: `scripts/affinity/` (`ingredient_map.py`, `build_associations.py`,
-  `evaluate.py`, `visualize_profiles.py`); reference data in `data/affinity/`.
+  `evaluate.py`, `customer_profiles.py`, `visualize_profiles.py`); reference data in
+  `data/affinity/`; customer summaries in this directory.
 - Evidence: two public recipe corpora — **Food.com** (231,637 recipes, dish/composition
   tags) for food styles, **What's Cooking / Yummly** (39,774 recipes, 20 cuisines) for
   cuisine. Full methodology: [Food Profiles reference →](../../docs/AFFINITY_REFERENCE.md).
@@ -145,6 +146,42 @@ Three cautions carry forward:
   baseline is the right tool for the third question (as the sequence analysis showed, it
   deflates temporal stories that are really just stable habits) — but it is not required
   to establish that a preference *exists*.
+
+## Do customers specialize, or sample broadly?
+
+![Share of customers reaching each profile](../figures/profiles_customer_reach.png)
+
+Scoring each customer's purchase history (`scripts/affinity/customer_profiles.py`, 106,246
+customers with ≥10 orders) against the profile signatures gives a first, deliberately
+conservative answer. To avoid the trap where staples make everyone look omnivorous, a
+customer only "touches" a profile through its **distinctive** ingredients (lift ≥ 2) — so
+buying onions and oil counts for nothing; buying curry paste, miso, or kidney beans
+counts.
+
+Even so, breadth is near-complete. The median customer buys the distinctive ingredients
+of **18–20 of 20 cuisines** and does so **regularly (in ≥20% of their orders) for ~15 of
+them**; meal styles and composition patterns are touched almost completely too. Nearly
+every profile reaches 75–99% of customers. The exceptions are the weakly-detectable ones
+from the recipe evaluation — roasts (50%), Japanese (75%) — not evidence of specialization
+so much as thin signatures.
+
+![Breadth by order count](../figures/profiles_customer_breadth.png)
+
+The obvious objection is the observation window: a customer with 100 orders will touch
+more profiles than one with 10, mechanically. But breadth is already near-complete for
+customers with just 10–14 orders (median 18 of 20 cuisines) and barely rises with more
+history — so this is genuine breadth, not a counting artifact. **Grocery baskets are
+omnivorous**: in ingredient terms, essentially everyone samples essentially every
+cuisine and food style, most of them often. A model that assigned each customer to one or
+two cuisines would be describing noise, not behavior.
+
+Two cautions keep this honest. "Touching a cuisine's distinctive ingredients" is a lower
+bar than *cooking that cuisine* — distinctive ingredients are not exclusive, and one
+ingredient can be distinctive for several profiles. And this measures *whether* a profile
+appears, not *how much*: the interesting customer-level signal for a future layer is not
+breadth (nearly everyone is broad) but **intensity and tilt** — which profiles a customer
+leans into relative to the broad baseline, and whether that tilt is stable or shifts over
+time. Breadth answers your first question; strength and evolution are the next ones.
 
 ## Limitations
 

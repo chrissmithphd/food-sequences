@@ -228,7 +228,19 @@ marinara, and filled pasta. A 20-way cuisine classifier reaches **58% accuracy f
 ingredients alone** — about 2.9× the 20% you'd get always guessing the most common
 cuisine — and where it confuses cuisines (Thai with Vietnamese, Italian with Greek), it's
 showing where ingredient evidence alone can't separate traditions that cook from
-overlapping pantries. [Full analysis and method →](analysis/food_profiles/)
+overlapping pantries.
+
+![How broadly customers sample food profiles](analysis/figures/profiles_customer_breadth.png)
+
+Pointed at Instacart customers, the reference gives a first, striking result. Scoring each
+customer only on profiles' *distinctive* ingredients (so staples don't make everyone look
+adventurous), the median customer buys the signatures of **18–20 of 20 cuisines**, most of
+them regularly — and that breadth is already near-complete for customers with just 10–14
+orders, so it isn't an artifact of watching some people longer. Grocery baskets are
+**omnivorous**: almost everyone samples almost every cuisine and food style. The open
+question isn't *which* cuisine a customer belongs to — essentially none specialize — but
+how strongly each leans toward particular profiles, and whether that shifts over time.
+[Full analysis and method →](analysis/food_profiles/)
 
 ---
 

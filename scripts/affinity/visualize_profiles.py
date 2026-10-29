@@ -168,6 +168,56 @@ def fig_combos_vs_singles():
     _save(fig, "profiles_combos_vs_singles")
 
 
+def fig_customer_reach():
+    d = pl.read_csv(AFF.parent.parent / "analysis" / "food_profiles" / "customer_profile_reach.csv")
+    d = d.sort("regular_frac", descending=False)
+    names = d["affinity_id"].to_list()
+    ever = [x * 100 for x in d["ever_touched_frac"].to_list()]
+    reg = [x * 100 for x in d["regular_frac"].to_list()]
+    dims = d["dimension"].to_list()
+    y = np.arange(len(names))
+    fig, ax = plt.subplots(figsize=(10, 12))
+    ax.barh(y, reg, color=[DIM_COLOR.get(x, GRAY) for x in dims], alpha=0.9, zorder=3,
+            label="buy it regularly (≥20% of orders)")
+    ax.scatter(ever, y, color="black", s=20, zorder=4, label="ever buy a distinctive ingredient")
+    ax.set_yticks(y)
+    ax.set_yticklabels(names, fontsize=8)
+    ax.set_xlabel("Share of customers (≥10 orders), %")
+    ax.set_xlim(0, 105)
+    ax.legend(loc="lower left", fontsize=9)
+    ax.set_title("Customers sample almost every food profile\n"
+                 "Share buying each profile's distinctive ingredients — ever (dot) and "
+                 "regularly (bar)",
+                 fontweight="bold", fontsize=12)
+    _save(fig, "profiles_customer_reach")
+
+
+def fig_customer_breadth():
+    d = pl.read_csv(AFF.parent.parent / "analysis" / "food_profiles" / "customer_breadth.csv")
+    bands = ["10-14", "15-19", "20-29", "30-49", "50-+"]
+    fig, ax = plt.subplots(figsize=(10, 6))
+    labels = {"cuisine": ("Cuisines (of 20)", BLUE),
+              "meal_style": ("Meal styles (of 14)", GREEN),
+              "composition": ("Composition (of 8)", ORANGE)}
+    for dim, (lab, col) in labels.items():
+        dd = d.filter(pl.col("dimension") == dim)
+        tot = dd["total_profiles"][0]
+        xs = [b for b in bands if b in dd["order_band"].to_list()]
+        frac_touch = [dd.filter(pl.col("order_band") == b)["median_touched"][0] / tot * 100 for b in xs]
+        frac_reg = [dd.filter(pl.col("order_band") == b)["median_regular"][0] / tot * 100 for b in xs]
+        ax.plot(xs, frac_touch, "-o", color=col, label=f"{lab} — ever", linewidth=2.3)
+        ax.plot(xs, frac_reg, "--o", color=col, alpha=0.6, label=f"{lab} — regularly")
+    ax.set_ylim(0, 105)
+    ax.set_xlabel("Customer's observed order count")
+    ax.set_ylabel("Median share of profiles touched (%)")
+    ax.legend(fontsize=8, loc="lower right", ncol=1)
+    ax.set_title("Breadth is near-complete, even for short histories\n"
+                 "Median customer touches almost every profile's distinctive "
+                 "ingredients — not a 1-or-2-cuisine story",
+                 fontweight="bold", fontsize=12)
+    _save(fig, "profiles_customer_breadth")
+
+
 def main():
     print("Generating Food Profiles figures...")
     fig_detectability()
@@ -175,6 +225,8 @@ def main():
     fig_common_vs_distinct()
     fig_cuisine_confusion()
     fig_combos_vs_singles()
+    fig_customer_reach()
+    fig_customer_breadth()
     print(f"All figures saved to {FIG}")
 
 
