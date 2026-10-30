@@ -82,14 +82,31 @@ all grocery purchase volume**.
 | black pepper | 2.1 | 20% | 12% |
 | spinach | 2.7 | 4% | 51% |
 
-The table reveals a split that matters for interpreting grocery data. **Frequently
-restocked staples** (onions, eggs, butter, spinach — bought by ~50% of customers, in
-10–18% of their orders) appear on grocery lists because they're consumed quickly.
-**Buy-once staples** (salt at 19%, black pepper at 12%, olive oil at 33%) are used just
-as constantly but purchased rarely — a container of salt lasts months, so a low grocery
-purchase rate doesn't mean people don't use salt. Recipe prevalence and grocery purchase
-frequency are *different measures of different things*, and confusing them would make
-every heavy salt user look like they never cook.
+The table reveals a split that matters for interpreting grocery data — two kinds of
+pantry staple that look completely different in purchase records despite being equally
+fundamental to cooking:
+
+**Frequently restocked** — consumed fast, repurchased regularly:
+- **Onion**: in 53% of recipes, 489k grocery purchases (1.6% of volume), 59% of customers buy it
+- **Eggs**: 20% of recipes, 382k purchases, 49% of customers
+- **Butter**: 22% of recipes, 243k purchases, 50% of customers
+- **Fresh herbs**: 36% of recipes, 401k purchases, 49% of customers
+- **Garlic**: 41% of recipes, 187k purchases, 40% of customers
+
+These show up in grocery data roughly proportional to how often recipes call for them.
+
+**Buy-once — in every kitchen, rarely on a grocery list:**
+- **Salt**: in **57% of recipes** but only **37k grocery purchases** (0.12% of volume), 19% of customers — a 26-oz container lasts months
+- **Black pepper**: 20% of recipes, **21k purchases** (0.07%), 12% of customers — a grinder lasts even longer
+- **Olive oil**: 23% of recipes, **98k purchases** (0.32%), 33% of customers — a bottle lasts weeks to months
+- **Cooking spray**: 3% of recipes, 13k purchases, very few customers
+- **Garlic powder**: 6% of recipes, 14k purchases — the jar in the back of the spice rack
+
+These are *invisible in grocery data* despite being essential to cooking. A customer who
+never buys salt on Instacart isn't someone who doesn't cook — they already have salt.
+This is one reason grocery purchases are a weaker signal of cooking behavior than recipe
+ingredient lists: the most universal ingredients are the ones least likely to appear in
+an order.
 
 ## Some ingredient pairs are more distinctive than any single ingredient
 
