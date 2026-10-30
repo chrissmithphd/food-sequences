@@ -69,6 +69,30 @@ Breakfast, baking, and salads are near-universal. Grilling and roasts are the on
 profiles that don't reach most customers regularly — both are cooking *methods* whose
 ingredient signatures are thin, not evidence that customers avoid them.
 
+### What individual shopping histories look like
+
+![Food-profile timelines for example customers](../figures/profiles_timelines.png)
+
+Each panel is one real customer, with orders across the top and food styles down the
+side — blue means the order contained distinctive ingredients for that style. Some
+patterns:
+
+- **Rare roaster** (100 orders): dense across breakfast, salads, baking — but the
+  roasts row is nearly blank, a profile this customer almost never triggers.
+- **Curry enthusiast** (25 orders): curries, stir-fries, and chili light up
+  consistently; pizza and casseroles are sparse.
+- **Dedicated baker** (43 orders): sweet baking and bread baking are solid bands across
+  the full history.
+- **Omnivore** (22 orders, 14 of 14 styles active): nearly every row is dense — this
+  customer genuinely buys distinctive ingredients across all food styles.
+- **Multi-style switcher** (100 orders): several styles appear in visible clusters that
+  come and go — soups heavier in some stretches, pasta in others — rather than staying
+  constant.
+
+These are illustrations, not a sample the statistics depend on. The quantitative
+findings above hold across all 106,246 customers; the timelines show what those numbers
+look like as real shopping histories.
+
 ---
 
 ## How engaged are customers?
