@@ -2,8 +2,8 @@
 """Score each customer's purchase history against the Food Profiles reference.
 
 Strictly multi-label: every customer gets evidence on ALL profiles, never one bucket.
-A customer "touches" a profile only through its DISTINCTIVE ingredients (lift >= 2,
-support >= 30) — staples like onion/oil (lift ~ 1) are excluded by construction, so
+A customer "touches" a profile only through its DISTINCTIVE ingredients (lift >= 5,
+support >= 30) — pantry staples like onion/oil/baking powder are excluded, so
 breadth measures genuine sampling, not the fact that staples appear everywhere.
 
 Because longer histories mechanically touch more profiles (the truncation confound

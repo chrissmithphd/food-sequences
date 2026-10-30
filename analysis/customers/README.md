@@ -81,20 +81,21 @@ steak, roast cuts) are specific enough that only customers who buy them register
 ![Food-profile timelines for example customers](../figures/profiles_timelines.png)
 
 Each panel is one real customer, with orders across the top and food styles down the
-side — blue means the order contained distinctive ingredients for that style. Some
-patterns:
+side — blue means the order contained strongly distinctive ingredients (lift ≥ 5) for
+that style. Some patterns:
 
-- **Rare roaster** (100 orders): dense across breakfast, salads, baking — but the
-  roasts row is nearly blank, a profile this customer almost never triggers.
-- **Curry enthusiast** (25 orders): curries, stir-fries, and chili light up
-  consistently; pizza and casseroles are sparse.
-- **Dedicated baker** (43 orders): sweet baking and bread baking are solid bands across
-  the full history.
-- **Omnivore** (22 orders, 14 of 14 styles active): nearly every row is dense — this
-  customer genuinely buys distinctive ingredients across all food styles.
-- **Multi-style switcher** (100 orders): several styles appear in visible clusters that
-  come and go — soups heavier in some stretches, pasta in others — rather than staying
-  constant.
+- **Grill-focused** (49 orders): a solid **grilling_bbq** band and almost nothing else
+  — a genuinely specialized customer.
+- **Curry enthusiast** (27 orders): curries, chili, and stir-fries visible; most other
+  rows sparse.
+- **Dedicated baker** (31 orders): sweet baking and sandwiches show up; most cooking
+  styles are absent.
+- **Broad sampler** (23 orders, 9 styles active): many rows have dots — this customer
+  genuinely buys distinctive ingredients across food styles.
+- **Narrow buyer** (100 orders): one dense row (casseroles) and white everywhere else
+  — 100 orders but nearly no food-profile signal beyond one style.
+- **Multi-style** (100 orders): scattered dots across several styles, no single
+  dominant pattern — diffuse purchasing over a long history.
 
 These are illustrations, not a sample the statistics depend on. The quantitative
 findings above hold across all 106,246 customers; the timelines show what those numbers

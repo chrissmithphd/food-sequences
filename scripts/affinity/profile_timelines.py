@@ -34,7 +34,7 @@ FIG = ROOT / "analysis" / "figures"
 FIG.mkdir(exist_ok=True, parents=True)
 
 BLUE, GREEN, ORANGE, RED, PURPLE, GRAY = "#1565C0", "#2E7D32", "#EF6C00", "#C62828", "#6A1B9A", "#757575"
-LIFT_MIN, SUPPORT_MIN = 2.0, 30
+LIFT_MIN, SUPPORT_MIN = 5.0, 30   # must match customer_profiles.py threshold
 
 # meal-style profiles to show (most interpretable subset)
 SHOW_PROFILES = [
@@ -97,56 +97,61 @@ def find_examples(hits, orders):
         if roast_low.height > 0:
             examples["Rare roaster"] = roast_low["user_id"][0]
 
-    # 2. Meat-heavy: high meat_centered, low seafood
-    if "grilling_bbq" in wide.columns and "sweet_baking" in wide.columns:
-        meat = wide.filter((pl.col("grilling_bbq") >= 0.4))
+    # Helper: exclude already-chosen users
+    def unused(df):
+        used = set(examples.values())
+        return df.filter(~pl.col("user_id").is_in(used)) if used else df
+
+    # 2. Grill-focused
+    if "grilling_bbq" in wide.columns:
+        meat = unused(wide.filter(pl.col("grilling_bbq") >= 0.15))
         if meat.height > 0:
             examples["Grill-focused"] = meat.sort("grilling_bbq", descending=True)["user_id"][0]
 
-    # 3. Seafood-heavy (via pasta_dishes as proxy — we need seafood in meal_style...
-    # Actually seafood is composition, not meal_style. Let me use curry-heavy instead.
+    # 3. Curry enthusiast: at lift>=5 thresholds are lower
     if "curries" in wide.columns:
-        curry = wide.filter(pl.col("curries") >= 0.6).sort("curries", descending=True)
+        curry = unused(wide.filter(pl.col("curries") >= 0.15).sort("curries", descending=True))
         if curry.height > 0:
             examples["Curry enthusiast"] = curry["user_id"][0]
 
-    # 4. Baker: sweet_baking dominant
+    # 4. Baker: sweet_baking visible
     if "sweet_baking" in wide.columns:
-        baker = wide.filter(pl.col("sweet_baking") >= 0.7).sort("sweet_baking", descending=True)
+        baker = unused(wide.filter(pl.col("sweet_baking") >= 0.2).sort("sweet_baking", descending=True))
         if baker.height > 0:
             examples["Dedicated baker"] = baker["user_id"][0]
 
-    # 5. Broad omnivore: many profiles all above 0.3, exclude already-chosen users
+    # 5. Broad sampler: touches many profiles (but at lift>=5, this is genuinely broad)
     profile_cols = [c for c in SHOW_PROFILES if c in wide.columns]
-    used = set(examples.values())
     if profile_cols:
         wide2 = wide.with_columns(
-            pl.concat_list([pl.col(c) >= 0.3 for c in profile_cols]).list.sum().alias("n_broad")
+            pl.concat_list([pl.col(c) >= 0.1 for c in profile_cols]).list.sum().alias("n_active")
         )
-        omni = (wide2.filter((pl.col("n_broad") >= 10) & (~pl.col("user_id").is_in(used)))
-                .sort("n_broad", descending=True))
+        omni = (unused(wide2.filter(pl.col("n_active") >= 8))
+                .sort("n_active", descending=True))
         if omni.height > 0:
-            examples["Omnivore"] = omni["user_id"][0]
+            examples["Broad sampler"] = omni["user_id"][0]
 
-    # 6. Stir-fry focused
-    if "stir_fries" in wide.columns:
-        sf = wide.filter(pl.col("stir_fries") >= 0.5).sort("stir_fries", descending=True)
-        if sf.height > 0:
-            examples["Stir-fry focused"] = sf["user_id"][0]
-
-    # 7. Profile switcher: someone with 2-3 strong profiles that alternate in clusters
-    # measured by high variance in rolling-window profile shares
-    # find someone with >=40 orders and 2+ profiles each above 0.3 but neither above 0.7
+    # 6. Narrow buyer: touches very few profiles — the contrast to the omnivore
     if profile_cols:
-        multi = wide.filter(pl.col("n_orders") >= 40)
-        multi = multi.with_columns(
-            pl.concat_list([pl.col(c) >= 0.3 for c in profile_cols]).list.sum().alias("n_strong"),
-            pl.max_horizontal([pl.col(c) for c in profile_cols]).alias("max_share"),
+        wide3 = wide.with_columns(
+            pl.concat_list([pl.col(c) > 0 for c in profile_cols]).list.sum().alias("n_any")
         )
-        switcher = (multi.filter((pl.col("n_strong") >= 3) & (pl.col("max_share") <= 0.70))
-                    .sort("n_orders", descending=True))
-        if switcher.height > 0:
-            examples["Multi-style switcher"] = switcher["user_id"][0]
+        narrow = (unused(wide3.filter((pl.col("n_any") <= 4) & (pl.col("n_orders") >= 20)))
+                  .sort("n_orders", descending=True))
+        if narrow.height > 0:
+            examples["Narrow buyer"] = narrow["user_id"][0]
+
+    # 7. Multi-style switcher: several profiles present but not all at once
+    if profile_cols:
+        multi = unused(wide.filter(pl.col("n_orders") >= 40))
+        if multi.height > 0:
+            multi = multi.with_columns(
+                pl.concat_list([pl.col(c) >= 0.1 for c in profile_cols]).list.sum().alias("n_strong"),
+                pl.max_horizontal([pl.col(c) for c in profile_cols]).alias("max_share"),
+            )
+            switcher = multi.filter((pl.col("n_strong") >= 3) & (pl.col("max_share") <= 0.35))
+            if switcher.height > 0:
+                examples["Multi-style"] = switcher.sort("n_orders", descending=True)["user_id"][0]
 
     print(f"Found {len(examples)} example customers:")
     for label, uid in examples.items():
