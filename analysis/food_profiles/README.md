@@ -60,6 +60,37 @@ high-lift ingredients: `marinara`, `ricotta`, `filled_pasta`, `pesto`. Ranking b
 frequency would surface garlic and miss ricotta; ranking by lift does the opposite. Any
 detector built on this reference must weight by distinctiveness, not popularity.
 
+## Pantry staples: the noise in food-profile detection
+
+![Pantry staples scatter](../figures/profiles_pantry_staples.png)
+
+Some ingredients appear in recipes for *every* food style but are never distinctive of
+any one — they are the background noise a detector must filter out. We define **pantry
+staples** as ingredients whose maximum lift across all profiles is below 3: they show up
+everywhere but signal nothing specific. There are 22 of them, accounting for **~12% of
+all grocery purchase volume**.
+
+| Ingredient | Max lift (best profile) | Mean recipe prevalence | % of customers who buy it |
+|---|---:|---:|---:|
+| salt | 1.4 | 57% | 19% |
+| onion | 2.1 | 53% | 59% |
+| garlic | 2.4 | 41% | 40% |
+| fresh herbs | 1.7 | 36% | 49% |
+| olive oil | 2.4 | 23% | 33% |
+| butter | 2.6 | 22% | 50% |
+| eggs | 2.6 | 20% | 49% |
+| black pepper | 2.1 | 20% | 12% |
+| spinach | 2.7 | 4% | 51% |
+
+The table reveals a split that matters for interpreting grocery data. **Frequently
+restocked staples** (onions, eggs, butter, spinach — bought by ~50% of customers, in
+10–18% of their orders) appear on grocery lists because they're consumed quickly.
+**Buy-once staples** (salt at 19%, black pepper at 12%, olive oil at 33%) are used just
+as constantly but purchased rarely — a container of salt lasts months, so a low grocery
+purchase rate doesn't mean people don't use salt. Recipe prevalence and grocery purchase
+frequency are *different measures of different things*, and confusing them would make
+every heavy salt user look like they never cook.
+
 ## Some ingredient pairs are more distinctive than any single ingredient
 
 ![Best pair lift vs. best single-ingredient lift](../figures/profiles_combos_vs_singles.png)

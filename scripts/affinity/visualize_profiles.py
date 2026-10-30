@@ -168,6 +168,51 @@ def fig_combos_vs_singles():
     _save(fig, "profiles_combos_vs_singles")
 
 
+def fig_pantry_staples():
+    """Pantry staples: high recipe prevalence, low distinctiveness, variable grocery buying."""
+    import csv
+    from collections import defaultdict
+    assoc = list(csv.DictReader(open(str(AFF / "ingredient_associations.csv"))))
+    max_lift = defaultdict(float)
+    n_profiles = defaultdict(int)
+    mean_prev = defaultdict(list)
+    for r in assoc:
+        s = r["slug"]
+        lf = float(r["lift"])
+        if lf > max_lift[s]:
+            max_lift[s] = lf
+        if lf >= 1.0:
+            n_profiles[s] += 1
+        mean_prev[s].append(float(r["prevalence"]))
+    ai = pl.read_csv(str(AFF.parent.parent / "analysis" / "ingredients" / "all_ingredients.csv"))
+    vol = dict(zip(ai["ingredient"].to_list(), ai["purchases"].to_list()))
+    staples = []
+    for s in max_lift:
+        if max_lift[s] < 3.0 and n_profiles[s] >= 5:
+            mp = sum(mean_prev[s]) / len(mean_prev[s])
+            staples.append((s, max_lift[s], n_profiles[s], mp, vol.get(s, 0)))
+    staples.sort(key=lambda x: x[1])
+    # scatter: x = max lift, y = mean recipe prevalence, size = grocery volume
+    fig, ax = plt.subplots(figsize=(11, 7))
+    names = [s[0] for s in staples]
+    x = [s[1] for s in staples]
+    y = [s[3] * 100 for s in staples]
+    sizes = [max(20, min(300, s[4] / 3000)) for s in staples]
+    ax.scatter(x, y, s=sizes, color=ORANGE, alpha=0.7, zorder=3, edgecolors="white")
+    for i, (nm, xi, yi) in enumerate(zip(names, x, y)):
+        if yi > 5 or xi < 2.0:
+            ax.annotate(nm, (xi, yi), fontsize=8, xytext=(4, 4), textcoords="offset points")
+    ax.axvline(3.0, color=GRAY, linestyle="--", linewidth=1, label="lift = 3 threshold")
+    ax.set_xlabel("Maximum lift across all food profiles — how distinctive at best")
+    ax.set_ylabel("Mean recipe prevalence (%) — how common in recipes")
+    ax.set_title("Pantry staples: common in recipes, never distinctive of any food style\n"
+                 "These ingredients appear everywhere but signal nothing specific — "
+                 "they are the noise in food-profile detection",
+                 fontweight="bold", fontsize=12)
+    ax.legend(fontsize=9)
+    _save(fig, "profiles_pantry_staples")
+
+
 def fig_pantry_vs_profiles():
     d = pl.read_csv(AFF.parent.parent / "analysis" / "food_profiles" / "customer_pantry_vs_profiles.csv")
     fig, ax = plt.subplots(figsize=(10, 6))
@@ -258,6 +303,7 @@ def main():
     fig_customer_reach()
     fig_customer_breadth()
     fig_pantry_vs_profiles()
+    fig_pantry_staples()
     print(f"All figures saved to {FIG}")
 
 
