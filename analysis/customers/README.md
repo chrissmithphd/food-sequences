@@ -19,55 +19,62 @@ composition patterns. Scoring each customer's history against those signatures �
 only the *distinctive* ingredients per profile, so staples like onions and oil don't
 inflate the count — gives a first concrete picture.
 
-### Everyone samples broadly
+### How broadly do customers sample?
 
-The median customer buys the distinctive ingredients of **18–20 of 20 cuisines**, most
-of them regularly (in ≥20% of orders). Meal styles (13–14 of 14) and composition
-patterns (all 8 of 8) are touched almost completely. This breadth is near-complete even
-for customers with just 10–14 orders, so it's genuine — not a side effect of observing
-some people longer. **Grocery baskets are omnivorous.** A model assigning each customer
-to one or two cuisines would be describing noise.
+Scoring customers only on ingredients that are **strongly** distinctive of each food
+style (lift ≥ 5 — so baking powder doesn't count as "baking" and bananas don't count as
+"banana bread"), the picture is moderate, not universal:
 
-### But some food styles are bought much more consistently than others
+The median customer samples **8–11 of 14 meal styles** across their history (growing
+with order count), but only buys **~4 regularly** (in ≥20% of orders). Sandwiches (90%
+of customers ever) and salads (82%) are widely sampled because their distinctive
+ingredients (bagels, arugula, cucumber) genuinely are popular; bread baking (28% ever,
+5% regularly) and grilling (18% / 3%) are minority pursuits — just as you'd expect.
 
-![Pantry size vs food styles bought consistently](../figures/profiles_pantry_vs_core.png)
+### Pantry size predicts how many food styles a customer buys consistently
 
-Nearly everyone *touches* every style, but not equally. How many food styles a customer
-buys **consistently** — whose distinctive ingredients appear in at least half their
-orders — ranges from 3 to 11, driven by pantry size:
+![Bigger pantries mean more kinds of cooking](../figures/profiles_pantry_vs_core.png)
 
-| Ingredient repertoire | Median distinct ings | Styles sampled (of 14) | Styles bought consistently |
+| Ingredient repertoire | Median distinct ings | Styles sampled (of 14) | Bought consistently (≥50% of orders) |
 |---|---:|---:|---:|
-| 1–19 ingredients | 13 | 9 | 3 |
-| 20–34 | 27 | 13 | 5 |
-| 35–49 | 42 | 13 | 8 |
-| 50–74 | 61 | 14 | 10 |
-| 75+ | 91 | 14 | 11 |
+| 1–19 ingredients | 13 | 3 | 0 |
+| 20–34 | 27 | 6 | 1 |
+| 35–49 | 42 | 8 | 1 |
+| 50–74 | 61 | 10 | 2 |
+| 75+ | 91 | 12 | 2 |
 
-Bigger pantries don't just mean more of the same — they mean more kinds of cooking.
-And even within omnivorous sampling there's a dominant lean: the median customer's
-strongest single food style appears in **58% of their orders**.
+**34% of customers have zero food styles they buy consistently** at the ≥50%-of-orders
+bar — they sample but don't specialize. Even among the broadest shoppers (91
+ingredients), the median consistently buys only 2 food styles. The median customer's
+strongest single food style appears in **20% of their orders** (p75 = 40%).
 
-### Which profiles reach the most customers?
+Bigger pantries mean more styles sampled and a modestly stronger lean — but the dominant
+pattern is diffuse purchasing, not clear specialization.
+
+### Which food styles are most widely bought?
 
 ![Per-profile customer reach](../figures/profiles_customer_reach.png)
 
 | Profile | Ever buy its distinctive ingredients | Buy them regularly (≥20% of orders) |
 |---|---:|---:|
-| Breakfast | 99% | 95% |
-| Sweet baking | 99% | 94% |
-| Salads | 97% | 90% |
-| Curries | 95% | 85% |
-| Pasta | 94% | 83% |
-| Stir-fries | 94% | 81% |
-| Seafood | 92% | 72% |
-| Pizza | 89% | 70% |
-| Grilling & BBQ | 82% | 41% |
-| Roasts | 51% | 8% |
+| Sandwiches | 90% | 71% |
+| Salads | 82% | 55% |
+| Casseroles | 81% | 49% |
+| Chili | 76% | 41% |
+| Curries | 74% | 43% |
+| Sweet baking | 71% | 31% |
+| Stir-fries | 69% | 31% |
+| Breakfast | 67% | 29% |
+| Pizza | 67% | 28% |
+| Pasta | 62% | 25% |
+| Soups & stews | 58% | 23% |
+| Bread baking | 28% | 5% |
+| Grilling & BBQ | 18% | 3% |
+| Roasts | 3% | 0.2% |
 
-Breakfast, baking, and salads are near-universal. Grilling and roasts are the only
-profiles that don't reach most customers regularly — both are cooking *methods* whose
-ingredient signatures are thin, not evidence that customers avoid them.
+Sandwiches and salads are the most widely purchased food styles. Bread baking, grilling,
+and roasting are genuine minority behaviors — their ingredient signatures (bread flour,
+steak, roast cuts) are specific enough that only customers who buy them register.
 
 ### What individual shopping histories look like
 

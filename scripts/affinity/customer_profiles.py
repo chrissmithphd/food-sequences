@@ -31,7 +31,7 @@ from analyze_reorder import iter_events  # noqa: E402
 
 AFF = ROOT / "data" / "affinity"
 OUT = ROOT / "analysis" / "food_profiles"
-LIFT_MIN, SUPPORT_MIN = 2.0, 30
+LIFT_MIN, SUPPORT_MIN = 5.0, 30   # lift>=5 excludes pantry staples that inflate reach
 REGULAR_SHARE = 0.20          # "often" = profile evidence in >=20% of a customer's orders
 CORE_SHARE = 0.50             # "core lean" = profile evidence in >=50% of a customer's orders
 MIN_ORDERS = 10               # restrict to customers with enough history to be meaningful

@@ -152,30 +152,27 @@ Three cautions carry forward:
 ![Share of customers reaching each profile](../figures/profiles_customer_reach.png)
 
 Scoring each customer's purchase history (`scripts/affinity/customer_profiles.py`, 106,246
-customers with ≥10 orders) against the profile signatures gives a first, deliberately
-conservative answer. To avoid the trap where staples make everyone look omnivorous, a
-customer only "touches" a profile through its **distinctive** ingredients (lift ≥ 2) — so
-buying onions and oil counts for nothing; buying curry paste, miso, or kidney beans
-counts.
+customers with ≥10 orders) against the profile signatures — using only **strongly
+distinctive** ingredients (lift ≥ 5, so baking powder doesn't count as "baking" and
+bananas don't count as "banana bread").
 
-Even so, breadth is near-complete. The median customer buys the distinctive ingredients
-of **18–20 of 20 cuisines** and does so **regularly (in ≥20% of their orders) for ~15 of
-them**; meal styles and composition patterns are touched almost completely too. Nearly
-every profile reaches 75–99% of customers. The exceptions are the weakly-detectable ones
-from the recipe evaluation — roasts (50%), Japanese (75%) — not evidence of specialization
-so much as thin signatures.
+The median customer samples **8–11 of 14 meal styles** across their history (growing
+with order count), but only **~4 regularly** (in ≥20% of orders). Sandwiches (90% of
+customers ever) and salads (82%) are widely sampled because their distinctive ingredients
+are genuinely popular; bread baking (28% ever, 5% regularly) and grilling (18% / 3%)
+are minority pursuits — just as you'd expect.
 
-The obvious objection is the observation window: a customer with 100 orders will touch
-more profiles than one with 10, mechanically. But breadth is already near-complete for
-customers with just 10–14 orders (median 18 of 20 cuisines) and barely rises with more
-history — so this is genuine breadth, not a counting artifact. **Grocery baskets are
-omnivorous**: a model assigning each customer to one or two cuisines would be describing
-noise, not behavior.
-
-Since breadth is near-universal, the more revealing question is how many food styles
-each customer *leans into consistently*:
+Breadth does grow with order count (10-order customers touch ~8 styles; 50+ touch ~11)
+but this reflects both genuine exploration and the mechanical fact that more orders
+expose more ingredients. The revealing question is how many food styles each customer
+buys *consistently*:
 
 ![Bigger pantries mean more kinds of cooking](../figures/profiles_pantry_vs_core.png)
+
+**34% of customers have zero food styles they buy consistently** (≥50% of orders).
+Even among the broadest shoppers (91 ingredients), the median buys only 2 styles
+consistently. The median customer's strongest single food style appears in **20% of
+their orders**. Most purchasing is diffuse rather than specialized.
 
 Two cautions keep this honest. "Touching a cuisine's distinctive ingredients" is a lower
 bar than *cooking that cuisine* — distinctive ingredients are not exclusive, and one

@@ -201,19 +201,19 @@ The median customer places **10 orders** over ~5 months, **8 items** per trip, e
 ~13 days. A heavy tail shops weekly. Basket size barely varies with engagement — **it's
 frequency that differs**, not trip size.
 
-Scored against food-profile signatures (distinctive ingredients only — staples excluded),
-the median customer buys the ingredients of **18–20 of 20 cuisines**, most of them
-regularly. Grocery baskets are **omnivorous**: a model assigning each customer to one
-cuisine would describe noise. But breadth isn't the whole story — pantry size predicts
-how many food styles a customer *leans into consistently*:
+Scored against food-profile signatures (using only strongly distinctive ingredients —
+lift ≥ 5, so baking powder doesn't count as "baking" and bananas don't count as "banana
+bread"), customers are moderately broad: the median samples **8–11 of 14 meal styles**
+but buys only **~4 regularly**. Sandwiches (90%) and salads (82%) are widely sampled;
+bread baking (28%) and grilling (18%) are genuine minority pursuits.
 
 ![Bigger pantries mean more kinds of cooking](analysis/figures/profiles_pantry_vs_core.png)
 
-A customer buying 13 distinct ingredients buys 3 food styles consistently (in ≥50% of
-their orders); one buying 91 buys 11. The strongest single food style shows up in
-**58% of the median customer's orders**, so there *is* a dominant lean, even within the
-broad sampling. The interesting signal isn't which cuisine a customer "belongs to" —
-none specialize — but which styles they lean into, how deeply, and whether that shifts.
+Pantry size (how many distinct ingredients a customer has ever bought) predicts how many
+food styles they sample — but **34% of customers have zero styles they buy consistently**
+(in ≥50% of orders), and even the broadest shoppers (91 ingredients) typically hold to
+just 2. Most customers sample diffusely rather than specializing, and the median
+customer's strongest food style appears in only **20% of their orders**.
 [Full analysis →](analysis/customers/)
 
 ---
@@ -251,11 +251,12 @@ tempting story rather than confirming one.
    shape. Whether it substitutes for or supplements fresh cooking is a real question this
    data cannot settle.
 
-6. **Food styles are legible in ingredients — unevenly.** Built from external recipes,
-   the Food Profiles reference recognizes seafood, baking, salads, and pasta well from
-   ingredients and is near-useless for cooking *methods* (roasting, grilling) that lack
-   distinctive ingredients. It's a reference and a recipe-level validation, not yet a
-   statement about any Instacart customer.
+6. **Food styles are legible in ingredients — unevenly, and most customers are diffuse.**
+   The Food Profiles reference recognizes seafood, baking, salads, and pasta well from
+   ingredients and is near-useless for cooking *methods* (roasting, grilling). Pointed at
+   Instacart customers, the honest result is that most people sample many food styles but
+   specialize in few — 34% have zero styles they buy consistently, and the median
+   customer's strongest style appears in only 20% of their orders.
 
 The connecting thread: reading food choice from purchase records means continually
 separating stable preference from temporary behavior, food from packaging, and signal
