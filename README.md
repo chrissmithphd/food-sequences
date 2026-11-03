@@ -115,14 +115,22 @@ it has fallen to **~5–7%** and is still drifting down.
 
 ![What happens after a customer tries a new ingredient](analysis/figures/tried_once.png)
 
-A more truncation-resistant way to measure exploration: of the distinct ingredients a
-customer tries, **about a third are bought exactly once and never again** — they don't
-become part of the customer's purchasing. The rest are adopted (bought 3+ times). This
-tried-and-dropped rate is more stable across observation lengths than the raw novelty
-rate: it moves from 50% to 32% as history length increases (vs. novelty's 100% to 6%).
-Discoveries tilt toward the long tail (the top 20 ingredients are 37% of purchases but
-only 24% of first-time discoveries), and people differ in how much they explore (p10 =
-6%, p90 = 41% at matched history length).
+A more truncation-resistant measure: of the distinct ingredients a customer tries,
+**about a third are bought once and never again**, ~16% get a second purchase but don't
+stick, and the rest are adopted (bought 3+ times). The one-and-done rate declines with
+longer observation (50% → 32% as order count grows) — some ingredients that look
+abandoned were just waiting for a second purchase — but it moves gradually, unlike the
+raw novelty rate which crashes from 100% to 6%.
+
+![How individual customers explore over time](analysis/figures/novelty_individuals.png)
+
+Individual exploration histories show what these numbers look like in practice. The
+active explorer keeps discovering new ingredients throughout 50+ orders; the low
+explorer's repertoire plateaus by order 10 with only occasional additions. The fast
+slowdown shows a customer who tried many new ingredients early and then almost stopped —
+the pattern the population-level truncation chart averages over. Customers differ in
+how much they explore (p10 = 6%, p90 = 41% at matched history length), and those
+differences persist over time.
 
 ## Where prepared dishes fit
 
