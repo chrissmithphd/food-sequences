@@ -90,21 +90,16 @@ one basket can hold several meals and a week of restocking.
 
 ![How often customers repurchase each ingredient](analysis/figures/gap_histograms.png)
 
-How many orders pass between purchases varies enormously by ingredient. Banana and milk
-appear in nearly every order for the customers who buy them; chicken breast and ground
-beef return every 2–3 orders; curry paste is separated by many more. These repurchase
-rhythms are a baseline that any sequence model has to beat.
+How many orders pass between purchases varies by ingredient. Banana and milk return
+nearly every order; chicken breast every 2–3; curry paste is spread across many. These
+repurchase rhythms are simple — but they turn out to be the strongest signal in the data.
 
-To isolate what is genuinely about *timing* beyond simple frequency, each customer's
-orders are compared against a **frequency-preserving shuffle** — the same baskets and
-purchase rates, with the order scrambled. A product returns in the next order **28% more
-often than the shuffle** (lift 1.28×), a real effect — but it shrinks at broader grains
-(ingredient 1.15×, category 1.04×) and most named "patterns" (staples, returns,
-rotations) occur at or below the rate a reshuffle produces.
-
-The central finding: a customer's **long-run purchase frequency predicts the next order
-better than any recency rule tested.** What someone bought recently does not beat how
-often they buy it. Most apparent sequence "patterns" are frequency in disguise.
+A customer's **long-run purchase frequency predicts the next order better than any
+recency rule tested.** What someone bought recently does not beat how often they buy it.
+To test whether there's anything in the *sequence* beyond frequency, each customer's
+orders are compared against a shuffle that preserves their purchase rates but scrambles
+the order — and most named "patterns" (staples, returns, rotations) occur at the same
+rate in the shuffle. They are frequency in disguise. [Full analysis →](analysis/sequences/)
 
 ## How customers try unfamiliar foods
 
@@ -118,11 +113,13 @@ truncation. The data starts mid-history, so a customer's first observed order is
 "new" by construction, and apparent novelty decays as the window lengthens. By order 50
 it has fallen to **~5–7%** and is still drifting down.
 
-What holds up: the 20 most-popular ingredients are 37% of purchases but only 24% of
-first-time discoveries — people branch out into the long tail, not the core.
-Repertoires grow slowly and never saturate (71 of 543 ingredients at order 50). People
-differ in how much they explore (p10 = 6%, p90 = 41% at matched history length), and
-those who explore more early stay relatively more exploratory later.
+A more truncation-resistant way to measure exploration: of the distinct ingredients a
+customer tries, **37% are bought exactly once and never again** (median, for customers
+with ≥20 orders). The rest are adopted into their purchasing — bought 3+ times. This
+tried-and-dropped rate is more stable across observation lengths than the raw novelty
+rate. Discoveries tilt toward the long tail (the top 20 ingredients are 37% of purchases
+but only 24% of first-time discoveries), and people differ in how much they explore
+(p10 = 6%, p90 = 41% at matched history length).
 
 ## Where prepared dishes fit
 

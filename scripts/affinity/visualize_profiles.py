@@ -235,8 +235,8 @@ def fig_pantry_vs_profiles():
     ax.set_ylim(0, 16)
     ax.set_xlabel("Customer's ingredient repertoire")
     ax.legend(loc="upper left", fontsize=9)
-    ax.set_title("Bigger pantries mean more kinds of cooking\n"
-                 "Customers with 13 ingredients buy 3 food styles consistently; "
+    ax.set_title("More ingredients purchased → more kinds of cooking\n"
+                 "Customers with 13 distinct ingredients buy 3 food styles consistently; "
                  "at 91 ingredients, 11",
                  fontweight="bold", fontsize=12)
     fig.tight_layout()

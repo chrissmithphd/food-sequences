@@ -33,7 +33,7 @@ ingredients (bagels, arugula, cucumber) genuinely are popular; bread baking (28%
 
 ### Unique ingredient count predicts how many food styles a customer buys consistently
 
-![Bigger pantries mean more kinds of cooking](../figures/profiles_pantry_vs_core.png)
+![More distinct ingredients purchased means more kinds of cooking](../figures/profiles_pantry_vs_core.png)
 
 | Ingredient repertoire | Median distinct ings | Styles sampled (of 14) | Bought consistently (≥50% of orders) |
 |---|---:|---:|---:|
