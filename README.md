@@ -113,13 +113,16 @@ truncation. The data starts mid-history, so a customer's first observed order is
 "new" by construction, and apparent novelty decays as the window lengthens. By order 50
 it has fallen to **~5–7%** and is still drifting down.
 
+![What happens after a customer tries a new ingredient](analysis/figures/tried_once.png)
+
 A more truncation-resistant way to measure exploration: of the distinct ingredients a
-customer tries, **37% are bought exactly once and never again** (median, for customers
-with ≥20 orders). The rest are adopted into their purchasing — bought 3+ times. This
+customer tries, **about a third are bought exactly once and never again** — they don't
+become part of the customer's purchasing. The rest are adopted (bought 3+ times). This
 tried-and-dropped rate is more stable across observation lengths than the raw novelty
-rate. Discoveries tilt toward the long tail (the top 20 ingredients are 37% of purchases
-but only 24% of first-time discoveries), and people differ in how much they explore
-(p10 = 6%, p90 = 41% at matched history length).
+rate: it moves from 50% to 32% as history length increases (vs. novelty's 100% to 6%).
+Discoveries tilt toward the long tail (the top 20 ingredients are 37% of purchases but
+only 24% of first-time discoveries), and people differ in how much they explore (p10 =
+6%, p90 = 41% at matched history length).
 
 ## Where prepared dishes fit
 
@@ -176,22 +179,24 @@ The median customer places **10 orders** over ~5 months, **8 items** per trip, e
 varies**, not trip size.
 
 Scored against food-profile signatures, customers are moderately broad: the median
-samples **8–11 of 14 meal styles** but buys only **~4 regularly**. A customer's unique
-ingredient count (how many distinct ingredients they've purchased across their observed
-history) predicts how many food styles they buy consistently:
+samples **8–11 of 14 meal styles** but buys only **~4 regularly**. **34% have zero
+food styles they buy consistently** (in ≥50% of orders), and the median customer's
+strongest style appears in only **20% of their orders**.
 
-![Unique ingredient count predicts food-style variety](analysis/figures/profiles_pantry_vs_core.png)
+![Food-profile timelines for example customers](analysis/figures/profiles_timelines.png)
 
-A customer who has bought 13 distinct ingredients has 3 food styles they sample; one who
-has bought 91 has 12 — but even the broadest shoppers typically buy only 2 food styles
-consistently (in ≥50% of orders). **34% of customers have zero food styles they buy
-consistently.** The median customer's strongest single style appears in only **20% of
-their orders**. Most purchasing is diffuse.
+The timelines make this concrete. Each row is a food style; each column is an order;
+blue means that order contained the style's distinctive ingredients. The grill-focused
+customer has one dense band and white everywhere else. The narrow buyer has casseroles
+and nothing else across 100 orders. The broad sampler has dots across many rows. Most
+customers look more like the multi-style panel — scattered, diffuse purchasing — than
+like any of the focused ones.
 
-But the minorities are identifiable: the 28% who buy bread-baking ingredients, the 18%
-who buy grilling ingredients, the customers whose strongest food style appears in 40%+
-of their orders — those are specific, measurable populations with distinctive ingredient
-signatures. [Full analysis →](analysis/customers/)
+A customer's unique ingredient count (how many distinct ingredients they've purchased)
+predicts food-style variety: 13 ingredients → 3 styles sampled; 91 → 12. But even the
+broadest shoppers typically buy only 2 styles consistently. The minorities who do
+specialize — the 28% who buy bread-baking ingredients, the 18% who grill — are
+identifiable from their distinctive ingredients. [Full analysis →](analysis/customers/)
 
 ---
 

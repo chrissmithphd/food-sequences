@@ -24,25 +24,31 @@ COLORS = [BLUE, "#1976D2", "#42A5F5", GREEN, "#43A047", ORANGE, PURPLE]
 
 def main():
     d = pl.read_csv(SEQ / "gap_histograms.csv")
-    fig, ax = plt.subplots(figsize=(11, 6.5))
 
-    for ing, color in zip(INGREDIENTS, COLORS):
-        sub = d.filter(pl.col("ingredient") == ing).sort("gap_orders")
-        gaps = sub["gap_orders"].to_list()
-        counts = sub["count"].to_list()
-        total = sum(counts)
-        if total == 0:
-            continue
-        pcts = [c / total * 100 for c in counts]
-        label = ing.replace("_", " ")
-        ax.plot(gaps[:12], pcts[:12], "-o", color=color, markersize=5,
-                linewidth=2.2, label=label, alpha=0.85)
+    # Reconstruct raw gap values from histogram for boxplot
+    data, labels = [], []
+    for ing in INGREDIENTS:
+        sub = d.filter(pl.col("ingredient") == ing)
+        vals = []
+        for g, c in sub.select("gap_orders", "count").iter_rows():
+            vals.extend([g] * c)
+        data.append(np.array(vals))
+        labels.append(ing.replace("_", " "))
 
-    ax.set_xlabel("Orders between consecutive purchases")
-    ax.set_ylabel("Share of repurchase events (%)")
-    ax.legend(fontsize=9, loc="upper right")
-    ax.set_xlim(0.5, 12.5)
-    ax.set_xticks(range(1, 13))
+    fig, ax = plt.subplots(figsize=(11, 6))
+    bp = ax.boxplot(data, vert=False, patch_artist=True, whis=(10, 90),
+                    showfliers=False, widths=0.6,
+                    medianprops=dict(color="white", linewidth=2))
+    for patch, color in zip(bp["boxes"], COLORS):
+        patch.set_facecolor(color)
+        patch.set_alpha(0.8)
+    ax.set_yticklabels(labels, fontsize=10)
+    ax.set_xlabel("Orders between consecutive purchases (10th–90th percentile)")
+    ax.set_xlim(0, 25)
+    # annotate medians
+    for i, vals in enumerate(data):
+        med = float(np.median(vals))
+        ax.text(med + 0.3, i + 1, f"med={med:.0f}", va="center", fontsize=8, color="#333")
     ax.set_title("How many orders pass between purchases?\n"
                  "Banana and milk return nearly every order; "
                  "steak and curry paste are spread across many",
