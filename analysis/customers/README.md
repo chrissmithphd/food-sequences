@@ -31,7 +31,7 @@ of customers ever) and salads (82%) are widely sampled because their distinctive
 ingredients (bagels, arugula, cucumber) genuinely are popular; bread baking (28% ever,
 5% regularly) and grilling (18% / 3%) are minority pursuits — just as you'd expect.
 
-### Pantry size predicts how many food styles a customer buys consistently
+### Unique ingredient count predicts how many food styles a customer buys consistently
 
 ![Bigger pantries mean more kinds of cooking](../figures/profiles_pantry_vs_core.png)
 
@@ -116,7 +116,7 @@ look like as real shopping histories.
 The median customer (across all 206k) places **10 orders** over **~5 months**, shopping
 every **~13 days** with **8 items** per basket. Every engagement measure is right-skewed:
 a heavy tail shops weekly with 37+ orders across nearly a year. But basket size is
-remarkably stable — even the heaviest shoppers average 8–9 items per trip. **Frequency
+stable across all engagement levels — even the heaviest shoppers average 8–9 items per trip. **Frequency
 is what varies, not basket size.**
 
 ---
@@ -184,7 +184,7 @@ individual stability.
 - **Food-profile scoring uses recipe-derived signatures.** "Touching a cuisine's
   distinctive ingredients" is a lower bar than cooking that cuisine, and distinctive
   ingredients are not exclusive (one ingredient can signal several profiles). The
-  pantry-breadth and intensity results describe what's in the cart, not what's on the
+  ingredient-count and intensity results describe what's in the cart, not what's on the
   plate.
 - **ICC is approximate** under the badly unbalanced design (order counts range 10 to
   100+). The qualitative finding — within ≈ between — is robust; the exact numbers are

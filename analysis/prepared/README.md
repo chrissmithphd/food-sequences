@@ -98,19 +98,20 @@ has wide assortment (100 products) but the lowest per-product demand (216).
 ![Basket composition comparison](../figures/prepared_basket_comparison.png)
 
 Baskets containing prepared dishes are **larger** (median 12 items vs 7). The
-composition of the *rest of the basket* barely changes:
+non-prepared portion of those baskets shifts measurably:
 
-- Produce, dairy, and fruit are slightly lower in prepared-food baskets (the basket
-  is bigger, so these categories' shares dilute slightly).
-- Spices and cooking liquids drop by 0.2 percentage points — a tiny signal consistent
-  with less from-scratch cooking, but within noise.
-- Snacks, bread, and protein are marginally higher.
+- **Vegetables** are 16.8% of non-prepared items in prepared-food baskets vs 20.8%
+  without — a **4 percentage point difference**.
+- **Fruit** is 14.6% vs 17.1% — **2.5 points lower**.
+- **Snacks** are 10.0% vs 8.2% — **1.8 points higher**.
+- **Frozen foods** are 3.6% vs 2.4% — **1.2 points higher**.
+- Dairy is essentially unchanged (18.3% vs 18.2%).
 
-**What the data actually supports:** baskets with prepared food look almost exactly
-like baskets without, except bigger. Cross-sectional basket comparisons cannot establish whether
-prepared items replace or supplement other foods — the same customer may shop
-differently on different occasions, and prepared-food buyers may differ from
-non-buyers in ways not visible here.
+These are not trivial differences, but they don't establish causation.
+Cross-sectional basket comparisons cannot determine whether prepared items replace
+fresh cooking or whether prepared-food buyers simply shop differently in general — the
+same customer may shop differently on different occasions, and prepared-food buyers may
+differ from non-buyers in ways not visible in the basket.
 
 ## How prepared dishes reorder
 

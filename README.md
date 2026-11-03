@@ -1,15 +1,14 @@
-# What Grocery Purchases Reveal About Food Choice
+# Understanding Food Customers Through Grocery Purchase Data
 
-Grocery transaction data records what people actually put in their carts — not what
-they say they eat, not what nutritionists recommend, just what gets purchased, trip
-after trip. This project reads 3.4 million such orders to ask a deceptively simple
-question: when you watch people buy food over time, what can you actually learn about
-how they choose it?
+Grocery transaction data records what people put in their carts — not what they say
+they eat, not what nutritionists recommend, just what gets purchased, trip after trip.
+This project reads 3.4 million orders from 206,000 customers to understand how people
+choose, repeat, and explore food.
 
 The data is the [Instacart Online Grocery Shopping Dataset 2017](https://www.kaggle.com/datasets/psparks/instacart-market-basket-analysis):
 3.4 million orders from 206,000 customers, with the full sequence of products in each
-order. It's one of the few large public datasets where you can follow individual
-customers across dozens of shopping trips and watch their choices change.
+order — one of the few large public datasets where you can follow individual customers
+across dozens of shopping trips.
 
 The dataset has 49,688 products, but products are a poor unit for understanding food. A
 store carries 277 kinds of milk and 1,177 yogurts — organic, conventional, whole, skim,
@@ -20,36 +19,25 @@ plays. "Organic 2% Milk," "Whole Milk," and a store-brand gallon all become `mil
 into 543 ingredients across 21 food categories, and everything downstream works there.
 ([Classification methodology →](docs/FOOD_CLASSIFICATION.md))
 
-One theme kept surfacing across the analyses below. Reading food choice from
-purchase data means constantly separating four things that look identical in the raw
-numbers:
+One theme kept surfacing: reading food choice from purchase data means constantly
+separating what a customer genuinely prefers from what they happened to do for a while,
+which brand they reached for, and what is an artifact of seeing only a slice of their
+history.
 
-- what a customer genuinely **prefers** (stable),
-- what they happened to do **for a while** (temporary),
-- which **brand or package** they reached for (product-level, not food-level), and
-- what is just an **artifact** of seeing only a slice of their history.
-
-Several of the most-assumed shopping "patterns" turn out to be one of the last three
-wearing the costume of the first. The findings that survive that scrutiny are the
-interesting ones.
-
-Six questions probe the Instacart transactions directly, each with its own detailed
-report (click any section header):
+Seven analyses, each with its own detailed report:
 
 - **What do people buy?** How does the catalog compare with actual demand?
 - **What goes together?** Which ingredients share a basket more than chance predicts?
-- **What repeats?** Is there information in the *order* of purchases beyond how often
-  someone buys a thing?
+- **What repeats?** How often do customers repurchase each ingredient, and is there
+  information in the order of purchases beyond frequency?
 - **What's new?** How much of shopping is trying something unfamiliar, and where?
-- **Where do prepared meals fit?** How much shopping is ready-to-eat, and what else is
-  in that cart?
-- **How do customers differ?** Which differences are real and persistent, and which are
-  artifacts of how much we observe?
-
-A seventh analysis, **Food Profiles**, is a supporting reference built from *external*
-recipe data rather than the Instacart transactions: it asks what kinds of food — curries,
-salads, baking — our ingredients can signal, as groundwork for later recognizing food
-styles in baskets.
+- **Where do prepared meals fit?** How much shopping is ready-to-eat, and what's in the
+  rest of the cart?
+- **What kinds of food can the ingredients signal?** Which food styles — curries, salads,
+  baking — are detectable from ingredient purchases?
+- **Who are the customers, and what do they cook?** How broadly do customers sample food
+  styles, how many do they buy consistently, and which differences between customers
+  hold up under scrutiny?
 
 ---
 
@@ -68,14 +56,13 @@ the mirror image: 45% of the catalog, 25% of purchases. The catalog is widest wh
 branding does the differentiating (1,212 candy products, 939 granola bars); the cart is
 deepest where the food itself is the product (18 banana SKUs are 3% of all purchases).
 
-The practical lesson is that **product variety and food variety are not the same
-thing.** Just **19% of the food catalog captures 80% of purchase volume** — yogurt
-needs 190 of its 1,177 products to reach 80% of its own sales, while banana needs 2 of
-18. The median customer buys 45 distinct products but only 34 distinct ingredients, so
-about a quarter of their apparent variety is the same food in different packaging. (One
-platform-specific signal stands out: "organic" products are 12% of the food catalog but
-**33.5% of purchases**, far above the ~6% US grocery average — a statement about who
-shops here, not about groceries generally.)
+**Product variety and food variety are not the same thing.** Just **19% of the food
+catalog captures 80% of purchase volume** — yogurt needs 190 of its 1,177 products to
+reach 80% of its own sales, while banana needs 2 of 18. The median customer buys 45
+distinct products but only 34 distinct ingredients, so about a quarter of their apparent
+variety is the same food in different packaging. ("Organic" products are 12% of the food
+catalog but **33.5% of purchases** — far above the ~6% US grocery average, reflecting
+this platform's customer base rather than groceries generally.)
 
 ## What customers buy together
 
@@ -84,49 +71,40 @@ shops here, not about groceries generally.)
 ![Support vs. lift for ingredient pairs](analysis/figures/cooccurrence_support_lift.png)
 
 The median basket holds 8 items spanning 7 ingredients. Which ingredients travel
-together splits cleanly into two kinds, and *lift* — how many times more often a pair
-co-occurs than their individual popularity would predict, where 1.0 is pure chance —
-tells them apart. **High-support pairs** are staples that share a cart simply because
-both are everywhere (banana + yogurt, 354k orders, lift ~1.4 — barely above chance).
-**High-lift pairs** are specialists that are rare alone but almost always appear
-together: cake flour + powdered sugar (85×), bread flour + yeast (61×), lasagna noodles
-+ ricotta (51×).
+together splits into two kinds, and *lift* — how many times more often a pair co-occurs
+than their individual popularity would predict (1.0 = chance) — tells them apart.
+**High-support pairs** are staples that share a cart because both are everywhere
+(banana + yogurt, 354k orders, lift ~1.4). **High-lift pairs** are specialists that
+almost always appear together: cake flour + powdered sugar (85×), bread flour + yeast
+(61×), lasagna noodles + ricotta (51×).
 
-The second kind are co-purchasing signatures — you can see baking projects, spice
-blends, and specific dishes in them. Three-ingredient combinations make the cooking
-contexts even clearer: fresh herbs + garlic + onion (28k baskets, 12×), cucumber +
-lettuce + tomato (salad), avocado + garlic + onion (guacamole). The real structure
-lives in that rare, high-lift corner — not in the staples that dominate volume. These
-are things bought in the same order, though, not proof of a recipe: one basket can hold
-several meals and a week of restocking.
+High-lift pairs are co-purchasing signatures — baking projects, spice blends, specific
+dishes. Three-ingredient combinations surface cooking contexts: fresh herbs + garlic +
+onion (28k baskets, 12×), cucumber + lettuce + tomato (salad), avocado + garlic + onion
+(guacamole). These are things bought in the same order, not proof of a single recipe:
+one basket can hold several meals and a week of restocking.
 
 ## What customers buy again
 
 ### [Sequences →](analysis/sequences/)
 
-![Reorder lift by grain](analysis/figures/reorder_lift_by_level.png)
+![How often customers repurchase each ingredient](analysis/figures/gap_histograms.png)
 
-This is where separating signal from noise matters most. To isolate whatever is
-genuinely about *timing* — rather than just how often someone buys something — each
-customer's orders are compared against a **frequency-preserving shuffle**: the same
-baskets and the same purchase rates, with the order scrambled. Anything that shows up
-above the shuffle is real sequence structure; anything that doesn't was just frequency.
+How many orders pass between purchases varies enormously by ingredient. Banana and milk
+appear in nearly every order for the customers who buy them; chicken breast and ground
+beef return every 2–3 orders; curry paste is separated by many more. These repurchase
+rhythms are a baseline that any sequence model has to beat.
 
-A specific product returns in the very next order **28% more often than the shuffle**
-(lift 1.28×) — a real effect. But it shrinks fast as you zoom out: ingredient 1.15×,
-aisle 1.09×, category 1.04×. A broad category refills often mostly because it holds many
-products, which is arithmetic, not behavior. The genuine timing signal is narrow and
-product-level: individual products arrive in bunches within a stable ingredient (someone
-buys the same yogurt for a month, then switches brands).
+To isolate what is genuinely about *timing* beyond simple frequency, each customer's
+orders are compared against a **frequency-preserving shuffle** — the same baskets and
+purchase rates, with the order scrambled. A product returns in the next order **28% more
+often than the shuffle** (lift 1.28×), a real effect — but it shrinks at broader grains
+(ingredient 1.15×, category 1.04×) and most named "patterns" (staples, returns,
+rotations) occur at or below the rate a reshuffle produces.
 
-The headline is a negative result worth stating plainly. Scored honestly against *every*
-ingredient a customer might buy — present and absent from the next order — their
-**long-run purchase frequency predicts the next order better than any recency rule
-tested.** What someone bought most recently does not beat how often they buy it. And
-most named "patterns" — staples, returns, rotations — occur at or below the rate a
-reshuffle produces; they are frequency in disguise. The one pattern clearly above
-chance is *burst-then-absence* (an ingredient bought a few times early, then gone for
-the rest of the window: 3.4% of histories vs. 0.3% by chance).
+The central finding: a customer's **long-run purchase frequency predicts the next order
+better than any recency rule tested.** What someone bought recently does not beat how
+often they buy it. Most apparent sequence "patterns" are frequency in disguise.
 
 ## How customers try unfamiliar foods
 
@@ -135,28 +113,16 @@ the rest of the window: 3.4% of histories vs. 0.3% by chance).
 ![Apparent novelty decays as we observe more of a history](analysis/figures/novelty_decay.png)
 
 "New" means the first time an ingredient appears in a customer's observed history. Pool
-every order and about 22% of items look new — but that number is mostly a mirage. The
-data starts mid-history, so a customer's first observed order is 100% "new" by
-construction, and apparent novelty decays as the window lengthens. By order 50 it has
-fallen to **~5–7%** and is still drifting down. Most of the "exploration" in the pooled
-figure is an artifact of where our observation happens to begin.
+every order and about 22% of items look new — but that number is inflated by
+truncation. The data starts mid-history, so a customer's first observed order is 100%
+"new" by construction, and apparent novelty decays as the window lengthens. By order 50
+it has fallen to **~5–7%** and is still drifting down.
 
-What survives is more interesting than the headline rate:
-
-- **Discovery happens at the edges.** The 20 most-popular ingredients are 37% of
-  purchases but only 24% of first-time discoveries — people branch out into the long
-  tail, not the core.
-- **Repertoires grow slowly and never saturate.** Among customers observed to 50
-  orders, the median has tried 71 of 543 ingredients — a trickle of new items into
-  otherwise familiar baskets, rather than baskets themselves becoming more varied.
-- **People differ, and the difference persists.** Exploration slows for nearly everyone
-  (34% of items in the first half of a history, 15% in the second), yet those who
-  explore more early stay relatively more exploratory later. At matched history length,
-  the 90th-percentile explorer hits a new ingredient about seven times as often as the
-  10th (41% vs. 6%).
-
-The open question the data can't settle: is that low late-history rate a true floor, or
-would it keep falling with a longer window?
+What holds up: the 20 most-popular ingredients are 37% of purchases but only 24% of
+first-time discoveries — people branch out into the long tail, not the core.
+Repertoires grow slowly and never saturate (71 of 543 ingredients at order 50). People
+differ in how much they explore (p10 = 6%, p90 = 41% at matched history length), and
+those who explore more early stay relatively more exploratory later.
 
 ## Where prepared dishes fit
 
@@ -166,116 +132,126 @@ would it keep falling with a longer window?
 
 Prepared food — frozen meals, pizza, soup, deli items — is a minority, occasional
 behavior. **79% of baskets contain none.** 60% of customers buy one at some point, but
-for the median buyer it's about 4% of their items across ~30% of their orders, and
-reliance doesn't rise with how much someone shops (slightly negative, r = −0.21). Heavy
-grocery shoppers don't lean on prepared meals more.
+for the median buyer it's about 4% of their items across ~30% of their orders. Reliance
+doesn't rise with how much someone shops (slightly negative, r = −0.21).
 
-The more revealing result is what the data *can't* establish. Baskets with prepared food
-are larger (median 12 items vs. 7), but the rest of the basket looks almost identical in
-composition — produce, dairy, and fruit shares barely move. There's no visible
-"prepared food crowds out fresh cooking" signature. But a single snapshot of orders
-can't rule one out either, because the same person shops differently on different days
-and prepared-food buyers may simply differ from non-buyers. Whether prepared meals
-substitute for or ride alongside fresh cooking is a question this data frames cleanly
-and then leaves open.
+Baskets with prepared food are larger (median 12 items vs. 7). The non-prepared portion
+of those baskets shifts measurably: **vegetables and fruit are 4 and 2.5 percentage
+points lower**, while snacks and frozen foods are each ~1–2 points higher. This is not
+the "nearly identical" composition sometimes claimed for these comparisons, but it also
+doesn't establish causation — prepared-food buyers may simply differ from non-buyers in
+ways not visible in the basket. Whether prepared meals displace fresh cooking or ride
+alongside it remains an open question this data frames but cannot settle.
 
-## What kinds of food can the ingredients signal? Food Profiles
+## What kinds of food can the ingredients signal?
 
 ### [Food Profiles →](analysis/food_profiles/)
 
 What *kind* of food do those ingredients add up to — a curry, a salad, a baking project?
-Using two public recipe corpora (231k Food.com recipes, 40k labeled by cuisine), each of
-our 543 ingredients is scored for how **distinctively** it signals a food style, measured
-as *lift*. The result is validated on held-out recipes — seafood, sweet baking, salads,
-and pasta are recognized well; roasting and grilling are not (they're methods, not
-ingredients). Garlic is in every Italian recipe but, being in everything, signals
-nothing; ricotta, marinara, and filled pasta are the real tells.
+Using two public recipe corpora (231k Food.com recipes, 40k labeled by cuisine), each
+ingredient is scored for how distinctively it signals a food style, measured as *lift*.
+The result is validated on held-out recipes.
 
-![Which food profiles are recognizable from ingredients](analysis/figures/profiles_detectability.png)
+![Common is not the same as characteristic](analysis/figures/profiles_common_vs_distinct.png)
+
+The figure above captures the core principle. In Italian recipes, garlic and olive oil
+appear constantly — but they appear in *most* cuisines, so they signal nothing specific
+(lift near 1). The ingredients that actually identify Italian cooking — ricotta,
+marinara, filled pasta, pesto — are less common but far more distinctive. Ranking by
+frequency would surface garlic and miss ricotta. This applies to every food style: the
+ingredients that define it are not the ingredients that sell the most.
+
+![Which food styles are most widely bought](analysis/figures/profiles_customer_reach.png)
+
+Applied to Instacart customers (using only strongly distinctive ingredients — lift ≥ 5,
+so baking powder doesn't count as "baking"): sandwiches (90% of customers), salads
+(82%), and casseroles (81%) are the most widely purchased food styles. Bread baking
+(28%), grilling (18%), and roasts (3%) are genuine minority pursuits — their distinctive
+ingredients (bread flour, steak, roast cuts) are specific enough to identify who
+actually buys them.
 
 ## Who are the customers, and what do they cook?
 
 ### [Customers →](analysis/customers/)
 
 The median customer places **10 orders** over ~5 months, **8 items** per trip, every
-~13 days. A heavy tail shops weekly. Basket size barely varies with engagement — **it's
-frequency that differs**, not trip size.
+~13 days. Basket size is stable across all engagement levels — **frequency is what
+varies**, not trip size.
 
-Scored against food-profile signatures (using only strongly distinctive ingredients —
-lift ≥ 5, so baking powder doesn't count as "baking" and bananas don't count as "banana
-bread"), customers are moderately broad: the median samples **8–11 of 14 meal styles**
-but buys only **~4 regularly**. Sandwiches (90%) and salads (82%) are widely sampled;
-bread baking (28%) and grilling (18%) are genuine minority pursuits.
+Scored against food-profile signatures, customers are moderately broad: the median
+samples **8–11 of 14 meal styles** but buys only **~4 regularly**. A customer's unique
+ingredient count (how many distinct ingredients they've purchased across their observed
+history) predicts how many food styles they buy consistently:
 
-![Bigger pantries mean more kinds of cooking](analysis/figures/profiles_pantry_vs_core.png)
+![Unique ingredient count predicts food-style variety](analysis/figures/profiles_pantry_vs_core.png)
 
-Pantry size (how many distinct ingredients a customer has ever bought) predicts how many
-food styles they sample — but **34% of customers have zero styles they buy consistently**
-(in ≥50% of orders), and even the broadest shoppers (91 ingredients) typically hold to
-just 2. Most customers sample diffusely rather than specializing, and the median
-customer's strongest food style appears in only **20% of their orders**.
-[Full analysis →](analysis/customers/)
+A customer who has bought 13 distinct ingredients has 3 food styles they sample; one who
+has bought 91 has 12 — but even the broadest shoppers typically buy only 2 food styles
+consistently (in ≥50% of orders). **34% of customers have zero food styles they buy
+consistently.** The median customer's strongest single style appears in only **20% of
+their orders**. Most purchasing is diffuse.
+
+But the minorities are identifiable: the 28% who buy bread-baking ingredients, the 18%
+who buy grilling ingredients, the customers whose strongest food style appears in 40%+
+of their orders — those are specific, measurable populations with distinctive ingredient
+signatures. [Full analysis →](analysis/customers/)
 
 ---
 
 ## What we learned
 
-Across these analyses, a few conclusions hold up — several of them by dissolving a
-tempting story rather than confirming one.
+1. **Product variety is not food variety.** A quarter of apparent product diversity
+   disappears at the ingredient level, and 19% of the catalog covers 80% of volume.
+   Most "assortment" is brand and package choice over a smaller set of foods.
 
-1. **Product variety is not food variety.** A quarter of a customer's apparent product
-   diversity disappears at the ingredient level, and 19% of the catalog covers 80% of
-   volume. Most "assortment" is brand and package choice layered over a much smaller set
-   of foods people actually eat.
+2. **Purchase frequency is a strong baseline.** A customer's long-run rate for each
+   ingredient is a well-calibrated predictor of their next order, and simple recency
+   rules don't improve on it. Most named sequence "patterns" match their
+   frequency-preserving baselines.
 
-2. **How often beats what's next.** A customer's long-run rate for each ingredient is a
-   well-calibrated predictor of their next order, and simple recency rules don't improve
-   on it. Order and timing add a small, genuine, product-level effect — the 1.28×
-   next-order bump, bursty repurchase timing — but not a dominant one. Much of what gets
-   called a shopping "pattern" is frequency in disguise. (A richer sequence model might
-   extract more; the point is that the crude ones don't, and the frequency baseline is
-   hard to beat.)
+3. **Exploration is ~5–7% after correcting for truncation, not ~22%.** People keep
+   trying new things, slowly, tilted toward the catalog's long tail. They differ in how
+   much — but the headline number is inflated by where the observation window starts.
 
-3. **Exploration is real but small, and easy to overstate.** Correct for only seeing
-   part of each history and steady-state novelty is ~5–7%, not ~22%, tilted toward the
-   catalog's long tail. People keep trying new things, slowly, and differ markedly in
-   how much — but the eye-catching novelty number is mostly an observation artifact.
+4. **Within-customer variation rivals between-customer differences.** Several
+   "personality" metrics (repeater vs. explorer) encode observation length rather than
+   behavior. Genuine individual signal exists but is narrower than segment language
+   implies.
 
-4. **Customers differ less than they first appear.** Variation within a person rivals
-   the differences between people, and several "personality" metrics mostly encode how
-   long we watched. Genuine, observation-independent individual signal exists, but it's
-   narrower than segment language implies.
+5. **Prepared food is a minority behavior with a measurably different basket.** 79% of
+   baskets contain none. Baskets with prepared food have less produce and more snacks —
+   but cross-sectional comparisons can't establish whether prepared meals displace
+   cooking or simply co-occur with different shopping patterns.
 
-5. **Prepared food is a minority behavior with a genuinely ambiguous role.** It's
-   occasional even for its users, and its baskets differ from others mainly in size, not
-   shape. Whether it substitutes for or supplements fresh cooking is a real question this
-   data cannot settle.
+6. **The ingredients that define a food style are not the ones that sell the most.**
+   Garlic is common but not distinctive; ricotta, curry paste, and bread flour are
+   distinctive but not common. 22 ingredients (salt, onion, garlic, olive oil, butter,
+   eggs, pepper) appear in every food style and signal nothing specific — they are 12%
+   of purchase volume and the noise floor for any personalization. Among those, salt
+   (57% of recipes, 0.12% of grocery purchases) and olive oil (23% of recipes, 0.32%)
+   are in every kitchen but rarely appear on a grocery list — purchase frequency and
+   importance to cooking are different measures.
 
-6. **Food styles are legible in ingredients — unevenly, and most customers are diffuse.**
-   The Food Profiles reference recognizes seafood, baking, salads, and pasta well from
-   ingredients and is near-useless for cooking *methods* (roasting, grilling). Pointed at
-   Instacart customers, the honest result is that most people sample many food styles but
-   specialize in few — 34% have zero styles they buy consistently, and the median
-   customer's strongest style appears in only 20% of their orders.
+7. **Most customers sample broadly but specialize in little.** 34% have zero food styles
+   bought consistently; the median customer's strongest style is in 20% of orders. But
+   the minorities who do specialize — the bakers, the grillers, the curry buyers — are
+   identifiable from their distinctive ingredients, and a customer's unique ingredient
+   count is a usable proxy for cooking engagement (13 ingredients → 3 styles, 91 → 12).
 
-The connecting thread: reading food choice from purchase records means continually
-separating stable preference from temporary behavior, food from packaging, and signal
-from the shape of the observation window. The strongest results here are often the ones
-that take a confident-sounding pattern apart — a "pattern" that's really frequency, a
-"segment" that's really history length, an "exploration rate" that's really truncation.
+These patterns are from one delivery platform in 2017. Whether they hold on current,
+broader data is an open question.
 
 Questions worth more or better data:
 
 - Would exploration keep declining with a longer observation window, or does it reach a
   floor?
-- Does buying prepared food displace cooking, or sit alongside it?
-- Which individual differences survive once observation length is held constant — is
-  there a stable "explorer" at all?
-- How much of co-purchase structure reflects planned meals versus routine restocking?
-- Can food styles be recognized in real grocery baskets, which are partial and mix
-  several meals, rather than in the complete recipes the reference was validated on?
-- Do a customer's food styles shift over time beyond what their stable purchasing habits
-  and ordinary sampling variation already produce?
+- Does buying prepared food displace cooking, or sit alongside it? (The basket
+  composition differences suggest it might, but can't prove it.)
+- Which individual differences survive once observation length is held constant?
+- Can food styles be recognized in real grocery baskets — partial and multi-meal —
+  rather than the complete recipes the reference was validated on?
+- Do a customer's food styles shift over time beyond what stable purchase frequencies
+  produce?
 
 ---
 
@@ -293,13 +269,13 @@ mapping without an LLM.
 [Taxonomy →](data/INGREDIENT_TAXONOMY.md) ·
 [Method →](docs/FOOD_CLASSIFICATION.md)
 
-**What limits the conclusions:** There are no absolute dates, so nothing here speaks to
-seasons; inter-order gaps are capped at 30 days; test-set orders lack item labels. Most
-importantly, each customer's history is observed only in part — it begins mid-stream and
-ends at the data cutoff — which is why novelty and several per-customer metrics have to
-be read against that truncation rather than at face value. And this is Instacart's
-customer base: urban, convenience-oriented, over-indexing on organic (33.5% of
-purchases) and plant milk (38% of milk), none of it nationally representative.
+**What limits the conclusions:** No absolute dates (nothing speaks to seasons);
+inter-order gaps capped at 30 days; test-set orders lack item labels. Each customer's
+history is observed only in part — it begins mid-stream and ends at the data cutoff —
+which is why novelty and several per-customer metrics must be read against that
+truncation. This is Instacart's customer base: urban, convenience-oriented,
+over-indexing on organic (33.5% of purchases) and plant milk (38% of milk), none of it
+nationally representative.
 
 ## Repository structure
 

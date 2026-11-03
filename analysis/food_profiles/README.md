@@ -139,7 +139,7 @@ pasta (0.63). **Rare but far above their base rate:** chili (AP 0.53 on a 0.9% b
 rate), pizza, curries — modest absolute precision but a large gain over prevalence, which
 reflects a few near-decisive ingredients (kidney beans, curry paste). A big ratio over
 prevalence does not imply high absolute precision; it means the signature ranks the rare
-positives well. **Weak — the honest negatives:** roasts (0.03), spicy (0.16), stir-fries
+positives well. **Weak:** roasts (0.03), spicy (0.16), stir-fries
 (0.16), grilling (0.17). Roasting and grilling are *methods* with few distinctive
 ingredients, and the "spicy" tag is detected only through the presence of chili/heat
 ingredients, which ingredients can't translate into how hot a dish actually tastes.
@@ -161,7 +161,7 @@ Measured signature overlap (Jaccard of distinctive ingredients) tells the same s
 `vegetarian ≈ plant_forward` (0.52), `Thai ≈ Vietnamese` (0.46), `British ≈ Irish`
 (0.38). The practical reading is about *evidence*, not taxonomy: where two profiles share
 most of their distinctive ingredients, a detector will struggle to tell them apart, so a
-broader grouping may be the honest unit when evidence is thin — while finer distinctions
+broader grouping may be the appropriate unit when evidence is thin — while finer distinctions
 should be kept wherever the ingredients support them, not permanently discarded.
 
 One overlap needs care: `curries ≈ Indian` (0.49) is *not* evidence that Indian and Thai
@@ -173,7 +173,7 @@ that regional cuisines should collapse.
 ## What this means for grocery baskets
 
 The reference is built on recipes, and **a grocery basket is not a recipe.** A single
-order mixes several meals and a week of restocking, so the honest target is "this basket
+order mixes several meals and a week of restocking, so the target is "this basket
 shows *evidence consistent with* curries and salads," never "this basket is a curry."
 Three cautions carry forward:
 
@@ -215,7 +215,7 @@ but this reflects both genuine exploration and the mechanical fact that more ord
 expose more ingredients. The revealing question is how many food styles each customer
 buys *consistently*:
 
-![Bigger pantries mean more kinds of cooking](../figures/profiles_pantry_vs_core.png)
+![More distinct ingredients purchased means more kinds of cooking](../figures/profiles_pantry_vs_core.png)
 
 **34% of customers have zero food styles they buy consistently** (≥50% of orders).
 Even among the broadest shoppers (91 ingredients), the median buys only 2 styles
